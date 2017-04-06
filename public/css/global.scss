@@ -214,6 +214,53 @@ section.carousel_offers_section {
   .carousel.offers_carousel {
     .slick-slide {
       padding: 0 15px;
+      &.object_block {
+        position: relative;
+        margin-bottom: 81px;
+        .object_img_container {
+          img {
+            width: 100%;
+          }
+        }
+        .object_info_container {
+          position: absolute;
+          padding: 0 20px;
+          width: 100%;
+          bottom: -81px;
+          .object_info {
+            background-color: #272727;
+            padding: 30px 30px 20px 30px;
+            a {
+              display: block;
+              text-transform: uppercase;
+              font-size: 1.5625rem;
+              margin-bottom: 0;
+            }
+            span.price {
+              font-size: 1.25rem;
+              float: right;
+            }
+            .properties {
+              border-top: 1px solid #ccac83;
+              padding-top: 15px;
+              margin-top: 15px;
+              text-align: center;
+              display: table;
+              width: 100%;
+              li {
+                display: table-cell;
+                width: 25%;
+                .icn_container {
+                  .icn {
+                    color: #ccac83;
+                    margin-right: 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
     .slick-arrow {
       position: absolute;
@@ -334,9 +381,6 @@ footer {
     }
   }
 }
-
-
-
 
 
 
