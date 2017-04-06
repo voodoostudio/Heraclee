@@ -136,6 +136,7 @@
                 <div class="object_block">
                     <div class="object_img_container">
                         <a href="#"><img src="/img/objects/object_1.png"></a>
+                        <div class="loading"></div>
                     </div>
                     <div class="object_info_container">
                         <div class="object_info">
@@ -165,29 +166,30 @@
                 </div>
                 <div class="object_block">
                     <div class="object_img_container">
-                        <a href="#"><img src="/img/objects/object_1.png"></a>
+                        <a href="#"><img src="/img/objects/object_2.png"></a>
+                        <div class="loading"></div>
                     </div>
                     <div class="object_info_container">
                         <div class="object_info">
-                            <a href="#">Saint-Tropez</a>
-                            <span class="city">Vanades</span>
-                            <span class="price">3 000 000 000 €</span>
+                            <a href="#">Ramatuelle</a>
+                            <span class="city">Les Marres</span>
+                            <span class="price">2 500 000 000 €</span>
                             <ul class="properties">
                                 <li>
                                     <span class="icn_container"><i class="icn icon-area"></i></span>
-                                    <span class="prop_title">300 m</span><sup>2</sup>
+                                    <span class="prop_title">200 m</span><sup>2</sup>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-rooms"></i></span>
-                                    <span class="prop_title">8</span>
+                                    <span class="prop_title">7</span>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-bedroom"></i></span>
-                                    <span class="prop_title">5</span>
+                                    <span class="prop_title">4</span>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-bathroom"></i></span>
-                                    <span class="prop_title">3</span>
+                                    <span class="prop_title">2</span>
                                 </li>
                             </ul>
                         </div>
@@ -195,34 +197,66 @@
                 </div>
                 <div class="object_block">
                     <div class="object_img_container">
-                        <a href="#"><img src="/img/objects/object_1.png"></a>
+                        <a href="#"><img src="/img/objects/object_3.png"></a>
+                        <div class="loading"></div>
                     </div>
                     <div class="object_info_container">
                         <div class="object_info">
-                            <a href="#">Saint-Tropez</a>
-                            <span class="city">Vanades</span>
-                            <span class="price">3 000 000 000 €</span>
+                            <a href="#">VILLA DES PARCS</a>
+                            <span class="city">Saint-Tropez</span>
+                            <span class="price">Prix sur demande</span>
                             <ul class="properties">
                                 <li>
                                     <span class="icn_container"><i class="icn icon-area"></i></span>
-                                    <span class="prop_title">300 m</span><sup>2</sup>
+                                    <span class="prop_title">400 m</span><sup>2</sup>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-rooms"></i></span>
-                                    <span class="prop_title">8</span>
+                                    <span class="prop_title">12</span>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-bedroom"></i></span>
-                                    <span class="prop_title">5</span>
+                                    <span class="prop_title">6</span>
                                 </li>
                                 <li>
                                     <span class="icn_container"><i class="icn icon-bathroom"></i></span>
-                                    <span class="prop_title">3</span>
+                                    <span class="prop_title">6</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {{--<div class="object_block">--}}
+                    {{--<div class="object_img_container">--}}
+                        {{--<a href="#"><img src="/img/objects/object_4.png"></a>--}}
+                        {{--<div class="loading"></div>--}}
+                    {{--</div>--}}
+                    {{--<div class="object_info_container">--}}
+                        {{--<div class="object_info">--}}
+                            {{--<a href="#">VILLAGE</a>--}}
+                            {{--<span class="city">Saint-Tropez</span>--}}
+                            {{--<span class="price">5 625 €</span>--}}
+                            {{--<ul class="properties">--}}
+                                {{--<li>--}}
+                                    {{--<span class="icn_container"><i class="icn icon-area"></i></span>--}}
+                                    {{--<span class="prop_title">380 m</span><sup>2</sup>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<span class="icn_container"><i class="icn icon-rooms"></i></span>--}}
+                                    {{--<span class="prop_title">2</span>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<span class="icn_container"><i class="icn icon-bedroom"></i></span>--}}
+                                    {{--<span class="prop_title">1</span>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<span class="icn_container"><i class="icn icon-bathroom"></i></span>--}}
+                                    {{--<span class="prop_title">1</span>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
             </div>
         </div>
     </section>
