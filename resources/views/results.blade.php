@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Heraclee</title>
+    <title>Heraclee results</title>
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
     <meta name="description" content="Heraclee website">
     <meta name="keywords" content="heraclee, website, responsive">
@@ -23,15 +23,6 @@
 
 <body>
     @include('includes.header')
-
-    <section class="top_offer_section" style="background-image: url('/img/homepage_img.jpg')">
-        <div class="info_block">
-            <h1>Maison de standing</h1>
-            <h3>Saint-tropez</h3>
-            <a href="#" class="btn">Voir le bien</a>
-        </div>
-        <div class="gradient_bottom"></div>
-    </section>
 
     <section class="search_section">
         <div class="container-fluid">
@@ -129,16 +120,28 @@
         </div>
     </section>
 
-    <section class="carousel_offers_section">
-        <div class="container-fluid">
-            <h2>Nos derniers biens</h2>
-            <div class="offers_carousel carousel">
-                <div>your content</div>
-                <div>your content</div>
-                <div>your content</div>
-            </div>
-        </div>
-    </section>
+    {{--<section class="carousel_offers_section">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<h2>Votre recherche immobiliére</h2>--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-10">--}}
+                    {{--<div class="view_type_container">--}}
+                        {{--<ul class="view_type">--}}
+                            {{--<li class="hidden-sm-down list_view_btn"><i class="icn icon-list_icn"></i>Liste (371)</li>--}}
+                            {{--<li class="grid_view_btn active"><i class="icn icon-grid_icn"></i>Grille (371)</li>--}}
+                            {{--<li class="map_view_btn"><i class="icn icon-map_pin"></i>Carte (152)</li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+
+            {{--<div class="offers_carousel carousel">--}}
+                {{--<div>your content</div>--}}
+                {{--<div>your content</div>--}}
+                {{--<div>your content</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
     @include('includes.footer')
 

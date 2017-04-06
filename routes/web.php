@@ -15,3 +15,8 @@ Route::get('/', [
     'uses' => 'PagesController@index',
     'as' => 'index'
 ]);
+
+Route::get('/results', [
+    'uses' => 'PagesController@results',
+    'as' => 'results'
+]);

@@ -28,10 +28,10 @@
             <nav>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Accueil</a>
+                        <a class="nav-link active" href="/">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Achat</a>
+                        <a class="nav-link" href="{{ route('results') }}">Achat</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Location</a>

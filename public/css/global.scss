@@ -64,6 +64,8 @@ p {
 header {
   display: table;
   width: 100%;
+  @include my_box_shadow(0px 6px 20px -10px black);
+
   .logo {
     float: left;
     padding: 23px 0;
@@ -207,10 +209,34 @@ section.carousel_offers_section {
     font-size: 2.5rem;
     text-transform: uppercase;
     text-align: center;
+    margin-bottom: 40px;
+  }
+  .carousel.offers_carousel {
+    .slick-slide {
+      padding: 0 15px;
+    }
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      margin-top: -27px;
+      padding: 0;
+      font-size: 54px;
+      background: transparent;
+      border: none;
+      color: $main_light_clr;
+      cursor: pointer;
+      &.slick-next {
+        right: -50px;
+      }
+      &.slick-prev {
+        left: -50px;
+      }
+    }
   }
 }
 
 footer {
+  margin-top: 70px;
   section.top_footer_section {
     background-color: #323232;
     padding: 30px 0;
@@ -262,6 +288,48 @@ footer {
         li:first-child {
           margin-bottom: 13px;
         }
+      }
+    }
+  }
+  ul.social_networks {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    li {
+      margin: 0;
+      a,
+      a:visited,
+      a:focus {
+        color: $main_light_clr;
+        display: block;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 1.25rem;
+        text-decoration: none;
+        i.icn {
+          position: relative;
+          top: 2px;
+        }
+      }
+      &:hover {
+        a {
+          color: #ffffff;
+          font-size: 1.5rem;
+        }
+      }
+      &.scroll_to_top {
+        background-color: $main_gray_clr;
+      }
+      &.twitter {
+        background-color: #21aaf4;
+      }
+      &.facebook {
+        background-color: #4464a2;
+      }
+      &.linkedin {
+        background-color: #037cb6;
       }
     }
   }
