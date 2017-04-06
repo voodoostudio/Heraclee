@@ -1,8 +1,8 @@
-$main_dark_clr: #232323;
+$main_dark_clr: #272727;
 $main_light_clr: #fdfdfd;
-$main_brown_clr: #c5a278;
+$main_brown_clr: #ccac83;
 $main_gray_clr: #625e57;
-$main_divider_clr: #a0988b;
+$main_divider_clr: #aaa296;
 
 @mixin my_border_radius($radius) {
   -webkit-border-radius: $radius;
@@ -16,4 +16,22 @@ $main_divider_clr: #a0988b;
   -ms-transform: $transform_parameter;
   -o-transform: $transform_parameter;
   transform: $transform_parameter;
+}
+
+@mixin my_transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin my_box_shadow($shadow_parameters) {
+  -webkit-box-shadow: $shadow_parameters;
+  -moz-box-shadow: $shadow_parameters;
+  box-shadow: $shadow_parameters;
+}
+@mixin my_gradient_bg($gradient_color) {
+  background: -webkit-linear-gradient(transparent, $gradient_color);
+  background: -moz-linear-gradient(transparent, $gradient_color);
+  background: -o-linear-gradient(transparent, $gradient_color);
+  background: linear-gradient(transparent, $gradient_color);
 }

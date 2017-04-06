@@ -77,14 +77,13 @@
         </div>
     </header>
 
-    <section class="top_offer_section">
-        <div class="my_checkbox">
-            <label>
-                <input required="" type="checkbox" name="" value="">
-                <span class="fake_checkbox"></span>
-                <span class="my_checkbox_text">Subscribe to the newsletter</span>
-            </label>
+    <section class="top_offer_section" style="background-image: url('/img/homepage_img.jpg')">
+        <div class="info_block">
+            <h1>Maison de standing</h1>
+            <h3>Saint-tropez</h3>
+            <a href="#" class="btn">Voir le bien</a>
         </div>
+        <div class="gradient_bottom"></div>
     </section>
 
     <section class="search_section">
@@ -92,13 +91,20 @@
             <div class="search_block">
                 <div class="row">
                     <div class="col-4">
-                        Achat-Location
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a data-toggle="tab" class="nav-link active" href="#">Location</a>
+                            </li>
+                            <li class="nav-item">
+                                <a data-toggle="tab" class="nav-link" href="#">Vente</a>
+                            </li>
+                        </ul>
                     </div>
                     <div class="col-8">
                         <div class="row">
                             <div class="col-4">
                                 <label class="form_el_label light"><i class="icn icon-building"></i><span>Type de bien</span></label>
-                                <div class="min_select_container margin_bottom_10">
+                                <div class="margin_bottom_10">
                                     <select multiple="multiple" name="object_type">
                                         <option value="">House</option>
                                         <option value="">Apartment</option>
@@ -109,8 +115,8 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <label class="form_el_label light"><i class="icn icon-country"></i><span>Lieu</span></label>
-                                <div class="min_select_container margin_bottom_10">
+                                <label class="form_el_label light"><i class="icn icon-country"></i><span>Commune</span></label>
+                                <div class="margin_bottom_10">
                                     <select multiple="multiple" name="object_place">
                                         <option value="">Geneva</option>
                                         <option value="">Bern</option>
@@ -120,8 +126,8 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="input_container">
-                                    <input type="text" placeholder="Rechercher votre bien">
+                                <div class="input_container search_input">
+                                    <input type="text" placeholder="Entrer un mot-clé">
                                     <button type="submit"><i class="icn icon-search"></i></button>
                                 </div>
                             </div>
@@ -133,42 +139,40 @@
                         <label class="form_el_label light"><i class="icn icon-price"></i><span>Prix min</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Min">
-                            <div class="input_label">CHF</div>
+                            <div class="input_label">&euro;</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 margin_bottom_10">
                         <label class="form_el_label light"><i class="icn icon-price"></i><span>Prix max</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Max">
-                            <div class="input_label">CHF</div>
+                            <div class="input_label">&euro;</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 margin_bottom_10">
                         <label class="form_el_label light"><i class="icn icon-area"></i><span>Surface min</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Min">
-                            <div class="input_label">m<sup>2</sup></div>
+                            <div class="input_label"><span>m<sup>2</sup></span></div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 margin_bottom_10">
                         <label class="form_el_label light"><i class="icn icon-area"></i><span>Surface max</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Max">
-                            <div class="input_label">m<sup>2</sup></div>
+                            <div class="input_label"><span>m<sup>2</sup></span></div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 margin_bottom_10">
-                        <label class="form_el_label light"><i class="icn icon-bedroom"></i><span>Chambres min</span></label>
+                        <label class="form_el_label light"><i class="icn icon-rooms"></i><span>Chambres min</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Min">
-                            <div class="input_label">CHF</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-2 margin_bottom_10">
-                        <label class="form_el_label light"><i class="icn icon-bedroom"></i><span>Chambres max</span></label>
+                        <label class="form_el_label light"><i class="icn icon-rooms"></i><span>Chambres max</span></label>
                         <div class="input_container light margin_bottom_10">
                             <input type="text" placeholder="Max">
-                            <div class="input_label">CHF</div>
                         </div>
                     </div>
                 </div>

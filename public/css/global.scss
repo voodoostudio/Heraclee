@@ -50,6 +50,17 @@ p {
   margin-bottom: 30px;
 }
 
+//gradient bg blocks START
+.gradient_bottom {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 1;
+  @include my_gradient_bg(rgba(black, 0.3))
+}
+//gradient bg blocks END
+
 header {
   display: table;
   width: 100%;
@@ -92,7 +103,7 @@ header {
             }
             a {
               &.active {
-                color: $main_gray_clr;
+                color: $main_brown_clr;
               }
             }
           }
@@ -133,13 +144,13 @@ header {
             font-size: 1.063rem;
             line-height: 1.063rem;
             &.active {
-              color: $main_gray_clr;
+              color: $main_brown_clr;
               font-family: opensans_regular;
-              border-bottom: 1px solid $main_gray_clr;
+              border-bottom: 1px solid $main_brown_clr;
             }
             &:hover {
-              color: $main_gray_clr;
-              border-bottom: 1px solid $main_gray_clr;
+              color: $main_brown_clr;
+              border-bottom: 1px solid $main_brown_clr;
             }
           }
         }
@@ -150,13 +161,38 @@ header {
 
 section.top_offer_section {
   height: 700px;
-  background: gray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  .info_block {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 2;
+    h1 {
+      font-family: opensans_regular;
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+  }
 }
 
 section.search_section {
   margin-top: 70px;
   .search_block {
     border: 1px solid $main_brown_clr;
-    padding: 40px 50px 50px;
+    padding: 40px 50px;
+    ul.nav.nav-tabs {
+      margin-top: 27px;
+    }
+    .input_container.search_input {
+      margin-top: 27px;
+    }
   }
 }
