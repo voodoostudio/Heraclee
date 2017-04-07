@@ -123,14 +123,14 @@
 
     <section class="results_section">
         <div class="container-fluid">
-            <h1 class="margin_bottom_30">Votre recherche immobiliére</h1>
+            <h2>Votre recherche immobiliére</h2>
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-6 margin_bottom_10">
                     <div class="view_type_container">
                         <ul class="view_type">
-                            <li class="hidden-sm-down list_view_btn"><i class="icn icon-list_icn"></i>Liste (371)</li>
+                            <li class="hidden-sm-down list_view_btn"><i class="icn icon-list_icn"></i>Liste</li>
                             <li class="grid_view_btn active"><i class="icn icon-grid_icn"></i>Grille (371)</li>
-                            <li class="map_view_btn"><i class="icn icon-map_pin"></i>Carte (152)</li>
+                            <li class="map_view_btn"><i class="icn icon-map_pin"></i>Carte</li>
                         </ul>
                     </div>
                 </div>
@@ -207,7 +207,8 @@
                 <ul class="pagination">
                     <li class="page-item">
                         <a href="#" class="page-link" aria-label="Previous">
-                            <span aria-hidden="true">«</span>
+                            {{--<span aria-hidden="true">«</span>--}}
+                            <i class="icn icon-arrow_dropdown_left"></i>
                         </a>
                     </li>
                     <li class="page-item"><a href="#" class="page-link">1</a></li>
@@ -215,9 +216,10 @@
                     <li class="page-item active"><a href="#" class="page-link">3</a></li>
                     <li class="page-item"><a href="#" class="page-link">4</a></li>
                     <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">6</a></li>
                     <li class="page-item">
                         <a href="#" class="page-link" aria-label="Next">
-                            <span aria-hidden="true">»</span>
+                            <i class="icn icon-arrow_dropdown_right"></i>
                         </a>
                     </li>
                 </ul>

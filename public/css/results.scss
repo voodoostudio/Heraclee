@@ -11,6 +11,12 @@ $border_color: #cccccc;
 
 .results_section {
   padding: 40px 0 70px;
+  h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
   .view_type_container {
     .view_type {
       width: 100%;
@@ -23,10 +29,10 @@ $border_color: #cccccc;
         line-height: 38px;
         text-align: center;
         text-transform: uppercase;
-        color: $main_blue;
+        color: #ffffff;
         font-size: 1rem;
         cursor: pointer;
-        border: 2px solid $main_blue;
+        border: 1px solid $main_brown_clr;
         border-right: none;
         i.icn {
           font-size: 18px;
@@ -34,16 +40,16 @@ $border_color: #cccccc;
         }
       }
       li:last-of-type {
-        border-right: 2px solid $main_blue;
+        border-right: 2px solid $main_brown_clr;
       }
       li.active {
-        background-color: $main_blue;
+        background-color: $main_brown_clr;
         color: white;
       }
     }
   }
   .results_container {
-    margin-top: 15px;
+    margin-top: 10px;
     width: 100%;
     display: table;
     position: relative;
@@ -57,7 +63,7 @@ $border_color: #cccccc;
           overflow: hidden;
           .object_block {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: table;
             position: relative;
             .img_block {
@@ -435,11 +441,12 @@ $border_color: #cccccc;
     display: table;
     margin: 0 auto;
     ul.pagination {
-      border: 1px solid $border_color;
+      border: 1px solid $main_divider_clr;
       border-radius: 0;
       margin: 20px 0 0;
       li {
         a.page-link {
+          background-color: transparent;
           padding: 0;
           height: 40px;
           width: 40px;
@@ -447,11 +454,11 @@ $border_color: #cccccc;
           text-align: center;
           border: none;
           border-radius: 0;
-          color: $text_main_gray;
+          color: $main_light_clr;
           font-size: 18px;
           &:focus,
           &:hover {
-            color: $main_blue;
+            color: $main_brown_clr;
             background-color: transparent;
             border: none;
             font-size: 20px;
@@ -459,14 +466,16 @@ $border_color: #cccccc;
           }
           &[aria-label="Previous"],
           &[aria-label="Next"] {
-            line-height: 36px;
+            font-size: 8px;
+            line-height: 42px;
+            color: $main_divider_clr;
           }
         }
         &.active {
           .page-link {
             background-color: transparent;
-            font-size: 20px;
-            color: $main_blue;
+            font-size: 22px;
+            color: $main_brown_clr;
           }
         }
       }
