@@ -152,7 +152,7 @@
             <div id="results_map"></div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-lg-4 object_block_container">
+                    <div class="col-12 col-sm-6 object_block_container">
                         <div class="object_block">
                             <div class="img_block">
                                 {{--<div class="activity_label">Loué</div>--}}
@@ -205,7 +205,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="gradient_bg"></div>
+                            {{--<div class="gradient_bg"></div>--}}
                         </div>
                     </div>
                 </div>
