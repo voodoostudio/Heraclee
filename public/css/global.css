@@ -621,7 +621,8 @@ section.carousel_offers_section {
           section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn {
             display: table-cell;
             vertical-align: middle;
-            color: #ccac83; }
+            color: #ccac83;
+            font-size: 10px; }
         section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img {
           -webkit-transform: scale(1.2);
           -moz-transform: scale(1.2);
