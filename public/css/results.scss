@@ -105,7 +105,7 @@ $border_color: #cccccc;
                       margin: 0;
                     }
                     a {
-                      color: $main_blue;
+                      color: $main_light_clr;
                       i.icn {
                         font-size: 14px;
                       }
@@ -118,7 +118,6 @@ $border_color: #cccccc;
                   display: table;
                   width: 100%;
                   li {
-                    line-height: 30px;
                     .icn_container {
                       display: table;
                       float: left;
@@ -126,9 +125,9 @@ $border_color: #cccccc;
                       position: relative;
                       cursor: default;
                       .icn {
-                        margin-right: 5px;
-                        color: $main_blue;
-                        font-size: 30px;
+                        margin-right: 10px;
+                        color: $main_brown_clr;
+                        font-size: 20px;
                         float: left;
                       }
                     }
@@ -152,7 +151,7 @@ $border_color: #cccccc;
                   //border: 2px solid $main_blue;
                   color: white;
                   background: $main_yellow;
-                  font: 20px lato_regular;
+                  font-size: 20px;
                   text-align: center;
                   float: right;
                   padding: 9px 5px 8px;
@@ -187,8 +186,10 @@ $border_color: #cccccc;
             img {
               display: block;
               float: left;
-              height: 100%;
+              height: auto;
               min-width: 100%;
+              max-width: 100%;
+              min-height: 100%;
             }
 
             .gallery.slick-slider {
@@ -231,17 +232,17 @@ $border_color: #cccccc;
             .title_container {
               a {
                 h2 {
-                  font: 2rem lato_bold;
-                  color: $main_blue;
+                  font-size: 2rem;
+                  color: $main_light_clr;
                   text-transform: uppercase;
                 }
               }
             }
             .description_container {
               h3 {
-                font: 1.375rem lato_bold;
+                font-size: 1.375rem;
                 text-transform: uppercase;
-                color: $main_blue;
+                color: $main_brown_clr;
                 margin-top: 5px;
                 span {
                   color: $main_yellow;
@@ -264,7 +265,7 @@ $border_color: #cccccc;
             }
 
             .properties_container {
-              border-top: 1px solid $main_blue;
+              border-top: 1px solid $main_divider_clr;
               margin-top: 10px;
               padding-top: 20px;
               ul.properties {
@@ -465,7 +466,6 @@ $border_color: #cccccc;
           .page-link {
             background-color: transparent;
             font-size: 20px;
-            font-family: lato_bold;
             color: $main_blue;
           }
         }
