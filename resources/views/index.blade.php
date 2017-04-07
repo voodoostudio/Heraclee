@@ -226,37 +226,37 @@
                         </div>
                     </div>
                 </div>
-                {{--<div class="object_block">--}}
-                    {{--<div class="object_img_container">--}}
-                        {{--<a href="#"><img src="/img/objects/object_4.png"></a>--}}
-                        {{--<div class="loading"></div>--}}
-                    {{--</div>--}}
-                    {{--<div class="object_info_container">--}}
-                        {{--<div class="object_info">--}}
-                            {{--<a href="#">VILLAGE</a>--}}
-                            {{--<span class="city">Saint-Tropez</span>--}}
-                            {{--<span class="price">5 625 €</span>--}}
-                            {{--<ul class="properties">--}}
-                                {{--<li>--}}
-                                    {{--<span class="icn_container"><i class="icn icon-area"></i></span>--}}
-                                    {{--<span class="prop_title">380 m</span><sup>2</sup>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<span class="icn_container"><i class="icn icon-rooms"></i></span>--}}
-                                    {{--<span class="prop_title">2</span>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<span class="icn_container"><i class="icn icon-bedroom"></i></span>--}}
-                                    {{--<span class="prop_title">1</span>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<span class="icn_container"><i class="icn icon-bathroom"></i></span>--}}
-                                    {{--<span class="prop_title">1</span>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+                <div class="object_block">
+                    <div class="object_img_container">
+                        <a href="#"><img src="/img/objects/object_4.png"></a>
+                        <div class="loading"></div>
+                    </div>
+                    <div class="object_info_container">
+                        <div class="object_info">
+                            <a href="#">VILLAGE</a>
+                            <span class="city">Saint-Tropez</span>
+                            <span class="price">5 625 €</span>
+                            <ul class="properties">
+                                <li>
+                                    <span class="icn_container"><i class="icn icon-area"></i></span>
+                                    <span class="prop_title">380 m</span><sup>2</sup>
+                                </li>
+                                <li>
+                                    <span class="icn_container"><i class="icn icon-rooms"></i></span>
+                                    <span class="prop_title">2</span>
+                                </li>
+                                <li>
+                                    <span class="icn_container"><i class="icn icon-bedroom"></i></span>
+                                    <span class="prop_title">1</span>
+                                </li>
+                                <li>
+                                    <span class="icn_container"><i class="icn icon-bathroom"></i></span>
+                                    <span class="prop_title">1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
