@@ -1,10 +1,10 @@
 
 /*Buttons style START*/
 .btn:not(.dropdown-toggle) {
-  height: 60px;
+  height: 50px;
   padding: 0 65px;
   font: 1.25rem opensans_light;
-  line-height: 60px;
+  line-height: 50px;
   border-radius: 0;
   background: $main_dark_clr;
   color: $main_light_clr;
@@ -61,13 +61,17 @@ textarea {
   padding: 12px;
   resize: none;
 }
-a:focus,
+
 button:focus,
 input:focus,
 textarea:focus {
   outline: none !important;
   box-shadow: none !important;
   border-color: $main_gray_clr !important;
+}
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .input_container {

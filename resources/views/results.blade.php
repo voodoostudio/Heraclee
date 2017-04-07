@@ -123,7 +123,7 @@
 
     <section class="results_section">
         <div class="container-fluid">
-            <h2>Votre recherche immobiliére</h2>
+            <h1>Votre recherche immobiliére</h1>
             <div class="row">
                 <div class="col-xs-12 col-md-8 col-lg-6 margin_bottom_10">
                     <div class="view_type_container">
@@ -152,8 +152,8 @@
                     <div class="col-xs-12 col-sm-6 col-lg-4 object_block_container">
                         <div class="object_block">
                             <div class="img_block">
-                                <div class="activity_label">Loué</div>
-                                <div class="exclusive_label">Exclusif</div>
+                                {{--<div class="activity_label">Loué</div>--}}
+                                {{--<div class="exclusive_label">Exclusif</div>--}}
                                 <div class="gallery_view">
                                     <ul class="gallery result_preview_gallery">
                                         <li><img src="img/objects/object_1.png" alt=""></li>
@@ -181,19 +181,23 @@
                                     <ul class="properties">
                                         <li>
                                             <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                            <span class="prop_title">Surface habitable</span><span class="prop_val">200m<sup>2</sup></span>
+                                            {{--<span class="prop_title">Surface habitable</span>--}}
+                                            <span class="prop_val">300 m<sup>2</sup></span>
+                                        </li>
+                                        <li>
+                                            <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
+                                            {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                            <span class="prop_val">7</span>
                                         </li>
                                         <li>
                                             <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
-                                            <span class="prop_title">Nombre de chambres</span><span class="prop_val">5</span>
+                                            {{--<span class="prop_title">Nombre de chambres</span>--}}
+                                            <span class="prop_val">5</span>
                                         </li>
                                         <li>
-                                            <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-bathroom"></i></span>
-                                            <span class="prop_title">Nombre de salles de bain</span><span class="prop_val">4</span>
-                                        </li>
-                                        <li>
-                                            <span class="icn_container tooltip" title="Nombre de WC"><i class="icn icon-rooms"></i></span>
-                                            <span class="prop_title">Nombre de WC</span><span class="prop_val">3</span>
+                                            <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
+                                            {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
+                                            <span class="prop_val">Dégagée Jardin Mer</span>
                                         </li>
                                     </ul>
                                 </div>
