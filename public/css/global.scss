@@ -222,11 +222,12 @@ section.carousel_offers_section {
           overflow: hidden;
           background-color: #ccac83;
           img {
-            @include my_transition(0.5s);
+            @include my_transition(0.3s);
             width: 100%;
           }
           .loading {
-            //@include my_transition(0.5s);
+            text-align: center;
+            display: table;
             width: 100px;
             height: 100px;
             border-radius: 100%;
@@ -237,16 +238,20 @@ section.carousel_offers_section {
             left: 50%;
             margin-left: -50px;
             margin-top: -50px;
+            .icn {
+              display: table-cell;
+              vertical-align: middle;
+              color: $main_brown_clr;
+            }
           }
           &:hover {
             img {
               @include my_transform(scale(1.2));
-              //@include my_transition(0.5s);
               opacity: 0.6;
             }
             .loading {
               opacity: 1;
-              @include my_transition(0.5s);
+              @include my_transition(0.3s);
             }
           }
         }

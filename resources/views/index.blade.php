@@ -136,7 +136,7 @@
                 <div class="object_block">
                     <div class="object_img_container">
                         <a href="#"><img src="/img/objects/object_1.png"></a>
-                        <div class="loading"></div>
+                        <div class="loading"><i class="icn icon-checkbox_active"></i></div>
                     </div>
                     <div class="object_info_container">
                         <div class="object_info">

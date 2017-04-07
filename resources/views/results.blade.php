@@ -129,7 +129,7 @@
                     <div class="view_type_container">
                         <ul class="view_type">
                             <li class="hidden-sm-down list_view_btn"><i class="icn icon-list_icn"></i>Liste</li>
-                            <li class="grid_view_btn active"><i class="icn icon-grid_icn"></i>Grille (371)</li>
+                            <li class="grid_view_btn active"><i class="icn icon-grid_icn"></i>Grille (311)</li>
                             <li class="map_view_btn"><i class="icn icon-map_pin"></i>Carte</li>
                         </ul>
                     </div>
