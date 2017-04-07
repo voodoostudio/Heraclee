@@ -41,4 +41,11 @@ $(document).ready(function() {
         }
     });
 
+
+    $('.results_section .pagination .page-item .page-link').on('click', function(event) {
+        event.preventDefault();
+        $('.results_section .pagination .page-item.active').removeClass("active");
+        $(this).closest(".page-item").addClass("active");
+    });
+
 });

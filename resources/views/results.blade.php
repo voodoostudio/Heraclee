@@ -136,10 +136,10 @@
                 </div>
                 <div class="col-xs-12 offset-sm-6 col-sm-6 col-md-4 offset-md-0 col-lg-3 offset-lg-3 margin_bottom_10">
                     <select class="selectpicker" name="sorting_type">
-                        <option value="">Tout</option>
-                        <option value="">10 résultats par page</option>
-                        <option value="">50 résultats par page</option>
-                        <option value="">100 résultats par page</option>
+                        <option value="1">Tout</option>
+                        <option value="2">10 résultats par page</option>
+                        <option value="3">50 résultats par page</option>
+                        <option value="4">100 résultats par page</option>
                     </select>
                 </div>
             </div>
