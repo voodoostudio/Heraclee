@@ -497,5 +497,35 @@ ul.nav.nav-tabs {
     }
   }
 }
-
 /*Slick END*/
+
+//Toooltipster START
+.tooltipster-sidetip {
+  .tooltipster-box {
+    background: $main_brown_clr;
+    border: none;
+    border-radius: 0;
+    .tooltipster-content {
+      padding: 0 15px 0;
+      font-size: 0.875rem;
+      line-height: 1.875rem;
+    }
+  }
+  &.tooltipster-top {
+    .tooltipster-arrow-border {
+      border-top-color: $main_brown_clr;
+    }
+    .tooltipster-arrow-background {
+      border-top-color: $main_brown_clr;
+    }
+  }
+  &.tooltipster-bottom {
+    .tooltipster-arrow-border {
+      border-bottom-color: $main_brown_clr;
+    }
+    .tooltipster-arrow-background {
+      border-bottom-color: $main_brown_clr;
+    }
+  }
+}
+//Toooltipster END

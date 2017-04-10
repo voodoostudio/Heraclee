@@ -443,6 +443,23 @@ ul.nav.nav-tabs {
     left: -50px; }
 
 /*Slick END*/
+.tooltipster-sidetip .tooltipster-box {
+  background: #ccac83;
+  border: none;
+  border-radius: 0; }
+  .tooltipster-sidetip .tooltipster-box .tooltipster-content {
+    padding: 0 15px 0;
+    font-size: 0.875rem;
+    line-height: 1.875rem; }
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border {
+  border-top-color: #ccac83; }
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background {
+  border-top-color: #ccac83; }
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border {
+  border-bottom-color: #ccac83; }
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  border-bottom-color: #ccac83; }
+
 body {
   font: 16px 'opensans_light';
   color: #fdfdfd;
