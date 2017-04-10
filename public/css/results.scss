@@ -14,6 +14,7 @@ section.results_section {
     font-size: 2.5rem;
     text-transform: uppercase;
   }
+
   .view_type_container {
     .view_type {
       width: 100%;
@@ -45,6 +46,7 @@ section.results_section {
       }
     }
   }
+
   .results_container {
     width: 100%;
     display: table;
@@ -176,6 +178,7 @@ section.results_section {
       visibility: hidden;
     }
   }
+
   .results_container.list_view {
     .container-fluid {
       >.row {
@@ -357,6 +360,7 @@ section.results_section {
       }
     }
   }
+
   .results_container.map_view {
     height: 640px;
     #results_map {

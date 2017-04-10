@@ -50,7 +50,6 @@ p {
   margin-bottom: 30px;
 }
 
-//gradient bg blocks START
 .gradient_bottom {
   position: absolute;
   bottom: 0;
@@ -59,7 +58,6 @@ p {
   z-index: 1;
   @include my_gradient_bg(rgba(black, 0.3))
 }
-//gradient bg blocks END
 
 header {
   display: table;
