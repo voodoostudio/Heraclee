@@ -151,7 +151,141 @@
         <div class="results_container grid_view">
             <div id="results_map"></div>
             <div class="container-fluid">
-                <div class="row">
+                <div class="results_carousel row">
+                    <div class="col-12 col-sm-6 object_block_container">
+                        <div class="object_block">
+                            <div class="img_block">
+                                {{--<div class="activity_label">Loué</div>--}}
+                                {{--<div class="exclusive_label">Exclusif</div>--}}
+                                <div class="gallery_view">
+                                    <ul class="gallery result_preview_gallery">
+                                        <li><img src="img/objects/object_1.png" alt=""></li>
+                                        <li><img src="img/objects/object_2.png" alt=""></li>
+                                        <li><img src="img/objects/object_3.png" alt=""></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info_block_container">
+                                <div class="info_block">
+                                    <div class="title_container">
+                                        <a href="details_for_sale.php"><h2>Saint-Tropes</h2></a>
+                                        <ul class="social_networks">
+                                            <li><a href="#"><i class="icn icon-twitter"></i></a></li>
+                                            <li><a href="#"><i class="icn icon-linked_in"></i></a></li>
+                                            <li><a href="#"><i class="icn icon-facebook"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="description_container">
+                                        <h3>Vanades <span></span></h3>
+                                        <p class="object_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <a href="#" class="btn dark_inverse">Contactez l'agent</a>
+                                        <div class="object_price">CHF 2'990'001</div>
+                                    </div>
+                                    <div class="properties_container">
+                                        <ul class="properties">
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
+                                                    {{--<span class="prop_title">Surface habitable</span>--}}
+                                                    <span class="prop_val">300 m<sup>2</sup></span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
+                                                    {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                                    <span class="prop_val">7</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
+                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
+                                                    <span class="prop_val">5</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
+                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
+                                                    <span class="prop_val">Dégagée Jardin Mer</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{--<div class="gradient_bg"></div>--}}
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 object_block_container">
+                        <div class="object_block">
+                            <div class="img_block">
+                                {{--<div class="activity_label">Loué</div>--}}
+                                {{--<div class="exclusive_label">Exclusif</div>--}}
+                                <div class="gallery_view">
+                                    <ul class="gallery result_preview_gallery">
+                                        <li><img src="img/objects/object_1.png" alt=""></li>
+                                        <li><img src="img/objects/object_2.png" alt=""></li>
+                                        <li><img src="img/objects/object_3.png" alt=""></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="info_block_container">
+                                <div class="info_block">
+                                    <div class="title_container">
+                                        <a href="details_for_sale.php"><h2>Saint-Tropes</h2></a>
+                                        <ul class="social_networks">
+                                            <li><a href="#"><i class="icn icon-twitter"></i></a></li>
+                                            <li><a href="#"><i class="icn icon-linked_in"></i></a></li>
+                                            <li><a href="#"><i class="icn icon-facebook"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="description_container">
+                                        <h3>Vanades <span></span></h3>
+                                        <p class="object_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                        <a href="#" class="btn dark_inverse">Contactez l'agent</a>
+                                        <div class="object_price">CHF 2'990'001</div>
+                                    </div>
+                                    <div class="properties_container">
+                                        <ul class="properties">
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
+                                                    {{--<span class="prop_title">Surface habitable</span>--}}
+                                                    <span class="prop_val">300 m<sup>2</sup></span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
+                                                    {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                                    <span class="prop_val">7</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
+                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
+                                                    <span class="prop_val">5</span>
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
+                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
+                                                    <span class="prop_val">Dégagée Jardin Mer</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{--<div class="gradient_bg"></div>--}}
+                        </div>
+                    </div>
                     <div class="col-12 col-sm-6 object_block_container">
                         <div class="object_block">
                             <div class="img_block">

@@ -300,28 +300,11 @@ section.carousel_offers_section {
         }
       }
     }
-    .slick-arrow {
-      position: absolute;
-      top: 50%;
-      margin-top: -27px;
-      padding: 0;
-      font-size: 54px;
-      background: transparent;
-      border: none;
-      color: $main_light_clr;
-      cursor: pointer;
-      &.slick-next {
-        right: -50px;
-      }
-      &.slick-prev {
-        left: -50px;
-      }
-    }
   }
 }
 
 footer {
-  margin-top: 70px;
+  margin-top: 90px;
   section.top_footer_section {
     background-color: #323232;
     padding: 30px 0;

@@ -420,6 +420,29 @@ ul.nav.nav-tabs {
     content: "\e90e"; }
 
 /*Bootstrap select END*/
+/*Slick START*/
+.slick-slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -27px;
+  padding: 0;
+  font-size: 54px;
+  background: transparent;
+  border: none;
+  color: #fdfdfd;
+  cursor: pointer; }
+  .slick-slider .slick-arrow:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2); }
+  .slick-slider .slick-arrow.slick-next {
+    right: -50px; }
+  .slick-slider .slick-arrow.slick-prev {
+    left: -50px; }
+
+/*Slick END*/
 body {
   font: 16px 'opensans_light';
   color: #fdfdfd;
@@ -671,23 +694,9 @@ section.carousel_offers_section {
               section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .properties li .icn_container .icn {
                 color: #ccac83;
                 margin-right: 10px; }
-  section.carousel_offers_section .carousel.offers_carousel .slick-arrow {
-    position: absolute;
-    top: 50%;
-    margin-top: -27px;
-    padding: 0;
-    font-size: 54px;
-    background: transparent;
-    border: none;
-    color: #fdfdfd;
-    cursor: pointer; }
-    section.carousel_offers_section .carousel.offers_carousel .slick-arrow.slick-next {
-      right: -50px; }
-    section.carousel_offers_section .carousel.offers_carousel .slick-arrow.slick-prev {
-      left: -50px; }
 
 footer {
-  margin-top: 70px; }
+  margin-top: 90px; }
   footer section.top_footer_section {
     background-color: #323232;
     padding: 30px 0; }

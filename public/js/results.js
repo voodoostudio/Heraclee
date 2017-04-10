@@ -9,16 +9,16 @@ $(document).ready(function() {
         $('.results_container').attr("class", "results_container " + view_type);
 
         if ($(this).hasClass('map_view_btn')) {
-            initResultsMap();
-            //resultsCarouselInit();
             $(this).closest('.row').find('.multiselect-native-select').hide();
             if ($('.result_preview_gallery').hasClass('slick-initialized')) {
                 $('.result_preview_gallery').slick('unslick');
             }
+            initResultsMap();
+            resultsCarouselInit();
         }
         else {
-            if ($('.carousel').hasClass('flickity-enabled')) {
-                $('.carousel').flickity('destroy');
+            if ($('.results_carousel').hasClass('slick-initialized')) {
+                $('.results_carousel').slick('unslick');
             }
             $(this).closest('.row').find('.multiselect-native-select').show();
 
@@ -28,16 +28,8 @@ $(document).ready(function() {
                 }
             }
             else if ($(this).hasClass('list_view_btn')) {
-                $('.result_preview_gallery').slick({
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    fade: true,
-                    speed: 100,
-                    prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
-                    nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
-                });
+                listView_galleryInit();
             }
-
         }
     });
 
@@ -70,6 +62,28 @@ $(document).ready(function() {
             position: latlang,
             map: map,
             icon: '/img/map_pin.svg'
+        });
+    }
+
+    function resultsCarouselInit() {
+        $('.results_carousel').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
+            dots: true
+        });
+    }
+
+    function listView_galleryInit() {
+        $('.result_preview_gallery').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            speed: 100,
+            prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
         });
     }
 });
