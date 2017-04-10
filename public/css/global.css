@@ -260,7 +260,7 @@ ul.nav.nav-tabs {
         outline: none;
         color: #fdfdfd; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a:hover {
-          color: #fdfdfd; }
+          color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label {
           width: 100%;
           position: relative;
@@ -268,7 +268,8 @@ ul.nav.nav-tabs {
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label input {
             display: none; }
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label.checkbox {
-            padding-left: 20px; }
+            padding-left: 20px;
+            line-height: 1rem; }
             .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label.checkbox:before {
               position: absolute;
               left: 0;
@@ -286,7 +287,7 @@ ul.nav.nav-tabs {
               -moz-osx-font-smoothing: grayscale;
               font-size: 1rem; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
-        color: #fdfdfd; }
+        color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
           content: "\e90e"; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {

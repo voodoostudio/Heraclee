@@ -258,7 +258,7 @@ ul.nav.nav-tabs {
           outline: none;
           color: $main_light_clr;
           &:hover {
-            color: $main_light_clr;
+            color: $main_brown_clr;
           }
           label {
             width: 100%;
@@ -269,6 +269,7 @@ ul.nav.nav-tabs {
             }
             &.checkbox {
               padding-left: 20px;
+              line-height: 1rem;
               &:before {
                 position: absolute;
                 left: 0;
@@ -291,7 +292,7 @@ ul.nav.nav-tabs {
         }
         &.active {
           a {
-            color: $main_light_clr;
+            color: $main_brown_clr;
             label.checkbox:before {
               content: "\e90e";
             }

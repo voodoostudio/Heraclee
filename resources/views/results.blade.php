@@ -139,10 +139,10 @@
                 </div>
                 <div class="col-xs-12 offset-sm-6 col-sm-6 col-md-4 offset-md-0 col-lg-3 offset-lg-3 margin_bottom_10">
                     <select class="selectpicker" name="sorting_type">
-                        <option value="1">Tout</option>
-                        <option value="2">10 résultats par page</option>
-                        <option value="3">50 résultats par page</option>
-                        <option value="4">100 résultats par page</option>
+                        <option value="1">10 résultats par page</option>
+                        <option value="2">50 résultats par page</option>
+                        <option value="3">100 résultats par page</option>
+                        <option value="0">Tout</option>
                     </select>
                 </div>
             </div>
@@ -184,30 +184,32 @@
                                     <div class="properties_container">
                                         <ul class="properties">
                                             <li>
-                                                <span>
+                                                <span class="property_container">
                                                     <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
                                                     {{--<span class="prop_title">Surface habitable</span>--}}
                                                     <span class="prop_val">300 m<sup>2</sup></span>
                                                 </span>
-
                                             </li>
                                             <li>
-                                                <span>
+                                                <span class="property_container">
                                                     <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
                                                     {{--<span class="prop_title">Nombre de salles de bain</span>--}}
                                                     <span class="prop_val">7</span>
                                                 </span>
-
                                             </li>
                                             <li>
-                                                <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
-                                                {{--<span class="prop_title">Nombre de chambres</span>--}}
-                                                <span class="prop_val">5</span>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
+                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
+                                                    <span class="prop_val">5</span>
+                                                </span>
                                             </li>
                                             <li>
-                                                <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
-                                                {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
-                                                <span class="prop_val">Dégagée Jardin Mer</span>
+                                                <span class="property_container">
+                                                    <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
+                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
+                                                    <span class="prop_val">Dégagée Jardin Mer</span>
+                                                </span>
                                             </li>
                                         </ul>
                                     </div>
