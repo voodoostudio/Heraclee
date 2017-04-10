@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
     <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
@@ -269,6 +270,7 @@
     <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
     <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
     <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
 </body>

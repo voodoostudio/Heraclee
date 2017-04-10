@@ -478,7 +478,6 @@ section.results_section {
       background-color: #ccac83;
       color: white; }
   section.results_section .results_container {
-    margin-top: 10px;
     width: 100%;
     display: table;
     position: relative; }
@@ -569,8 +568,6 @@ section.results_section {
             margin-right: 10%; }
             section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li:last-of-type {
               margin: 0; }
-            section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li .prop_title {
-              display: none; }
     section.results_section .results_container #results_map {
       visibility: hidden; }
   section.results_section .results_container.list_view .container-fluid > .row {
@@ -649,10 +646,11 @@ section.results_section {
           section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_price {
             margin-top: 15px;
             padding: 9px 30px 8px; }
+      section.results_section .results_container.list_view .container-fluid > .row .object_block_container:first-of-type .object_block {
+        margin-top: 30px; }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block,
   section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
-    margin-bottom: 75px;
-    margin-top: 20px; }
+    margin: 30px 0 85px; }
     section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block img,
     section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block img {
       width: 100%; }
@@ -707,13 +705,13 @@ section.results_section {
     section.results_section .results_container.map_view #results_map {
       visibility: visible;
       height: 640px;
-      margin-bottom: 40px; }
+      margin: 30px 0 40px; }
     section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block {
       margin-top: 0; }
     section.results_section .results_container.map_view .container-fluid .results_carousel ul.slick-dots {
       display: table;
       width: 100%;
-      margin-top: 25px; }
+      margin-top: 15px; }
       section.results_section .results_container.map_view .container-fluid .results_carousel ul.slick-dots li {
         display: table-cell;
         font-size: 0; }

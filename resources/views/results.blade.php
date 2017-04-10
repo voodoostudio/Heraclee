@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
     <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
@@ -186,28 +187,24 @@
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                                    {{--<span class="prop_title">Surface habitable</span>--}}
                                                     <span class="prop_val">300 m<sup>2</sup></span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
-                                                    <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
-                                                    {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-rooms"></i></span>
                                                     <span class="prop_val">7</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
-                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
                                                     <span class="prop_val">5</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
-                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
                                                     <span class="prop_val">Dégagée Jardin Mer</span>
                                                 </span>
                                             </li>
@@ -215,8 +212,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            {{--<div class="gradient_bg"></div>--}}
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 object_block_container">
@@ -253,28 +248,24 @@
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                                    {{--<span class="prop_title">Surface habitable</span>--}}
                                                     <span class="prop_val">300 m<sup>2</sup></span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
-                                                    <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
-                                                    {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-rooms"></i></span>
                                                     <span class="prop_val">7</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
-                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
                                                     <span class="prop_val">5</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
-                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
                                                     <span class="prop_val">Dégagée Jardin Mer</span>
                                                 </span>
                                             </li>
@@ -282,8 +273,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            {{--<div class="gradient_bg"></div>--}}
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 object_block_container">
@@ -320,28 +309,24 @@
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                                    {{--<span class="prop_title">Surface habitable</span>--}}
                                                     <span class="prop_val">300 m<sup>2</sup></span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
-                                                    <span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-rooms"></i></span>
-                                                    {{--<span class="prop_title">Nombre de salles de bain</span>--}}
+                                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-rooms"></i></span>
                                                     <span class="prop_val">7</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
-                                                    {{--<span class="prop_title">Nombre de chambres</span>--}}
                                                     <span class="prop_val">5</span>
                                                 </span>
                                             </li>
                                             <li>
                                                 <span class="property_container">
                                                     <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span>
-                                                    {{--<span class="prop_title">Dégagée Jardin Mer</span>--}}
                                                     <span class="prop_val">Dégagée Jardin Mer</span>
                                                 </span>
                                             </li>
@@ -349,8 +334,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            {{--<div class="gradient_bg"></div>--}}
                         </div>
                     </div>
                 </div>
@@ -386,6 +369,7 @@
     <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
     <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+    <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
     <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
     <script type="text/javascript" src="/js/scripts.js"></script>
     <script type="text/javascript" src="/js/results.js"></script>

@@ -19,4 +19,10 @@ $(document).ready(function() {
         nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
         autoplay: true
     });
+
+    $('.tooltip').tooltipster({
+        animation: 'fade',
+        delay: 100,
+        theme: 'tooltipster-punk'
+    });
 });
