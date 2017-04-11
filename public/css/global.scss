@@ -158,6 +158,61 @@ header {
       }
     }
   }
+
+
+  .menu-icon {
+    //display: none;
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    /* to center */
+    margin: 0 auto;
+    float: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 9999;
+    > span {
+      position: absolute;
+      top: 50%;
+      display: block;
+      width: 100%;
+      height: 2px;
+      margin-top: -1px;
+      background-color: $main_light_clr;
+      border-radius: 0;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $main_light_clr;
+        border-radius: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      &:before {
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+      }
+      &:after {
+        -webkit-transform: translateY(8px);
+        transform: translateY(8px);
+      }
+    }
+  }
+  &.opened .menu-icon {
+    @include my_transform(rotate(45deg));
+    span {
+      &:before,
+      &:after {
+        @include my_transform(rotate(90deg));
+      }
+    }
+  }
 }
 
 section.top_offer_section {

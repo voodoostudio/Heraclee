@@ -50,7 +50,9 @@
                     </li>
                 </ul>
             </nav>
-
+            <div class="menu-icon">
+                <span></span>
+            </div>
         </div>
     </div>
 </header>

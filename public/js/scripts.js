@@ -25,4 +25,8 @@ $(document).ready(function() {
         delay: 100,
         theme: 'tooltipster-punk'
     });
+
+    $('header .menu-icon').on('click', function () {
+        $('header').toggleClass('opened');
+    });
 });
