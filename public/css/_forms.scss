@@ -500,11 +500,19 @@ ul.nav.nav-tabs {
 /*Slick END*/
 
 //Toooltipster START
+.icn_container {
+  display: table;
+  float: left;
+  opacity: 1;
+  position: relative;
+  cursor: default;
+}
 .tooltipster-sidetip {
   .tooltipster-box {
     background: $main_brown_clr;
     border: none;
     border-radius: 0;
+    @include my_box_shadow(0px 0px 20px -5px black);
     .tooltipster-content {
       padding: 0 15px 0;
       font-size: 0.875rem;

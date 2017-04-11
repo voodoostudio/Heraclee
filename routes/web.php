@@ -20,3 +20,8 @@ Route::get('/results', [
     'uses' => 'PagesController@results',
     'as' => 'results'
 ]);
+
+Route::get('/details', [
+    'uses' => 'PagesController@details',
+    'as' => 'details'
+]);

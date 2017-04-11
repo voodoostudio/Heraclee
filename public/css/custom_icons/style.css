@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?k7a90x');
-  src:  url('fonts/icomoon.eot?k7a90x#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?k7a90x') format('truetype'),
-    url('fonts/icomoon.woff?k7a90x') format('woff'),
-    url('fonts/icomoon.svg?k7a90x#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?pz11pn');
+  src:  url('fonts/icomoon.eot?pz11pn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?pz11pn') format('truetype'),
+    url('fonts/icomoon.woff?pz11pn') format('woff'),
+    url('fonts/icomoon.svg?pz11pn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,13 +24,63 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-grid_icn:before {
+.icon-beach:before {
+  content: "\e934";
+}
+.icon-conditioner:before {
+  content: "\e919";
+}
+.icon-elevator:before {
+  content: "\e91a";
+}
+.icon-floor:before {
+  content: "\e91b";
+}
+.icon-furniture:before {
+  content: "\e91c";
+}
+.icon-garden:before {
+  content: "\e91d";
+}
+.icon-parking:before {
+  content: "\e91e";
+}
+.icon-security:before {
+  content: "\e91f";
+}
+.icon-swim:before {
+  content: "\e920";
+}
+.icon-wheelchair:before {
+  content: "\e921";
+}
+.icon-wifi:before {
+  content: "\e922";
+}
+.icon-pin_map .path1:before {
+  content: "\e923";
+  color: rgb(39, 39, 39);
+}
+.icon-pin_map .path2:before {
+  content: "\e924";
+  margin-left: -0.7001953125em;
+  color: rgb(204, 172, 131);
+}
+.icon-pin_map .path3:before {
+  content: "\e925";
+  margin-left: -0.7001953125em;
+  color: rgb(39, 39, 39);
+}
+.icon-arrow_right:before {
+  content: "\e926";
+}
+.icon-grid:before {
   content: "\e916";
 }
-.icon-list_icn:before {
+.icon-list:before {
   content: "\e917";
 }
-.icon-map_icn:before {
+.icon-map:before {
   content: "\e918";
 }
 .icon-more:before {
@@ -98,5 +148,44 @@
 }
 .icon-window_view:before {
   content: "\e915";
+}
+.icon-bank:before {
+  content: "\e927";
+}
+.icon-bakery:before {
+  content: "\e928";
+}
+.icon-cafe:before {
+  content: "\e929";
+}
+.icon-dentist:before {
+  content: "\e92a";
+}
+.icon-school:before {
+  content: "\e92b";
+}
+.icon-hospital:before {
+  content: "\e92c";
+}
+.icon-doctor:before {
+  content: "\e92d";
+}
+.icon-petrol:before {
+  content: "\e92e";
+}
+.icon-university:before {
+  content: "\e92f";
+}
+.icon-restaurant:before {
+  content: "\e930";
+}
+.icon-police:before {
+  content: "\e931";
+}
+.icon-posts:before {
+  content: "\e932";
+}
+.icon-pharmacy:before {
+  content: "\e933";
 }
 

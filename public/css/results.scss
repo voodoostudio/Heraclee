@@ -115,12 +115,7 @@ section.results_section {
                 width: 100%;
                 li {
                   .icn_container {
-                    display: table;
-                    float: left;
-                    opacity: 1;
                     margin-right: 10px;
-                    position: relative;
-                    cursor: default;
                     .icn {
                       color: $main_brown_clr;
                       font-size: 20px;
