@@ -8,6 +8,14 @@
       }
     }
   }
+
+  header .navigation_container nav ul.nav li.nav-item {
+    padding-right: 33px;
+    a.nav-link {
+      font-size: 0.875rem;
+      line-height: 0.875rem;
+    }
+  }
 }
 
 @media screen and ( max-width: 991px ) {
@@ -30,6 +38,42 @@
         padding: 30px 30px 20px;
       }
     }
+  }
+
+  header {
+    &.opened .navigation_container nav {
+      display: block;
+    }
+    .navigation_container {
+      padding-right: 34px;
+      padding-top: 10px;
+      nav {
+        margin-top: 10px;
+        margin-left: 0;
+        display: none;
+        ul.nav li.nav-item {
+          display: table;
+        }
+      }
+      .navigation_block {
+        text-align: center;
+        display: table;
+        margin: 0 auto;
+        .lang_currency_container {
+          float: none;
+          display: inline-block;
+        }
+      }
+    }
+    .logo {
+      padding: 15px 0;
+      img {
+        max-width: 50px;
+      }
+    }
+  }
+  div.menu-icon {
+    display: block;
   }
 }
 

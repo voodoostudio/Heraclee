@@ -527,72 +527,80 @@ header {
     header .logo img {
       max-width: 90px; }
   header .navigation_container {
-    margin-left: 170px;
     padding-top: 15px; }
-    header .navigation_container p.header_tel {
-      font-size: 0.813rem;
-      line-height: 27px; }
-    header .navigation_container .lang_currency_container {
-      float: right; }
-      header .navigation_container .lang_currency_container li {
-        float: left; }
-        header .navigation_container .lang_currency_container li ul.language_select {
-          display: table;
-          float: left;
-          margin-right: 30px;
-          padding: 6px 0; }
-          header .navigation_container .lang_currency_container li ul.language_select li {
+    header .navigation_container .navigation_block {
+      margin-left: 170px; }
+      header .navigation_container .navigation_block p.header_tel {
+        font-size: 0.813rem;
+        line-height: 27px; }
+      header .navigation_container .navigation_block .lang_currency_container {
+        float: right; }
+        header .navigation_container .navigation_block .lang_currency_container li {
+          float: left; }
+          header .navigation_container .navigation_block .lang_currency_container li ul.language_select {
+            display: table;
             float: left;
-            text-transform: uppercase;
-            font-size: 0.813rem;
-            padding: 1px 5px;
-            border-right: 1px solid #fdfdfd;
-            line-height: 0.813rem; }
-            header .navigation_container .lang_currency_container li ul.language_select li:first-of-type {
-              padding-left: 0; }
-            header .navigation_container .lang_currency_container li ul.language_select li:last-of-type {
-              border-right: none;
-              padding-right: 0; }
-            header .navigation_container .lang_currency_container li ul.language_select li a.active {
-              color: #ccac83; }
-        header .navigation_container .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
-          line-height: 25px;
-          padding: 0 30px 0 13px;
-          text-transform: uppercase;
-          font-size: 0.813rem; }
-          header .navigation_container .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle::after {
-            top: 11px;
-            right: 10px; }
-        header .navigation_container .lang_currency_container li .multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
-          min-width: 100%; }
-          header .navigation_container .lang_currency_container li .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
-            float: none;
+            margin-right: 30px;
+            padding: 6px 0; }
+            header .navigation_container .navigation_block .lang_currency_container li ul.language_select li {
+              float: left;
+              text-transform: uppercase;
+              font-size: 0.813rem;
+              padding: 1px 5px;
+              border-right: 1px solid #fdfdfd;
+              line-height: 0.813rem; }
+              header .navigation_container .navigation_block .lang_currency_container li ul.language_select li:first-of-type {
+                padding-left: 0; }
+              header .navigation_container .navigation_block .lang_currency_container li ul.language_select li:last-of-type {
+                border-right: none;
+                padding-right: 0; }
+              header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a.active {
+                color: #ccac83; }
+          header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
+            line-height: 25px;
+            padding: 0 30px 0 13px;
             text-transform: uppercase;
             font-size: 0.813rem; }
+            header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle::after {
+              top: 11px;
+              right: 10px; }
+          header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
+            min-width: 100%; }
+            header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
+              float: none;
+              text-transform: uppercase;
+              font-size: 0.813rem; }
     header .navigation_container nav {
+      margin-left: 170px;
       border-top: 1px solid rgba(98, 94, 87, 0.1);
-      padding: 20px 0 25px;
+      padding: 20px 0 15px;
       margin-top: 15px; }
-      header .navigation_container nav ul.nav li.nav-item {
-        padding-right: 45px; }
-        header .navigation_container nav ul.nav li.nav-item:last-of-type {
-          padding-right: 0; }
-        header .navigation_container nav ul.nav li.nav-item a.nav-link {
-          text-transform: uppercase;
-          padding: 8px 5px;
-          font-size: 1.063rem;
-          line-height: 1.063rem; }
-          header .navigation_container nav ul.nav li.nav-item a.nav-link.active {
-            color: #ccac83;
-            font-family: opensans_regular;
-            border-bottom: 1px solid #ccac83; }
-          header .navigation_container nav ul.nav li.nav-item a.nav-link:hover {
-            color: #ccac83;
-            border-bottom: 1px solid #ccac83; }
+      header .navigation_container nav ul.nav {
+        width: 100%;
+        display: table; }
+        header .navigation_container nav ul.nav li.nav-item {
+          margin-bottom: 10px;
+          padding-right: 45px;
+          display: inline-block; }
+          header .navigation_container nav ul.nav li.nav-item:last-of-type {
+            padding-right: 0; }
+          header .navigation_container nav ul.nav li.nav-item a.nav-link {
+            text-transform: uppercase;
+            padding: 8px 5px;
+            font-size: 1.063rem;
+            line-height: 1.063rem; }
+            header .navigation_container nav ul.nav li.nav-item a.nav-link.active {
+              color: #ccac83;
+              font-family: opensans_regular;
+              border-bottom: 1px solid #ccac83; }
+            header .navigation_container nav ul.nav li.nav-item a.nav-link:hover {
+              color: #ccac83;
+              border-bottom: 1px solid #ccac83; }
   header .menu-icon {
+    display: none;
     position: absolute;
-    top: 22px;
-    right: 30px;
+    top: 15px;
+    right: 20px;
     width: 30px;
     height: 20px;
     cursor: pointer;
@@ -839,7 +847,13 @@ footer {
 
 @media screen and (max-width: 1199px) {
   section.search_section .search_block_container .search_block .input_container.search_input {
-    margin-top: 0; } }
+    margin-top: 0; }
+
+  header .navigation_container nav ul.nav li.nav-item {
+    padding-right: 33px; }
+    header .navigation_container nav ul.nav li.nav-item a.nav-link {
+      font-size: 0.875rem;
+      line-height: 0.875rem; } }
 @media screen and (max-width: 991px) {
   section.search_section .search_block_container .search_block {
     padding: 40px 50px 30px; }
@@ -847,7 +861,33 @@ footer {
       margin-top: 0; } }
 @media screen and (max-width: 767px) {
   section.search_section .search_block_container .search_block {
-    padding: 30px 30px 20px; } }
+    padding: 30px 30px 20px; }
+
+  header.opened .navigation_container nav {
+    display: block; }
+  header .navigation_container {
+    padding-right: 34px;
+    padding-top: 10px; }
+    header .navigation_container nav {
+      margin-top: 10px;
+      margin-left: 0;
+      display: none; }
+      header .navigation_container nav ul.nav li.nav-item {
+        display: table; }
+    header .navigation_container .navigation_block {
+      text-align: center;
+      display: table;
+      margin: 0 auto; }
+      header .navigation_container .navigation_block .lang_currency_container {
+        float: none;
+        display: inline-block; }
+  header .logo {
+    padding: 15px 0; }
+    header .logo img {
+      max-width: 50px; }
+
+  div.menu-icon {
+    display: block; } }
 @media screen and (max-width: 575px) {
   section.search_section .search_block_container .search_block {
     padding: 15px 15px 5px; } }
