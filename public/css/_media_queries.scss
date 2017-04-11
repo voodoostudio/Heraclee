@@ -1,0 +1,44 @@
+@media screen and ( max-width: 1199px ) {
+  section.search_section {
+    .search_block_container {
+      .search_block {
+        .input_container.search_input {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 991px ) {
+  section.search_section {
+    .search_block_container {
+      .search_block {
+        padding: 40px 50px 30px;
+        ul.nav.nav-tabs {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 767px ) {
+  section.search_section {
+    .search_block_container {
+      .search_block {
+        padding: 30px 30px 20px;
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 575px ) {
+  section.search_section {
+    .search_block_container {
+      .search_block {
+        padding: 15px 15px 5px;
+      }
+    }
+  }
+}

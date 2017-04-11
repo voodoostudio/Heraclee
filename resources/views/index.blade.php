@@ -39,8 +39,8 @@
             <div class="search_block_container">
                 <div class="search_block">
                     <div class="row">
-                        <div class="col-4">
-                            <ul class="nav nav-tabs">
+                        <div class="col-12 col-lg-4">
+                            <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
                                     <a data-toggle="tab" class="nav-link active" href="#">Location</a>
                                 </li>
@@ -49,32 +49,28 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-8">
+                        <div class="col-12 col-lg-8">
                             <div class="row">
-                                <div class="col-4">
-                                    <label class="form_el_label light"><i class="icn icon-building"></i><span>Type de bien</span></label>
-                                    <div class="margin_bottom_10">
-                                        <select multiple="multiple" name="object_type">
-                                            <option value="House">House</option>
-                                            <option value="Apartment">Apartment</option>
-                                            <option value="Building plot">Building plot</option>
-                                            <option value="Building">Building</option>
-                                            <option value="Parking space">Parking space</option>
-                                        </select>
-                                    </div>
+                                <div class="col-xl-4 col-sm-6 margin_bottom_10">
+                                    <label class="form_el_label"><i class="icn icon-building"></i><span>Type de bien</span></label>
+                                    <select multiple="multiple" name="object_type">
+                                        <option value="House">House</option>
+                                        <option value="Apartment">Apartment</option>
+                                        <option value="Building plot">Building plot</option>
+                                        <option value="Building">Building</option>
+                                        <option value="Parking space">Parking space</option>
+                                    </select>
                                 </div>
-                                <div class="col-4">
-                                    <label class="form_el_label light"><i class="icn icon-country"></i><span>Commune</span></label>
-                                    <div class="margin_bottom_10">
-                                        <select multiple="multiple" name="object_place">
-                                            <option value="Geneva">Geneva</option>
-                                            <option value="Bern">Bern</option>
-                                            <option value="Zurich">Zurich</option>
-                                            <option value="Paris">Paris</option>
-                                        </select>
-                                    </div>
+                                <div class="col-xl-4 col-sm-6 margin_bottom_10">
+                                    <label class="form_el_label"><i class="icn icon-country"></i><span>Commune</span></label>
+                                    <select multiple="multiple" name="object_place">
+                                        <option value="Geneva">Geneva</option>
+                                        <option value="Bern">Bern</option>
+                                        <option value="Zurich">Zurich</option>
+                                        <option value="Paris">Paris</option>
+                                    </select>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-xl-4 col-sm-12 margin_bottom_10">
                                     <div class="input_container search_input">
                                         <input type="text" placeholder="Entrer un mot-clé">
                                         <button type="submit"><i class="icn icon-search"></i></button>
@@ -84,43 +80,43 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-price"></i><span>Prix min</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-price"></i><span>Prix min</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Min">
                                 <div class="input_label">&euro;</div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-price"></i><span>Prix max</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-price"></i><span>Prix max</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Max">
                                 <div class="input_label">&euro;</div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-area"></i><span>Surface min</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-area"></i><span>Surface min</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Min">
                                 <div class="input_label"><span>m<sup>2</sup></span></div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-area"></i><span>Surface max</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-area"></i><span>Surface max</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Max">
                                 <div class="input_label"><span>m<sup>2</sup></span></div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-rooms"></i><span>Chambres min</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>Chambres min</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Min">
                             </div>
                         </div>
-                        <div class="col-12 col-lg-2 margin_bottom_10">
-                            <label class="form_el_label light"><i class="icn icon-rooms"></i><span>Chambres max</span></label>
-                            <div class="input_container light margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>Chambres max</span></label>
+                            <div class="input_container">
                                 <input type="text" placeholder="Max">
                             </div>
                         </div>
