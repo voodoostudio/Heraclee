@@ -1,3 +1,9 @@
+@media screen and ( max-width: 1300px ) {
+  footer ul.social_networks li {
+    float: right;
+  }
+}
+
 @media screen and ( max-width: 1199px ) {
   section.search_section {
     .search_block_container {
@@ -28,6 +34,10 @@
         }
       }
     }
+  }
+
+  footer section.bottom_footer_section p {
+    margin-right: 0;
   }
 }
 
@@ -75,6 +85,11 @@
   div.menu-icon {
     display: block;
   }
+
+  footer ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
+    width: 40px;
+    line-height: 40px;
+  }
 }
 
 @media screen and ( max-width: 575px ) {
@@ -84,5 +99,9 @@
         padding: 15px 15px 5px;
       }
     }
+  }
+
+  footer section.bottom_footer_section .copyright {
+    font-size: 0.8125rem;
   }
 }
