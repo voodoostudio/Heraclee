@@ -19,6 +19,7 @@ section.gallery_section {
     padding-left: 15px;
     .gallery_view {
       position: relative;
+      overflow: hidden;
       .gallery.slick-slider {
         .slick-arrow {
           position: absolute;
@@ -26,6 +27,7 @@ section.gallery_section {
           margin-top: -27px;
           color: white;
           font-size: 55px;
+          line-height: 50px;
           background: transparent;
           border: none;
           z-index: 99;
@@ -47,6 +49,12 @@ section.gallery_section {
             }
           }
         }
+      }
+      .fullscreen_btn {
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        font-size: 32px;
       }
       .object_title {
         position: absolute;
@@ -72,6 +80,61 @@ section.gallery_section {
           display: table;
           text-align: center;
           padding: 7px 30px 6px;
+        }
+      }
+      .panorama_link_container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 300px;
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: -5%;
+          right: -125px;
+          width: 130%;
+          height: 120%;
+          background-color: rgba(0, 0, 0, 0.5);
+          @include my_transform(rotate(13deg));
+        }
+        button {
+          font-size: 1.25rem;
+          text-transform: uppercase;
+          z-index: 2;
+          position: absolute;
+          bottom: 60px;
+          right: 35px;
+          i {
+            margin-left: 20px;
+          }
+        }
+      }
+      #object_panorama {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+      }
+      .close_panorama {
+        display: none;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 32px;
+        line-height: 32px;
+        z-index: 101;
+      }
+      &.display_panorama {
+        #object_panorama {
+          display: block;
+        }
+        .close_panorama {
+          display: block;
         }
       }
     }

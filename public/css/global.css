@@ -23,6 +23,14 @@
   font-style: normal; }
 /* END Semibold*/
 /*Buttons style START*/
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #fdfdfd;
+  padding: 0;
+  font: 1rem opensans_regular; }
+
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;

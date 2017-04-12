@@ -20,7 +20,9 @@ $(document).ready(function() {
         focusOnSelect: true
     });
 
-    initObjectMap();
+    setTimeout(function(){
+        initObjectMap();
+    }, 100);
     
     function initObjectMap() {
         var latlong = {lat: 46.207389, lng: 6.155903};
@@ -48,4 +50,11 @@ $(document).ready(function() {
             icon: markerImage
         });
     }
+
+    $('.gallery_view .panorama_link_container button').on('click', function () {
+       $('.gallery_view').addClass('display_panorama');
+    });
+    $('.gallery_view button.close_panorama').on('click', function () {
+       $('.gallery_view').removeClass('display_panorama');
+    });
 });

@@ -29,6 +29,12 @@
 <body>
     @include('includes.header')
     <main>
+
+        <div class="container-fluid">
+
+        </div>
+
+
         <section class="gallery_section">
             <div class="gallery_container">
                 <div class="gallery_view">
@@ -42,6 +48,7 @@
                         <li><img src="/img/details/img_7.png" alt=""></li>
                         <li><img src="/img/details/img_8.png" alt=""></li>
                     </ul>
+                    <button class="fullscreen_btn"><i class="icn icon-fullscreen"></i></button>
                     <div class="object_title">
                         <div class="container-fluid">
                             <div class="row">
@@ -54,6 +61,11 @@
                         </div>
                     </div>
                     <div class="gradient_bottom"></div>
+                    <div class="panorama_link_container">
+                        <button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>
+                    </div>
+                    <div id="object_panorama"></div>
+                    <button class="close_panorama"><i class="icn icon-cancel"></i></button>
                 </div>
                 <div class="gallery_nav">
                     <div class="container-fluid">
@@ -90,7 +102,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -171,7 +182,6 @@
                             <li><span class="detail_name">Gardien</span></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -322,6 +332,16 @@
     <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
     <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
     <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
+    <script type="text/javascript" src="/krpano/Barnes-sttropez.com_les_vanades.js"></script>
+
+    <script>
+        embedpano({
+            swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",
+            xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",
+            target:"object_panorama"
+        });
+    </script>
+
     <script type="text/javascript" src="/js/scripts.js"></script>
     <script type="text/javascript" src="/js/details.js"></script>
 </body>
