@@ -338,6 +338,7 @@
 @endsection
 
 @section('javascript')
+    <script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>
     <script type="text/javascript" src="/js/results.js"></script>
 @stop
 

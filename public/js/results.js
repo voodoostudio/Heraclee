@@ -40,31 +40,6 @@ $(document).ready(function() {
         $(this).closest(".page-item").addClass("active");
     });
 
-
-    function initResultsMap() {
-        var latlang = {lat: 46.207389, lng: 6.155903};
-        var map = new google.maps.Map(document.getElementById('results_map'), {
-            zoom: 14,
-            center: latlang,
-            scrollwheel: false,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                position: google.maps.ControlPosition.TOP_RIGHT
-            },
-            zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-            },
-            streetViewControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
-            }
-        });
-        var marker = new google.maps.Marker({
-            position: latlang,
-            map: map,
-            icon: '/img/map_pin.svg'
-        });
-    }
-
     function resultsCarouselInit() {
         $('.results_carousel').slick({
             infinite: true,
@@ -86,4 +61,123 @@ $(document).ready(function() {
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
         });
     }
+
+    function initResultsMap() {
+        var latlang = {lat: 46.207389, lng: 6.155903};
+        var map = new google.maps.Map(document.getElementById('results_map'), {
+            zoom: 5,
+            center: latlang,
+            scrollwheel: false,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                position: google.maps.ControlPosition.TOP_RIGHT
+            },
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+            streetViewControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            }
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                icon: '/img/map_pin.svg'
+            });
+            google.maps.event.addListener(marker, 'click', function(evt) {
+                infowindow.setContent(location.info);
+                infowindow.open(map, marker);
+            });
+            return marker;
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(
+            map,
+            markers,
+            {imagePath: '/img/map_markerclusterer/m'}
+        );
+
+    }
+    var locations = [
+        {
+            lat: 47.061703,
+            lng: 9.008789,
+            info: '<span style="color: black;">test 1</span>'
+        },
+        {
+            lat: 46.207389,
+            lng: 6.155903,
+            info: '<span style="color: black;">test 2</span>'
+        },
+        {
+            lat: 46.254593,
+            lng: 6.143417,
+            info: '<span style="color: black;">test 3</span>'
+        },
+        {
+            lat: 46.355873,
+            lng: 6.479187,
+            info: '<span style="color: black;">test 4</span>'
+        },
+        {
+            lat: 47.260126,
+            lng: 8.569336,
+            info: '<span style="color: black;">test 5</span>'
+        },
+        {
+            lat: 47.512447,
+            lng: 8.695679,
+            info: '<span style="color: black;">test 6</span>'
+        }
+        ,
+        {
+            lat: 47.671745,
+            lng: 8.382568,
+            info: '<span style="color: black;">test 7</span>'
+        },
+        {
+            lat: 47.608825,
+            lng: 8.750610,
+            info: '<span style="color: black;">test 8</span>'
+        },
+        {
+            lat: 47.579189,
+            lng: 8.684692,
+            info: '<span style="color: black;">test 9</span>'
+        },
+        {
+            lat: 47.675444,
+            lng: 8.366089,
+            info: '<span style="color: black;">test 10</span>'
+        },
+        {
+            lat: 47.582895,
+            lng: 8.497925,
+            info: '<span style="color: black;">test 11</span>'
+        },
+        {
+            lat: 47.434474,
+            lng: 8.728638,
+            info: '<span style="color: black;">test 12</span>'
+        },
+        {
+            lat: 47.512447,
+            lng: 8.415527,
+            info: '<span style="color: black;">test 13</span>'
+        },
+        {
+            lat: 46.240348,
+            lng: 6.146507,
+            info: '<span style="color: black;">test 14</span>'
+        }
+    ]
+
 });
