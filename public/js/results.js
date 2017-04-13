@@ -91,9 +91,13 @@ $(document).ready(function() {
                 position: location,
                 icon: '/img/map_pin.svg'
             });
-            google.maps.event.addListener(marker, 'click', function(evt) {
+            google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(location.info);
                 infowindow.open(map, marker);
+            });
+
+            google.maps.event.addListener(map, "click", function() {
+                infowindow.close(map, marker);
             });
             return marker;
         });
