@@ -1,6 +1,14 @@
 $(document).ready(function() {
 
 
+    $('button.fullscreen_btn').on('click', function () {
+        var currentSlide = $('.details_gallery').slick('slickCurrentSlide');
+        var slide_scr = $('.details_gallery .slick-slide[data-slick-index="'+currentSlide+'"] img').attr('src');
+        $.fancybox.open([{src  : slide_scr}]);
+    });
+
+
+
     $('.details_gallery').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -50,6 +58,7 @@ $(document).ready(function() {
             icon: markerImage
         });
     }
+
 
     $('.gallery_view .panorama_link_container button').on('click', function () {
        $('.gallery_view').addClass('display_panorama');

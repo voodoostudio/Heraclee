@@ -1,6 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Details page')
 @section('css')
+    <link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">
     <link rel="stylesheet" type="text/css" href="/css/details.css">
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
@@ -20,6 +21,7 @@
                     <li><img src="/img/details/img_7.png" alt=""></li>
                     <li><img src="/img/details/img_8.png" alt=""></li>
                 </ul>
+                {{--<a data-fancybox="gallery" class="fullscreen_btn" href="/img/details/img_7.png"><i class="icn icon-fullscreen"></i></a>--}}
                 <button class="fullscreen_btn"><i class="icn icon-fullscreen"></i></button>
                 <div class="object_title">
                     <div class="container-fluid">
@@ -158,135 +160,95 @@
         </div>
     </section>
 
+
+
     <section class="location_section">
         <div class="map_container">
             <div id="object_map"></div>
             <div class="map_sidebar">
                 <ul>
                     <li class="map_banks">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-price"></i><span>Banques</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_banks" value="" name="map_banks">
+                            <label for="map_banks" class="checkbox_label"><i class="icn icon-price"></i><span>Banques</span></label>
                         </div>
                     </li>
                     <li class="map_bakeries">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-bakery"></i><span>Boulangeries</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_bakeries" value="" name="map_bakeries">
+                            <label for="map_bakeries" class="checkbox_label"><i class="icn icon-bakery"></i><span>Boulangeries</span></label>
                         </div>
                     </li>
                     <li class="map_cafes">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-cafe"></i><span>Cafés/Pubs</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_cafes" value="" name="map_cafes">
+                            <label for="map_cafes" class="checkbox_label"><i class="icn icon-cafe"></i><span>Cafés/Pubs</span></label>
                         </div>
                     </li>
                     <li class="map_dentists">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-dentist"></i><span>Dentistes</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_dentists" value="" name="map_dentists">
+                            <label for="map_dentists" class="checkbox_label"><i class="icn icon-dentist"></i><span>Dentistes</span></label>
                         </div>
                     </li>
                     <li class="map_schools">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-school"></i><span>Ecoles</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_schools" value="" name="map_schools">
+                            <label for="map_schools" class="checkbox_label"><i class="icn icon-school"></i><span>Ecoles</span></label>
                         </div>
                     </li>
                     <li class="map_hospitals">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-hospital"></i><span>Hôpitaux</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_hospitals" value="" name="map_hospitals">
+                            <label for="map_hospitals" class="checkbox_label"><i class="icn icon-hospital"></i><span>Hôpitaux</span></label>
                         </div>
                     </li>
                     <li class="map_dostors">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-doctor"></i><span>Médecins</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_dostors" value="" name="map_dostors">
+                            <label for="map_dostors" class="checkbox_label"><i class="icn icon-doctor"></i><span>Médecins</span></label>
                         </div>
                     </li>
                     <li class="map_parkings">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-parking"></i><span>Parkings</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_parkings" value="" name="map_parkings">
+                            <label for="map_parkings" class="checkbox_label"><i class="icn icon-parking"></i><span>Parkings</span></label>
                         </div>
                     </li>
                     <li class="map_pharmacies">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-pharmacy"></i><span>Pharmacies</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_pharmacies" value="" name="map_pharmacies">
+                            <label for="map_pharmacies" class="checkbox_label"><i class="icn icon-pharmacy"></i><span>Pharmacies</span></label>
                         </div>
                     </li>
                     <li class="map_police">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-police"></i><span>Police</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_police" value="" name="map_police">
+                            <label for="map_police" class="checkbox_label"><i class="icn icon-police"></i><span>Police</span></label>
                         </div>
                     </li>
                     <li class="map_post_offices">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-post_office"></i><span>Postes</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_post_offices" value="" name="map_post_offices">
+                            <label for="map_post_offices" class="checkbox_label"><i class="icn icon-posts"></i><span>Postes</span></label>
                         </div>
                     </li>
                     <li class="map_restaurants">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-restaurant"></i><span>Restaurants</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_restaurants" value="" name="map_restaurants">
+                            <label for="map_restaurants" class="checkbox_label"><i class="icn icon-cafe"></i><span>Restaurants</span></label>
                         </div>
                     </li>
                     <li class="map_gas_stations">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-petrol"></i><span>Stations service</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_gas_stations" value="" name="map_gas_stations">
+                            <label for="map_gas_stations" class="checkbox_label"><i class="icn icon-petrol"></i><span>Stations service</span></label>
                         </div>
                     </li>
                     <li class="map_universities">
-                        <div class="my_checkbox">
-                            <label>
-                                <input required="" type="checkbox" name="" value="">
-                                <span class="fake_checkbox"></span>
-                                <span class="my_checkbox_text"><i class="icn icon-university"></i><span>Universités</span></span>
-                            </label>
+                        <div class="checkbox_container">
+                            <input type="checkbox" id="map_universities" value="cb_val" name="map_universities">
+                            <label for="map_universities" class="checkbox_label"><i class="icn icon-university"></i><span>Universités</span></label>
                         </div>
                     </li>
                 </ul>
@@ -306,6 +268,7 @@
         });
     </script>
 
+    <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="/js/details.js"></script>
 @stop
 

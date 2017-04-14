@@ -2,13 +2,6 @@
 @import "variables";
 @import "forms";
 
-
-$main_blue: #2c314f;
-$main_yellow: #d3c070;
-$text_main_gray: #888888;
-$text_light_gray: #e5e5e5;
-$border_color: #cccccc;
-
 section.gallery_section {
   .gallery_container {
     max-width: 1400px;
@@ -167,7 +160,6 @@ section.gallery_section {
               }
               img {
                 width: 100%;
-                @include my_box_shadow(rgba($main_blue, 0.5));
               }
             }
           }
@@ -211,7 +203,7 @@ section.gallery_section {
   }
 }
 
-.contact_section {
+section.contact_section {
   .agent_info_container {
     padding: 13px;
     @include my_box_shadow(0px 0px 20px -5px black);
@@ -290,7 +282,7 @@ section.gallery_section {
   }
 }
 
-.object_info_section {
+section.object_info_section {
   .object_info_container {
     margin-top: 20px;
     padding: 13px;
@@ -338,80 +330,121 @@ section.gallery_section {
 
   }
 }
-.map_container {
-  position: relative;
-  margin-top: 20px;
-  #object_map {
-    visibility: visible;
-    height: 600px;
-    width: 100%;
-  }
-  .map_sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    //background: rgba(#ffffff, 0.9);
-    //padding: 30px;
-    ul {
-      li {
-        margin-bottom: 20px;
-        display: table;
-        width: 100%;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-        &.map_banks .my_checkbox label .my_checkbox_text {
-          color: #424f89;
-        }
-        &.map_bakeries .my_checkbox label .my_checkbox_text {
-          color: #2989a5;
-        }
-        &.map_cafes .my_checkbox label .my_checkbox_text {
-          color: #0295c4;
-        }
-        &.map_dentists .my_checkbox label .my_checkbox_text {
-          color: #475c56;
-        }
-        &.map_schools .my_checkbox label .my_checkbox_text {
-          color: #477664;
-        }
-        &.map_hospitals .my_checkbox label .my_checkbox_text {
-          color: #1ba570;
-        }
-        &.map_dostors .my_checkbox label .my_checkbox_text {
-          color: #1ba570;
-        }
-        &.map_parkings .my_checkbox label .my_checkbox_text {
-          color: #fcba26;
-        }
-        &.map_pharmacies .my_checkbox label .my_checkbox_text {
-          color: #f36326;
-        }
-        &.map_police .my_checkbox label .my_checkbox_text {
-          color: #f36326;
-        }
-        &.map_post_offices .my_checkbox label .my_checkbox_text {
-          color: #e5232b;
-        }
-        &.map_restaurants .my_checkbox label .my_checkbox_text {
-          color: #f25c8e;
-        }
-        &.map_gas_stations .my_checkbox label .my_checkbox_text {
-          color: #ff78ce;
-        }
-        &.map_universities .my_checkbox label .my_checkbox_text {
-          color: #d462fa;
-        }
-        .my_checkbox label .my_checkbox_text {
-          .icn {
-            display: block;
-            width: 30px;
-            text-align: center;
-            float: left;
+
+section.location_section {
+  .map_container {
+    position: relative;
+    margin-top: 20px;
+    #object_map {
+      visibility: visible;
+      height: 650px;
+      width: 100%;
+    }
+    .map_sidebar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      padding: 38px 40px;
+      ul {
+        @include my_box_shadow(0px 0px 20px -5px black);
+        li {
+          display: table;
+          width: 100%;
+          .checkbox_container {
+            background: white;
+            display: table;
+            border-bottom: 1px solid rgba($main_dark_clr, 0.1);
+            input[type="checkbox"] {
+              display: none;
+            }
+            label.checkbox_label {
+              line-height: 40px;
+              width: 40px;
+              text-align: center;
+              margin: 0;
+              position: relative;
+              i.icn {
+                opacity: 0.3;
+              }
+              span {
+                position: absolute;
+                top: 0;
+                left: 40px;
+                line-height: 40px;
+                padding: 0;
+                background: white;
+                width: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                @include my_transition(0.3s);
+              }
+              &:hover {
+                span {
+                  padding: 0 20px;
+                  width: auto;
+                }
+              }
+            }
+            input[type="checkbox"]:checked + label.checkbox_label {
+              i.icn {
+                opacity: 1;
+              }
+            }
+          }
+          &:last-of-type {
+            .checkbox_container {
+              border-bottom: none;
+            }
+          }
+          &.map_banks .checkbox_container label.checkbox_label {
+            color: #424f89;
+          }
+          &.map_bakeries .checkbox_container label.checkbox_label {
+            color: #2989a5;
+          }
+          &.map_cafes .checkbox_container label.checkbox_label {
+            color: #0295c4;
+          }
+          &.map_dentists .checkbox_container label.checkbox_label {
+            color: #475c56;
+          }
+          &.map_schools .checkbox_container label.checkbox_label {
+            color: #477664;
+          }
+          &.map_hospitals .checkbox_container label.checkbox_label {
+            color: #1ba570;
+          }
+          &.map_dostors .checkbox_container label.checkbox_label {
+            color: #1ba570;
+          }
+          &.map_parkings .checkbox_container label.checkbox_label {
+            color: #fcba26;
+          }
+          &.map_pharmacies .checkbox_container label.checkbox_label {
+            color: #f36326;
+          }
+          &.map_police .checkbox_container label.checkbox_label {
+            color: #f36326;
+          }
+          &.map_post_offices .checkbox_container label.checkbox_label {
+            color: #e5232b;
+          }
+          &.map_restaurants .checkbox_container label.checkbox_label {
+            color: #f25c8e;
+          }
+          &.map_gas_stations .checkbox_container label.checkbox_label {
+            color: #ff78ce;
+          }
+          &.map_universities .checkbox_container label.checkbox_label {
+            color: #d462fa;
           }
         }
       }
     }
   }
 }
+
+
+
+
