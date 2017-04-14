@@ -96,24 +96,36 @@ section.carousel_offers_section {
                 color: #ccac83;
               }
             }
-            span.price {
-              font-size: 1.25rem;
-              float: right;
-            }
-            .properties {
-              border-top: 1px solid #ccac83;
-              padding-top: 15px;
-              margin-top: 15px;
-              text-align: center;
+            .subtitle {
               display: table;
               width: 100%;
-              li {
-                display: table-cell;
-                width: 25%;
-                .icn_container {
-                  .icn {
-                    color: #ccac83;
-                    margin-right: 10px;
+              span.price {
+                font-size: 1.25rem;
+                float: right;
+                display: block;
+              }
+              span.city {
+                display: block;
+                float: left;
+              }
+            }
+            .properties_block {
+              border-top: 1px solid #ccac83;
+              margin-top: 15px;
+              .properties {
+                //margin-top: 15px;
+                text-align: center;
+                display: table;
+                width: auto;
+                margin: 15px auto 0;
+                li {
+                  float: left;
+                  margin-right: 15px;
+                  .icn_container {
+                    .icn {
+                      color: #ccac83;
+                      margin-right: 10px;
+                    }
                   }
                 }
               }

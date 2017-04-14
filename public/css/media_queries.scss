@@ -39,6 +39,10 @@
   footer section.bottom_footer_section p {
     margin-right: 0;
   }
+
+  section.top_offer_section {
+    height: 550px;
+  }
 }
 
 @media screen and ( max-width: 767px ) {
@@ -90,6 +94,66 @@
     width: 40px;
     line-height: 40px;
   }
+
+
+  section.carousel_offers_section .carousel.offers_carousel .slick-slide {
+    margin: 0 5px;
+    &.object_block .object_info_container {
+      bottom: -60px;
+      padding: 0 10px;
+      .object_info {
+        padding: 10px 10px 10px 10px;
+        a {
+          font-size: 0.875rem;
+        }
+        .subtitle {
+          span.price, span.city {
+            font-size: 0.75rem;
+          }
+        }
+        .properties_block {
+          margin-top: 0;
+          .properties {
+            margin: 5px auto 0;
+          }
+          .properties li {
+            font-size: 0.75rem;
+            margin-right: 7px;
+          }
+        }
+      }
+    }
+  }
+
+
+  footer {
+    margin-top: 30px;
+    section.bottom_footer_section .copyright {
+      font-size: 0.8125rem;
+    }
+  }
+
+  section.carousel_offers_section {
+    margin-top: 30px;
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.5625rem;
+    }
+  }
+  section.top_offer_section {
+    height: 400px;
+    .info_block {
+      h1 {
+        font-size: 40px;
+      }
+      h3 {
+        font-size: 25px;
+      }
+    }
+  }
+  section.search_section {
+    margin-top: 30px;
+  }
 }
 
 @media screen and ( max-width: 575px ) {
@@ -101,7 +165,24 @@
     }
   }
 
-  footer section.bottom_footer_section .copyright {
-    font-size: 0.8125rem;
+
+
+  section.top_offer_section {
+    height: 250px;
+    .info_block {
+      bottom: 20px;
+      h1 {
+        font-size: 25px;
+      }
+      h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .btn:not(.dropdown-toggle) {
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
   }
 }
