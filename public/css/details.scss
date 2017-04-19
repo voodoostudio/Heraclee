@@ -339,6 +339,9 @@ section.location_section {
       visibility: visible;
       height: 650px;
       width: 100%;
+      .place-content {
+        color: $main_dark_clr;
+      }
     }
     .map_sidebar {
       position: absolute;
@@ -364,6 +367,7 @@ section.location_section {
               text-align: center;
               margin: 0;
               position: relative;
+              cursor: pointer;
               i.icn {
                 opacity: 0.3;
               }
@@ -444,7 +448,3 @@ section.location_section {
     }
   }
 }
-
-
-
-

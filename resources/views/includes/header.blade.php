@@ -1,7 +1,9 @@
 <header>
     <div class="container-fluid">
         <div class="logo">
-            <img src="/img/logo.svg" alt="Heraclee logo">
+            <a href="{{ route('index') }}">
+                <img src="/img/logo.svg" alt="Heraclee logo">
+            </a>
         </div>
         <div class="navigation_container">
             <div class="navigation_block">
@@ -28,13 +30,17 @@
                 </div>
             </div>
 
+            <?php
+                $current_page = Route::getCurrentRoute()->getName();
+            ?>
+
             <nav>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link {{ (Route::getCurrentRoute()->getName() == 'index') ? 'active' : '' }}" href="/">Accueil</a>
+                        <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (Route::getCurrentRoute()->getName() == 'results' || 'details') ? 'active' : '' }}" href="{{ route('results') }}">Achat</a>
+                        <a class="nav-link {{ ($current_page == 'results' || $current_page == 'details') ? 'active' : '' }}" href="{{ route('results') }}">Achat</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Location</a>
