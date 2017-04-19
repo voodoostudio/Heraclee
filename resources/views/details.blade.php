@@ -74,6 +74,7 @@
                         <li><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span></li>
                         <li class="inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span></li>
                         <li class="inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span></li>
+                        <li><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span></li>
                     </ul>
                 </div>
             </div>
@@ -118,44 +119,61 @@
                     <p class="margin_bottom_20">Propriété Les Vanades, villa d'exception entourée de vignes et vue sur le Golfe de Saint-Tropez, elle dispose d'une surface habitable de 470m2 avec possibilité d'agrandissement en rez-de-jardin de 100m2 environ. La villa offre 5 chambres dont 1 chambre de Maître, chacune possédant sa salle de bains et dressing, très belle cuisine américaine Gaggeneau entièrement équipée ouvrant sur les larges terrasses extérieures en pierre naturelle avec vue sur la piscine et le jardin, le lumineux salon dispose de sa cheminée.
                         Les Vanades se situant quartier des Salins, la villa n'est qu'à quelques mètres de la plage des Canoubiers et à 10 minutes du centre du village.</p>
                     <p class="margin_bottom_30">En détail: <br> Terrain de 4269m2, piscine chauffée avec éclairage LED et son pool house, cave à vins, garage, carport, interphone, digicode, portail électrique, wifi, domotique, climatisation réversible, système de caméras complet, arrosage automatique, hélisurface.</p>
-                    <h4>Informations</h4>
-                    <ul class="object_info_list">
-                        <li><span class="detail_name">Piéces : </span><span class="detail_value">9</span></li>
-                        <li><span class="detail_name">État : </span><span class="detail_value">Excellent étata</span></li>
-                        <li><span class="detail_name">Niveaux : </span><span class="detail_value">2</span></li>
-                        <li><span class="detail_name">Nombre d’étages : </span><span class="detail_value">4</span></li>
-                        <li><span class="detail_name">Style : </span><span class="detail_value">Contemporain</span></li>
-                        <li><span class="detail_name">Étage : </span><span class="detail_value">2</span></li>
-                    </ul>
-                    <h4>Surfaces</h4>
-                    <ul class="object_info_list">
-                        <li><span class="detail_name">1 Terrain :</span><span class="detail_value">1300 m<sup>2</sup></span></li>
-                        <li><span class="detail_name">Suites :</span><span class="detail_value">5</span></li>
-                        <li><span class="detail_name">Sous-sol :</span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Salon : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Chambre de maître : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Cinéma : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Salle à manger : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Studios : </span><span class="detail_value">2</span></li>
-                        <li><span class="detail_name">Piscine intérieure : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Cuisine : </span><span class="detail_value">1</span></li>
-                        <li><span class="detail_name">Dressings : </span><span class="detail_value">6</span></li>
-                        <li><span class="detail_name">Pool house : </span><span class="detail_value">1</span></li>
-                    </ul>
-                    <h4>Prestations</h4>
-                    <ul class="object_info_list">
-                        <li><span class="detail_name">Maison de gardien</span></li>
-                        <li><span class="detail_name">Héliport</span></li>
-                        <li><span class="detail_name">Piscine</span></li>
-                        <li><span class="detail_name">Double vitrage</span></li>
-                        <li><span class="detail_name">Arrosage</span></li>
-                        <li><span class="detail_name">Tennis</span></li>
-                        <li><span class="detail_name">Me</span></li>
-                        <li><span class="detail_name">Alarme</span></li>
-                        <li><span class="detail_name">Cuisinière</span></li>
-                        <li><span class="detail_name">Baies vitréesublé</span></li>
-                        <li><span class="detail_name">Gardien</span></li>
-                    </ul>
+                    <div class="object_details_container">
+                        <h4>Informations</h4>
+                        <ul class="object_info_list">
+                            <li><span class="detail_name">Piéces </span><span class="detail_value">9</span></li>
+                            <li><span class="detail_name">État</span><span class="detail_value">Excellent étata</span></li>
+                            <li><span class="detail_name">Niveaux</span><span class="detail_value">2</span></li>
+                            <li><span class="detail_name">Nombre d’étages</span><span class="detail_value">4</span></li>
+                            <li><span class="detail_name">Style</span><span class="detail_value">Contemporain</span></li>
+                            <li><span class="detail_name">Étage</span><span class="detail_value">2</span></li>
+                        </ul>
+                        <h4>Surfaces</h4>
+                        <ul class="object_info_list main_info">
+                            <li><span class="detail_name">Surface totale</span><span class="detail_value">700 m<sup>2</sup></span></li>
+                            <li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>
+                        </ul>
+                        <ul class="object_info_list">
+                            <li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>
+                            <li><span class="detail_name">Suites</span><span class="detail_value">5</span></li>
+                            <li><span class="detail_name">Sous-sol</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Salon</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Chambre de maître</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Cinéma</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Salle à manger</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Studios</span><span class="detail_value">2</span></li>
+                            <li><span class="detail_name">Piscine intérieure</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Cuisine</span><span class="detail_value">1</span></li>
+                            <li><span class="detail_name">Dressings</span><span class="detail_value">6</span></li>
+                            <li><span class="detail_name">Pool house</span><span class="detail_value">1</span></li>
+                        </ul>
+                        <h4>Prestations</h4>
+                        <h5>Équipments</h5>
+                        <ul class="object_add_info_list">
+                            <li><span class="detail_name">Maison de gardien</span></li>
+                            <li><span class="detail_name">Double vitrage</span></li>
+                            <li><span class="detail_name">Meublé</span></li>
+                            <li><span class="detail_name">Baies vitréesublé</span></li>
+                        </ul>
+                        <h5>Espaces extérieurs</h5>
+                        <ul class="object_add_info_list">
+                            <li><span class="detail_name">Héliport</span></li>
+                            <li><span class="detail_name">Arrosage</span></li>
+                        </ul>
+                        <h5>Sécurité</h5>
+                        <ul class="object_add_info_list">
+                            <li><span class="detail_name">Alarme</span></li>
+                            <li><span class="detail_name">Gardien</span></li>
+                        </ul>
+                        <h5>Équipments sportifs</h5>
+                        <ul class="object_add_info_list">
+                            <li><span class="detail_name">Piscine</span></li>
+                            <li><span class="detail_name">Tennis</span></li>
+                            <li><span class="detail_name">Cuisinière</span></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>
