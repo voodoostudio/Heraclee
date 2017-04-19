@@ -758,4 +758,40 @@ footer {
       footer ul.social_networks li.linkedin {
         background-color: #037cb6; }
 
+.object_info_container .object_info {
+  background-color: #272727;
+  padding: 20px 20px 20px 20px; }
+  .object_info_container .object_info a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 0; }
+    .object_info_container .object_info a:hover {
+      color: #ccac83; }
+  .object_info_container .object_info .subtitle {
+    display: table;
+    width: 100%; }
+    .object_info_container .object_info .subtitle span.price {
+      font-size: 12px;
+      float: right;
+      display: block; }
+    .object_info_container .object_info .subtitle span.city {
+      font-size: 12px;
+      display: block;
+      float: left; }
+  .object_info_container .object_info .properties_block {
+    border-top: 1px solid #ccac83;
+    margin-top: 5px; }
+    .object_info_container .object_info .properties_block .properties {
+      text-align: center;
+      display: table;
+      width: auto;
+      margin: 5px auto 0; }
+      .object_info_container .object_info .properties_block .properties li {
+        float: left;
+        margin-right: 15px; }
+        .object_info_container .object_info .properties_block .properties li .icn_container .icn {
+          color: #ccac83;
+          margin-right: 10px; }
+
 /*# sourceMappingURL=global.css.map */

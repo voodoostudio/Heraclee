@@ -114,7 +114,7 @@ $(document).ready(function() {
         {
             lat: 47.061703,
             lng: 9.008789,
-            info: '<span style="color: black;">test 1</span>'
+            info: '<div class="object_info_container"><div class="object_info"><a href="#">Saint-Tropez</a><div class="subtitle"> <span class="city">Vanades</span> <span class="price">3 000 000 000 €</span> </div> <div class="properties_block"> <ul class="properties"> <li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> <li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> <li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> <li> <span class="property_container"> <span class="icn_container tooltip" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> </ul> </div> </div> </div>'
         },
         {
             lat: 46.207389,
