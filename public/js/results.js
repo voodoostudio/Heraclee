@@ -100,6 +100,7 @@ $(document).ready(function() {
             google.maps.event.addListener(map, "click", function() {
                 infowindow.close(map, marker);
             });
+
             return marker;
         });
 
@@ -130,21 +131,28 @@ $(document).ready(function() {
             // Reference to the DIV that wraps the bottom of infowindow
             var iwOuter = $('.gm-style-iw');
 
+
+
+            iwOuter.parent().parent().css({width: '300px !important'});
+
+
             /* Since this div is in a position prior to .gm-div style-iw.
              * We use jQuery and create a iwBackground variable,
              * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
              */
             var iwBackground = iwOuter.prev();
+            //iwBackground.css({display: 'none'});
 
             // Removes background shadow DIV
             iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+            //iwBackground.children(':nth-child(2)').css({'top' : '0', 'left' : '0', 'width' : '300px !important', 'height' : '100% !important'});
 
             // Removes white background DIV
             iwBackground.children(':nth-child(4)').css({'display' : 'none'});
             //iwBackground.children(':nth-child(4)').css({'top' : '0', 'left' : '0', 'width' : '300px !important', 'height' : '100% !important'});
 
-            // Moves the infowindow 0px to the right.
-            iwOuter.parent().parent().css({left: '0px'});
+            // Moves the infowindow 115px to the right.
+            //iwOuter.parent().parent().css({left: '0px'});
 
             // Moves the shadow of the arrow 76px to the left margin.
             //iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
