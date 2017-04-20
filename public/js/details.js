@@ -94,7 +94,7 @@ $(document).ready(function() {
                         for (var i = 0; i < results.length; i++) {
 
                             results[i].html_attributions = '';
-                            var show_icon = (map.getZoom() >= 14) ? icon : dot_icon,
+                            var show_icon = (map.getZoom() >= 15) ? icon : dot_icon,
                                 htmlContent = "<div class='place-content'><b>" + results[i].name + "</b><br><span>" + results[i].vicinity + "</span></div>";
 
                             createMarker(results[i], show_icon, type, {
@@ -139,7 +139,7 @@ $(document).ready(function() {
     function checkPlaceMarkers(zoom) {
         var type;
 
-        if (zoom >= 14) {
+        if (zoom >= 15) {
             type = "icon";
         } else {
             type = "dot";

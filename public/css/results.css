@@ -261,18 +261,18 @@ ul.nav.nav-tabs {
     width: 100%;
     min-width: 100%; }
     .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
-      padding: 5px; }
+      padding: 5px 0 5px 5px; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a {
         display: block;
         width: 100%;
         outline: none;
         color: #fdfdfd; }
-        .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a:hover {
-          color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label {
           width: 100%;
           position: relative;
           padding: 0; }
+          .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label:hover {
+            color: #ccac83; }
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label input {
             display: none; }
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label.checkbox {

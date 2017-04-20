@@ -258,19 +258,20 @@ ul.nav.nav-tabs {
       width: 100%;
       min-width: 100%;
       li {
-        padding: 5px;
+        padding: 5px 0 5px 5px;
         a {
           display: block;
           width: 100%;
           outline: none;
           color: $main_light_clr;
-          &:hover {
-            color: $main_brown_clr;
-          }
+
           label {
             width: 100%;
             position: relative;
             padding: 0;
+            &:hover {
+              color: $main_brown_clr;
+            }
             input {
               display: none;
             }

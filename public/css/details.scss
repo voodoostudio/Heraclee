@@ -116,11 +116,19 @@ section.gallery_section {
       .close_panorama {
         display: none;
         position: absolute;
-        top: 20px;
-        left: 20px;
-        font-size: 32px;
-        line-height: 32px;
+        bottom: 20px;
+        left: 50%;
+        margin-left: -85px;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
         z-index: 101;
+        .icn {
+          margin-right: 10px;
+          display: block;
+          float: left;
+          @include my_transform(rotate(180deg));
+        }
       }
       &.display_panorama {
         #object_panorama {

@@ -40,7 +40,7 @@
                     <button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>
                 </div>
                 <div id="object_panorama"></div>
-                <button class="close_panorama"><i class="icn icon-cancel"></i></button>
+                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>
             </div>
             <div class="gallery_nav">
                 <div class="container-fluid">
@@ -199,7 +199,7 @@
                     </li>
                     <li class="map_cafes">
                         <div class="checkbox_container">
-                            <input type="checkbox" id="map_cafes" value="cafe" name="map_cafes">
+                            <input type="checkbox" id="map_cafes" value="bar" name="map_cafes">
                             <label for="map_cafes" class="checkbox_label"><i class="icn icon-cafe"></i><span>Cafés/Pubs</span></label>
                         </div>
                     </li>
