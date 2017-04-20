@@ -25,3 +25,8 @@ Route::get('/details', [
     'uses' => 'PagesController@details',
     'as' => 'details'
 ]);
+
+Route::get('/api',[
+   'uses' => 'PagesController@api',
+    'as' => 'api'
+]);
