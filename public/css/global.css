@@ -680,6 +680,46 @@ section.search_section {
       section.search_section .search_block_container .search_block .input_container.search_input {
         margin-top: 27px; }
 
+.object_info_container .object_info {
+  background-color: #272727;
+  padding: 30px 30px 20px 30px;
+  -webkit-box-shadow: 0px 0px 20px -2px black;
+  -moz-box-shadow: 0px 0px 20px -2px black;
+  box-shadow: 0px 0px 20px -2px black; }
+  .object_info_container .object_info a {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.5625rem;
+    margin-bottom: 0; }
+    .object_info_container .object_info a:hover {
+      color: #ccac83; }
+  .object_info_container .object_info .subtitle {
+    display: table;
+    width: 100%; }
+    .object_info_container .object_info .subtitle span.price {
+      font-size: 1.25rem;
+      float: right;
+      display: block; }
+    .object_info_container .object_info .subtitle span.city {
+      display: block;
+      float: left; }
+  .object_info_container .object_info .properties_block {
+    border-top: 1px solid #ccac83;
+    margin-top: 15px; }
+    .object_info_container .object_info .properties_block .properties {
+      text-align: center;
+      display: table;
+      width: auto;
+      margin: 15px auto 0; }
+      .object_info_container .object_info .properties_block .properties li {
+        float: left;
+        margin-right: 15px; }
+        .object_info_container .object_info .properties_block .properties li:last-child {
+          margin-right: 0; }
+        .object_info_container .object_info .properties_block .properties li .icn_container .icn {
+          color: #ccac83;
+          margin-right: 10px; }
+
 footer {
   margin-top: 90px; }
   footer section.top_footer_section {
@@ -758,45 +798,28 @@ footer {
       footer ul.social_networks li.linkedin {
         background-color: #037cb6; }
 
-.object_info_container .object_info {
-  background-color: #272727;
-  padding: 20px 20px 20px 20px; }
-  .object_info_container .object_info a {
-    display: block;
-    text-transform: uppercase;
-    font-size: 16px;
-    margin-bottom: 0; }
-    .object_info_container .object_info a:hover {
-      color: #ccac83; }
-  .object_info_container .object_info .subtitle {
-    display: table;
-    width: 100%; }
-    .object_info_container .object_info .subtitle span.price {
-      font-size: 12px;
-      float: right;
-      display: block; }
-    .object_info_container .object_info .subtitle span.city {
-      font-size: 12px;
-      display: block;
-      float: left; }
-  .object_info_container .object_info .properties_block {
-    border-top: 1px solid #ccac83;
-    margin-top: 5px; }
-    .object_info_container .object_info .properties_block .properties {
-      text-align: center;
-      display: table;
-      width: auto;
-      margin: 5px auto 0; }
-      .object_info_container .object_info .properties_block .properties li {
-        float: left;
-        margin-right: 15px; }
-        .object_info_container .object_info .properties_block .properties li .icn_container .icn {
-          color: #ccac83;
-          margin-right: 10px; }
-
 .gm-style-iw {
   width: 300px !important;
   top: 17px !important;
-  left: 24px !important; }
+  left: -145px !important; }
+  .gm-style-iw .object_info_container {
+    width: 300px; }
+    .gm-style-iw .object_info_container .object_info {
+      padding: 20px 15px 20px 15px; }
+      .gm-style-iw .object_info_container .object_info a {
+        font-size: 1rem; }
+      .gm-style-iw .object_info_container .object_info .subtitle span {
+        font-size: 0.75rem; }
+      .gm-style-iw .object_info_container .object_info .properties_block {
+        margin-top: 5px; }
+        .gm-style-iw .object_info_container .object_info .properties_block .properties {
+          margin: 7px auto 0; }
+          .gm-style-iw .object_info_container .object_info .properties_block .properties li {
+            font-size: 0.75rem;
+            margin-right: 10px; }
+            .gm-style-iw .object_info_container .object_info .properties_block .properties li:last-child {
+              margin-right: 0; }
+            .gm-style-iw .object_info_container .object_info .properties_block .properties li .icn_container .icn {
+              margin-right: 7px; }
 
 /*# sourceMappingURL=global.css.map */
