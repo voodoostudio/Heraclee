@@ -17,4 +17,10 @@ $(document).ready(function() {
             }
         ]
     });
+
+    $('.loading').on('click', function(){
+        var this_link =  $(this).parent().find('a').attr('href');
+        document.location.href = this_link;
+    });
+
 });

@@ -142,7 +142,7 @@ $(document).ready(function() {
             //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
 
             // Changes the desired tail shadow color.
-            iwBackground.children(':nth-child(3)').find('div').children().css({'background-color': '#272727'});
+            iwBackground.children(':nth-child(3)').find('div').children().css({'background-color': '#272727', 'box-shadow': 'none'});
 
             // Reference to the div that groups the close button elements.
             var iwCloseBtn = iwOuter.next();
