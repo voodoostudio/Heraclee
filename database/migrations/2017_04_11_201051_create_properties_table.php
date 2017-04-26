@@ -15,7 +15,7 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('app_id');
+            $table->integer('app_id')->nullable();
             $table->string('reference');
             $table->integer('user_id');
             $table->integer('step');
@@ -37,7 +37,6 @@ class CreatePropertiesTable extends Migration
             $table->integer('district_id')->nullable();
             $table->float('longitude')->nullable();
             $table->float('latitude')->nullable();
-            $table->float('latitude')->nullable();
             $table->float('radius')->nullable();
             $table->integer('area_id')->nullable();
             $table->integer('rooms');
@@ -51,7 +50,27 @@ class CreatePropertiesTable extends Migration
             $table->integer('floor_id');
             $table->integer('heating_id');
             $table->integer('water_id');
-            $table->integer('water_id');
+            $table->string('condition')->nullable();
+            $table->string('standing')->nullable();
+            $table->integer('style_id');
+            $table->integer('construction_year')->nullable();
+            $table->integer('renovation_year')->nullable();
+            $table->integer('available_at')->nullable();
+            $table->integer('delivered_at')->nullable();
+            $table->integer('activities_id');
+            $table->integer('orientations_id');
+            $table->integer('services_id');
+            $table->integer('proximities_id');
+            $table->integer('tags_id');
+            $table->integer('tags_customized_id');
+            $table->integer('pictures_id');
+            $table->integer('medias_id');
+            $table->integer('comments_id');
+            $table->integer('areas_id');
+            $table->integer('regulations_id');
+            $table->integer('providers_id');
+            $table->integer('filling_rate')->nullable();
+
             $table->timestamps();
         });
     }
