@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('.carousel').slick({
+    //$('.results_carousel').slick({
         infinite: true,
         slidesToShow: 2,
         slidesToScroll: 1,

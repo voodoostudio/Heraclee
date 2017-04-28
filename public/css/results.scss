@@ -334,12 +334,14 @@ section.results_section {
                 }
               }
               .properties_container {
-                padding: 15px 0 0;
+                padding: 0;
                 margin-top: 10px;
                 ul.properties {
+                  width: auto;
+                  margin: 15px auto 0;
                   li {
-                    margin: 0;
-                    display: table-cell;
+                    margin-right: 15px;
+                    display: inline-block;
                     .property_container {
                       display: table;
                       margin: 0 auto;
@@ -413,7 +415,7 @@ section.results_section {
           background-color: transparent;
           padding: 0;
           height: 40px;
-          width: 45px;
+          width: 37px;
           line-height: 40px;
           text-align: center;
           border: none;

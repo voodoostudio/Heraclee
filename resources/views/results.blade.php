@@ -312,7 +312,8 @@
                     </div>
                 </div>
             </div>
-            <nav>
+            <div class="container-fluid">
+                <nav>
                 <ul class="pagination">
                     <li class="page-item">
                         <a href="#" class="page-link" aria-label="Previous">
@@ -333,6 +334,7 @@
                     </li>
                 </ul>
             </nav>
+            </div>
         </div>
     </section>
 @endsection

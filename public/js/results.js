@@ -48,8 +48,19 @@ $(document).ready(function() {
             slidesToScroll: 1,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
-            dots: true
+            dots: true,
+
+            responsive: [
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
+
     }
 
     function listView_galleryInit() {

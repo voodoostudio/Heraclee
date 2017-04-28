@@ -126,6 +126,58 @@
   }
 
 
+  section.results_section {
+    .results_container.grid_view, .results_container.map_view {
+      .container-fluid {
+        .object_block_container {
+          .object_block {
+            .info_block_container {
+              bottom: -60px;
+              padding: 0 10px;
+              .info_block {
+                padding: 10px 10px 10px 10px;
+                .title_container a h2 {
+                  font-size: 0.875rem;
+                }
+                .description_container {
+                  h3, div.object_price {
+                    font-size: 0.75rem;
+                  }
+                }
+                .properties_container {
+                  margin-top: 0;
+                  padding: 0;
+                  ul.properties {
+                    margin: 5px auto 0;
+                    li {
+                      font-size: 0.75rem;
+                      margin-right: 7px;
+                      .icn_container {
+                        margin-right: 0;
+                        .icn {
+                          line-height: 17px;
+                          font-size: 0.75rem;
+                          margin-right: 7px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
   footer {
     margin-top: 30px;
     section.bottom_footer_section .copyright {
