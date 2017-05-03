@@ -1,0 +1,140 @@
+@media screen and (max-width: 1300px) {
+  footer ul.social_networks li {
+    float: right; } }
+@media screen and (max-width: 1199px) {
+  section.search_section .search_block_container .search_block .input_container.search_input {
+    margin-top: 0; }
+
+  header .navigation_container nav ul.nav li.nav-item {
+    padding-right: 33px; }
+    header .navigation_container nav ul.nav li.nav-item a.nav-link {
+      font-size: 0.875rem;
+      line-height: 0.875rem; } }
+@media screen and (max-width: 991px) {
+  section.search_section .search_block_container .search_block {
+    padding: 40px 50px 30px; }
+    section.search_section .search_block_container .search_block ul.nav.nav-tabs {
+      margin-top: 0; }
+
+  footer section.bottom_footer_section p {
+    margin-right: 0; }
+
+  section.top_offer_section {
+    height: 550px; } }
+@media screen and (max-width: 767px) {
+  section.search_section .search_block_container .search_block {
+    padding: 30px 30px 20px; }
+
+  header.opened .navigation_container nav {
+    display: block; }
+  header .navigation_container {
+    padding-right: 34px;
+    padding-top: 10px; }
+    header .navigation_container nav {
+      margin-top: 10px;
+      margin-left: 0;
+      display: none; }
+      header .navigation_container nav ul.nav li.nav-item {
+        display: table; }
+    header .navigation_container .navigation_block {
+      text-align: center;
+      display: table;
+      margin: 0 auto; }
+      header .navigation_container .navigation_block .lang_currency_container {
+        float: none;
+        display: inline-block; }
+  header .logo {
+    padding: 15px 0; }
+    header .logo img {
+      max-width: 50px; }
+
+  div.menu-icon {
+    display: block; }
+
+  footer ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
+    width: 40px;
+    line-height: 40px; }
+
+  section.carousel_offers_section .carousel.offers_carousel .slick-slide {
+    margin: 0 5px; }
+    section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container {
+      bottom: -60px;
+      padding: 0 10px; }
+      section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info {
+        padding: 10px 10px 10px 10px; }
+        section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info a {
+          font-size: 0.875rem; }
+        section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .subtitle span.price, section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .subtitle span.city {
+          font-size: 0.75rem; }
+        section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .properties_block {
+          margin-top: 0; }
+          section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .properties_block .properties {
+            margin: 5px auto 0; }
+          section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container .object_info .properties_block .properties li {
+            font-size: 0.75rem;
+            margin-right: 7px; }
+
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container {
+    bottom: -60px;
+    padding: 0 10px; }
+    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block {
+      padding: 10px 10px 10px 10px; }
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2 {
+        font-size: 0.875rem; }
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
+        font-size: 0.75rem; }
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container {
+        margin-top: 0;
+        padding: 0; }
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
+          margin: 5px auto 0; }
+          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
+            font-size: 0.75rem;
+            margin-right: 7px; }
+            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container {
+              margin-right: 0; }
+              section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
+                line-height: 17px;
+                font-size: 0.75rem;
+                margin-right: 7px; }
+
+  footer {
+    margin-top: 30px; }
+    footer section.bottom_footer_section .copyright {
+      font-size: 0.8125rem; }
+
+  section.carousel_offers_section {
+    margin-top: 30px; }
+    section.carousel_offers_section h2 {
+      margin-bottom: 20px;
+      font-size: 1.5625rem; }
+
+  section.top_offer_section {
+    height: 400px; }
+    section.top_offer_section .info_block h1 {
+      font-size: 40px; }
+    section.top_offer_section .info_block h3 {
+      font-size: 25px; }
+
+  section.search_section {
+    margin-top: 30px; } }
+@media screen and (max-width: 575px) {
+  section.search_section .search_block_container .search_block {
+    padding: 15px 15px 5px; }
+
+  section.top_offer_section {
+    height: 250px; }
+    section.top_offer_section .info_block {
+      bottom: 20px; }
+      section.top_offer_section .info_block h1 {
+        font-size: 25px; }
+      section.top_offer_section .info_block h3 {
+        font-size: 15px;
+        margin-bottom: 10px; }
+
+  .btn:not(.dropdown-toggle) {
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px; } }
+
+/*# sourceMappingURL=media_queries.css.map */
