@@ -7,7 +7,7 @@
 @section('content')
     <section class="top_offer_section" style="background-image: url('/img/homepage_img.jpg')">
         <div class="info_block">
-            <h1>Maison de standing!</h1>
+            <h1>Maison de standing</h1>
             <h3>Saint-tropez</h3>
             <a href="#" class="btn">Voir le bien</a>
         </div>
