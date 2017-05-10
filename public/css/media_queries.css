@@ -2,14 +2,21 @@
   footer ul.social_networks li {
     float: right; } }
 @media screen and (max-width: 1199px) {
-  section.search_section .search_block_container .search_block .input_container.search_input {
-    margin-top: 0; }
-
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px; }
     header .navigation_container nav ul.nav li.nav-item a.nav-link {
       font-size: 0.875rem;
-      line-height: 0.875rem; } }
+      line-height: 0.875rem; }
+
+  section.search_section .search_block_container .search_block .input_container.search_input {
+    margin-top: 0; }
+
+  section.contact_section .agent_info_container .agent_info_block .object_info {
+    margin-top: 15px; }
+    section.contact_section .agent_info_container .agent_info_block .object_info p {
+      display: inline-block; }
+    section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
+      margin: 0 30px; } }
 @media screen and (max-width: 991px) {
   section.search_section .search_block_container .search_block {
     padding: 40px 50px 30px; }
@@ -20,7 +27,15 @@
     margin-right: 0; }
 
   section.top_offer_section {
-    height: 550px; } }
+    height: 550px; }
+
+  section.object_info_section .object_info_container .object_info_block .object_details_container ul.object_info_list li {
+    width: 50%; }
+
+  section.contact_section .agent_info_container .agent_info_block .object_info p {
+    display: block; }
+  section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
+    margin: 0 30px 0 0; } }
 @media screen and (max-width: 767px) {
   section.search_section .search_block_container .search_block {
     padding: 30px 30px 20px; }
@@ -50,10 +65,6 @@
 
   div.menu-icon {
     display: block; }
-
-  footer ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
-    width: 40px;
-    line-height: 40px; }
 
   section.carousel_offers_section .carousel.offers_carousel .slick-slide {
     margin: 0 5px; }
@@ -98,10 +109,20 @@
                 font-size: 0.75rem;
                 margin-right: 7px; }
 
-  footer {
-    margin-top: 30px; }
-    footer section.bottom_footer_section .copyright {
-      font-size: 0.8125rem; }
+  section.object_info_section .object_info_container .object_info_block {
+    padding: 20px;
+    font-size: 0.875rem; }
+    section.object_info_section .object_info_container .object_info_block p:last-of-type {
+      margin-bottom: 30px; }
+    section.object_info_section .object_info_container .object_info_block .object_details_container h4 {
+      font-size: 1rem;
+      margin-top: 15px; }
+    section.object_info_section .object_info_container .object_info_block .object_details_container ul.object_info_list li {
+      width: 100%;
+      margin-bottom: 15px; }
+
+  section.contact_section .agent_info_container .agent_info_block {
+    padding: 20px; }
 
   section.carousel_offers_section {
     margin-top: 30px; }
@@ -117,7 +138,15 @@
       font-size: 25px; }
 
   section.search_section {
-    margin-top: 30px; } }
+    margin-top: 30px; }
+
+  footer {
+    margin-top: 30px; }
+    footer section.bottom_footer_section .copyright {
+      font-size: 0.8125rem; }
+    footer ul.social_networks li a, footer footer ul.social_networks li a:visited, footer footer ul.social_networks li a:focus {
+      width: 40px;
+      line-height: 40px; } }
 @media screen and (max-width: 575px) {
   section.search_section .search_block_container .search_block {
     padding: 15px 15px 5px; }
@@ -131,6 +160,22 @@
       section.top_offer_section .info_block h3 {
         font-size: 15px;
         margin-bottom: 10px; }
+
+  section.object_info_section .object_info_container .object_info_block .object_details_container {
+    padding-left: 0; }
+
+  section.location_section .map_container #object_map {
+    height: 532px; }
+  section.location_section .map_container .map_sidebar {
+    padding: 15px; }
+    section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label {
+      width: 35px;
+      height: 35px; }
+      section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label span {
+        left: 35px;
+        line-height: 35px; }
+      section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label:hover span {
+        padding: 0 10px; }
 
   .btn:not(.dropdown-toggle) {
     height: 40px;

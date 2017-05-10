@@ -86,7 +86,7 @@
             <div class="agent_info_container">
                 <div class="agent_info_block">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-7 col-md-6 col-lg-8">
+                        <div class="col-xs-12 col-xl-8">
                             <div class="agent_img">
                                 <img src="img/details/agent.jpg" alt="">
                             </div>
@@ -99,7 +99,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-5 col-md-6 col-lg-4">
+                        <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
                                 <p class="object_id">ID : 1239806</p>
                                 <div class="object_price">CHF 2'990'001</div>

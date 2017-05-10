@@ -5,6 +5,14 @@
 }
 
 @media screen and ( max-width: 1199px ) {
+  header .navigation_container nav ul.nav li.nav-item {
+    padding-right: 33px;
+    a.nav-link {
+      font-size: 0.875rem;
+      line-height: 0.875rem;
+    }
+  }
+
   section.search_section {
     .search_block_container {
       .search_block {
@@ -15,13 +23,22 @@
     }
   }
 
-  header .navigation_container nav ul.nav li.nav-item {
-    padding-right: 33px;
-    a.nav-link {
-      font-size: 0.875rem;
-      line-height: 0.875rem;
+  section.contact_section {
+    .agent_info_container {
+      .agent_info_block {
+        .object_info {
+          margin-top: 15px;
+          p {
+            display: inline-block;
+          }
+          button.btn {
+            margin: 0 30px;
+          }
+        }
+      }
     }
   }
+
 }
 
 @media screen and ( max-width: 991px ) {
@@ -42,6 +59,35 @@
 
   section.top_offer_section {
     height: 550px;
+  }
+
+  section.object_info_section {
+    .object_info_container {
+      .object_info_block {
+        .object_details_container {
+          ul.object_info_list {
+            li {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.contact_section {
+    .agent_info_container {
+      .agent_info_block {
+        .object_info {
+          p {
+            display: block;
+          }
+          button.btn {
+            margin: 0 30px 0 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -86,15 +132,10 @@
       }
     }
   }
+
   div.menu-icon {
     display: block;
   }
-
-  footer ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
-    width: 40px;
-    line-height: 40px;
-  }
-
 
   section.carousel_offers_section .carousel.offers_carousel .slick-slide {
     margin: 0 5px;
@@ -124,7 +165,6 @@
       }
     }
   }
-
 
   section.results_section {
     .results_container.grid_view, .results_container.map_view {
@@ -171,17 +211,35 @@
     }
   }
 
+  section.object_info_section {
+    .object_info_container {
+      .object_info_block {
+        padding: 20px;
+        font-size: 0.875rem;
+        p:last-of-type {
+          margin-bottom: 30px;
+        }
+        .object_details_container {
+          h4 {
+            font-size: 1rem;
+            margin-top: 15px;
+          }
+          ul.object_info_list {
+            li {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
 
-
-
-
-
-
-
-  footer {
-    margin-top: 30px;
-    section.bottom_footer_section .copyright {
-      font-size: 0.8125rem;
+  section.contact_section {
+    .agent_info_container {
+      .agent_info_block {
+        padding: 20px;
+      }
     }
   }
 
@@ -192,6 +250,7 @@
       font-size: 1.5625rem;
     }
   }
+
   section.top_offer_section {
     height: 400px;
     .info_block {
@@ -203,8 +262,20 @@
       }
     }
   }
+
   section.search_section {
     margin-top: 30px;
+  }
+
+  footer {
+    margin-top: 30px;
+    section.bottom_footer_section .copyright {
+      font-size: 0.8125rem;
+    }
+    ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
+      width: 40px;
+      line-height: 40px;
+    }
   }
 }
 
@@ -216,8 +287,6 @@
       }
     }
   }
-
-
 
   section.top_offer_section {
     height: 250px;
@@ -232,6 +301,48 @@
       }
     }
   }
+
+  section.object_info_section {
+    .object_info_container {
+      .object_info_block {
+        .object_details_container {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  section.location_section {
+    .map_container {
+      #object_map {
+        height: 532px;
+      }
+      .map_sidebar {
+        padding: 15px;
+        ul {
+          li {
+            .checkbox_container {
+              label.checkbox_label {
+                width: 35px;
+                height: 35px;
+                span {
+                  left: 35px;
+                  line-height: 35px;
+                }
+                &:hover {
+                  span {
+                    padding: 0 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
   .btn:not(.dropdown-toggle) {
     height: 40px;
     line-height: 40px;
