@@ -38,7 +38,6 @@
       }
     }
   }
-
 }
 
 @media screen and ( max-width: 991px ) {
@@ -53,12 +52,21 @@
     }
   }
 
-  footer section.bottom_footer_section p {
-    margin-right: 0;
-  }
-
   section.top_offer_section {
     height: 550px;
+  }
+
+  section.gallery_section {
+    .gallery_container {
+      .gallery_view {
+        .object_title {
+          h2 {
+            font-size: 2.125rem;
+          }
+        }
+      }
+    }
+
   }
 
   section.object_info_section {
@@ -89,16 +97,13 @@
       }
     }
   }
+
+  footer section.bottom_footer_section p {
+    margin-right: 0;
+  }
 }
 
 @media screen and ( max-width: 767px ) {
-  section.search_section {
-    .search_block_container {
-      .search_block {
-        padding: 30px 30px 20px;
-      }
-    }
-  }
 
   header {
     &.opened .navigation_container nav {
@@ -129,6 +134,14 @@
       padding: 15px 0;
       img {
         max-width: 50px;
+      }
+    }
+  }
+
+  section.search_section {
+    .search_block_container {
+      .search_block {
+        padding: 30px 30px 20px;
       }
     }
   }
@@ -239,6 +252,21 @@
     .agent_info_container {
       .agent_info_block {
         padding: 20px;
+        .agent_info {
+          p {
+            margin-top: 0;
+          }
+          ul {
+            li {
+              float: none;
+              &:nth-child(2) {
+                margin: 10px 0 0;
+                padding: 0;
+                border: none;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -307,6 +335,38 @@
       .object_info_block {
         .object_details_container {
           padding-left: 0;
+        }
+      }
+    }
+  }
+
+  section.contact_section {
+    .agent_info_container {
+      .agent_info_block {
+        .agent_img {
+          float: none;
+          text-align: center;
+          margin: 0 0 20px 0;
+        }
+        .agent_info {
+          float: none;
+          text-align: center;
+        }
+        .object_info {
+          text-align: center;
+          .object_id {
+            font-size: 1rem;
+            line-height: 1rem;
+            margin-bottom: 0;
+          }
+          .object_price {
+            float: none;
+            margin: 15px auto;
+            font-size: 1rem;
+          }
+          button.btn {
+            margin-right: 0;
+          }
         }
       }
     }

@@ -23,11 +23,11 @@
     section.search_section .search_block_container .search_block ul.nav.nav-tabs {
       margin-top: 0; }
 
-  footer section.bottom_footer_section p {
-    margin-right: 0; }
-
   section.top_offer_section {
     height: 550px; }
+
+  section.gallery_section .gallery_container .gallery_view .object_title h2 {
+    font-size: 2.125rem; }
 
   section.object_info_section .object_info_container .object_info_block .object_details_container ul.object_info_list li {
     width: 50%; }
@@ -35,11 +35,11 @@
   section.contact_section .agent_info_container .agent_info_block .object_info p {
     display: block; }
   section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
-    margin: 0 30px 0 0; } }
-@media screen and (max-width: 767px) {
-  section.search_section .search_block_container .search_block {
-    padding: 30px 30px 20px; }
+    margin: 0 30px 0 0; }
 
+  footer section.bottom_footer_section p {
+    margin-right: 0; } }
+@media screen and (max-width: 767px) {
   header.opened .navigation_container nav {
     display: block; }
   header .navigation_container {
@@ -62,6 +62,9 @@
     padding: 15px 0; }
     header .logo img {
       max-width: 50px; }
+
+  section.search_section .search_block_container .search_block {
+    padding: 30px 30px 20px; }
 
   div.menu-icon {
     display: block; }
@@ -123,6 +126,14 @@
 
   section.contact_section .agent_info_container .agent_info_block {
     padding: 20px; }
+    section.contact_section .agent_info_container .agent_info_block .agent_info p {
+      margin-top: 0; }
+    section.contact_section .agent_info_container .agent_info_block .agent_info ul li {
+      float: none; }
+      section.contact_section .agent_info_container .agent_info_block .agent_info ul li:nth-child(2) {
+        margin: 10px 0 0;
+        padding: 0;
+        border: none; }
 
   section.carousel_offers_section {
     margin-top: 30px; }
@@ -163,6 +174,26 @@
 
   section.object_info_section .object_info_container .object_info_block .object_details_container {
     padding-left: 0; }
+
+  section.contact_section .agent_info_container .agent_info_block .agent_img {
+    float: none;
+    text-align: center;
+    margin: 0 0 20px 0; }
+  section.contact_section .agent_info_container .agent_info_block .agent_info {
+    float: none;
+    text-align: center; }
+  section.contact_section .agent_info_container .agent_info_block .object_info {
+    text-align: center; }
+    section.contact_section .agent_info_container .agent_info_block .object_info .object_id {
+      font-size: 1rem;
+      line-height: 1rem;
+      margin-bottom: 0; }
+    section.contact_section .agent_info_container .agent_info_block .object_info .object_price {
+      float: none;
+      margin: 15px auto;
+      font-size: 1rem; }
+    section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
+      margin-right: 0; }
 
   section.location_section .map_container #object_map {
     height: 532px; }
