@@ -2,6 +2,27 @@
   footer ul.social_networks li {
     float: right;
   }
+
+  section.results_section {
+    .results_container {
+      &.list_view .container-fluid > .row .object_block_container .object_block {
+        .img_block {
+          top: 0;
+          left: 0;
+        }
+        .info_block {
+          padding: 20px 20px 20px 20px;
+          .properties_container {
+            margin-top: 14px;
+            padding: 15px 10px 0;
+          }
+          .description_container .object_description {
+            width: 57%;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and ( max-width: 1199px ) {
@@ -105,6 +126,56 @@
 
   footer section.bottom_footer_section p {
     margin-right: 0;
+  }
+
+
+  section.results_section .results_container.list_view .container-fluid {
+    .object_block_container .object_block .info_block {
+      .properties_container ul.properties li {
+        line-height: 13px;
+        font-size: 13px;
+        .icn_container .icn {
+          font-size: 13px;
+        }
+      }
+      .title_container a h2 {
+        font-size: 20px;
+      }
+      .description_container h3 {
+        font-size: 14px;
+      }
+    }
+    > .row .object_block_container .object_block {
+      .info_block {
+        padding: 15px 20px 10px 20px;
+        .description_container {
+          .object_description {
+            width: 100%;
+            font-size: 12px;
+            margin-top: 2px;
+          }
+          .object_price {
+            padding: 6px 30px 5px;
+            font-size: 14px;
+            margin-top: 10px;
+          }
+          .btn {
+            margin: 10px 0 0 15px;
+            padding: 0 15px;
+            font: 14px opensans_light;
+            height: 30px;
+            line-height: 30px;
+          }
+        }
+        .title_container a h2 {
+          margin-bottom: 6px;
+        }
+        .properties_container {
+          margin-top: 8px;
+          padding: 8px 10px 0;
+        }
+      }
+    }
   }
 }
 
@@ -568,5 +639,11 @@
     height: 40px;
     line-height: 40px;
     font-size: 15px;
+  }
+
+
+
+  section.results_section .view_type_container .view_type li {
+    width: 50%;
   }
 }
