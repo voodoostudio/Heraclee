@@ -257,30 +257,42 @@
     section.gallery_section .gallery_container > .container-fluid .properties_container {
       padding: 0 5px 10px; }
 
-  section.object_info_section .object_info_container .object_info_block .object_details_container {
-    padding-left: 0; }
+  section.object_info_section .object_info_container .object_info_block {
+    padding: 15px; }
+    section.object_info_section .object_info_container .object_info_block .object_details_container {
+      padding-left: 0; }
 
   section.contact_section .agent_info_container {
     margin-top: 10px; }
-    section.contact_section .agent_info_container .agent_info_block .agent_img {
-      float: none;
-      text-align: center;
-      margin: 0 0 20px 0; }
-    section.contact_section .agent_info_container .agent_info_block .agent_info {
-      float: none;
-      text-align: center; }
-    section.contact_section .agent_info_container .agent_info_block .object_info {
-      text-align: center; }
-      section.contact_section .agent_info_container .agent_info_block .object_info .object_id {
-        font-size: 1rem;
-        line-height: 1rem;
-        margin-bottom: 0; }
-      section.contact_section .agent_info_container .agent_info_block .object_info .object_price {
+    section.contact_section .agent_info_container .agent_info_block {
+      padding: 15px; }
+      section.contact_section .agent_info_container .agent_info_block .agent_img {
         float: none;
-        margin: 15px auto;
-        font-size: 1rem; }
-      section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
-        margin-right: 0; }
+        text-align: center;
+        margin: 0 0 20px 0; }
+      section.contact_section .agent_info_container .agent_info_block .agent_info {
+        float: none;
+        text-align: center; }
+        section.contact_section .agent_info_container .agent_info_block .agent_info p {
+          font-size: 0.875rem; }
+        section.contact_section .agent_info_container .agent_info_block .agent_info p.agent_name {
+          font-size: 1.125rem;
+          line-height: 1.125rem;
+          margin-top: 15px; }
+        section.contact_section .agent_info_container .agent_info_block .agent_info ul li {
+          font-size: 0.75rem; }
+      section.contact_section .agent_info_container .agent_info_block .object_info {
+        text-align: center; }
+        section.contact_section .agent_info_container .agent_info_block .object_info .object_id {
+          font-size: 1rem;
+          line-height: 1rem;
+          margin-bottom: 0; }
+        section.contact_section .agent_info_container .agent_info_block .object_info .object_price {
+          float: none;
+          margin: 15px auto;
+          font-size: 1rem; }
+        section.contact_section .agent_info_container .agent_info_block .object_info button.btn {
+          margin-right: 0; }
 
   section.location_section .map_container #object_map {
     height: 532px; }

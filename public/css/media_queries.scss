@@ -478,6 +478,7 @@
   section.object_info_section {
     .object_info_container {
       .object_info_block {
+        padding: 15px;
         .object_details_container {
           padding-left: 0;
         }
@@ -489,6 +490,7 @@
     .agent_info_container {
       margin-top: 10px;
       .agent_info_block {
+        padding: 15px;
         .agent_img {
           float: none;
           text-align: center;
@@ -497,6 +499,19 @@
         .agent_info {
           float: none;
           text-align: center;
+          p {
+            font-size: 0.875rem;
+          }
+          p.agent_name {
+            font-size: 1.125rem;
+            line-height: 1.125rem;
+            margin-top: 15px;
+          }
+          ul {
+            li {
+              font-size: 0.75rem;
+            }
+          }
         }
         .object_info {
           text-align: center;
