@@ -518,7 +518,8 @@ section.gallery_section .gallery_container {
       width: 100%;
       color: white;
       text-transform: uppercase;
-      z-index: 2; }
+      z-index: 2;
+      padding: 0 80px; }
       section.gallery_section .gallery_container .gallery_view .object_title h2 {
         text-align: center;
         font-size: 3.125rem;
@@ -615,34 +616,39 @@ section.gallery_section .gallery_container {
         opacity: 0.7; }
     section.gallery_section .gallery_container .gallery_nav .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide img {
       width: 100%; }
-  section.gallery_section .gallery_container .properties_container {
-    overflow: hidden;
-    padding: 0 10px 10px; }
-    section.gallery_section .gallery_container .properties_container ul.properties {
-      padding: 30px 20px;
-      display: table;
-      margin: 0 auto;
-      -webkit-box-shadow: 0px 0px 20px -5px black;
-      -moz-box-shadow: 0px 0px 20px -5px black;
-      box-shadow: 0px 0px 20px -5px black; }
-      section.gallery_section .gallery_container .properties_container ul.properties li {
-        float: left;
-        margin-right: 20px;
-        text-align: center; }
-        section.gallery_section .gallery_container .properties_container ul.properties li:last-child {
-          margin: 0; }
-        section.gallery_section .gallery_container .properties_container ul.properties li i {
-          font-size: 1.375rem;
-          line-height: 1.25rem;
-          float: left;
-          color: #ccac83; }
-        section.gallery_section .gallery_container .properties_container ul.properties li .prop_val {
-          font-size: 1rem;
-          margin-left: 10px; }
-          section.gallery_section .gallery_container .properties_container ul.properties li .prop_val span {
-            color: #fdfdfd; }
-        section.gallery_section .gallery_container .properties_container ul.properties li.inactive {
-          opacity: 0.3; }
+  section.gallery_section .gallery_container > .container-fluid {
+    padding: 0 5px; }
+    section.gallery_section .gallery_container > .container-fluid .properties_container {
+      overflow: hidden;
+      padding: 0 10px 10px; }
+      section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties {
+        padding: 20px 20px;
+        display: table;
+        margin: 0 auto;
+        -webkit-box-shadow: 0px 0px 20px -5px black;
+        -moz-box-shadow: 0px 0px 20px -5px black;
+        box-shadow: 0px 0px 20px -5px black; }
+        section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li {
+          display: inline-block;
+          margin-right: 20px;
+          text-align: center;
+          padding: 5px 0; }
+          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.no_text {
+            margin-right: 10px; }
+            section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.no_text:last-child {
+              margin-right: -10px; }
+          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li i {
+            font-size: 1.375rem;
+            line-height: 1.25rem;
+            float: left;
+            color: #ccac83; }
+          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .prop_val {
+            font-size: 1rem;
+            margin-left: 10px; }
+            section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .prop_val span {
+              color: #fdfdfd; }
+          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.inactive {
+            opacity: 0.3; }
 
 section.contact_section .agent_info_container {
   padding: 13px;
@@ -895,5 +901,3 @@ section.location_section .map_container {
           color: #ff78ce; }
         section.location_section .map_container .map_sidebar ul li.map_universities .checkbox_container label.checkbox_label {
           color: #d462fa; }
-
-/*# sourceMappingURL=details.css.map */

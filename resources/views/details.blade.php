@@ -65,16 +65,16 @@
                         <li><span class="icn_container tooltip" title="Number of bathrooms"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>2</span></span></li>
                         <li><span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span><span class="prop_val">Dégagée Jardin Collines</span></li>
                         <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span>2ème/2<sup>2</sup></span></span></li>
-                        <li><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span></li>
-                        <li class="inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Securit"><i class="icn icon-security"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span></li>
-                        <li class="inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span></li>
-                        <li class="inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span></li>
-                        <li><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Securit"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>
                     </ul>
                 </div>
             </div>
