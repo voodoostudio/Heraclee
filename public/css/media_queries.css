@@ -2,16 +2,18 @@
   footer ul.social_networks li {
     float: right; }
 
-  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block {
-    top: 0;
-    left: 0; }
-  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block {
-    padding: 20px 20px 20px 20px; }
-    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .properties_container {
-      margin-top: 14px;
-      padding: 15px 10px 0; }
-    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_description {
-      width: 57%; } }
+  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block {
+    margin-top: 25px; }
+    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block {
+      top: 0;
+      left: 0; }
+    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block {
+      padding: 20px 20px 20px 20px; }
+      section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .properties_container {
+        margin-top: 14px;
+        padding: 15px 10px 0; }
+      section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_description {
+        width: 57%; } }
 @media screen and (max-width: 1199px) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px; }
