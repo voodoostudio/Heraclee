@@ -194,7 +194,7 @@ ul.nav.nav-tabs {
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
         content: "\e90f";
         font-family: icomoon;
-        color: #fdfdfd;
+        color: #625e57;
         font-size: 20px; }
     .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox {
       background-position: 0 0;
@@ -202,7 +202,7 @@ ul.nav.nav-tabs {
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
         content: "\e90e";
         font-family: icomoon;
-        color: #fdfdfd;
+        color: #625e57;
         font-size: 20px; }
     .my_checkbox label .my_checkbox_text {
       font-size: 16px;
@@ -556,5 +556,3 @@ section.carousel_offers_section {
         padding: 0 20px;
         width: 100%;
         bottom: -81px; }
-
-/*# sourceMappingURL=index.css.map */

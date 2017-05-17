@@ -194,7 +194,7 @@ ul.nav.nav-tabs {
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
         content: "\e90f";
         font-family: icomoon;
-        color: #fdfdfd;
+        color: #625e57;
         font-size: 20px; }
     .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox {
       background-position: 0 0;
@@ -202,7 +202,7 @@ ul.nav.nav-tabs {
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
         content: "\e90e";
         font-family: icomoon;
-        color: #fdfdfd;
+        color: #625e57;
         font-size: 20px; }
     .my_checkbox label .my_checkbox_text {
       font-size: 16px;
@@ -533,6 +533,15 @@ p {
   background: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.5));
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)); }
 
+.outer_block_container {
+  padding: 13px;
+  -webkit-box-shadow: 0px 0px 20px -5px black;
+  -moz-box-shadow: 0px 0px 20px -5px black;
+  box-shadow: 0px 0px 20px -5px black; }
+  .outer_block_container .inner_block_container {
+    border: 1px solid #ccac83;
+    padding: 40px; }
+
 header {
   display: table;
   width: 100%;
@@ -667,18 +676,10 @@ header {
 
 section.search_section {
   margin-top: 70px; }
-  section.search_section .search_block_container {
-    padding: 13px;
-    -webkit-box-shadow: 0px 0px 20px -5px black;
-    -moz-box-shadow: 0px 0px 20px -5px black;
-    box-shadow: 0px 0px 20px -5px black; }
-    section.search_section .search_block_container .search_block {
-      border: 1px solid #ccac83;
-      padding: 40px 50px; }
-      section.search_section .search_block_container .search_block ul.nav.nav-tabs {
-        margin-top: 27px; }
-      section.search_section .search_block_container .search_block .input_container.search_input {
-        margin-top: 27px; }
+  section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
+    margin-top: 27px; }
+  section.search_section .outer_block_container .inner_block_container .input_container.search_input {
+    margin-top: 27px; }
 
 .object_info_container .object_info {
   background-color: #272727;
@@ -821,5 +822,3 @@ footer {
         background-color: #4464a2; }
       footer ul.social_networks li.linkedin {
         background-color: #037cb6; }
-
-/*# sourceMappingURL=global.css.map */

@@ -16,8 +16,8 @@
 
     <section class="search_section">
         <div class="container-fluid">
-            <div class="search_block_container">
-                <div class="search_block">
+            <div class="outer_block_container">
+                <div class="inner_block_container">
                     <div class="row">
                         <div class="col-12 col-lg-4">
                             <ul class="nav nav-tabs margin_bottom_10">

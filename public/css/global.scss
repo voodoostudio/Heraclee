@@ -59,6 +59,15 @@ p {
   @include my_gradient_bg(rgba(black, 0.5))
 }
 
+.outer_block_container {
+  padding: 13px;
+  @include my_box_shadow(0px 0px 20px -5px black);
+  .inner_block_container {
+    border: 1px solid #ccac83;
+    padding: 40px;
+  }
+}
+
 header {
   display: table;
   width: 100%;
@@ -224,12 +233,8 @@ header {
 
 section.search_section {
   margin-top: 70px;
-  .search_block_container {
-    padding: 13px;
-    @include my_box_shadow(0px 0px 20px -5px black);
-    .search_block {
-      border: 1px solid $main_brown_clr;
-      padding: 40px 50px;
+  .outer_block_container {
+    .inner_block_container {
       ul.nav.nav-tabs {
         margin-top: 27px;
       }

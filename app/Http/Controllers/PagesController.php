@@ -26,6 +26,10 @@ class PagesController extends Controller {
         return view('details');
     }
 
+    public function contact() {
+        return view('contact');
+    }
+
     public function api() {
 
 

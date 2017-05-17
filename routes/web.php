@@ -26,6 +26,11 @@ Route::get('/details', [
     'as' => 'details'
 ]);
 
+Route::get('/contact', [
+    'uses' => 'PagesController@contact',
+    'as' => 'contact'
+]);
+
 Route::get('/api',[
    'uses' => 'PagesController@api',
     'as' => 'api'

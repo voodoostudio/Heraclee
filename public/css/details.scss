@@ -220,13 +220,10 @@ section.gallery_section {
 }
 
 section.contact_section {
-  .agent_info_container {
-    padding: 13px;
-    @include my_box_shadow(0px 0px 20px -5px black);
+  .outer_block_container {
     margin-top: 40px;
-    .agent_info_block {
+    .inner_block_container {
       padding: 40px 75px;
-      border: 1px solid $main_brown_clr;
       .agent_img {
         float: left;
         margin-right: 30px;
@@ -297,13 +294,9 @@ section.contact_section {
 }
 
 section.object_info_section {
-  .object_info_container {
+  .outer_block_container {
     margin-top: 20px;
-    padding: 13px;
-    @include my_box_shadow(0px 0px 20px -5px black);
-    .object_info_block {
-      border: 1px solid $main_brown_clr;
-      padding: 40px;
+    .inner_block_container {
       p {
         font-family: opensans_light;
         &:last-of-type {
