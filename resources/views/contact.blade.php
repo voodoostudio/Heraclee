@@ -16,7 +16,7 @@
     <section class="contact_map_section">
         <div id="contact_map"></div>
     </section>
-    <section class="conntact_form_section">
+    <section class="contact_form_section">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
@@ -26,19 +26,19 @@
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Nom *</span></label>
                                         <div class="input_container">
                                             <input type="text" placeholder="Min">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Phone</span></label>
                                         <div class="input_container">
                                             <input type="text" placeholder="Min">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 margin_bottom_10">
                                         <label class="form_el_label"><span>Couriel *</span></label>
                                         <div class="input_container">
                                             <input type="text" placeholder="Min">
@@ -60,7 +60,7 @@
                                 <div class="input_container">
                                     <textarea name="" id="" cols="30" rows="10"></textarea>
                                 </div>
-                                <button class="btn">Envoyer</button>
+                                <button class="btn" type="submit">Envoyer</button>
                             </div>
                         </div>
                     </form>
