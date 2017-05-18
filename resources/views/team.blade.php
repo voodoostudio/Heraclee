@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Contact page')
+@section('title', 'Team page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/team.css">
 @stop
