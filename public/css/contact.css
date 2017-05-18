@@ -1,15 +1,37 @@
 section.contact_info_section {
-  margin: 60px 0 50px; }
+  margin-top: 60px; }
 
 section.contact_map_section {
-  margin-top: 50px; }
+  margin-top: 50px;
+  position: relative; }
   section.contact_map_section #contact_map {
     height: 640px; }
+  section.contact_map_section .address_block {
+    position: absolute;
+    top: calc(50% - 192px);
+    right: 10%;
+    background: #272727; }
+    section.contact_map_section .address_block .outer_block_container .inner_block_container {
+      padding: 55px 100px 55px 55px;
+      text-transform: uppercase; }
+      section.contact_map_section .address_block .outer_block_container .inner_block_container h3 {
+        font-size: 1.875rem;
+        margin-bottom: 30px; }
+      section.contact_map_section .address_block .outer_block_container .inner_block_container p {
+        font-size: 1.25rem;
+        margin-bottom: 25px; }
+        section.contact_map_section .address_block .outer_block_container .inner_block_container p span {
+          color: #ccac83; }
+      section.contact_map_section .address_block .outer_block_container .inner_block_container ul li {
+        margin-bottom: 20px; }
+        section.contact_map_section .address_block .outer_block_container .inner_block_container ul li:last-of-type {
+          margin-bottom: 0; }
 
 section.contact_form_section {
   margin-top: 50px; }
   section.contact_form_section .outer_block_container {
-    margin: 0 107px; }
+    margin: 0 auto;
+    max-width: 930px; }
     section.contact_form_section .outer_block_container .inner_block_container h2 {
       font-size: 2.5rem;
       text-transform: uppercase;
@@ -17,5 +39,10 @@ section.contact_form_section {
       margin-bottom: 25px; }
     section.contact_form_section .outer_block_container .inner_block_container p {
       margin-bottom: 25px; }
+    section.contact_form_section .outer_block_container .inner_block_container form.contact_form .my_checkbox label .my_checkbox_text {
+      font-size: 0.875rem; }
+    section.contact_form_section .outer_block_container .inner_block_container form.contact_form .input_container textarea {
+      height: 160px; }
     section.contact_form_section .outer_block_container .inner_block_container form.contact_form button.btn {
-      float: right; }
+      float: right;
+      margin-top: 5px; }

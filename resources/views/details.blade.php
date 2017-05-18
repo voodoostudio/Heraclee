@@ -81,7 +81,7 @@
         </div>
     </section>
 
-    <section class="contact_section">
+    <section class="agent_info_section">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">

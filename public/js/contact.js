@@ -17,10 +17,10 @@ $(document).ready(function() {
                 position: google.maps.ControlPosition.TOP_RIGHT
             },
             zoomControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
+                position: google.maps.ControlPosition.LEFT_CENTER
             },
             streetViewControlOptions: {
-                position: google.maps.ControlPosition.RIGHT_CENTER
+                position: google.maps.ControlPosition.LEFT_CENTER
             }
         });
         var markerImage = new google.maps.MarkerImage('img/map_pin.svg');
@@ -29,9 +29,6 @@ $(document).ready(function() {
             position: latlong,
             map: map,
             icon: markerImage
-        });
-        google.maps.event.addListener(map, 'zoom_changed', function () {
-            checkPlaceMarkers(map.getZoom());
         });
     }
 });

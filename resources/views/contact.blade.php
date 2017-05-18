@@ -15,6 +15,22 @@
     </section>
     <section class="contact_map_section">
         <div id="contact_map"></div>
+        <div class="address_block">
+            <div class="outer_block_container">
+                <div class="inner_block_container">
+                    <h3>Saint-Tropez</h3>
+                    <p>
+                        44, Route des Plages<br>
+                        83990 Saint-Tropez<br>
+                        <span>France</span>
+                    </p>
+                    <ul>
+                        <li>Tel : +33 4 94 54 20 01</li>
+                        <li><a href="mailto:agence@heraclee.com">agence@heraclee.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="contact_form_section">
         <div class="container-fluid">
@@ -26,22 +42,22 @@
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="row">
-                                    <div class="col-md-12 margin_bottom_20">
+                                    <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Nom *</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Min">
+                                            <input type="text" placeholder="Nom">
                                         </div>
                                     </div>
-                                    <div class="col-md-12 margin_bottom_20">
+                                    <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Phone</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Min">
+                                            <input type="text" placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
                                         <label class="form_el_label"><span>Couriel *</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Min">
+                                            <input type="text" placeholder="Courriel">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
