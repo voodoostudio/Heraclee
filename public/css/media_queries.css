@@ -297,15 +297,24 @@
       section.contact_form_section .outer_block_container .inner_block_container form.contact_form .my_checkbox {
         margin-bottom: 15px; }
 
-  section.team_members_section .outer_block_container .inner_block_container {
-    padding: 15px; }
-    section.team_members_section .outer_block_container .inner_block_container .info_container {
-      margin: 0; }
-      section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
-        font-size: 1.5rem;
-        margin-top: 50px; }
-      section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
-        font-size: 1.125rem; }
+  section.team_info_section {
+    margin-top: 30px; }
+    section.team_info_section h2 {
+      font-size: 2rem; }
+    section.team_info_section p {
+      font-size: 0.875rem; }
+
+  section.team_members_section {
+    margin-top: 10px; }
+    section.team_members_section .outer_block_container .inner_block_container {
+      padding: 15px; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container {
+        margin: 0; }
+        section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+          font-size: 1.5rem;
+          margin-top: 50px; }
+        section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
+          font-size: 1.125rem; }
 
   footer {
     margin-top: 30px; }
@@ -429,19 +438,25 @@
       font-size: 1.5rem;
       margin-bottom: 15px; }
 
-  section.team_members_section .outer_block_container .inner_block_container {
-    padding: 15px; }
-    section.team_members_section .outer_block_container .inner_block_container .info_container {
-      margin: 0; }
-      section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
-        font-size: 1.25rem;
-        margin-top: 30px;
-        text-align: center; }
-      section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
-        text-align: center; }
-    section.team_members_section .outer_block_container .inner_block_container a.btn {
-      font-size: 0.875rem;
-      padding: 0 20px; }
+  section.team_info_section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px; }
+
+  section.team_members_section .outer_block_container {
+    margin-top: 20px; }
+    section.team_members_section .outer_block_container .inner_block_container {
+      padding: 15px; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container {
+        margin: 0; }
+        section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+          font-size: 1.25rem;
+          margin-top: 30px;
+          text-align: center; }
+        section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
+          text-align: center; }
+      section.team_members_section .outer_block_container .inner_block_container a.btn {
+        font-size: 0.875rem;
+        padding: 0 20px; }
 
   section.results_section .view_type_container .view_type li {
     width: 50%; } }

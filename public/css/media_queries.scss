@@ -546,7 +546,17 @@
     }
   }
 
+  section.team_info_section {
+    margin-top: 30px;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
   section.team_members_section {
+    margin-top: 10px;
     .outer_block_container {
       .inner_block_container {
         padding: 15px;
@@ -776,8 +786,16 @@
     }
   }
 
+  section.team_info_section {
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  }
+
   section.team_members_section {
     .outer_block_container {
+      margin-top: 20px;
       .inner_block_container {
         padding: 15px;
         .info_container {
