@@ -29,7 +29,13 @@
     section.agent_info_section .outer_block_container .inner_block_container .object_info p {
       display: inline-block; }
     section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
-      margin: 0 30px; } }
+      margin: 0 30px; }
+
+  section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+    font-size: 1.25rem;
+    margin: 20px 0 20px; }
+  section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
+    font-size: 1rem; } }
 @media screen and (max-width: 991px) {
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 50px 30px; }
@@ -88,6 +94,15 @@
     right: 5%; }
     section.contact_map_section .address_block .outer_block_container .inner_block_container {
       padding: 30px; }
+
+  section.team_members_section .outer_block_container .inner_block_container {
+    padding: 15px; }
+    section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+      font-size: 1rem;
+      margin-top: 10px; }
+    section.team_members_section .outer_block_container .inner_block_container a.btn {
+      padding: 0 25px;
+      font-size: 1rem; }
 
   footer section.bottom_footer_section p {
     margin-right: 0; } }
@@ -282,6 +297,16 @@
       section.contact_form_section .outer_block_container .inner_block_container form.contact_form .my_checkbox {
         margin-bottom: 15px; }
 
+  section.team_members_section .outer_block_container .inner_block_container {
+    padding: 15px; }
+    section.team_members_section .outer_block_container .inner_block_container .info_container {
+      margin: 0; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+        font-size: 1.5rem;
+        margin-top: 50px; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
+        font-size: 1.125rem; }
+
   footer {
     margin-top: 30px; }
     footer section.bottom_footer_section .copyright {
@@ -403,6 +428,20 @@
     section.contact_form_section .outer_block_container .inner_block_container h2 {
       font-size: 1.5rem;
       margin-bottom: 15px; }
+
+  section.team_members_section .outer_block_container .inner_block_container {
+    padding: 15px; }
+    section.team_members_section .outer_block_container .inner_block_container .info_container {
+      margin: 0; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
+        font-size: 1.25rem;
+        margin-top: 30px;
+        text-align: center; }
+      section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
+        text-align: center; }
+    section.team_members_section .outer_block_container .inner_block_container a.btn {
+      font-size: 0.875rem;
+      padding: 0 20px; }
 
   section.results_section .view_type_container .view_type li {
     width: 50%; } }

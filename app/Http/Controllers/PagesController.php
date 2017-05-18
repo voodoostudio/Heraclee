@@ -30,6 +30,10 @@ class PagesController extends Controller {
         return view('contact');
     }
 
+    public function team() {
+        return view('team');
+    }
+
     public function api() {
 
 

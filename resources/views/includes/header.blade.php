@@ -52,10 +52,10 @@
                         <a class="nav-link" href="#">Locaux commerciaux</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Agence</a>
+                        <a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">Agence</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+                        <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
                     </li>
                 </ul>
             </nav>

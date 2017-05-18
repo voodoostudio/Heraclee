@@ -31,6 +31,11 @@ Route::get('/contact', [
     'as' => 'contact'
 ]);
 
+Route::get('/team', [
+    'uses' => 'PagesController@team',
+    'as' => 'team'
+]);
+
 Route::get('/api',[
    'uses' => 'PagesController@api',
     'as' => 'api'
