@@ -482,31 +482,6 @@ ul.nav.nav-tabs {
 }
 /*Bootstrap select END*/
 
-/*Slick START*/
-.slick-slider {
-  .slick-arrow {
-    position: absolute;
-    top: 50%;
-    margin-top: -27px;
-    padding: 0;
-    font-size: 54px;
-    background: transparent;
-    border: none;
-    color: $main_light_clr;
-    cursor: pointer;
-    &:hover {
-      @include my_transform(scale(1.2));
-    }
-    &.slick-next {
-      right: -50px;
-    }
-    &.slick-prev {
-      left: -50px;
-    }
-  }
-}
-/*Slick END*/
-
 //Toooltipster START
 .icn_container {
   display: table;

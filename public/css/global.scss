@@ -338,6 +338,30 @@ section.search_section {
   }
 }
 
+/*Slick START*/
+.slick-slider {
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -27px;
+    padding: 0;
+    font-size: 54px;
+    background: transparent;
+    border: none;
+    color: $main_light_clr;
+    cursor: pointer;
+    &:hover {
+      @include my_transform(scale(1.2));
+    }
+    &.slick-next {
+      right: -40px;
+    }
+    &.slick-prev {
+      left: -40px;
+    }
+  }
+}
+/*Slick END*/
 
 footer {
   margin-top: 90px;

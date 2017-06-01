@@ -48,7 +48,7 @@ section.results_section {
 
   .results_container {
     width: 100%;
-    display: table;
+    display: initial;
     position: relative;
     .container-fluid {
       .object_block_container {
@@ -373,8 +373,8 @@ section.results_section {
         }
         ul.slick-dots {
           display: table;
-          width: 100%;
-          margin-top: 15px;
+          width: calc(100% - 30px);
+          margin: 15px auto 0;
           li {
             display: table-cell;
             font-size: 0;

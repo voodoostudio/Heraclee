@@ -13,7 +13,17 @@
         margin-top: 14px;
         padding: 15px 10px 0; }
       section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_description {
-        width: 57%; } }
+        width: 57%; }
+  section.results_section .results_container.map_view #results_map {
+    margin-bottom: 60px; }
+  section.results_section .results_container.map_view .slick-slider .slick-arrow {
+    top: -15px !important;
+    font-size: 30px !important; }
+    section.results_section .results_container.map_view .slick-slider .slick-arrow.slick-next {
+      right: 15px !important; }
+    section.results_section .results_container.map_view .slick-slider .slick-arrow.slick-prev {
+      left: initial;
+      right: 55px !important; } }
 @media screen and (max-width: 1199px) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px; }

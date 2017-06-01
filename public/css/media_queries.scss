@@ -22,6 +22,24 @@
           }
         }
       }
+      &.map_view {
+        #results_map {
+          margin-bottom: 60px;
+        }
+        .slick-slider {
+          .slick-arrow {
+            top: -15px !important;
+            font-size: 30px !important;
+            &.slick-next {
+              right: 15px !important;
+            }
+            &.slick-prev {
+              left: initial;
+              right: 55px !important;
+            }
+          }
+        }
+      }
     }
   }
 }
