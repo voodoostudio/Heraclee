@@ -8,9 +8,8 @@
 
 namespace App\Http\Controllers;
 
-use GuzzleHttp\Client;
-
-
+use App\Libraries\SyncWithApimo;
+use App\Properties;
 
 class PagesController extends Controller {
 
@@ -19,6 +18,8 @@ class PagesController extends Controller {
     }
 
     public function results() {
+        SyncWithApimo::update();
+        dump(Properties::getProperties());
         return view('results');
     }
 
