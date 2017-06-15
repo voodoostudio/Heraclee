@@ -59,7 +59,8 @@ class Properties extends Model
         $pictures_array = [];
         if (!empty($pictures)) {
             foreach ($pictures as $picture) {
-                $pictures_array[$picture['picture_id']] = $picture['url'];
+                $pictures_array[$picture['picture_id']]['rank'] = $picture['rank'];
+                $pictures_array[$picture['picture_id']]['url'] = $picture['url'];
             }
         }
 
