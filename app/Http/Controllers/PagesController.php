@@ -19,8 +19,8 @@ class PagesController extends Controller {
 
     public function results() {
         SyncWithApimo::update();
-        dump(Properties::getProperties());
-        return view('results');
+        $properties = Properties::getProperties(400);
+        return view('results',['properties'=>$properties]);
     }
 
     public function details() {
