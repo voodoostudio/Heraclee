@@ -76,7 +76,7 @@ class Properties extends Model
     {
         $services = DB::table('apimo_property_service')
             ->wherein("reference", explode(',', $ids))
-            ->where('locale','fr_FR')
+            ->where('locale', 'fr_FR')
             ->get();
 
         $services_array = [];
@@ -97,23 +97,39 @@ class Properties extends Model
     protected static function getAreasByIds($ids)
     {
         $areas = DB::table('apimo_areas')
-            ->leftJoin('apimo_property_area','apimo_areas.type','=','apimo_property_area.reference')
-            ->leftJoin('apimo_property_flooring','apimo_areas.flooring','=','apimo_property_flooring.reference')
-            ->leftJoin('apimo_property_floor','apimo_areas.floor_type','=','apimo_property_floor.reference')
-            ->leftJoin('apimo_property_orientations','apimo_areas.orientations','=','apimo_property_orientations.reference')
-            ->whereIn('apimo_areas.id',explode(',',$ids))
+            ->select(
+                'apimo_areas.id as id',
+                'apimo_property_area.value as type',
+                'apimo_areas.number',
+                'apimo_areas.area as area',
+                'apimo_property_flooring.value as flooring',
+                'apimo_property_floor.value as floor_type',
+                'apimo_areas.floor_value as floor_value',
+                'apimo_property_orientations.value as orientations'
+            )
+            ->leftJoin('apimo_property_area', 'apimo_areas.type', '=', 'apimo_property_area.reference')
+            ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
+            ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
+            ->leftJoin(
+                'apimo_property_orientations',
+                'apimo_areas.orientations',
+                '=',
+                'apimo_property_orientations.reference'
+            )
+            ->whereIn('apimo_areas.id', explode(',', $ids))
             ->get();
 
+        dump($areas);
         $areas_array = [];
         if (!empty($areas)) {
             foreach ($areas as $area) {
-                $areas_array[$area['id']]['type'] = $area['type'];
-                $areas_array[$area['id']]['number'] = $area['number'];
-                $areas_array[$area['id']]['area'] = $area['area'];
-                $areas_array[$area['id']]['flooring'] = $area['flooring'];
-                $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
-                $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
-                $areas_array[$area['id']]['orientations'] = $area['orientations'];
+//                $areas_array[$area['id']]['type'] = $area['type'];
+//                $areas_array[$area['id']]['number'] = $area['number'];
+//                $areas_array[$area['id']]['area'] = $area['area'];
+//                $areas_array[$area['id']]['flooring'] = $area['flooring'];
+//                $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
+//                $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
+//                $areas_array[$area['id']]['orientations'] = $area['orientations'];
 
             }
         }
@@ -130,7 +146,7 @@ class Properties extends Model
     {
         $proximities = DB::table('apimo_property_proximity')
             ->wherein("reference", explode(',', $ids))
-            ->where('locale','fr_FR')
+            ->where('locale', 'fr_FR')
             ->get();
 
         $proximities_array = [];
@@ -336,10 +352,13 @@ class Properties extends Model
     protected static function getViewById($view_id)
     {
         if ($view_id != 0) {
-            $r = DB::select("SELECT apvt.value as type, apvl.value as landscape FROM apimo_view as av
+            $r = DB::select(
+                "SELECT apvt.value as type, apvl.value as landscape FROM apimo_view as av
                                 LEFT JOIN apimo_property_view_type as apvt ON av.type = apvt.reference
                                 LEFT JOIN apimo_property_view_landscape as apvl ON av.landscape = apvl.reference
-                                WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",['view_id'=>$view_id,'locale1'=>'fr_FR','locale2'=>'fr_FR']);
+                                WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",
+                ['view_id' => $view_id, 'locale1' => 'fr_FR', 'locale2' => 'fr_FR']
+            );
 
             if (!empty($r)) {
                 $view_array['type'] = $r[0]['type'];
