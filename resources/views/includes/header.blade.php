@@ -45,12 +45,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Location</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promotions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Locaux commerciaux</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="#">Promotions</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="#">Locaux commerciaux</a>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">Agence</a>
                     </li>
