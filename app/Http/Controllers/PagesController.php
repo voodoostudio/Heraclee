@@ -22,7 +22,6 @@ class PagesController extends Controller
     public function results()
     {
         SyncWithApimo::update();
-
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $url_page = '/results?page=';
         $items = 10;
