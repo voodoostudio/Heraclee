@@ -3,25 +3,47 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
-use PDO;
 
 class Properties extends Model
 {
+    public static function paginations($items = 10, $curPage = 1, $url_page = '/results?page=')
+    {
+        $count = DB::table('apimo_properties')->count();
+        $countPages = (int)ceil($count / $items);
+        $number_of_pages_on_the_sides = 5;
+
+        $listPage['next'] = (($curPage < $countPages)?($curPage+1):'');
+        $listPage['back'] = (($curPage > 1)?($curPage-1):'');
+
+        $listPage['correntPage'] = $curPage;
+        $listPage['url_page'] = $url_page;
+
+        for ($i = ($curPage - $number_of_pages_on_the_sides); $i <= ($curPage + $number_of_pages_on_the_sides); $i++) {
+            if ($i > 0 && $i <= $countPages) {
+                $listPage['listPages'][] = $i;
+            }
+        }
+        asort($listPage);
+        return $listPage;
+    }
+
     /**
      * @param int $page
-     * @param int $quantity
+     * @param int $items
      *
      * @return mixed
      */
-    public static function getProperties($quantity = 10, $page = 1)
-    {
-        $offset = ($page - 1) * $quantity;
+    public
+    static function getProperties(
+        $items = 10,
+        $page = 1
+    ) {
+        $offset = ($page - 1) * $items;
         $array = [];
         $properties = DB::select(
             "SELECT * FROM `apimo_properties` ORDER BY property_id DESC LIMIT :offset,:limit",
-            ['limit' => $quantity, 'offset' => $offset]
+            ['limit' => $items, 'offset' => $offset]
         );
 
         foreach ($properties as $property) {
@@ -51,8 +73,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getPicturesByIds($ids)
-    {
+    protected
+    static function getPicturesByIds(
+        $ids
+    ) {
         $pictures = DB::table('apimo_pictures')
             ->wherein("picture_id", explode(',', $ids))
             ->get();
@@ -72,8 +96,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getServicesByIds($ids)
-    {
+    protected
+    static function getServicesByIds(
+        $ids
+    ) {
         $services = DB::table('apimo_property_service')
             ->wherein("reference", explode(',', $ids))
             ->where('locale', 'fr_FR')
@@ -94,8 +120,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getAreasByIds($ids)
-    {
+    protected
+    static function getAreasByIds(
+        $ids
+    ) {
         $areas = DB::table('apimo_areas')
             ->select(
                 'apimo_areas.id as id',
@@ -119,17 +147,16 @@ class Properties extends Model
             ->whereIn('apimo_areas.id', explode(',', $ids))
             ->get();
 
-        dump($areas);
         $areas_array = [];
         if (!empty($areas)) {
             foreach ($areas as $area) {
-//                $areas_array[$area['id']]['type'] = $area['type'];
-//                $areas_array[$area['id']]['number'] = $area['number'];
-//                $areas_array[$area['id']]['area'] = $area['area'];
-//                $areas_array[$area['id']]['flooring'] = $area['flooring'];
-//                $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
-//                $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
-//                $areas_array[$area['id']]['orientations'] = $area['orientations'];
+                $areas_array[$area['id']]['type'] = $area['type'];
+                $areas_array[$area['id']]['number'] = $area['number'];
+                $areas_array[$area['id']]['area'] = $area['area'];
+                $areas_array[$area['id']]['flooring'] = $area['flooring'];
+                $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
+                $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
+                $areas_array[$area['id']]['orientations'] = $area['orientations'];
 
             }
         }
@@ -142,8 +169,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getProximitiesByIds($ids)
-    {
+    protected
+    static function getProximitiesByIds(
+        $ids
+    ) {
         $proximities = DB::table('apimo_property_proximity')
             ->wherein("reference", explode(',', $ids))
             ->where('locale', 'fr_FR')
@@ -164,8 +193,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getStepByIds($step_id)
-    {
+    protected
+    static function getStepByIds(
+        $step_id
+    ) {
         $step = DB::table('apimo_property_step')
             ->where("reference", $step_id)
             ->where("locale", "fr_FR")
@@ -183,8 +214,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getCategoryById($cat_id)
-    {
+    protected
+    static function getCategoryById(
+        $cat_id
+    ) {
         $step = DB::table('apimo_property_category')
             ->where("reference", $cat_id)
             ->where("locale", "fr_FR")
@@ -202,8 +235,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getSubCategoryById($sub_cat_id)
-    {
+    protected
+    static function getSubCategoryById(
+        $sub_cat_id
+    ) {
         $sub_cat = '';
         if ($sub_cat_id != 0) {
             $r = DB::table('apimo_property_subcategory')
@@ -224,8 +259,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getTypeById($type_id)
-    {
+    protected
+    static function getTypeById(
+        $type_id
+    ) {
         if ($type_id != 0) {
             $r = DB::table('apimo_property_type')
                 ->where("reference", $type_id)
@@ -245,8 +282,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getSubTypeById($sub_type_id)
-    {
+    protected
+    static function getSubTypeById(
+        $sub_type_id
+    ) {
         if ($sub_type_id != 0) {
             $r = DB::table('apimo_property_subtype')
                 ->where("reference", $sub_type_id)
@@ -266,8 +305,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getCityById($city_id)
-    {
+    protected
+    static function getCityById(
+        $city_id
+    ) {
         if ($city_id != 0) {
             $r = DB::table('apimo_city')
                 ->where("city_id", $city_id)
@@ -286,8 +327,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getPriceById($price_id)
-    {
+    protected
+    static function getPriceById(
+        $price_id
+    ) {
         if ($price_id != 0) {
             $r = DB::table('apimo_price')
                 ->where("id", $price_id)
@@ -309,8 +352,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getConditionById($condition_id)
-    {
+    protected
+    static function getConditionById(
+        $condition_id
+    ) {
         if ($condition_id != 0) {
             $r = DB::table('apimo_property_condition')
                 ->where("reference", $condition_id)
@@ -329,8 +374,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getStandingById($standing_id)
-    {
+    protected
+    static function getStandingById(
+        $standing_id
+    ) {
         if ($standing_id != 0) {
             $r = DB::table('apimo_property_standing')
                 ->where("reference", $standing_id)
@@ -349,8 +396,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getViewById($view_id)
-    {
+    protected
+    static function getViewById(
+        $view_id
+    ) {
         if ($view_id != 0) {
             $r = DB::select(
                 "SELECT apvt.value as type, apvl.value as landscape FROM apimo_view as av
@@ -375,8 +424,10 @@ class Properties extends Model
      *
      * @return mixed
      */
-    protected static function getAreaById($area_id)
-    {
+    protected
+    static function getAreaById(
+        $area_id
+    ) {
         if ($area_id != 0) {
             $r = DB::select(
                 "SELECT apa.value as value FROM apimo_area as aa

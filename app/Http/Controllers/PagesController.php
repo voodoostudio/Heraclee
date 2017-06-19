@@ -11,33 +11,45 @@ namespace App\Http\Controllers;
 use App\Libraries\SyncWithApimo;
 use App\Properties;
 
-class PagesController extends Controller {
+class PagesController extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
         return view('index');
     }
 
-    public function results() {
+    public function results()
+    {
         SyncWithApimo::update();
-        $properties = Properties::getProperties(400);
-        return view('results',['properties'=>$properties]);
+
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+        $url_page = '/results?page=';
+        $items = 10;
+        $properties = Properties::getProperties($items, $cur_page);
+
+        $pagination = Properties::paginations($items, $cur_page, $url_page);
+
+        return view('results', ['properties' => $properties, 'pagination' => $pagination]);
     }
 
-    public function details() {
+    public function details()
+    {
         return view('details');
     }
 
-    public function contact() {
+    public function contact()
+    {
         return view('contact');
     }
 
-    public function team() {
+    public function team()
+    {
         return view('team');
     }
 
-    public function api() {
-
-
+    public function api()
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.apimo.pro/agencies/10338/properties');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
