@@ -148,7 +148,7 @@
                                 <div class="info_block_container">
                                     <div class="info_block">
                                         <div class="title_container">
-                                            <a href="{{ route('details') }}"><h2>{{$property['type']}}</h2></a>
+                                            <a href="{{ route('details') }}?id={{$property['property_id']}}"><h2>{{$property['type']}}</h2></a>
                                             <ul class="social_networks">
                                                 <li><a href="#"><i class="icn icon-twitter"></i></a></li>
                                                 <li><a href="#"><i class="icn icon-linked_in"></i></a></li>
