@@ -385,6 +385,20 @@ section.results_section {
         .object_block_container {
           .object_block {
             margin-top: 0;
+            .img_block {
+              .gallery_view {
+                ul.gallery {
+                  li {
+                    overflow: hidden;
+                    img {
+                      height: 400px;
+                      min-width: 100%;
+                      width: auto;
+                    }
+                  }
+                }
+              }
+            }
           }
         }
         ul.slick-dots {

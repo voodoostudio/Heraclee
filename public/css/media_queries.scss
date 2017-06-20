@@ -96,6 +96,30 @@
       }
     }
   }
+
+  section.results_section {
+    .results_container.map_view {
+      .container-fluid {
+        .results_carousel {
+          .object_block_container {
+            .object_block {
+              .img_block {
+                .gallery_view {
+                  ul.gallery {
+                    li {
+                      img {
+                        height: 350px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and ( max-width: 991px ) {
@@ -161,50 +185,124 @@
     }
   }
 
-  section.results_section .results_container.list_view .container-fluid {
-    .object_block_container .object_block .info_block {
-      .properties_container ul.properties li {
-        line-height: 13px;
-        font-size: 13px;
-        .icn_container .icn {
-          font-size: 13px;
-        }
-      }
-      .title_container a h2 {
-        font-size: 20px;
-      }
-      .description_container h3 {
-        font-size: 14px;
-      }
+  section.results_section {
+    h1 {
+      font-size: 1.5rem;
     }
-    > .row .object_block_container .object_block {
-      .info_block {
-        padding: 15px 20px 10px 20px;
-        .description_container {
-          .object_description {
-            width: 100%;
-            font-size: 12px;
-            margin-top: 2px;
+    .results_container{
+      &.list_view {
+        .container-fluid {
+          .object_block_container .object_block .info_block {
+            .properties_container ul.properties li {
+              line-height: 13px;
+              font-size: 13px;
+              .icn_container .icn {
+                font-size: 13px;
+              }
+            }
+            .title_container a h2 {
+              font-size: 20px;
+            }
+            .description_container h3 {
+              font-size: 14px;
+            }
           }
-          .object_price {
-            padding: 6px 30px 5px;
-            font-size: 14px;
-            margin-top: 10px;
-          }
-          .btn {
-            margin: 10px 0 0 15px;
-            padding: 0 15px;
-            font: 14px opensans_light;
-            height: 30px;
-            line-height: 30px;
+          > .row .object_block_container .object_block {
+            .info_block {
+              padding: 15px 20px 10px 20px;
+              .description_container {
+                .object_description {
+                  width: 100%;
+                  font-size: 12px;
+                  margin-top: 2px;
+                }
+                .object_price {
+                  padding: 6px 30px 5px;
+                  font-size: 14px;
+                  margin-top: 10px;
+                }
+                .btn {
+                  margin: 10px 0 0 15px;
+                  padding: 0 15px;
+                  font: 14px opensans_light;
+                  height: 30px;
+                  line-height: 30px;
+                }
+              }
+              .title_container a h2 {
+                margin-bottom: 6px;
+              }
+              .properties_container {
+                margin-top: 8px;
+                padding: 8px 10px 0;
+              }
+            }
           }
         }
-        .title_container a h2 {
-          margin-bottom: 6px;
+      }
+      &.grid_view,
+      &.map_view {
+        .container-fluid {
+          .object_block_container {
+            .object_block {
+              .info_block_container {
+                .info_block {
+                  .title_container {
+                    a {
+                      h2 {
+                        font-size: 1rem;
+                      }
+                    }
+                  }
+                  .description_container {
+                    h3, div.object_price {
+                      font-size: 0.85rem;
+                    }
+                  }
+                  .properties_container {
+                    margin-top: 0;
+                    padding: 0;
+                    ul.properties {
+                      margin: 10px auto 0;
+                      li {
+                        font-size: 0.85rem;
+                        margin-right: 7px;
+                        .icn_container {
+                          margin-right: 0;
+                          .icn {
+                            line-height: 20px;
+                            font-size: 0.85rem;
+                            margin-right: 7px;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
-        .properties_container {
-          margin-top: 8px;
-          padding: 8px 10px 0;
+      }
+      &.map_view {
+        .container-fluid {
+          .results_carousel {
+            .object_block_container {
+              .object_block {
+                .img_block {
+                  .gallery_view {
+                    ul.gallery {
+                      li {
+                        img {
+                          height: 300px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -291,29 +389,33 @@
     }
   }
 
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide {
-    margin: 0 5px;
-    &.object_block .outer_block_container {
-      bottom: -60px;
-      padding: 0 10px;
-      .object_info {
-        padding: 10px 10px 10px 10px;
-        a {
-          font-size: 0.875rem;
-        }
-        .subtitle {
-          span.price, span.city {
-            font-size: 0.75rem;
-          }
-        }
-        .properties_block {
-          margin-top: 0;
-          .properties {
-            margin: 5px auto 0;
-          }
-          .properties li {
-            font-size: 0.75rem;
-            margin-right: 7px;
+  section.carousel_offers_section {
+    .carousel.offers_carousel {
+      .slick-slide {
+        margin: 0 5px;
+        &.object_block .outer_block_container {
+          bottom: -60px;
+          padding: 0 10px;
+          .object_info {
+            padding: 10px 10px 10px 10px;
+            a {
+              font-size: 0.875rem;
+            }
+            .subtitle {
+              span.price, span.city {
+                font-size: 0.75rem;
+              }
+            }
+            .properties_block {
+              margin-top: 0;
+              .properties {
+                margin: 5px auto 0;
+              }
+              .properties li {
+                font-size: 0.75rem;
+                margin-right: 7px;
+              }
+            }
           }
         }
       }
@@ -321,37 +423,58 @@
   }
 
   section.results_section {
-    .results_container.grid_view, .results_container.map_view {
-      .container-fluid {
-        .object_block_container {
-          .object_block {
-            .info_block_container {
-              bottom: -60px;
-              padding: 0 10px;
-              .info_block {
-                padding: 10px 10px 10px 10px;
-                .title_container a h2 {
-                  font-size: 0.875rem;
-                }
-                .description_container {
-                  h3, div.object_price {
-                    font-size: 0.75rem;
+    .results_container {
+      &.grid_view,
+      &.map_view {
+        .container-fluid {
+          .object_block_container {
+            .object_block {
+              margin: 20px 0 70px;
+              height: calc(100% - 90px);
+              .info_block_container {
+                bottom: -60px;
+                padding: 0 10px;
+                .info_block {
+                  padding: 10px 10px 10px 10px;
+                  .title_container a h2 {
+                    font-size: 0.875rem;
+                  }
+                  .description_container {
+                    h3, div.object_price {
+                      font-size: 0.75rem;
+                    }
+                  }
+                  .properties_container {
+                    ul.properties {
+                      margin: 5px auto 0;
+                      li {
+                        font-size: 0.75rem;
+                        .icn_container {
+                          .icn {
+                            line-height: 17px;
+                            font-size: 0.75rem;
+                          }
+                        }
+                      }
+                    }
                   }
                 }
-                .properties_container {
-                  margin-top: 0;
-                  padding: 0;
-                  ul.properties {
-                    margin: 5px auto 0;
-                    li {
-                      font-size: 0.75rem;
-                      margin-right: 7px;
-                      .icn_container {
-                        margin-right: 0;
-                        .icn {
-                          line-height: 17px;
-                          font-size: 0.75rem;
-                          margin-right: 7px;
+              }
+            }
+          }
+        }
+      }
+      &.map_view {
+        .container-fluid {
+          .results_carousel {
+            .object_block_container {
+              .object_block {
+                .img_block {
+                  .gallery_view {
+                    ul.gallery {
+                      li {
+                        img {
+                          height: 230px;
                         }
                       }
                     }
@@ -573,6 +696,7 @@
       font-size: 0.875rem;
     }
   }
+
   section.team_members_section {
     margin-top: 10px;
     .outer_block_container {
@@ -837,7 +961,56 @@
     }
   }
 
-  section.results_section .view_type_container .view_type li {
-    width: 50%;
+  section.results_section {
+    .view_type_container {
+      .view_type li {
+        width: 50%;
+      }
+    }
+    .results_container {
+      &.grid_view,
+      &.map_view {
+        .container-fluid {
+          .object_block_container {
+            .object_block {
+              margin: 10px 0 70px;
+              height: calc(100% - 80px);
+            }
+          }
+        }
+      }
+      &.map_view {
+        .container-fluid {
+          .results_carousel {
+            .object_block_container {
+              .object_block {
+                .img_block {
+                  .gallery_view {
+                    ul.gallery {
+                      li {
+                        img {
+                          height: 100%;
+                          width: 100%;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nav {
+      ul.pagination {
+        li {
+          a.page-link {
+            width: 32px;
+          }
+        }
+      }
+
+    }
   }
 }

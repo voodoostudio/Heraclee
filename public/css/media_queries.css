@@ -45,7 +45,10 @@
     font-size: 1.25rem;
     margin: 20px 0 20px; }
   section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+
+  section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
+    height: 350px; } }
 @media screen and (max-width: 991px) {
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 50px 30px; }
@@ -68,6 +71,8 @@
   section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     margin: 0 30px 0 0; }
 
+  section.results_section h1 {
+    font-size: 1.5rem; }
   section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li {
     line-height: 13px;
     font-size: 13px; }
@@ -98,6 +103,26 @@
     section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .properties_container {
       margin-top: 8px;
       padding: 8px 10px 0; }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2 {
+    font-size: 1rem; }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
+    font-size: 0.85rem; }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container {
+    margin-top: 0;
+    padding: 0; }
+    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
+      margin: 10px auto 0; }
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
+        font-size: 0.85rem;
+        margin-right: 7px; }
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container {
+          margin-right: 0; }
+          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
+            line-height: 20px;
+            font-size: 0.85rem;
+            margin-right: 7px; }
+  section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
+    height: 300px; }
 
   section.contact_map_section .address_block {
     top: calc(50% - 150px);
@@ -166,29 +191,27 @@
             font-size: 0.75rem;
             margin-right: 7px; }
 
-  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container {
-    bottom: -60px;
-    padding: 0 10px; }
-    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block {
-      padding: 10px 10px 10px 10px; }
-      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2 {
-        font-size: 0.875rem; }
-      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
-        font-size: 0.75rem; }
-      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container {
-        margin-top: 0;
-        padding: 0; }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
+    margin: 20px 0 70px;
+    height: calc(100% - 90px); }
+    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container {
+      bottom: -60px;
+      padding: 0 10px; }
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block {
+        padding: 10px 10px 10px 10px; }
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2 {
+          font-size: 0.875rem; }
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
+          font-size: 0.75rem; }
         section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
           margin: 5px auto 0; }
           section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
-            font-size: 0.75rem;
-            margin-right: 7px; }
-            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container {
-              margin-right: 0; }
-              section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
-                line-height: 17px;
-                font-size: 0.75rem;
-                margin-right: 7px; }
+            font-size: 0.75rem; }
+            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
+              line-height: 17px;
+              font-size: 0.75rem; }
+  section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
+    height: 230px; }
 
   section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 25px;
@@ -469,4 +492,12 @@
         padding: 0 20px; }
 
   section.results_section .view_type_container .view_type li {
-    width: 50%; } }
+    width: 50%; }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
+    margin: 10px 0 70px;
+    height: calc(100% - 80px); }
+  section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
+    height: 100%;
+    width: 100%; }
+  section.results_section nav ul.pagination li a.page-link {
+    width: 32px; } }
