@@ -12,3 +12,4 @@ Homestead.yaml
 /test.php
 test.php
 /composer.lock
+/.env

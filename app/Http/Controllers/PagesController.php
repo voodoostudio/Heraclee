@@ -34,7 +34,10 @@ class PagesController extends Controller
 
     public function details()
     {
-        return view('details');
+        $id = $_GET['id'];
+        $property = Properties::getProperty($id);
+
+        return view('details', ['property' => $property]);
     }
 
     public function contact()
