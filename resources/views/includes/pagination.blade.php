@@ -14,7 +14,9 @@
                 </li>
             @endforeach
             <li class="page-item">
-                <a href="{{(($pagination['next']!='')?($pagination['url_page'].$pagination['next']):'')}}" class="page-link" aria-label="Next">
+                <a href="{{(($pagination['next']!='')?($pagination['url_page'].$pagination['next']):'')}}"
+                   class="page-link"
+                   aria-label="Next">
                     <i class="icn icon-arrow_dropdown_right"></i>
                 </a>
             </li>

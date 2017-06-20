@@ -11,7 +11,7 @@ class Properties extends Model
     {
         $count = DB::table('apimo_properties')->count();
         $countPages = (int)ceil($count / $items);
-        $number_of_pages_on_the_sides = 5;
+        $number_of_pages_on_the_sides = 3;
 
         $listPage['next'] = (($curPage < $countPages)?($curPage+1):'');
         $listPage['back'] = (($curPage > 1)?($curPage-1):'');
