@@ -35,9 +35,13 @@ class PagesController extends Controller
     public function details()
     {
         $id = $_GET['id'];
-        $property = Properties::getProperty($id);
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $property = Properties::getProperty($id);
 
-        return view('details', ['property' => $property]);
+            return view('details', ['property' => $property]);
+        } else {
+            return redirect('results');
+        }
     }
 
     public function contact()
