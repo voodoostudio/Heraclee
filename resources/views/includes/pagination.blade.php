@@ -9,8 +9,8 @@
                 </a>
             </li>
             @foreach($pagination['listPages'] as $page)
-                <li class="page-item {{ (($pagination['correntPage'] == $page)? 'active':'') }}"><a
-                            href="{{$pagination['url_page']}}{{$page}}" class="page-link">{{$page}}</a>
+                <li class="page-item {{ (($pagination['correntPage'] == $page)? 'active':'') }}">
+                    <a href="{{$pagination['url_page']}}{{$page}}" class="page-link">{{$page}}</a>
                 </li>
             @endforeach
             <li class="page-item">
