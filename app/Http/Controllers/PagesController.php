@@ -16,12 +16,17 @@ class PagesController extends Controller
 
     public function index()
     {
-        return view('index');
+
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
+        return view('index', ['city_list' => $city_list, 'type' => $type]);
     }
 
     public function results()
     {
         SyncWithApimo::update();
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $url_page = '/results?page=';
         $items = 10;
@@ -29,7 +34,10 @@ class PagesController extends Controller
 
         $pagination = Properties::paginations($items, $cur_page, $url_page);
 
-        return view('results', ['properties' => $properties, 'pagination' => $pagination]);
+        return view(
+            'results',
+            ['properties' => $properties, 'pagination' => $pagination, 'city_list' => $city_list, 'type' => $type]
+        );
     }
 
     public function details()
@@ -37,6 +45,7 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
+            dump($property);
 
             return view('details', ['property' => $property]);
         } else {
@@ -69,8 +78,6 @@ class PagesController extends Controller
 
 
         dd($values);
-
-
     }
 
 }

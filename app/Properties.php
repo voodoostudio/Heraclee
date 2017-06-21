@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 
 class Properties extends Model
 {
+    public static $lang = 'fr_FR';
+
     public static function paginations($items = 10, $curPage = 1, $url_page = '/results?page=')
     {
         $count = DB::table('apimo_properties')->count();
@@ -126,7 +128,7 @@ class Properties extends Model
     {
         $services = DB::table('apimo_property_service')
                 ->wherein("reference", explode(',', $ids))
-                ->where('locale', 'fr_FR')
+                ->where('locale', self::$lang)
                 ->get();
 
         $services_array = [];
@@ -195,7 +197,7 @@ class Properties extends Model
     {
         $proximities = DB::table('apimo_property_proximity')
                 ->wherein("reference", explode(',', $ids))
-                ->where('locale', 'fr_FR')
+                ->where('locale', self::$lang)
                 ->get();
 
         $proximities_array = [];
@@ -217,7 +219,7 @@ class Properties extends Model
     {
         $step = DB::table('apimo_property_step')
                 ->where("reference", $step_id)
-                ->where("locale", "fr_FR")
+                ->where("locale", self::$lang)
                 ->get();
 
         if (!empty($step)) {
@@ -236,7 +238,7 @@ class Properties extends Model
     {
         $step = DB::table('apimo_property_category')
                 ->where("reference", $cat_id)
-                ->where("locale", "fr_FR")
+                ->where("locale", self::$lang)
                 ->get();
 
         if (!empty($step)) {
@@ -257,7 +259,7 @@ class Properties extends Model
         if ($sub_cat_id != 0) {
             $r = DB::table('apimo_property_subcategory')
                     ->where("reference", $sub_cat_id)
-                    ->where("locale", "fr_FR")
+                    ->where("locale", self::$lang)
                     ->get();
 
             if (!empty($r)) {
@@ -278,7 +280,7 @@ class Properties extends Model
         if ($type_id != 0) {
             $r = DB::table('apimo_property_type')
                     ->where("reference", $type_id)
-                    ->where("locale", "fr_FR")
+                    ->where("locale", self::$lang)
                     ->get();
 
             if (!empty($r)) {
@@ -299,7 +301,7 @@ class Properties extends Model
         if ($sub_type_id != 0) {
             $r = DB::table('apimo_property_subtype')
                     ->where("reference", $sub_type_id)
-                    ->where("locale", "fr_FR")
+                    ->where("locale", self::$lang)
                     ->get();
 
             if (!empty($r)) {
@@ -363,7 +365,7 @@ class Properties extends Model
         if ($condition_id != 0) {
             $r = DB::table('apimo_property_condition')
                     ->where("reference", $condition_id)
-                    ->where("locale", 'fr_FR')
+                    ->where("locale", self::$lang)
                     ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $condition_id = $r[0]['value'];
@@ -383,7 +385,7 @@ class Properties extends Model
         if ($standing_id != 0) {
             $r = DB::table('apimo_property_standing')
                     ->where("reference", $standing_id)
-                    ->where("locale", 'fr_FR')
+                    ->where("locale", self::$lang)
                     ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $standing_id = $r[0]['value'];
@@ -405,7 +407,7 @@ class Properties extends Model
                                 LEFT JOIN apimo_property_view_type AS apvt ON av.type = apvt.reference
                                 LEFT JOIN apimo_property_view_landscape AS apvl ON av.landscape = apvl.reference
                                 WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",
-                    ['view_id' => $view_id, 'locale1' => 'fr_FR', 'locale2' => 'fr_FR']);
+                    ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]);
 
             if (!empty($r)) {
                 $view_array['type'] = $r[0]['type'];
@@ -436,4 +438,36 @@ class Properties extends Model
 
         return $area_id;
     }
+
+    /**
+     * Returns a list of cities with real estate
+     *
+     * @return array
+     */
+    public static function getCityList()
+    {
+        $cities = DB::table('apimo_city')->get()->toArray();
+
+        return $cities;
+    }
+
+    /**
+     * Returns the list of available types of real estate
+     *
+     * @return array
+     */
+    public static function getAvailablePropertyType()
+    {
+        $property_type = DB::select("SELECT *
+                                            FROM apimo_property_type
+                                            WHERE reference IN (
+                                              SELECT type
+                                              FROM apimo_properties
+                                              GROUP BY type
+                                            )
+                                            AND locale = ?", [self::$lang]);
+
+        return $property_type;
+    }
+
 }
