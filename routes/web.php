@@ -12,31 +12,31 @@
 */
 
 Route::get('/', [
-    'uses' => 'PagesController@index',
-    'as' => 'index'
+        'uses' => 'PagesController@index',
+        'as' => 'index',
 ]);
 
-Route::get('/results', [
-    'uses' => 'PagesController@results',
-    'as' => 'results'
+Route::match(['GET', 'POST'], '/results', [
+        'uses' => 'PagesController@results',
+        'as' => 'results',
 ]);
 
 Route::get('/details', [
-    'uses' => 'PagesController@details',
-    'as' => 'details'
+        'uses' => 'PagesController@details',
+        'as' => 'details',
 ]);
 
 Route::get('/contact', [
-    'uses' => 'PagesController@contact',
-    'as' => 'contact'
+        'uses' => 'PagesController@contact',
+        'as' => 'contact',
 ]);
 
 Route::get('/team', [
-    'uses' => 'PagesController@team',
-    'as' => 'team'
+        'uses' => 'PagesController@team',
+        'as' => 'team',
 ]);
 
-Route::get('/api',[
-   'uses' => 'PagesController@api',
-    'as' => 'api'
+Route::get('/api', [
+        'uses' => 'PagesController@api',
+        'as' => 'api',
 ]);
