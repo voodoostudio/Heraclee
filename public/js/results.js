@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     // $(window).on('resize orientationChange', function(event) {
     //    console.log('test');
@@ -24,6 +24,7 @@ $(document).ready(function() {
         $('.results_container').attr("class", "results_container " + view_type);
 
         if ($(this).hasClass('map_view_btn')) {
+            setCookie('typeView', 'map_view');
             $(this).closest('.row').find('.multiselect-native-select').hide();
             if ($('.result_preview_gallery').hasClass('slick-initialized')) {
                 $('.result_preview_gallery').slick('unslick');
@@ -38,15 +39,53 @@ $(document).ready(function() {
             $(this).closest('.row').find('.multiselect-native-select').show();
 
             if ($(this).hasClass('grid_view_btn')) {
+                setCookie('typeView', 'grid_view');
                 if ($('.result_preview_gallery').hasClass('slick-initialized')) {
                     $('.result_preview_gallery').slick('unslick');
                 }
             }
             else if ($(this).hasClass('list_view_btn')) {
+                setCookie('typeView', 'list_view');
                 listView_galleryInit();
             }
         }
     });
+
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value, options) {
+        options = options || {};
+
+        var expires = options.expires;
+
+        if (typeof expires == "number" && expires) {
+            var d = new Date();
+            d.setTime(d.getTime() + expires * 1000);
+            expires = options.expires = d;
+        }
+        if (expires && expires.toUTCString) {
+            options.expires = expires.toUTCString();
+        }
+
+        value = encodeURIComponent(value);
+
+        var updatedCookie = name + "=" + value;
+
+        for (var propName in options) {
+            updatedCookie += "; " + propName;
+            var propValue = options[propName];
+            if (propValue !== true) {
+                updatedCookie += "=" + propValue;
+            }
+        }
+
+        document.cookie = updatedCookie;
+    }
 
     function resultsCarouselInit() {
         $('.results_carousel').slick({
@@ -107,18 +146,18 @@ $(document).ready(function() {
         // Note: The code uses the JavaScript Array.prototype.map() method to
         // create an array of markers based on a given "locations" array.
         // The map() method here has nothing to do with the Google Maps API.
-        var markers = locations.map(function(location) {
+        var markers = locations.map(function (location) {
             var marker = new google.maps.Marker({
                 position: location,
                 icon: '/img/map_pin.svg'
             });
-            google.maps.event.addListener(marker, 'click', function() {
+            google.maps.event.addListener(marker, 'click', function () {
                 infowindow.setContent(location.info);
                 infowindow.open(map, marker);
                 map.setCenter(marker.getPosition());
             });
 
-            google.maps.event.addListener(map, "click", function() {
+            google.maps.event.addListener(map, "click", function () {
                 infowindow.close(map, marker);
             });
 
@@ -132,7 +171,7 @@ $(document).ready(function() {
             {imagePath: '/img/map_markerclusterer/m'}
         );
 
-        google.maps.event.addListener(infowindow, 'domready', function() {
+        google.maps.event.addListener(infowindow, 'domready', function () {
 
             // Reference to the DIV that wraps the bottom of infowindow
             var iwOuter = $('.gm-style-iw');
@@ -145,10 +184,10 @@ $(document).ready(function() {
             //iwBackground.css({display: 'none'});
 
             // Removes background shadow DIV
-            iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+            iwBackground.children(':nth-child(2)').css({'display': 'none'});
 
             // Removes white background DIV
-            iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+            iwBackground.children(':nth-child(4)').css({'display': 'none'});
 
             // Moves the infowindow 115px to the right.
             iwOuter.parent().parent().css({left: '-10px'});
@@ -160,7 +199,10 @@ $(document).ready(function() {
             //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
 
             // Changes the desired tail shadow color.
-            iwBackground.children(':nth-child(3)').find('div').children().css({'background-color': '#272727', 'box-shadow': 'none'});
+            iwBackground.children(':nth-child(3)').find('div').children().css({
+                'background-color': '#272727',
+                'box-shadow': 'none'
+            });
 
             // Reference to the div that groups the close button elements.
             var iwCloseBtn = iwOuter.next();
