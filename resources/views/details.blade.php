@@ -13,14 +13,13 @@
         <div class="gallery_container">
             <div class="gallery_view">
                 <ul class="gallery details_gallery">
-                    <li><img src="/img/details/img_1.png" alt=""></li>
-                    <li><img src="/img/details/img_2.png" alt=""></li>
-                    <li><img src="/img/details/img_3.png" alt=""></li>
-                    <li><img src="/img/details/img_4.png" alt=""></li>
-                    <li><img src="/img/details/img_5.png" alt=""></li>
-                    <li><img src="/img/details/img_6.png" alt=""></li>
-                    <li><img src="/img/details/img_7.png" alt=""></li>
-                    <li><img src="/img/details/img_8.png" alt=""></li>
+                    @foreach($property['pictures'] as $picture)
+                        @if(!empty($picture['url']))
+                            <li><img src="{{$picture['url']}}" alt=""></li>
+                        @else
+                            <li><img src="img/details/img_1.png" alt=""></li>
+                        @endif
+                    @endforeach
                 </ul>
                 {{--<a data-fancybox="gallery" class="fullscreen_btn" href="/img/details/img_7.png"><i class="icn icon-fullscreen"></i></a>--}}
                 <button class="fullscreen_btn"><i class="icn icon-fullscreen"></i></button>
@@ -29,8 +28,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="object_status">Vente</div>
-                                <h2>Maison de standing</h2>
-                                <h3>Maison, Villa / Saint-Tropez</h3>
+                                <h2>{{$property['type']}}</h2>
+                                <h3>{{$property['city']}}</h3>
                             </div>
                         </div>
                     </div>
@@ -45,14 +44,13 @@
             <div class="gallery_nav">
                 <div class="container-fluid">
                     <ul class="gallery_thumbnails details_gallery_thumbnails">
-                        <li><img src="/img/details/img_1.png" alt=""></li>
-                        <li><img src="/img/details/img_2.png" alt=""></li>
-                        <li><img src="/img/details/img_3.png" alt=""></li>
-                        <li><img src="/img/details/img_4.png" alt=""></li>
-                        <li><img src="/img/details/img_5.png" alt=""></li>
-                        <li><img src="/img/details/img_6.png" alt=""></li>
-                        <li><img src="/img/details/img_7.png" alt=""></li>
-                        <li><img src="/img/details/img_8.png" alt=""></li>
+                        @foreach($property['pictures'] as $picture)
+                            @if(!empty($picture['url']))
+                                <li><img src="{{$picture['url']}}" alt=""></li>
+                            @else
+                                <li><img src="img/details/img_1.png" alt=""></li>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -60,17 +58,27 @@
                 <div class="properties_container">
                     <ul class="properties">
                         <li><span class="icn_container tooltip" title="Living space"><i class="icn icon-area"></i></span><span class="prop_val"><span>300m<sup>2</sup></span></span></li>
-                        <li><span class="icn_container tooltip" title="Number of rooms"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>4</span></span></li>
-                        <li><span class="icn_container tooltip" title="Number of bedrooms"><i class="icn icon-bedroom"></i></span><span class="prop_val"><span>4</span></span></li>
-                        <li><span class="icn_container tooltip" title="Number of bathrooms"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>2</span></span></li>
-                        <li><span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span><span class="prop_val">Dégagée Jardin Collines</span></li>
-                        <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span>2ème/2<sup>2</sup></span></span></li>
+                        @if(!empty($property['rooms']))
+                            <li><span class="icn_container tooltip" title="Number of rooms"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
+                        @endif
+                        @if(!empty($property['bedrooms']))
+                            <li><span class="icn_container tooltip" title="Number of bedrooms"><i class="icn icon-bedroom"></i></span><span class="prop_val"><span>{{$property['bedrooms']}}</span></span></li>
+                        @endif
+                        @if(!empty($property['bathrooms']))
+                            <li><span class="icn_container tooltip" title="Number of bathrooms"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
+                        @endif
+                        @if(!empty($property['view']['type']))
+                            <li><span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
+                        @endif
+                        @if(!empty($property['floor']))
+                            <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span>{{$property['floor']}}</span></span></li>
+                        @endif
                         <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>
                         <li class="no_text inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Securit"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                        <li class="no_text"><span class="icn_container tooltip" title="Security"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
                         <li class="no_text inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
                         <li class="no_text inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
