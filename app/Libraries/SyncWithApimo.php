@@ -111,6 +111,7 @@ class SyncWithApimo
                             'regulations' => '',
                         ]
                     );
+                    self::addOrUpdateComments($property['comments'], $property['id']);
                     self::setPropertyHash($property);
                 } else {
                     if (self::checkPropertyUpdateByHash($property)) {
@@ -231,6 +232,7 @@ class SyncWithApimo
                                 'regulations' => '',
                             ]
                         );
+                        self::addOrUpdateComments($property['comments'], $property['id']);
                     }
                 }
             }
@@ -292,7 +294,7 @@ class SyncWithApimo
      *
      * @param array $areas
      *
-     * @param int   $property_id
+     * @param int $property_id
      *
      * @return int
      */
@@ -365,10 +367,46 @@ class SyncWithApimo
     }
 
     /**
+     * Add or update comments on DB
+     *
+     * @param array $comments
+     * @param int $property_id
+     *
+     * @return null|string
+     */
+    protected static function addOrUpdateComments($comments, $property_id)
+    {
+
+        if (is_array($comments) && !empty($comments)) {
+            foreach ($comments as $comment) {
+                DB::insert(
+                    'REPLACE INTO apimo_property_comments SET property_id = ?, 
+                                                      language = ?, 
+                                                      title=?, 
+                                                      subtitle=?, 
+                                                      comment=?, 
+                                                      comment_full=?,
+                                                      hash=?',
+                    [
+                        $property_id,
+                        $comment['language'],
+                        $comment['title'],
+                        $comment['subtitle'],
+                        $comment['comment'],
+                        $comment['comment_full'],
+                        $property_id . '_' . $comment['language']
+                    ]
+                );
+            }
+
+        }
+    }
+
+    /**
      * Add or update price on DB
      *
      * @param array $price
-     * @param int   $property_id
+     * @param int $property_id
      *
      * @return int
      */
@@ -415,7 +453,7 @@ class SyncWithApimo
     /**
      * Add or update area on DB
      *
-     * @param array   $area
+     * @param array $area
      * @param integer $property_id
      *
      * @return int
@@ -486,7 +524,7 @@ class SyncWithApimo
      *
      * @param array $floor
      *
-     * @param int   $property_id
+     * @param int $property_id
      *
      * @return int
      */
@@ -515,7 +553,7 @@ class SyncWithApimo
      *
      * @param array $heating
      *
-     * @param int   $property_id
+     * @param int $property_id
      *
      * @return int
      */
@@ -541,7 +579,7 @@ class SyncWithApimo
      *
      * @param array $water
      *
-     * @param int   $property_id
+     * @param int $property_id
      *
      * @return int
      */
@@ -666,7 +704,7 @@ class SyncWithApimo
      * Returns a limited list of objects
      * Limitations are imposed by APIMO
      *
-     * @param int    $offset
+     * @param int $offset
      * @param string $type_real_estate
      *
      * @return array
@@ -677,12 +715,14 @@ class SyncWithApimo
         $curl->setBasicAuthentication(env('APIMO_PROVIDER'), env('APIMO_TOKEN'));
         $curl->setHeader('Content - Type', 'application / json; charset = utf - 8');
         $curl->get(
-            'https://api.apimo.pro/agencies/'.env('APIMO_AGENCY').'/'.$type_real_estate,
+            'https://api.apimo.pro/agencies/' . env('APIMO_AGENCY') . '/' . $type_real_estate,
             ['limit' => self::$limit, 'offset' => $offset]
         );
-
         $properties_array = json_decode($curl->response, 1);
-
+//        echo "<pre>";
+//        var_dump($properties_array);
+//        echo "</pre>";
+//        die();
         return $properties_array;
     }
 

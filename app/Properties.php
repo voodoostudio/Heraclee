@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class Properties extends Model
 {
     public static $lang = 'fr_FR';
+    public static $lang_short = 'fr';
 
     public static function paginations($items = 10, $curPage = 1, $url_page = '/results?page=')
     {
@@ -57,6 +58,7 @@ class Properties extends Model
             $array['services'] = self::getServicesByIds($property[0]['services']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
+            $array['comments'] = self::getCommentsByIds($property[0]['property_id']);
         }
 
         return $array;
@@ -73,8 +75,8 @@ class Properties extends Model
         $offset = ($page - 1) * $items;
         $array = [];
         $properties = DB::select(
-                "SELECT * FROM `apimo_properties` ORDER BY property_id DESC LIMIT :offset,:limit",
-                ['limit' => $items, 'offset' => $offset]);
+            "SELECT * FROM `apimo_properties` ORDER BY property_id DESC LIMIT :offset,:limit",
+            ['limit' => $items, 'offset' => $offset]);
 
         foreach ($properties as $property) {
             $array[$property['property_id']] = $property;
@@ -106,8 +108,8 @@ class Properties extends Model
     protected static function getPicturesByIds($ids)
     {
         $pictures = DB::table('apimo_pictures')
-                ->wherein("picture_id", explode(',', $ids))
-                ->get();
+            ->wherein("picture_id", explode(',', $ids))
+            ->get();
         $pictures_array = [];
         if (!empty($pictures)) {
             foreach ($pictures as $picture) {
@@ -127,9 +129,9 @@ class Properties extends Model
     protected static function getServicesByIds($ids)
     {
         $services = DB::table('apimo_property_service')
-                ->wherein("reference", explode(',', $ids))
-                ->where('locale', self::$lang)
-                ->get();
+            ->wherein("reference", explode(',', $ids))
+            ->where('locale', self::$lang)
+            ->get();
 
         $services_array = [];
         if (!empty($services)) {
@@ -149,27 +151,27 @@ class Properties extends Model
     protected static function getAreasByIds($ids)
     {
         $areas = DB::table('apimo_areas')
-                ->select(
-                        'apimo_areas.id as id',
-                        'apimo_property_area.value as type',
-                        'apimo_areas.number',
-                        'apimo_areas.area as area',
-                        'apimo_property_flooring.value as flooring',
-                        'apimo_property_floor.value as floor_type',
-                        'apimo_areas.floor_value as floor_value',
-                        'apimo_property_orientations.value as orientations'
-                )
-                ->leftJoin('apimo_property_area', 'apimo_areas.type', '=', 'apimo_property_area.reference')
-                ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
-                ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
-                ->leftJoin(
-                        'apimo_property_orientations',
-                        'apimo_areas.orientations',
-                        '=',
-                        'apimo_property_orientations.reference'
-                )
-                ->whereIn('apimo_areas.id', explode(',', $ids))
-                ->get();
+            ->select(
+                'apimo_areas.id as id',
+                'apimo_property_area.value as type',
+                'apimo_areas.number',
+                'apimo_areas.area as area',
+                'apimo_property_flooring.value as flooring',
+                'apimo_property_floor.value as floor_type',
+                'apimo_areas.floor_value as floor_value',
+                'apimo_property_orientations.value as orientations'
+            )
+            ->leftJoin('apimo_property_area', 'apimo_areas.type', '=', 'apimo_property_area.reference')
+            ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
+            ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
+            ->leftJoin(
+                'apimo_property_orientations',
+                'apimo_areas.orientations',
+                '=',
+                'apimo_property_orientations.reference'
+            )
+            ->whereIn('apimo_areas.id', explode(',', $ids))
+            ->get();
 
         $areas_array = [];
         if (!empty($areas)) {
@@ -196,9 +198,9 @@ class Properties extends Model
     protected static function getProximitiesByIds($ids)
     {
         $proximities = DB::table('apimo_property_proximity')
-                ->wherein("reference", explode(',', $ids))
-                ->where('locale', self::$lang)
-                ->get();
+            ->wherein("reference", explode(',', $ids))
+            ->where('locale', self::$lang)
+            ->get();
 
         $proximities_array = [];
         if (!empty($proximities)) {
@@ -218,9 +220,9 @@ class Properties extends Model
     protected static function getStepByIds($step_id)
     {
         $step = DB::table('apimo_property_step')
-                ->where("reference", $step_id)
-                ->where("locale", self::$lang)
-                ->get();
+            ->where("reference", $step_id)
+            ->where("locale", self::$lang)
+            ->get();
 
         if (!empty($step)) {
             $step_id = $step[0]['value'];
@@ -237,9 +239,9 @@ class Properties extends Model
     protected static function getCategoryById($cat_id)
     {
         $step = DB::table('apimo_property_category')
-                ->where("reference", $cat_id)
-                ->where("locale", self::$lang)
-                ->get();
+            ->where("reference", $cat_id)
+            ->where("locale", self::$lang)
+            ->get();
 
         if (!empty($step)) {
             $cat_id = $step[0]['value'];
@@ -258,9 +260,9 @@ class Properties extends Model
         $sub_cat = '';
         if ($sub_cat_id != 0) {
             $r = DB::table('apimo_property_subcategory')
-                    ->where("reference", $sub_cat_id)
-                    ->where("locale", self::$lang)
-                    ->get();
+                ->where("reference", $sub_cat_id)
+                ->where("locale", self::$lang)
+                ->get();
 
             if (!empty($r)) {
                 $sub_cat = $r[0]['value'];
@@ -279,9 +281,9 @@ class Properties extends Model
     {
         if ($type_id != 0) {
             $r = DB::table('apimo_property_type')
-                    ->where("reference", $type_id)
-                    ->where("locale", self::$lang)
-                    ->get();
+                ->where("reference", $type_id)
+                ->where("locale", self::$lang)
+                ->get();
 
             if (!empty($r)) {
                 $type_id = $r[0]['value'];
@@ -300,9 +302,9 @@ class Properties extends Model
     {
         if ($sub_type_id != 0) {
             $r = DB::table('apimo_property_subtype')
-                    ->where("reference", $sub_type_id)
-                    ->where("locale", self::$lang)
-                    ->get();
+                ->where("reference", $sub_type_id)
+                ->where("locale", self::$lang)
+                ->get();
 
             if (!empty($r)) {
                 $sub_type_id = $r[0]['value'];
@@ -321,8 +323,8 @@ class Properties extends Model
     {
         if ($city_id != 0) {
             $r = DB::table('apimo_city')
-                    ->where("city_id", $city_id)
-                    ->get();
+                ->where("city_id", $city_id)
+                ->get();
 
             if (!empty($r)) {
                 $city_id = $r[0]['name'];
@@ -341,8 +343,8 @@ class Properties extends Model
     {
         if ($price_id != 0) {
             $r = DB::table('apimo_price')
-                    ->where("id", $price_id)
-                    ->get();
+                ->where("id", $price_id)
+                ->get();
 
             if (!empty($r)) {
                 $price_array['value'] = $r[0]['value'];
@@ -364,9 +366,9 @@ class Properties extends Model
     {
         if ($condition_id != 0) {
             $r = DB::table('apimo_property_condition')
-                    ->where("reference", $condition_id)
-                    ->where("locale", self::$lang)
-                    ->get();
+                ->where("reference", $condition_id)
+                ->where("locale", self::$lang)
+                ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $condition_id = $r[0]['value'];
             }
@@ -384,9 +386,9 @@ class Properties extends Model
     {
         if ($standing_id != 0) {
             $r = DB::table('apimo_property_standing')
-                    ->where("reference", $standing_id)
-                    ->where("locale", self::$lang)
-                    ->get();
+                ->where("reference", $standing_id)
+                ->where("locale", self::$lang)
+                ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $standing_id = $r[0]['value'];
             }
@@ -407,7 +409,7 @@ class Properties extends Model
                                 LEFT JOIN apimo_property_view_type AS apvt ON av.type = apvt.reference
                                 LEFT JOIN apimo_property_view_landscape AS apvl ON av.landscape = apvl.reference
                                 WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",
-                    ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]);
+                ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]);
 
             if (!empty($r)) {
                 $view_array['type'] = $r[0]['type'];
@@ -437,6 +439,24 @@ class Properties extends Model
         }
 
         return $area_id;
+    }
+
+    /**
+     * Returns a list of comments with property
+     *
+     * @param int $property_id
+     *
+     * @return mixed
+     */
+    protected static function getCommentsByIds($property_id)
+    {
+        $r = [];
+        if ($property_id != 0) {
+            $r = DB::select("SELECT * FROM apimo_property_comments 
+                                    WHERE property_id = ? AND language = ?", [$property_id, self::$lang_short]);
+        }
+
+        return $r;
     }
 
     /**

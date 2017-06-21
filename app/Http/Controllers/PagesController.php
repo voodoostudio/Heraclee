@@ -45,7 +45,6 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
-            dump($property);
 
             return view('details', ['property' => $property]);
         } else {
