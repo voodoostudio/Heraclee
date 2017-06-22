@@ -489,5 +489,4 @@ class Properties extends Model
 
         return $property_type;
     }
-
 }
