@@ -124,9 +124,11 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
-                    <p class="margin_bottom_20">Propriété Les Vanades, villa d'exception entourée de vignes et vue sur le Golfe de Saint-Tropez, elle dispose d'une surface habitable de 470m2 avec possibilité d'agrandissement en rez-de-jardin de 100m2 environ. La villa offre 5 chambres dont 1 chambre de Maître, chacune possédant sa salle de bains et dressing, très belle cuisine américaine Gaggeneau entièrement équipée ouvrant sur les larges terrasses extérieures en pierre naturelle avec vue sur la piscine et le jardin, le lumineux salon dispose de sa cheminée.
-                        Les Vanades se situant quartier des Salins, la villa n'est qu'à quelques mètres de la plage des Canoubiers et à 10 minutes du centre du village.</p>
-                    <p class="margin_bottom_30">En détail: <br> Terrain de 4269m2, piscine chauffée avec éclairage LED et son pool house, cave à vins, garage, carport, interphone, digicode, portail électrique, wifi, domotique, climatisation réversible, système de caméras complet, arrosage automatique, hélisurface.</p>
+                    @if(!empty($property['comments']['comment']))
+                        <p class="margin_bottom_20">
+                            {{$property['comments']['comment']}}
+                        </p>
+                    @endif
                     <div class="object_details_container">
                         <h4>Informations</h4>
                         <ul class="object_info_list">

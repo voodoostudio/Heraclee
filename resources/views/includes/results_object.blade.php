@@ -29,7 +29,7 @@
                 </div>
                 <div class="description_container">
                     <h3>{{$property['city']}} <span></span></h3>
-                    <?php $comments = str_limit($property['comments']['comment'],75); ?>
+                    <?php $comments = str_limit($property['comments']['comment'],400); ?>
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse">Contactez l'agent</a>
                     <div class="object_price">{{$property['price']['currency']}} {{$property['price']['value']}}</div>
