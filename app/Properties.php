@@ -77,10 +77,12 @@ class Properties extends Model
         $array = [];
         $properties = DB::select(
             "SELECT * FROM `apimo_properties` ORDER BY property_id DESC LIMIT :offset,:limit",
-            ['limit' => $items, 'offset' => $offset]);
+            ['limit' => $items, 'offset' => $offset]
+        );
 
         foreach ($properties as $property) {
             $array[$property['property_id']] = $property;
+            $array[$property['property_id']]['user'] = self::getUserById($property['user']);
             $array[$property['property_id']]['pictures'] = self::getPicturesByIds($property['pictures']);
             $array[$property['property_id']]['step'] = self::getStepByIds($property['step']);
             $array[$property['property_id']]['category'] = self::getCategoryById($property['category']);
@@ -96,6 +98,7 @@ class Properties extends Model
             $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
             $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
             $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
+            $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
         }
 
         return $array;
