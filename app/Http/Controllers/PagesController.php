@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Libraries\SyncWithApimo;
 use App\Properties;
+use App\Team;
 
 class PagesController extends Controller
 {
@@ -59,6 +60,8 @@ class PagesController extends Controller
 
     public function team()
     {
+        $users = Team::where('active', 1)->get();
+        dump($users);
         return view('team');
     }
 
