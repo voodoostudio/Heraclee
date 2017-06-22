@@ -14,7 +14,7 @@
                                     <a data-toggle="tab" class="nav-link" href="#" type_value="1">Vente</a>
                                 </li>
                             </ul>
-                            <input type="text" name="sell_type" hidden class="sell_type_val">
+                            <input type="text" name="sell_type" value="0" hidden class="sell_type_val">
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="row">
