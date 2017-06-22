@@ -111,6 +111,7 @@ class SyncWithApimo
                             'regulations' => '',
                         ]
                     );
+                    self::addOrUpdateUser($property['user']);
                     self::addOrUpdateComments($property['comments'], $property['id']);
                     self::setPropertyHash($property);
                 } else {
@@ -232,6 +233,7 @@ class SyncWithApimo
                                 'regulations' => '',
                             ]
                         );
+                        self::addOrUpdateUser($property['user']);
                         self::addOrUpdateComments($property['comments'], $property['id']);
                     }
                 }
@@ -643,6 +645,49 @@ class SyncWithApimo
     }
 
     /**
+     * Add or update city on DB
+     *
+     * @param array $user
+     * @return int
+     */
+    protected static function addOrUpdateUser($user)
+    {
+        if (is_array($user) && !empty($user)) {
+            DB::insert(
+                'REPLACE INTO apimo_users 
+                                SET user_id = ?, 
+                                    active = ?, 
+                                    firstname = ?, 
+                                    lastname = ?, 
+                                    language = ?, 
+                                    `group` = ?, 
+                                    email = ?, 
+                                    phone = ?, 
+                                    fax = ?, 
+                                    mobile = ?, 
+                                    birthday_at = ?, 
+                                    timezone = ?, 
+                                    picture = ?',
+                [
+                    $user['id'],
+                    $user['active'],
+                    (isset($user['firstname'])?$user['firstname']:''),
+                    (isset($user['lastname'])?$user['lastname']:''),
+                    (isset($user['language'])?$user['language']:''),
+                    (isset($user['group'])?$user['group']:''),
+                    (isset($user['email'])?$user['email']:''),
+                    (isset($user['phone'])?$user['phone']:''),
+                    (isset($user['fax'])?$user['fax']:''),
+                    (isset($user['mobile'])?$user['mobile']:''),
+                    (isset($user['birthday_at'])?$user['birthday_at']:''),
+                    (isset($user['timezone'])?$user['timezone']:''),
+                    (isset($user['picture'])?$user['picture']:'')
+                ]
+            );
+        }
+    }
+
+    /**
      * Check if the specified time in seconds from the last synchronization
      *
      * @return bool
@@ -720,7 +765,7 @@ class SyncWithApimo
         );
         $properties_array = json_decode($curl->response, 1);
 //        echo "<pre>";
-//        var_dump($properties_array);
+//        print_r($properties_array);
 //        echo "</pre>";
 //        die();
         return $properties_array;

@@ -15,18 +15,19 @@ class ApimoUsers extends Migration
     {
         Schema::create('apimo_users', function (Blueprint $table) {
             $table->integer('user_id')->unique();
-            $table->integer('agency');
-            $table->string('active');
-            $table->string('firstname');
-            $table->string('language');
-            $table->string('group');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('fax');
-            $table->string('mobile');
-            $table->date('birthday_at');
-            $table->string('timezone');
-            $table->string('picture');
+            $table->string('active')->nullable();
+            $table->string('firstname')->nullable();
+            $table->string('lastname')->nullable();
+            $table->string('language')->nullable();
+            $table->string('group')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('birthday_at')->nullable();
+            $table->string('timezone')->nullable();
+            $table->text('picture')->nullable();
+            $table->timestamps();
         });
     }
 

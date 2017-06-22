@@ -43,6 +43,7 @@ class Properties extends Model
 
         if (!empty($property)) {
             $array = $property[0];
+            $array['user'] = self::getUserById($property[0]['user']);
             $array['pictures'] = self::getPicturesByIds($property[0]['pictures']);
             $array['step'] = self::getStepByIds($property[0]['step']);
             $array['category'] = self::getCategoryById($property[0]['category']);
@@ -119,6 +120,20 @@ class Properties extends Model
         }
 
         return $pictures_array;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return mixed
+     */
+    protected static function getUserById($id)
+    {
+        $user = DB::table('apimo_users')
+            ->where("user_id", $id)
+            ->get()
+            ->toArray();
+        return $user;
     }
 
     /**
@@ -455,7 +470,9 @@ class Properties extends Model
             $r = DB::select("SELECT * FROM apimo_property_comments 
                                     WHERE property_id = ? AND language = ?", [$property_id, self::$lang_short]);
         }
-
+        if (isset($r[0])) {
+            $r = $r[0];
+        }
         return $r;
     }
 
