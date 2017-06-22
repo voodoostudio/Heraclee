@@ -6,15 +6,15 @@
                 <div class="inner_block_container">
                     <div class="row">
                         <div class="col-12 col-lg-4">
-                            {{--<input type="text" name="property_type">--}}
                             <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link active" href="#">Location</a>
+                                    <a data-toggle="tab" class="nav-link active" href="#" type_value="0">Location</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link" href="#">Vente</a>
+                                    <a data-toggle="tab" class="nav-link" href="#" type_value="1">Vente</a>
                                 </li>
                             </ul>
+                            <input type="text" name="sell_type" hidden class="sell_type_val">
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="row">
