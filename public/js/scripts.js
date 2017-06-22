@@ -25,5 +25,4 @@ $(document).ready(function() {
         var type_value = $(this).attr('type_value');
         $('section.search_section input.sell_type_val').val(type_value);
     });
-    console.log($('section.search_section input.sell_type_val').val());
 });
