@@ -35,11 +35,11 @@
                     </div>
                 </div>
                 <div class="gradient_bottom"></div>
-                <div class="panorama_link_container">
-                    <button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>
-                </div>
-                <div id="object_panorama"></div>
-                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>
+                {{--<div class="panorama_link_container">--}}
+                    {{--<button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>--}}
+                {{--</div>--}}
+                {{--<div id="object_panorama"></div>--}}
+                {{--<button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>--}}
             </div>
             <div class="gallery_nav">
                 <div class="container-fluid">
@@ -86,6 +86,9 @@
                     </ul>
                 </div>
             </div>
+            {{--@foreach($property['services'] as $service)--}}
+                {{--{{$service}}--}}
+            {{--@endforeach--}}
         </div>
     </section>
 
@@ -100,7 +103,10 @@
                             </div>
                             <div class="agent_info">
                                 <p>Contact agent to visit</p>
-                                <p class="agent_name">Pascal de Boo</p>
+                                <p class="agent_name">
+{{--                                    {{$user['firstname']}}--}}
+                                    Pascal de Boo
+                                </p>
                                 <ul>
                                     <li>+33 4 94 54 20 01</li>
                                     <li><a href="mailto:nego@heraclee.com">nego@heraclee.com</a></li>
@@ -288,13 +294,13 @@
 @section('javascript')
     <script type="text/javascript" src="/krpano/Barnes-sttropez.com_les_vanades.js"></script>
 
-    <script>
-        embedpano({
-            swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",
-            xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",
-            target:"object_panorama"
-        });
-    </script>
+    {{--<script>--}}
+        {{--embedpano({--}}
+            {{--swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",--}}
+            {{--xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",--}}
+            {{--target:"object_panorama"--}}
+        {{--});--}}
+    {{--</script>--}}
 
     <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
     <script type="text/javascript" src="/js/details.js"></script>
