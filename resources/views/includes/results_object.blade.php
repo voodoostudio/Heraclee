@@ -29,17 +29,17 @@
                 </div>
                 <div class="description_container">
                     <h3>{{$property['city']}} <span></span></h3>
-                    <?php $comments = str_limit($property['comments']['comment'],400); ?>
+                    <?php $comments = str_limit((isset($property['comments']['comment'])?$property['comments']['comment']:''),400); ?>
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse">Contactez l'agent</a>
-                    <div class="object_price">{{$property['price']['currency']}} {{$property['price']['value']}}</div>
+                    <div class="object_price">{{$property['price_currency']}} {{$property['price']}}</div>
                 </div>
                 <div class="properties_container">
                     <ul class="properties">
                         <li>
                             <span class="property_container">
                                 <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                <span class="prop_val">300 m<sup>2</sup></span>
+                                <span class="prop_val">{{$property['area_surface']}} m<sup>2</sup></span>
                             </span>
                         </li>
                         @if(!empty($property['rooms']))

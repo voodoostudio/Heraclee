@@ -13,3 +13,5 @@ Homestead.yaml
 test.php
 /composer.lock
 /.env
+.phpstorm.meta.php
+_ide_helper.php

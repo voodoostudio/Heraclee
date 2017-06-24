@@ -47,8 +47,8 @@ class SyncWithApimo
                 );
                 if (empty($checkExistence)) {
                     DB::insert(
-                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area`, `rooms`, `bedrooms`, `sleeps`, `price`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`)
-                                VALUES ( :property_id, :reference, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area, :rooms, :bedrooms, :sleeps, :price, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations)',
+                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`)
+                                VALUES ( :property_id, :reference, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations)',
                         [
                             'property_id' => $property['id'],
                             'reference' => $property['reference'],
@@ -71,11 +71,13 @@ class SyncWithApimo
                             'longitude' => $property['longitude'],
                             'latitude' => $property['latitude'],
                             'radius' => $property['radius'],
-                            'area' => self::addOrUpdateArea($property['area'], $property['id']),
+                            'area_unit' => $property['area']['unit'],
+                            'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total']))?(($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']):0),
                             'rooms' => $property['rooms'],
                             'bedrooms' => $property['bedrooms'],
                             'sleeps' => $property['sleeps'],
-                            'price' => self::addOrUpdatePrice($property['price'], $property['id']),
+                            'price' => ((isset($property['price']['value']) && !empty($property['price']['value'])) ? $property['price']['value'] : 0),
+                            'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                             'residence' => self::addOrUpdateResidence($property['residence']),
                             'view' => self::addOrUpdateView($property['view'], $property['id']),
                             'floor' => self::addOrUpdateFloor($property['floor'], $property['id']),
@@ -138,11 +140,13 @@ class SyncWithApimo
                                  `longitude` = :longitude, 
                                  `latitude` = :latitude, 
                                  `radius` = :radius, 
-                                 `area` = :area, 
+                                 `area_unit` = :area_unit, 
+                                 `area_surface` = :area_surface, 
                                  `rooms` = :rooms, 
                                  `bedrooms` = :bedrooms, 
                                  `sleeps` =  :sleeps, 
                                  `price` = :price, 
+                                 `price_currency` = :price_currency, 
                                  `residence` = :residence, 
                                  `view` = :view, 
                                  `floor` = :floor, 
@@ -187,11 +191,13 @@ class SyncWithApimo
                                 'longitude' => $property['longitude'],
                                 'latitude' => $property['latitude'],
                                 'radius' => $property['radius'],
-                                'area' => self::addOrUpdateArea($property['area'], $property['id']),
+                                'area_unit' => $property['area']['unit'],
+                                'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total']))?(($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']):0),
                                 'rooms' => $property['rooms'],
                                 'bedrooms' => $property['bedrooms'],
                                 'sleeps' => $property['sleeps'],
-                                'price' => self::addOrUpdatePrice($property['price'], $property['id']),
+                                'price' => ((isset($property['price']['value']) && !empty($property['price']['value'])) ? $property['price']['value'] : 0),
+                                'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                                 'residence' => self::addOrUpdateResidence($property['residence']),
                                 'view' => self::addOrUpdateView($property['view'], $property['id']),
                                 'floor' => self::addOrUpdateFloor($property['floor'], $property['id']),
@@ -466,7 +472,13 @@ class SyncWithApimo
         if (is_array($area) && !empty($area)) {
             DB::insert(
                 'REPLACE INTO apimo_area SET property_id = ?, unit = ?, value=?,total=?,weighted=?',
-                [$property_id, $area['unit'], $area['value'], $area['total'], $area['weighted']]
+                [
+                    $property_id,
+                    $area['unit'],
+                    (($area['value'] < $area['total']) ? $area['total'] : $area['value']),
+                    $area['total'],
+                    $area['weighted']
+                ]
             );
             $area_id = DB::connection()->getPdo()->lastInsertId();
         }
@@ -671,17 +683,17 @@ class SyncWithApimo
                 [
                     $user['id'],
                     $user['active'],
-                    (isset($user['firstname'])?$user['firstname']:''),
-                    (isset($user['lastname'])?$user['lastname']:''),
-                    (isset($user['language'])?$user['language']:''),
-                    (isset($user['group'])?$user['group']:''),
-                    (isset($user['email'])?$user['email']:''),
-                    (isset($user['phone'])?$user['phone']:''),
-                    (isset($user['fax'])?$user['fax']:''),
-                    (isset($user['mobile'])?$user['mobile']:''),
-                    (isset($user['birthday_at'])?$user['birthday_at']:''),
-                    (isset($user['timezone'])?$user['timezone']:''),
-                    (isset($user['picture'])?$user['picture']:'')
+                    (isset($user['firstname']) ? $user['firstname'] : ''),
+                    (isset($user['lastname']) ? $user['lastname'] : ''),
+                    (isset($user['language']) ? $user['language'] : ''),
+                    (isset($user['group']) ? $user['group'] : ''),
+                    (isset($user['email']) ? $user['email'] : ''),
+                    (isset($user['phone']) ? $user['phone'] : ''),
+                    (isset($user['fax']) ? $user['fax'] : ''),
+                    (isset($user['mobile']) ? $user['mobile'] : ''),
+                    (isset($user['birthday_at']) ? $user['birthday_at'] : ''),
+                    (isset($user['timezone']) ? $user['timezone'] : ''),
+                    (isset($user['picture']) ? $user['picture'] : '')
                 ]
             );
         }
@@ -732,9 +744,7 @@ class SyncWithApimo
         $countAllRealEstate = $realEstate['total_items'];
         $allRealEstate['properties'] = $realEstate['properties'];
         $allRealEstate['timestamp'] = $realEstate['timestamp'];
-        for ($i = count($realEstate['properties']); $i < $countAllRealEstate; ($i = $i + count(
-                $estate['properties']
-            ))) {
+        for ($i = count($realEstate['properties']); $i < $countAllRealEstate; ($i = $i + count($estate['properties']))) {
             $estate = self::getRealEstate($type_real_estate, $i);
             $allRealEstate['properties'] = array_merge($allRealEstate['properties'], $estate['properties']);
             $allRealEstate['timestamp'] = $estate['timestamp'];

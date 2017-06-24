@@ -19,9 +19,17 @@ $(document).ready(function() {
         ]
     });
 
+    function setSellType(id) {
+        $('#sell_type_val').val(id);
+    }
+
     $('.loading').on('click', function(){
         var this_link =  $(this).parent().find('a').attr('href');
         document.location.href = this_link;
     });
 
 });
+
+function setSellType(id) {
+    $('#sell_type_val').val(id);
+}

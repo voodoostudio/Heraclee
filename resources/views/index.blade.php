@@ -14,7 +14,7 @@
         <div class="gradient_bottom"></div>
     </section>
 
-    @include('includes.search_block')
+    @include('includes.search_block_index')
 
     <section class="carousel_offers_section">
         <div class="container-fluid">

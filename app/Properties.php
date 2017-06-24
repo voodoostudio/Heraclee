@@ -9,22 +9,32 @@ class Properties extends Model
 {
     public static $lang = 'fr_FR';
     public static $lang_short = 'fr';
+    private $property_count;
 
-    public static function paginations($items = 10, $curPage = 1, $url_page = '/results?page=')
+    /**
+     * @param int $items
+     * @param int $curPage
+     * @param string $url_page
+     * @return mixed
+     */
+    public function paginations($items = 10, $curPage = 1, $url_page = '/results?page=')
     {
-        $count = DB::table('apimo_properties')->count();
-        $countPages = (int)ceil($count / $items);
-        $number_of_pages_on_the_sides = 3;
+        $count = $this->property_count;
+        $listPage = [];
+        if ($count != 0) {
+            $countPages = (int)ceil($count / $items);
+            $number_of_pages_on_the_sides = 30;
 
-        $listPage['next'] = (($curPage < $countPages) ? ($curPage + 1) : '');
-        $listPage['back'] = (($curPage > 1) ? ($curPage - 1) : '');
+            $listPage['next'] = (($curPage < $countPages) ? ($curPage + 1) : '');
+            $listPage['back'] = (($curPage > 1) ? ($curPage - 1) : '');
 
-        $listPage['correntPage'] = $curPage;
-        $listPage['url_page'] = $url_page;
+            $listPage['correntPage'] = $curPage;
+            $listPage['url_page'] = $url_page;
 
-        for ($i = ($curPage - $number_of_pages_on_the_sides); $i <= ($curPage + $number_of_pages_on_the_sides); $i++) {
-            if ($i > 0 && $i <= $countPages) {
-                $listPage['listPages'][] = $i;
+            for ($i = ($curPage - $number_of_pages_on_the_sides); $i <= ($curPage + $number_of_pages_on_the_sides); $i++) {
+                if ($i > 0 && $i <= $countPages) {
+                    $listPage['listPages'][] = $i;
+                }
             }
         }
 
@@ -51,8 +61,6 @@ class Properties extends Model
             $array['type'] = self::getTypeById($property[0]['type']);
             $array['subtype'] = self::getSubTypeById($property[0]['subtype']);
             $array['city'] = self::getCityById($property[0]['city']);
-            $array['area'] = self::getAreaById($property[0]['area']);
-            $array['price'] = self::getPriceById($property[0]['price']);
             $array['view'] = self::getViewById($property[0]['view']);
             $array['condition'] = self::getConditionById($property[0]['condition']);
             $array['standing'] = self::getStandingById($property[0]['standing']);
@@ -66,41 +74,105 @@ class Properties extends Model
     }
 
     /**
-     * @param int $page
      * @param int $items
      *
+     * @param int $page
+     * @param int $sell_type
+     * @param string|array $object_type
+     * @param string|array $object_place
+     * @param string $search_keywords
+     * @param string $price_min
+     * @param string $price_max
+     * @param string $surface_min
+     * @param string $surface_max
+     * @param string $bedrooms_min
+     * @param string $bedrooms_max
      * @return mixed
      */
-    public static function getProperties($items = 10, $page = 1)
-    {
+    public function getProperties(
+        $items = 10,
+        $page = 1,
+        $sell_type = 1,
+        $object_type = '',
+        $object_place = '',
+        $search_keywords = '',
+        $price_min = '',
+        $price_max = '',
+        $surface_min = '',
+        $surface_max = '',
+        $bedrooms_min = '',
+        $bedrooms_max = ''
+    ) {
         $offset = ($page - 1) * $items;
         $array = [];
-        $properties = DB::select(
-            "SELECT * FROM `apimo_properties` ORDER BY property_id DESC LIMIT :offset,:limit",
-            ['limit' => $items, 'offset' => $offset]
-        );
+        $conditions_where = [];
 
-        foreach ($properties as $property) {
-            $array[$property['property_id']] = $property;
-            $array[$property['property_id']]['user'] = self::getUserById($property['user']);
-            $array[$property['property_id']]['pictures'] = self::getPicturesByIds($property['pictures']);
-            $array[$property['property_id']]['step'] = self::getStepByIds($property['step']);
-            $array[$property['property_id']]['category'] = self::getCategoryById($property['category']);
-            $array[$property['property_id']]['subcategory'] = self::getSubCategoryById($property['subcategory']);
-            $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
-            $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
-            $array[$property['property_id']]['city'] = self::getCityById($property['city']);
-            $array[$property['property_id']]['area'] = self::getAreaById($property['area']);
-            $array[$property['property_id']]['price'] = self::getPriceById($property['price']);
-            $array[$property['property_id']]['view'] = self::getViewById($property['view']);
-            $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
-            $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
-            $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
-            $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
-            $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
-            $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
+        $conditions_where[] = ['category', '=', $sell_type];
+
+//        if ($search_keywords != '') {
+//            $conditions_where[] = ['category', '=', $search_keywords];
+//        };
+
+        if ($price_min != '') {
+            $conditions_where[] = ['price', '>=', $price_min];
+        };
+
+        if ($price_max != '') {
+            $conditions_where[] = ['price', '<=', $price_max];
+        };
+
+        if ($surface_min != '') {
+            $conditions_where[] = ['area_surface', '>=', $surface_min];
+        };
+
+        if ($surface_max != '') {
+            $conditions_where[] = ['area_surface', '<=', $surface_max];
+        };
+
+        if ($bedrooms_min != '') {
+            $conditions_where[] = ['area_surface', '>=', $bedrooms_min];
+        };
+
+        if ($bedrooms_max != '') {
+            $conditions_where[] = ['area_surface', '<=', $bedrooms_max];
+        };
+
+        $properties = DB::table('apimo_properties')
+            ->where($conditions_where)
+            ->whereIn('type', $object_type)
+            ->whereIn('city', $object_place)
+            ->limit($items)
+            ->offset($offset)
+            ->get();
+
+
+        $this->property_count = DB::table('apimo_properties')
+            ->whereIn('type', $object_type)
+            ->whereIn('city', $object_place)
+            ->where($conditions_where)
+            ->get()->count();
+
+        if (count($properties) > 0) {
+            foreach ($properties as $property) {
+                $array[$property['property_id']] = $property;
+                $array[$property['property_id']]['user'] = self::getUserById($property['user']);
+                $array[$property['property_id']]['pictures'] = self::getPicturesByIds($property['pictures']);
+                $array[$property['property_id']]['step'] = self::getStepByIds($property['step']);
+                $array[$property['property_id']]['category'] = self::getCategoryById($property['category']);
+                $array[$property['property_id']]['subcategory'] = self::getSubCategoryById($property['subcategory']);
+                $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
+                $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
+                $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['view'] = self::getViewById($property['view']);
+                $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
+                $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
+                $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
+                $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
+                $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
+                $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
+            }
         }
-
+//        dump($array);
         return $array;
     }
 
@@ -423,11 +495,13 @@ class Properties extends Model
     protected static function getViewById($view_id)
     {
         if ($view_id != 0) {
-            $r = DB::select("SELECT apvt.value AS type, apvl.value AS landscape FROM apimo_view AS av
+            $r = DB::select(
+                "SELECT apvt.value AS type, apvl.value AS landscape FROM apimo_view AS av
                                 LEFT JOIN apimo_property_view_type AS apvt ON av.type = apvt.reference
                                 LEFT JOIN apimo_property_view_landscape AS apvl ON av.landscape = apvl.reference
                                 WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",
-                ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]);
+                ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]
+            );
 
             if (!empty($r)) {
                 $view_array['type'] = $r[0]['type'];
@@ -446,17 +520,21 @@ class Properties extends Model
      */
     protected static function getAreaById($area_id)
     {
+        $area = [];
         if ($area_id != 0) {
-            $r = DB::select("SELECT apa.value AS value FROM apimo_area AS aa
+            $r = DB::select("SELECT apa.value AS value,aa.value AS surface, aa.total AS surface_total FROM apimo_area AS aa
                  LEFT JOIN apimo_property_area AS apa ON aa.unit = apa.reference
                     WHERE aa.id = ?", [$area_id]);
-
             if (!empty($r)) {
-                $area_id = $r[0]['value'];
+                $area['value'] = $r[0]['value'];
+                $area['surface'] = $r[0]['surface'];
+                if ($area['surface'] < $r[0]['surface_total']) {
+                    $area['surface'] = $r[0]['surface_total'];
+                }
             }
         }
 
-        return $area_id;
+        return $area;
     }
 
     /**
@@ -492,6 +570,22 @@ class Properties extends Model
     }
 
     /**
+     * Returns a list of cities with real estate
+     *
+     * @return array
+     */
+    public static function getCityListIds()
+    {
+        $cities_ids = [];
+        $cities = DB::table('apimo_city')->select('city_id')->get()->toArray();
+        foreach ($cities as $city) {
+            $cities_ids[] = (string)$city['city_id'];
+        }
+
+        return $cities_ids;
+    }
+
+    /**
      * Returns the list of available types of real estate
      *
      * @return array
@@ -508,5 +602,24 @@ class Properties extends Model
                                             AND locale = ?", [self::$lang]);
 
         return $property_type;
+    }
+
+    /**
+     * Returns the list of available types of real estate
+     *
+     * @return array
+     */
+    public static function getAvailablePropertyTypeIds()
+    {
+        $res = [];
+        $property_types = DB::select(
+            "SELECT type FROM apimo_properties GROUP BY type"
+        );
+        foreach ($property_types as $property_type) {
+            $res[] = (string)$property_type['type'];
+        }
+
+
+        return $res;
     }
 }

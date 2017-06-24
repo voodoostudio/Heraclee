@@ -522,3 +522,7 @@ $(document).ready(function () {
     ]
 
 });
+
+function setSellType(id) {
+    $('#sell_type_val').val(id);
+}
