@@ -130,11 +130,11 @@ class Properties extends Model
         };
 
         if ($bedrooms_min != '') {
-            $conditions_where[] = ['area_surface', '>=', $bedrooms_min];
+            $conditions_where[] = ['rooms', '>=', $bedrooms_min];
         };
 
         if ($bedrooms_max != '') {
-            $conditions_where[] = ['area_surface', '<=', $bedrooms_max];
+            $conditions_where[] = ['rooms', '<=', $bedrooms_max];
         };
 
         $properties = DB::table('apimo_properties')
