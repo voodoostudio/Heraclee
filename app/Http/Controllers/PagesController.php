@@ -32,6 +32,12 @@ class PagesController extends Controller
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $url_page = '/results?page=';
 
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
         if (isset($_GET['items'])) {
             Session::put('search.items', $_GET['items']);
         } elseif (!Session::has('search.items')) {
@@ -123,7 +129,8 @@ class PagesController extends Controller
                 'pagination' => $pagination,
                 'city_list' => $city_list,
                 'type' => $type,
-                'search' => Session::get('search')
+                'search' => Session::get('search'),
+                'view_type' => $view_type
             ]
         );
     }
