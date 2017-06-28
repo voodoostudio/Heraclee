@@ -23,7 +23,7 @@ class Properties extends Model
         $listPage = [];
         if ($count != 0) {
             $countPages = (int)ceil($count / $items);
-            $number_of_pages_on_the_sides = 30;
+            $number_of_pages_on_the_sides = 2;
 
             $listPage['next'] = (($curPage < $countPages) ? ($curPage + 1) : '');
             $listPage['back'] = (($curPage > 1) ? ($curPage - 1) : '');

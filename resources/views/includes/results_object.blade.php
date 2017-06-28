@@ -5,13 +5,20 @@
             {{--<div class="exclusive_label">Exclusif</div>--}}
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
+                    {{--@foreach($property['pictures'] as $picture)--}}
+                        {{--@if(!empty($picture['url']))--}}
+                            {{--<li><img src="{{$picture['url']}}" alt=""></li>--}}
+                        {{--@else--}}
+                            {{--<li><img src="img/objects/object_3.png" alt=""></li>--}}
+                        {{--@endif--}}
+                    {{--@endforeach--}}
+                    @if(!empty($property['pictures']))
                     @foreach($property['pictures'] as $picture)
-                        @if(!empty($picture['url']))
                             <li><img src="{{$picture['url']}}" alt=""></li>
-                        @else
-                            <li><img src="img/objects/object_3.png" alt=""></li>
-                        @endif
                     @endforeach
+                    @else
+                        <li style="padding: 100px"><img src="img/no_photo.svg" alt=""></li>
+                    @endif
                 </ul>
             </div>
         </div>

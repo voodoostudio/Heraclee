@@ -1,20 +1,4 @@
 $(document).ready(function () {
-
-    // $(window).on('resize orientationChange', function(event) {
-    //    console.log('test');
-    //     $('.results_carousel').slick('resize');
-    // });
-
-    // $(window).resize(function() {
-    //     $('.results_carousel').slick('unslick');
-    //     resultsCarouselInit();
-    //     console.log('test');
-    // });
-
-    // $(window).on('orientationchange', function() {
-    //     $('.results_carousel').slick('resize');
-    // });
-
     $('.view_type li').on('click', function () {
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');
@@ -88,312 +72,313 @@ $(document).ready(function () {
     }
 
 
+
+
 });
 
-var locations = [
-    {
-        lat: 47.061703,
-        lng: 9.008789,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 46.207389,
-        lng: 6.155903,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 46.254593,
-        lng: 6.143417,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 46.355873,
-        lng: 6.479187,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.260126,
-        lng: 8.569336,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.512447,
-        lng: 8.695679,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    }
-    ,
-    {
-        lat: 47.671745,
-        lng: 8.382568,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.608825,
-        lng: 8.750610,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.579189,
-        lng: 8.684692,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.675444,
-        lng: 8.366089,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.582895,
-        lng: 8.497925,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.434474,
-        lng: 8.728638,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 47.512447,
-        lng: 8.415527,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    },
-    {
-        lat: 46.240348,
-        lng: 6.146507,
-        info: '<div class="object_info_container">' +
-        '<div class="object_info">' +
-        '<a href="#">Saint-Tropez</a>' +
-        '<div class="subtitle"> ' +
-        '<span class="city">Vanades</span> ' +
-        '<span class="price">3 000 000 000 €</span> ' +
-        '</div> ' +
-        '<div class="properties_block"> ' +
-        '<ul class="properties"> ' +
-        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
-        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
-        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
-        '</ul> ' +
-        '</div> ' +
-        '</div> ' +
-        '</div>'
-    }
-];
+// var locations = [
+//     {
+//         lat: 47.061703,
+//         lng: 9.008789,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 46.207389,
+//         lng: 6.155903,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 46.254593,
+//         lng: 6.143417,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 46.355873,
+//         lng: 6.479187,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.260126,
+//         lng: 8.569336,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.512447,
+//         lng: 8.695679,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.671745,
+//         lng: 8.382568,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.608825,
+//         lng: 8.750610,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.579189,
+//         lng: 8.684692,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.675444,
+//         lng: 8.366089,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.582895,
+//         lng: 8.497925,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.434474,
+//         lng: 8.728638,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 47.512447,
+//         lng: 8.415527,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     },
+//     {
+//         lat: 46.240348,
+//         lng: 6.146507,
+//         info: '<div class="object_info_container">' +
+//         '<div class="object_info">' +
+//         '<a href="#">Saint-Tropez</a>' +
+//         '<div class="subtitle"> ' +
+//         '<span class="city">Vanades</span> ' +
+//         '<span class="price">3 000 000 000 €</span> ' +
+//         '</div> ' +
+//         '<div class="properties_block"> ' +
+//         '<ul class="properties"> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">300 m</span><sup>2</sup> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">8</span> </li> ' +
+//         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">5</span> </li> ' +
+//         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">Dégagée Jardin Mer</span> </span> </li> ' +
+//         '</ul> ' +
+//         '</div> ' +
+//         '</div> ' +
+//         '</div>'
+//     }
+// ];
 
 function setSellType(id) {
     $('#sell_type_val').val(id);
 }
 
 function setItems() {
-    var items = $('#sorting_type').val()
+    var items = $('#sorting_type').val();
     window.location.href='/results?items='+items;
     console.log(items);
 }
