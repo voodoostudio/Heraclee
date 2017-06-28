@@ -301,6 +301,9 @@ section.results_section {
                 height: 100%;
                 li {
                   height: 100%;
+                  &.no_image {
+                    border: 1px solid $main_brown_clr;
+                  }
                   img {
                     width: 100%;
                     height: 100%;
