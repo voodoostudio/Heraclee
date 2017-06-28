@@ -17,7 +17,7 @@
                             <li><img src="{{$picture['url']}}" alt=""></li>
                     @endforeach
                     @else
-                        <li style="padding: 100px"><img src="img/no_photo.svg" alt=""></li>
+                        <li class="no_image"><img src="img/no_photo_570.svg" alt=""></li>
                     @endif
                 </ul>
             </div>

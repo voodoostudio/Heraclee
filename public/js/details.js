@@ -45,9 +45,9 @@ $(document).ready(function() {
     var service;
     var placesMarkers = [];
     function initObjectMap() {
-        latlong = {lat: 46.207389, lng: 6.155903};
+        latlong = {lat: object_lat, lng: object_long};
         map = new google.maps.Map(document.getElementById('object_map'), {
-            zoom: 15,
+            zoom: 17,
             center: latlong,
             scrollwheel: false,
             mapTypeControlOptions: {

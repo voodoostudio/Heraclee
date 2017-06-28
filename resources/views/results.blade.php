@@ -68,16 +68,22 @@
                 lng: {{$property['longitude']}},
                 info: '<div class="object_info_container">' +
                 '<div class="object_info">' +
-                '<a href="#">'+'{{$property["type"]}}'+'</a>' +
+                '<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +
                 '<div class="subtitle"> ' +
                 '<span class="city">'+'{{$property['city']}}'+'</span> ' +
                 '<span class="price">'+'{{$property['price']}}'+ '€</span> ' +
                 '</div> ' +
                 '<div class="properties_block"> ' +
                 '<ul class="properties"> ' +
+                '@if(!empty($property['area_surface']))'+
                 '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$property['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                '@endif'+
+                '@if(!empty($property['rooms']))'+
                 '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$property['rooms']}}'+'</span> </li> ' +
+                '@endif'+
+                '@if(!empty($property['bedrooms']))'+
                 '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$property['bedrooms']}}'+'</span> </li> ' +
+                '@endif'+
                 '@if(!empty($property['view']['type']))'+
                 '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$property['view']['type']}}'+'</span> </span> </li> ' +
                 '@endif'+
