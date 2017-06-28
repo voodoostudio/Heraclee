@@ -121,13 +121,26 @@ class PagesController extends Controller
             Session::get("search.bedrooms_max")
         );
 
+        $all_properties = $properties_obj->getAllProperties(
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place"),
+            Session::get("search.search_keywords"),
+            Session::get("search.price_min"),
+            Session::get("search.price_max"),
+            Session::get("search.surface_min"),
+            Session::get("search.surface_max"),
+            Session::get("search.bedrooms_min"),
+            Session::get("search.bedrooms_max")
+        );
+
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
         return view(
             'results',
             [
                 'properties' => $properties,
-                'all_properties' => $properties_obj->getAllProperties(Session::get("search.sell_type")),
+                'all_properties' => $all_properties,
                 'pagination' => $pagination,
                 'count_items' => $count_items,
                 'city_list' => $city_list,

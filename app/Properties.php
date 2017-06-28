@@ -181,7 +181,16 @@ class Properties extends Model
      * @return mixed
      */
     public function getAllProperties(
-        $sell_type = 1
+        $sell_type = 1,
+        $object_type = '',
+        $object_place = '',
+        $search_keywords = '',
+        $price_min = '',
+        $price_max = '',
+        $surface_min = '',
+        $surface_max = '',
+        $bedrooms_min = '',
+        $bedrooms_max = ''
     ) {
 
         $array = [];
@@ -189,12 +198,40 @@ class Properties extends Model
 
         $conditions_where[] = ['category', '=', $sell_type];
 
+        if ($price_min != '') {
+            $conditions_where[] = ['price', '>=', $price_min];
+        };
+
+        if ($price_max != '') {
+            $conditions_where[] = ['price', '<=', $price_max];
+        };
+
+        if ($surface_min != '') {
+            $conditions_where[] = ['area_surface', '>=', $surface_min];
+        };
+
+        if ($surface_max != '') {
+            $conditions_where[] = ['area_surface', '<=', $surface_max];
+        };
+
+        if ($bedrooms_min != '') {
+            $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+        };
+
+        if ($bedrooms_max != '') {
+            $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+        };
+
         $properties = DB::table('apimo_properties')
+            ->whereIn('type', $object_type)
+            ->whereIn('city', $object_place)
             ->where($conditions_where)
             ->get();
 
 
         $this->property_count = DB::table('apimo_properties')
+            ->whereIn('type', $object_type)
+            ->whereIn('city', $object_place)
             ->where($conditions_where)
             ->get()->count();
 
