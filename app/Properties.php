@@ -177,6 +177,51 @@ class Properties extends Model
     }
 
     /**
+     * @param int $sell_type
+     * @return mixed
+     */
+    public function getAllProperties(
+        $sell_type = 1
+    ) {
+
+        $array = [];
+        $conditions_where = [];
+
+        $conditions_where[] = ['category', '=', $sell_type];
+
+        $properties = DB::table('apimo_properties')
+            ->where($conditions_where)
+            ->get();
+
+
+        $this->property_count = DB::table('apimo_properties')
+            ->where($conditions_where)
+            ->get()->count();
+
+        if (count($properties) > 0) {
+            foreach ($properties as $property) {
+                $array[$property['property_id']] = $property;
+                $array[$property['property_id']]['user'] = self::getUserById($property['user']);
+                $array[$property['property_id']]['pictures'] = self::getPicturesByIds($property['pictures']);
+                $array[$property['property_id']]['step'] = self::getStepByIds($property['step']);
+                $array[$property['property_id']]['category'] = self::getCategoryById($property['category']);
+                $array[$property['property_id']]['subcategory'] = self::getSubCategoryById($property['subcategory']);
+                $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
+                $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
+                $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['view'] = self::getViewById($property['view']);
+                $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
+                $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
+                $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
+                $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
+                $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
+                $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
+            }
+        }
+        return $array;
+    }
+
+    /**
      * @param $ids
      *
      * @return mixed

@@ -127,6 +127,7 @@ class PagesController extends Controller
             'results',
             [
                 'properties' => $properties,
+                'all_properties' => $properties_obj->getAllProperties(Session::get("search.sell_type")),
                 'pagination' => $pagination,
                 'count_items' => $count_items,
                 'city_list' => $city_list,
