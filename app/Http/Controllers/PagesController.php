@@ -122,11 +122,13 @@ class PagesController extends Controller
         );
 
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
+        $count_items = $properties_obj->property_count;
         return view(
             'results',
             [
                 'properties' => $properties,
                 'pagination' => $pagination,
+                'count_items' => $count_items,
                 'city_list' => $city_list,
                 'type' => $type,
                 'search' => Session::get('search'),

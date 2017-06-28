@@ -9,7 +9,7 @@ class Properties extends Model
 {
     public static $lang = 'fr_FR';
     public static $lang_short = 'fr';
-    private $property_count;
+    public $property_count;
 
     /**
      * @param int $items

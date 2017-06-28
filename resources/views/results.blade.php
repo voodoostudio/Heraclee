@@ -22,7 +22,7 @@
                                         class="icn icon-list"></i>Liste
                             </li>
                             <li class="grid_view_btn  @if($view_type == 'grid_view') active @endif"><i
-                                        class="icn icon-grid"></i>Grille (311)
+                                        class="icn icon-grid"></i>Grille ({{$count_items}})
                             </li>
                             <li class="map_view_btn @if($view_type == 'map_view') active @endif"><i
                                         class="icn icon-map"></i>Carte
