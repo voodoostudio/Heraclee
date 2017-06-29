@@ -405,7 +405,7 @@ function resultsCarouselInit() {
 
 }
 
-function initResultsMap() {
+function initResultsMap()  {
     var latlang = {lat: 46.207389, lng: 6.155903};
     var map = new google.maps.Map(document.getElementById('results_map'), {
         zoom: 5,
@@ -449,11 +449,38 @@ function initResultsMap() {
         return marker;
     });
 
+
+    var mcOptions = {
+        gridSize: 50,
+        styles: [{
+            url: '/img/map_markerclusterer/claster_img_sm.svg',
+            height: 30,
+            width: 30,
+            anchor: [0, 0],
+            textColor: '#000000',
+            textSize: 12
+        }, {
+            url: '/img/map_markerclusterer/claster_img_md.svg',
+            height: 40,
+            width: 40,
+            anchor: [0, 0],
+            textColor: '#000000',
+            textSize: 12
+        }, {
+            url: '/img/map_markerclusterer/claster_img_lg.svg',
+            width: 52,
+            height: 52,
+            anchor: [0, 0],
+            textColor: '#000000',
+            textSize: 12
+        }],
+        maxZoom: 15
+    };
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(
         map,
         markers,
-        {imagePath: '/img/map_markerclusterer/m'}
+        mcOptions
     );
 
     google.maps.event.addListener(infowindow, 'domready', function () {
