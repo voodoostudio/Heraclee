@@ -768,18 +768,13 @@ class SyncWithApimo
     {
         $curl = new Curl();
         $curl->setBasicAuthentication(env('APIMO_PROVIDER'), env('APIMO_TOKEN'));
-        $curl->setHeader('Content - Type', 'application / json; charset = utf - 8');
+        $curl->setHeader('Content-Type', 'application/json');
         $curl->get(
             'https://api.apimo.pro/agencies/' . env('APIMO_AGENCY') . '/' . $type_real_estate,
             ['limit' => self::$limit, 'offset' => $offset]
         );
-        $properties_array = json_decode($curl->response, 1);
-//        echo "<pre>";
-//        print_r($properties_array);
-//        echo "</pre>";
-//        die();
+        $response = json_encode($curl->response);
+        $properties_array = json_decode($response, true);
         return $properties_array;
     }
-
-
 }
