@@ -43,12 +43,14 @@
                 </div>
                 <div class="properties_container">
                     <ul class="properties">
-                        <li>
-                            <span class="property_container">
-                                <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
-                                <span class="prop_val">{{$property['area_surface']}} m<sup>2</sup></span>
-                            </span>
-                        </li>
+                        @if(!empty($property['area_surface']))
+                            <li>
+                                <span class="property_container">
+                                    <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
+                                    <span class="prop_val">{{$property['area_surface']}} m<sup>2</sup></span>
+                                </span>
+                            </li>
+                        @endif
                         @if(!empty($property['rooms']))
                             <li>
                                 <span class="property_container">

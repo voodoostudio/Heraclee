@@ -99,24 +99,27 @@
                     <div class="row">
                         <div class="col-xs-12 col-xl-8">
                             <div class="agent_img">
-                                <img src="img/details/agent.jpg" alt="">
+                                @if(!empty($property['user']['picture']))
+                                    <img src="{{$property['user']['picture']}}" alt="">
+                                @else
+                                    <img src="img/details/no_agent_photo.svg" alt="">
+                                @endif
                             </div>
                             <div class="agent_info">
                                 <p>Contact agent to visit</p>
                                 <p class="agent_name">
-{{--                                    {{$user['firstname']}}--}}
-                                    Pascal de Boo
+                                    {{$property['user']['firstname']}} {{$property['user']['lastname']}}
                                 </p>
                                 <ul>
-                                    <li>+33 4 94 54 20 01</li>
-                                    <li><a href="mailto:nego@heraclee.com">nego@heraclee.com</a></li>
+                                    <li>{{$property['user']['phone']}}</li>
+                                    <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
-                                <p class="object_id">ID : 1239806</p>
-                                <div class="object_price">CHF 2'990'001</div>
+                                <p class="object_id">ID : {{$property['property_id']}}</p>
+                                <div class="object_price">{{$property['price_currency']}} {{$property['price']}}</div>
                                 <button class="btn dark">Je suis intéressé</button>
                             </div>
                         </div>
@@ -138,17 +141,28 @@
                     <div class="object_details_container">
                         <h4>Informations</h4>
                         <ul class="object_info_list">
-                            <li><span class="detail_name">Piéces </span><span class="detail_value">9</span></li>
-                            <li><span class="detail_name">État</span><span class="detail_value">Excellent étata</span></li>
+                            @if(!empty($property['rooms']))
+                                <li><span class="detail_name">Piéces </span><span class="detail_value">{{$property['rooms']}}</span></li>
+                            @endif
+                            @if(!empty($property['condition']))
+                                <li><span class="detail_name">État</span><span class="detail_value">{{$property['condition']}}</span></li>
+                            @endif
                             <li><span class="detail_name">Niveaux</span><span class="detail_value">2</span></li>
                             <li><span class="detail_name">Nombre d’étages</span><span class="detail_value">4</span></li>
-                            <li><span class="detail_name">Style</span><span class="detail_value">Contemporain</span></li>
-                            <li><span class="detail_name">Étage</span><span class="detail_value">2</span></li>
+                            @if(!empty($property['style']))
+                                <li><span class="detail_name">Style</span><span class="detail_value">{{$property['style']}}</span></li>
+                            @endif
+                            @if(!empty($property['floor']))
+                                <li><span class="detail_name">Étage</span><span class="detail_value">{{$property['floor']}}</span></li>
+                            @endif
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
-                            <li><span class="detail_name">Surface totale</span><span class="detail_value">700 m<sup>2</sup></span></li>
-                            <li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>
+                            @if(!empty($property['area_surface']))
+                                <li><span class="detail_name">Surface totale</span><span class="detail_value">{{$property['area_surface']}} m<sup>2</sup></span></li>
+                            @endif
+
+                            {{--<li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>--}}
                         </ul>
                         <ul class="object_info_list">
                             <li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>
