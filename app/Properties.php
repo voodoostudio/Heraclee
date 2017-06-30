@@ -290,7 +290,7 @@ class Properties extends Model
             ->where("user_id", $id)
             ->get()
             ->toArray();
-        return $user;
+        return $user[0];
     }
 
     /**
