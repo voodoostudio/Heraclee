@@ -62,7 +62,7 @@
     <script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>
     <script>
         var locations = [
-            @foreach ($properties as $property)
+            @foreach ($all_properties as $property)
             {
                 lat: {{$property['latitude']}},
                 lng: {{$property['longitude']}},
