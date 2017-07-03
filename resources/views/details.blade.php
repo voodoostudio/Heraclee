@@ -70,8 +70,8 @@
                         @if(!empty($property['view']['type']))
                             <li><span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
                         @endif
-                        @if(!empty($property['floor']))
-                            <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span>{{$property['floor']}}</span></span></li>
+                        @if(!empty($property['floor']['type']))
+                            <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
                         <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
