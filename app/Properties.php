@@ -107,7 +107,11 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
-        $conditions_where[] = ['category', '=', $sell_type];
+        if ($sell_type == 1) {
+            $sell_type_array = [1, 4, 5, 6];
+        } else {
+            $sell_type_array = [2,3];
+        }
 
 //        if ($search_keywords != '') {
 //            $conditions_where[] = ['category', '=', $search_keywords];
@@ -140,6 +144,7 @@ class Properties extends Model
         $properties = DB::table('apimo_properties')
             ->where($conditions_where)
             ->whereIn('type', $object_type)
+            ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
             ->limit($items)
             ->offset($offset)
@@ -147,9 +152,10 @@ class Properties extends Model
 
 
         $this->property_count = DB::table('apimo_properties')
-            ->whereIn('type', $object_type)
-            ->whereIn('city', $object_place)
             ->where($conditions_where)
+            ->whereIn('type', $object_type)
+            ->whereIn('category', $sell_type_array)
+            ->whereIn('city', $object_place)
             ->get()->count();
 
         if (count($properties) > 0) {
@@ -196,6 +202,12 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
+        if ($sell_type == 1) {
+            $sell_type_array = [1, 4, 5, 6];
+        } else {
+            $sell_type_array = [2,3];
+        }
+
         $conditions_where[] = ['category', '=', $sell_type];
 
         if ($price_min != '') {
@@ -224,16 +236,18 @@ class Properties extends Model
 
         $properties = DB::table('apimo_properties')
             ->whereIn('type', $object_type)
+            ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
             ->where($conditions_where)
             ->get();
-
-
-        $this->property_count = DB::table('apimo_properties')
-            ->whereIn('type', $object_type)
-            ->whereIn('city', $object_place)
-            ->where($conditions_where)
-            ->get()->count();
+//
+//
+//        $this->property_count = DB::table('apimo_properties')
+//            ->whereIn('type', $object_type)
+//            ->whereIn('category', $sell_type_array)
+//            ->whereIn('city', $object_place)
+//            ->where($conditions_where)
+//            ->get()->count();
 
         if (count($properties) > 0) {
             foreach ($properties as $property) {
