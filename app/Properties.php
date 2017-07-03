@@ -61,7 +61,7 @@ class Properties extends Model
             $array['type'] = self::getTypeById($property[0]['type']);
             $array['subtype'] = self::getSubTypeById($property[0]['subtype']);
             $array['city'] = self::getCityById($property[0]['city']);
-            $array['floor'] = self::getFloorByPropertyId($property['property_id']);
+            $array['floor'] = self::getFloorByPropertyId($property[0]['property_id']);
             $array['view'] = self::getViewById($property[0]['view']);
             $array['condition'] = self::getConditionById($property[0]['condition']);
             $array['standing'] = self::getStandingById($property[0]['standing']);
@@ -378,6 +378,10 @@ class Properties extends Model
         return $areas_array;
     }
 
+    /**
+     * @param int $property_id
+     * @return array
+     */
     protected static function getFloorByPropertyId($property_id)
     {
         $floor = DB::table('apimo_floor')
