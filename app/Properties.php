@@ -61,6 +61,7 @@ class Properties extends Model
             $array['type'] = self::getTypeById($property[0]['type']);
             $array['subtype'] = self::getSubTypeById($property[0]['subtype']);
             $array['city'] = self::getCityById($property[0]['city']);
+            $array['floor'] = self::getFloorByPropertyId($property['property_id']);
             $array['view'] = self::getViewById($property[0]['view']);
             $array['condition'] = self::getConditionById($property[0]['condition']);
             $array['standing'] = self::getStandingById($property[0]['standing']);
@@ -110,7 +111,7 @@ class Properties extends Model
         if ($sell_type == 1) {
             $sell_type_array = [1, 4, 5, 6];
         } else {
-            $sell_type_array = [2,3];
+            $sell_type_array = [2, 3];
         }
 
 //        if ($search_keywords != '') {
@@ -169,6 +170,7 @@ class Properties extends Model
                 $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
                 $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
                 $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['floor'] = self::getFloorByPropertyId($property['property_id']);
                 $array[$property['property_id']]['view'] = self::getViewById($property['view']);
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
@@ -205,7 +207,7 @@ class Properties extends Model
         if ($sell_type == 1) {
             $sell_type_array = [1, 4, 5, 6];
         } else {
-            $sell_type_array = [2,3];
+            $sell_type_array = [2, 3];
         }
 
         $conditions_where[] = ['category', '=', $sell_type];
@@ -374,6 +376,19 @@ class Properties extends Model
         }
 
         return $areas_array;
+    }
+
+    protected static function getFloorByPropertyId($property_id)
+    {
+        $floor = DB::table('apimo_floor')
+            ->select(['apimo_property_floor.value as type','apimo_floor.value','apimo_floor.levels','apimo_floor.floors'])
+            ->leftJoin('apimo_property_floor', 'apimo_floor.type', '=', 'apimo_property_floor.reference')
+            ->where('apimo_floor.property_id', $property_id)
+            ->get()->toArray();
+        if (count($floor) > 0) {
+            $floor = $floor[0];
+        }
+        return $floor;
     }
 
     /**

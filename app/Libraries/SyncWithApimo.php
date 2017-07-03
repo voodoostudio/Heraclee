@@ -72,7 +72,7 @@ class SyncWithApimo
                             'latitude' => $property['latitude'],
                             'radius' => $property['radius'],
                             'area_unit' => $property['area']['unit'],
-                            'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total']))?(($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']):0),
+                            'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total'])) ? (($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']) : 0),
                             'rooms' => $property['rooms'],
                             'bedrooms' => $property['bedrooms'],
                             'sleeps' => $property['sleeps'],
@@ -192,7 +192,7 @@ class SyncWithApimo
                                 'latitude' => $property['latitude'],
                                 'radius' => $property['radius'],
                                 'area_unit' => $property['area']['unit'],
-                                'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total']))?(($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']):0),
+                                'area_surface' => ((!empty($property['area']['value']) || !empty($property['area']['total'])) ? (($property['area']['value'] < $property['area']['total']) ? $property['area']['total'] : $property['area']['value']) : 0),
                                 'rooms' => $property['rooms'],
                                 'bedrooms' => $property['bedrooms'],
                                 'sleeps' => $property['sleeps'],
@@ -546,9 +546,10 @@ class SyncWithApimo
     {
         $floor_id = null;
         if (is_array($floor)) {
-            if (!is_null($floor['type']) || !is_null($floor['value']) || !is_null($floor['levels']) || !is_null(
-                    $floor['floors']
-                )
+            if (!is_null($floor['type'])
+                || !is_null($floor['value'])
+                || !is_null($floor['levels'])
+                || !is_null($floor['floors'])
             ) {
                 DB::insert(
                     'REPLACE INTO apimo_floor SET property_id = ?, type = ?, value =?, levels=?,floors=?',
