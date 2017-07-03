@@ -354,6 +354,7 @@ section.object_info_section {
             }
             .detail_value {
               padding-left: 10px;
+              text-transform: lowercase;
             }
           }
           &.main_info {

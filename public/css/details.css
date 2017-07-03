@@ -739,7 +739,8 @@ section.object_info_section .outer_block_container {
             bottom: 2px;
             margin-left: 4px; }
         section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li .detail_value {
-          padding-left: 10px; }
+          padding-left: 10px;
+          text-transform: lowercase; }
       section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list.main_info {
         border-bottom: 1px solid #ccac83;
         margin-bottom: 30px; }
@@ -867,3 +868,5 @@ section.location_section .map_container {
           color: #ff78ce; }
         section.location_section .map_container .map_sidebar ul li.map_universities .checkbox_container label.checkbox_label {
           color: #d462fa; }
+
+/*# sourceMappingURL=details.css.map */
