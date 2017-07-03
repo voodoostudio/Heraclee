@@ -27,7 +27,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
-                                <div class="object_status">Vente</div>
+                                <div class="object_status">{{$property['category']}}</div>
                                 <h2>{{$property['type']}}</h2>
                                 <h3>{{$property['city']}}</h3>
                             </div>

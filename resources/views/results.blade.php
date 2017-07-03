@@ -48,7 +48,9 @@
             <div class="container-fluid">
                 <div class="results_carousel row">
                     @foreach($properties as $property)
-                        @include('includes.results_object')
+                        @if($property['step'] == 1)
+                            @include('includes.results_object')
+                        @endif
                     @endforeach
                 </div>
             </div>

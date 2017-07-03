@@ -397,7 +397,7 @@ class Properties extends Model
             ->get();
 
         if (!empty($step)) {
-            $step_id = $step[0]['value'];
+            $step_id = $step[0]['reference'];
         }
 
         return $step_id;
