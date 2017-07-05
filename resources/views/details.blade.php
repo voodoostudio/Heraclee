@@ -79,10 +79,13 @@
                         {{--@endforeach--}}
 
 {{--                        {{$property['service']['value']}}--}}
+
                         @foreach($property['services'] as $key => $prop)
-                            @if($key == '4')
-                                <li class="no_text {{ ($key == '4') ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $prop }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
-                            @endif
+                            @switch($key)
+                                @case(4)
+                                     <li class="no_text {{ ($key == '4') ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $prop }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
+                                @breakswitch
+                            @endswitch
                         @endforeach
                         <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
