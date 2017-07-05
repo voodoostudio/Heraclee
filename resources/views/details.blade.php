@@ -78,7 +78,7 @@
                          {{--{{$service['value']}}--}}
                         {{--@endforeach--}}
 
-                        {{$property['service']['value']}}
+{{--                        {{$property['service']['value']}}--}}
                         <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>
