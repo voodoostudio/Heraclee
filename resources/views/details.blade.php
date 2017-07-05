@@ -73,6 +73,12 @@
                         @if(!empty($property['floor']['type']))
                             <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
+
+                        {{--@foreach($property['services'] as $service)--}}
+                         {{--{{$service['value']}}--}}
+                        {{--@endforeach--}}
+
+                        {{$property['service']['value']}}
                         <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
                         <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>
@@ -152,8 +158,8 @@
                             @if(!empty($property['style']))
                                 <li><span class="detail_name">Style</span><span class="detail_value">{{$property['style']}}</span></li>
                             @endif
-                            @if(!empty($property['floor']))
-                                <li><span class="detail_name">Étage</span><span class="detail_value">{{$property['floor']}}</span></li>
+                            @if(!empty($property['floor']['type']))
+                                <li><span class="detail_name">Étage</span><span class="detail_value">{{$property['floor']['type']}}</span></li>
                             @endif
                         </ul>
                         <h4>Surfaces</h4>
