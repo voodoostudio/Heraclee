@@ -11,8 +11,8 @@ namespace App\Http\Controllers;
 use App\Libraries\SyncWithApimo;
 use App\Properties;
 use App\Team;
+use App\Services;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -157,7 +157,7 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
-            $services = DB::select('select * from apimo_property_service');
+            $services = Services::select('reference', 'value')->get();
             return view('details', ['property' => $property, 'services' => $services]);
         } else {
             return redirect('results');

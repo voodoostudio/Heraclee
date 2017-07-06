@@ -82,34 +82,34 @@
 
 
                         @foreach($services as $service)
-                            @switch($service['reference'])
+                            @switch($service->reference)
                                 {{-- Wi-Fi --}}
                                 @case(1)
-                                    <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Disabled access --}}
                                 @case(3)
-                                    <li class="no_text {{ (!empty($property['services']['3'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['3'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Air conditioner --}}
                                 @case(4)
-                                    <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Security --}}
                                 @case(5)
-                                    <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Elevator --}}
                                 @case(6)
-                                    <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Swimming pool --}}
                                 @case(11)
-                                    <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Furniture --}}
                                 @case(47)
-                                    <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
+                                    <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
                                 @break
                             @endswitch
                         @endforeach
