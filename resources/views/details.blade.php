@@ -80,23 +80,50 @@
 
 {{--                        {{$property['service']['value']}}--}}
 
-                        @foreach($property['services'] as $key => $prop)
-                            @switch($key)
+
+                        @foreach($services as $service)
+                            @switch($service['reference'])
+                                {{-- Wi-Fi --}}
+                                @case(1)
+                                    <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Disabled access --}}
+                                @case(3)
+                                    <li class="no_text {{ (!empty($property['services']['3'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Air conditioner --}}
                                 @case(4)
-                                     <li class="no_text {{ ($key == '4') ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $prop }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
-                                @breakswitch
+                                    <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Security --}}
+                                @case(5)
+                                    <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Elevator --}}
+                                @case(6)
+                                    <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Swimming pool --}}
+                                @case(11)
+                                    <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Furniture --}}
+                                @case(47)
+                                    <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service['value'] }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
+                                @break
                             @endswitch
                         @endforeach
-                        <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Security"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
-                        <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>
+
+                     <!--   <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li> -
+                        <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li> -
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text"><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text"><span class="icn_container tooltip" title="Security"><i class="icn icon-security"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text"><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li> +
+                        <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li> -->
                     </ul>
                 </div>
             </div>

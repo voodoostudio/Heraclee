@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
             $value = preg_replace('/(\s*)@endswitch(?=\s)/', '$1endswitch; ?>', $value);
             $value = preg_replace('/(\s*)@case\((.*)\)(?=\s)/', '$1case $2: ?>', $value);
             $value = preg_replace('/(?<=\s)@default(?=\s)/', 'default: ?>', $value);
-            $value = preg_replace('/(?<=\s)@breakswitch(?=\s)/', '<?php break;', $value);
+            $value = preg_replace('/(?<=\s)@break(?=\s)/', '<?php break;', $value);
             return $value;
         });
 //
