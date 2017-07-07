@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-12 col-sm-5 col-md-5 col-lg-6">
                                     <div class="img_container">
-                                        <img src="img/team/team_1.png" alt="Heraclee team member">
+                                        <img src="/img/team/team_1.png" alt="Heraclee team member">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-7 col-md-7 col-lg-6">
@@ -49,7 +49,7 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 col-md-5 col-lg-6">
                                     <div class="img_container">
-                                        <img src="img/team/team_2.png" alt="Heraclee team member">
+                                        <img src="/img/team/team_2.png" alt="Heraclee team member">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-7 col-lg-6">
@@ -76,7 +76,7 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 col-md-5 col-lg-6">
                                     <div class="img_container">
-                                        <img src="img/team/team_3_act.png" alt="Heraclee team member">
+                                        <img src="/img/team/team_3_act.png" alt="Heraclee team member">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-7 col-lg-6">
@@ -103,7 +103,7 @@
                             <div class="row">
                                 <div class="col-12 col-sm-6 col-md-5 col-lg-6">
                                     <div class="img_container">
-                                        <img src="img/team/team_4.png" alt="Heraclee team member">
+                                        <img src="/img/team/team_4.png" alt="Heraclee team member">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-7 col-lg-6">
