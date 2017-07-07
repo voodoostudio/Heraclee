@@ -15,8 +15,15 @@
                         <ul class="lang_currency_container">
                             <li>
                                 <ul class="language_select">
-                                    <li><a href="#" class="active">Fra</a></li>
-                                    <li><a href="#">Eng</a></li>
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                        <li>
+                                            <a class="ravis-btn btn-type-2 {{ ($localeCode == App::getLocale()) ? 'active' : '' }}" rel="alternate" hreflang="{{$localeCode}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode) }}">
+                                                <span>{{ $properties['native'] }}</span>
+                                           </a>
+                                        </li>
+                                    @endforeach
+                                    <!--<li><a href="#" class="active">Fra</a></li>
+                                    <li><a href="#">Eng</a></li>-->
                                 </ul>
                             </li>
                             <li>
