@@ -201,7 +201,7 @@ class PagesController extends Controller
     public function team()
     {
         $users = Team::where('active', 1)->get()->toArray();
-        dump($users);
+        //dump($users);
         return view('team');
     }
 
