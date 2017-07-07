@@ -24,12 +24,12 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li>
-                                <select name="currency">
-                                    <option value="chf">chf</option>
-                                    <option value="eur">euro</option>
-                                </select>
-                            </li>
+                            {{--<li>--}}
+                                {{--<select name="currency">--}}
+                                    {{--<option value="chf">chf</option>--}}
+                                    {{--<option value="eur">euro</option>--}}
+                                {{--</select>--}}
+                            {{--</li>--}}
                         </ul>
                     </div>
                 </div>
@@ -50,12 +50,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Location</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Promotions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Locaux commerciaux</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="#">Promotions</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link" href="#">Locaux commerciaux</a>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">Agence</a>
                     </li>
