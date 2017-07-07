@@ -20,6 +20,11 @@
         <div class="container-fluid">
             <h2>Nos derniers biens</h2>
             <div class="offers_carousel carousel">
+            {{-- @foreach($properties as $property)
+                @if($property['step'] == 1)
+                    @include('includes.results_object')
+                @endif
+            @endforeach--}}
                 <div class="object_block">
                     <div class="object_img_container">
                         <a href="#"><img src="/img/objects/object_1.png"></a>

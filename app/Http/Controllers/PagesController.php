@@ -22,7 +22,36 @@ class PagesController extends Controller
         Session::forget('search');
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
-        return view('index', ['city_list' => $city_list, 'type' => $type]);
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        if (isset($_GET['items'])) {
+            Session::put('search.items', $_GET['items']);
+        } elseif (!Session::has('search.items')) {
+            Session::put('search.items', 10);
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
+        $properties_obj = new Properties();
+        $properties = $properties_obj->getProperties(
+            Session::get("search.items"),
+            $cur_page,
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties]);
     }
 
     public function results()
