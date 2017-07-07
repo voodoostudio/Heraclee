@@ -22,8 +22,6 @@
                                            </a>
                                         </li>
                                     @endforeach
-                                    <!--<li><a href="#" class="active">Fra</a></li>
-                                    <li><a href="#">Eng</a></li>-->
                                 </ul>
                             </li>
                             <li>
