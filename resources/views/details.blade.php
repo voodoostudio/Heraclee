@@ -35,11 +35,11 @@
                     </div>
                 </div>
                 <div class="gradient_bottom"></div>
-                {{--<div class="panorama_link_container">--}}
-                    {{--<button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>--}}
-                {{--</div>--}}
-                {{--<div id="object_panorama"></div>--}}
-                {{--<button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>--}}
+                <div class="panorama_link_container">
+                    <button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>
+                </div>
+                <div id="object_panorama"></div>
+                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>
             </div>
             <div class="gallery_nav">
                 <div class="container-fluid">
@@ -73,13 +73,6 @@
                         @if(!empty($property['floor']['type']))
                             <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
-
-                        {{--@foreach($property['services'] as $service)--}}
-                         {{--{{$service['value']}}--}}
-                        {{--@endforeach--}}
-
-{{--                        {{$property['service']['value']}}--}}
-
 
                         @foreach($services as $service)
                             @switch($service->reference)
@@ -349,13 +342,13 @@
 @section('javascript')
     <script type="text/javascript" src="/krpano/Barnes-sttropez.com_les_vanades.js"></script>
 
-    {{--<script>--}}
-        {{--embedpano({--}}
-            {{--swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",--}}
-            {{--xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",--}}
-            {{--target:"object_panorama"--}}
-        {{--});--}}
-    {{--</script>--}}
+    <script>
+        embedpano({
+            swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",
+            xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",
+            target:"object_panorama"
+        });
+    </script>
 
     <script>
         var object_lat = {{$property['latitude']}};

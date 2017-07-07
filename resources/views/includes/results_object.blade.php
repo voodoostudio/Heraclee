@@ -2,16 +2,11 @@
     <div class="object_block">
         <div class="img_block">
             {{--<div class="activity_label">Loué</div>--}}
-            {{--<div class="exclusive_label">Exclusif</div>--}}
+            @if(!empty($property['agreement']) && $property['agreement'] == 3)
+            <div class="exclusive_label">Exclusif</div>
+            @endif
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
-                    {{--@foreach($property['pictures'] as $picture)--}}
-                        {{--@if(!empty($picture['url']))--}}
-                            {{--<li><img src="{{$picture['url']}}" alt=""></li>--}}
-                        {{--@else--}}
-                            {{--<li><img src="img/objects/object_3.png" alt=""></li>--}}
-                        {{--@endif--}}
-                    {{--@endforeach--}}
                     @if(!empty($property['pictures']))
                     @foreach($property['pictures'] as $picture)
                             <li><img src="{{$picture['url']}}" alt=""></li>
