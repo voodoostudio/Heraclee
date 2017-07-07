@@ -61,7 +61,7 @@ $(document).ready(function() {
                 position: google.maps.ControlPosition.RIGHT_CENTER
             }
         });
-        var markerImage = new google.maps.MarkerImage('img/map_pin.svg');
+        var markerImage = new google.maps.MarkerImage('/img/map_pin.svg');
 
         var marker = new google.maps.Marker({
             position: latlong,

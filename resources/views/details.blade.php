@@ -120,9 +120,6 @@
                     </ul>
                 </div>
             </div>
-            {{--@foreach($property['services'] as $service)--}}
-                {{--{{$service}}--}}
-            {{--@endforeach--}}
         </div>
     </section>
 
@@ -136,7 +133,7 @@
                                 @if(!empty($property['user']['picture']))
                                     <img src="{{$property['user']['picture']}}" alt="">
                                 @else
-                                    <img src="img/details/no_agent_photo.svg" alt="">
+                                    <img src="/img/details/no_agent_photo.svg" alt="">
                                 @endif
                             </div>
                             <div class="agent_info">
