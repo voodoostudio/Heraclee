@@ -557,8 +557,8 @@ section.gallery_section .gallery_container {
       bottom: 20px;
       left: 50%;
       margin-left: -85px;
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 1rem;
+      line-height: 1rem;
       text-transform: uppercase;
       z-index: 101; }
       section.gallery_section .gallery_container .gallery_view .close_panorama .icn {
@@ -872,5 +872,3 @@ section.location_section .map_container {
           color: #ff78ce; }
         section.location_section .map_container .map_sidebar ul li.map_universities .checkbox_container label.checkbox_label {
           color: #d462fa; }
-
-/*# sourceMappingURL=details.css.map */
