@@ -29,7 +29,7 @@
                             <div class="col-12">
                                 <div class="object_status">{{$property['category']}}</div>
                                 <h2>{{$property['type']}}</h2>
-                                <h3>{{$property['city']}}</h3>
+                                <h3>{{$property['city']}}{{$property['district']['name']}}</h3>
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,9 @@
             <div class="container-fluid">
                 <div class="properties_container">
                     <ul class="properties">
-                        <li><span class="icn_container tooltip" title="Living space"><i class="icn icon-area"></i></span><span class="prop_val"><span>300m<sup>2</sup></span></span></li>
+                        @if(!empty($property['area_surface']))
+                            <li><span class="icn_container tooltip" title="Living space"><i class="icn icon-area"></i></span><span class="prop_val"><span>{{$property['area_surface']}}m<sup>2</sup></span></span></li>
+                        @endif
                         @if(!empty($property['rooms']))
                             <li><span class="icn_container tooltip" title="Number of rooms"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
                         @endif
@@ -106,17 +108,6 @@
                                 @break
                             @endswitch
                         @endforeach
-
-                     <!--   <li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li> -
-                        <li class="no_text"><span class="icn_container tooltip" title="Disabled access"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li> -
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Swimming pool"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text"><span class="icn_container tooltip" title="Air conditioner"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text"><span class="icn_container tooltip" title="Security"><i class="icn icon-security"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text"><span class="icn_container tooltip" title="Wi-Fi"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Furniture"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text inactive"><span class="icn_container tooltip" title="Elevator"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li> +
-                        <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li> -->
                     </ul>
                 </div>
             </div>
@@ -172,19 +163,41 @@
                     <div class="object_details_container">
                         <h4>Informations</h4>
                         <ul class="object_info_list">
+                            @if(!empty($property['type']))
+                                <li><span class="detail_name">Type</span><span class="detail_value">{{$property['type']}}</span></li>
+                            @endif
+                            @if(!empty($property['subtype']))
+                                <li><span class="detail_name">Sous-type</span><span class="detail_value">{{$property['subtype']}}</span></li>
+                            @endif
                             @if(!empty($property['rooms']))
                                 <li><span class="detail_name">Piéces </span><span class="detail_value">{{$property['rooms']}}</span></li>
+                            @endif
+                            @if(!empty($property['bedrooms']))
+                                <li><span class="detail_name">Chambres</span><span class="detail_value">{{$property['bedrooms']}}</span></li>
                             @endif
                             @if(!empty($property['condition']))
                                 <li><span class="detail_name">État</span><span class="detail_value">{{$property['condition']}}</span></li>
                             @endif
-                            <li><span class="detail_name">Niveaux</span><span class="detail_value">2</span></li>
-                            <li><span class="detail_name">Nombre d’étages</span><span class="detail_value">4</span></li>
                             @if(!empty($property['style']))
                                 <li><span class="detail_name">Style</span><span class="detail_value">{{$property['style']}}</span></li>
                             @endif
                             @if(!empty($property['floor']['type']))
                                 <li><span class="detail_name">Étage</span><span class="detail_value">{{$property['floor']['type']}}</span></li>
+                            @endif
+                            @if(!empty($property['view']['landscape']))
+                                <li><span class="detail_name">Voir le paysage</span><span class="detail_value">{{$property['view']['landscape']}}</span></li>
+                            @endif
+                            @if(!empty($property['heating']['device']))
+                                <li><span class="detail_name">Type de chauffage</span><span class="detail_value">{{$property['heating']['device']}}</span></li>
+                            @endif
+                            @if(!empty($property['construction_year']))
+                                <li><span class="detail_name">Année de construction</span><span class="detail_value">{{$property['construction_year']}}</span></li>
+                            @endif
+                            @if(!empty($property['renovation_year']))
+                                <li><span class="detail_name">Année de rénovation</span><span class="detail_value">{{$property['renovation_year']}}</span></li>
+                            @endif
+                            @if(!empty($property['orientations']))
+                                <li><span class="detail_name">Orientation</span><span class="detail_value">{{$property['orientations']}}</span></li>
                             @endif
                         </ul>
                         <h4>Surfaces</h4>
@@ -234,7 +247,6 @@
                             <li><span class="detail_name">Cuisinière</span></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
