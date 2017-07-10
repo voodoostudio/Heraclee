@@ -48,7 +48,7 @@
                         <a class="nav-link {{ ($current_page == 'results' || $current_page == 'details') ? 'active' : '' }}" href="{{ route('results') }}">Achat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Location</a>
+                        <a class="nav-link" href="{{ route('locations') }}">Location</a>
                     </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="#">Promotions</a>--}}

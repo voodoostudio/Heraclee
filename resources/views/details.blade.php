@@ -225,26 +225,484 @@
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
                         <ul class="object_add_info_list">
-                            <li><span class="detail_name">Maison de gardien</span></li>
+                            <!--Maison de gardien</span></li>
                             <li><span class="detail_name">Double vitrage</span></li>
                             <li><span class="detail_name">Meublé</span></li>
-                            <li><span class="detail_name">Baies vitréesublé</span></li>
+                            <li><span class="detail_name">Baies vitréesublé</span></li>-->
+                            @foreach($services as $service)
+                                    @switch($service->reference)
+
+                                        @case(1)
+                                            @if(!empty($property['services']['1']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(2)
+                                            @if(!empty($property['services']['2']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(4)
+                                            @if(!empty($property['services']['4']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(6)
+                                            @if(!empty($property['services']['6']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(10)
+                                            @if(!empty($property['services']['10']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(17)
+                                            @if(!empty($property['services']['17']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(20)
+                                            @if(!empty($property['services']['20']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(21)
+                                            @if(!empty($property['services']['21']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(22)
+                                            @if(!empty($property['services']['22']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(23)
+                                            @if(!empty($property['services']['23']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(24)
+                                            @if(!empty($property['services']['24']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(25)
+                                            @if(!empty($property['services']['25']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(26)
+                                            @if(!empty($property['services']['26']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(27)
+                                            @if(!empty($property['services']['27']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(28)
+                                            @if(!empty($property['services']['28']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(31)
+                                            @if(!empty($property['services']['31']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(32)
+                                            @if(!empty($property['services']['32']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(33)
+                                            @if(!empty($property['services']['33']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(38)
+                                            @if(!empty($property['services']['38']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(39)
+                                            @if(!empty($property['services']['39']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(40)
+                                            @if(!empty($property['services']['40']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(41)
+                                            @if(!empty($property['services']['41']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(42)
+                                            @if(!empty($property['services']['42']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(43)
+                                            @if(!empty($property['services']['43']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(45)
+                                            @if(!empty($property['services']['45']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(46)
+                                            @if(!empty($property['services']['46']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(47)
+                                            @if(!empty($property['services']['47']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(48)
+                                            @if(!empty($property['services']['48']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(49)
+                                            @if(!empty($property['services']['49']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(50)
+                                            @if(!empty($property['services']['50']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(51)
+                                            @if(!empty($property['services']['51']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(52)
+                                            @if(!empty($property['services']['52']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(53)
+                                            @if(!empty($property['services']['53']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(54)
+                                            @if(!empty($property['services']['54']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(55)
+                                            @if(!empty($property['services']['55']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(56)
+                                            @if(!empty($property['services']['56']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(57)
+                                            @if(!empty($property['services']['57']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(58)
+                                            @if(!empty($property['services']['58']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(61)
+                                            @if(!empty($property['services']['61']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(62)
+                                            @if(!empty($property['services']['62']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(64)
+                                            @if(!empty($property['services']['64']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(65)
+                                            @if(!empty($property['services']['65']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(66)
+                                            @if(!empty($property['services']['66']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(70)
+                                            @if(!empty($property['services']['70']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(72)
+                                            @if(!empty($property['services']['72']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(73)
+                                            @if(!empty($property['services']['73']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(74)
+                                            @if(!empty($property['services']['74']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+
+                                        @case(75)
+                                            @if(!empty($property['services']['75']))
+                                                <li><span class="detail_name">{{ $service->value }}</span></li>
+                                            @endif
+                                        @break
+                                    @endswitch
+                            @endforeach
+
+
                         </ul>
                         <h5>Espaces extérieurs</h5>
                         <ul class="object_add_info_list">
-                            <li><span class="detail_name">Héliport</span></li>
-                            <li><span class="detail_name">Arrosage</span></li>
+                            <!--<li><span class="detail_name">Héliport</span></li>
+                            <li><span class="detail_name">Arrosage</span></li>-->
+                            @foreach($services as $service)
+                                @switch($service->reference)
+
+                                    @case(11)
+                                        @if(!empty($property['services']['11']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(14)
+                                        @if(!empty($property['services']['14']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(15)
+                                        @if(!empty($property['services']['15']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(16)
+                                        @if(!empty($property['services']['16']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(18)
+                                        @if(!empty($property['services']['18']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(29)
+                                        @if(!empty($property['services']['29']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(30)
+                                        @if(!empty($property['services']['30']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(35)
+                                        @if(!empty($property['services']['35']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(44)
+                                        @if(!empty($property['services']['44']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(59)
+                                        @if(!empty($property['services']['59']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(69)
+                                        @if(!empty($property['services']['69']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+                                @endswitch
+                            @endforeach
+
                         </ul>
                         <h5>Sécurité</h5>
                         <ul class="object_add_info_list">
-                            <li><span class="detail_name">Alarme</span></li>
-                            <li><span class="detail_name">Gardien</span></li>
+                            <!--<li><span class="detail_name">Alarme</span></li>
+                            <li><span class="detail_name">Gardien</span></li>-->
+                            @foreach($services as $service)
+                                @switch($service->reference)
+
+                                    @case(3)
+                                        @if(!empty($property['services']['3']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(3)
+                                        @if(!empty($property['services']['3']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(5)
+                                        @if(!empty($property['services']['5']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(12)
+                                        @if(!empty($property['services']['12']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(19)
+                                        @if(!empty($property['services']['19']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(34)
+                                        @if(!empty($property['services']['34']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(36)
+                                        @if(!empty($property['services']['36']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(37)
+                                        @if(!empty($property['services']['37']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(60)
+                                        @if(!empty($property['services']['60']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(63)
+                                        @if(!empty($property['services']['63']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(67)
+                                        @if(!empty($property['services']['67']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(68)
+                                        @if(!empty($property['services']['68']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+                                @endswitch
+                            @endforeach
                         </ul>
                         <h5>Équipments sportifs</h5>
                         <ul class="object_add_info_list">
-                            <li><span class="detail_name">Piscine</span></li>
+                            <!--<li><span class="detail_name">Piscine</span></li>
                             <li><span class="detail_name">Tennis</span></li>
-                            <li><span class="detail_name">Cuisinière</span></li>
+                            <li><span class="detail_name">Cuisinière</span></li> -->
+
+                            @foreach($services as $service)
+                                @switch($service->reference)
+
+                                    @case(13)
+                                        @if(!empty($property['services']['13']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+
+                                    @case(71)
+                                        @if(!empty($property['services']['71']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @break
+                                @endswitch
+                            @endforeach
                         </ul>
                     </div>
                 </div>

@@ -23,9 +23,14 @@ Route::group(
                 'as' => 'index',
         ]);
 
-        Route::match(['GET', 'POST'], '/results', [
+        Route::match(['GET', 'POST'], '/achat/results', [
                 'uses' => 'PagesController@results',
                 'as' => 'results',
+        ]);
+
+        Route::match(['GET', 'POST'], '/locations/results', [
+            'uses' => 'PagesController@locations',
+            'as' => 'locations',
         ]);
 
         Route::get('/details', [

@@ -1,5 +1,5 @@
 <section class="search_section">
-    <form action="/results" method="post">
+    <form action="@if($search['sell_type'] == '3') ../locations/results @elseif($search['sell_type'] == '1') ../achat/results @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
