@@ -60,7 +60,7 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
-        $url_page = '/results?page=';
+        $url_page = '/achat/results?page=';
 
         $view_type = 'grid_view';
 
