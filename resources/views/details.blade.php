@@ -208,7 +208,7 @@
 
                             {{-- @if(!empty($property['orientations']))
                                 <li><span class="detail_name">Orientation</span><span class="detail_value">{{$property['orientations']}}</span></li>
-                            @endif-->
+                            @endif--}}
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
