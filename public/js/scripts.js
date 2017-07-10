@@ -24,5 +24,12 @@ $(document).ready(function() {
     $('section.search_section ul.nav-tabs li.nav-item a.nav-link').on('click', function () {
         var type_value = $(this).attr('type_value');
         $('section.search_section input.sell_type_val').val(type_value);
+        var form_action = $(this).closest('form').attr('action');
+        if (form_action.indexOf("locations") >= 0) {
+            $(this).closest('form').attr('action', '../achat/results');
+        }
+        else if (form_action.indexOf("achat") >= 0) {
+            $(this).closest('form').attr('action', '../locations/results');
+        }
     });
 });

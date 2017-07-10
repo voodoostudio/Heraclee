@@ -79,7 +79,6 @@ function setSellType(id) {
 function setItems() {
     var items = $('#sorting_type').val();
     window.location.href='?items='+items;
-    console.log(items);
 }
 
 function resultsCarouselInit() {
