@@ -45,10 +45,10 @@
                         <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'results') ? 'active' : '' }}" href="{{ route('results') }}">Achat</a>
+                        <a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">Achat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'locations') ? 'active' : '' }}" href="{{ route('locations') }}">Location</a>
+                        <a class="nav-link {{ ($current_page == 'locations' || $current_page == 'locationsDetails') ? 'active' : '' }}" href="{{ route('locations') }}">Location</a>
                     </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="#">Promotions</a>--}}

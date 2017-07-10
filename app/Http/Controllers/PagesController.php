@@ -323,6 +323,18 @@ class PagesController extends Controller
         }
     }
 
+    public function locationsDetails()
+    {
+        $id = $_GET['id'];
+        if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
+            $property = Properties::getProperty($id);
+            $services = Services::select('reference', 'value')->get();
+            return view('details', ['property' => $property, 'services' => $services]);
+        } else {
+            return redirect('results');
+        }
+    }
+
     public function contact()
     {
         return view('contact');

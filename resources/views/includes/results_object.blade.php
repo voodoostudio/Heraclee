@@ -17,10 +17,11 @@
                 </ul>
             </div>
         </div>
+
         <div class="info_block_container">
             <div class="info_block">
                 <div class="title_container">
-                    <a href="{{ route('details') }}?id={{$property['property_id']}}">
+                    <a href="@if(Route::getCurrentRoute()->getName() == 'results'){{ route('details') }}?id={{$property['property_id']}} @elseif(Route::getCurrentRoute()->getName() == 'locations') {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
                         <h2>{{$property['type']}}</h2>
                     </a>
                     <ul class="social_networks">

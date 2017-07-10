@@ -33,9 +33,14 @@ Route::group(
             'as' => 'locations',
         ]);
 
-        Route::get('/details', [
+        Route::get('/achat/details', [
                 'uses' => 'PagesController@details',
                 'as' => 'details',
+        ]);
+
+        Route::get('/locations/details', [
+            'uses' => 'PagesController@locationsDetails',
+            'as' => 'locationsDetails',
         ]);
 
         Route::get('/contact', [
