@@ -66,6 +66,7 @@ class Properties extends Model
             $array['condition'] = self::getConditionById($property[0]['condition']);
             $array['standing'] = self::getStandingById($property[0]['standing']);
             $array['services'] = self::getServicesByIds($property[0]['services']);
+            $array['orientations'] = self::getOrientationsByIds($property[0]['orientations']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
             $array['comments'] = self::getCommentsByIds($property[0]['property_id']);
@@ -175,6 +176,7 @@ class Properties extends Model
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
                 $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
+                $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
@@ -266,6 +268,7 @@ class Properties extends Model
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
                 $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
+                $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
@@ -329,6 +332,28 @@ class Properties extends Model
         }
 
         return $services_array;
+    }
+
+    /**
+     * @param $ids
+     *
+     * @return mixed
+     */
+    protected static function getOrientationsByIds($ids)
+    {
+        $orientations = DB::table('apimo_property_orientations')
+            ->wherein("reference", explode(',', $ids))
+            ->where('locale', self::$lang)
+            ->get();
+
+        $orientations_array = [];
+        if (!empty($orientations)) {
+            foreach ($orientations as $orientation) {
+                $orientations_array[$orientation['reference']] = $orientation['value'];
+            }
+        }
+
+        return $orientations_array;
     }
 
     /**

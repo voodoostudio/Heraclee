@@ -197,8 +197,18 @@
                                 <li><span class="detail_name">Année de rénovation</span><span class="detail_value">{{$property['renovation_year']}}</span></li>
                             @endif
                             @if(!empty($property['orientations']))
-                                <li><span class="detail_name">Orientation</span><span class="detail_value">{{$property['orientations']}}</span></li>
+                                <li>
+                                    <span class="detail_name">Orientation</span><span class="detail_value">
+                                        @foreach($property['orientations'] as $orientation)
+                                           {{ $orientation }}
+                                        @endforeach
+                                    </span>
+                                </li>
                             @endif
+
+                            {{-- @if(!empty($property['orientations']))
+                                <li><span class="detail_name">Orientation</span><span class="detail_value">{{$property['orientations']}}</span></li>
+                            @endif-->
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
@@ -225,10 +235,6 @@
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
                         <ul class="object_add_info_list">
-                            <!--Maison de gardien</span></li>
-                            <li><span class="detail_name">Double vitrage</span></li>
-                            <li><span class="detail_name">Meublé</span></li>
-                            <li><span class="detail_name">Baies vitréesublé</span></li>-->
                             @foreach($services as $service)
                                     @switch($service->reference)
 
@@ -521,13 +527,9 @@
                                         @break
                                     @endswitch
                             @endforeach
-
-
                         </ul>
                         <h5>Espaces extérieurs</h5>
                         <ul class="object_add_info_list">
-                            <!--<li><span class="detail_name">Héliport</span></li>
-                            <li><span class="detail_name">Arrosage</span></li>-->
                             @foreach($services as $service)
                                 @switch($service->reference)
 
@@ -598,12 +600,9 @@
                                     @break
                                 @endswitch
                             @endforeach
-
                         </ul>
                         <h5>Sécurité</h5>
                         <ul class="object_add_info_list">
-                            <!--<li><span class="detail_name">Alarme</span></li>
-                            <li><span class="detail_name">Gardien</span></li>-->
                             @foreach($services as $service)
                                 @switch($service->reference)
 
@@ -683,10 +682,6 @@
                         </ul>
                         <h5>Équipments sportifs</h5>
                         <ul class="object_add_info_list">
-                            <!--<li><span class="detail_name">Piscine</span></li>
-                            <li><span class="detail_name">Tennis</span></li>
-                            <li><span class="detail_name">Cuisinière</span></li> -->
-
                             @foreach($services as $service)
                                 @switch($service->reference)
 
