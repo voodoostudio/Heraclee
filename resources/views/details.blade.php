@@ -169,12 +169,6 @@
                             @if(!empty($property['subtype']))
                                 <li><span class="detail_name">Sous-type</span><span class="detail_value">{{$property['subtype']}}</span></li>
                             @endif
-                            @if(!empty($property['rooms']))
-                                <li><span class="detail_name">Piéces </span><span class="detail_value">{{$property['rooms']}}</span></li>
-                            @endif
-                            @if(!empty($property['bedrooms']))
-                                <li><span class="detail_name">Chambres</span><span class="detail_value">{{$property['bedrooms']}}</span></li>
-                            @endif
                             @if(!empty($property['condition']))
                                 <li><span class="detail_name">État</span><span class="detail_value">{{$property['condition']}}</span></li>
                             @endif
@@ -202,10 +196,6 @@
                             @if(!empty($property['heating']))
                                 <li><span class="detail_name">Heating</span><span class="detail_value">{{$property['heating']}}</span></li>
                             @endif
-
-                            {{-- @if(!empty($property['orientations']))
-                                <li><span class="detail_name">Orientation</span><span class="detail_value">{{$property['orientations']}}</span></li>
-                            @endif--}}
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
@@ -216,18 +206,24 @@
                             {{--<li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>--}}
                         </ul>
                         <ul class="object_info_list">
-                            <li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>
-                            <li><span class="detail_name">Suites</span><span class="detail_value">5</span></li>
-                            <li><span class="detail_name">Sous-sol</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Salon</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Chambre de maître</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Cinéma</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Salle à manger</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Studios</span><span class="detail_value">2</span></li>
-                            <li><span class="detail_name">Piscine intérieure</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Cuisine</span><span class="detail_value">1</span></li>
-                            <li><span class="detail_name">Dressings</span><span class="detail_value">6</span></li>
-                            <li><span class="detail_name">Pool house</span><span class="detail_value">1</span></li>
+                            @if(!empty($property['rooms']))
+                                <li><span class="detail_name">Piéces </span><span class="detail_value">{{$property['rooms']}}</span></li>
+                            @endif
+                            @if(!empty($property['bedrooms']))
+                                <li><span class="detail_name">Chambres</span><span class="detail_value">{{$property['bedrooms']}}</span></li>
+                            @endif
+                            {{--<li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>--}}
+                            {{--<li><span class="detail_name">Suites</span><span class="detail_value">5</span></li>--}}
+                            {{--<li><span class="detail_name">Sous-sol</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Salon</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Chambre de maître</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Cinéma</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Salle à manger</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Studios</span><span class="detail_value">2</span></li>--}}
+                            {{--<li><span class="detail_name">Piscine intérieure</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Cuisine</span><span class="detail_value">1</span></li>--}}
+                            {{--<li><span class="detail_name">Dressings</span><span class="detail_value">6</span></li>--}}
+                            {{--<li><span class="detail_name">Pool house</span><span class="detail_value">1</span></li>--}}
                         </ul>
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
