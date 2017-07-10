@@ -19,6 +19,26 @@ class ApimoPropertyWaterHotDevice extends Migration
             $table->string('value');
             $table->string('value_plurial')->nullable();
         });
+
+        DB::table('apimo_property_water_hot_device')->insert(
+            [
+                [
+                    'reference' => 1,
+                    'locale' => 'fr_FR',
+                    'value' => 'Solaire',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'fr_FR',
+                    'value' => 'Chauffe-eau',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'fr_FR',
+                    'value' => 'Chaudière',
+                ],
+            ]
+        );
     }
 
     /**

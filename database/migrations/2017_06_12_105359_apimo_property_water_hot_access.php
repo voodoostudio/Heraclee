@@ -19,6 +19,21 @@ class ApimoPropertyWaterHotAccess extends Migration
             $table->string('value');
             $table->string('value_plurial')->nullable();
         });
+
+        DB::table('apimo_property_water_hot_access')->insert(
+            [
+                [
+                    'reference' => 1,
+                    'locale' => 'fr_FR',
+                    'value' => 'Individuelle',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'fr_FR',
+                    'value' => 'Collective',
+                ],
+            ]
+        );
     }
 
     /**
