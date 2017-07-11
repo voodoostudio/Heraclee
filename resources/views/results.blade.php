@@ -68,7 +68,10 @@
             {
                 lat: {{$property['latitude']}},
                 lng: {{$property['longitude']}},
-                info: '<div class="object_info_container">' +
+                info:'<div class="object_img">'+
+                '<img src="/img/details/img_1_portrait.png" alt="">'+
+                '</div>'+
+                '<div class="object_info_container">' +
                 '<div class="object_info">' +
                 '<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +
                 '<div class="subtitle"> ' +

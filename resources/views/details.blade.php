@@ -17,7 +17,7 @@
                         @if(!empty($picture['url']))
                             <li><img src="{{$picture['url']}}" alt=""></li>
                         @else
-                            <li><img src="img/details/img_1.png" alt=""></li>
+                            <li><img src="/img/details/img_1.png" alt=""></li>
                         @endif
                     @endforeach
                 </ul>

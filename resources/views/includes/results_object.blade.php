@@ -31,7 +31,7 @@
                     </ul>
                 </div>
                 <div class="description_container">
-                    <h3>{{$property['city']}} <span></span></h3>
+                    <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}<span></span></h3>
                     <?php $comments = str_limit((isset($property['comments']['comment'])?$property['comments']['comment']:''),400); ?>
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse">Contactez l'agent</a>
