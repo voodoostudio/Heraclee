@@ -391,7 +391,7 @@ class Properties extends Model
         $areas = DB::table('apimo_areas')
             ->select(
                 'apimo_areas.id as id',
-                'apimo_property_area.value as type',
+                'apimo_property_areas_type.value as type',
                 'apimo_areas.number',
                 'apimo_areas.area as area',
                 'apimo_property_flooring.value as flooring',
@@ -399,7 +399,7 @@ class Properties extends Model
                 'apimo_areas.floor_value as floor_value',
                 'apimo_property_orientations.value as orientations'
             )
-            ->leftJoin('apimo_property_area', 'apimo_areas.type', '=', 'apimo_property_area.reference')
+            ->leftJoin('apimo_property_areas_type', 'apimo_areas.type', '=', 'apimo_property_areas_type.reference')
             ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
             ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
             ->leftJoin(

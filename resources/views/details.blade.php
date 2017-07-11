@@ -229,6 +229,11 @@
                             @if(!empty($property['area_surface']))
                                 <li><span class="detail_name">Surface totale</span><span class="detail_value">{{ $property['area_surface'] }} m<sup>2</sup></span></li>
                             @endif
+                            @foreach($property['areas'] as $area)
+                                @if((!empty($area['type'])) && (!empty($area['area'])))
+                                    <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
+                                @endif
+                            @endforeach
 
                             {{--<li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>--}}
                         </ul>
