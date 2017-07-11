@@ -151,6 +151,7 @@ class Properties extends Model
             ->whereIn('city', $object_place)
             ->limit($items)
             ->offset($offset)
+            ->orderBy('property_id', 'DESC')
             ->get();
 
 

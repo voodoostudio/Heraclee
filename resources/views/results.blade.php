@@ -63,13 +63,30 @@
 @section('javascript')
     <script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>
     <script>
+
+        @php
+            $lat_count = 0;
+            $lng_count = 0;
+        @endphp
+
         var locations = [
             @foreach ($all_properties as $property)
             {
-                lat: {{$property['latitude']}},
-                lng: {{$property['longitude']}},
+                @php
+                    $counter = 1;
+                @endphp
+
+                lat: {{ $property['latitude']  + ('0.0000' . $lat_count++) }},
+                lng: {{ $property['longitude'] + ('0.0000' . $lng_count++) }},
                 info:'<div class="object_img">'+
-                '<img src="/img/details/img_1_portrait.png" alt="">'+
+                    @foreach($property['pictures'] as $picture)
+                        @if($counter == 1)
+                            '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                        @endif
+                        @php
+                            $counter++;
+                        @endphp
+                    @endforeach
                 '</div>'+
                 '<div class="object_info_container">' +
                 '<div class="object_info">' +
