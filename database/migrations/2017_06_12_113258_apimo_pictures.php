@@ -30,6 +30,6 @@ class ApimoPictures extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apimo_property_pictures');
+        Schema::dropIfExists('apimo_pictures');
     }
 }
