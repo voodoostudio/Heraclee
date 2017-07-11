@@ -164,31 +164,31 @@
                         <h4>Informations</h4>
                         <ul class="object_info_list">
                             @if(!empty($property['type']))
-                                <li><span class="detail_name">Type</span><span class="detail_value">{{$property['type']}}</span></li>
+                                <li><span class="detail_name">Type</span><span class="detail_value">{{ $property['type'] }}</span></li>
                             @endif
                             @if(!empty($property['subtype']))
-                                <li><span class="detail_name">Sous-type</span><span class="detail_value">{{$property['subtype']}}</span></li>
+                                <li><span class="detail_name">Sous-type</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
                             @endif
                             @if(!empty($property['condition']))
-                                <li><span class="detail_name">État</span><span class="detail_value">{{$property['condition']}}</span></li>
+                                <li><span class="detail_name">État</span><span class="detail_value">{{ $property['condition'] }}</span></li>
                             @endif
                             @if(!empty($property['style']))
-                                <li><span class="detail_name">Style</span><span class="detail_value">{{$property['style']}}</span></li>
+                                <li><span class="detail_name">Style</span><span class="detail_value">{{ $property['style'] }}</span></li>
                             @endif
                             @if(!empty($property['floor']['type']))
-                                <li><span class="detail_name">Étage</span><span class="detail_value">{{$property['floor']['type']}}</span></li>
+                                <li><span class="detail_name">Étage</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
                             @endif
                             @if(!empty($property['view']['landscape']))
-                                <li><span class="detail_name">Voir le paysage</span><span class="detail_value">{{$property['view']['landscape']}}</span></li>
+                                <li><span class="detail_name">Voir le paysage</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
                             @endif
                             @if(!empty($property['heating']['device']))
-                                <li><span class="detail_name">Type de chauffage</span><span class="detail_value">{{$property['heating']['device']}}</span></li>
+                                <li><span class="detail_name">Type de chauffage</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
                             @endif
                             @if(!empty($property['construction_year']))
-                                <li><span class="detail_name">Année de construction</span><span class="detail_value">{{$property['construction_year']}}</span></li>
+                                <li><span class="detail_name">Année de construction</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
                             @endif
                             @if(!empty($property['renovation_year']))
-                                <li><span class="detail_name">Année de rénovation</span><span class="detail_value">{{$property['renovation_year']}}</span></li>
+                                <li><span class="detail_name">Année de rénovation</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
                             @endif
                             @if(!empty($property['orientations']))
                                 <li><span class="detail_name">Orientation</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
@@ -220,11 +220,14 @@
                                     <li><span class="detail_name">Water waste</span><span class="detail_value">{{ $water['waste'] }}</span></li>
                                 @endif
                             @endforeach
+                            @if(!empty($property['standing']))
+                                <li><span class="detail_name">Standing</span><span class="detail_value">{{ $property['standing'] }}</span></li>
+                            @endif
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
                             @if(!empty($property['area_surface']))
-                                <li><span class="detail_name">Surface totale</span><span class="detail_value">{{$property['area_surface']}} m<sup>2</sup></span></li>
+                                <li><span class="detail_name">Surface totale</span><span class="detail_value">{{ $property['area_surface'] }} m<sup>2</sup></span></li>
                             @endif
 
                             {{--<li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>--}}
