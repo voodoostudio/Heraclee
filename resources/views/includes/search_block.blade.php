@@ -1,5 +1,5 @@
 <section class="search_section">
-    <form action="@if($search['sell_type'] == '1') ../locations/results @elseif($search['sell_type'] == '3') ../achat/results @endif" method="post">
+    <form action="@if($search['sell_type'] == '3') ../locations/results @elseif($search['sell_type'] == '1') ../achat/results @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
@@ -8,10 +8,10 @@
                         <div class="col-12 col-lg-4">
                             <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '1') active @endif" href="#" onclick="setSellType(1)" >Location</a>
+                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(1)" >Location</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(3)" >Vente</a>
+                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '1') active @endif" href="#" onclick="setSellType(3)" >Vente</a>
                                 </li>
                             </ul>
                             <input type="hidden" id="sell_type_val" name="sell_type" value="{{$search['sell_type']}}">

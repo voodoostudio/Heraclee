@@ -80,7 +80,7 @@ class PagesController extends Controller
             Session::put('search.items', 10);
         }
 
-        Session::put('search.sell_type', 3);
+        Session::put('search.sell_type', 1);
 
         if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
             Session::put('search.object_type', $_POST['object_type']);
@@ -202,7 +202,7 @@ class PagesController extends Controller
             Session::put('search.items', 10);
         }
 
-        Session::put('search.sell_type', 1);
+        Session::put('search.sell_type', 3);
 
        /* if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
             Session::put('search.sell_type', $_POST['sell_type']);

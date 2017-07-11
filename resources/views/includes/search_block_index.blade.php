@@ -1,5 +1,5 @@
 <section class="search_section">
-    <form action="@if($search['sell_type'] == '1') ../locations/results @elseif($search['sell_type'] == '3') ../achat/results @endif" method="post">
+    <form action="@if($search['sell_type'] == '3') ../locations/results @elseif($search['sell_type'] == '1') ../achat/results @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
@@ -14,7 +14,7 @@
                                     <a data-toggle="tab" class="nav-link" href="#" onclick="setSellType(3)" >Vente</a>
                                 </li>
                             </ul>
-                            <input type="hidden" id="sell_type_val" name="sell_type" value="1">
+                            <input type="hidden" id="sell_type_val" name="sell_type" value="3">
                         </div>
 
                         <div class="col-12 col-lg-8">

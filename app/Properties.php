@@ -493,7 +493,9 @@ class Properties extends Model
             ->get();
 
         if (!empty($step)) {
-            $cat_id = $step[0]['value'];
+            $category_array['value'] = $step[0]['value'];
+            $category_array['reference'] = $step[0]['reference'];
+            $cat_id = $category_array;
         }
 
         return $cat_id;

@@ -21,7 +21,7 @@
         <div class="info_block_container">
             <div class="info_block">
                 <div class="title_container">
-                    <a href="@if(Route::getCurrentRoute()->getName() == 'results'){{ route('details') }}?id={{$property['property_id']}} @elseif(Route::getCurrentRoute()->getName() == 'locations') {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                    <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
                         <h2>{{$property['type']}}</h2>
                     </a>
                     <ul class="social_networks">
