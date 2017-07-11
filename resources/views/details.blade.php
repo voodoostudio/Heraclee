@@ -194,8 +194,14 @@
                                 <li><span class="detail_name">Orientation</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
                             @endif
                             @foreach($property['heating'] as $heating)
-                                @if((!empty($heating['device'])) || (!empty($heating['device'])) || (!empty($heating['device'])))
-                                    <li><span class="detail_name">Heating</span><span class="detail_value">{{ $heating['device'] }} | {{ $heating['access'] }} | {{ $heating['type'] }}</span></li>
+                                @if(!empty($heating['device']))
+                                    <li><span class="detail_name">Heating device</span><span class="detail_value">{{ $heating['device'] }}</span></li>
+                                @endif
+                                @if(!empty($heating['access']))
+                                    <li><span class="detail_name">Heating access</span><span class="detail_value">{{ $heating['access'] }}</span></li>
+                                @endif
+                                @if(!empty($heating['type']))
+                                    <li><span class="detail_name">Heating type</span><span class="detail_value">{{ $heating['type'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['areas'] as $area)
