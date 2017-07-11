@@ -780,6 +780,7 @@ section.object_info_section .outer_block_container {
         line-height: 1rem;
         padding-right: 10px;
         margin-right: 10px;
+        margin-bottom: 5px;
         border-right: 2px solid #ccac83; }
         section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_add_info_list li:last-of-type {
           border: none;

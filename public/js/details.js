@@ -77,7 +77,7 @@ $(document).ready(function() {
             type = $(this).val();
 
         if ($(this).is(':checked')) {
-            var icon = 'img/map/sidebar_icons/'+type+'.svg',
+            var icon = '/img/map/sidebar_icons/'+type+'.svg',
                 dot_icon = icon.replace('sidebar_icons', 'sidebar_icons/small_dots');
 
             checkbox.addClass('loading');
