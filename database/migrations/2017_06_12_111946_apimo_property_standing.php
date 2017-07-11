@@ -21,7 +21,7 @@ class ApimoPropertyStanding extends Migration
             $table->string('value_plurial')->nullable();
         });
 
-        DB::table('apimo_property_heating_access')->insert(
+        DB::table('apimo_property_standing')->insert(
             [
                 [
                     'reference' => 1,

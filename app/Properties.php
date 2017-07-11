@@ -71,6 +71,7 @@ class Properties extends Model
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
             $array['heating'] = self::getHeatingByIds($property[0]['heating']);
+            $array['water'] = self:: getWaterByIds($property[0]['water']);
             $array['comments'] = self::getCommentsByIds($property[0]['property_id']);
         }
 
@@ -184,6 +185,7 @@ class Properties extends Model
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
+                $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
@@ -277,7 +279,7 @@ class Properties extends Model
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
-                $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
+                $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
@@ -456,6 +458,38 @@ class Properties extends Model
         }
 
         return $heating_array;
+    }
+
+    /**
+     * @param $ids
+     *
+     * @return mixed
+     */
+    protected static function getWaterByIds($ids)
+    {
+        $water = DB::table('apimo_water')
+            ->select(
+                'apimo_water.id as id',
+                'apimo_property_water_hot_access.value as hot_access',
+                'apimo_property_water_hot_device.value as hot_device',
+                'apimo_property_water_waste.value as waste'
+            )
+            ->leftJoin('apimo_property_water_hot_access', 'apimo_water.hot_access', '=', 'apimo_property_water_hot_access.reference')
+            ->leftJoin('apimo_property_water_hot_device', 'apimo_water.hot_device', '=', 'apimo_property_water_hot_device.reference')
+            ->leftJoin('apimo_property_water_waste', 'apimo_water.waste', '=', 'apimo_property_water_waste.reference')
+            ->whereIn('apimo_water.id', explode(',', $ids))
+            ->get();
+
+        $water_array = [];
+        if (!empty($water)) {
+            foreach ($water as $value) {
+                $water_array[$value['id']]['hot_access'] = $value['hot_access'];
+                $water_array[$value['id']]['hot_device'] = $value['hot_device'];
+                $water_array[$value['id']]['waste'] = $value['waste'];
+            }
+        }
+
+        return $water_array;
     }
 
     /**

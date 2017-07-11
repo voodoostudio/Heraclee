@@ -77,6 +77,11 @@ class ApimoPropertyViewLandscape extends Migration
                     'value' => 'Parc',
                 ],
                 [
+                    'reference' => 12,
+                    'locale' => 'fr_FR',
+                    'value' => 'Jardin',
+                ],
+                [
                     'reference' => 13,
                     'locale' => 'fr_FR',
                     'value' => 'Ciel',

@@ -209,6 +209,17 @@
                                     <li><span class="detail_name">Flooring</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
                                 @endif
                             @endforeach
+                            @foreach($property['water'] as $water)
+                                @if(!empty($water['hot_access']))
+                                    <li><span class="detail_name">Water hot access</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
+                                @endif
+                                @if(!empty($water['hot_device']))
+                                    <li><span class="detail_name">Water hot device</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
+                                @endif
+                                @if(!empty($water['waste']))
+                                    <li><span class="detail_name">Water waste</span><span class="detail_value">{{ $water['waste'] }}</span></li>
+                                @endif
+                            @endforeach
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
