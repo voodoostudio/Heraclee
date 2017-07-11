@@ -116,6 +116,7 @@
             },
             @endforeach
         ];
+        console.log(locations);
     </script>
     <script type="text/javascript" src="/js/results.js"></script>
     <script type="text/javascript">

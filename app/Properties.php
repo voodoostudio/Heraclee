@@ -70,6 +70,7 @@ class Properties extends Model
             $array['district'] = self::getDistrictByIds($property[0]['district']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
+            $array['heating'] = self::getHeatingByIds($property[0]['heating']);
             $array['comments'] = self::getCommentsByIds($property[0]['property_id']);
         }
 
@@ -182,6 +183,7 @@ class Properties extends Model
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
+                $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
@@ -275,6 +277,7 @@ class Properties extends Model
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
+                $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
@@ -421,6 +424,38 @@ class Properties extends Model
         }
 
         return $areas_array;
+    }
+
+    /**
+     * @param $ids
+     *
+     * @return mixed
+     */
+    protected static function getHeatingByIds($ids)
+    {
+        $heating = DB::table('apimo_heating')
+            ->select(
+                'apimo_heating.id as id',
+                'apimo_property_heating_access.value as access',
+                'apimo_property_heating_device.value as device',
+                'apimo_property_heating_type.value as type'
+            )
+            ->leftJoin('apimo_property_heating_access', 'apimo_heating.access', '=', 'apimo_property_heating_access.reference')
+            ->leftJoin('apimo_property_heating_device', 'apimo_heating.device', '=', 'apimo_property_heating_device.reference')
+            ->leftJoin('apimo_property_heating_type', 'apimo_heating.type', '=', 'apimo_property_heating_type.reference')
+            ->whereIn('apimo_heating.id', explode(',', $ids))
+            ->get();
+
+        $heating_array = [];
+        if (!empty($heating)) {
+            foreach ($heating as $value) {
+                $heating_array[$value['id']]['access'] = $value['access'];
+                $heating_array[$value['id']]['device'] = $value['device'];
+                $heating_array[$value['id']]['type'] = $value['type'];
+            }
+        }
+
+        return $heating_array;
     }
 
     /**
