@@ -8,7 +8,10 @@ $(document).ready(function() {
     $('select').multiselect({
         includeSelectAllOption: true,
         selectAllValue: 'select-all-value',
-        selectAllText: 'Tout'
+        selectAllText: 'Tout',
+        nonSelectedText: 'Aucune sélection',
+        nSelectedText: 'sélectionné',
+        allSelectedText: 'Tous sélectionnés'
     });
     
     $('.tooltip').tooltipster({

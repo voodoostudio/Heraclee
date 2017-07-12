@@ -36,10 +36,10 @@
                 </div>
                 <div class="gradient_bottom"></div>
                 <div class="panorama_link_container">
-                    <button>Go to virtual tour<i class="icn icon-arrow_right"></i></button>
+                    <button>Visite virtuelle<i class="icn icon-arrow_right"></i></button>
                 </div>
                 <div id="object_panorama"></div>
-                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Back to gallery</button>
+                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Retour à la galerie</button>
             </div>
             <div class="gallery_nav">
                 <div class="container-fluid">
@@ -61,19 +61,19 @@
                             <li><span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span><span class="prop_val"><span>{{$property['area_surface']}}m<sup>2</sup></span></span></li>
                         @endif
                         @if(!empty($property['rooms']))
-                            <li><span class="icn_container tooltip" title="Number of rooms"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="Nombre de pièces"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['bedrooms']))
                             <li><span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span><span class="prop_val"><span>{{$property['bedrooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['bathrooms']))
-                            <li><span class="icn_container tooltip" title="Number of bathrooms"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['view']['type']))
-                            <li><span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
+                            <li><span class="icn_container tooltip" title="Vue"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
                         @endif
                         @if(!empty($property['floor']['type']))
-                            <li><span class="icn_container tooltip" title="Floor"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="Étage"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
 
                         @foreach($services as $service)
@@ -203,29 +203,29 @@
                             @endif
                             @foreach($property['heating'] as $heating)
                                 @if(!empty($heating['device']))
-                                    <li class="tooltip" title="Heating device : {{ $heating['device'] }}"><span class="detail_name">Heating device</span><span class="detail_value">{{ $heating['device'] }}</span></li>
+                                    <li class="tooltip" title="Dispositif de chauffage : {{ $heating['device'] }}"><span class="detail_name">Dispositif de chauffage</span><span class="detail_value">{{ $heating['device'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['access']))
-                                    <li class="tooltip" title="Heating access : {{ $heating['access'] }}"><span class="detail_name">Heating access</span><span class="detail_value">{{ $heating['access'] }}</span></li>
+                                    <li class="tooltip" title="Accès au chauffage : {{ $heating['access'] }}"><span class="detail_name">Accès au chauffage</span><span class="detail_value">{{ $heating['access'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['type']))
-                                    <li class="tooltip" title="Heating type : {{ $heating['type'] }}"><span class="detail_name">Heating type</span><span class="detail_value">{{ $heating['type'] }}</span></li>
+                                    <li class="tooltip" title="Type de chauffage : {{ $heating['type'] }}"><span class="detail_name">Type de chauffage</span><span class="detail_value">{{ $heating['type'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['areas'] as $area)
                                 @if(!empty($area['flooring']))
-                                    <li class="tooltip" title="Flooring : {{ $area['flooring'] }}"><span class="detail_name">Flooring</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
+                                    <li class="tooltip" title="Flooring : {{ $area['flooring'] }}"><span class="detail_name">Sol</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['water'] as $water)
                                 @if(!empty($water['hot_access']))
-                                    <li class="tooltip" title="Water hot access : {{ $water['hot_access'] }}"><span class="detail_name">Water hot access</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
+                                    <li class="tooltip" title="Accès à l’eau chaude : {{ $water['hot_access'] }}"><span class="detail_name">Accès à l’eau chaude</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
                                 @endif
                                 @if(!empty($water['hot_device']))
-                                    <li class="tooltip" title="Water hot device : {{ $water['hot_device'] }}"><span class="detail_name">Water hot device</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
+                                    <li class="tooltip" title="Dispositif d’eau chaude : {{ $water['hot_device'] }}"><span class="detail_name">Dispositif d’eau chaude</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
                                 @endif
                                 @if(!empty($water['waste']))
-                                    <li class="tooltip" title="Water waste : {{ $water['waste'] }}"><span class="detail_name">Water waste</span><span class="detail_value">{{ $water['waste'] }}</span></li>
+                                    <li class="tooltip" title="Gaspillage d'eau : {{ $water['waste'] }}"><span class="detail_name">Gaspillage d'eau</span><span class="detail_value">{{ $water['waste'] }}</span></li>
                                 @endif
                             @endforeach
                             @if(!empty($property['standing']))

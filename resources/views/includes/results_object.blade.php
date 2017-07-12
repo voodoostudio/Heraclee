@@ -50,7 +50,7 @@
                         @if(!empty($property['rooms']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-rooms"></i></span>
+                                    <span class="icn_container tooltip" title="Nombre de pièces"><i class="icn icon-rooms"></i></span>
                                     <span class="prop_val">{{$property['rooms']}}</span>
                                 </span>
                             </li>
@@ -66,7 +66,7 @@
                         @if(!empty($property['view']['type']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Window view"><i class="icn icon-window_view"></i></span>
+                                    <span class="icn_container tooltip" title="Vue"><i class="icn icon-window_view"></i></span>
                                     <span class="prop_val">{{$property['view']['type']}}</span>
                                 </span>
                             </li>
