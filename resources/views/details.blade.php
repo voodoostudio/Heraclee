@@ -223,12 +223,6 @@
                             @if(!empty($property['standing']))
                                 <li><span class="detail_name">Standing</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
-
-                            {{--  PROXIMITY
-                            @foreach($property['proximities'] as $proximity)
-                                {{ $proximity }}
-                            @endforeach
-                            --}}
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">

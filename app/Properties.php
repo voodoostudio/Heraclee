@@ -69,6 +69,7 @@ class Properties extends Model
             $array['orientations'] = self::getOrientationsByIds($property[0]['orientations']);
             $array['district'] = self::getDistrictByIds($property[0]['district']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
+            //$array['agreement'] = self::getAgreementsByIds($property[0]['agreement']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
             $array['heating'] = self::getHeatingByIds($property[0]['heating']);
             $array['water'] = self:: getWaterByIds($property[0]['water']);
@@ -183,6 +184,7 @@ class Properties extends Model
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
+                //$array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
@@ -278,6 +280,7 @@ class Properties extends Model
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
+                //$array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
@@ -365,7 +368,6 @@ class Properties extends Model
         return $orientations_array;
     }
 
-
     /**
      * @param $district_id
      *
@@ -379,7 +381,6 @@ class Properties extends Model
 
         return $district;
     }
-
 
     /**
      * @param $ids
@@ -425,6 +426,7 @@ class Properties extends Model
             }
         }
 
+        sort($areas_array);
         return $areas_array;
     }
 
@@ -549,6 +551,25 @@ class Properties extends Model
 
         return $step_id;
     }
+
+    /**
+     * @param $agreement_id
+     *
+     * @return mixed
+     */
+   /* protected static function getAgreementsByIds($agreement_id)
+    {
+        $agreement = DB::table('apimo_property_agreement')
+            ->where("reference", $agreement_id)
+            ->where("locale", self::$lang)
+            ->get();
+
+        if (!empty($agreement)) {
+            $agreement_id = $agreement[0]['value'];
+        }
+
+        return $agreement_id;
+    }*/
 
     /**
      * @param $cat_id
