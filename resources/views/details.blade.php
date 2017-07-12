@@ -244,6 +244,11 @@
                             @if(!empty($property['bedrooms']))
                                 <li><span class="detail_name">Chambres</span><span class="detail_value">{{$property['bedrooms']}}</span></li>
                             @endif
+                            @foreach($property['areas'] as $area)
+                                @if((!empty($area['type'])) && (!empty($area['number'])))
+                                    <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['number'] }}</span></li>
+                                @endif
+                            @endforeach
                             {{--<li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>--}}
                             {{--<li><span class="detail_name">Suites</span><span class="detail_value">5</span></li>--}}
                             {{--<li><span class="detail_name">Sous-sol</span><span class="detail_value">1</span></li>--}}
