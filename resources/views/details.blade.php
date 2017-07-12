@@ -234,8 +234,6 @@
                                     <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
                                 @endif
                             @endforeach
-
-                            {{--<li><span class="detail_name">Superficie pondérée</span><span class="detail_value">300 m<sup>2</sup></span></li>--}}
                         </ul>
                         <ul class="object_info_list">
                             @if(!empty($property['rooms']))
@@ -249,18 +247,6 @@
                                     <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['number'] }}</span></li>
                                 @endif
                             @endforeach
-                            {{--<li><span class="detail_name">Terrain</span><span class="detail_value">1 | 1300 m<sup>2</sup></span></li>--}}
-                            {{--<li><span class="detail_name">Suites</span><span class="detail_value">5</span></li>--}}
-                            {{--<li><span class="detail_name">Sous-sol</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Salon</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Chambre de maître</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Cinéma</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Salle à manger</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Studios</span><span class="detail_value">2</span></li>--}}
-                            {{--<li><span class="detail_name">Piscine intérieure</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Cuisine</span><span class="detail_value">1</span></li>--}}
-                            {{--<li><span class="detail_name">Dressings</span><span class="detail_value">6</span></li>--}}
-                            {{--<li><span class="detail_name">Pool house</span><span class="detail_value">1</span></li>--}}
                         </ul>
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
