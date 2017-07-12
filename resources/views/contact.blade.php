@@ -38,32 +38,33 @@
                 <div class="inner_block_container">
                     <h2>Contactez-nous</h2>
                     <p>Pour toute demande d’information, n’hésitez pas à nous contacter via ce formulaire, nous vous répondrons dans les plus brefs délais :</p>
-                    <form action="" class="contact_form">
+                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="row">
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Nom *</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Nom">
+                                            <input type="text" id = "name" name = "name" placeholder="Nom">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Phone</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Phone">
+                                            <input type="text" id = "phone" name = "phone" placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
                                         <label class="form_el_label"><span>Couriel *</span></label>
                                         <div class="input_container">
-                                            <input type="text" placeholder="Courriel">
+                                            <input type="text" id = "email" name = "email" placeholder="Courriel">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="my_checkbox">
                                             <label>
-                                                <input required="" type="checkbox" name="" value="">
+                                                <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
                                                 <span class="fake_checkbox"></span>
                                                 <span class="my_checkbox_text">Subscribe to the newsletter</span>
                                             </label>
@@ -74,7 +75,7 @@
                             <div class="col-md-8">
                                 <label class="form_el_label"><span>Message *</span></label>
                                 <div class="input_container">
-                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                 </div>
                                 <button class="btn" type="submit">Envoyer</button>
                             </div>

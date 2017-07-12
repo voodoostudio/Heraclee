@@ -66,10 +66,13 @@
                             <li>44, Route des Plages<br>83990 Saint-Tropez</li>
                         </ul>
                     </div>
-                    <div class="input_container light">
-                        <input type="text" placeholder="Inscrivez-vous à notre newsletter">
-                        <button type="submit"><i class="icn icon-send_message" aria-hidden="true"></i></button>
-                    </div>
+                    <form id = "contactForm" action="{{ route('newsletter') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="input_container light">
+                            <input type="text" name = "email" id = "email" placeholder="Inscrivez-vous à notre newsletter">
+                            <button type="submit" class = "send-btn"><i class="icn icon-send_message" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="row">

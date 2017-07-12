@@ -232,6 +232,7 @@
                                 <li class="tooltip" title="Standing : {{ $property['standing'] }}"><span class="detail_name">Standing</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
                         </ul>
+                        @if(!empty($property['areas']))
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
                             @foreach($property['areas'] as $area)
@@ -247,6 +248,7 @@
                                 @endif
                             @endforeach
                         </ul>
+                        @endif
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
                         <ul class="object_add_info_list">

@@ -48,6 +48,16 @@ Route::group(
                 'as' => 'contact',
         ]);
 
+        Route::post('/contact', [
+                'uses' => 'PagesController@postContact',
+                'as' => 'contact.post'
+        ]);
+
+        Route::post('/newsletter', [
+            'uses' => 'PagesController@newsletter',
+            'as' => 'newsletter',
+        ]);
+
         Route::get('/team', [
                 'uses' => 'PagesController@team',
                 'as' => 'team',

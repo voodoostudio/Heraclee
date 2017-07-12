@@ -119,9 +119,13 @@ class Properties extends Model
             $sell_type_array = [2, 3];
         }
 
-//        if ($search_keywords != '') {
-//            $conditions_where[] = ['category', '=', $search_keywords];
-//        };
+
+        $search_keywords = trim($search_keywords);
+        $search_keywords = htmlspecialchars($search_keywords);
+
+        if ($search_keywords != '') {
+            $conditions_where[] = ['reference', '=', $search_keywords];
+        };
 
         if ($price_min != '') {
             $conditions_where[] = ['price', '>=', $price_min];

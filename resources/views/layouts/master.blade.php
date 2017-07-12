@@ -44,6 +44,36 @@
         <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
         <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
+        <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#contactForm").validate({
+                    rules: {
+                        name: {
+                            required: true,
+                            minlength: 2
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        message: "required"
+                    },
+                    messages: {
+                        name: {
+                            minlength: "Your name must consist at least 2 characters"
+                        },
+                        email: {
+                            email: "Please provide a valid email address"
+                        }
+                    },
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                })
+            })
+        </script>
 
         @yield('javascript')
 

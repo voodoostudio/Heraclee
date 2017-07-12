@@ -12,7 +12,12 @@ use App\Libraries\SyncWithApimo;
 use App\Properties;
 use App\Team;
 use App\Services;
+use App\Subscribers;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
+
 
 class PagesController extends Controller
 {
@@ -337,6 +342,56 @@ class PagesController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function postContact(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:2',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'bodyMessage' => $request->message,
+        ];
+
+        $subscribers = new Subscribers;
+        $subscribers->email = $request->email;
+        $check_subscriber = Subscribers::select('email')->get();
+
+        if($request->subscribe == 'true') {
+            if (stristr((string)$check_subscriber, $subscribers->email) === false) {
+                $subscribers->save();
+            }
+        }
+
+        Mail::send('emails.email', $data, function($message) use ($data){
+            $message->from($data['email'],'Heraclee Contact form');
+            $message->to(env('CONTACT_EMAIL'));
+        });
+
+        return redirect()->route('contact');
+    }
+
+    public function newsletter(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email',
+        ]);
+
+        $subscribers = new Subscribers;
+        $subscribers->email = $request->email;
+        $check_subscriber = Subscribers::select('email')->get();
+
+        if (stristr((string)$check_subscriber, $subscribers->email) === false) {
+            $subscribers->save();
+        }
+
+        return redirect()->back();
     }
 
     public function team()
