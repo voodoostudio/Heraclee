@@ -460,6 +460,7 @@ section.top_offer_section {
   height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   position: relative; }
   section.top_offer_section .info_block {
     position: absolute;

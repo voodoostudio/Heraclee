@@ -3,47 +3,47 @@
         <div class="container-fluid">
             <h3>Heraclee - Agence Immobilière Saint Tropez</h3>
             <div class="row">
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Immobilier de luxe saint-tropez></li>
+                        <li>Immobilier de luxe saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Location saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Vente immobilier saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Luxury real estate  saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Villas prestige saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Immobilier saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Immobilier golfe de saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Villas à vendre saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>Villas à louer saint-tropez</li>
                     </ul>
