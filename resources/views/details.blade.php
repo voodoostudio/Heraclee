@@ -78,6 +78,8 @@
 
                         @foreach($services as $service)
                             @switch($service->reference)
+                                {{-- Parking --}}
+                                {{--<li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>--}}
                                 {{-- Wi-Fi --}}
                                 @case(1)
                                     <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
@@ -98,6 +100,8 @@
                                 @case(6)
                                     <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
                                 @break
+                                {{-- Garden --}}
+                                {{--<li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>--}}
                                 {{-- Swimming pool --}}
                                 @case(11)
                                     <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
@@ -106,8 +110,12 @@
                                 @case(47)
                                     <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
                                 @break
+                                {{-- Beach --}}
+                                {{--<li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>--}}
                             @endswitch
                         @endforeach
+
+
                     </ul>
                 </div>
             </div>
@@ -226,9 +234,6 @@
                         </ul>
                         <h4>Surfaces</h4>
                         <ul class="object_info_list main_info">
-                            @if(!empty($property['area_surface']))
-                                <li><span class="detail_name">Surface totale</span><span class="detail_value">{{ $property['area_surface'] }} m<sup>2</sup></span></li>
-                            @endif
                             @foreach($property['areas'] as $area)
                                 @if((!empty($area['type'])) && (!empty($area['area'])))
                                     <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
@@ -236,12 +241,6 @@
                             @endforeach
                         </ul>
                         <ul class="object_info_list">
-                            @if(!empty($property['rooms']))
-                                <li><span class="detail_name">Piéces </span><span class="detail_value">{{$property['rooms']}}</span></li>
-                            @endif
-                            @if(!empty($property['bedrooms']))
-                                <li><span class="detail_name">Chambres</span><span class="detail_value">{{$property['bedrooms']}}</span></li>
-                            @endif
                             @foreach($property['areas'] as $area)
                                 @if((!empty($area['type'])) && (!empty($area['number'])))
                                     <li><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['number'] }}</span></li>
