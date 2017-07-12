@@ -310,7 +310,6 @@ section.object_info_section {
         }
       }
       .object_details_container {
-        padding-left: 40px;
         h4 {
           font-size: 1.25rem;
           margin: 30px 0 15px 0;
@@ -328,6 +327,8 @@ section.object_info_section {
             margin-bottom: 30px;
             position: relative;
             padding-right: 20px;
+            font: 16px opensans_light;
+            opacity: 1;
             &:before {
               content: '';
               display: block;
@@ -361,6 +362,11 @@ section.object_info_section {
             .detail_value {
               padding-left: 10px;
               text-transform: lowercase;
+              display: inline-block;
+              overflow: hidden;
+              white-space: nowrap;
+              width: 50%;
+              text-overflow: ellipsis;
             }
           }
           &.main_info {

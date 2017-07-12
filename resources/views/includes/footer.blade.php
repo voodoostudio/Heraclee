@@ -3,58 +3,49 @@
         <div class="container-fluid">
             <h3>Heraclee - Agence Immobilière Saint Tropez</h3>
             <div class="row">
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Gent immobilier de luxe Genève</a></li>
-                        <li><a href="#">Immobilier de luxe Genève</a></li>
-                        <li><a href="#">Appartement à vendre Genève</a></li>
-                        <li><a href="#">Villa à vendre Genève</a></li>
-                        <li><a href="#">Villa à vendre Cologny</a></li>
+                        <li>Immobilier de luxe saint-tropez></li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Villa à vendre Colonge Bellerive</a></li>
-                        <li><a href="#">Villa à vendre Corsier</a></li>
-                        <li><a href="#">Villa à vendre Anières</a></li>
-                        <li><a href="#">Villa à vendre Vandoeuvres</a></li>
-                        <li><a href="#">Propriété à vendre Colonge Bellerive</a></li>
+                        <li>Location saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Propriété à vendre Cologny</a></li>
-                        <li><a href="#">Propriété à vendre Corsier</a></li>
-                        <li><a href="#">Propriété à vendre Anières</a></li>
-                        <li><a href="#">Propriété à vendre Vandoeuvres</a></li>
-                        <li><a href="#">Maison à vendre Genève</a></li>
+                        <li>Vente immobilier saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Villa de luxe à vendre Genève</a></li>
-                        <li><a href="#">Appartements à vendre à Genève</a></li>
-                        <li><a href="#">Maisons et villas à vendre à Genève</a></li>
-                        <li><a href="#">Appartement à louer Genève</a></li>
-                        <li><a href="#">Appartement à louer Vaud</a></li>
+                        <li>Luxury real estate  saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Appartement à louer Valais</a></li>
-                        <li><a href="#">Appartement à vendre Vaud</a></li>
-                        <li><a href="#">Appartement à vendre Valais</a></li>
-                        <li><a href="#">Maison à vendre Genève</a></li>
-                        <li><a href="#">Maison à vendre Vaud</a></li>
+                        <li>Villas prestige saint-tropez</li>
                     </ul>
                 </div>
-                <div class="col-6 col-sm-4 col-md-2">
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <ul>
-                        <li><a href="#">Chalet terrain Genève Valais</a></li>
-                        <li><a href="#">Immobilier de prestige Genève</a></li>
-                        <li><a href="#">Immobilier Genève</a></li>
-                        <li><a href="#">Immobilier Vaud</a></li>
-                        <li><a href="#">Immobilier Valais</a></li>
+                        <li>Immobilier saint-tropez</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                    <ul>
+                        <li>Immobilier golfe de saint-tropez</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                    <ul>
+                        <li>Villas à vendre saint-tropez</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                    <ul>
+                        <li>Villas à louer saint-tropez</li>
                     </ul>
                 </div>
             </div>
