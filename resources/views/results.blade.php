@@ -76,8 +76,8 @@
                     $counter = 1;
                 @endphp
 
-                lat: {{ $property['latitude']  + ('0.0000' . $lat_count++) }},
-                lng: {{ $property['longitude'] + ('0.0000' . $lng_count++) }},
+                lat: {{ $property['latitude'] }},
+                lng: {{ $property['longitude'] + (('0.0000' . $lng_count++) * 5) }},
                 info:'<div class="object_img">'+
                     @foreach($property['pictures'] as $picture)
                         @if($counter == 1)
@@ -93,7 +93,7 @@
                 '<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +
                 '<div class="subtitle"> ' +
                 '<span class="city">'+'{{$property['city']}}'+'</span> ' +
-                '<span class="price">'+'{{$property['price']}}'+ '€</span> ' +
+                '<span class="price">'+'{{ number_format($property['price'], 0, ' ', ' ') }}'+ '€</span> ' +
                 '</div> ' +
                 '<div class="properties_block"> ' +
                 '<ul class="properties"> ' +

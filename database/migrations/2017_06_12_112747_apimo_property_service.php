@@ -111,7 +111,7 @@ class ApimoPropertyService extends Migration
                 [
                     'reference' => 18,
                     'locale' => 'fr_FR',
-                    'value' => 'AlaAbri de voiturerme',
+                    'value' => 'Abri de voiture',
                 ],
                 [
                     'reference' => 19,

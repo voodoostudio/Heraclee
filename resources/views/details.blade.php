@@ -78,8 +78,6 @@
 
                         @foreach($services as $service)
                             @switch($service->reference)
-                                {{-- Parking --}}
-                                {{--<li class="no_text"><span class="icn_container tooltip" title="Parking"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>--}}
                                 {{-- Wi-Fi --}}
                                 @case(1)
                                     <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
@@ -100,22 +98,24 @@
                                 @case(6)
                                     <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
                                 @break
-                                {{-- Garden --}}
-                                {{--<li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>--}}
                                 {{-- Swimming pool --}}
                                 @case(11)
                                     <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
+                                @break
+                                {{-- Parking --}}
+                                @case(18)
+                                    <li class="no_text {{ (!empty($property['services']['18'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
                                 @break
                                 {{-- Furniture --}}
                                 @case(47)
                                     <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
                                 @break
-                                {{-- Beach --}}
-                                {{--<li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>--}}
                             @endswitch
                         @endforeach
-
-
+                            {{-- Beach
+                            <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>
+                            {{-- Garden
+                            <li class="no_text"><span class="icn_container tooltip" title="Garden"><i class="icn icon-garden"></i></span><span class="prop_val"></span></li>--}}
                     </ul>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
                                 <p class="object_id">ID : {{$property['property_id']}}</p>
-                                <div class="object_price">{{$property['price_currency']}} {{$property['price']}}</div>
+                                <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
                                 <button class="btn dark">Je suis intéressé</button>
                             </div>
                         </div>
