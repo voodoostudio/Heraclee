@@ -141,16 +141,101 @@
                                     {{$property['user']['firstname']}} {{$property['user']['lastname']}}
                                 </p>
                                 <ul>
-                                    <li>{{$property['user']['phone']}}</li>
-                                    <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
+                                    @if(!empty($property['user']['phone']))
+                                        <li>{{$property['user']['phone']}}</li>
+                                    @endif
+                                    @if(!empty($property['user']['email']))
+                                        <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
+                                    @endif
                                 </ul>
+                            </div>
+                            <!-- Agent Modal Popup -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="vertical-alignment-helper">
+                                    <div class="modal-dialog vertical-align-center" role="document">
+                                        <div class="modal-content">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <i class="icn icon-cancel"></i>
+                                            </button>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="agent_img">
+                                                            @if(!empty($property['user']['picture']))
+                                                                <img src="{{$property['user']['picture']}}" alt="">
+                                                            @else
+                                                                <img src="/img/details/no_agent_photo.svg" alt="">
+                                                            @endif
+                                                        </div>
+                                                        <div class="agent_info">
+                                                            <p>Contact agent to visit</p>
+                                                            <p class="agent_name">
+                                                                {{$property['user']['firstname']}} {{$property['user']['lastname']}}
+                                                            </p>
+                                                            <ul>
+                                                                @if(!empty($property['user']['phone']))
+                                                                    <li>{{$property['user']['phone']}}</li>
+                                                                @endif
+                                                                @if(!empty($property['user']['email']))
+                                                                    <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
+                                                                @endif
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <form action="">
+                                                    <div class="row">
+                                                        <div class="col-md-6 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Nom *</span></label>
+                                                            <div class="input_container">
+                                                                <input type="text" placeholder="Nom">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Phone</span></label>
+                                                            <div class="input_container">
+                                                                <input type="text" placeholder="Phone">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Couriel *</span></label>
+                                                            <div class="input_container">
+                                                                <input type="text" id = "email" name = "email" placeholder="Courriel">
+                                                            </div>
+                                                            <div class="my_checkbox margin_top_10">
+                                                                <label>
+                                                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                                                    <span class="fake_checkbox"></span>
+                                                                    <span class="my_checkbox_text">Abonnez-vous à la newsletter</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Code postal</span></label>
+                                                            <div class="input_container">
+                                                                <input type="text" placeholder="Code postal">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <label class="form_el_label"><span>Message *</span></label>
+                                                            <div class="input_container">
+                                                                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                                                            </div>
+                                                            <button class="btn" type="submit">Envoyer</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
                                 <p class="object_id">ID : {{$property['property_id']}}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
-                                <button class="btn dark">Je suis intéressé</button>
+                                <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">Je suis intéressé</button>
                             </div>
                         </div>
                     </div>
