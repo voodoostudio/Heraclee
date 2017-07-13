@@ -210,20 +210,6 @@
   section.agent_info_section {
     .outer_block_container {
       .inner_block_container {
-        .agent_img {
-          img {
-            height: 120px;
-          }
-        }
-        .agent_info {
-          p {
-            margin-top: 10px;
-          }
-          p.agent_name {
-            font-size: 1.25rem;
-            margin: 15px 0 10px;
-          }
-        }
         .object_info {
           .object_id {
             font-size: 1rem;
@@ -239,6 +225,23 @@
             padding: 10px 25px 8px;
           }
         }
+      }
+    }
+  }
+
+  .agent_info_block {
+    .agent_img {
+      img {
+        height: 120px;
+      }
+    }
+    .agent_info {
+      p {
+        margin-top: 10px;
+      }
+      p.agent_name {
+        font-size: 1.25rem;
+        margin: 15px 0 10px;
       }
     }
   }
@@ -699,30 +702,33 @@
     .outer_block_container {
       .inner_block_container {
         padding: 20px;
-        .agent_info {
-          p {
-            margin-top: 0;
-          }
-          p.agent_name {
-            margin-top: 10px;
-          }
-          ul {
-            li {
-              float: none;
-              &:nth-child(2) {
-                margin: 10px 0 0;
-                padding: 0;
-                border: none;
-              }
-            }
-          }
-        }
         .object_info {
           p {
             display: block;
           }
           button.btn {
             margin: 0 30px 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  .agent_info_block {
+    .agent_info {
+      p {
+        margin-top: 0;
+      }
+      p.agent_name {
+        margin-top: 10px;
+      }
+      ul {
+        li {
+          float: none;
+          &:nth-child(2) {
+            margin: 10px 0 0;
+            padding: 0;
+            border: none;
           }
         }
       }
@@ -973,28 +979,6 @@
       margin-top: 10px;
       .inner_block_container {
         padding: 15px;
-        .agent_img {
-          float: none;
-          text-align: center;
-          margin: 0 0 20px 0;
-        }
-        .agent_info {
-          float: none;
-          text-align: center;
-          p {
-            font-size: 0.875rem;
-          }
-          p.agent_name {
-            font-size: 1.125rem;
-            line-height: 1.125rem;
-            margin-top: 15px;
-          }
-          ul {
-            li {
-              font-size: 0.85rem;
-            }
-          }
-        }
         .object_info {
           text-align: center;
           .object_id {
@@ -1158,6 +1142,31 @@
         }
       }
 
+    }
+  }
+
+  .agent_info_block {
+    .agent_img {
+      float: none;
+      text-align: center;
+      margin: 0 0 20px 0;
+    }
+    .agent_info {
+      float: none;
+      text-align: center;
+      p {
+        font-size: 0.875rem;
+      }
+      p.agent_name {
+        font-size: 1.125rem;
+        line-height: 1.125rem;
+        margin-top: 15px;
+      }
+      ul {
+        li {
+          font-size: 0.85rem;
+        }
+      }
     }
   }
 

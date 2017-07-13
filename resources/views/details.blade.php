@@ -128,26 +128,28 @@
                 <div class="inner_block_container">
                     <div class="row">
                         <div class="col-xs-12 col-xl-8">
-                            <div class="agent_img">
-                                @if(!empty($property['user']['picture']))
-                                    <img src="{{$property['user']['picture']}}" alt="">
-                                @else
-                                    <img src="/img/details/no_agent_photo.svg" alt="">
-                                @endif
-                            </div>
-                            <div class="agent_info">
-                                <p>Contact agent to visit</p>
-                                <p class="agent_name">
-                                    {{$property['user']['firstname']}} {{$property['user']['lastname']}}
-                                </p>
-                                <ul>
-                                    @if(!empty($property['user']['phone']))
-                                        <li>{{$property['user']['phone']}}</li>
+                            <div class="agent_info_block">
+                                <div class="agent_img">
+                                    @if(!empty($property['user']['picture']))
+                                        <img src="{{$property['user']['picture']}}" alt="">
+                                    @else
+                                        <img src="/img/details/no_agent_photo.svg" alt="">
                                     @endif
-                                    @if(!empty($property['user']['email']))
-                                        <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
-                                    @endif
-                                </ul>
+                                </div>
+                                <div class="agent_info">
+                                    <p>Contact agent to visit</p>
+                                    <p class="agent_name">
+                                        {{$property['user']['firstname']}} {{$property['user']['lastname']}}
+                                    </p>
+                                    <ul>
+                                        @if(!empty($property['user']['phone']))
+                                            <li>{{$property['user']['phone']}}</li>
+                                        @endif
+                                        @if(!empty($property['user']['email']))
+                                            <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
+                                        @endif
+                                    </ul>
+                                </div>
                             </div>
                             <!-- Agent Modal Popup -->
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -160,26 +162,28 @@
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-md-12">
-                                                        <div class="agent_img">
-                                                            @if(!empty($property['user']['picture']))
-                                                                <img src="{{$property['user']['picture']}}" alt="">
-                                                            @else
-                                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                                            @endif
-                                                        </div>
-                                                        <div class="agent_info">
-                                                            <p>Contact agent to visit</p>
-                                                            <p class="agent_name">
-                                                                {{$property['user']['firstname']}} {{$property['user']['lastname']}}
-                                                            </p>
-                                                            <ul>
-                                                                @if(!empty($property['user']['phone']))
-                                                                    <li>{{$property['user']['phone']}}</li>
+                                                        <div class="agent_info_block">
+                                                            <div class="agent_img">
+                                                                @if(!empty($property['user']['picture']))
+                                                                    <img src="{{$property['user']['picture']}}" alt="">
+                                                                @else
+                                                                    <img src="/img/details/no_agent_photo.svg" alt="">
                                                                 @endif
-                                                                @if(!empty($property['user']['email']))
-                                                                    <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
-                                                                @endif
-                                                            </ul>
+                                                            </div>
+                                                            <div class="agent_info">
+                                                                <p>Contact agent to visit</p>
+                                                                <p class="agent_name">
+                                                                    {{$property['user']['firstname']}} {{$property['user']['lastname']}}
+                                                                </p>
+                                                                <ul>
+                                                                    @if(!empty($property['user']['phone']))
+                                                                        <li>{{$property['user']['phone']}}</li>
+                                                                    @endif
+                                                                    @if(!empty($property['user']['email']))
+                                                                        <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
+                                                                    @endif
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

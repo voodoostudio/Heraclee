@@ -230,46 +230,6 @@ section.agent_info_section {
     margin-top: 40px;
     .inner_block_container {
       padding: 40px 75px;
-      .agent_img {
-        float: left;
-        margin-right: 30px;
-        img {
-          border: 1px solid $main_brown_clr;
-          height: 100%;
-        }
-      }
-      .agent_info {
-        float: left;
-        p {
-          font-size: 1rem;
-          margin-top: 20px;
-        }
-        .agent_name {
-          margin: 30px 0 15px;
-          font-size: 1.563rem;
-          line-height: 1.563rem;
-          text-transform: uppercase;
-          color: $main_light_clr;
-        }
-        ul {
-          display: table;
-          width: 100%;
-          li {
-            font-size: 1rem;
-            color: $main_light_clr;
-            float: left;
-            text-transform: uppercase;
-            &:nth-child(2) {
-              margin-left: 30px;
-              padding-left: 30px;
-              border-left: 2px solid $main_light_clr;
-            }
-            a {
-              color: $main_light_clr;
-            }
-          }
-        }
-      }
       .object_info {
         text-align: right;
         .object_id {
@@ -312,7 +272,7 @@ section.object_info_section {
       .object_details_container {
         h4 {
           font-size: 1.25rem;
-          margin: 30px 0 15px 0;
+          margin: 30px 0 20px 0;
           text-transform: uppercase;
           padding-bottom: 10px;
           border-bottom: 1px solid $main_brown_clr;
@@ -371,9 +331,9 @@ section.object_info_section {
           }
           &.main_info {
             border-bottom: 1px solid $main_brown_clr;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             li {
-              margin-bottom: 20px;
+              margin-bottom: 15px;
               &:before {
                 display: none;
               }
