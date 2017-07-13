@@ -41,6 +41,16 @@
         <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+        <script>
+            $('select').multiselect({
+                includeSelectAllOption: true,
+                selectAllValue: 'select-all-value',
+                selectAllText: 'Tout',
+                nonSelectedText: 'Aucune sélection',
+                nSelectedText: 'sélectionné',
+                allSelectedText: 'Tous sélectionnés'
+            });
+        </script>
         <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
         <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>

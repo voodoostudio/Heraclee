@@ -1,12 +1,3 @@
-$('select').multiselect({
-    includeSelectAllOption: true,
-    selectAllValue: 'select-all-value',
-    selectAllText: 'Tout',
-    nonSelectedText: 'Aucune sélection',
-    nSelectedText: 'sélectionné',
-    allSelectedText: 'Tous sélectionnés'
-});
-
 $(document).ready(function() {
 
     $('.scroll_to_top a').click(function(){
