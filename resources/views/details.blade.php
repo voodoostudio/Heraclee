@@ -323,22 +323,25 @@
                                 <li class="tooltip" title="Standing : {{ $property['standing'] }}"><span class="detail_name">Standing</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
                         </ul>
+
                         @if(!empty($property['areas']))
-                        <h4>Surfaces</h4>
-                        <ul class="object_info_list main_info">
-                            @foreach($property['areas'] as $area)
-                                @if((!empty($area['type'])) && (!empty($area['area'])))
-                                    <li class="tooltip" title="{{ $area['type'] }} : {{ $area['area'] }} m2"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
-                                @endif
-                            @endforeach
-                        </ul>
-                        <ul class="object_info_list">
-                            @foreach($property['areas'] as $area)
-                                @if((!empty($area['type'])) && (!empty($area['number'])))
-                                    <li class="tooltip" title="{{ $area['type'] }} : {{ $area['number'] }}"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['number'] }}</span></li>
-                                @endif
-                            @endforeach
-                        </ul>
+                            <h4>Surfaces</h4>
+                            @if($area['area'] != null)
+                                <ul class="object_info_list main_info">
+                                    @foreach($property['areas'] as $area)
+                                        @if((!empty($area['type'])) && (!empty($area['area'])))
+                                            <li class="tooltip" title="{{ $area['type'] }} : {{ $area['area'] }} m2"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            @endif
+                            <ul class="object_info_list">
+                                @foreach($property['areas'] as $area)
+                                    @if((!empty($area['type'])) && (!empty($area['number'])))
+                                        <li class="tooltip" title="{{ $area['type'] }} : {{ $area['number'] }}"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['number'] }}</span></li>
+                                    @endif
+                                @endforeach
+                            </ul>
                         @endif
                         <h4>Prestations</h4>
                         <h5>Équipments</h5>
