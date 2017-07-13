@@ -72,18 +72,20 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <form action="">
+                                        <form id = "contactForm" action="{{ route('contact.post.agent') }}"  method="POST">
+                                            {{ csrf_field() }}
+                                            <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">
                                             <div class="row">
                                                 <div class="col-md-6 margin_bottom_20">
                                                     <label class="form_el_label"><span>Nom *</span></label>
                                                     <div class="input_container">
-                                                        <input type="text" placeholder="Nom">
+                                                        <input type="text" name = "name" id = "name" placeholder="Nom">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 margin_bottom_20">
                                                     <label class="form_el_label"><span>Phone</span></label>
                                                     <div class="input_container">
-                                                        <input type="text" placeholder="Phone">
+                                                        <input type="text" name = "phone" id="phone" placeholder="Phone">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 margin_bottom_20">
@@ -102,7 +104,7 @@
                                                 <div class="col-md-6 margin_bottom_20">
                                                     <label class="form_el_label"><span>Code postal</span></label>
                                                     <div class="input_container">
-                                                        <input type="text" placeholder="Code postal">
+                                                        <input type="text" name = "post_code" id = "post_code" placeholder="Code postal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12">

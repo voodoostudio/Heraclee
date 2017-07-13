@@ -377,6 +377,43 @@ class PagesController extends Controller
         return redirect()->route('contact');
     }
 
+    public function postContactToAgent(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:2',
+            'email' => 'required|email',
+            'message' => 'required',
+        ]);
+
+
+
+        $data = [
+            'to' => $request->to,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'post_code' => $request->post_code,
+            'bodyMessage' => $request->message,
+        ];
+
+        $subscribers = new Subscribers;
+        $subscribers->email = $request->email;
+        $check_subscriber = Subscribers::select('email')->get();
+
+        if($request->subscribe == 'true') {
+            if (stristr((string)$check_subscriber, $subscribers->email) === false) {
+                $subscribers->save();
+            }
+        }
+
+        Mail::send('emails.email_agent', $data, function($message) use ($data){
+            $message->from($data['email'],'Heraclee Contact form');
+            $message->to($data['to']);
+        });
+
+        return redirect()->back();
+    }
+
     public function newsletter(Request $request)
     {
         $this->validate($request, [

@@ -58,6 +58,11 @@ Route::group(
             'as' => 'newsletter',
         ]);
 
+        Route::post('/contact-agent', [
+            'uses' => 'PagesController@postContactToAgent',
+            'as' => 'contact.post.agent',
+        ]);
+
         Route::get('/team', [
                 'uses' => 'PagesController@team',
                 'as' => 'team',
