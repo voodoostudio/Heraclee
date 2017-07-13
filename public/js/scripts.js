@@ -1,3 +1,12 @@
+$('select').multiselect({
+    includeSelectAllOption: true,
+    selectAllValue: 'select-all-value',
+    selectAllText: 'Tout',
+    nonSelectedText: 'Aucune sélection',
+    nSelectedText: 'sélectionné',
+    allSelectedText: 'Tous sélectionnés'
+});
+
 $(document).ready(function() {
 
     $('.scroll_to_top a').click(function(){
@@ -5,15 +14,6 @@ $(document).ready(function() {
         return false;
     });
 
-    $('select').multiselect({
-        includeSelectAllOption: true,
-        selectAllValue: 'select-all-value',
-        selectAllText: 'Tout',
-        nonSelectedText: 'Aucune sélection',
-        nSelectedText: 'sélectionné',
-        allSelectedText: 'Tous sélectionnés'
-    });
-    
     $('.tooltip').tooltipster({
         animation: 'fade',
         delay: 100,
