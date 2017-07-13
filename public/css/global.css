@@ -588,7 +588,7 @@ header {
               font-size: 0.813rem; }
     header .navigation_container nav {
       margin-left: 170px;
-      border-top: 1px solid rgba(98, 94, 87, 0.1);
+      border-top: 1px solid rgba(98, 94, 87, 0.3);
       padding: 20px 0 15px;
       margin-top: 15px; }
       header .navigation_container nav ul.nav {

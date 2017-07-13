@@ -36,6 +36,7 @@
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#myModal">Contactez l'agent</a>
                     <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
+
                     <!-- Agent Modal Popup -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="vertical-alignment-helper">
@@ -62,7 +63,7 @@
                                                         </p>
                                                         <ul>
                                                             @if(!empty($property['user']['phone']))
-                                                                <li>{{$property['user']['phone']}}</li>
+                                                                <li><a href="tel:{{$property['user']['phone']}}">{{$property['user']['phone']}}</a></li>
                                                             @endif
                                                             @if(!empty($property['user']['email']))
                                                                 <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>

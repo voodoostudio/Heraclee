@@ -143,7 +143,7 @@
                                     </p>
                                     <ul>
                                         @if(!empty($property['user']['phone']))
-                                            <li>{{$property['user']['phone']}}</li>
+                                            <li><a href="tel:{{$property['user']['phone']}}">{{$property['user']['phone']}}</a></li>
                                         @endif
                                         @if(!empty($property['user']['email']))
                                             <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
@@ -177,7 +177,7 @@
                                                                 </p>
                                                                 <ul>
                                                                     @if(!empty($property['user']['phone']))
-                                                                        <li>{{$property['user']['phone']}}</li>
+                                                                        <li><a href="tel:{{$property['user']['phone']}}">{{$property['user']['phone']}}</a></li>
                                                                     @endif
                                                                     @if(!empty($property['user']['email']))
                                                                         <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
