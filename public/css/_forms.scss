@@ -64,6 +64,11 @@ textarea {
 input {
   height: 42px;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 textarea {
   height: 150px;
   padding: 12px;
@@ -87,6 +92,14 @@ a:focus {
 
   input {
     color: $main_light_clr;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      color: $main_light_clr !important;
+      -webkit-box-shadow: 0 0 0 30px $main_dark_clr inset !important;
+      -webkit-text-fill-color: $main_light_clr !important;
+    }
   }
   button {
     position: absolute;
@@ -112,6 +125,10 @@ a:focus {
     span {
       text-transform: none;
     }
+  }
+  label.error {
+    color: $error_crt;
+    font-size: 0.75rem;
   }
 }
 sup {
