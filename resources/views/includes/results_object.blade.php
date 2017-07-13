@@ -25,9 +25,9 @@
                         <h2>{{$property['type']}}</h2>
                     </a>
                     <ul class="social_networks">
-                        <li><a href="#"><i class="icn icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icn icon-linked_in"></i></a></li>
-                        <li><a href="#"><i class="icn icon-facebook"></i></a></li>
+                        <li><a href="javascript: void(0)"><i class="icn icon-twitter"></i></a></li>
+                        <li><a href="javascript: void(0)"><i class="icn icon-linked_in"></i></a></li>
+                        <li><a href="javascript: void(0)"><i class="icn icon-facebook"></i></a></li>
                     </ul>
                 </div>
                 <div class="description_container">

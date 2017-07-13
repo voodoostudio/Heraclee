@@ -691,6 +691,7 @@
             li {
               width: 100%;
               margin-bottom: 15px;
+              font-size: 0.875rem;
             }
           }
         }
@@ -850,7 +851,9 @@
     section.bottom_footer_section .copyright {
       font-size: 0.8125rem;
     }
-    ul.social_networks li a, footer ul.social_networks li a:visited, footer ul.social_networks li a:focus {
+    ul.social_networks li a,
+    ul.social_networks li a:visited,
+    ul.social_networks li a:focus {
       width: 40px;
       line-height: 40px;
     }

@@ -1,6 +1,7 @@
 $(document).ready(function() {
     $('.results_carousel').slick({
         infinite: true,
+        lazyLoad: 'progressive',
         slidesToShow: 2,
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',

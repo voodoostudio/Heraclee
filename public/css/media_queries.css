@@ -300,7 +300,8 @@
       margin-top: 15px; }
     section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
       width: 100%;
-      margin-bottom: 15px; }
+      margin-bottom: 15px;
+      font-size: 0.875rem; }
 
   section.agent_info_section .outer_block_container .inner_block_container {
     padding: 20px; }
@@ -394,7 +395,9 @@
     margin-top: 30px; }
     footer section.bottom_footer_section .copyright {
       font-size: 0.8125rem; }
-    footer ul.social_networks li a, footer footer ul.social_networks li a:visited, footer footer ul.social_networks li a:focus {
+    footer ul.social_networks li a,
+    footer ul.social_networks li a:visited,
+    footer ul.social_networks li a:focus {
       width: 40px;
       line-height: 40px; } }
 @media screen and (max-width: 575px) {

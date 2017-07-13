@@ -692,7 +692,8 @@ section.object_info_section .outer_block_container {
       margin-bottom: 30px;
       position: relative;
       padding-right: 20px;
-      font: 16px opensans_light;
+      font-family: opensans_light;
+      font-size: 1rem;
       opacity: 1; }
       section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li:before {
         content: '';

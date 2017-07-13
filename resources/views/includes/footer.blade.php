@@ -84,8 +84,8 @@
     </section>
     <ul class="social_networks">
         <li class="scroll_to_top"><a href="#"><i class="icn icon-up_page"></i></a></li>
-        <li class="twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        <li class="linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li class="facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li class="twitter"><a href="javascript: void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li class="linkedin"><a href="javascript: void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li class="facebook"><a href="javascript: void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
     </ul>
 </footer>

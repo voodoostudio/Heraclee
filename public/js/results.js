@@ -84,6 +84,7 @@ function setItems() {
 function resultsCarouselInit() {
     $('.results_carousel').slick({
         infinite: true,
+        lazyLoad: 'progressive',
         slidesToShow: 2,
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
@@ -236,6 +237,7 @@ function listView_galleryInit() {
     $('.result_preview_gallery').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
+        lazyLoad: 'progressive',
         fade: true,
         speed: 100,
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',

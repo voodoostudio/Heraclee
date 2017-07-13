@@ -287,7 +287,8 @@ section.object_info_section {
             margin-bottom: 30px;
             position: relative;
             padding-right: 20px;
-            font: 16px opensans_light;
+            font-family: opensans_light;
+            font-size: 1rem;
             opacity: 1;
             &:before {
               content: '';
