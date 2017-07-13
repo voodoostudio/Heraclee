@@ -396,8 +396,7 @@
     footer section.bottom_footer_section .copyright {
       font-size: 0.8125rem; }
     footer ul.social_networks li a,
-    footer ul.social_networks li a:visited,
-    footer ul.social_networks li a:focus {
+    footer ul.social_networks li a:hover {
       width: 40px;
       line-height: 40px; } }
 @media screen and (max-width: 575px) {

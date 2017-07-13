@@ -25,7 +25,7 @@
                         <span>France</span>
                     </p>
                     <ul>
-                        <li>Tel : +33 4 94 54 20 01</li>
+                        <li>Tel : <a href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a></li>
                         <li><a href="mailto:agence@heraclee.com">agence@heraclee.com</a></li>
                     </ul>
                 </div>

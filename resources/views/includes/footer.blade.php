@@ -60,9 +60,9 @@
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <h4>Heraclee - Agence Immobilière Saint Tropez</h4>
                     <div class="contact_block">
-                        <a href="/"><img src="/img/logo.svg"></a>
+                        <a class="footer_logo_link" href="{{ route('index') }}"><img src="/img/logo.svg"></a>
                         <ul>
-                            <li>+33 (0)4 94 54 20 01</li>
+                            <li><a href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a></li>
                             <li>44, Route des Plages<br>83990 Saint-Tropez</li>
                         </ul>
                     </div>

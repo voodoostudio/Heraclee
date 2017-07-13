@@ -84,7 +84,7 @@ header {
     padding-top: 15px;
     .navigation_block {
       margin-left: 170px;
-      p.header_tel {
+      .header_tel {
         font-size: 0.813rem;
         line-height: 27px;
       }
@@ -95,7 +95,7 @@ header {
           ul.language_select {
             display: table;
             float: left;
-            margin-right: 30px;
+            //margin-right: 30px;
             padding: 6px 0;
             li {
               float: left;
@@ -520,7 +520,7 @@ footer {
     .contact_block {
       margin: 20px auto;
       display: table;
-      a {
+      a.footer_logo_link {
         display: table-cell;
         float: left;
         padding-right: 20px;

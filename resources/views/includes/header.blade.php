@@ -9,7 +9,7 @@
             <div class="navigation_block">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <p class="header_tel">+33 (0)4 94 54 20 01</p>
+                        <a class="header_tel" href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a>
                     </div>
                     <div class="col-12 col-md-6">
                         <ul class="lang_currency_container">

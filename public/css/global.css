@@ -547,7 +547,7 @@ header {
     padding-top: 15px; }
     header .navigation_container .navigation_block {
       margin-left: 170px; }
-      header .navigation_container .navigation_block p.header_tel {
+      header .navigation_container .navigation_block .header_tel {
         font-size: 0.813rem;
         line-height: 27px; }
       header .navigation_container .navigation_block .lang_currency_container {
@@ -557,7 +557,6 @@ header {
           header .navigation_container .navigation_block .lang_currency_container li ul.language_select {
             display: table;
             float: left;
-            margin-right: 30px;
             padding: 6px 0; }
             header .navigation_container .navigation_block .lang_currency_container li ul.language_select li {
               float: left;
@@ -884,11 +883,11 @@ footer {
     footer section.bottom_footer_section .contact_block {
       margin: 20px auto;
       display: table; }
-      footer section.bottom_footer_section .contact_block a {
+      footer section.bottom_footer_section .contact_block a.footer_logo_link {
         display: table-cell;
         float: left;
         padding-right: 20px; }
-        footer section.bottom_footer_section .contact_block a img {
+        footer section.bottom_footer_section .contact_block a.footer_logo_link img {
           max-width: 100px; }
       footer section.bottom_footer_section .contact_block ul {
         font-size: 0.875rem;

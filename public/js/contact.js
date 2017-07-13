@@ -23,7 +23,7 @@ $(document).ready(function() {
                 position: google.maps.ControlPosition.LEFT_CENTER
             }
         });
-        var markerImage = new google.maps.MarkerImage('img/map_pin.svg');
+        var markerImage = new google.maps.MarkerImage('/img/map_pin.svg');
 
         marker = new google.maps.Marker({
             position: latlong,
