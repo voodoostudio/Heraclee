@@ -90,6 +90,11 @@ textarea {
 input {
   height: 42px; }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 textarea {
   height: 150px;
   padding: 12px;
@@ -111,6 +116,10 @@ a:focus {
   background-color: #272727; }
   .input_container input {
     color: #fdfdfd; }
+    .input_container input:-webkit-autofill, .input_container input:-webkit-autofill:hover, .input_container input:-webkit-autofill:focus, .input_container input:-webkit-autofill:active {
+      color: #fdfdfd !important;
+      -webkit-box-shadow: 0 0 0 30px #272727 inset !important;
+      -webkit-text-fill-color: #fdfdfd !important; }
   .input_container button {
     position: absolute;
     top: 1px;
@@ -133,6 +142,9 @@ a:focus {
     background-color: #625e57; }
     .input_container .input_label span {
       text-transform: none; }
+  .input_container label.error {
+    color: #c54545;
+    font-size: 0.75rem; }
 
 sup {
   font-size: 0.650em; }
@@ -755,6 +767,59 @@ section.search_section {
     left: -40px; }
 
 /*Slick END*/
+/* Bootstrap modal popup START*/
+.modal {
+  z-index: 1100; }
+  .modal .vertical-alignment-helper {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+    padding: 15px; }
+    .modal .vertical-alignment-helper .modal-dialog {
+      max-width: 860px; }
+      .modal .vertical-alignment-helper .modal-dialog.vertical-align-center {
+        /* To center vertically */
+        display: table-cell;
+        vertical-align: middle;
+        pointer-events: none; }
+      .modal .vertical-alignment-helper .modal-dialog .modal-content {
+        background-color: #272727;
+        padding: 15px;
+        /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+        height: inherit;
+        /* To center horizontally */
+        margin: 0 auto;
+        pointer-events: all; }
+        .modal .vertical-alignment-helper .modal-dialog .modal-content button.close {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          text-shadow: none;
+          opacity: 1;
+          font-size: 1.3rem;
+          line-height: 1.3rem;
+          padding: 10px;
+          border-left: 1px solid #ccac83;
+          border-bottom: 1px solid #ccac83;
+          z-index: 1;
+          color: white; }
+          .modal .vertical-alignment-helper .modal-dialog .modal-content button.close:hover {
+            color: rgba(255, 255, 255, 0.8); }
+        .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
+          border: 1px solid #ccac83;
+          padding: 90px 125px 45px; }
+          .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body form {
+            border-top: 1px solid #aaa296;
+            margin-top: 30px;
+            padding-top: 30px; }
+            .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body form button.btn {
+              margin-top: 5px;
+              float: right; }
+            .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body form .my_checkbox label .my_checkbox_text {
+              font-size: 0.875rem; }
+
+/* Bootstrap modal popup END*/
 footer {
   margin-top: 90px; }
   footer section.top_footer_section {

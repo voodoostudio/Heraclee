@@ -161,6 +161,11 @@
       padding: 0 25px;
       font-size: 1rem; }
 
+  /* Bootstrap modal popup START*/
+  .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
+    padding: 90px 75px 45px; }
+
+  /* Bootstrap modal popup END*/
   footer section.bottom_footer_section p {
     margin-right: 0; } }
 @media screen and (max-width: 767px) {
@@ -545,4 +550,10 @@
     height: 250px;
     width: 100%; }
   section.results_section nav ul.pagination li a.page-link {
-    width: 32px; } }
+    width: 32px; }
+
+  /* Bootstrap modal popup START*/
+  .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
+    padding: 15px; }
+
+  /* Bootstrap modal popup END*/ }

@@ -407,6 +407,20 @@
     }
   }
 
+  /* Bootstrap modal popup START*/
+  .modal {
+    .vertical-alignment-helper {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            padding: 90px 75px 45px;
+          }
+        }
+      }
+    }
+  }
+  /* Bootstrap modal popup END*/
+
   footer section.bottom_footer_section p {
     margin-right: 0;
   }
@@ -1146,4 +1160,18 @@
 
     }
   }
+
+  /* Bootstrap modal popup START*/
+  .modal {
+    .vertical-alignment-helper {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+  /* Bootstrap modal popup END*/
 }

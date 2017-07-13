@@ -374,6 +374,70 @@ section.search_section {
 }
 /*Slick END*/
 
+/* Bootstrap modal popup START*/
+.modal {
+  z-index: 1100;
+  .vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    margin: 0 auto;
+    pointer-events:none;
+    padding: 15px;
+    .modal-dialog {
+      max-width: 860px;
+      &.vertical-align-center {
+        /* To center vertically */
+        display: table-cell;
+        vertical-align: middle;
+        pointer-events:none;
+      }
+      .modal-content {
+        background-color: $main_dark_clr;
+        padding: 15px;
+        /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+        height:inherit;
+        /* To center horizontally */
+        margin: 0 auto;
+        pointer-events:all;
+        button.close {
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          text-shadow: none;
+          opacity: 1;
+          font-size: 1.3rem;
+          line-height: 1.3rem;
+          padding: 10px;
+          border-left: 1px solid $main_brown_clr;
+          border-bottom: 1px solid $main_brown_clr;
+          z-index: 1;
+          color: white;
+          &:hover {
+            color: rgba(white, 0.8);
+          }
+        }
+        .modal-body {
+          border: 1px solid $main_brown_clr;
+          padding: 90px 125px 45px;
+          form {
+            border-top: 1px solid $main_divider_clr;
+            margin-top: 30px;
+            padding-top: 30px;
+            button.btn {
+              margin-top: 5px;
+              float: right;
+            }
+            .my_checkbox label .my_checkbox_text {
+              font-size: 0.875rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* Bootstrap modal popup END*/
+
 footer {
   margin-top: 90px;
   section.top_footer_section {

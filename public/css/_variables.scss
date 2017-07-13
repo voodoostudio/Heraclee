@@ -3,6 +3,7 @@ $main_light_clr: #fdfdfd;
 $main_brown_clr: #ccac83;
 $main_gray_clr: #625e57;
 $main_divider_clr: #aaa296;
+$error_crt: #c54545;
 
 @mixin my_border_radius($radius) {
   -webkit-border-radius: $radius;

@@ -90,6 +90,11 @@ textarea {
 input {
   height: 42px; }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 textarea {
   height: 150px;
   padding: 12px;
@@ -111,6 +116,10 @@ a:focus {
   background-color: #272727; }
   .input_container input {
     color: #fdfdfd; }
+    .input_container input:-webkit-autofill, .input_container input:-webkit-autofill:hover, .input_container input:-webkit-autofill:focus, .input_container input:-webkit-autofill:active {
+      color: #fdfdfd !important;
+      -webkit-box-shadow: 0 0 0 30px #272727 inset !important;
+      -webkit-text-fill-color: #fdfdfd !important; }
   .input_container button {
     position: absolute;
     top: 1px;
@@ -133,6 +142,9 @@ a:focus {
     background-color: #625e57; }
     .input_container .input_label span {
       text-transform: none; }
+  .input_container label.error {
+    color: #c54545;
+    font-size: 0.75rem; }
 
 sup {
   font-size: 0.650em; }
