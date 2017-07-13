@@ -73,13 +73,6 @@
   section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
     width: 50%; }
 
-  section.agent_info_section .outer_block_container .inner_block_container .agent_img img {
-    height: 120px; }
-  section.agent_info_section .outer_block_container .inner_block_container .agent_info p {
-    margin-top: 10px; }
-  section.agent_info_section .outer_block_container .inner_block_container .agent_info p.agent_name {
-    font-size: 1.25rem;
-    margin: 15px 0 10px; }
   section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
     font-size: 1rem;
     line-height: 1rem; }
@@ -90,6 +83,14 @@
   section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
     font-size: 1rem;
     padding: 10px 25px 8px; }
+
+  .agent_info_block .agent_img img {
+    height: 120px; }
+  .agent_info_block .agent_info p {
+    margin-top: 10px; }
+  .agent_info_block .agent_info p.agent_name {
+    font-size: 1.25rem;
+    margin: 15px 0 10px; }
 
   section.results_section h1 {
     font-size: 1.5rem; }
@@ -303,20 +304,21 @@
 
   section.agent_info_section .outer_block_container .inner_block_container {
     padding: 20px; }
-    section.agent_info_section .outer_block_container .inner_block_container .agent_info p {
-      margin-top: 0; }
-    section.agent_info_section .outer_block_container .inner_block_container .agent_info p.agent_name {
-      margin-top: 10px; }
-    section.agent_info_section .outer_block_container .inner_block_container .agent_info ul li {
-      float: none; }
-      section.agent_info_section .outer_block_container .inner_block_container .agent_info ul li:nth-child(2) {
-        margin: 10px 0 0;
-        padding: 0;
-        border: none; }
     section.agent_info_section .outer_block_container .inner_block_container .object_info p {
       display: block; }
     section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
       margin: 0 30px 0 0; }
+
+  .agent_info_block .agent_info p {
+    margin-top: 0; }
+  .agent_info_block .agent_info p.agent_name {
+    margin-top: 10px; }
+  .agent_info_block .agent_info ul li {
+    float: none; }
+    .agent_info_block .agent_info ul li:nth-child(2) {
+      margin: 10px 0 0;
+      padding: 0;
+      border: none; }
 
   section.carousel_offers_section {
     margin-top: 30px; }
@@ -467,21 +469,6 @@
     margin-top: 10px; }
     section.agent_info_section .outer_block_container .inner_block_container {
       padding: 15px; }
-      section.agent_info_section .outer_block_container .inner_block_container .agent_img {
-        float: none;
-        text-align: center;
-        margin: 0 0 20px 0; }
-      section.agent_info_section .outer_block_container .inner_block_container .agent_info {
-        float: none;
-        text-align: center; }
-        section.agent_info_section .outer_block_container .inner_block_container .agent_info p {
-          font-size: 0.875rem; }
-        section.agent_info_section .outer_block_container .inner_block_container .agent_info p.agent_name {
-          font-size: 1.125rem;
-          line-height: 1.125rem;
-          margin-top: 15px; }
-        section.agent_info_section .outer_block_container .inner_block_container .agent_info ul li {
-          font-size: 0.85rem; }
       section.agent_info_section .outer_block_container .inner_block_container .object_info {
         text-align: center; }
         section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
@@ -551,6 +538,22 @@
     width: 100%; }
   section.results_section nav ul.pagination li a.page-link {
     width: 32px; }
+
+  .agent_info_block .agent_img {
+    float: none;
+    text-align: center;
+    margin: 0 0 20px 0; }
+  .agent_info_block .agent_info {
+    float: none;
+    text-align: center; }
+    .agent_info_block .agent_info p {
+      font-size: 0.875rem; }
+    .agent_info_block .agent_info p.agent_name {
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      margin-top: 15px; }
+    .agent_info_block .agent_info ul li {
+      font-size: 0.85rem; }
 
   /* Bootstrap modal popup START*/
   .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
