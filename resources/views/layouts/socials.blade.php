@@ -12,10 +12,24 @@
     <meta name="description" content="Heraclee website">
     <meta name="keywords" content="heraclee, website, responsive">
 
-    <meta property="og:title" content="The Rock" />
-    <meta property="og:type" content="video.movie" />
-    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
-    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+    <!-- SOCIAL SHARE -->
+    <meta property="og:title" content="{{ Illuminate\Support\Str::limit($property['comments']['comment'], 100) }}" />
+    <meta property="og:description" content="{{$property['comments']['comment']}}"/>
+    <meta property="og:type" content="{{$property['type']}}" />
+    <meta property="og:url" content="{{ Request::fullUrl() }}" />
+
+    @php
+        $image_counter = 1;
+    @endphp
+    @foreach($property['pictures'] as $picture)
+        @if($image_counter == 1)
+            <meta property="og:image" content="{{$picture['url']}}" />
+        @endif
+        @php
+            $image_counter++;
+        @endphp
+    @endforeach
+    <!-- END SOCIAL SHARE -->
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
