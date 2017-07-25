@@ -37,9 +37,9 @@
                     </div>
                 </div>
                 <div class="gradient_bottom"></div>
-                <div class="panorama_link_container">
-                    <button>Visite virtuelle<i class="icn icon-arrow_right"></i></button>
-                </div>
+                {{--<div class="panorama_link_container">--}}
+                    {{--<button>Visite virtuelle<i class="icn icon-arrow_right"></i></button>--}}
+                {{--</div>--}}
                 <div id="object_panorama"></div>
                 <button class="close_panorama"><i class="icn icon-arrow_right"></i>Retour à la galerie</button>
             </div>

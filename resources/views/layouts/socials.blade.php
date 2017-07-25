@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
     <meta name="description" content="Heraclee website">
     <meta name="keywords" content="heraclee, website, responsive">
+
+    <meta property="og:title" content="The Rock" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="http://www.imdb.com/title/tt0117500/" />
+    <meta property="og:image" content="http://ia.media-imdb.com/images/rock.jpg" />
+
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
