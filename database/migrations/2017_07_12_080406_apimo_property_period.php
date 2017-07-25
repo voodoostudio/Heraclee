@@ -57,6 +57,41 @@ class ApimoPropertyPeriod extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'An',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Day',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Week',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Fortnight',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Month',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Bimonthly',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Half-yearly',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Yearly',
+                ],
             ]
         );
     }

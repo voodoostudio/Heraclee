@@ -108,6 +108,91 @@ class ApimoPropertyFlooring extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Vinyle / PVC',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Wood floors',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Tile',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Vinyl composition tile',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Carpet',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Concrete',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Natural fiber',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Coco',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'Travertine',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Marble',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Granite',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => 'Terracotta tile',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => 'Teak',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => 'Mosaïc',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => 'Clay',
+                ],
+                [
+                    'reference' => 15,
+                    'locale' => 'en_GB',
+                    'value' => 'Stone',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => 'Laminate',
+                ],
+                [
+                    'reference' => 17,
+                    'locale' => 'en_GB',
+                    'value' => 'Vinyl composition tile',
+                ],
             ]
         );
     }

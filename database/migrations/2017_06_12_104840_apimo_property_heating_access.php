@@ -43,6 +43,26 @@ class ApimoPropertyHeatingAccess extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Réseau de chaleur',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Individual',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Common',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Mixed',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'District heating',
+                ],
             ]
         );
     }

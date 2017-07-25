@@ -32,6 +32,16 @@ class ApimoPropertyWaterHotAccess extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Collective',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Individual',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Collective',
+                ],
             ]
         );
     }

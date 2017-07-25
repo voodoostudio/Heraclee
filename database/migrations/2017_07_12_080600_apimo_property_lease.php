@@ -42,6 +42,26 @@ class ApimoPropertyLease extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Long terme tout commerce',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Term lease',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Long-Term',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Long-Term - Single activity',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Long-Term - All activities',
+                ],
             ]
         );
     }

@@ -53,6 +53,36 @@ class ApimoPropertyCategory extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Enchère',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Sale',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Rental',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Seasonal rental',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'New construction',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Life annuity',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Auction',
+                ],
             ]
         );
     }

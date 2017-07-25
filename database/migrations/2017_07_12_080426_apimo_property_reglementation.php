@@ -257,6 +257,156 @@ class ApimoPropertyReglementation extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Délibération conseil d’administration/surveillance',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Energy - Conventional consumption',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Energy - Emissions estimate',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => '« Carrez » act',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Natural : technical hazards',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Termites',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Asbestos',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Gas',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'Lead',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Electricity',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Boutin act',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => 'Sanitation',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => 'Indice prestazione energetica (EPI)',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => 'Attestato Certificazione Energetica (ACE)',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => 'Request for nomination of an ad hoc agent',
+                ],
+                [
+                    'reference' => 15,
+                    'locale' => 'en_GB',
+                    'value' => 'Request for nomination of a temporary administrator',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => 'Request for expert nomination',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => 'Energy consumption',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => 'Energy consumption',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => 'Land value tax',
+                ],
+                [
+                    'reference' => 23,
+                    'locale' => 'en_GB',
+                    'value' => 'Housing tax',
+                ],
+                [
+                    'reference' => 25,
+                    'locale' => 'en_GB',
+                    'value' => 'Land value tax',
+                ],
+                [
+                    'reference' => 26,
+                    'locale' => 'en_GB',
+                    'value' => 'Land value tax',
+                ],
+                [
+                    'reference' => 28,
+                    'locale' => 'en_GB',
+                    'value' => 'IPTU',
+                ],
+                [
+                    'reference' => 30,
+                    'locale' => 'en_GB',
+                    'value' => 'Minergie',
+                ],
+                [
+                    'reference' => 33,
+                    'locale' => 'en_GB',
+                    'value' => 'Co-Ownership property',
+                ],
+                [
+                    'reference' => 34,
+                    'locale' => 'en_GB',
+                    'value' => 'Taux d\'imposition communal',
+                ],
+                [
+                    'reference' => 36,
+                    'locale' => 'en_GB',
+                    'value' => 'Droit de superficie',
+                ],
+                [
+                    'reference' => 37,
+                    'locale' => 'en_GB',
+                    'value' => 'Millièmes',
+                ],
+                [
+                    'reference' => 38,
+                    'locale' => 'en_GB',
+                    'value' => 'Housing tax',
+                ],
+                [
+                    'reference' => 40,
+                    'locale' => 'en_GB',
+                    'value' => 'Current renovation fund',
+                ],
             ]
         );
     }

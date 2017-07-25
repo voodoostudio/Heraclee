@@ -48,6 +48,31 @@ class ApimoPropertyStanding extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Normal',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'High standard',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Luxury',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'High luxury',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Housing estate',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Regular',
+                ],
             ]
         );
     }

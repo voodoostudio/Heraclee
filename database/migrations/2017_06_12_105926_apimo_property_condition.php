@@ -21,7 +21,7 @@ class ApimoPropertyCondition extends Migration
             $table->string('value_plurial')->nullable();
         });
 
-        DB::table('apimo_property_heating_access')->insert(
+        DB::table('apimo_property_condition')->insert(
             [
                 [
                     'reference' => 1,
@@ -47,6 +47,31 @@ class ApimoPropertyCondition extends Migration
                     'reference' => 8,
                     'locale' => 'fr_FR',
                     'value' => 'Neuf',
+                ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Requires updating',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Good condition',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Requires renovation',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Excellent condition',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'New',
                 ],
             ]
         );

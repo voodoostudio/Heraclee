@@ -116,6 +116,96 @@ class ApimoPropertyViewLandscape extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Piscine',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Sea',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Mountains',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Hills',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Greenery',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Monument',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Forest',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'City',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Countryside',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Village',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => 'Park',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => 'Garden',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => 'Sky',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => 'Courtyard',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => 'Harbor',
+                ],
+                [
+                    'reference' => 17,
+                    'locale' => 'en_GB',
+                    'value' => 'Street',
+                ],
+                [
+                    'reference' => 18,
+                    'locale' => 'en_GB',
+                    'value' => 'Lake',
+                ],
+                [
+                    'reference' => 19,
+                    'locale' => 'en_GB',
+                    'value' => 'Ski slopes',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => 'Swimming pool',
+                ],
             ]
         );
     }

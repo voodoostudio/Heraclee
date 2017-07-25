@@ -43,6 +43,26 @@ class ApimoPropertyOrientations extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Sud',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'East',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'North',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'West',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'South',
+                ],
             ]
         );
     }

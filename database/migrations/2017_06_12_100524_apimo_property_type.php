@@ -73,6 +73,56 @@ class ApimoPropertyType extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Cave / Box',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Apartment',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'House',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Plot of land',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Business',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Garage/Parking',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Building',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Office',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'Boat',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Warehouse',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Cellar / Box',
+                ],
             ]
         );
     }

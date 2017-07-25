@@ -37,6 +37,21 @@ class ApimoPropertyAvailability extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Occupé',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Free',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Rented',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Occupied',
+                ],
             ]
         );
     }

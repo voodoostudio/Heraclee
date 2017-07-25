@@ -37,6 +37,21 @@ class ApimoPropertyWaterHotDevice extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Chaudière',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Solar',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Hot water tank',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Boiler',
+                ],
             ]
         );
     }

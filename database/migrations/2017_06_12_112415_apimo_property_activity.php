@@ -348,6 +348,331 @@ class ApimoPropertyActivity extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Poissonnerie',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Self-employed',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Bakery',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Restaurant',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Press',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Bar',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Florist',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Tobacconist',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'Clothes',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Chemist',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Shopping centre',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => 'Travel agency',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => 'Real estate agent',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => 'Gallery',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => 'Garage',
+                ],
+                [
+                    'reference' => 15,
+                    'locale' => 'en_GB',
+                    'value' => 'Insurer',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => 'Optician',
+                ],
+                [
+                    'reference' => 17,
+                    'locale' => 'en_GB',
+                    'value' => 'Perfumery',
+                ],
+                [
+                    'reference' => 18,
+                    'locale' => 'en_GB',
+                    'value' => 'Hotel',
+                ],
+                [
+                    'reference' => 19,
+                    'locale' => 'en_GB',
+                    'value' => 'Antique dealer',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => 'Laundry',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => 'Pressing',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => 'Jeweller',
+                ],
+                [
+                    'reference' => 23,
+                    'locale' => 'en_GB',
+                    'value' => 'Grocer',
+                ],
+                [
+                    'reference' => 24,
+                    'locale' => 'en_GB',
+                    'value' => 'Butcher',
+                ],
+                [
+                    'reference' => 25,
+                    'locale' => 'en_GB',
+                    'value' => 'Caterer',
+                ],
+                [
+                    'reference' => 26,
+                    'locale' => 'en_GB',
+                    'value' => 'Brewery',
+                ],
+                [
+                    'reference' => 27,
+                    'locale' => 'en_GB',
+                    'value' => 'Snack',
+                ],
+                [
+                    'reference' => 28,
+                    'locale' => 'en_GB',
+                    'value' => 'Confectioner',
+                ],
+                [
+                    'reference' => 29,
+                    'locale' => 'en_GB',
+                    'value' => 'Pork butcher',
+                ],
+                [
+                    'reference' => 30,
+                    'locale' => 'en_GB',
+                    'value' => 'Grocery',
+                ],
+                [
+                    'reference' => 31,
+                    'locale' => 'en_GB',
+                    'value' => 'Cheesemonger',
+                ],
+                [
+                    'reference' => 32,
+                    'locale' => 'en_GB',
+                    'value' => 'Fruit and vegetables',
+                ],
+                [
+                    'reference' => 33,
+                    'locale' => 'en_GB',
+                    'value' => 'Sex shop',
+                ],
+                [
+                    'reference' => 34,
+                    'locale' => 'en_GB',
+                    'value' => 'Video game',
+                ],
+                [
+                    'reference' => 35,
+                    'locale' => 'en_GB',
+                    'value' => 'Computer',
+                ],
+                [
+                    'reference' => 36,
+                    'locale' => 'en_GB',
+                    'value' => 'Hairdresser',
+                ],
+                [
+                    'reference' => 37,
+                    'locale' => 'en_GB',
+                    'value' => 'Cosmetician',
+                ],
+                [
+                    'reference' => 38,
+                    'locale' => 'en_GB',
+                    'value' => 'Household electrical',
+                ],
+                [
+                    'reference' => 39,
+                    'locale' => 'en_GB',
+                    'value' => 'Shoes',
+                ],
+                [
+                    'reference' => 40,
+                    'locale' => 'en_GB',
+                    'value' => 'Haberdasher',
+                ],
+                [
+                    'reference' => 41,
+                    'locale' => 'en_GB',
+                    'value' => 'Groomer',
+                ],
+                [
+                    'reference' => 42,
+                    'locale' => 'en_GB',
+                    'value' => 'Tea room',
+                ],
+                [
+                    'reference' => 43,
+                    'locale' => 'en_GB',
+                    'value' => 'Beach',
+                ],
+                [
+                    'reference' => 44,
+                    'locale' => 'en_GB',
+                    'value' => 'Bookshop',
+                ],
+                [
+                    'reference' => 45,
+                    'locale' => 'en_GB',
+                    'value' => 'Offices',
+                ],
+                [
+                    'reference' => 46,
+                    'locale' => 'en_GB',
+                    'value' => 'Gas station',
+                ],
+                [
+                    'reference' => 47,
+                    'locale' => 'en_GB',
+                    'value' => 'Camping',
+                ],
+                [
+                    'reference' => 48,
+                    'locale' => 'en_GB',
+                    'value' => 'Nightclub',
+                ],
+                [
+                    'reference' => 49,
+                    'locale' => 'en_GB',
+                    'value' => 'Pet store',
+                ],
+                [
+                    'reference' => 50,
+                    'locale' => 'en_GB',
+                    'value' => 'Video arcade',
+                ],
+                [
+                    'reference' => 51,
+                    'locale' => 'en_GB',
+                    'value' => 'Office supplies',
+                ],
+                [
+                    'reference' => 52,
+                    'locale' => 'en_GB',
+                    'value' => 'Furniture',
+                ],
+                [
+                    'reference' => 53,
+                    'locale' => 'en_GB',
+                    'value' => 'Decoration',
+                ],
+                [
+                    'reference' => 54,
+                    'locale' => 'en_GB',
+                    'value' => 'Agriculture',
+                ],
+                [
+                    'reference' => 55,
+                    'locale' => 'en_GB',
+                    'value' => 'Photo',
+                ],
+                [
+                    'reference' => 56,
+                    'locale' => 'en_GB',
+                    'value' => 'Drugstore',
+                ],
+                [
+                    'reference' => 57,
+                    'locale' => 'en_GB',
+                    'value' => 'Locksmith',
+                ],
+                [
+                    'reference' => 58,
+                    'locale' => 'en_GB',
+                    'value' => 'Health club',
+                ],
+                [
+                    'reference' => 59,
+                    'locale' => 'en_GB',
+                    'value' => 'Taxi',
+                ],
+                [
+                    'reference' => 60,
+                    'locale' => 'en_GB',
+                    'value' => 'Cinema',
+                ],
+                [
+                    'reference' => 61,
+                    'locale' => 'en_GB',
+                    'value' => 'Theater',
+                ],
+                [
+                    'reference' => 62,
+                    'locale' => 'en_GB',
+                    'value' => 'Café',
+                ],
+                [
+                    'reference' => 63,
+                    'locale' => 'en_GB',
+                    'value' => 'Garden centre',
+                ],
+                [
+                    'reference' => 64,
+                    'locale' => 'en_GB',
+                    'value' => 'Hardware shop',
+                ],
+                [
+                    'reference' => 65,
+                    'locale' => 'en_GB',
+                    'value' => 'Fishmongers',
+                ],
             ]
         );
     }

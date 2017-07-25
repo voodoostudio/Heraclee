@@ -398,6 +398,381 @@ class ApimoPropertyService extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Fibre optique',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Internet',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Fireplace',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Disabled access',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Air-conditioning',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Alarm',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => 'Lift',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => 'Caretaker',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => 'Double glazing',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => 'Intercom',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => 'Parabolic antenna',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => 'Swimming pool',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => 'Security door',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => 'Tennis',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => 'Sprinkler system',
+                ],
+                [
+                    'reference' => 15,
+                    'locale' => 'en_GB',
+                    'value' => 'Barbecue',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => 'Electric gate',
+                ],
+                [
+                    'reference' => 17,
+                    'locale' => 'en_GB',
+                    'value' => 'Crawl space',
+                ],
+                [
+                    'reference' => 18,
+                    'locale' => 'en_GB',
+                    'value' => 'Car port',
+                ],
+                [
+                    'reference' => 19,
+                    'locale' => 'en_GB',
+                    'value' => 'Caretaker house',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => 'Bay-window',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => 'Central vaccum system',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => 'Electric shutters',
+                ],
+                [
+                    'reference' => 23,
+                    'locale' => 'en_GB',
+                    'value' => 'Window shade',
+                ],
+                [
+                    'reference' => 24,
+                    'locale' => 'en_GB',
+                    'value' => 'Electric window shade',
+                ],
+                [
+                    'reference' => 25,
+                    'locale' => 'en_GB',
+                    'value' => 'Washing machine',
+                ],
+                [
+                    'reference' => 26,
+                    'locale' => 'en_GB',
+                    'value' => 'Jacuzzi',
+                ],
+                [
+                    'reference' => 27,
+                    'locale' => 'en_GB',
+                    'value' => 'Sauna',
+                ],
+                [
+                    'reference' => 28,
+                    'locale' => 'en_GB',
+                    'value' => 'Whirlpool tub',
+                ],
+                [
+                    'reference' => 29,
+                    'locale' => 'en_GB',
+                    'value' => 'Well',
+                ],
+                [
+                    'reference' => 30,
+                    'locale' => 'en_GB',
+                    'value' => 'Spring',
+                ],
+                [
+                    'reference' => 31,
+                    'locale' => 'en_GB',
+                    'value' => 'Engine generator',
+                ],
+                [
+                    'reference' => 32,
+                    'locale' => 'en_GB',
+                    'value' => 'Dishwasher',
+                ],
+                [
+                    'reference' => 33,
+                    'locale' => 'en_GB',
+                    'value' => 'Hob',
+                ],
+                [
+                    'reference' => 34,
+                    'locale' => 'en_GB',
+                    'value' => 'Safe',
+                ],
+                [
+                    'reference' => 35,
+                    'locale' => 'en_GB',
+                    'value' => 'Helipad',
+                ],
+                [
+                    'reference' => 36,
+                    'locale' => 'en_GB',
+                    'value' => 'Videophone',
+                ],
+                [
+                    'reference' => 37,
+                    'locale' => 'en_GB',
+                    'value' => 'Video security',
+                ],
+                [
+                    'reference' => 38,
+                    'locale' => 'en_GB',
+                    'value' => 'Stove',
+                ],
+                [
+                    'reference' => 39,
+                    'locale' => 'en_GB',
+                    'value' => 'Iron',
+                ],
+                [
+                    'reference' => 40,
+                    'locale' => 'en_GB',
+                    'value' => 'Hair dryer',
+                ],
+                [
+                    'reference' => 41,
+                    'locale' => 'en_GB',
+                    'value' => 'Satellite TV',
+                ],
+                [
+                    'reference' => 42,
+                    'locale' => 'en_GB',
+                    'value' => 'DVD Player',
+                ],
+                [
+                    'reference' => 43,
+                    'locale' => 'en_GB',
+                    'value' => 'CD Player',
+                ],
+                [
+                    'reference' => 44,
+                    'locale' => 'en_GB',
+                    'value' => 'Outdoor lighting',
+                ],
+                [
+                    'reference' => 45,
+                    'locale' => 'en_GB',
+                    'value' => 'Spa',
+                ],
+                [
+                    'reference' => 46,
+                    'locale' => 'en_GB',
+                    'value' => 'Home automation',
+                ],
+                [
+                    'reference' => 47,
+                    'locale' => 'en_GB',
+                    'value' => 'Furnished',
+                ],
+                [
+                    'reference' => 48,
+                    'locale' => 'en_GB',
+                    'value' => 'Linens',
+                ],
+                [
+                    'reference' => 49,
+                    'locale' => 'en_GB',
+                    'value' => 'Tableware',
+                ],
+                [
+                    'reference' => 50,
+                    'locale' => 'en_GB',
+                    'value' => 'Clothes dryer',
+                ],
+                [
+                    'reference' => 51,
+                    'locale' => 'en_GB',
+                    'value' => 'Phone',
+                ],
+                [
+                    'reference' => 52,
+                    'locale' => 'en_GB',
+                    'value' => 'Refrigerator',
+                ],
+                [
+                    'reference' => 53,
+                    'locale' => 'en_GB',
+                    'value' => 'Oven',
+                ],
+                [
+                    'reference' => 54,
+                    'locale' => 'en_GB',
+                    'value' => 'Reception 24/7',
+                ],
+                [
+                    'reference' => 55,
+                    'locale' => 'en_GB',
+                    'value' => 'Coffeemaker',
+                ],
+                [
+                    'reference' => 56,
+                    'locale' => 'en_GB',
+                    'value' => 'Microwave oven',
+                ],
+                [
+                    'reference' => 57,
+                    'locale' => 'en_GB',
+                    'value' => 'Shabbat elevator',
+                ],
+                [
+                    'reference' => 58,
+                    'locale' => 'en_GB',
+                    'value' => 'Sukkah',
+                ],
+                [
+                    'reference' => 59,
+                    'locale' => 'en_GB',
+                    'value' => 'Synagogue',
+                ],
+                [
+                    'reference' => 60,
+                    'locale' => 'en_GB',
+                    'value' => 'Digicode',
+                ],
+                [
+                    'reference' => 61,
+                    'locale' => 'en_GB',
+                    'value' => 'Common laundry',
+                ],
+                [
+                    'reference' => 62,
+                    'locale' => 'en_GB',
+                    'value' => 'Pets allowed',
+                ],
+                [
+                    'reference' => 63,
+                    'locale' => 'en_GB',
+                    'value' => 'Metal shutters',
+                ],
+                [
+                    'reference' => 64,
+                    'locale' => 'en_GB',
+                    'value' => 'Wiring closet',
+                ],
+                [
+                    'reference' => 65,
+                    'locale' => 'en_GB',
+                    'value' => 'Computer network',
+                ],
+                [
+                    'reference' => 66,
+                    'locale' => 'en_GB',
+                    'value' => 'Dropped ceiling',
+                ],
+                [
+                    'reference' => 67,
+                    'locale' => 'en_GB',
+                    'value' => 'Fire hose cabinets',
+                ],
+                [
+                    'reference' => 68,
+                    'locale' => 'en_GB',
+                    'value' => 'Fire sprinkler system',
+                ],
+                [
+                    'reference' => 69,
+                    'locale' => 'en_GB',
+                    'value' => 'Wharf',
+                ],
+                [
+                    'reference' => 70,
+                    'locale' => 'en_GB',
+                    'value' => 'Connected thermostat',
+                ],
+                [
+                    'reference' => 71,
+                    'locale' => 'en_GB',
+                    'value' => 'Bowling green',
+                ],
+                [
+                    'reference' => 72,
+                    'locale' => 'en_GB',
+                    'value' => 'Water softener',
+                ],
+                [
+                    'reference' => 73,
+                    'locale' => 'en_GB',
+                    'value' => 'Triple glazing',
+                ],
+                [
+                    'reference' => 74,
+                    'locale' => 'en_GB',
+                    'value' => 'Well drilling',
+                ],
+                [
+                    'reference' => 75,
+                    'locale' => 'en_GB',
+                    'value' => 'Optical fiber',
+                ],
             ]
         );
     }

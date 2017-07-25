@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.socials')
 @section('title', 'Details page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">
@@ -6,7 +6,9 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
 @stop
-
+@php
+    $lang = LaravelLocalization::getCurrentLocaleRegional();
+@endphp
 @section('content')
 
     <section class="gallery_section">
@@ -75,42 +77,31 @@
                         @if(!empty($property['floor']['type']))
                             <li><span class="icn_container tooltip" title="Étage"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
-
                         @foreach($services as $service)
-                            @switch($service->reference)
-                                {{-- Wi-Fi --}}
-                                @case(1)
-                                    <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Disabled access --}}
-                                @case(3)
-                                    <li class="no_text {{ (!empty($property['services']['3'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Air conditioner --}}
-                                @case(4)
-                                    <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Security --}}
-                                @case(5)
-                                    <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Elevator --}}
-                                @case(6)
-                                    <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Swimming pool --}}
-                                @case(11)
-                                    <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Parking --}}
-                                @case(18)
-                                    <li class="no_text {{ (!empty($property['services']['18'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
-                                @break
-                                {{-- Furniture --}}
-                                @case(47)
-                                    <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
-                                @break
-                            @endswitch
+                            @if($service->reference == '1' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['1'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-wifi"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '3' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['3'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title=" {{ $service->value }} "><i class="icn icon-wheelchair"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '4' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '5' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '6' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '11' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['11'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-swim"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '18' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['18'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-parking"></i></span><span class="prop_val"></span></li>
+                            @endif
+                            @if($service->reference == '47' && $service->locale == $lang)
+                                <li class="no_text {{ (!empty($property['services']['47'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-furniture"></i></span><span class="prop_val"></span></li>
+                            @endif
                         @endforeach
                             {{-- Beach
                             <li class="no_text"><span class="icn_container tooltip" title="Beach"><i class="icn icon-beach"></i></span><span class="prop_val"></span></li>
@@ -364,296 +355,293 @@
                                 (!empty($property['services']['73'])) || (!empty($property['services']['74'])) || (!empty($property['services']['75']))
                                 )
                                 @foreach($services as $service)
-                                    @switch($service->reference)
+                                    @if($service->reference == '1' && $service->locale == $lang )
+                                        @if(!empty($property['services']['1']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(1)
-                                            @if(!empty($property['services']['1']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '2' && $service->locale == $lang )
+                                        @if(!empty($property['services']['2']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(2)
-                                            @if(!empty($property['services']['2']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '4' && $service->locale == $lang )
+                                        @if(!empty($property['services']['4']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(4)
-                                            @if(!empty($property['services']['4']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '6' && $service->locale == $lang )
+                                        @if(!empty($property['services']['6']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(6)
-                                            @if(!empty($property['services']['6']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '10' && $service->locale == $lang )
+                                        @if(!empty($property['services']['10']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(10)
-                                            @if(!empty($property['services']['10']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '17' && $service->locale == $lang )
+                                        @if(!empty($property['services']['17']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(17)
-                                            @if(!empty($property['services']['17']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '20' && $service->locale == $lang )
+                                        @if(!empty($property['services']['20']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(20)
-                                            @if(!empty($property['services']['20']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '21' && $service->locale == $lang )
+                                        @if(!empty($property['services']['21']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(21)
-                                            @if(!empty($property['services']['21']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '22' && $service->locale == $lang )
+                                        @if(!empty($property['services']['22']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(22)
-                                            @if(!empty($property['services']['22']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '23' && $service->locale == $lang )
+                                        @if(!empty($property['services']['23']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(23)
-                                            @if(!empty($property['services']['23']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '24' && $service->locale == $lang )
+                                        @if(!empty($property['services']['24']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(24)
-                                            @if(!empty($property['services']['24']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '25' && $service->locale == $lang )
+                                        @if(!empty($property['services']['25']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(25)
-                                            @if(!empty($property['services']['25']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '26' && $service->locale == $lang )
+                                        @if(!empty($property['services']['26']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(26)
-                                            @if(!empty($property['services']['26']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '27' && $service->locale == $lang )
+                                        @if(!empty($property['services']['27']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(27)
-                                            @if(!empty($property['services']['27']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '28' && $service->locale == $lang )
+                                        @if(!empty($property['services']['28']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(28)
-                                            @if(!empty($property['services']['28']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '31' && $service->locale == $lang )
+                                        @if(!empty($property['services']['31']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(31)
-                                            @if(!empty($property['services']['31']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '32' && $service->locale == $lang )
+                                        @if(!empty($property['services']['32']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(32)
-                                            @if(!empty($property['services']['32']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '33' && $service->locale == $lang )
+                                        @if(!empty($property['services']['33']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(33)
-                                            @if(!empty($property['services']['33']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '38' && $service->locale == $lang )
+                                        @if(!empty($property['services']['38']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(38)
-                                            @if(!empty($property['services']['38']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '39' && $service->locale == $lang )
+                                        @if(!empty($property['services']['39']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(39)
-                                            @if(!empty($property['services']['39']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '40' && $service->locale == $lang )
+                                        @if(!empty($property['services']['40']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(40)
-                                            @if(!empty($property['services']['40']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '41' && $service->locale == $lang )
+                                        @if(!empty($property['services']['41']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(41)
-                                            @if(!empty($property['services']['41']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '42' && $service->locale == $lang )
+                                        @if(!empty($property['services']['42']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(42)
-                                            @if(!empty($property['services']['42']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '43' && $service->locale == $lang )
+                                        @if(!empty($property['services']['43']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(43)
-                                            @if(!empty($property['services']['43']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '45' && $service->locale == $lang )
+                                        @if(!empty($property['services']['45']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(45)
-                                            @if(!empty($property['services']['45']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '46' && $service->locale == $lang )
+                                        @if(!empty($property['services']['46']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(46)
-                                            @if(!empty($property['services']['46']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '47' && $service->locale == $lang )
+                                        @if(!empty($property['services']['47']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(47)
-                                            @if(!empty($property['services']['47']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '48' && $service->locale == $lang )
+                                        @if(!empty($property['services']['48']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(48)
-                                            @if(!empty($property['services']['48']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '49' && $service->locale == $lang )
+                                        @if(!empty($property['services']['49']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(49)
-                                            @if(!empty($property['services']['49']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '50' && $service->locale == $lang )
+                                        @if(!empty($property['services']['50']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(50)
-                                            @if(!empty($property['services']['50']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '51' && $service->locale == $lang )
+                                        @if(!empty($property['services']['51']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(51)
-                                            @if(!empty($property['services']['51']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '52' && $service->locale == $lang )
+                                        @if(!empty($property['services']['52']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(52)
-                                            @if(!empty($property['services']['52']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '53' && $service->locale == $lang )
+                                        @if(!empty($property['services']['53']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(53)
-                                            @if(!empty($property['services']['53']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '54' && $service->locale == $lang )
+                                        @if(!empty($property['services']['54']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(54)
-                                            @if(!empty($property['services']['54']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '55' && $service->locale == $lang )
+                                        @if(!empty($property['services']['55']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(55)
-                                            @if(!empty($property['services']['55']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '56' && $service->locale == $lang )
+                                        @if(!empty($property['services']['56']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(56)
-                                            @if(!empty($property['services']['56']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '57' && $service->locale == $lang )
+                                        @if(!empty($property['services']['57']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(57)
-                                            @if(!empty($property['services']['57']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '58' && $service->locale == $lang )
+                                        @if(!empty($property['services']['58']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(58)
-                                            @if(!empty($property['services']['58']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '61' && $service->locale == $lang )
+                                        @if(!empty($property['services']['61']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(61)
-                                            @if(!empty($property['services']['61']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '62' && $service->locale == $lang )
+                                        @if(!empty($property['services']['62']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(62)
-                                            @if(!empty($property['services']['62']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '64' && $service->locale == $lang )
+                                        @if(!empty($property['services']['64']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(64)
-                                            @if(!empty($property['services']['64']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '65' && $service->locale == $lang )
+                                        @if(!empty($property['services']['65']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(65)
-                                            @if(!empty($property['services']['65']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '66' && $service->locale == $lang )
+                                        @if(!empty($property['services']['66']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(66)
-                                            @if(!empty($property['services']['66']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '70' && $service->locale == $lang )
+                                        @if(!empty($property['services']['70']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(70)
-                                            @if(!empty($property['services']['70']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '72' && $service->locale == $lang )
+                                        @if(!empty($property['services']['72']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(72)
-                                            @if(!empty($property['services']['72']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '73' && $service->locale == $lang )
+                                        @if(!empty($property['services']['73']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(73)
-                                            @if(!empty($property['services']['73']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '74' && $service->locale == $lang )
+                                        @if(!empty($property['services']['74']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(74)
-                                            @if(!empty($property['services']['74']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-
-                                        @case(75)
-                                            @if(!empty($property['services']['75']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-                                    @endswitch
+                                    @if($service->reference == '75' && $service->locale == $lang )
+                                        @if(!empty($property['services']['75']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
                                 @endforeach
                             @else
                                 -
@@ -667,74 +655,71 @@
                                 (!empty($property['services']['59'])) || (!empty($property['services']['69']))
                             )
                                 @foreach($services as $service)
-                                    @switch($service->reference)
+                                    @if($service->reference == '11' && $service->locale == $lang )
+                                        @if(!empty($property['services']['11']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(11)
-                                            @if(!empty($property['services']['11']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '14' && $service->locale == $lang )
+                                        @if(!empty($property['services']['14']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(14)
-                                            @if(!empty($property['services']['14']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '15' && $service->locale == $lang )
+                                        @if(!empty($property['services']['15']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(15)
-                                            @if(!empty($property['services']['15']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '16' && $service->locale == $lang )
+                                        @if(!empty($property['services']['16']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(16)
-                                            @if(!empty($property['services']['16']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '18' && $service->locale == $lang )
+                                        @if(!empty($property['services']['18']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(18)
-                                            @if(!empty($property['services']['18']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '29' && $service->locale == $lang )
+                                        @if(!empty($property['services']['29']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(29)
-                                            @if(!empty($property['services']['29']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '30' && $service->locale == $lang )
+                                        @if(!empty($property['services']['30']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(30)
-                                            @if(!empty($property['services']['30']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '35' && $service->locale == $lang )
+                                        @if(!empty($property['services']['35']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(35)
-                                            @if(!empty($property['services']['35']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '44' && $service->locale == $lang )
+                                        @if(!empty($property['services']['44']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(44)
-                                            @if(!empty($property['services']['44']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '59' && $service->locale == $lang )
+                                        @if(!empty($property['services']['59']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(59)
-                                            @if(!empty($property['services']['59']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-
-                                        @case(69)
-                                            @if(!empty($property['services']['69']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-                                    @endswitch
+                                    @if($service->reference == '69' && $service->locale == $lang )
+                                        @if(!empty($property['services']['69']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
                                 @endforeach
                             @else
                                 -
@@ -748,80 +733,77 @@
                                 (!empty($property['services']['63'])) || (!empty($property['services']['67'])) || (!empty($property['services']['68']))
                             )
                                 @foreach($services as $service)
-                                    @switch($service->reference)
+                                    @if($service->reference == '3' && $service->locale == $lang )
+                                        @if(!empty($property['services']['3']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(3)
-                                            @if(!empty($property['services']['3']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '5' && $service->locale == $lang )
+                                        @if(!empty($property['services']['5']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(5)
-                                            @if(!empty($property['services']['5']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '7' && $service->locale == $lang )
+                                        @if(!empty($property['services']['7']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(7)
-                                            @if(!empty($property['services']['7']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '12' && $service->locale == $lang )
+                                        @if(!empty($property['services']['12']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(12)
-                                            @if(!empty($property['services']['12']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '19' && $service->locale == $lang )
+                                        @if(!empty($property['services']['19']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(19)
-                                            @if(!empty($property['services']['19']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '34' && $service->locale == $lang )
+                                        @if(!empty($property['services']['34']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(34)
-                                            @if(!empty($property['services']['34']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '36' && $service->locale == $lang )
+                                        @if(!empty($property['services']['36']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(36)
-                                            @if(!empty($property['services']['36']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '37' && $service->locale == $lang )
+                                        @if(!empty($property['services']['37']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(37)
-                                            @if(!empty($property['services']['37']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '60' && $service->locale == $lang )
+                                        @if(!empty($property['services']['60']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(60)
-                                            @if(!empty($property['services']['60']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '63' && $service->locale == $lang )
+                                        @if(!empty($property['services']['63']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(63)
-                                            @if(!empty($property['services']['63']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
+                                    @if($service->reference == '67' && $service->locale == $lang )
+                                        @if(!empty($property['services']['67']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(67)
-                                            @if(!empty($property['services']['67']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-
-                                        @case(68)
-                                            @if(!empty($property['services']['68']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-                                    @endswitch
+                                    @if($service->reference == '68' && $service->locale == $lang )
+                                        @if(!empty($property['services']['68']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
                                 @endforeach
                             @else
                                 -
@@ -831,20 +813,17 @@
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['13'])) || (!empty($property['services']['71'])))
                                 @foreach($services as $service)
-                                    @switch($service->reference)
+                                    @if($service->reference == '13' && $service->locale == $lang )
+                                        @if(!empty($property['services']['13']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
 
-                                        @case(13)
-                                            @if(!empty($property['services']['13']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-
-                                        @case(71)
-                                            @if(!empty($property['services']['71']))
-                                                <li><span class="detail_name">{{ $service->value }}</span></li>
-                                            @endif
-                                        @break
-                                    @endswitch
+                                    @if($service->reference == '71' && $service->locale == $lang )
+                                        @if(!empty($property['services']['71']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
                                 @endforeach
                             @else
                                 -
@@ -950,6 +929,13 @@
             </div>
         </div>
     </section>
+
+    <div class = "socials">
+        <a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url={{ Request::fullUrl() }}&title={{$property['comments']['comment']}}.">IN</a>
+        <a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{$property['comments']['comment']}}+{{ Request::fullUrl() }}">TW</a>
+        <a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/share.php?u={{ Request::fullUrl() }}">FB</a>
+    </div>
+
 @endsection
 
 @section('javascript')

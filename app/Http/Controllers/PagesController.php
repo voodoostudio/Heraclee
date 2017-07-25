@@ -192,6 +192,7 @@ class PagesController extends Controller
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
+        //$areas = Properties::getAreasTypeIds();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $url_page = '/locations/results?page=';
 
@@ -226,6 +227,12 @@ class PagesController extends Controller
         } elseif (!Session::has('search.object_place')) {
             Session::put('search.object_place', Properties::getCityListIds());
         }
+
+       /* if (isset($_POST['search_keywords'])) {
+            Session::put('search.search_keywords', $_POST['search_keywords']);
+        } elseif (!Session::has('search.search_keywords')) {
+            Session::put('search.search_keywords', Properties::getAreasTypeIds());
+        } */
 
         if (isset($_POST['search_keywords'])) {
             Session::put('search.search_keywords', $_POST['search_keywords']);
@@ -309,6 +316,7 @@ class PagesController extends Controller
                 'count_items' => $count_items,
                 'city_list' => $city_list,
                 'type' => $type,
+             //   'areas' => $areas,
                 'search' => Session::get('search'),
                 'view_type' => $view_type
             ]
@@ -320,7 +328,7 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
-            $services = Services::select('reference', 'value')->get();
+            $services = Services::select('reference', 'value', 'locale')->get();
             return view('details', ['property' => $property, 'services' => $services]);
         } else {
             return redirect('results');
@@ -384,8 +392,6 @@ class PagesController extends Controller
             'email' => 'required|email',
             'message' => 'required',
         ]);
-
-
 
         $data = [
             'to' => $request->to,

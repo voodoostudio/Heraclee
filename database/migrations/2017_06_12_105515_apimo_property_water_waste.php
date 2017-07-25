@@ -37,6 +37,21 @@ class ApimoPropertyWaterWaste extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Station d\'épuration',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Septic tank',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Main drainage',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Treatment plant',
+                ],
             ]
         );
     }

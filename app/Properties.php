@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use LaravelLocalization;
 
 class Properties extends Model
 {
-    public static $lang = 'fr_FR';
-    public static $lang_short = 'fr';
+    //public static $lang = 'fr_FR';
+    //public static $lang_short = 'fr';
+    //$lang = LaravelLocalization::getCurrentLocaleRegional();
     public $property_count;
 
     /**
@@ -119,7 +121,6 @@ class Properties extends Model
             $sell_type_array = [2, 3];
         }
 
-
         $search_keywords = trim($search_keywords);
         $search_keywords = htmlspecialchars($search_keywords);
 
@@ -156,6 +157,7 @@ class Properties extends Model
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
+            //->whereIn('areas',$search_keywords)
             ->limit($items)
             ->offset($offset)
             ->orderBy('property_id', 'DESC')
@@ -167,6 +169,7 @@ class Properties extends Model
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
+            //->whereIn('areas',$search_keywords)
             ->get()->count();
 
         if (count($properties) > 0) {
@@ -335,15 +338,17 @@ class Properties extends Model
      */
     protected static function getServicesByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $services = DB::table('apimo_property_service')
-            ->wherein("reference", explode(',', $ids))
-            ->where('locale', self::$lang)
+            ->whereIn("reference", explode(',', $ids))
+            ->where('locale', $lang)
             ->get();
 
         $services_array = [];
         if (!empty($services)) {
             foreach ($services as $service) {
                 $services_array[$service['reference']] = $service['value'];
+                $services_array[$service['reference']] = $service['locale'];
             }
         }
 
@@ -357,9 +362,10 @@ class Properties extends Model
      */
     protected static function getOrientationsByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $orientations = DB::table('apimo_property_orientations')
             ->wherein("reference", explode(',', $ids))
-            ->where('locale', self::$lang)
+            ->where('locale', $lang)
             ->get();
 
         $orientations_array = [];
@@ -407,12 +413,7 @@ class Properties extends Model
             ->leftJoin('apimo_property_areas_type', 'apimo_areas.type', '=', 'apimo_property_areas_type.reference')
             ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
             ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
-            ->leftJoin(
-                'apimo_property_orientations',
-                'apimo_areas.orientations',
-                '=',
-                'apimo_property_orientations.reference'
-            )
+            ->leftJoin('apimo_property_orientations', 'apimo_areas.orientations', '=', 'apimo_property_orientations.reference')
             ->whereIn('apimo_areas.id', explode(',', $ids))
             ->get();
 
@@ -441,18 +442,66 @@ class Properties extends Model
      */
     protected static function getHeatingByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $heating = DB::table('apimo_heating')
             ->select(
                 'apimo_heating.id as id',
                 'apimo_property_heating_access.value as access',
                 'apimo_property_heating_device.value as device',
                 'apimo_property_heating_type.value as type'
+
             )
             ->leftJoin('apimo_property_heating_access', 'apimo_heating.access', '=', 'apimo_property_heating_access.reference')
-            ->leftJoin('apimo_property_heating_device', 'apimo_heating.device', '=', 'apimo_property_heating_device.reference')
-            ->leftJoin('apimo_property_heating_type', 'apimo_heating.type', '=', 'apimo_property_heating_type.reference')
+
+
+           /* ->where(function ($q) {
+                $q->whereNull('apimo_heating.access');
+                    })
+            ->orWhere(function ($q) {
+                $q->where('type', '2')->whereIn('apimo_heating.id', explode(',', $ids)); })
+            ->whereIn('apimo_heating.id', explode(',', $ids))*/
+
+
+
+            //->whereNull('apimo_heating.access')
+            //->whereNotNull('apimo_heating.access')
+                //->whereNotNull('apimo_property_heating_access')
+            //->whereNull('apimo_heating.access')
+
+            ->where('apimo_property_heating_access.locale', '=', $lang)
             ->whereIn('apimo_heating.id', explode(',', $ids))
+           /* ->where('apimo_heating.access', function ($query) {
+                if(condition){
+                    $query->select('column')->from('table')->where('where clause');
+                }
+                else{
+                    $query->select('column')->from('table')->where('where clause');
+                }
+            })*/
+            /*->where(function ($query) {
+                $query->whereNotNull('apimo_heating.access');
+            })->orWhere(function($query) {
+                $query->where('apimo_property_heating_access.locale', '=', LaravelLocalization::getCurrentLocaleRegional());
+            })*/
+
+            ->leftJoin('apimo_property_heating_device', 'apimo_heating.device', '=', 'apimo_property_heating_device.reference')
+            //->whereNull('apimo_heating.device')
+           // ->whereIn('apimo_heating.id', explode(',', $ids))
+
+            ->whereIn('apimo_heating.id', explode(',', $ids))
+            ->where('apimo_property_heating_device.locale', '=', $lang)
+
+
+            ->leftJoin('apimo_property_heating_type', 'apimo_heating.type', '=', 'apimo_property_heating_type.reference')
+           // ->whereNull('apimo_heating.type')
+          //  ->whereIn('apimo_heating.id', explode(',', $ids))
+            ->where('apimo_property_heating_type.locale', '=', $lang)
+            ->whereIn('apimo_heating.id', explode(',', $ids))
+
             ->get();
+
+
 
         $heating_array = [];
         if (!empty($heating)) {
@@ -460,9 +509,22 @@ class Properties extends Model
                 $heating_array[$value['id']]['access'] = $value['access'];
                 $heating_array[$value['id']]['device'] = $value['device'];
                 $heating_array[$value['id']]['type'] = $value['type'];
+
+                if(!empty($value['access'])) {
+                    $value['access'];
+                }
+
+                if(!empty($value['device'])) {
+                    $value['device'];
+                }
+
+                if(!empty($value['type'])) {
+                    $value['type'];
+                }
+
             }
         }
-
+       // dump($heating_array);
         return $heating_array;
     }
 
@@ -522,9 +584,10 @@ class Properties extends Model
      */
     protected static function getProximitiesByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $proximities = DB::table('apimo_property_proximity')
             ->wherein("reference", explode(',', $ids))
-            ->where('locale', self::$lang)
+            ->where('locale', $lang)
             ->get();
 
         $proximities_array = [];
@@ -544,9 +607,10 @@ class Properties extends Model
      */
     protected static function getStepByIds($step_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $step = DB::table('apimo_property_step')
             ->where("reference", $step_id)
-            ->where("locale", self::$lang)
+            ->where("locale", $lang)
             ->get();
 
         if (!empty($step)) {
@@ -582,9 +646,10 @@ class Properties extends Model
      */
     protected static function getCategoryById($cat_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $step = DB::table('apimo_property_category')
             ->where("reference", $cat_id)
-            ->where("locale", self::$lang)
+            ->where("locale", $lang)
             ->get();
 
         if (!empty($step)) {
@@ -603,11 +668,12 @@ class Properties extends Model
      */
     protected static function getSubCategoryById($sub_cat_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $sub_cat = '';
         if ($sub_cat_id != 0) {
             $r = DB::table('apimo_property_subcategory')
                 ->where("reference", $sub_cat_id)
-                ->where("locale", self::$lang)
+                ->where("locale", $lang)
                 ->get();
 
             if (!empty($r)) {
@@ -625,10 +691,11 @@ class Properties extends Model
      */
     protected static function getTypeById($type_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         if ($type_id != 0) {
             $r = DB::table('apimo_property_type')
                 ->where("reference", $type_id)
-                ->where("locale", self::$lang)
+                ->where("locale", $lang)
                 ->get();
 
             if (!empty($r)) {
@@ -646,10 +713,11 @@ class Properties extends Model
      */
     protected static function getSubTypeById($sub_type_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         if ($sub_type_id != 0) {
             $r = DB::table('apimo_property_subtype')
                 ->where("reference", $sub_type_id)
-                ->where("locale", self::$lang)
+                ->where("locale", $lang)
                 ->get();
 
             if (!empty($r)) {
@@ -710,10 +778,11 @@ class Properties extends Model
      */
     protected static function getConditionById($condition_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         if ($condition_id != 0) {
             $r = DB::table('apimo_property_condition')
                 ->where("reference", $condition_id)
-                ->where("locale", self::$lang)
+                ->where("locale", $lang)
                 ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $condition_id = $r[0]['value'];
@@ -730,10 +799,11 @@ class Properties extends Model
      */
     protected static function getStandingById($standing_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         if ($standing_id != 0) {
             $r = DB::table('apimo_property_standing')
                 ->where("reference", $standing_id)
-                ->where("locale", self::$lang)
+                ->where("locale", $lang)
                 ->get();
             if (isset($r[0]) && !empty($r[0]['value'])) {
                 $standing_id = $r[0]['value'];
@@ -750,13 +820,14 @@ class Properties extends Model
      */
     protected static function getViewById($view_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         if ($view_id != 0) {
             $r = DB::select(
                 "SELECT apvt.value AS type, apvl.value AS landscape FROM apimo_view AS av
                                 LEFT JOIN apimo_property_view_type AS apvt ON av.type = apvt.reference
                                 LEFT JOIN apimo_property_view_landscape AS apvl ON av.landscape = apvl.reference
                                 WHERE av.id = :view_id AND apvt.locale = :locale1 AND apvl.locale = :locale2",
-                ['view_id' => $view_id, 'locale1' => self::$lang, 'locale2' => self::$lang]
+                ['view_id' => $view_id, 'locale1' => $lang, 'locale2' => $lang]
             );
 
             if (!empty($r)) {
@@ -802,10 +873,11 @@ class Properties extends Model
      */
     protected static function getCommentsByIds($property_id)
     {
+        $lang_short = LaravelLocalization::getCurrentLocale();
         $r = [];
         if ($property_id != 0) {
             $r = DB::select("SELECT * FROM apimo_property_comments 
-                                    WHERE property_id = ? AND language = ?", [$property_id, self::$lang_short]);
+                                    WHERE property_id = ? AND language = ? ", [$property_id, $lang_short ]);
         }
         if (isset($r[0])) {
             $r = $r[0];
@@ -842,12 +914,29 @@ class Properties extends Model
     }
 
     /**
+     * Returns a areas type with real estate
+     *
+     * @return array
+     */
+    public static function getAreasTypeIds()
+    {
+        $areas_ids = [];
+        $areas = DB::table('apimo_areas')->select('type')->get()->toArray();
+        foreach ($areas as $area) {
+            $areas_ids[] = (string)$area['type'];
+        }
+
+        return $areas_ids;
+    }
+
+    /**
      * Returns the list of available types of real estate
      *
      * @return array
      */
     public static function getAvailablePropertyType()
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $property_type = DB::select("SELECT *
                                             FROM apimo_property_type
                                             WHERE reference IN (
@@ -855,7 +944,7 @@ class Properties extends Model
                                               FROM apimo_properties
                                               GROUP BY type
                                             )
-                                            AND locale = ?", [self::$lang]);
+                                            AND locale = ?", [$lang]);
 
         return $property_type;
     }

@@ -303,6 +303,286 @@ class ApimoPropertyFloor extends Migration
                     'locale' => 'fr_FR',
                     'value' => '-10',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Ground floor',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Top floor',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => '1st',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => '2nd',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => '3rd',
+                ],
+                [
+                    'reference' => 6,
+                    'locale' => 'en_GB',
+                    'value' => '4th',
+                ],
+                [
+                    'reference' => 7,
+                    'locale' => 'en_GB',
+                    'value' => '5th',
+                ],
+                [
+                    'reference' => 8,
+                    'locale' => 'en_GB',
+                    'value' => '6th',
+                ],
+                [
+                    'reference' => 9,
+                    'locale' => 'en_GB',
+                    'value' => '7th',
+                ],
+                [
+                    'reference' => 10,
+                    'locale' => 'en_GB',
+                    'value' => '8th',
+                ],
+                [
+                    'reference' => 11,
+                    'locale' => 'en_GB',
+                    'value' => '9th',
+                ],
+                [
+                    'reference' => 12,
+                    'locale' => 'en_GB',
+                    'value' => '10th',
+                ],
+                [
+                    'reference' => 13,
+                    'locale' => 'en_GB',
+                    'value' => '11th',
+                ],
+                [
+                    'reference' => 14,
+                    'locale' => 'en_GB',
+                    'value' => '12th',
+                ],
+                [
+                    'reference' => 15,
+                    'locale' => 'en_GB',
+                    'value' => '13th',
+                ],
+                [
+                    'reference' => 16,
+                    'locale' => 'en_GB',
+                    'value' => '14th',
+                ],
+                [
+                    'reference' => 17,
+                    'locale' => 'en_GB',
+                    'value' => '15th',
+                ],
+                [
+                    'reference' => 18,
+                    'locale' => 'en_GB',
+                    'value' => '16th',
+                ],
+                [
+                    'reference' => 19,
+                    'locale' => 'en_GB',
+                    'value' => '17th',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => '18th',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => '19th',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => '20th',
+                ],
+                [
+                    'reference' => 23,
+                    'locale' => 'en_GB',
+                    'value' => 'Garden level',
+                ],
+                [
+                    'reference' => 24,
+                    'locale' => 'en_GB',
+                    'value' => 'Split-level',
+                ],
+                [
+                    'reference' => 25,
+                    'locale' => 'en_GB',
+                    'value' => '-1',
+                ],
+                [
+                    'reference' => 26,
+                    'locale' => 'en_GB',
+                    'value' => '-2',
+                ],
+                [
+                    'reference' => 27,
+                    'locale' => 'en_GB',
+                    'value' => '-3',
+                ],
+                [
+                    'reference' => 28,
+                    'locale' => 'en_GB',
+                    'value' => '-4',
+                ],
+                [
+                    'reference' => 29,
+                    'locale' => 'en_GB',
+                    'value' => 'Basement',
+                ],
+                [
+                    'reference' => 30,
+                    'locale' => 'en_GB',
+                    'value' => 'Single-storey',
+                ],
+                [
+                    'reference' => 31,
+                    'locale' => 'en_GB',
+                    'value' => '21th',
+                ],
+                [
+                    'reference' => 32,
+                    'locale' => 'en_GB',
+                    'value' => '22th',
+                ],
+                [
+                    'reference' => 33,
+                    'locale' => 'en_GB',
+                    'value' => '23th',
+                ],
+                [
+                    'reference' => 34,
+                    'locale' => 'en_GB',
+                    'value' => '24ème',
+                ],
+                [
+                    'reference' => 35,
+                    'locale' => 'en_GB',
+                    'value' => '25th',
+                ],
+                [
+                    'reference' => 36,
+                    'locale' => 'en_GB',
+                    'value' => '26th',
+                ],
+                [
+                    'reference' => 37,
+                    'locale' => 'en_GB',
+                    'value' => '27th',
+                ],
+                [
+                    'reference' => 38,
+                    'locale' => 'en_GB',
+                    'value' => '28th',
+                ],
+                [
+                    'reference' => 39,
+                    'locale' => 'en_GB',
+                    'value' => '29th',
+                ],
+                [
+                    'reference' => 40,
+                    'locale' => 'en_GB',
+                    'value' => '30th',
+                ],
+                [
+                    'reference' => 41,
+                    'locale' => 'en_GB',
+                    'value' => '31th',
+                ],
+                [
+                    'reference' => 42,
+                    'locale' => 'en_GB',
+                    'value' => '32th',
+                ],
+                [
+                    'reference' => 43,
+                    'locale' => 'en_GB',
+                    'value' => '33th',
+                ],
+                [
+                    'reference' => 44,
+                    'locale' => 'en_GB',
+                    'value' => '34th',
+                ],
+                [
+                    'reference' => 45,
+                    'locale' => 'en_GB',
+                    'value' => '35th',
+                ],
+                [
+                    'reference' => 46,
+                    'locale' => 'en_GB',
+                    'value' => '36th',
+                ],
+                [
+                    'reference' => 47,
+                    'locale' => 'en_GB',
+                    'value' => '37th',
+                ],
+                [
+                    'reference' => 48,
+                    'locale' => 'en_GB',
+                    'value' => '38th',
+                ],
+                [
+                    'reference' => 49,
+                    'locale' => 'en_GB',
+                    'value' => '39th',
+                ],
+                [
+                    'reference' => 50,
+                    'locale' => 'en_GB',
+                    'value' => '40th',
+                ],
+                [
+                    'reference' => 51,
+                    'locale' => 'en_GB',
+                    'value' => '-5',
+                ],
+                [
+                    'reference' => 52,
+                    'locale' => 'en_GB',
+                    'value' => '-6',
+                ],
+                [
+                    'reference' => 53,
+                    'locale' => 'en_GB',
+                    'value' => '-7',
+                ],
+                [
+                    'reference' => 54,
+                    'locale' => 'en_GB',
+                    'value' => '-8',
+                ],
+                [
+                    'reference' => 55,
+                    'locale' => 'en_GB',
+                    'value' => '-9',
+                ],
+                [
+                    'reference' => 56,
+                    'locale' => 'en_GB',
+                    'value' => '-10',
+                ],
             ]
         );
     }

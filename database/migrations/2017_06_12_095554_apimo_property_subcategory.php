@@ -108,6 +108,91 @@ class ApimoPropertySubcategory extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Viager sans rente',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Unit sale',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Bulk sale',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => 'Unfurnished',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => 'Furnished',
+                ],
+                [
+                    'reference' => 23,
+                    'locale' => 'en_GB',
+                    'value' => 'Roommate',
+                ],
+                [
+                    'reference' => 24,
+                    'locale' => 'en_GB',
+                    'value' => 'Student',
+                ],
+                [
+                    'reference' => 31,
+                    'locale' => 'en_GB',
+                    'value' => 'Holidays',
+                ],
+                [
+                    'reference' => 32,
+                    'locale' => 'en_GB',
+                    'value' => 'Event',
+                ],
+                [
+                    'reference' => 51,
+                    'locale' => 'en_GB',
+                    'value' => 'Life annuity',
+                ],
+                [
+                    'reference' => 52,
+                    'locale' => 'en_GB',
+                    'value' => 'Life annuity occupied',
+                ],
+                [
+                    'reference' => 53,
+                    'locale' => 'en_GB',
+                    'value' => 'Bare Ownership',
+                ],
+                [
+                    'reference' => 54,
+                    'locale' => 'en_GB',
+                    'value' => 'Forward sale',
+                ],
+                [
+                    'reference' => 55,
+                    'locale' => 'en_GB',
+                    'value' => 'Life annuity semi-occupied',
+                ],
+                [
+                    'reference' => 56,
+                    'locale' => 'en_GB',
+                    'value' => 'Forward sale available',
+                ],
+                [
+                    'reference' => 57,
+                    'locale' => 'en_GB',
+                    'value' => 'Forward sale semi-occupied',
+                ],
+                [
+                    'reference' => 58,
+                    'locale' => 'en_GB',
+                    'value' => 'Forward sale occupied',
+                ],
+                [
+                    'reference' => 59,
+                    'locale' => 'en_GB',
+                    'value' => 'Life annuity without income',
+                ],
             ]
         );
     }

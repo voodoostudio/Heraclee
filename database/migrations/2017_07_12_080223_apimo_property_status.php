@@ -102,6 +102,86 @@ class ApimoPropertyStatus extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Détruire cette fiche',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'In progress',
+                ],
+                [
+                    'reference' => 20,
+                    'locale' => 'en_GB',
+                    'value' => 'Waiting for agreement',
+                ],
+                [
+                    'reference' => 21,
+                    'locale' => 'en_GB',
+                    'value' => 'Agreement ended',
+                ],
+                [
+                    'reference' => 22,
+                    'locale' => 'en_GB',
+                    'value' => 'Offer',
+                ],
+                [
+                    'reference' => 24,
+                    'locale' => 'en_GB',
+                    'value' => 'Processing sale',
+                ],
+                [
+                    'reference' => 25,
+                    'locale' => 'en_GB',
+                    'value' => 'Waiting for contract',
+                ],
+                [
+                    'reference' => 28,
+                    'locale' => 'en_GB',
+                    'value' => 'Pending approval',
+                ],
+                [
+                    'reference' => 29,
+                    'locale' => 'en_GB',
+                    'value' => 'Other',
+                ],
+                [
+                    'reference' => 30,
+                    'locale' => 'en_GB',
+                    'value' => 'Sell/Rent by agent',
+                ],
+                [
+                    'reference' => 31,
+                    'locale' => 'en_GB',
+                    'value' => 'Sell/Rent by owner',
+                ],
+                [
+                    'reference' => 32,
+                    'locale' => 'en_GB',
+                    'value' => 'Sell/Rent by other agent',
+                ],
+                [
+                    'reference' => 33,
+                    'locale' => 'en_GB',
+                    'value' => 'Removed by agent',
+                ],
+                [
+                    'reference' => 34,
+                    'locale' => 'en_GB',
+                    'value' => 'Removed by owner',
+                ],
+                [
+                    'reference' => 35,
+                    'locale' => 'en_GB',
+                    'value' => 'Sale/Rental cancelled',
+                ],
+                [
+                    'reference' => 39,
+                    'locale' => 'en_GB',
+                    'value' => 'Other',
+                ],
+                [
+                    'reference' => 40,
+                    'locale' => 'en_GB',
+                    'value' => 'Destroy this product',
+                ],
             ]
         );
     }

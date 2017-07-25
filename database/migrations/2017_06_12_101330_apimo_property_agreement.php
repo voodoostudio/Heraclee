@@ -48,6 +48,31 @@ class ApimoPropertyAgreement extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Exclusif agence',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Standard',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Co-exclusive',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Exclusive',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Delegation',
+                ],
+                [
+                    'reference' => 5,
+                    'locale' => 'en_GB',
+                    'value' => 'Exclusive agent',
+                ],
             ]
         );
     }

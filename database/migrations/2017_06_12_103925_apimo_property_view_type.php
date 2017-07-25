@@ -43,6 +43,26 @@ class ApimoPropertyViewType extends Migration
                     'locale' => 'fr_FR',
                     'value' => 'Panoramique',
                 ],
+                [
+                    'reference' => 1,
+                    'locale' => 'en_GB',
+                    'value' => 'Obstructed',
+                ],
+                [
+                    'reference' => 2,
+                    'locale' => 'en_GB',
+                    'value' => 'Slight',
+                ],
+                [
+                    'reference' => 3,
+                    'locale' => 'en_GB',
+                    'value' => 'Unobstructed',
+                ],
+                [
+                    'reference' => 4,
+                    'locale' => 'en_GB',
+                    'value' => 'Panoramic',
+                ],
             ]
         );
     }
