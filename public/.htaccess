@@ -68,13 +68,11 @@
 
 # END G-zip
 
-
 # BEGIN Cache
-# кеширование в браузере на стороне пользователя
+
 <IfModule mod_expires.c>
- #Включаем поддержку директивы Expires
   ExpiresActive On
- # Задаем время для хранения файлов (картинок) в кэше для каждого типа
+
   ExpiresDefault "access 7 days"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
@@ -88,36 +86,32 @@
   ExpiresByType image/x-icon "access 1 year"
   ExpiresByType application/x-shockwave-flash "access 1 year"
 </IfModule>
+
 # Cache-Control
 <ifModule mod_headers.c>
-# Задаем 30 дней для данного типа файла
-<filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
-  Header set Cache-Control "max-age=2592000, public"
-</filesMatch>
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
+        Header set Cache-Control "max-age=32592000, public"
+    </filesMatch>
 
-# Задаем 30 дней для данного типа файла
-<filesMatch "\.(css|js)$">
- Header set Cache-Control "max-age=2592000, public"
-</filesMatch>
+    <filesMatch "\.(css|js)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </filesMatch>
 
-# Задаем 2 дня для данного типа файла
-<filesMatch "\.(xml|txt)$">
-Header set Cache-Control "max-age=172800, public, must-revalidate"
-</filesMatch>
+    <filesMatch "\.(xml|txt)$">
+        Header set Cache-Control "max-age=172800, public, must-revalidate"
+    </filesMatch>
 
-# Задаем 1 день для данного типа файла
-<filesMatch "\.(html|htm|php)$">
- Header set Cache-Control "max-age=172800, private, must-revalidate"
-</filesMatch>
-</ifModule>
+    <filesMatch "\.(html|htm|php)$">
+        Header set Cache-Control "max-age=172800, private, must-revalidate"
+    </filesMatch>
+    </ifModule>
 
-# использование кеша браузеров
-FileETag MTime Size
-<ifmodule mod_expires.c>
-<filesmatch ".(jpg|jpeg|gif|png|ico|css|js)$">
- ExpiresActive on
- ExpiresDefault "access plus 1 year"
-</filesmatch>
+    FileETag MTime Size
+    <ifmodule mod_expires.c>
+    <filesmatch ".(jpg|jpeg|gif|png|ico|css|js)$">
+         ExpiresActive on
+         ExpiresDefault "access plus 1 year"
+    </filesmatch>
 </ifmodule>
 
 #Запрет отдачи HTTP-заголовков Vary браузерам семейства MSIE
