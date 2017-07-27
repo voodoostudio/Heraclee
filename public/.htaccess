@@ -48,7 +48,7 @@
     </FilesMatch>
     ExpiresByType image/gif                 "access plus 128 month"
     ExpiresByType image/png                 "access plus 128 month"
-    ExpiresByType image/jpeg                "access plus 48 month"
+    ExpiresByType image/jpeg                "access plus 128 month"
     ExpiresByType video/ogg                 "access plus 24 month"
     ExpiresByType audio/ogg                 "access plus 24 month"
     ExpiresByType video/mp4                 "access plus 24 month"
