@@ -44,11 +44,11 @@
     ExpiresByType image/x-icon "access plus 1 week"
 
     <FilesMatch \.(gif|png|jpg|jpeg|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm)$>
-        ExpiresDefault "access plus 2 year"
+        ExpiresDefault "access plus 1 year"
     </FilesMatch>
-    ExpiresByType image/gif                 "access plus 24 month"
-    ExpiresByType image/png                 "access plus 24 month"
-    ExpiresByType image/jpeg                "access plus 24 month"
+    ExpiresByType image/gif                 "access plus 48 month"
+    ExpiresByType image/png                 "access plus 48 month"
+    ExpiresByType image/jpeg                "access plus 48 month"
     ExpiresByType video/ogg                 "access plus 24 month"
     ExpiresByType audio/ogg                 "access plus 24 month"
     ExpiresByType video/mp4                 "access plus 24 month"
