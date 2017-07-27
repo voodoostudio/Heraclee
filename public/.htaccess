@@ -73,7 +73,7 @@
 
 <IfModule mod_headers.c>
 	<filesmatch "\.(jpg|jpeg|png|flv|ico|gif|css|swf)$">
-		Header set Cache-Control "max-age=604800, public"
+		Header set Cache-Control "max-age=31536000, public"
 	</filesmatch>
 	<filesmatch "\.(html|htm)$">
 		Header set Cache-Control "max-age=7200, private, must-revalidate"
