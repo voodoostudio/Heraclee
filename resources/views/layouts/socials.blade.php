@@ -13,14 +13,13 @@
     <meta name="keywords" content="heraclee, website, responsive">
 
     <!-- SOCIAL SHARE -->
-    <meta property="og:title" content="{{ Illuminate\Support\Str::limit($property['comments']['comment'], 100) }}" />
+    <meta property="og:title" content="{{ $property['comments']['title'] }}" />
     <meta property="og:description" content="{{$property['comments']['comment']}}"/>
     <meta property="og:type" content="{{$property['type']}}" />
     <meta property="og:url" content="{{ Request::fullUrl() }}" />
 
-    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ Illuminate\Support\Str::limit($property['comments']['comment'], 100) }}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ $property['comments']['title'] }}" />
     <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{$property['type']}}" />
-
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ Request::fullUrl() }}" />
 
     @php
