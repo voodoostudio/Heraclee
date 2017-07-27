@@ -41,7 +41,7 @@
 <ifModule mod_headers.c>
 # Задаем 30 дней для данного типа файла
 <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|swf)$">
-    Header set Cache-Control "max-age=2592000, public"
+    Header set Cache-Control "max-age=4592000, public"
 </filesMatch>
 
 # Задаем 30 дней для данного типа файла
