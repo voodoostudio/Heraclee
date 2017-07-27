@@ -18,12 +18,18 @@
     <meta property="og:type" content="{{$property['type']}}" />
     <meta property="og:url" content="{{ Request::fullUrl() }}" />
 
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ Illuminate\Support\Str::limit($property['comments']['comment'], 100) }}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{$property['type']}}" />
+
+    <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ Request::fullUrl() }}" />
+
     @php
         $image_counter = 1;
     @endphp
     @foreach($property['pictures'] as $picture)
         @if($image_counter == 1)
             <meta property="og:image" content="{{$picture['url']}}" />
+            <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{$picture['url']}}" />
         @endif
         @php
             $image_counter++;
