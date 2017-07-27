@@ -25,9 +25,13 @@
                         <h2>{{$property['type']}}</h2>
                     </a>
                     <ul class="social_networks">
-                        <li><a href="javascript: void(0)"><i class="icn icon-twitter"></i></a></li>
+
+                        <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{$property['comments']['comment']}}+{{ Request::fullUrl() }}"><i class="icn icon-twitter"></i></a></li>
+                        <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url={{ Request::fullUrl() }}&title={{$property['comments']['comment']}}."><i class="icn icon-linked_in"></i></a></li>
+                        <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/sharer.php?s=100&p[title]={{$property['comments']['comment']}}&p[summary]={{$property['comments']['comment']}}&p[url]={{ Request::fullUrl() }}"><i class="icn icon-facebook"></i></a></li>
+                        <!--<li><a href="javascript: void(0)"><i class="icn icon-twitter"></i></a></li>
                         <li><a href="javascript: void(0)"><i class="icn icon-linked_in"></i></a></li>
-                        <li><a href="javascript: void(0)"><i class="icn icon-facebook"></i></a></li>
+                        <li><a href="javascript: void(0)"><i class="icn icon-facebook"></i></a></li>-->
                     </ul>
                 </div>
                 <div class="description_container">
