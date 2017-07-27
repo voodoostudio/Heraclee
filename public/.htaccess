@@ -46,14 +46,14 @@
     <FilesMatch \.(gif|png|jpg|jpeg|ogg|mp4|mkv|flv|swf|wmv|asf|asx|wma|wax|wmx|wm)$>
         ExpiresDefault "access plus 1 year"
     </FilesMatch>
-    ExpiresByType image/gif                 "access plus 12 month"
-    ExpiresByType image/png                 "access plus 12 month"
-    ExpiresByType image/jpeg                "access plus 12 month"
-    ExpiresByType video/ogg                 "access plus 12 month"
-    ExpiresByType audio/ogg                 "access plus 12 month"
-    ExpiresByType video/mp4                 "access plus 12 month"
-    ExpiresByType video/webm                "access plus 12 month"
-    ExpiresByType text/x-component          "access plus 12 month"
+    ExpiresByType image/gif                 "access plus 24 month"
+    ExpiresByType image/png                 "access plus 24 month"
+    ExpiresByType image/jpeg                "access plus 24 month"
+    ExpiresByType video/ogg                 "access plus 24 month"
+    ExpiresByType audio/ogg                 "access plus 24 month"
+    ExpiresByType video/mp4                 "access plus 24 month"
+    ExpiresByType video/webm                "access plus 24 month"
+    ExpiresByType text/x-component          "access plus 24 month"
 
     <FilesMatch \.(eot|ttf|otf|svg|woff)$>
         ExpiresDefault "access plus 1 year"
