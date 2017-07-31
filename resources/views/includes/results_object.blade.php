@@ -2,9 +2,14 @@
     <div class="object_block">
         <div class="img_block">
             {{--<div class="activity_label">Loué</div>--}}
-            @if(!empty($property['agreement']) && $property['agreement'] == 3)
+           {{-- @if(!empty($property['agreement']) && $property['agreement'] == 3)
             <div class="exclusive_label">Exclusif</div>
+            @endif --}}
+
+            @if(!empty($property['agreement']))
+                <div class="exclusive_label">{{ $property['agreement'] }}</div>
             @endif
+
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
                     @if(!empty($property['pictures']))
@@ -22,6 +27,7 @@
             $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
             $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
         @endphp
+
         <div class="info_block_container">
             <div class="info_block">
                 <div class="title_container">

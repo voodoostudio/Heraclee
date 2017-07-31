@@ -8,9 +8,6 @@ use LaravelLocalization;
 
 class Properties extends Model
 {
-    //public static $lang = 'fr_FR';
-    //public static $lang_short = 'fr';
-    //$lang = LaravelLocalization::getCurrentLocaleRegional();
     public $property_count;
 
     /**
@@ -71,7 +68,7 @@ class Properties extends Model
             $array['orientations'] = self::getOrientationsByIds($property[0]['orientations']);
             $array['district'] = self::getDistrictByIds($property[0]['district']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
-            //$array['agreement'] = self::getAgreementsByIds($property[0]['agreement']);
+            $array['agreement'] = self::getAgreementsByIds($property[0]['agreement']);
             $array['areas'] = self::getAreasByIds($property[0]['areas']);
             $array['heating'] = self::getHeatingByIds($property[0]['heating']);
             $array['water'] = self:: getWaterByIds($property[0]['water']);
@@ -191,14 +188,14 @@ class Properties extends Model
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
-                //$array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
+                $array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['heating'] = self::getHeatingByIds($property['heating']);
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
-//        dump($array);
+        //dump($array);
         return $array;
     }
 
@@ -287,7 +284,7 @@ class Properties extends Model
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
-                //$array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
+                $array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
@@ -399,22 +396,59 @@ class Properties extends Model
      */
     protected static function getAreasByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $areas = DB::table('apimo_areas')
             ->select(
                 'apimo_areas.id as id',
-                'apimo_property_areas_type.value as type',
+                'apat.value as type',
                 'apimo_areas.number',
                 'apimo_areas.area as area',
-                'apimo_property_flooring.value as flooring',
-                'apimo_property_floor.value as floor_type',
-                'apimo_areas.floor_value as floor_value',
-                'apimo_property_orientations.value as orientations'
+                'apfg.value as flooring',
+                'apf.value as floor_type',
+                'apimo_areas.floor_value as floor_value'
+                //'apimo_property_orientations.value as orientations'
             )
-            ->leftJoin('apimo_property_areas_type', 'apimo_areas.type', '=', 'apimo_property_areas_type.reference')
-            ->leftJoin('apimo_property_flooring', 'apimo_areas.flooring', '=', 'apimo_property_flooring.reference')
-            ->leftJoin('apimo_property_floor', 'apimo_areas.floor_type', '=', 'apimo_property_floor.reference')
-            ->leftJoin('apimo_property_orientations', 'apimo_areas.orientations', '=', 'apimo_property_orientations.reference')
-            ->whereIn('apimo_areas.id', explode(',', $ids))
+            ->leftJoin('apimo_property_areas_type as apat', 'apimo_areas.type', '=', 'apat.reference')
+            ->leftJoin('apimo_property_flooring as apfg', 'apimo_areas.flooring', '=', 'apfg.reference')
+            ->leftJoin('apimo_property_floor as apf', 'apimo_areas.floor_type', '=', 'apf.reference')
+            //->leftJoin('apimo_property_orientations', 'apimo_areas.orientations', '=', 'apimo_property_orientations.reference')
+
+            ->whereIn('id', explode(',', $ids))
+            ->where('apat.locale', '=', $lang)
+            ->where('apfg.locale', '=', $lang)
+            ->where('apf.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.type')
+            ->where('apfg.locale', '=', $lang)
+            ->where('apf.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.flooring')
+            ->where('apat.locale', '=', $lang)
+            ->where('apf.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.floor_type')
+            ->where('apat.locale', '=', $lang)
+            ->where('apfg.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.type')
+            ->whereNull('apimo_areas.flooring')
+            ->where('apf.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.type')
+            ->whereNull('apimo_areas.floor_type')
+            ->where('apfg.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_areas.flooring')
+            ->whereNull('apimo_areas.floor_type')
+            ->where('apat.locale', '=', $lang)
+
             ->get();
 
         $areas_array = [];
@@ -426,7 +460,7 @@ class Properties extends Model
                 $areas_array[$area['id']]['flooring'] = $area['flooring'];
                 $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
                 $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
-                $areas_array[$area['id']]['orientations'] = $area['orientations'];
+               // $areas_array[$area['id']]['orientations'] = $area['orientations'];
 
             }
         }
@@ -447,61 +481,51 @@ class Properties extends Model
         $heating = DB::table('apimo_heating')
             ->select(
                 'apimo_heating.id as id',
-                'apimo_property_heating_access.value as access',
-                'apimo_property_heating_device.value as device',
-                'apimo_property_heating_type.value as type'
-
+                'apha.value as access',
+                'aphd.value as device',
+                'apht.value as type'
             )
-            ->leftJoin('apimo_property_heating_access', 'apimo_heating.access', '=', 'apimo_property_heating_access.reference')
 
+            ->leftJoin('apimo_property_heating_access as apha', 'apimo_heating.access', '=', 'apha.reference')
+            ->leftJoin('apimo_property_heating_device as aphd', 'apimo_heating.device', '=', 'aphd.reference')
+            ->leftJoin('apimo_property_heating_type as apht', 'apimo_heating.type', '=', 'apht.reference')
 
-           /* ->where(function ($q) {
-                $q->whereNull('apimo_heating.access');
-                    })
-            ->orWhere(function ($q) {
-                $q->where('type', '2')->whereIn('apimo_heating.id', explode(',', $ids)); })
-            ->whereIn('apimo_heating.id', explode(',', $ids))*/
+            ->whereIn('id', explode(',', $ids))
+            ->where('apha.locale', '=', $lang)
+            ->where('aphd.locale', '=', $lang)
+            ->where('apht.locale', '=', $lang)
 
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.access')
+            ->where('aphd.locale', '=', $lang)
+            ->where('apht.locale', '=', $lang)
 
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.device')
+            ->where('apha.locale', '=', $lang)
+            ->where('apht.locale', '=', $lang)
 
-            //->whereNull('apimo_heating.access')
-            //->whereNotNull('apimo_heating.access')
-                //->whereNotNull('apimo_property_heating_access')
-            //->whereNull('apimo_heating.access')
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.type')
+            ->where('apha.locale', '=', $lang)
+            ->where('aphd.locale', '=', $lang)
 
-            ->where('apimo_property_heating_access.locale', '=', $lang)
-            ->whereIn('apimo_heating.id', explode(',', $ids))
-           /* ->where('apimo_heating.access', function ($query) {
-                if(condition){
-                    $query->select('column')->from('table')->where('where clause');
-                }
-                else{
-                    $query->select('column')->from('table')->where('where clause');
-                }
-            })*/
-            /*->where(function ($query) {
-                $query->whereNotNull('apimo_heating.access');
-            })->orWhere(function($query) {
-                $query->where('apimo_property_heating_access.locale', '=', LaravelLocalization::getCurrentLocaleRegional());
-            })*/
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.access')
+            ->whereNull('apimo_heating.device')
+            ->where('apht.locale', '=', $lang)
 
-            ->leftJoin('apimo_property_heating_device', 'apimo_heating.device', '=', 'apimo_property_heating_device.reference')
-            //->whereNull('apimo_heating.device')
-           // ->whereIn('apimo_heating.id', explode(',', $ids))
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.access')
+            ->whereNull('apimo_heating.type')
+            ->where('aphd.locale', '=', $lang)
 
-            ->whereIn('apimo_heating.id', explode(',', $ids))
-            ->where('apimo_property_heating_device.locale', '=', $lang)
-
-
-            ->leftJoin('apimo_property_heating_type', 'apimo_heating.type', '=', 'apimo_property_heating_type.reference')
-           // ->whereNull('apimo_heating.type')
-          //  ->whereIn('apimo_heating.id', explode(',', $ids))
-            ->where('apimo_property_heating_type.locale', '=', $lang)
-            ->whereIn('apimo_heating.id', explode(',', $ids))
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_heating.device')
+            ->whereNull('apimo_heating.type')
+            ->where('apha.locale', '=', $lang)
 
             ->get();
-
-
 
         $heating_array = [];
         if (!empty($heating)) {
@@ -509,23 +533,12 @@ class Properties extends Model
                 $heating_array[$value['id']]['access'] = $value['access'];
                 $heating_array[$value['id']]['device'] = $value['device'];
                 $heating_array[$value['id']]['type'] = $value['type'];
-
-                if(!empty($value['access'])) {
-                    $value['access'];
-                }
-
-                if(!empty($value['device'])) {
-                    $value['device'];
-                }
-
-                if(!empty($value['type'])) {
-                    $value['type'];
-                }
-
             }
         }
        // dump($heating_array);
         return $heating_array;
+
+
     }
 
     /**
@@ -535,17 +548,54 @@ class Properties extends Model
      */
     protected static function getWaterByIds($ids)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $water = DB::table('apimo_water')
             ->select(
                 'apimo_water.id as id',
-                'apimo_property_water_hot_access.value as hot_access',
-                'apimo_property_water_hot_device.value as hot_device',
-                'apimo_property_water_waste.value as waste'
+                'apwha.value as hot_access',
+                'apwhd.value as hot_device',
+                'apww.value as waste'
             )
-            ->leftJoin('apimo_property_water_hot_access', 'apimo_water.hot_access', '=', 'apimo_property_water_hot_access.reference')
-            ->leftJoin('apimo_property_water_hot_device', 'apimo_water.hot_device', '=', 'apimo_property_water_hot_device.reference')
-            ->leftJoin('apimo_property_water_waste', 'apimo_water.waste', '=', 'apimo_property_water_waste.reference')
-            ->whereIn('apimo_water.id', explode(',', $ids))
+            ->leftJoin('apimo_property_water_hot_access as apwha', 'apimo_water.hot_access', '=', 'apwha.reference')
+            ->leftJoin('apimo_property_water_hot_device as apwhd', 'apimo_water.hot_device', '=', 'apwhd.reference')
+            ->leftJoin('apimo_property_water_waste as apww', 'apimo_water.waste', '=', 'apww.reference')
+
+            ->whereIn('id', explode(',', $ids))
+            ->where('apwha.locale', '=', $lang)
+            ->where('apwhd.locale', '=', $lang)
+            ->where('apww.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.hot_access')
+            ->where('apwhd.locale', '=', $lang)
+            ->where('apww.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.hot_device')
+            ->where('apwha.locale', '=', $lang)
+            ->where('apww.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.waste')
+            ->where('apwha.locale', '=', $lang)
+            ->where('apwhd.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.hot_access')
+            ->whereNull('apimo_water.hot_device')
+            ->where('apww.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.hot_access')
+            ->whereNull('apimo_water.waste')
+            ->where('apwhd.locale', '=', $lang)
+
+            ->whereIn('id', explode(',', $ids), 'or')
+            ->whereNull('apimo_water.hot_device')
+            ->whereNull('apimo_water.waste')
+            ->where('apwha.locale', '=', $lang)
+
             ->get();
 
         $water_array = [];
@@ -556,7 +606,7 @@ class Properties extends Model
                 $water_array[$value['id']]['waste'] = $value['waste'];
             }
         }
-
+       // dump($water_array);
         return $water_array;
     }
 
@@ -566,14 +616,19 @@ class Properties extends Model
      */
     protected static function getFloorByPropertyId($property_id)
     {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $floor = DB::table('apimo_floor')
             ->select(['apimo_property_floor.value as type','apimo_floor.value','apimo_floor.levels','apimo_floor.floors'])
             ->leftJoin('apimo_property_floor', 'apimo_floor.type', '=', 'apimo_property_floor.reference')
-            ->where('apimo_floor.property_id', $property_id)
+            ->whereIn('apimo_floor.property_id', explode(',',$property_id))
+            ->where('locale', $lang)
             ->get()->toArray();
         if (count($floor) > 0) {
             $floor = $floor[0];
         }
+
+        //dump($floor);
         return $floor;
     }
 
@@ -586,7 +641,7 @@ class Properties extends Model
     {
         $lang = LaravelLocalization::getCurrentLocaleRegional();
         $proximities = DB::table('apimo_property_proximity')
-            ->wherein("reference", explode(',', $ids))
+            ->whereIn("reference", explode(',', $ids))
             ->where('locale', $lang)
             ->get();
 
@@ -608,6 +663,7 @@ class Properties extends Model
     protected static function getStepByIds($step_id)
     {
         $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $step = DB::table('apimo_property_step')
             ->where("reference", $step_id)
             ->where("locale", $lang)
@@ -625,19 +681,22 @@ class Properties extends Model
      *
      * @return mixed
      */
-   /* protected static function getAgreementsByIds($agreement_id)
+    protected static function getAgreementsByIds($agreement_id)
     {
-        $agreement = DB::table('apimo_property_agreement')
-            ->where("reference", $agreement_id)
-            ->where("locale", self::$lang)
-            ->get();
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
 
-        if (!empty($agreement)) {
-            $agreement_id = $agreement[0]['value'];
+        $agreements = DB::table('apimo_property_agreement')
+            ->where("reference", $agreement_id)
+            ->where("locale", $lang)
+            ->get()
+            ->toArray();
+
+        if (!empty($agreements)) {
+            $agreement_id = $agreements[0]['value'];
         }
 
-        return $agreement_id;
-    }*/
+        return  $agreement_id;
+    }
 
     /**
      * @param $cat_id

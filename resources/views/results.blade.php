@@ -8,7 +8,6 @@
 @stop
 
 @section('content')
-
     @include('includes.search_block')
 
     <section class="results_section">
@@ -130,4 +129,3 @@
         });
     </script>
 @stop
-

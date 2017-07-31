@@ -192,7 +192,6 @@ class PagesController extends Controller
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
-        //$areas = Properties::getAreasTypeIds();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $url_page = '/locations/results?page=';
 
@@ -316,7 +315,6 @@ class PagesController extends Controller
                 'count_items' => $count_items,
                 'city_list' => $city_list,
                 'type' => $type,
-             //   'areas' => $areas,
                 'search' => Session::get('search'),
                 'view_type' => $view_type
             ]
