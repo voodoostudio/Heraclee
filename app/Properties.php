@@ -692,7 +692,9 @@ class Properties extends Model
             ->toArray();
 
         if (!empty($agreements)) {
-            $agreement_id = $agreements[0]['value'];
+            $agreement_array['value'] = $agreements[0]['value'];
+            $agreement_array['reference'] = $agreements[0]['reference'];
+            $agreement_id = $agreement_array;
         }
 
         return  $agreement_id;

@@ -6,8 +6,8 @@
             <div class="exclusive_label">Exclusif</div>
             @endif --}}
 
-            @if(!empty($property['agreement']))
-                <div class="exclusive_label">{{ $property['agreement'] }}</div>
+            @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
+                <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
 
             <div class="gallery_view">
