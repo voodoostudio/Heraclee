@@ -563,9 +563,10 @@ section.carousel_offers_section {
         .results_container .container-fluid .object_block_container .object_block .img_block .exclusive_label {
           position: absolute;
           padding: 9px 20px;
-          font-size: 22px;
+          font-size: 1rem;
           text-transform: uppercase;
-          z-index: 1; }
+          z-index: 1;
+          background: rgba(39, 39, 39, 0.5); }
         .results_container .container-fluid .object_block_container .object_block .img_block img {
           display: block; }
       .results_container .container-fluid .object_block_container .object_block .info_block .title_container {

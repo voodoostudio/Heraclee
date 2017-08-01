@@ -14,9 +14,10 @@
           .exclusive_label {
             position: absolute;
             padding: 9px 20px;
-            font-size: 22px;
+            font-size: 1rem;
             text-transform: uppercase;
             z-index: 1;
+            background: rgba($main_dark_clr, 0.5);
           }
           img {
             display: block;

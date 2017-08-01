@@ -9,18 +9,17 @@
             @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
                 <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
-
-            <div class="gallery_view">
-                <ul class="gallery result_preview_gallery">
-                    @if(!empty($property['pictures']))
-                    @foreach($property['pictures'] as $picture)
-                            <li><img src="{{$picture['url']}}" alt=""></li>
-                    @endforeach
-                    @else
-                        <li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>
-                    @endif
-                </ul>
-            </div>
+            {{--<div class="gallery_view">--}}
+                {{--<ul class="gallery result_preview_gallery">--}}
+                    {{--@if(!empty($property['pictures']))--}}
+                    {{--@foreach($property['pictures'] as $picture)--}}
+                            {{--<li><img src="{{$picture['url']}}" alt=""></li>--}}
+                    {{--@endforeach--}}
+                    {{--@else--}}
+                        {{--<li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>--}}
+                    {{--@endif--}}
+                {{--</ul>--}}
+            {{--</div>--}}
         </div>
 
         @php
