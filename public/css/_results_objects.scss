@@ -39,25 +39,8 @@
               }
             }
             ul.social_networks {
-              display: table;
               float: right;
               padding: 2px 0 0;
-              li {
-                float: left;
-                margin-right: 10px;
-                &:last-child {
-                  margin: 0;
-                }
-                a {
-                  color: $main_light_clr;
-                  i.icn {
-                    font-size: 14px;
-                  }
-                  &:hover {
-                    color: $main_brown_clr;
-                  }
-                }
-              }
             }
           }
           .properties_container {

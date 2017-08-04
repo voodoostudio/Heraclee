@@ -92,4 +92,43 @@ section.results_section {
       }
     }
   }
+
+  #results_map {
+    .infowindow_container {
+      width: 300px;
+      button.slick-arrow {
+        z-index: 9999999;
+        font-size: 22px;
+        top: initial;
+        bottom: 5px;
+        &.slick-prev {
+          left: 10px;
+        }
+        &.slick-next {
+          right: 10px;
+        }
+      }
+      ul.slick-dots {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        li {
+          display: inline-block;
+          button {
+            border: none;
+            padding: 0;
+            font-size: 0;
+            line-height: 0;
+            background-color: #625e57;
+            height: 2px;
+          }
+          &.slick-active {
+            button {
+              background-color: #aaa296;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -851,6 +851,20 @@ section.search_section {
               font-size: 0.875rem; }
 
 /* Bootstrap modal popup END*/
+ul.social_networks_share {
+  display: table; }
+  ul.social_networks_share li {
+    float: left;
+    margin-right: 10px; }
+    ul.social_networks_share li:last-child {
+      margin: 0; }
+    ul.social_networks_share li a {
+      color: #fdfdfd; }
+      ul.social_networks_share li a i.icn {
+        font-size: 14px; }
+      ul.social_networks_share li a:hover {
+        color: #ccac83; }
+
 footer {
   margin-top: 90px; }
   footer section.top_footer_section {

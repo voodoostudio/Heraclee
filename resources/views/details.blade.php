@@ -13,6 +13,11 @@
 
     <section class="gallery_section">
         <div class="gallery_container">
+            <ul class="social_networks_share">
+                <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{$property['comments']['comment']}}+{{ Request::fullUrl() }}"><i class="icn icon-twitter"></i></a></li>
+                <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url={{ Request::fullUrl() }}&title={{$property['comments']['comment']}}."><i class="icn icon-linked_in"></i></a></li>
+                <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/share.php?u={{ Request::fullUrl() }}"><i class="icn icon-facebook"></i></a></li>
+            </ul>
             <div class="gallery_view">
                 <ul class="gallery details_gallery">
                     @foreach($property['pictures'] as $picture)
@@ -929,12 +934,6 @@
             </div>
         </div>
     </section>
-
-   <!-- <div class = "socials">
-        <a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url={{ Request::fullUrl() }}&title={{$property['comments']['comment']}}.">IN</a>
-        <a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{$property['comments']['comment']}}+{{ Request::fullUrl() }}">TW</a>
-        <a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/share.php?u={{ Request::fullUrl() }}">FB</a>
-    </div> -->
 @endsection
 
 @section('javascript')

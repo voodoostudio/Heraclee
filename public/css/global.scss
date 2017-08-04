@@ -477,6 +477,26 @@ section.search_section {
 }
 /* Bootstrap modal popup END*/
 
+ul.social_networks_share {
+  display: table;
+  li {
+    float: left;
+    margin-right: 10px;
+    &:last-child {
+      margin: 0;
+    }
+    a {
+      color: $main_light_clr;
+      i.icn {
+        font-size: 14px;
+      }
+      &:hover {
+        color: $main_brown_clr;
+      }
+    }
+  }
+}
+
 footer {
   margin-top: 90px;
   section.top_footer_section {

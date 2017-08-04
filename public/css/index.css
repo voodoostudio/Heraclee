@@ -581,20 +581,8 @@ section.carousel_offers_section {
             font-size: 1.563rem;
             text-transform: uppercase; }
         .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks {
-          display: table;
           float: right;
           padding: 2px 0 0; }
-          .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks li {
-            float: left;
-            margin-right: 10px; }
-            .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks li:last-child {
-              margin: 0; }
-            .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks li a {
-              color: #fdfdfd; }
-              .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks li a i.icn {
-                font-size: 14px; }
-              .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks li a:hover {
-                color: #ccac83; }
       .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties {
         display: table;
         width: 100%; }
