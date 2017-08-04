@@ -534,7 +534,7 @@ section.results_section {
             section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .title_container a h2 {
               font-size: 1.563rem;
               text-transform: uppercase; }
-          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks {
+          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks_share {
             float: right;
             padding: 2px 0 0; }
         section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties {
