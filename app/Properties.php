@@ -111,19 +111,13 @@ class Properties extends Model
         $offset = ($page - 1) * $items;
         $array = [];
         $conditions_where = [];
+        $param = [];
 
         if ($sell_type == 1) {
             $sell_type_array = [1, 4, 5, 6];
         } else {
             $sell_type_array = [2, 3];
         }
-
-        $search_keywords = trim($search_keywords);
-        $search_keywords = htmlspecialchars($search_keywords);
-
-        if ($search_keywords != '') {
-            $conditions_where[] = ['reference', '=', $search_keywords];
-        };
 
         if ($price_min != '') {
             $conditions_where[] = ['price', '>=', $price_min];
@@ -151,10 +145,44 @@ class Properties extends Model
 
         $properties = DB::table('apimo_properties')
             ->where($conditions_where)
+            ->where(function($query) use ($search_keywords) {
+                if($search_keywords != '') {
+                    //take reference in the services
+                    $services = DB::table('apimo_property_service')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the orientations
+                    $orientations = DB::table('apimo_property_orientations')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the condition
+                    $conditions = DB::table('apimo_property_condition')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    /**
+                     *
+                     * @param $services_search (services)
+                     * @param $orientations_search (orientations)
+                     * @param $conditions_search (condition)
+                     *
+                     */
+
+                    $services_search = (!empty($services)) ? $services : $search_keywords;
+                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+
+                    //dump($orientations);
+
+                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('style', 'like', '%' . $search_keywords . '%');
+                }
+            })
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
-            //->whereIn('areas',$search_keywords)
             ->limit($items)
             ->offset($offset)
             ->orderBy('property_id', 'DESC')
@@ -163,11 +191,46 @@ class Properties extends Model
 
         $this->property_count = DB::table('apimo_properties')
             ->where($conditions_where)
+            ->where(function($query) use ($search_keywords) {
+                if($search_keywords != '') {
+                    //take reference in the services
+                    $services = DB::table('apimo_property_service')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the orientations
+                    $orientations = DB::table('apimo_property_orientations')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the condition
+                    $conditions = DB::table('apimo_property_condition')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    /**
+                     *
+                     * @param $services_search (services)
+                     * @param $orientations_search (orientations)
+                     * @param $conditions_search (condition)
+                     *
+                     */
+
+                    $services_search = (!empty($services)) ? $services : $search_keywords;
+                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+
+                    //dump($orientations);
+
+                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('style', 'like', '%' . $search_keywords . '%');
+                }
+            })
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
-            //->whereIn('areas',$search_keywords)
-            ->get()->count();
+            ->get()
+            ->count();
 
         if (count($properties) > 0) {
             foreach ($properties as $property) {
@@ -195,7 +258,7 @@ class Properties extends Model
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
-        //dump($array);
+      //  dump($array);
         return $array;
     }
 

@@ -8,6 +8,7 @@
 @stop
 
 @section('content')
+
     @include('includes.search_block')
 
     <section class="results_section">
@@ -67,6 +68,8 @@
             $lat_count = 0;
             $lng_count = 0;
         @endphp
+
+
 
         var locations = [
             @foreach ($all_properties as $property)

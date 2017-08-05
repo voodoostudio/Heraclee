@@ -227,11 +227,11 @@ class PagesController extends Controller
             Session::put('search.object_place', Properties::getCityListIds());
         }
 
-       /* if (isset($_POST['search_keywords'])) {
+        if (isset($_POST['search_keywords'])) {
             Session::put('search.search_keywords', $_POST['search_keywords']);
         } elseif (!Session::has('search.search_keywords')) {
-            Session::put('search.search_keywords', Properties::getAreasTypeIds());
-        } */
+            Session::put('search.search_keywords', '');
+        }
 
         if (isset($_POST['search_keywords'])) {
             Session::put('search.search_keywords', $_POST['search_keywords']);
