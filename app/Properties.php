@@ -122,7 +122,7 @@ class Properties extends Model
             if(is_numeric($price_min) == true) {
                 $conditions_where[] = ['price', '>=', $price_min];
             } else {
-                $conditions_where[] = ['price', '>=', '-1'];
+                $conditions_where[] = ['price', '>=', '9999999999'];
             }
         };
 
@@ -138,7 +138,7 @@ class Properties extends Model
             if(is_numeric($surface_min) == true) {
                 $conditions_where[] = ['area_surface', '>=', $surface_min];
             } else {
-                $conditions_where[] = ['area_surface', '>=', '-1'];
+                $conditions_where[] = ['area_surface', '>=', '9999999999'];
             }
         };
 
@@ -154,7 +154,7 @@ class Properties extends Model
             if(is_numeric($bedrooms_min) == true) {
                 $conditions_where[] = ['rooms', '>=', $bedrooms_min];
             } else {
-                $conditions_where[] = ['rooms', '>=', '-1'];
+                $conditions_where[] = ['rooms', '>=', '9999999999'];
             }
         };
 
