@@ -80,7 +80,6 @@ class Properties extends Model
 
     /**
      * @param int $items
-     *
      * @param int $page
      * @param int $sell_type
      * @param string|array $object_type
@@ -112,10 +111,14 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
-        if ($sell_type == 1) {
-            $sell_type_array = [1, 4, 5, 6];
+        if($_SERVER['REQUEST_URI'] === '/'){
+            $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
-            $sell_type_array = [2, 3];
+            if ($sell_type == 1) {
+                $sell_type_array = [1, 4, 5, 6];
+            } else {
+                $sell_type_array = [2, 3];
+            }
         }
 
         if ($price_min != '') {
