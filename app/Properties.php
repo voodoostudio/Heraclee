@@ -182,22 +182,26 @@ class Properties extends Model
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
                         ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the standing
+                    $standing = DB::table('apimo_property_standing')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
                     /**
-                     *
                      * @param $services_search (services)
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
-                     *
+                     * @param $standing_search (standing)
                      */
 
                     $services_search = (!empty($services)) ? $services : $search_keywords;
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
 
                     //dump($orientations);
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
                         ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
@@ -228,22 +232,26 @@ class Properties extends Model
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
                         ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                    //take reference in the standing
+                    $standing = DB::table('apimo_property_standing')
+                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
                     /**
-                     *
                      * @param $services_search (services)
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
-                     *
+                     * @param $conditions_search (condition)
                      */
 
                     $services_search = (!empty($services)) ? $services : $search_keywords;
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
 
                     //dump($orientations);
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
                         ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
