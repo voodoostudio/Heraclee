@@ -111,7 +111,6 @@ class Properties extends Model
         $offset = ($page - 1) * $items;
         $array = [];
         $conditions_where = [];
-        $param = [];
 
         if ($sell_type == 1) {
             $sell_type_array = [1, 4, 5, 6];
@@ -120,27 +119,51 @@ class Properties extends Model
         }
 
         if ($price_min != '') {
-            $conditions_where[] = ['price', '>=', $price_min];
+            if(is_numeric($price_min) == true) {
+                $conditions_where[] = ['price', '>=', $price_min];
+            } else {
+                $conditions_where[] = ['price', '>=', '-1'];
+            }
         };
 
         if ($price_max != '') {
-            $conditions_where[] = ['price', '<=', $price_max];
+            if(is_numeric($price_max) == true) {
+                $conditions_where[] = ['price', '<=', $price_max];
+            } else {
+                $conditions_where[] = ['price', '<=', '-1'];
+            }
         };
 
         if ($surface_min != '') {
-            $conditions_where[] = ['area_surface', '>=', $surface_min];
+            if(is_numeric($surface_min) == true) {
+                $conditions_where[] = ['area_surface', '>=', $surface_min];
+            } else {
+                $conditions_where[] = ['area_surface', '>=', '-1'];
+            }
         };
 
         if ($surface_max != '') {
-            $conditions_where[] = ['area_surface', '<=', $surface_max];
+            if(is_numeric($surface_max) == true) {
+                $conditions_where[] = ['area_surface', '<=', $surface_max];
+            } else {
+                $conditions_where[] = ['area_surface', '<=', '-1'];
+            }
         };
 
         if ($bedrooms_min != '') {
-            $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+            if(is_numeric($bedrooms_min) == true) {
+                $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+            } else {
+                $conditions_where[] = ['rooms', '>=', '-1'];
+            }
         };
 
         if ($bedrooms_max != '') {
-            $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+            if(is_numeric($bedrooms_max) == true) {
+                $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+            } else {
+                $conditions_where[] = ['rooms', '<=', '-1'];
+            }
         };
 
         $properties = DB::table('apimo_properties')
