@@ -206,6 +206,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -213,9 +214,9 @@ class Properties extends Model
                     $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
+                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -270,6 +271,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -277,9 +279,9 @@ class Properties extends Model
                     $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
+                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -442,6 +444,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -449,9 +452,9 @@ class Properties extends Model
                     $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
+                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
