@@ -25,7 +25,7 @@
                         <span>France</span>
                     </p>
                     <ul>
-                        <li>Tel : <a href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a></li>
+                        <li>Tel : <a href="tel:+330494542001">+33 (0)4 94 54 20 01</a></li>
                         <li><a href="mailto:agence@heraclee.com">agence@heraclee.com</a></li>
                     </ul>
                 </div>
@@ -50,13 +50,13 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Phone</span></label>
+                                        <label class="form_el_label"><span>Téléphone</span></label>
                                         <div class="input_container">
                                             <input type="number" id = "phone" name = "phone" placeholder="Phone">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
-                                        <label class="form_el_label"><span>Couriel *</span></label>
+                                        <label class="form_el_label"><span>Courriel *</span></label>
                                         <div class="input_container">
                                             <input type="text" id = "email" name = "email" placeholder="Courriel">
                                         </div>

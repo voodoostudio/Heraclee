@@ -429,6 +429,12 @@
   }
 }
 
+@media screen and ( min-width: 768px ) {
+  .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label:hover {
+    color: #ccac83;
+  }
+}
+
 @media screen and ( max-width: 767px ) {
   header {
     &.opened .navigation_container nav {
@@ -947,7 +953,7 @@
             margin-top: 10px;
             .slick-list .slick-track .slick-slide {
               padding: 0 5px;
-              height: 50px;
+              height: 40px;
               &.slick-current:before {
                 width: calc(100% - 10px);
                 left: 5px;
@@ -961,6 +967,11 @@
         .properties_container {
           padding: 0 5px 10px;
         }
+      }
+      .social_networks_share {
+        right: 20px;
+        top: 5px;
+        padding: 5px;
       }
     }
   }

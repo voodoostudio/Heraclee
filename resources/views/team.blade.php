@@ -29,7 +29,7 @@
                                     <div class="info_container">
                                         <h4>Name Surname</h4>
                                         <ul>
-                                            <li>+33 0000 000 000</li>
+                                            <li><a href="tel:330000000000">+33 0000 000 000</a></li>
                                             <li><a href="mailto:email@mailserver.com">email@mailserver.com</a></li>
                                         </ul>
                                     </div>
@@ -56,7 +56,7 @@
                                     <div class="info_container">
                                         <h4>Name Surname</h4>
                                         <ul>
-                                            <li>+33 0000 000 000</li>
+                                            <li><a href="tel:330000000000">+33 0000 000 000</a></li>
                                             <li><a href="mailto:email@mailserver.com">email@mailserver.com</a></li>
                                         </ul>
                                     </div>
@@ -83,7 +83,7 @@
                                     <div class="info_container">
                                         <h4>Name Surname</h4>
                                         <ul>
-                                            <li>+33 0000 000 000</li>
+                                            <li><a href="tel:330000000000">+33 0000 000 000</a></li>
                                             <li><a href="mailto:email@mailserver.com">email@mailserver.com</a></li>
                                         </ul>
                                     </div>
@@ -110,7 +110,7 @@
                                     <div class="info_container">
                                         <h4>Name Surname</h4>
                                         <ul>
-                                            <li>+33 0000 000 000</li>
+                                            <li><a href="tel:330000000000">+33 0000 000 000</a></li>
                                             <li><a href="mailto:email@mailserver.com">email@mailserver.com</a></li>
                                         </ul>
                                     </div>
