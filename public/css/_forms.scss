@@ -100,6 +100,7 @@ a:focus {
       -webkit-box-shadow: 0 0 0 30px $main_dark_clr inset !important;
       -webkit-text-fill-color: $main_light_clr !important;
     }
+    @include my_border_radius(0);
   }
   button {
     position: absolute;
@@ -286,9 +287,9 @@ ul.nav.nav-tabs {
             width: 100%;
             position: relative;
             padding: 0;
-            &:hover {
-              color: $main_brown_clr;
-            }
+            //&:hover {
+            //  color: $main_brown_clr;
+            //}
             input {
               display: none;
             }

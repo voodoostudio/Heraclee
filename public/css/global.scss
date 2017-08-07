@@ -390,6 +390,9 @@ section.search_section {
 
 /*Slick START*/
 .slick-slider {
+  .slick-track {
+    min-width: 100%;
+  }
   .slick-arrow {
     position: absolute;
     top: 50%;
@@ -415,7 +418,7 @@ section.search_section {
 
 /* Bootstrap modal popup START*/
 .modal {
-  z-index: 1100;
+  z-index: 999999;
   .vertical-alignment-helper {
     display:table;
     height: 100%;

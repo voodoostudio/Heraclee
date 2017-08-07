@@ -115,7 +115,10 @@ a:focus {
   position: relative;
   background-color: #272727; }
   .input_container input {
-    color: #fdfdfd; }
+    color: #fdfdfd;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
     .input_container input:-webkit-autofill, .input_container input:-webkit-autofill:hover, .input_container input:-webkit-autofill:focus, .input_container input:-webkit-autofill:active {
       color: #fdfdfd !important;
       -webkit-box-shadow: 0 0 0 30px #272727 inset !important;
@@ -284,8 +287,6 @@ ul.nav.nav-tabs {
           width: 100%;
           position: relative;
           padding: 0; }
-          .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label:hover {
-            color: #ccac83; }
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label input {
             display: none; }
           .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label.checkbox {
@@ -776,6 +777,8 @@ section.search_section {
               margin-right: 7px; }
 
 /*Slick START*/
+.slick-slider .slick-track {
+  min-width: 100%; }
 .slick-slider .slick-arrow {
   position: absolute;
   top: 50%;
@@ -800,7 +803,7 @@ section.search_section {
 /*Slick END*/
 /* Bootstrap modal popup START*/
 .modal {
-  z-index: 1100; }
+  z-index: 999999; }
   .modal .vertical-alignment-helper {
     display: table;
     height: 100%;

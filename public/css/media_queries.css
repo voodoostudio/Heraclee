@@ -169,6 +169,9 @@
   /* Bootstrap modal popup END*/
   footer section.bottom_footer_section p {
     margin-right: 0; } }
+@media screen and (min-width: 768px) {
+  .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a label:hover {
+    color: #ccac83; } }
 @media screen and (max-width: 767px) {
   header.opened .navigation_container nav {
     display: block; }
@@ -453,7 +456,7 @@
       margin-top: 10px; }
       section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide {
         padding: 0 5px;
-        height: 50px; }
+        height: 40px; }
         section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide.slick-current:before {
           width: calc(100% - 10px);
           left: 5px; }
@@ -461,6 +464,10 @@
     padding: 0; }
     section.gallery_section .gallery_container > .container-fluid .properties_container {
       padding: 0 5px 10px; }
+  section.gallery_section .gallery_container .social_networks_share {
+    right: 20px;
+    top: 5px;
+    padding: 5px; }
 
   section.object_info_section .outer_block_container .inner_block_container {
     padding: 15px; }
