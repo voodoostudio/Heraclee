@@ -16,8 +16,6 @@ use App\Subscribers;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
-
 
 class PagesController extends Controller
 {
@@ -424,15 +422,21 @@ class PagesController extends Controller
             'email' => 'required|email',
         ]);
 
-        $subscribers = new Subscribers;
-        $subscribers->email = $request->email;
-        $check_subscriber = Subscribers::select('email')->get();
+        if($request->ajax()){
+            $subscribers = new Subscribers;
+            $subscribers->email = $request->email;
+            $check_subscriber = Subscribers::select('email')->get();
 
-        if (stristr((string)$check_subscriber, $subscribers->email) === false) {
-            $subscribers->save();
+            if (stristr((string)$check_subscriber, $subscribers->email) === false) {
+                $subscribers->save();
+            }
+
+            /*$response = array(
+                'status' => 'success',
+                'msg' => 'Setting created successfully',
+            );
+            return dump($request->json($response));*/
         }
-
-        return redirect()->back();
     }
 
     public function team()
@@ -455,8 +459,6 @@ class PagesController extends Controller
         curl_close($ch);
         $values = json_decode($output, true);
 
-
         dd($values);
     }
-
 }

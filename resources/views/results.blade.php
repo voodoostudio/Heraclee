@@ -9,6 +9,32 @@
 
 @section('content')
 
+
+    @php
+        $coordinates = [];
+        foreach($all_properties as $property){
+            //$coordinates[] = [$property['property_id'] => $property['latitude']];
+            $coordinates[$property['property_id']] =  $property['latitude'];
+            //dump($coordinates);
+            //dump(array_search($property['latitude'], $coordinates));
+        }
+
+
+        //dump($coordinates);
+       // dump(array_count_values($coordinates));
+       // foreach (array_count_values($coordinates) as $number) {
+           // if($number > 1) {
+               /* foreach ($coordinates as $key => $value) {
+                    dump($value);
+                }*/
+            //}
+       // }
+
+
+
+
+    @endphp
+
     @include('includes.search_block')
 
     <section class="results_section">

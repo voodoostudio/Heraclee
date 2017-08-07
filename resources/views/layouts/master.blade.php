@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
         <meta name="description" content="Heraclee website">
         <meta name="keywords" content="heraclee, website, responsive">
+        {{ csrf_field() }}
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
 
@@ -102,6 +103,67 @@
                     }
                 })
             })
+        </script>
+
+        <script>
+            jQuery(document).ready(function () {
+                jQuery("#newsletter").validate({
+                    rules: {
+                        email: {
+                            required: true,
+                            email: true
+                        }
+                    },
+
+                    email: {
+                        email: "Please provide a valid email address"
+                    },
+
+                    submitHandler: function (form) {
+                        form.submit();
+                    }
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+
+              /*var mylink = $('#newsletter label');
+                $( "#email" ).focus(function() {
+                    if (mylink.hasClass('error') === false) {
+                        $('#newsletter_submit').removeAttr('disabled', 'disabled');
+                        console.log('test');
+                    }
+                });*/
+
+
+                $('#newsletter_submit').one("click", function (e) {
+                    e.preventDefault();
+
+                    var url = "newsletter";
+                    var csrf = $('input[name=_token]').val();
+                    var email = $('#newsletter').find('#email').val();
+                    var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
+                    if (pattern.test(email)) {
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: {email: email, _token: csrf},
+                            cache: false,
+                            success: function () {
+                                $('.message-send').append('<div class = \"success\" style = \"color: forestgreen; font-size: 0.75rem; position: absolute;\">Message send</div>').hide(3000);
+                                $('#newsletter_submit').attr('disabled', 'disabled');
+                            }
+                        });
+                    } else {
+                        $('#newsletter_submit').removeAttr('disabled', 'disabled');
+                    }
+                });
+            });
+
+
         </script>
 
         @yield('javascript')

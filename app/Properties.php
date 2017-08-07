@@ -175,27 +175,38 @@ class Properties extends Model
                 if($search_keywords != '') {
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the orientations
                     $orientations = DB::table('apimo_property_orientations')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the standing
                     $standing = DB::table('apimo_property_standing')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the comments
+                    $comments = DB::table('apimo_property_comments')
+                        ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->value('property_id');
+
                     /**
                      * @param $services_search (services)
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
-                     * @param $standing_search (standing)
+                     * @param $conditions_search (condition)
+                     * @param $comments_search (comments)
                      */
 
                     $services_search = (!empty($services)) ? $services : $search_keywords;
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                    $comments_search = (!empty($comments)) ? $comments : $search_keywords;
 
                     //dump($orientations);
 
@@ -203,6 +214,7 @@ class Properties extends Model
                         ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('property_id', 'like', '%' . $comments_search . '%')
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -225,27 +237,38 @@ class Properties extends Model
                 if($search_keywords != '') {
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the orientations
                     $orientations = DB::table('apimo_property_orientations')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
                     //take reference in the standing
                     $standing = DB::table('apimo_property_standing')
-                        ->where('value', 'like', '%' . $search_keywords . '%')->value('reference');
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the comments
+                    $comments = DB::table('apimo_property_comments')
+                        ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->value('property_id');
+
                     /**
                      * @param $services_search (services)
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
                      * @param $conditions_search (condition)
+                     * @param $comments_search (comments)
                      */
 
                     $services_search = (!empty($services)) ? $services : $search_keywords;
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                    $comments_search = (!empty($comments)) ? $comments : $search_keywords;
 
                     //dump($orientations);
 
@@ -253,6 +276,7 @@ class Properties extends Model
                         ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('property_id', 'like', '%' . $comments_search . '%')
                         ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -316,36 +340,62 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
-        if ($sell_type == 1) {
-            $sell_type_array = [1, 4, 5, 6];
+        if($_SERVER['REQUEST_URI'] === '/'){
+            $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
-            $sell_type_array = [2, 3];
+            if ($sell_type == 1) {
+                $sell_type_array = [1, 4, 5, 6];
+            } else {
+                $sell_type_array = [2, 3];
+            }
         }
 
-        $conditions_where[] = ['category', '=', $sell_type];
-
         if ($price_min != '') {
-            $conditions_where[] = ['price', '>=', $price_min];
+            if(is_numeric($price_min) == true) {
+                $conditions_where[] = ['price', '>=', $price_min];
+            } else {
+                $conditions_where[] = ['price', '>=', '9999999999'];
+            }
         };
 
         if ($price_max != '') {
-            $conditions_where[] = ['price', '<=', $price_max];
+            if(is_numeric($price_max) == true) {
+                $conditions_where[] = ['price', '<=', $price_max];
+            } else {
+                $conditions_where[] = ['price', '<=', '-1'];
+            }
         };
 
         if ($surface_min != '') {
-            $conditions_where[] = ['area_surface', '>=', $surface_min];
+            if(is_numeric($surface_min) == true) {
+                $conditions_where[] = ['area_surface', '>=', $surface_min];
+            } else {
+                $conditions_where[] = ['area_surface', '>=', '9999999999'];
+            }
         };
 
         if ($surface_max != '') {
-            $conditions_where[] = ['area_surface', '<=', $surface_max];
+            if(is_numeric($surface_max) == true) {
+                $conditions_where[] = ['area_surface', '<=', $surface_max];
+            } else {
+                $conditions_where[] = ['area_surface', '<=', '-1'];
+            }
         };
 
         if ($bedrooms_min != '') {
-            $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+            if(is_numeric($bedrooms_min) == true) {
+                $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+            } else {
+                $conditions_where[] = ['rooms', '>=', '9999999999'];
+            }
         };
 
         if ($bedrooms_max != '') {
-            $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+            if(is_numeric($bedrooms_max) == true) {
+                $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+            } else {
+                $conditions_where[] = ['rooms', '<=', '-1'];
+            }
         };
 
         $properties = DB::table('apimo_properties')
@@ -353,6 +403,57 @@ class Properties extends Model
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
             ->where($conditions_where)
+            ->where(function($query) use ($search_keywords) {
+                if($search_keywords != '') {
+                    //take reference in the services
+                    $services = DB::table('apimo_property_service')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the orientations
+                    $orientations = DB::table('apimo_property_orientations')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the condition
+                    $conditions = DB::table('apimo_property_condition')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the standing
+                    $standing = DB::table('apimo_property_standing')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+                    //take reference in the comments
+                    $comments = DB::table('apimo_property_comments')
+                        ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->value('property_id');
+
+                    /**
+                     * @param $services_search (services)
+                     * @param $orientations_search (orientations)
+                     * @param $conditions_search (condition)
+                     * @param $conditions_search (condition)
+                     * @param $comments_search (comments)
+                     */
+
+                    $services_search = (!empty($services)) ? $services : $search_keywords;
+                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                    $comments_search = (!empty($comments)) ? $comments : $search_keywords;
+
+                    //dump($orientations);
+
+                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                        ->orwhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                        ->orwhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
+                        ->orwhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                        ->orWhere('property_id', 'like', '%' . $comments_search . '%')
+                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('style', 'like', '%' . $search_keywords . '%');
+                }
+            })
             ->get();
 //
 //
