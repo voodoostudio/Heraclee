@@ -777,8 +777,6 @@ section.search_section {
               margin-right: 7px; }
 
 /*Slick START*/
-.slick-slider .slick-track {
-  min-width: 100%; }
 .slick-slider .slick-arrow {
   position: absolute;
   top: 50%;

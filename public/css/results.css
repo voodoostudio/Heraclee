@@ -829,3 +829,5 @@ section.results_section {
           height: 2px; }
         section.results_section #results_map .infowindow_container ul.slick-dots li.slick-active button {
           background-color: #aaa296; }
+  section.results_section .slick-track {
+    min-width: 100%; }
