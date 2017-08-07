@@ -1,2 +1,75 @@
 <?php
-return [];
+return [
+
+//    HOMEPAGE
+    'see_property'          => 'See the property',
+
+//    RESULTS PAGE
+    'results_per_page'      => 'results per page',
+    'all'                   => 'All',
+    'list'                  => 'List',
+    'grid'                  => 'Grid',
+    'map'                   => 'Map',
+    'your_real_estate_search' => 'Your real estate search',
+
+//    DETAILS PAGE
+    'virtual_tour'          => 'Virtual tour',
+    'back_to_gallery'       => 'Back to gallery',
+    'contact_agent_to_visit' => 'Contact agent to visit',
+    'name'                  => 'Name',
+    'telephone'             => 'Phone',
+    'email'                 => 'E-mail',
+    'postal_code'           => 'Postal code',
+    'sign_up_to_newsletter' => 'Sign up for the newsletter',
+    'message'               => 'Message',
+    'send'                  => 'Send',
+    'i_am_interested'       => 'I am interested',
+    'type'                  => 'Type',
+    'sub_type'              => 'Sub type',
+    'condition'             => 'Condition',
+    'style'                 => 'Style',
+    'floor'                 => 'Floor',
+    'landscape_view'        => 'Landscape view',
+    'construction_year'     => 'Construction year',
+    'renovation_year'       => 'Renovation year',
+    'orientation'           => 'Orientation',
+    'heating_device'        => 'Heating device',
+    'heating_access'        => 'Heating access',
+    'heating_type'          => 'Heating type',
+    'flooring'              => 'Flooring',
+    'hot_water_access'      => 'Hot water access',
+    'hot_water_device'      => 'Hot water device',
+    'water_waste'           => 'Water waste',
+    'standing'              => 'Standing',
+    'surfaces'              => 'Surfaces',
+    'features'              => 'Features',
+    'equipments'            => 'Equipments',
+    'outdoor_spaces'        => 'Outdoor spaces',
+    'security'              => 'Security',
+    'sports_equipment'      => 'Sports equipment',
+    'banks'                 => 'Banks',
+    'bakeries'              => 'Bakeries',
+    'cafes'                 => 'Cafes',
+    'dentists'              => 'Dentists',
+    'schools'               => 'Schools',
+    'hospitals'             => 'Hospitals',
+    'doctors'               => 'Doctors',
+    'parkings'              => 'Parkings',
+    'pharmacies'            => 'Pharmacies',
+    'police'                => 'Police',
+    'post_offices'          => 'Post offices',
+    'restaurants'           => 'Restaurants',
+    'gas_stations'          => 'Gas stations',
+    'universities'          => 'Universities',
+
+//    CONTACT PAGE
+    'france'                => 'France',
+    'contact_us'            => 'Contact us',
+    'contact_form_description' => 'For any information request, do not hesitate to contact us via this form, we will reply as soon as possible:',
+
+//    FOOTER
+    'footer_title'          => 'Heraclee - Real Estate Agency Saint Tropez',
+    'footer_description'    => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut',
+    'subscribe_to_newsletter' => 'Subscribe to our newsletter',
+    'copyright_text'        => 'Heraclee - Creation and development by voodoo studio',
+];

@@ -594,7 +594,7 @@ section.gallery_section .gallery_container {
   section.gallery_section .gallery_container .gallery_nav .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
     padding: 0 10px;
     cursor: pointer;
-    height: 130px; }
+    height: 120px; }
     section.gallery_section .gallery_container .gallery_nav .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide.slick-current {
       position: relative; }
       section.gallery_section .gallery_container .gallery_nav .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide.slick-current:before {
@@ -855,8 +855,8 @@ section.location_section .map_container {
           color: #477664; }
         section.location_section .map_container .map_sidebar ul li.map_hospitals .checkbox_container label.checkbox_label {
           color: #1ba570; }
-        section.location_section .map_container .map_sidebar ul li.map_dostors .checkbox_container label.checkbox_label {
-          color: #1ba570; }
+        section.location_section .map_container .map_sidebar ul li.map_doctors .checkbox_container label.checkbox_label {
+          color: #b3d540; }
         section.location_section .map_container .map_sidebar ul li.map_parkings .checkbox_container label.checkbox_label {
           color: #fcba26; }
         section.location_section .map_container .map_sidebar ul li.map_pharmacies .checkbox_container label.checkbox_label {

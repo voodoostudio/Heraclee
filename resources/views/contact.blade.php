@@ -22,7 +22,7 @@
                     <p>
                         44, Route des Plages<br>
                         83990 Saint-Tropez<br>
-                        <span>France</span>
+                        <span>{{ trans('lang.france') }}</span>
                     </p>
                     <ul>
                         <li>Tel : <a href="tel:+330494542001">+33 (0)4 94 54 20 01</a></li>
@@ -36,29 +36,29 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
-                    <h2>Contactez-nous</h2>
-                    <p>Pour toute demande d’information, n’hésitez pas à nous contacter via ce formulaire, nous vous répondrons dans les plus brefs délais :</p>
+                    <h2>{{ trans('lang.contact_us') }}</h2>
+                    <p>{{ trans('lang.contact_form_description') }}</p>
                     <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST">
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-12 col-md-4">
                                 <div class="row">
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Nom *</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id = "name" name = "name" placeholder="Nom">
+                                            <input type="text" id = "name" name = "name" placeholder="{{ trans('lang.name') }}">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Téléphone</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.telephone') }}</span></label>
                                         <div class="input_container">
-                                            <input type="number" id = "phone" name = "phone" placeholder="Phone">
+                                            <input type="number" id = "phone" name = "phone" placeholder="{{ trans('lang.telephone') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
-                                        <label class="form_el_label"><span>Courriel *</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id = "email" name = "email" placeholder="Courriel">
+                                            <input type="text" id = "email" name = "email" placeholder="{{ trans('lang.email') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -66,18 +66,18 @@
                                             <label>
                                                 <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
                                                 <span class="fake_checkbox"></span>
-                                                <span class="my_checkbox_text">Abonnez-vous à la newsletter</span>
+                                                <span class="my_checkbox_text">{{ trans('lang.sign_up_to_newsletter') }}</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-8">
-                                <label class="form_el_label"><span>Message *</span></label>
+                                <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
                                 <div class="input_container">
                                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                 </div>
-                                <button class="btn" type="submit">Envoyer</button>
+                                <button class="btn" type="submit">{{ trans('lang.send') }}</button>
                             </div>
                         </div>
                     </form>

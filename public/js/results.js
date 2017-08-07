@@ -138,7 +138,9 @@ function initResultsMap()  {
             infowindow.setContent(location.info);
             infowindow.open(map, marker);
             map.setCenter(marker.getPosition());
+            infowindow_objectsInit();
         });
+
 
         google.maps.event.addListener(map, "click", function () {
             infowindow.close(map, marker);
@@ -230,7 +232,6 @@ function initResultsMap()  {
         //    $(this).css({opacity: '1'});
         //});
     });
-
 }
 
 function listView_galleryInit() {
@@ -240,6 +241,21 @@ function listView_galleryInit() {
         lazyLoad: 'progressive',
         fade: true,
         speed: 100,
+        prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
+    });
+}
+
+function infowindow_objectsInit() {
+    console.log('test');
+    $('.infowindow_container').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        lazyLoad: 'progressive',
+        fade: false,
+        speed: 100,
+        dots: true,
+        swipe: true,
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
     });

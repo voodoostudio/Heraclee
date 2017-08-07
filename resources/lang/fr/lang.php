@@ -1,2 +1,76 @@
 <?php
-return [];
+
+return [
+
+//    HOMEPAGE
+    'see_property'          => 'Voir le bien',
+
+//    RESULTS PAGE
+    'results_per_page'      => 'résultats par page',
+    'all'                   => 'Tout',
+    'list'                  => 'Liste',
+    'grid'                  => 'Grille',
+    'map'                   => 'Carte',
+    'your_real_estate_search' => 'Votre recherche immobiliére',
+
+//    DETAILS PAGE
+    'virtual_tour'          => 'Visite virtuelle',
+    'back_to_gallery'       => 'Retour à la galerie',
+    'contact_agent_to_visit' => 'Contacter l\'agent pour visiter',
+    'name'                  => 'Nom',
+    'telephone'             => 'Téléphone',
+    'email'                 => 'Courriel',
+    'postal_code'           => 'Code postal',
+    'sign_up_to_newsletter' => 'Abonnez-vous à la newsletter',
+    'message'               => 'Message',
+    'send'                  => 'Envoyer',
+    'i_am_interested'       => 'Je suis intéressé',
+    'type'                  => 'Type',
+    'sub_type'              => 'Sous-type',
+    'condition'                 => 'État',
+    'style'                 => 'Style',
+    'floor'                 => 'Étage',
+    'landscape_view'        => 'Voir le paysage',
+    'construction_year'     => 'Année de construction',
+    'renovation_year'       => 'Année de rénovation',
+    'orientation'           => 'Orientation',
+    'heating_device'        => 'Dispositif de chauffage',
+    'heating_access'        => 'Accès au chauffage',
+    'heating_type'          => 'Type de chauffage',
+    'flooring'              => 'Sol',
+    'hot_water_access'      => 'Accès à l’eau chaude',
+    'hot_water_device'      => 'Dispositif d’eau chaude',
+    'water_waste'           => 'Gaspillage d\'eau',
+    'standing'              => 'Standing',
+    'surfaces'              => 'Surfaces',
+    'features'              => 'Prestations',
+    'equipments'            => 'Équipments',
+    'outdoor_spaces'        => 'Espaces extérieurs',
+    'security'              => 'Sécurité',
+    'sports_equipment'      => 'Équipments sportifs',
+    'banks'                 => 'Banques',
+    'bakeries'              => 'Boulangeries',
+    'cafes'                 => 'Cafés/Pubs',
+    'dentists'              => 'Dentistes',
+    'schools'               => 'Ecoles',
+    'hospitals'             => 'Hôpitaux',
+    'doctors'               => 'Médecins',
+    'parkings'              => 'Parkings',
+    'pharmacies'            => 'Pharmacies',
+    'police'                => 'Police',
+    'post_offices'          => 'Postes',
+    'restaurants'           => 'Restaurants',
+    'gas_stations'          => 'Stations service',
+    'universities'          => 'Universités',
+
+//    CONTACT PAGE
+    'france'                => 'France',
+    'contact_us'            => 'Contactez-nous',
+    'contact_form_description' => 'Pour toute demande d’information, n’hésitez pas à nous contacter via ce formulaire, nous vous répondrons dans les plus brefs délais :',
+
+//    FOOTER
+    'footer_title'          => 'Heraclee - Agence Immobilière Saint Tropez',
+    'footer_description'    => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut',
+    'subscribe_to_newsletter' => 'Inscrivez-vous à notre newsletter',
+    'copyright_text'        => 'Heraclee- Création et développement par voodoo studio',
+];

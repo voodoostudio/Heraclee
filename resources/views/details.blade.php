@@ -43,10 +43,10 @@
                 </div>
                 <div class="gradient_bottom"></div>
                 {{--<div class="panorama_link_container">--}}
-                    {{--<button>Visite virtuelle<i class="icn icon-arrow_right"></i></button>--}}
+                    {{--<button>{{ trans('lang.virtual_tour') }}<i class="icn icon-arrow_right"></i></button>--}}
                 {{--</div>--}}
                 <div id="object_panorama"></div>
-                <button class="close_panorama"><i class="icn icon-arrow_right"></i>Retour à la galerie</button>
+                <button class="close_panorama"><i class="icn icon-arrow_right"></i>{{ trans('lang.back_to_gallery') }}</button>
             </div>
             <div class="gallery_nav">
                 <div class="container-fluid">
@@ -133,7 +133,7 @@
                                     @endif
                                 </div>
                                 <div class="agent_info">
-                                    <p>Contact agent to visit</p>
+                                    <p>{{ trans('lang.contact_agent_to_visit') }}</p>
                                     <p class="agent_name">
                                         {{$property['user']['firstname']}} {{$property['user']['lastname']}}
                                     </p>
@@ -185,45 +185,45 @@
                                                 </div>
                                                 <form id = "contactForm" action="{{ route('contact.post.agent') }}"  method="POST">
                                                     {{ csrf_field() }}
-                                                    <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">
+                                                    <input type = "hidden" name="to" value="{{ $property['user']['email'] }}">
                                                     <div class="row">
                                                         <div class="col-md-6 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Nom *</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
                                                             <div class="input_container">
-                                                                <input type="text" name = "name" id = "name" placeholder="Nom">
+                                                                <input type="text" name="name" id="name" placeholder="{{ trans('lang.name') }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Phone</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.telephone')}}</span></label>
                                                             <div class="input_container">
-                                                                <input type="text" name = "phone" id="phone" placeholder="Phone">
+                                                                <input type="text" name="phone" id="phone" placeholder="{{ trans('lang.telephone') }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Couriel *</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.email')}} *</span></label>
                                                             <div class="input_container">
-                                                                <input type="text" id = "email" name = "email" placeholder="Courriel">
+                                                                <input type="text" id="email" name="email" placeholder="{{ trans('lang.email') }}">
                                                             </div>
                                                             <div class="my_checkbox margin_top_10">
                                                                 <label>
-                                                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                                                    <input required="" type="checkbox" name="subscribe" id="subscribe" value="true">
                                                                     <span class="fake_checkbox"></span>
-                                                                    <span class="my_checkbox_text">Abonnez-vous à la newsletter</span>
+                                                                    <span class="my_checkbox_text">{{ trans('lang.sign_up_to_newsletter') }}</span>
                                                                 </label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Code postal</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.postal_code') }}</span></label>
                                                             <div class="input_container">
-                                                                <input type="text" name = "post_code" id = "post_code" placeholder="Code postal">
+                                                                <input type="text" name = "post_code" id = "post_code" placeholder="{{ trans('lang.postal_code') }}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <label class="form_el_label"><span>Message *</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
                                                             <div class="input_container">
                                                                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                                             </div>
-                                                            <button class="btn" type="submit">Envoyer</button>
+                                                            <button class="btn" type="submit">{{ trans('lang.send') }}</button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -237,7 +237,7 @@
                             <div class="object_info">
                                 <p class="object_id">ID : {{$property['property_id']}}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
-                                <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">Je suis intéressé</button>
+                                <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">{{ trans('lang.i_am_interested') }}</button>
                             </div>
                         </div>
                     </div>
@@ -259,69 +259,69 @@
                         <h4>Informations</h4>
                         <ul class="object_info_list">
                             @if(!empty($property['type']))
-                                <li class="tooltip" title="Type : {{ $property['type'] }}"><span class="detail_name">Type</span><span class="detail_value">{{ $property['type'] }}</span></li>
+                                <li class="tooltip" title="Type : {{ $property['type'] }}"><span class="detail_name">{{ trans('lang.type') }}</span><span class="detail_value">{{ $property['type'] }}</span></li>
                             @endif
                             @if(!empty($property['subtype']))
-                                <li class="tooltip" title="Sous-type : {{ $property['subtype'] }}"><span class="detail_name">Sous-type</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
+                                <li class="tooltip" title="Sous-type : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
                             @endif
                             @if(!empty($property['condition']))
-                                <li class="tooltip" title="État : {{ $property['condition'] }}"><span class="detail_name">État</span><span class="detail_value">{{ $property['condition'] }}</span></li>
+                                <li class="tooltip" title="État : {{ $property['condition'] }}"><span class="detail_name">{{ trans('lang.condition') }}</span><span class="detail_value">{{ $property['condition'] }}</span></li>
                             @endif
                             @if(!empty($property['style']))
-                                <li class="tooltip" title="Style : {{ $property['style'] }}"><span class="detail_name">Style</span><span class="detail_value">{{ $property['style'] }}</span></li>
+                                <li class="tooltip" title="Style : {{ $property['style'] }}"><span class="detail_name">{{ trans('lang.style') }}</span><span class="detail_value">{{ $property['style'] }}</span></li>
                             @endif
                             @if(!empty($property['floor']['type']))
-                                <li class="tooltip" title="Étage : {{ $property['floor']['type'] }}"><span class="detail_name">Étage</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
+                                <li class="tooltip" title="Étage : {{ $property['floor']['type'] }}"><span class="detail_name">{{ trans('lang.floor') }}</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
                             @endif
                             @if(!empty($property['view']['landscape']))
-                                <li class="tooltip" title="Voir le paysage : {{ $property['view']['landscape'] }}"><span class="detail_name">Voir le paysage</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
+                                <li class="tooltip" title="Voir le paysage : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
                             @endif
                             @if(!empty($property['heating']['device']))
-                                <li class="tooltip" title="Type de chauffage : {{ $property['heating']['device'] }}"><span class="detail_name">Type de chauffage</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
+                                <li class="tooltip" title="Type de chauffage : {{ $property['heating']['device'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
                             @endif
                             @if(!empty($property['construction_year']))
-                                <li class="tooltip" title="Année de construction : {{ $property['construction_year'] }}"><span class="detail_name">Année de construction</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
+                                <li class="tooltip" title="Année de construction : {{ $property['construction_year'] }}"><span class="detail_name">{{ trans('lang.construction_year') }}</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
                             @endif
                             @if(!empty($property['renovation_year']))
-                                <li class="tooltip" title="Année de rénovation : {{ $property['renovation_year'] }}"><span class="detail_name">Année de rénovation</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
+                                <li class="tooltip" title="Année de rénovation : {{ $property['renovation_year'] }}"><span class="detail_name">{{ trans('lang.renovation_year') }}</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
                             @endif
                             @if(!empty($property['orientations']))
-                                <li class="tooltip" title="Orientation : {{ implode(" | ", $property['orientations']) }}"><span class="detail_name">Orientation</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
+                                <li class="tooltip" title="Orientation : {{ implode(" | ", $property['orientations']) }}"><span class="detail_name">{{ trans('lang.orientation') }}</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
                             @endif
                             @foreach($property['heating'] as $heating)
                                 @if(!empty($heating['device']))
-                                    <li class="tooltip" title="Dispositif de chauffage : {{ $heating['device'] }}"><span class="detail_name">Dispositif de chauffage</span><span class="detail_value">{{ $heating['device'] }}</span></li>
+                                    <li class="tooltip" title="Dispositif de chauffage : {{ $heating['device'] }}"><span class="detail_name">{{ trans('lang.heating_device') }}</span><span class="detail_value">{{ $heating['device'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['access']))
-                                    <li class="tooltip" title="Accès au chauffage : {{ $heating['access'] }}"><span class="detail_name">Accès au chauffage</span><span class="detail_value">{{ $heating['access'] }}</span></li>
+                                    <li class="tooltip" title="Accès au chauffage : {{ $heating['access'] }}"><span class="detail_name">{{ trans('lang.heating_access') }}</span><span class="detail_value">{{ $heating['access'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['type']))
-                                    <li class="tooltip" title="Type de chauffage : {{ $heating['type'] }}"><span class="detail_name">Type de chauffage</span><span class="detail_value">{{ $heating['type'] }}</span></li>
+                                    <li class="tooltip" title="Type de chauffage : {{ $heating['type'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $heating['type'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['areas'] as $area)
                                 @if(!empty($area['flooring']))
-                                    <li class="tooltip" title="Flooring : {{ $area['flooring'] }}"><span class="detail_name">Sol</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
+                                    <li class="tooltip" title="Flooring : {{ $area['flooring'] }}"><span class="detail_name">{{ trans('lang.flooring') }}</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['water'] as $water)
                                 @if(!empty($water['hot_access']))
-                                    <li class="tooltip" title="Accès à l’eau chaude : {{ $water['hot_access'] }}"><span class="detail_name">Accès à l’eau chaude</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
+                                    <li class="tooltip" title="Accès à l’eau chaude : {{ $water['hot_access'] }}"><span class="detail_name">{{ trans('lang.hot_water_access') }}</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
                                 @endif
                                 @if(!empty($water['hot_device']))
-                                    <li class="tooltip" title="Dispositif d’eau chaude : {{ $water['hot_device'] }}"><span class="detail_name">Dispositif d’eau chaude</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
+                                    <li class="tooltip" title="Dispositif d’eau chaude : {{ $water['hot_device'] }}"><span class="detail_name">{{ trans('lang.hot_water_device') }}</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
                                 @endif
                                 @if(!empty($water['waste']))
-                                    <li class="tooltip" title="Gaspillage d'eau : {{ $water['waste'] }}"><span class="detail_name">Gaspillage d'eau</span><span class="detail_value">{{ $water['waste'] }}</span></li>
+                                    <li class="tooltip" title="Gaspillage d'eau : {{ $water['waste'] }}"><span class="detail_name">{{ trans('lang.water_waste') }}</span><span class="detail_value">{{ $water['waste'] }}</span></li>
                                 @endif
                             @endforeach
                             @if(!empty($property['standing']))
-                                <li class="tooltip" title="Standing : {{ $property['standing'] }}"><span class="detail_name">Standing</span><span class="detail_value">{{ $property['standing'] }}</span></li>
+                                <li class="tooltip" title="Standing : {{ $property['standing'] }}"><span class="detail_name">{{ trans('lang.standing') }}</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
                         </ul>
 
                         @if(!empty($property['areas']))
-                            <h4>Surfaces</h4>
+                            <h4>{{ trans('lang.surfaces') }}</h4>
                             @if($area['area'] != null)
                                 <ul class="object_info_list main_info">
                                     @foreach($property['areas'] as $area)
@@ -339,8 +339,8 @@
                                 @endforeach
                             </ul>
                         @endif
-                        <h4>Prestations</h4>
-                        <h5>Équipments</h5>
+                        <h4>{{ trans('lang.features') }}</h4>
+                        <h5>{{ trans('lang.equipments') }}</h5>
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['1'])) || (!empty($property['services']['2'])) || (!empty($property['services']['4'])) ||
                                 (!empty($property['services']['6'])) || (!empty($property['services']['10'])) || (!empty($property['services']['17'])) ||
@@ -652,7 +652,7 @@
                                 -
                             @endif
                         </ul>
-                        <h5>Espaces extérieurs</h5>
+                        <h5>{{ trans('lang.outdoor_spaces') }}</h5>
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['11'])) || (!empty($property['services']['14'])) || (!empty($property['services']['15'])) ||
                                 (!empty($property['services']['16'])) || (!empty($property['services']['18'])) || (!empty($property['services']['29'])) ||
@@ -730,7 +730,7 @@
                                 -
                             @endif
                         </ul>
-                        <h5>Sécurité</h5>
+                        <h5>{{ trans('lang.security') }}</h5>
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['3'])) || (!empty($property['services']['5'])) || (!empty($property['services']['7'])) ||
                                 (!empty($property['services']['12'])) || (!empty($property['services']['19'])) || (!empty($property['services']['34'])) ||
@@ -814,7 +814,7 @@
                                 -
                             @endif
                         </ul>
-                        <h5>Équipments sportifs</h5>
+                        <h5>{{ trans('lang.sports_equipment') }}</h5>
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['13'])) || (!empty($property['services']['71'])))
                                 @foreach($services as $service)
@@ -849,85 +849,85 @@
                     <li class="map_banks">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_banks" value="bank" name="map_banks">
-                            <label for="map_banks" class="checkbox_label"><i class="icn icon-price"></i><span>Banques</span></label>
+                            <label for="map_banks" class="checkbox_label"><i class="icn icon-price"></i><span>{{ trans('lang.banks') }}</span></label>
                         </div>
                     </li>
                     <li class="map_bakeries">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_bakeries" value="bakery" name="map_bakeries">
-                            <label for="map_bakeries" class="checkbox_label"><i class="icn icon-bakery"></i><span>Boulangeries</span></label>
+                            <label for="map_bakeries" class="checkbox_label"><i class="icn icon-bakery"></i><span>{{ trans('lang.bakeries') }}</span></label>
                         </div>
                     </li>
                     <li class="map_cafes">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_cafes" value="bar" name="map_cafes">
-                            <label for="map_cafes" class="checkbox_label"><i class="icn icon-cafe"></i><span>Cafés/Pubs</span></label>
+                            <label for="map_cafes" class="checkbox_label"><i class="icn icon-cafe"></i><span>{{ trans('lang.cafes') }}</span></label>
                         </div>
                     </li>
                     <li class="map_dentists">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_dentists" value="dentist" name="map_dentists">
-                            <label for="map_dentists" class="checkbox_label"><i class="icn icon-dentist"></i><span>Dentistes</span></label>
+                            <label for="map_dentists" class="checkbox_label"><i class="icn icon-dentist"></i><span>{{ trans('lang.dentists') }}</span></label>
                         </div>
                     </li>
                     <li class="map_schools">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_schools" value="school" name="map_schools">
-                            <label for="map_schools" class="checkbox_label"><i class="icn icon-school"></i><span>Ecoles</span></label>
+                            <label for="map_schools" class="checkbox_label"><i class="icn icon-school"></i><span>{{ trans('lang.schools') }}</span></label>
                         </div>
                     </li>
                     <li class="map_hospitals">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_hospitals" value="hospital" name="map_hospitals">
-                            <label for="map_hospitals" class="checkbox_label"><i class="icn icon-hospital"></i><span>Hôpitaux</span></label>
+                            <label for="map_hospitals" class="checkbox_label"><i class="icn icon-hospital"></i><span>{{ trans('lang.hospitals') }}</span></label>
                         </div>
                     </li>
-                    <li class="map_dostors">
+                    <li class="map_doctors">
                         <div class="checkbox_container">
-                            <input type="checkbox" id="map_dostors" value="doctor" name="map_dostors">
-                            <label for="map_dostors" class="checkbox_label"><i class="icn icon-doctor"></i><span>Médecins</span></label>
+                            <input type="checkbox" id="map_doctors" value="doctor" name="map_doctors">
+                            <label for="map_doctors" class="checkbox_label"><i class="icn icon-doctor"></i><span>{{ trans('lang.doctors') }}</span></label>
                         </div>
                     </li>
                     <li class="map_parkings">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_parkings" value="parking" name="map_parkings">
-                            <label for="map_parkings" class="checkbox_label"><i class="icn icon-parking"></i><span>Parkings</span></label>
+                            <label for="map_parkings" class="checkbox_label"><i class="icn icon-parking"></i><span>{{ trans('lang.parkings') }}</span></label>
                         </div>
                     </li>
                     <li class="map_pharmacies">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_pharmacies" value="pharmacy" name="map_pharmacies">
-                            <label for="map_pharmacies" class="checkbox_label"><i class="icn icon-pharmacy"></i><span>Pharmacies</span></label>
+                            <label for="map_pharmacies" class="checkbox_label"><i class="icn icon-pharmacy"></i><span>{{ trans('lang.pharmacies') }}</span></label>
                         </div>
                     </li>
                     <li class="map_police">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_police" value="police" name="map_police">
-                            <label for="map_police" class="checkbox_label"><i class="icn icon-police"></i><span>Police</span></label>
+                            <label for="map_police" class="checkbox_label"><i class="icn icon-police"></i><span>{{ trans('lang.police') }}</span></label>
                         </div>
                     </li>
                     <li class="map_post_offices">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_post_offices" value="post_office" name="map_post_offices">
-                            <label for="map_post_offices" class="checkbox_label"><i class="icn icon-posts"></i><span>Postes</span></label>
+                            <label for="map_post_offices" class="checkbox_label"><i class="icn icon-posts"></i><span>{{ trans('lang.post_offices') }}</span></label>
                         </div>
                     </li>
                     <li class="map_restaurants">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_restaurants" value="restaurant" name="map_restaurants">
-                            <label for="map_restaurants" class="checkbox_label"><i class="icn icon-restaurant"></i><span>Restaurants</span></label>
+                            <label for="map_restaurants" class="checkbox_label"><i class="icn icon-restaurant"></i><span>{{ trans('lang.restaurants') }}</span></label>
                         </div>
                     </li>
                     <li class="map_gas_stations">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_gas_stations" value="gas_station" name="map_gas_stations">
-                            <label for="map_gas_stations" class="checkbox_label"><i class="icn icon-petrol"></i><span>Stations service</span></label>
+                            <label for="map_gas_stations" class="checkbox_label"><i class="icn icon-petrol"></i><span>{{ trans('lang.gas_stations') }}</span></label>
                         </div>
                     </li>
                     <li class="map_universities">
                         <div class="checkbox_container">
                             <input type="checkbox" id="map_universities" value="university" name="map_universities">
-                            <label for="map_universities" class="checkbox_label"><i class="icn icon-university"></i><span>Universités</span></label>
+                            <label for="map_universities" class="checkbox_label"><i class="icn icon-university"></i><span>{{ trans('lang.universities') }}</span></label>
                         </div>
                     </li>
                 </ul>

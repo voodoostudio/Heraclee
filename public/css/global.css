@@ -750,6 +750,7 @@ section.search_section {
   #results_map .gm-style-iw .object_img {
     width: 300px;
     max-height: 200px;
+    min-height: 150px;
     background-color: #272727; }
     #results_map .gm-style-iw .object_img img {
       max-width: 100%;

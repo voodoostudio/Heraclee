@@ -345,6 +345,7 @@ section.search_section {
     .object_img {
       width: 300px;
       max-height: 200px;
+      min-height: 150px;
       background-color: $main_dark_clr;
       img {
         max-width: 100%;
