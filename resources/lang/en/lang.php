@@ -1,8 +1,22 @@
 <?php
 return [
 
+//    GLOBAL
+    'homepage'              => 'Home',
+    'buy'                   => 'Buy',
+    'agency'                => 'Agency',
+    'contact'               => 'Contact',
+
 //    HOMEPAGE
     'see_property'          => 'See the property',
+    'rent'                  => 'Rent',
+    'sale'                  => 'Sale',
+    'property_type'         => 'Property type',
+    'town'                  => 'Town',
+    'enter_keyword'         => 'Enter a keyword',
+    'price'                 => 'Price',
+    'surface'               => 'Surface',
+    'bedrooms'              => 'Bedrooms',
 
 //    RESULTS PAGE
     'results_per_page'      => 'results per page',
@@ -11,6 +25,7 @@ return [
     'grid'                  => 'Grid',
     'map'                   => 'Map',
     'your_real_estate_search' => 'Your real estate search',
+    'contact_the_agent'     => 'Contact the agent',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',
