@@ -195,6 +195,11 @@ class Properties extends Model
                         ->where('value', 'like', '%' . $search_keywords . '%')
                         ->value('reference');
 
+                    //take reference in the subtype
+                    $subtype = DB::table('apimo_property_subtype')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
@@ -276,7 +281,14 @@ class Properties extends Model
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
                      * @param $conditions_search (condition)
-                     * @param $comments_search (comments)
+                     * @param $subtype_search (subtype)
+                     * @array $commentary (comments)
+                     * @array $heating_access_array (heating access)
+                     * @array $heating_device_array (heating device)
+                     * @array $heating_type_array (heating type)
+                     * @array $water_access_array (hot access water)
+                     * @array $water_device_array (hot device water)
+                     * @array $water_waste_array (waste water)
                      */
 
                     // arrays
@@ -293,7 +305,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
+                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
 
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -329,7 +341,7 @@ class Properties extends Model
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
                         ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -379,6 +391,11 @@ class Properties extends Model
                         ->where('value', 'like', '%' . $search_keywords . '%')
                         ->value('reference');
 
+                    //take reference in the subtype
+                    $subtype = DB::table('apimo_property_subtype')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
@@ -460,7 +477,14 @@ class Properties extends Model
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
                      * @param $conditions_search (condition)
-                     * @param $comments_search (comments)
+                     * @param $subtype_search (subtype)
+                     * @array $commentary (comments)
+                     * @array $heating_access_array (heating access)
+                     * @array $heating_device_array (heating device)
+                     * @array $heating_type_array (heating type)
+                     * @array $water_access_array (hot access water)
+                     * @array $water_device_array (hot device water)
+                     * @array $water_waste_array (waste water)
                      */
 
                     // arrays
@@ -477,7 +501,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
+                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
 
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -513,7 +537,7 @@ class Properties extends Model
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
                         ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
@@ -671,6 +695,11 @@ class Properties extends Model
                         ->where('value', 'like', '%' . $search_keywords . '%')
                         ->value('reference');
 
+                    //take reference in the subtype
+                    $subtype = DB::table('apimo_property_subtype')
+                        ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->value('reference');
+
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
@@ -752,7 +781,14 @@ class Properties extends Model
                      * @param $orientations_search (orientations)
                      * @param $conditions_search (condition)
                      * @param $conditions_search (condition)
-                     * @param $comments_search (comments)
+                     * @param $subtype_search (subtype)
+                     * @array $commentary (comments)
+                     * @array $heating_access_array (heating access)
+                     * @array $heating_device_array (heating device)
+                     * @array $heating_type_array (heating type)
+                     * @array $water_access_array (hot access water)
+                     * @array $water_device_array (hot device water)
+                     * @array $water_waste_array (waste water)
                      */
 
                     // arrays
@@ -769,7 +805,7 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
+                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
 
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
@@ -805,7 +841,7 @@ class Properties extends Model
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
                         ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
