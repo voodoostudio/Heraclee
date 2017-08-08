@@ -172,6 +172,7 @@ class Properties extends Model
         $properties = DB::table('apimo_properties')
             ->where($conditions_where)
             ->where(function($query) use ($search_keywords) {
+                $lang_short = LaravelLocalization::getCurrentLocale();
                 if($search_keywords != '') {
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
@@ -192,6 +193,7 @@ class Properties extends Model
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->where('language', $lang_short)
                         ->get();
 
                     /**
@@ -206,23 +208,23 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-
+                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
                     }
-                    $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $comments_search);
+                        ->orWhereIn('property_id', $commentary);
                 }
             })
             ->whereIn('type', $object_type)
@@ -237,6 +239,7 @@ class Properties extends Model
         $this->property_count = DB::table('apimo_properties')
             ->where($conditions_where)
             ->where(function($query) use ($search_keywords) {
+                $lang_short = LaravelLocalization::getCurrentLocale();
                 if($search_keywords != '') {
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
@@ -257,6 +260,7 @@ class Properties extends Model
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->where('language', $lang_short)
                         ->get();
 
                     /**
@@ -271,23 +275,23 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-
+                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
                     }
-                    $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $comments_search);
+                        ->orWhereIn('property_id', $commentary);
                 }
             })
             ->whereIn('type', $object_type)
@@ -410,6 +414,7 @@ class Properties extends Model
             ->whereIn('city', $object_place)
             ->where($conditions_where)
             ->where(function($query) use ($search_keywords) {
+                $lang_short = LaravelLocalization::getCurrentLocale();
                 if($search_keywords != '') {
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
@@ -430,6 +435,7 @@ class Properties extends Model
                     //take reference in the comments
                     $comments = DB::table('apimo_property_comments')
                         ->where('comment', 'like', '%' . $search_keywords . '%')
+                        ->where('language', $lang_short)
                         ->get();
 
                     /**
@@ -444,23 +450,23 @@ class Properties extends Model
                     $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
                     $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
                     $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-
+                    $areas_search = (!empty($areas)) ? $areas : $search_keywords;
                     $commentary = [];
                     foreach ($comments as $comment) {
                         $commentary[] = $comment['property_id'];
                     }
-                    $comments_search = (!empty($commentary)) ? $commentary : $search_keywords;
 
                     $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
                         ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
                         ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
                         ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('property_id', 'like', '%' . $search_keywords . '%')
+                        ->orWhere('areas', 'rlike',  '(^|,)' . $areas_search . '(,|$)' )
+                        ->orWhere('property_id', 'like',  $search_keywords )
                         ->orWhere('reference', 'like', '%' . $search_keywords . '%')
                         ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
                         ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $comments_search);
+                        ->orWhereIn('property_id', $commentary);
                 }
             })
             ->get();
