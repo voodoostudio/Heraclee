@@ -666,10 +666,21 @@ header {
 
 section.search_section {
   margin-top: 70px; }
-  section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
-    margin-top: 27px; }
-  section.search_section .outer_block_container .inner_block_container .input_container.search_input {
-    margin-top: 27px; }
+  section.search_section .outer_block_container .inner_block_container {
+    position: relative; }
+    section.search_section .outer_block_container .inner_block_container .reset_filters_btn {
+      display: table;
+      position: absolute;
+      cursor: pointer;
+      padding: 5px;
+      right: 15px;
+      top: 15px; }
+      section.search_section .outer_block_container .inner_block_container .reset_filters_btn i {
+        font-size: 20px; }
+    section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
+      margin-top: 27px; }
+    section.search_section .outer_block_container .inner_block_container .input_container.search_input {
+      margin-top: 27px; }
 
 .object_info_container .object_info {
   background-color: #272727;

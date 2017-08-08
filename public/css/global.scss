@@ -231,6 +231,18 @@ section.search_section {
   margin-top: 70px;
   .outer_block_container {
     .inner_block_container {
+      position: relative;
+      .reset_filters_btn {
+        display: table;
+        position: absolute;
+        cursor: pointer;
+        padding: 5px;
+        right: 15px;
+        top: 15px;
+        i {
+          font-size: 20px;
+        }
+      }
       ul.nav.nav-tabs {
         margin-top: 27px;
       }

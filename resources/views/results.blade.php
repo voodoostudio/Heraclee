@@ -120,38 +120,38 @@
                             '</div> ' +
                         '</div>'+
                     '</div>'+
-                    {{--'<div class="infowindow_block">'+--}}
-                        {{--'<div class="object_img">'+--}}
+                    '<div class="infowindow_block">'+
+                        '<div class="object_img">'+
 
-                                    {{--'<img src="https://s3-eu-west-1.amazonaws.com/apimo/pictures/estate/1776/1775694/1515759126593e6b3109ac19.04618175_941871a3da_1024.jpg" alt="">'+--}}
+                                    '<img src="https://s3-eu-west-1.amazonaws.com/apimo/pictures/estate/1776/1775694/1515759126593e6b3109ac19.04618175_941871a3da_1024.jpg" alt="">'+
 
-                        {{--'</div>'+--}}
-                        {{--'<div class="object_info_container">' +--}}
-                            {{--'<div class="object_info">' +--}}
-                                {{--'<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +--}}
-                                {{--'<div class="subtitle"> ' +--}}
-                                    {{--'<span class="city">'+'{{$property['city']}}'+'</span> ' +--}}
-                                    {{--'<span class="price">'+'{{ number_format($property['price'], 0, ' ', ' ') }}'+ '€</span> ' +--}}
-                                {{--'</div> ' +--}}
-                                {{--'<div class="properties_block"> ' +--}}
-                                    {{--'<ul class="properties"> ' +--}}
-                                    {{--'@if(!empty($property['area_surface']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$property['area_surface']}}'+' m</span><sup>2</sup> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['rooms']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$property['rooms']}}'+'</span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['bedrooms']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$property['bedrooms']}}'+'</span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['view']['type']))'+--}}
-                                    {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$property['view']['type']}}'+'</span> </span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'</ul> ' +--}}
-                                {{--'</div> ' +--}}
-                            {{--'</div> ' +--}}
-                        {{--'</div>'+--}}
-                    {{--'</div>'+--}}
+                        '</div>'+
+                        '<div class="object_info_container">' +
+                            '<div class="object_info">' +
+                                '<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +
+                                '<div class="subtitle"> ' +
+                                    '<span class="city">'+'{{$property['city']}}'+'</span> ' +
+                                    '<span class="price">'+'{{ number_format($property['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                                '</div> ' +
+                                '<div class="properties_block"> ' +
+                                    '<ul class="properties"> ' +
+                                    '@if(!empty($property['area_surface']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$property['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                                    '@endif'+
+                                    '@if(!empty($property['rooms']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$property['rooms']}}'+'</span> </li> ' +
+                                    '@endif'+
+                                    '@if(!empty($property['bedrooms']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$property['bedrooms']}}'+'</span> </li> ' +
+                                    '@endif'+
+                                    '@if(!empty($property['view']['type']))'+
+                                    '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$property['view']['type']}}'+'</span> </span> </li> ' +
+                                    '@endif'+
+                                    '</ul> ' +
+                                '</div> ' +
+                            '</div> ' +
+                        '</div>'+
+                    '</div>'+
                 '</div>'
             },
             @endforeach

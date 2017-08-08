@@ -25,4 +25,9 @@ $(document).ready(function() {
             $(this).closest('form').attr('action', '../locations/results');
         }
     });
+
+    $('.reset_filters_btn').on('click', function () {
+       // console.log('test');
+       $(this).parent().find('input').val('');
+    });
 });
