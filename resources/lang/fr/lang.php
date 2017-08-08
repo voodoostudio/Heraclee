@@ -2,8 +2,22 @@
 
 return [
 
+//    GLOBAL
+    'homepage'              => 'Accueil',
+    'buy'                   => 'Achat',
+    'agency'                => 'Agence',
+    'contact'               => 'Contact',
+
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',
+    'rent'                  => 'Location',
+    'sale'                  => 'Vente',
+    'property_type'         => 'Type de bien',
+    'town'                  => 'Commune',
+    'enter_keyword'         => 'Entrer un mot-clé',
+    'price'                 => 'Prix',
+    'surface'               => 'Surface',
+    'bedrooms'              => 'Chambres',
 
 //    RESULTS PAGE
     'results_per_page'      => 'résultats par page',
@@ -12,6 +26,7 @@ return [
     'grid'                  => 'Grille',
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobiliére',
+    'contact_the_agent'     => 'Contactez l\'agent',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
