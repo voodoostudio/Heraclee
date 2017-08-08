@@ -78,7 +78,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <p class="copyright">© <?php echo date("Y"); ?> - {{ trans('lang.copyright_text') }}</p>
+                    <p class="copyright">© {{ date("Y") }} - {{ trans('lang.copyright_text') }}</p>
                 </div>
             </div>
         </div>
