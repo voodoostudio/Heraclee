@@ -1,5 +1,5 @@
 <section class="search_section">
-    <form action="@if($search['sell_type'] == '3') ../locations/results @elseif($search['sell_type'] == '1') ../achat/results @endif" method="post">
+    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">

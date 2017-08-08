@@ -12,14 +12,19 @@
     <meta name="description" content="Heraclee website">
     <meta name="keywords" content="heraclee, website, responsive">
 
+    @php
+        $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
+        $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
+    @endphp
+
     <!-- SOCIAL SHARE -->
-    <meta property="og:title" content="{{ $property['comments']['title'] }}" />
-    <meta property="og:description" content="{{$property['comments']['comment']}}"/>
-    <meta property="og:type" content="{{$property['type']}}" />
+    <meta property="og:title" content="{{ $comment_title }}" />
+    <meta property="og:description" content="{{ $comment_description }}"/>
+    <meta property="og:type" content="{{ $property['type'] }}" />
     <meta property="og:url" content="{{ Request::fullUrl() }}" />
 
-    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ $property['comments']['title'] }}" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{$property['type']}}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ $comment_title }}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{ $property['type'] }}" />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ Request::fullUrl() }}" />
 
     @php
