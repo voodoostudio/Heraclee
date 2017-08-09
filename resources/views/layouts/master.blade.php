@@ -65,7 +65,9 @@
         <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
         <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
         <script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
+        @if(LaravelLocalization::getCurrentLocale() == 'fr')
+            <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
+        @endif
         <script type="text/javascript" src="/js/scripts.js"></script>
 
         <script>

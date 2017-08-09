@@ -36,7 +36,7 @@ class PagesController extends Controller
         if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
             Session::put('search.sell_type', $_POST['sell_type']);
         } elseif (!Session::has('search.sell_type')) {
-            Session::put('search.sell_type', 1);
+            Session::put('search.sell_type', 3);
         }
 
         if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {

@@ -111,7 +111,7 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
-        if($_SERVER['REQUEST_URI'] === '/'){
+        if(($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en')){
             $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
             if ($sell_type == 1) {
@@ -178,26 +178,31 @@ class Properties extends Model
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the orientations
                     $orientations = DB::table('apimo_property_orientations')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the standing
                     $standing = DB::table('apimo_property_standing')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the subtype
                     $subtype = DB::table('apimo_property_subtype')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the comments
@@ -374,26 +379,31 @@ class Properties extends Model
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the orientations
                     $orientations = DB::table('apimo_property_orientations')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the standing
                     $standing = DB::table('apimo_property_standing')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the subtype
                     $subtype = DB::table('apimo_property_subtype')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the comments
@@ -608,7 +618,7 @@ class Properties extends Model
         $array = [];
         $conditions_where = [];
 
-        if($_SERVER['REQUEST_URI'] === '/'){
+        if(($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en')){
             $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
             if ($sell_type == 1) {
@@ -678,26 +688,31 @@ class Properties extends Model
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the orientations
                     $orientations = DB::table('apimo_property_orientations')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the condition
                     $conditions = DB::table('apimo_property_condition')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the standing
                     $standing = DB::table('apimo_property_standing')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the subtype
                     $subtype = DB::table('apimo_property_subtype')
                         ->where('value', 'like', '%' . $search_keywords . '%')
+                        ->where('locale', $lang)
                         ->value('reference');
 
                     //take reference in the comments
