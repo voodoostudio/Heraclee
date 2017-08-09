@@ -235,12 +235,16 @@ section.search_section {
       .reset_filters_btn {
         display: table;
         position: absolute;
-        cursor: pointer;
         padding: 5px;
         right: 15px;
         top: 15px;
+        opacity: 0.5;
         i {
           font-size: 20px;
+        }
+        &.active {
+          cursor: pointer;
+          opacity: 1;
         }
       }
       ul.nav.nav-tabs {

@@ -6,6 +6,9 @@ return [
     'buy'                   => 'Buy',
     'agency'                => 'Agency',
     'contact'               => 'Contact',
+    'selected'              => 'selected',
+    'none_selected'         => 'None selected',
+    'all_selected'          => 'All selected',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',

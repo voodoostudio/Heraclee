@@ -7,6 +7,10 @@ return [
     'buy'                   => 'Achat',
     'agency'                => 'Agence',
     'contact'               => 'Contact',
+    'selected'              => 'sélectionné',
+    'none_selected'         => 'Aucune sélection',
+    'all_selected'          => 'Tous sélectionnés',
+
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',

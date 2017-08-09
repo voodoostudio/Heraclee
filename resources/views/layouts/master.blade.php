@@ -42,20 +42,31 @@
         <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+        <script type="text/javascript" src="/js/functions.js"></script>
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
                 selectAllValue: 'select-all-value',
-                selectAllText: 'Tout',
-                nonSelectedText: 'Aucune sélection',
-                nSelectedText: 'sélectionné',
-                allSelectedText: 'Tous sélectionnés'
+                selectAllText: '{{ trans('lang.all') }}',
+                nonSelectedText: '{{ trans('lang.none_selected') }}',
+                nSelectedText: '{{ trans('lang.selected') }}',
+                allSelectedText: '{{ trans('lang.all_selected') }}',
+                onSelectAll: function () {
+                    activateResetFiltser();
+                },
+                onDeselectAll: function () {
+                    activateResetFiltser();
+                },
+                onChange: function() {
+                    activateResetFiltser();
+                }
             });
         </script>
         <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
         <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
+        <script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         <script type="text/javascript" src="/js/scripts.js"></script>
-        <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 
         <script>
             window.fbAsyncInit = function() {

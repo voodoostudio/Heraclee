@@ -26,8 +26,20 @@ $(document).ready(function() {
         }
     });
 
+    activateResetFiltser();
+    $('.search_section .input_container input').keyup(function() {
+       activateResetFiltser();
+    });
+
     $('.reset_filters_btn').on('click', function () {
-       // console.log('test');
-       $(this).parent().find('input').val('');
+        if ($(this).hasClass('active')) {
+            $(this).parent().find('.input_container input').val('');
+            $(this).parent().find('select option:selected').each(function() {
+                $(this).prop('selected', false);
+            });
+            $(this).parent().find('select').multiselect('refresh');
+
+            $(this).removeClass('active');
+        }
     });
 });
