@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+{{--{{ dd($all_properties) }}--}}
+
 @section('title', 'Results page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/results.css">
@@ -10,24 +13,25 @@
 @section('content')
 
 
-    {{--@php
+    @php
+
         $all_property = [];
 
         foreach($all_properties as $property) {
             $key = $property['latitude']." ".$property['longitude'];
-
             if(!isset($all_property[$key])) $all_property[$key] = [];
             $all_property[$key][] = [
-                                        'property_id' => $property['property_id'],
-                                        'reference' => $property['reference'],
-                                        'price' => $property['price'],
-                                        'pictures' => $property['pictures'],
-                                        'latitude' =>  $property['latitude'],
-                                        'longitude' => $property['longitude'],
-                                        'type' => $property['type'],
-                                        'area_surface' => $property['area_surface'],
-                                        'rooms' => $property['rooms'],
-                                        'bedrooms' => $property['bedrooms'],
+                                        'property_id'   => $property['property_id'],
+                                        'reference'     => $property['reference'],
+                                        'price'         => $property['price'],
+                                        'pictures'      => $property['pictures'],
+                                        'latitude'      =>  $property['latitude'],
+                                        'longitude'     => $property['longitude'],
+                                        'type'          => $property['type'],
+                                        'area_surface'  => $property['area_surface'],
+                                        'rooms'         => $property['rooms'],
+                                        'bedrooms'      => $property['bedrooms'],
+                                        'city'          => $property['city'],
                                     ];
 
         }
@@ -37,25 +41,11 @@
             if(count($property) > 1 ) $unique_property[] = $property;
         }
 
-        dump($unique_property);
+        //dump($unique_property);
 
-        foreach($unique_property as $key => $unique) {
-        echo '===========================';
-            foreach($unique as $k => $value) {
-
-                echo '<div><p>Property ID:' .$value['property_id'] . '|' . $k . '</p>';
-
-               /* foreach($value['pictures'] as $pictures) {
-                    dump($pictures['url']);
-                }*/
-
-               echo '<p>Bedrooms:' . $value['bedrooms'] . '</p>------------------</div>';
-
-            }
-
-        }
     @endphp
---}}
+
+
     @include('includes.search_block')
 
     <section class="results_section">
@@ -116,93 +106,61 @@
             $lng_count = 0;
         @endphp
 
+    var locations = [
+        @foreach($unique_property as $unique)
 
-
-        var locations = [
-            @foreach ($all_properties as $property)
+            @foreach($unique as $k => $value)
             {
                 @php
                     $counter = 1;
                 @endphp
-
-                lat: {{ $property['latitude'] }},
-                lng: {{ $property['longitude'] }},
-{{--                lng: {{ $property['longitude'] + (('0.0000' . $lng_count++) * 5) }},--}}
-                info:
-                '<div class="infowindow_container">'+
-                    '<div class="infowindow_block">'+
-                        '<div class="object_img">'+
-                            @foreach($property['pictures'] as $picture)
-                                @if($counter == 1)
-                                    '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
-                                @endif
-                                @php
-                                    $counter++;
-                                @endphp
-                            @endforeach
-                        '</div>'+
-                        '<div class="object_info_container">' +
-                            '<div class="object_info">' +
-                                '<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +
-                                '<div class="subtitle"> ' +
-                                    '<span class="city">'+'{{$property['city']}}'+'</span> ' +
-                                    '<span class="price">'+'{{ number_format($property['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                lat: {{ $value['latitude'] }},
+                lng: {{ $value['longitude'] }},
+                info: '<div class="infowindow_container">'+
+                        '<div class="infowindow_block">'+
+                                '<div class="object_img">'+
+                                    @foreach($value['pictures'] as $picture)
+                                        @if($counter == 1)
+                                            '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                                        @endif
+                                        @php
+                                            $counter++;
+                                        @endphp
+                                    @endforeach
+                                '</div>'+
+                                '<div class="object_info_container">' +
+                                    '<div class="object_info">' +
+                                        '<a href="{{ route('details') }}?id={{$value['property_id']}}">'+'{{$value["type"]}}'+'</a>' +
+                                        '<div class="subtitle"> ' +
+                                            '<span class="city">'+'{{$value['city']}}'+'</span> ' +
+                                            '<span class="price">'+'{{ number_format($value['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                                        '</div> ' +
+                                    '<div class="properties_block"> ' +
+                                        '<ul class="properties"> ' +
+                                            '@if(!empty($value['area_surface']))'+
+                                            '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$value['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                                            '@endif'+
+                                            '@if(!empty($value['rooms']))'+
+                                            '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$value['rooms']}}'+'</span> </li> ' +
+                                            '@endif'+
+                                            '@if(!empty($value['bedrooms']))'+
+                                            '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$value['bedrooms']}}'+'</span> </li> ' +
+                                            '@endif'+
+                                            {{--'@if(!empty($value['view']['type']))'+--}}
+                                            {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +--}}
+                                            {{--'@endif'+--}}
+                                        '</ul> ' +
+                                    '</div> ' +
                                 '</div> ' +
-                                '<div class="properties_block"> ' +
-                                    '<ul class="properties"> ' +
-                                    '@if(!empty($property['area_surface']))'+
-                                    '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$property['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
-                                    '@endif'+
-                                    '@if(!empty($property['rooms']))'+
-                                    '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$property['rooms']}}'+'</span> </li> ' +
-                                    '@endif'+
-                                    '@if(!empty($property['bedrooms']))'+
-                                    '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$property['bedrooms']}}'+'</span> </li> ' +
-                                    '@endif'+
-                                    '@if(!empty($property['view']['type']))'+
-                                    '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$property['view']['type']}}'+'</span> </span> </li> ' +
-                                    '@endif'+
-                                    '</ul> ' +
-                                '</div> ' +
-                            '</div> ' +
-                        '</div>'+
-                    '</div>'+
-                    {{--'<div class="infowindow_block">'+--}}
-                        {{--'<div class="object_img">'+--}}
-
-                                    {{--'<img src="https://s3-eu-west-1.amazonaws.com/apimo/pictures/estate/1776/1775694/1515759126593e6b3109ac19.04618175_941871a3da_1024.jpg" alt="">'+--}}
-
-                        {{--'</div>'+--}}
-                        {{--'<div class="object_info_container">' +--}}
-                            {{--'<div class="object_info">' +--}}
-                                {{--'<a href="{{ route('details') }}?id={{$property['property_id']}}">'+'{{$property["type"]}}'+'</a>' +--}}
-                                {{--'<div class="subtitle"> ' +--}}
-                                    {{--'<span class="city">'+'{{$property['city']}}'+'</span> ' +--}}
-                                    {{--'<span class="price">'+'{{ number_format($property['price'], 0, ' ', ' ') }}'+ '€</span> ' +--}}
-                                {{--'</div> ' +--}}
-                                {{--'<div class="properties_block"> ' +--}}
-                                    {{--'<ul class="properties"> ' +--}}
-                                    {{--'@if(!empty($property['area_surface']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$property['area_surface']}}'+' m</span><sup>2</sup> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['rooms']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$property['rooms']}}'+'</span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['bedrooms']))'+--}}
-                                    {{--'<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$property['bedrooms']}}'+'</span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'@if(!empty($property['view']['type']))'+--}}
-                                    {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$property['view']['type']}}'+'</span> </span> </li> ' +--}}
-                                    {{--'@endif'+--}}
-                                    {{--'</ul> ' +--}}
-                                {{--'</div> ' +--}}
-                            {{--'</div> ' +--}}
-                        {{--'</div>'+--}}
-                    {{--'</div>'+--}}
-                '</div>'
-            },
+                            '</div>'+
+                        '</div>'
+                },
             @endforeach
-        ];
+
+        @endforeach
+
+];
+
     </script>
     <script type="text/javascript" src="/js/results.js"></script>
 
