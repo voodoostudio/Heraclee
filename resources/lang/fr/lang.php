@@ -123,5 +123,5 @@ return [
     'required'        => 'required',
     'your_name_must_consist_at_least_characters'        => 'Your name must consist at least 2 characters',
     'please_provide_valid_email_address'        => 'Please provide a valid email address',
-    'message_send'        => 'Message send',
+    'message_send'        => 'Message sent',
 ];

@@ -68,6 +68,9 @@
                     </div>
                 </div>
                 <div class="col-xs-12 offset-sm-6 col-sm-6 col-md-4 offset-md-0 col-lg-3 offset-lg-3 margin_bottom_10">
+                    <div class="refresh_results">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </div>
                     <select onchange="setItems()" id="sorting_type" type="submit" class="selectpicker"
                             name="sorting_type" title="">
                         <option value="10" @if($search['items'] == '10') selected @endif>10 {{ trans('lang.results_per_page') }}</option>

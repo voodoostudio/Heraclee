@@ -166,7 +166,7 @@
                             data: {email: email, _token: csrf},
                             cache: false,
                             success: function () {
-                                $('.message-send').append('<div class = \"success\" style = \"color: forestgreen; font-size: 0.75rem; position: absolute;\">Message send</div>').hide(3000);
+                                $('.message-send').append('<div class = \"success\" style = \"color: forestgreen; font-size: 0.75rem; position: absolute;\">{{ trans('lang.message_send') }}</div>').hide(3000);
                                 $('#newsletter_submit').attr('disabled', 'disabled');
                             }
                         });

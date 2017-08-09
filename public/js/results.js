@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $('.refresh_results').on('click', function () {
+        $('.search_section .search_input button[type="submit"]').trigger("click");
+    });
+
     $('.view_type li').on('click', function () {
         $(this).parent().find('li').removeClass('active');
         $(this).addClass('active');

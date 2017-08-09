@@ -669,17 +669,30 @@ section.search_section {
   section.search_section .outer_block_container .inner_block_container {
     position: relative; }
     section.search_section .outer_block_container .inner_block_container .reset_filters_btn {
-      display: table;
       position: absolute;
+      width: 32px;
+      height: 32px;
+      text-align: center;
       padding: 5px;
       right: 15px;
       top: 15px;
-      opacity: 0.5; }
+      opacity: 0.5;
+      -webkit-transition: 0.2s ease-in-out;
+      -moz-transition: 0.2s ease-in-out;
+      -o-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out; }
       section.search_section .outer_block_container .inner_block_container .reset_filters_btn i {
-        font-size: 20px; }
+        font-size: 20px;
+        line-height: 22px; }
       section.search_section .outer_block_container .inner_block_container .reset_filters_btn.active {
         cursor: pointer;
         opacity: 1; }
+        section.search_section .outer_block_container .inner_block_container .reset_filters_btn.active:hover {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg); }
     section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
       margin-top: 27px; }
     section.search_section .outer_block_container .inner_block_container .input_container.search_input {

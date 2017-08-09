@@ -233,18 +233,25 @@ section.search_section {
     .inner_block_container {
       position: relative;
       .reset_filters_btn {
-        display: table;
         position: absolute;
+        width: 32px;
+        height: 32px;
+        text-align: center;
         padding: 5px;
         right: 15px;
         top: 15px;
         opacity: 0.5;
+        @include my_transition(.2s ease-in-out);
         i {
           font-size: 20px;
+          line-height: 22px;
         }
         &.active {
           cursor: pointer;
           opacity: 1;
+          &:hover {
+            @include my_transform(rotate(90deg));
+          }
         }
       }
       ul.nav.nav-tabs {
