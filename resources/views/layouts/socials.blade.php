@@ -78,10 +78,10 @@
     $('select').multiselect({
         includeSelectAllOption: true,
         selectAllValue: 'select-all-value',
-        selectAllText: 'Tout',
-        nonSelectedText: 'Aucune sélection',
-        nSelectedText: 'sélectionné',
-        allSelectedText: 'Tous sélectionnés'
+        selectAllText: '{{ trans('lang.all') }}',
+        nonSelectedText: '{{ trans('lang.none_selected') }}',
+        nSelectedText: '{{ trans('lang.selected') }}',
+        allSelectedText: '{{ trans('lang.all_selected') }}'
     });
 </script>
 <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
@@ -105,14 +105,14 @@
                     required: true,
                     email: true
                 },
-                message: "required"
+                message: "{{ trans('lang.required') }}"
             },
             messages: {
                 name: {
-                    minlength: "Your name must consist at least 2 characters"
+                    minlength: "{{ trans('lang.your_name_must_consist_at_least_characters') }}"
                 },
                 email: {
-                    email: "Please provide a valid email address"
+                    email: "{{ trans('lang.please_provide_valid_email_address') }}"
                 }
             },
             submitHandler: function (form) {

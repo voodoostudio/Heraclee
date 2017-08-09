@@ -1,8 +1,8 @@
-<h3>You have a new contact Via the contact form</h3>
+<h3>{{ trans('lang.email_title') }}</h3>
 
 <div>
-    Message: {{ $bodyMessage }}
+    {{ trans('lang.message') }} : {{ $bodyMessage }}
 </div>
-<p>ZIP code: {{ $post_code }}</p>
-<p>Phone: {{ $phone }}</p>
-<p>Email: {{ $email }}</p>
+<p>{{ trans('lang.postal_code') }}: {{ $post_code }}</p>
+<p>{{ trans('lang.telephone') }} : {{ $phone }}</p>
+<p>{{ trans('lang.email') }} : {{ $email }}</p>

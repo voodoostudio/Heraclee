@@ -1,9 +1,9 @@
-<h3>You have a new contact Via the contact form</h3>
+<h3>{{ trans('lang.email_title') }}</h3>
 
 <div>
-    Message: {{ $bodyMessage }}
+    {{ trans('lang.message') }} : {{ $bodyMessage }}
 </div>
 
-<p>Phone: {{ $phone }}</p>
+<p>{{ trans('lang.telephone') }} : {{ $phone }}</p>
 
-<p>Sent via {{ $email }}</p>
+<p>{{ trans('lang.sent_via') }} {{ $email }}</p>

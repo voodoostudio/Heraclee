@@ -11,7 +11,6 @@ return [
     'none_selected'         => 'Aucune sélection',
     'all_selected'          => 'Tous sélectionnés',
 
-
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',
     'rent'                  => 'Location',
@@ -30,12 +29,12 @@ return [
     'grid'                  => 'Grille',
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobiliére',
-    'contact_the_agent'     => 'Contactez l\'agent',
+    'contact_the_agent'     => 'Contactez l’agent',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
     'back_to_gallery'       => 'Retour à la galerie',
-    'contact_agent_to_visit' => 'Contacter l\'agent pour visiter',
+    'contact_agent_to_visit' => 'Contacter l’agent pour visiter',
     'name'                  => 'Nom',
     'telephone'             => 'Téléphone',
     'email'                 => 'Courriel',
@@ -59,7 +58,7 @@ return [
     'flooring'              => 'Sol',
     'hot_water_access'      => 'Accès à l’eau chaude',
     'hot_water_device'      => 'Dispositif d’eau chaude',
-    'water_waste'           => 'Gaspillage d\'eau',
+    'water_waste'           => 'Gaspillage d’eau',
     'standing'              => 'Standing',
     'surfaces'              => 'Surfaces',
     'features'              => 'Prestations',
@@ -81,15 +80,48 @@ return [
     'restaurants'           => 'Restaurants',
     'gas_stations'          => 'Stations service',
     'universities'          => 'Universités',
+    'living_space'          => 'Surface habitable',
+    'number_of_pieces'          => 'Nombre de pièces',
+    'number_of_rooms'          => 'Nombre de chambres',
+    'number_of_bathrooms'          => 'Nombre de salles de bain',
+    'view'          => 'Vue',
+    'id'          => 'ID',
+    'informations'          => 'Informations',
 
 //    CONTACT PAGE
+    'contact_page_description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
     'france'                => 'France',
     'contact_us'            => 'Contactez-nous',
+    'phone'            => 'Tel',
     'contact_form_description' => 'Pour toute demande d’information, n’hésitez pas à nous contacter via ce formulaire, nous vous répondrons dans les plus brefs délais :',
+
+//    TEAM PAGE
+    'team_page_title'            => 'Notre èquipe',
+    'team_page_description'      => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.',
+    'send_me_message'            => 'M’envoyer un message',
 
 //    FOOTER
     'footer_title'          => 'Heraclee - Agence Immobilière Saint Tropez',
     'footer_description'    => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut',
     'subscribe_to_newsletter' => 'Inscrivez-vous à notre newsletter',
     'copyright_text'        => 'Heraclee- Création et développement par voodoo studio',
+    'footer_list_1'        => 'Immobilier de luxe saint-tropez',
+    'footer_list_2'        => 'Location saint-tropez',
+    'footer_list_3'        => 'Vente immobilier saint-tropez',
+    'footer_list_4'        => 'Luxury real estate  saint-tropez',
+    'footer_list_5'        => 'Villas prestige saint-tropez',
+    'footer_list_6'        => 'Immobilier saint-tropez',
+    'footer_list_7'        => 'Immobilier golfe de saint-tropez',
+    'footer_list_8'        => 'Villas à vendre saint-tropez',
+    'footer_list_9'        => 'Villas à louer saint-tropez',
+
+// EMAIL PAGE
+    'email_title'        => 'You have a new contact Via the contact form',
+    'sent_via'        => 'Sent via',
+
+// SOCIALS PAGE
+    'required'        => 'required',
+    'your_name_must_consist_at_least_characters'        => 'Your name must consist at least 2 characters',
+    'please_provide_valid_email_address'        => 'Please provide a valid email address',
+    'message_send'        => 'Message send',
 ];

@@ -5,47 +5,47 @@
             <div class="row">
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Immobilier de luxe saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_1') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Location saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_2') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Vente immobilier saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_3') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Luxury real estate  saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_4') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Villas prestige saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_5') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Immobilier saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_6') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Immobilier golfe de saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_7') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Villas à vendre saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_8') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>Villas à louer saint-tropez</li>
+                        <li>{{ trans('lang.footer_list_9') }}</li>
                     </ul>
                 </div>
             </div>

@@ -72,22 +72,22 @@
                 <div class="properties_container">
                     <ul class="properties">
                         @if(!empty($property['area_surface']))
-                            <li><span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span><span class="prop_val"><span>{{$property['area_surface']}}m<sup>2</sup></span></span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.living_space') }}"><i class="icn icon-area"></i></span><span class="prop_val"><span>{{$property['area_surface']}}m<sup>2</sup></span></span></li>
                         @endif
                         @if(!empty($property['rooms']))
-                            <li><span class="icn_container tooltip" title="Nombre de pièces"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.number_of_pieces') }}"><i class="icn icon-rooms"></i></span><span class="prop_val"><span>{{$property['rooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['bedrooms']))
-                            <li><span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span><span class="prop_val"><span>{{$property['bedrooms']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.number_of_rooms') }}"><i class="icn icon-bedroom"></i></span><span class="prop_val"><span>{{$property['bedrooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['bathrooms']))
-                            <li><span class="icn_container tooltip" title="Nombre de salles de bain"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.number_of_bathrooms') }}"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['view']['type']))
-                            <li><span class="icn_container tooltip" title="Vue"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
                         @endif
                         @if(!empty($property['floor']['type']))
-                            <li><span class="icn_container tooltip" title="Étage"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.floor') }}"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
                         @endif
                         @foreach($services as $service)
                             @if($service->reference == '1' && $service->locale == $lang)
@@ -160,7 +160,7 @@
                         </div>
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
-                                <p class="object_id">ID : {{$property['property_id']}}</p>
+                                <p class="object_id">{{ trans('lang.id') }} : {{$property['property_id']}}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
                                 <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">{{ trans('lang.i_am_interested') }}</button>
                             </div>
@@ -181,67 +181,67 @@
                         </p>
                     @endif
                     <div class="object_details_container">
-                        <h4>Informations</h4>
+                        <h4>{{ trans('lang.informations') }}</h4>
                         <ul class="object_info_list">
                             @if(!empty($property['type']))
-                                <li class="tooltip" title="Type : {{ $property['type'] }}"><span class="detail_name">{{ trans('lang.type') }}</span><span class="detail_value">{{ $property['type'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.type') }} : {{ $property['type'] }}"><span class="detail_name">{{ trans('lang.type') }}</span><span class="detail_value">{{ $property['type'] }}</span></li>
                             @endif
                             @if(!empty($property['subtype']))
-                                <li class="tooltip" title="Sous-type : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.sub_type') }} : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
                             @endif
                             @if(!empty($property['condition']))
-                                <li class="tooltip" title="État : {{ $property['condition'] }}"><span class="detail_name">{{ trans('lang.condition') }}</span><span class="detail_value">{{ $property['condition'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.condition') }} : {{ $property['condition'] }}"><span class="detail_name">{{ trans('lang.condition') }}</span><span class="detail_value">{{ $property['condition'] }}</span></li>
                             @endif
                             @if(!empty($property['style']))
-                                <li class="tooltip" title="Style : {{ $property['style'] }}"><span class="detail_name">{{ trans('lang.style') }}</span><span class="detail_value">{{ $property['style'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.style') }} : {{ $property['style'] }}"><span class="detail_name">{{ trans('lang.style') }}</span><span class="detail_value">{{ $property['style'] }}</span></li>
                             @endif
                             @if(!empty($property['floor']['type']))
-                                <li class="tooltip" title="Étage : {{ $property['floor']['type'] }}"><span class="detail_name">{{ trans('lang.floor') }}</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.floor') }} : {{ $property['floor']['type'] }}"><span class="detail_name">{{ trans('lang.floor') }}</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
                             @endif
                             @if(!empty($property['view']['landscape']))
-                                <li class="tooltip" title="Voir le paysage : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.landscape_view') }} : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
                             @endif
                             @if(!empty($property['heating']['device']))
-                                <li class="tooltip" title="Type de chauffage : {{ $property['heating']['device'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.heating_type') }} : {{ $property['heating']['device'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
                             @endif
                             @if(!empty($property['construction_year']))
-                                <li class="tooltip" title="Année de construction : {{ $property['construction_year'] }}"><span class="detail_name">{{ trans('lang.construction_year') }}</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.construction_year') }} : {{ $property['construction_year'] }}"><span class="detail_name">{{ trans('lang.construction_year') }}</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
                             @endif
                             @if(!empty($property['renovation_year']))
-                                <li class="tooltip" title="Année de rénovation : {{ $property['renovation_year'] }}"><span class="detail_name">{{ trans('lang.renovation_year') }}</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.renovation_year') }} : {{ $property['renovation_year'] }}"><span class="detail_name">{{ trans('lang.renovation_year') }}</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
                             @endif
                             @if(!empty($property['orientations']))
-                                <li class="tooltip" title="Orientation : {{ implode(" | ", $property['orientations']) }}"><span class="detail_name">{{ trans('lang.orientation') }}</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.orientation') }} : {{ implode(" | ", $property['orientations']) }}"><span class="detail_name">{{ trans('lang.orientation') }}</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
                             @endif
                             @foreach($property['heating'] as $heating)
                                 @if(!empty($heating['device']))
-                                    <li class="tooltip" title="Dispositif de chauffage : {{ $heating['device'] }}"><span class="detail_name">{{ trans('lang.heating_device') }}</span><span class="detail_value">{{ $heating['device'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.heating_device') }} : {{ $heating['device'] }}"><span class="detail_name">{{ trans('lang.heating_device') }}</span><span class="detail_value">{{ $heating['device'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['access']))
-                                    <li class="tooltip" title="Accès au chauffage : {{ $heating['access'] }}"><span class="detail_name">{{ trans('lang.heating_access') }}</span><span class="detail_value">{{ $heating['access'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.heating_access') }} : {{ $heating['access'] }}"><span class="detail_name">{{ trans('lang.heating_access') }}</span><span class="detail_value">{{ $heating['access'] }}</span></li>
                                 @endif
                                 @if(!empty($heating['type']))
-                                    <li class="tooltip" title="Type de chauffage : {{ $heating['type'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $heating['type'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.heating_type') }} : {{ $heating['type'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $heating['type'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['areas'] as $area)
                                 @if(!empty($area['flooring']))
-                                    <li class="tooltip" title="Flooring : {{ $area['flooring'] }}"><span class="detail_name">{{ trans('lang.flooring') }}</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.flooring') }} : {{ $area['flooring'] }}"><span class="detail_name">{{ trans('lang.flooring') }}</span><span class="detail_value">{{ $area['flooring'] }}</span></li>
                                 @endif
                             @endforeach
                             @foreach($property['water'] as $water)
                                 @if(!empty($water['hot_access']))
-                                    <li class="tooltip" title="Accès à l’eau chaude : {{ $water['hot_access'] }}"><span class="detail_name">{{ trans('lang.hot_water_access') }}</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.hot_water_access') }} : {{ $water['hot_access'] }}"><span class="detail_name">{{ trans('lang.hot_water_access') }}</span><span class="detail_value">{{ $water['hot_access'] }}</span></li>
                                 @endif
                                 @if(!empty($water['hot_device']))
-                                    <li class="tooltip" title="Dispositif d’eau chaude : {{ $water['hot_device'] }}"><span class="detail_name">{{ trans('lang.hot_water_device') }}</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.hot_water_device') }} : {{ $water['hot_device'] }}"><span class="detail_name">{{ trans('lang.hot_water_device') }}</span><span class="detail_value">{{ $water['hot_device'] }}</span></li>
                                 @endif
                                 @if(!empty($water['waste']))
-                                    <li class="tooltip" title="Gaspillage d'eau : {{ $water['waste'] }}"><span class="detail_name">{{ trans('lang.water_waste') }}</span><span class="detail_value">{{ $water['waste'] }}</span></li>
+                                    <li class="tooltip" title="{{ trans('lang.water_waste') }} : {{ $water['waste'] }}"><span class="detail_name">{{ trans('lang.water_waste') }}</span><span class="detail_value">{{ $water['waste'] }}</span></li>
                                 @endif
                             @endforeach
                             @if(!empty($property['standing']))
-                                <li class="tooltip" title="Standing : {{ $property['standing'] }}"><span class="detail_name">{{ trans('lang.standing') }}</span><span class="detail_value">{{ $property['standing'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.standing') }} : {{ $property['standing'] }}"><span class="detail_name">{{ trans('lang.standing') }}</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
                         </ul>
 

@@ -72,8 +72,7 @@
                             name="sorting_type" title="">
                         <option value="10" @if($search['items'] == '10') selected @endif>10 {{ trans('lang.results_per_page') }}</option>
                         <option value="50" @if($search['items'] == '50') selected @endif>50 {{ trans('lang.results_per_page') }}</option>
-                        <option value="100" @if($search['items'] == '100') selected @endif>100 {{ trans('lang.results_per_page') }}
-                        </option>
+                        <option value="100" @if($search['items'] == '100') selected @endif>100 {{ trans('lang.results_per_page') }}</option>
                         <option value="1000" @if($search['items'] == '1000') selected @endif>{{ trans('lang.all') }}</option>
                     </select>
                 </div>

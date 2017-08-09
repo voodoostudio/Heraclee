@@ -54,7 +54,7 @@
                         @if(!empty($property['area_surface']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Surface habitable"><i class="icn icon-area"></i></span>
+                                    <span class="icn_container tooltip" title="{{ trans('lang.living_space') }}"><i class="icn icon-area"></i></span>
                                     <span class="prop_val">{{$property['area_surface']}} m<sup>2</sup></span>
                                 </span>
                             </li>
@@ -62,7 +62,7 @@
                         @if(!empty($property['rooms']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Nombre de pièces"><i class="icn icon-rooms"></i></span>
+                                    <span class="icn_container tooltip" title="{{ trans('lang.number_of_pieces') }}"><i class="icn icon-rooms"></i></span>
                                     <span class="prop_val">{{$property['rooms']}}</span>
                                 </span>
                             </li>
@@ -70,7 +70,7 @@
                         @if(!empty($property['bedrooms']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Nombre de chambres"><i class="icn icon-bedroom"></i></span>
+                                    <span class="icn_container tooltip" title="{{ trans('lang.number_of_rooms') }}"><i class="icn icon-bedroom"></i></span>
                                     <span class="prop_val">{{$property['bedrooms']}}</span>
                                 </span>
                             </li>
@@ -78,7 +78,7 @@
                         @if(!empty($property['view']['type']))
                             <li>
                                 <span class="property_container">
-                                    <span class="icn_container tooltip" title="Vue"><i class="icn icon-window_view"></i></span>
+                                    <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span>
                                     <span class="prop_val">{{$property['view']['type']}}</span>
                                 </span>
                             </li>

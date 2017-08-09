@@ -101,14 +101,14 @@
                             required: true,
                             email: true
                         },
-                        message: "required"
+                        message: "{{ trans('lang.required') }}"
                     },
                     messages: {
                         name: {
-                            minlength: "Your name must consist at least 2 characters"
+                            minlength: "{{ trans('lang.your_name_must_consist_at_least_characters') }}"
                         },
                         email: {
-                            email: "Please provide a valid email address"
+                            email: "{{ trans('lang.please_provide_valid_email_address') }}"
                         }
                     },
                     submitHandler: function (form) {
@@ -129,7 +129,7 @@
                     },
 
                     email: {
-                        email: "Please provide a valid email address"
+                        email: "{{ trans('lang.please_provide_valid_email_address') }}"
                     },
 
                     submitHandler: function (form) {
