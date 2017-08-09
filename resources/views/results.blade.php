@@ -9,6 +9,53 @@
 
 @section('content')
 
+
+    {{--@php
+        $all_property = [];
+
+        foreach($all_properties as $property) {
+            $key = $property['latitude']." ".$property['longitude'];
+
+            if(!isset($all_property[$key])) $all_property[$key] = [];
+            $all_property[$key][] = [
+                                        'property_id' => $property['property_id'],
+                                        'reference' => $property['reference'],
+                                        'price' => $property['price'],
+                                        'pictures' => $property['pictures'],
+                                        'latitude' =>  $property['latitude'],
+                                        'longitude' => $property['longitude'],
+                                        'type' => $property['type'],
+                                        'area_surface' => $property['area_surface'],
+                                        'rooms' => $property['rooms'],
+                                        'bedrooms' => $property['bedrooms'],
+                                    ];
+
+        }
+
+        $unique_property = [];
+        foreach($all_property as $property) {
+            if(count($property) > 1 ) $unique_property[] = $property;
+        }
+
+        dump($unique_property);
+
+        foreach($unique_property as $key => $unique) {
+        echo '===========================';
+            foreach($unique as $k => $value) {
+
+                echo '<div><p>Property ID:' .$value['property_id'] . '|' . $k . '</p>';
+
+               /* foreach($value['pictures'] as $pictures) {
+                    dump($pictures['url']);
+                }*/
+
+               echo '<p>Bedrooms:' . $value['bedrooms'] . '</p>------------------</div>';
+
+            }
+
+        }
+    @endphp
+--}}
     @include('includes.search_block')
 
     <section class="results_section">

@@ -86,8 +86,12 @@
 </script>
 <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
 <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
+<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
+@if(LaravelLocalization::getCurrentLocale() == 'fr')
+    <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
+@endif
 <script type="text/javascript" src="/js/scripts.js"></script>
-<script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
 
 <script>
     jQuery(document).ready(function () {
