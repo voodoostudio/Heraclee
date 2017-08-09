@@ -47,9 +47,11 @@
                     </div>
                 </div>
                 <div class="gradient_bottom"></div>
-                {{--<div class="panorama_link_container">--}}
-                    {{--<button>{{ trans('lang.virtual_tour') }}<i class="icn icon-arrow_right"></i></button>--}}
-                {{--</div>--}}
+                @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
+                    <div class="panorama_link_container">
+                        <button>{{ trans('lang.virtual_tour') }}<i class="icn icon-arrow_right"></i></button>
+                    </div>
+                @endif
                 <div id="object_panorama"></div>
                 <button class="close_panorama"><i class="icn icon-arrow_right"></i>{{ trans('lang.back_to_gallery') }}</button>
             </div>
@@ -860,16 +862,17 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="/krpano/Barnes-sttropez.com_les_vanades.js"></script>
+    @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
+        <script type="text/javascript" src="/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.js"></script>
 
-    <script>
-        embedpano({
-            swf:"/krpano/Barnes-sttropez.com_les_vanades.swf",
-            xml:"/krpano/Barnes-sttropez.com_les_vanades.xml",
-            target:"object_panorama"
-        });
-    </script>
-
+        <script>
+            embedpano({
+                swf:"/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.swf",
+                xml:"/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.xml",
+                target:"object_panorama"
+            });
+        </script>
+    @endif
     <script>
         var object_lat = {{$property['latitude']}};
         var object_long = {{$property['longitude']}};
