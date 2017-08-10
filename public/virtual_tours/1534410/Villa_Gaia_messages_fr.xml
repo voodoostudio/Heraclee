@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="fr_project_title"><![CDATA[Villa Gaïa]]></data>
+
+
+
+  <data name="fr_pano20_title"><![CDATA[Extérieur]]></data>
+
+
+  <data name="fr_pano18_title"><![CDATA[Intérieur]]></data>
+
+
+
+
+
+
+  <data name="fr_controlBar_roundedprevSceneTip"><![CDATA[Panorama précédent]]></data>
+  <data name="fr_controlBar_roundednextSceneTip"><![CDATA[Panorama suivant]]></data>
+  <data name="fr_controlBar_roundedzoomInTip"><![CDATA[Zoom +]]></data>
+  <data name="fr_controlBar_roundedzoomOutTip"><![CDATA[Zoom -]]></data>
+  <data name="fr_controlBar_roundedmoveLeftTip"><![CDATA[Déplacement vers la gauche]]></data>
+  <data name="fr_controlBar_roundedmoveRightTip"><![CDATA[Déplacement vers la droite]]></data>
+  <data name="fr_controlBar_roundedmoveUpTip"><![CDATA[Déplacement vers le haut]]></data>
+  <data name="fr_controlBar_roundedmoveDownTip"><![CDATA[Déplacement vers le bas]]></data>
+  <data name="fr_controlBar_roundedopenFsTip"><![CDATA[Plein écran]]></data>
+  <data name="fr_controlBar_roundedcloseFsTip"><![CDATA[Quitter le plein écran]]></data>
+  <data name="fr_controlBar_roundedautorotateOnTip"><![CDATA[Démarrer l'Autorotation]]></data>
+  <data name="fr_controlBar_roundedautorotateOffTip"><![CDATA[Arrêter l'Autorotation]]></data>
+  <data name="fr_controlBar_roundeddisplayHelpTip"><![CDATA[Afficher l'écran d'aide]]></data>
+  <data name="fr_controlBar_roundedhideHelpTip"><![CDATA[Masquer l'écran d'aide]]></data>
+  <data name="fr_controlBar_roundeddisplayControlsTip"><![CDATA[Afficher les contrôles]]></data>
+  <data name="fr_controlBar_roundedhideControlsTip"><![CDATA[Masquer les contrôles]]></data>
+  <data name="fr_controlBar_roundedctrlmodeDragTip"><![CDATA[Changer le mode de navigation]]></data>
+  <data name="fr_controlBar_roundedctrlmodeMoveTip"><![CDATA[Changer le mode de navigation]]></data>
+  <data name="fr_socialShareclose_text"><![CDATA[Fermer]]></data>
+
+
+  <data name="fr_vr_setup_hmd0"><![CDATA[CHOIX DU HMD]]></data>
+  <data name="fr_vr_setup_advanced"><![CDATA[PARAMETRES AVANCES]]></data>
+  <data name="fr_vr_setup_title"><![CDATA[PARAMETRES WEB VR]]></data>
+  <data name="fr_vr_setup_dvn1"><![CDATA[Appareil:]]></data>
+  <data name="fr_vr_setup_siz1"><![CDATA[Taille de l&#39;écran:]]></data>
+  <data name="fr_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="fr_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="fr_vr_setup_hmd3"><![CDATA[Personnaliser]]></data>
+  <data name="fr_vr_setup_cal"><![CDATA[Calibrer le gyroscope]]></data>
+  <data name="fr_vr_setup_sav"><![CDATA[ENREGISTRER]]></data>
+  <data name="fr_vr_setup_rst"><![CDATA[REINITIALISER]]></data>
+  <data name="fr_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="fr_vr_setup_cls"><![CDATA[FERMER]]></data>
+  <data name="fr_vr_setup_m31"><![CDATA[PARAMETRES DU HMD]]></data>
+  <data name="fr_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="fr_vr_setup_dst1"><![CDATA[Distorsion:]]></data>
+  <data name="fr_vr_setup_d2tx"><![CDATA[Distorsion 2:]]></data>
+  <data name="fr_vr_setup_vig1"><![CDATA[Vignettage:]]></data>
+  <data name="fr_vr_setup_cac1"><![CDATA[Aberration chromatique:]]></data>
+  <data name="fr_vr_setup_olp1"><![CDATA[Recouvrement:]]></data>
+  <data name="fr_vr_setup_m35"><![CDATA[RETOUR]]></data>
+  <data name="fr_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="fr_vr_setup_cb2"><![CDATA[Placer l&#39;appareil sur une surface plane et stable[br]puis tapez sur CALIBRER[br]pour corriger la dérive du gyroscope.]]></data>
+  <data name="fr_vr_setup_cb3"><![CDATA[CALIBRER]]></data>
+  <data name="fr_vr_setup_cb4"><![CDATA[REINITIALISER]]></data>
+  <data name="fr_vr_setup_cb5"><![CDATA[RETOUR]]></data>
+  <data name="fr_vr_setup_cb6"><![CDATA[Calibration en cours...]]></data>
+  <data name="fr_vr_setup_cb7"><![CDATA[Calibration réussie]]></data>
+  <data name="fr_vr_setup_cb8"><![CDATA[Echec de la calibration]]></data>
+  <data name="fr_vr_setup_unavailable"><![CDATA[Le mode VR[br]n&#39;est pas disponible sur cet appareil]]></data>
+
+
+
+
+
+
+
+
+
+</krpano>
