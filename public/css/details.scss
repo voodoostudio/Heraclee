@@ -133,14 +133,6 @@ section.gallery_section {
           @include my_transform(rotate(180deg));
         }
       }
-      &.display_panorama {
-        #object_panorama {
-          display: block;
-        }
-        .close_panorama {
-          display: block;
-        }
-      }
     }
     .gallery_nav {
       .gallery_thumbnails.slick-slider {
@@ -181,6 +173,20 @@ section.gallery_section {
             }
           }
         }
+      }
+    }
+    &.display_panorama {
+      .gallery_view {
+        #object_panorama {
+          display: block;
+        }
+        .close_panorama {
+          display: block;
+        }
+      }
+      .gallery_nav {
+        opacity: 0.3;
+        pointer-events : none;
       }
     }
     >.container-fluid {
