@@ -4,6 +4,9 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
+                    <div class="reset_filters_btn">
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                    </div>
                     <div class="row">
                         <div class="col-12 col-lg-4">
                             <ul class="nav nav-tabs margin_bottom_10">

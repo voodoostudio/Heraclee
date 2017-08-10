@@ -31,6 +31,14 @@
 
         @include('includes.header')
 
+        {{--<div class="cssload-wrap">--}}
+            {{--<div class="cssload-circle"></div>--}}
+            {{--<div class="cssload-circle"></div>--}}
+            {{--<div class="cssload-circle"></div>--}}
+            {{--<div class="cssload-circle"></div>--}}
+            {{--<div class="cssload-circle"></div>--}}
+        {{--</div>--}}
+
         <main>
             @yield('content')
         </main>
