@@ -682,7 +682,7 @@ section.search_section {
       -o-transition: 0.2s ease-in-out;
       transition: 0.2s ease-in-out; }
       section.search_section .outer_block_container .inner_block_container .reset_filters_btn i {
-        font-size: 20px;
+        font-size: 26px;
         line-height: 22px; }
       section.search_section .outer_block_container .inner_block_container .reset_filters_btn.active {
         cursor: pointer;

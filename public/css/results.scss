@@ -93,27 +93,27 @@ section.results_section {
     }
   }
 
-  .refresh_results {
-    position: absolute;
-    text-align: center;
-    cursor: pointer;
-    z-index: 1;
-    width: 42px;
-    height: 42px;
-    @include my_transition(.2s ease-in-out);
-    i {
-      font-size: 32px;
-      line-height: 42px;
-    }
-    &:hover {
-      @include my_transform(rotate(90deg));
-    }
-  }
-  span.multiselect-native-select {
-    float: right;
-    width: 100%;
-    padding-left: 45px;
-  }
+  //.refresh_results {
+  //  position: absolute;
+  //  text-align: center;
+  //  cursor: pointer;
+  //  z-index: 1;
+  //  width: 42px;
+  //  height: 42px;
+  //  @include my_transition(.2s ease-in-out);
+  //  i {
+  //    font-size: 32px;
+  //    line-height: 42px;
+  //  }
+  //  &:hover {
+  //    @include my_transform(rotate(90deg));
+  //  }
+  //}
+  //span.multiselect-native-select {
+  //  float: right;
+  //  width: 100%;
+  //  padding-left: 45px;
+  //}
 
   #results_map {
     .infowindow_container {
