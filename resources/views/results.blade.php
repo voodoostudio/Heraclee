@@ -11,10 +11,7 @@
 @stop
 
 @section('content')
-
-
     @php
-
         $all_property = [];
 
         foreach($all_properties as $property) {
@@ -41,10 +38,7 @@
             if(count($property) > 1 ) $unique_property[] = $property;
         }
 
-        //dump($unique_property);
-
     @endphp
-
 
     @include('includes.search_block')
 
@@ -106,6 +100,7 @@
         @php
             $lat_count = 0;
             $lng_count = 0;
+            $all_prop = [];
         @endphp
 
     var locations = [
@@ -113,56 +108,59 @@
 
             @foreach($unique as $k => $value)
             {
-                @php
-                    $counter = 1;
-                @endphp
                 lat: {{ $value['latitude'] }},
                 lng: {{ $value['longitude'] }},
-                info: '<div class="infowindow_container">'+
-                        '<div class="infowindow_block">'+
-                                '<div class="object_img">'+
-                                    @foreach($value['pictures'] as $picture)
-                                        @if($counter == 1)
-                                            '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
-                                        @endif
-                                        @php
-                                            $counter++;
-                                        @endphp
-                                    @endforeach
-                                '</div>'+
-                                '<div class="object_info_container">' +
-                                    '<div class="object_info">' +
-                                        '<a href="{{ route('details') }}?id={{$value['property_id']}}">'+'{{$value["type"]}}'+'</a>' +
-                                        '<div class="subtitle"> ' +
-                                            '<span class="city">'+'{{$value['city']}}'+'</span> ' +
-                                            '<span class="price">'+'{{ number_format($value['price'], 0, ' ', ' ') }}'+ '€</span> ' +
-                                        '</div> ' +
-                                    '<div class="properties_block"> ' +
-                                        '<ul class="properties"> ' +
-                                            '@if(!empty($value['area_surface']))'+
-                                            '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$value['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
-                                            '@endif'+
-                                            '@if(!empty($value['rooms']))'+
-                                            '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$value['rooms']}}'+'</span> </li> ' +
-                                            '@endif'+
-                                            '@if(!empty($value['bedrooms']))'+
-                                            '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$value['bedrooms']}}'+'</span> </li> ' +
-                                            '@endif'+
-                                            {{--'@if(!empty($value['view']['type']))'+--}}
-                                            {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +--}}
-                                            {{--'@endif'+--}}
-                                        '</ul> ' +
-                                    '</div> ' +
+                info: '<div class="infowindow_container">' +
+
+                @foreach($unique as $k => $v)
+                    @php
+                        $counter = 1;
+                    @endphp
+                    '<div class="infowindow_block">'+
+                        '<div class="object_img">'+
+                            @foreach($v['pictures'] as $picture)
+                                @if($counter == 1)
+                                    '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                                @endif
+                                @php
+                                    $counter++;
+                                @endphp
+                            @endforeach
+                        '</div>'+
+                        '<div class="object_info_container">' +
+                            '<div class="object_info">' +
+                                '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
+                                '<div class="subtitle"> ' +
+                                    '<span class="city">'+'{{$v['city']}}'+'</span> ' +
+                                    '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
                                 '</div> ' +
-                            '</div>'+
-                        '</div>'
-                },
+                                '<div class="properties_block"> ' +
+                                    '<ul class="properties"> ' +
+                                        '@if(!empty($value['area_surface']))'+
+                                        '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                                        '@endif'+
+                                        '@if(!empty($value['rooms']))'+
+                                        '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
+                                        '@endif'+
+                                        '@if(!empty($value['bedrooms']))'+
+                                        '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
+                                        '@endif'+
+                                        {{--'@if(!empty($value['view']['type']))'+--}}
+                                        {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +--}}
+                                        {{--'@endif'+--}}
+                                    '</ul> ' +
+                                '</div> ' +
+                            '</div> ' +
+                        '</div>' +
+                    '</div>'+
+                @endforeach
+                '</div>'
+            },
             @endforeach
-
         @endforeach
+    ];
 
-];
-
+    console.log(locations);
     </script>
     <script type="text/javascript" src="/js/results.js"></script>
 
