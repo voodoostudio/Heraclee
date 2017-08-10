@@ -37,6 +37,14 @@
         foreach($all_property as $property) {
             if(count($property) > 1 ) $unique_property[] = $property;
         }
+
+    /*foreach($all_property as $key => $unique) {
+        $array = explode(" ", $key);
+        dump($array['0']);
+    }*/
+
+
+
     @endphp
 
     @include('includes.search_block')
@@ -103,12 +111,14 @@
         @endphp
 
     var locations = [
-        @foreach($all_property as $unique)
+        @foreach($all_property as $key => $unique)
 
-            @foreach($unique as $k => $value)
+                        @php $array = explode(" ", $key); @endphp
+
+            {{--@foreach($unique as $k => $value)--}}
             {
-                lat: {{ $value['latitude'] }},
-                lng: {{ $value['longitude'] }},
+                lat: {{ $array['0'] }},
+                lng: {{ $array['1'] }},
                 info: '<div class="infowindow_container">' +
 
                 @foreach($unique as $k => $v)
@@ -155,7 +165,7 @@
                 @endforeach
                 '</div>'
             },
-            @endforeach
+            {{--@endforeach--}}
         @endforeach
     ];
 
