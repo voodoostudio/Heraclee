@@ -207,13 +207,13 @@ function initResultsMap()  {
         iwBackground.children(':nth-child(4)').css({'display': 'none'});
 
         // Moves the infowindow 115px to the right.
-        iwOuter.parent().parent().css({left: '-10px'});
+        iwOuter.parent().parent().css({left: '-5px'});
 
         // Moves the shadow of the arrow 76px to the left margin.
-        //iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+        iwBackground.children(':nth-child(1)').attr('style', function(i,s){ return s + 'left: -5px !important;'});
 
         // Moves the arrow 76px to the left margin.
-        //iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: 76px !important;'});
+        iwBackground.children(':nth-child(3)').attr('style', function(i,s){ return s + 'left: -5px !important;'});
 
         // Changes the desired tail shadow color.
         iwBackground.children(':nth-child(3)').find('div').children().css({

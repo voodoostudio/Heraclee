@@ -31,12 +31,16 @@
 
         @include('includes.header')
 
-        {{--<div class="cssload-wrap">--}}
-            {{--<div class="cssload-circle"></div>--}}
-            {{--<div class="cssload-circle"></div>--}}
-            {{--<div class="cssload-circle"></div>--}}
-            {{--<div class="cssload-circle"></div>--}}
-            {{--<div class="cssload-circle"></div>--}}
+        {{--<div class="preloader_container">--}}
+            {{--<div class="preloader">--}}
+                {{--<div class="cssload-wrap">--}}
+                    {{--<div class="cssload-circle"></div>--}}
+                    {{--<div class="cssload-circle"></div>--}}
+                    {{--<div class="cssload-circle"></div>--}}
+                    {{--<div class="cssload-circle"></div>--}}
+                    {{--<div class="cssload-circle"></div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         {{--</div>--}}
 
         <main>

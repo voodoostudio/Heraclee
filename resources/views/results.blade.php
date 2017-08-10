@@ -110,7 +110,9 @@
                         '<div class="object_img">'+
                             @foreach($v['pictures'] as $picture)
                                 @if($counter == 1)
-                                    '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                                    '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+
+                                        '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                                    '</a>' +
                                 @endif
                                 @php
                                     $counter++;
