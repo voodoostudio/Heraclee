@@ -35,10 +35,6 @@
         foreach($all_property as $property) {
             if(count($property) > 1 ) $unique_property[] = $property;
         }
-    /*foreach($all_property as $key => $unique) {
-        $array = explode(" ", $key);
-        dump($array['0']);
-    }*/
     @endphp
 
     @include('includes.search_block')
@@ -97,11 +93,7 @@
 @section('javascript')
     <script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>
     <script>
-        @php
-            $lat_count = 0;
-            $lng_count = 0;
-            $all_prop = [];
-        @endphp
+
     var locations = [
         @foreach($all_property as $key => $unique)
                         @php $array = explode(" ", $key); @endphp
@@ -143,7 +135,7 @@
                                         '@if(!empty($v['bedrooms']))'+
                                         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
                                         '@endif'+
-                                        '@if(!empty($['view']['type']))'+
+                                        '@if(!empty($v['view']['type']))'+
                                         '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +
                                         '@endif'+
                                     '</ul> ' +
