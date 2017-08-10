@@ -13,7 +13,6 @@
 @section('content')
     @php
         $all_property = [];
-
         foreach($all_properties as $property) {
             $key = $property['latitude']." ".$property['longitude'];
             if(!isset($all_property[$key])) $all_property[$key] = [];
@@ -32,19 +31,14 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
-
         $unique_property = []; //todo maybe not need
         foreach($all_property as $property) {
             if(count($property) > 1 ) $unique_property[] = $property;
         }
-
     /*foreach($all_property as $key => $unique) {
         $array = explode(" ", $key);
         dump($array['0']);
     }*/
-
-
-
     @endphp
 
     @include('includes.search_block')
@@ -103,24 +97,19 @@
 @section('javascript')
     <script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>
     <script>
-
         @php
             $lat_count = 0;
             $lng_count = 0;
             $all_prop = [];
         @endphp
-
     var locations = [
         @foreach($all_property as $key => $unique)
-
                         @php $array = explode(" ", $key); @endphp
-
             {{--@foreach($unique as $k => $value)--}}
             {
                 lat: {{ $array['0'] }},
                 lng: {{ $array['1'] }},
                 info: '<div class="infowindow_container">' +
-
                 @foreach($unique as $k => $v)
                     @php
                         $counter = 1;
@@ -145,17 +134,17 @@
                                 '</div> ' +
                                 '<div class="properties_block"> ' +
                                     '<ul class="properties"> ' +
-                                        '@if(!empty($value['area_surface']))'+
+                                        '@if(!empty($v['area_surface']))'+
                                         '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
                                         '@endif'+
-                                        '@if(!empty($value['rooms']))'+
+                                        '@if(!empty($v['rooms']))'+
                                         '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
                                         '@endif'+
-                                        '@if(!empty($value['bedrooms']))'+
+                                        '@if(!empty($v['bedrooms']))'+
                                         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
                                         '@endif'+
-                                        '@if(!empty($value['view']['type']))'+
-                                        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +
+                                        '@if(!empty($['view']['type']))'+
+                                        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +
                                         '@endif'+
                                     '</ul> ' +
                                 '</div> ' +
@@ -168,7 +157,6 @@
             {{--@endforeach--}}
         @endforeach
     ];
-
     console.log(locations);
     </script>
     <script type="text/javascript" src="/js/results.js"></script>
