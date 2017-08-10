@@ -149,7 +149,7 @@
             {{--@endforeach--}}
         @endforeach
     ];
-    console.log(locations);
+    console.log( locations );
     </script>
     <script type="text/javascript" src="/js/results.js"></script>
 
