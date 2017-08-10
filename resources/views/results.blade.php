@@ -29,15 +29,14 @@
                                         'rooms'         => $property['rooms'],
                                         'bedrooms'      => $property['bedrooms'],
                                         'city'          => $property['city'],
+                                        'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
-
         }
 
         $unique_property = [];
         foreach($all_property as $property) {
             if(count($property) > 1 ) $unique_property[] = $property;
         }
-
     @endphp
 
     @include('includes.search_block')
@@ -145,9 +144,9 @@
                                         '@if(!empty($value['bedrooms']))'+
                                         '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
                                         '@endif'+
-                                        {{--'@if(!empty($value['view']['type']))'+--}}
-                                        {{--'<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +--}}
-                                        {{--'@endif'+--}}
+                                        '@if(!empty($value['view']['type']))'+
+                                        '<li> <span class="property_container"> <span class="icn_container" title="Dégagée Jardin Mer"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$value['view']['type']}}'+'</span> </span> </li> ' +
+                                        '@endif'+
                                     '</ul> ' +
                                 '</div> ' +
                             '</div> ' +
