@@ -1,7 +1,8 @@
 $(document).ready(function () {
-    $('.refresh_results').on('click', function () {
-        $('.search_section .search_input button[type="submit"]').trigger("click");
-    });
+    // $('.refresh_results').on('click', function () {
+    //     $('.search_section .search_input button[type="submit"]').trigger("click");
+    // });
+    activateResetFiltser();
 
     $('.view_type li').on('click', function () {
         $(this).parent().find('li').removeClass('active');
@@ -251,7 +252,6 @@ function listView_galleryInit() {
 }
 
 function infowindow_objectsInit() {
-    console.log('test');
     $('.infowindow_container').slick({
         slidesToShow: 1,
         slidesToScroll: 1,

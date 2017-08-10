@@ -26,7 +26,7 @@ $(document).ready(function() {
         }
     });
 
-    activateResetFiltser();
+
     $('.search_section .input_container input').keyup(function() {
        activateResetFiltser();
     });

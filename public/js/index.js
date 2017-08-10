@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    activateResetFiltser();
+
     $('.results_carousel').slick({
         infinite: true,
         lazyLoad: 'progressive',

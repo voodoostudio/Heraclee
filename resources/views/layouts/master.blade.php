@@ -183,8 +183,6 @@
                     }
                 });
             });
-
-
         </script>
 
         @yield('javascript')
