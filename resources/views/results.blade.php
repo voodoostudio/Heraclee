@@ -33,7 +33,7 @@
                                     ];
         }
 
-        $unique_property = [];
+        $unique_property = []; //todo maybe not need
         foreach($all_property as $property) {
             if(count($property) > 1 ) $unique_property[] = $property;
         }
@@ -103,7 +103,7 @@
         @endphp
 
     var locations = [
-        @foreach($unique_property as $unique)
+        @foreach($all_property as $unique)
 
             @foreach($unique as $k => $value)
             {
