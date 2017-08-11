@@ -817,12 +817,18 @@ section.results_section {
     section.results_section #results_map .gm-style-iw .infowindow_container {
       width: 300px; }
       section.results_section #results_map .gm-style-iw .infowindow_container .object_img {
+        position: relative;
         width: 300px;
-        max-height: 200px;
-        min-height: 150px;
+        height: 200px;
+        overflow: hidden;
         background-color: #272727; }
         section.results_section #results_map .gm-style-iw .infowindow_container .object_img img {
-          height: 200px;
+          position: absolute;
+          max-width: 100%;
+          min-height: 100%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           display: block;
           margin: 0 auto; }
       section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container {

@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
     $('.scroll_to_top a').click(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
@@ -42,4 +44,5 @@ $(document).ready(function() {
             $(this).removeClass('active');
         }
     });
+
 });

@@ -138,9 +138,9 @@ function initResultsMap()  {
 
         var markerIcon;
 
-        if (location['counter'] === '1') {
+        if (location['counter'] > '1') {
             markerIcon = {
-                url: '/img/map_pin.svg',
+                url: '/img/map_pin_multi.svg',
                 labelOrigin: new google.maps.Point(21, 21)
             };
         } else {
@@ -154,10 +154,10 @@ function initResultsMap()  {
             position: location,
             icon: markerIcon,
             label: {
-                text: (location['counter'] === '1') ? '' + location['counter'] + '' : ' ',
-                color: 'black',
-                fontSize: '16px',
-                fontWeight: 'bold'
+                text: (location['counter'] > '1') ? '' + location['counter'] + '' : ' ',
+                color: 'white',
+                fontSize: '14px',
+                fontWeight: '400'
             }
         });
 
