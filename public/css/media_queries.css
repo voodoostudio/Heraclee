@@ -184,6 +184,7 @@
     header .navigation_container nav {
       margin-top: 10px;
       margin-left: 0;
+      margin-right: -34px;
       display: none; }
       header .navigation_container nav ul.nav li.nav-item {
         display: table; }
