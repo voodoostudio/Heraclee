@@ -139,6 +139,13 @@ function initResultsMap()  {
             position: location,
             icon: '/img/map_pin.svg'
         });
+
+        if (location.hasOwnProperty("info")) {
+            marker.setVisible(true);
+        } else {
+            marker.setVisible(false);
+        }
+
         google.maps.event.addListener(marker, 'click', function () {
             infowindow.setContent(location.info);
             infowindow.open(map, marker);
@@ -146,14 +153,12 @@ function initResultsMap()  {
             infowindow_objectsInit();
         });
 
-
         google.maps.event.addListener(map, "click", function () {
             infowindow.close(map, marker);
         });
 
         return marker;
     });
-
 
     var mcOptions = {
         gridSize: 50,
