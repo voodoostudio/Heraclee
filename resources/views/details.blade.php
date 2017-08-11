@@ -16,6 +16,7 @@
         $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
     @endphp
 
+
     <section class="gallery_section">
         <div class="gallery_container">
             <ul class="social_networks_share">

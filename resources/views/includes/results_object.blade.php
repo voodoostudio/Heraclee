@@ -18,10 +18,16 @@
                 <ul class="gallery result_preview_gallery">
                     @if(!empty($property['pictures']))
                         @foreach($property['pictures'] as $picture)
-                            <li><img src="{{$picture['url']}}" alt=""></li>
+                            <li>
+                                <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                                    <img src="{{$picture['url']}}" alt="">
+                                </a>
+                            </li>
                         @endforeach
                     @else
-                        <li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>
+                        <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                            <li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>
+                        </a>
                     @endif
                 </ul>
             </div>
