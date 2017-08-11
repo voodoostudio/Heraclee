@@ -27,18 +27,16 @@
         <![endif]-->
     </head>
 
-    <body id="{{ !empty(Route::getCurrentRoute()) ? Route::getCurrentRoute()->getName() : '' }}">
+    <body id="{{ !empty(Route::getCurrentRoute()) ? Route::getCurrentRoute()->getName() : '' }}" class="preloader_active">
 
         @include('includes.header')
 
         <div class="preloader_container">
             <div class="preloader">
-                <div class="cssload-wrap">
-                    <div class="cssload-circle"></div>
-                    <div class="cssload-circle"></div>
-                    <div class="cssload-circle"></div>
-                    <div class="cssload-circle"></div>
-                    <div class="cssload-circle"></div>
+                <div class="cssload-loader">
+                    <div class="cssload-inner cssload-one"></div>
+                    <div class="cssload-inner cssload-two"></div>
+                    <div class="cssload-inner cssload-three"></div>
                 </div>
             </div>
         </div>
@@ -190,6 +188,11 @@
         </script>
 
         @yield('javascript')
-
+        <script>
+            $(window).on('load', function () {
+                $('body').removeClass('preloader_active');
+                $('.preloader_container').fadeOut();
+            });
+        </script>
     </body>
 </html>

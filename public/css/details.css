@@ -208,7 +208,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer; }
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-        content: "\e90f";
+        content: "\e910";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -216,7 +216,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: #625e57; }
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-        content: "\e90e";
+        content: "\e90f";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }

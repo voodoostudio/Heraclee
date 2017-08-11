@@ -199,7 +199,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer;
       &:before {
-        content: "\e90f";
+        content: "\e910";
         font-family: icomoon;
         color: $main_gray_clr;
         font-size: 20px;
@@ -209,7 +209,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: $main_gray_clr;
       &:before {
-        content: "\e90e";
+        content: "\e90f";
         font-family: icomoon;
         color: $main_gray_clr;
         font-size: 20px;
