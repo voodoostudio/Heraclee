@@ -2,6 +2,35 @@
 @import "variables";
 @import "forms";
 
+section.objects_nav_section {
+  padding: 15px 0;
+  a.nav_link {
+    padding: 5px 10px;
+    i {
+      font-size: 22px;
+    }
+    span {
+      position: relative;
+      top: -3px;
+    }
+    &.prev {
+      float: left;
+      i {
+        margin-right: 10px;
+      }
+    }
+    &.next {
+      float: right;
+      i {
+        margin-left: 10px;
+      }
+    }
+    &:hover {
+      color: $main_brown_clr;
+    }
+  }
+}
+
 section.gallery_section {
   .gallery_container {
     max-width: 1400px;

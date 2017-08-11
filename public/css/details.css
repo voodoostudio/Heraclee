@@ -469,6 +469,26 @@ ul.nav.nav-tabs {
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
   border-bottom-color: #ccac83; }
 
+section.objects_nav_section {
+  padding: 15px 0; }
+  section.objects_nav_section a.nav_link {
+    padding: 5px 10px; }
+    section.objects_nav_section a.nav_link i {
+      font-size: 22px; }
+    section.objects_nav_section a.nav_link span {
+      position: relative;
+      top: -3px; }
+    section.objects_nav_section a.nav_link.prev {
+      float: left; }
+      section.objects_nav_section a.nav_link.prev i {
+        margin-right: 10px; }
+    section.objects_nav_section a.nav_link.next {
+      float: right; }
+      section.objects_nav_section a.nav_link.next i {
+        margin-left: 10px; }
+    section.objects_nav_section a.nav_link:hover {
+      color: #ccac83; }
+
 section.gallery_section .gallery_container {
   max-width: 1400px;
   position: relative;
