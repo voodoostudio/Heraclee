@@ -298,7 +298,7 @@ ul.nav.nav-tabs {
               top: 0;
               display: block;
               font-family: 'icomoon' !important;
-              content: "\e90f";
+              content: "\e910";
               speak: none;
               font-style: normal;
               font-weight: normal;
@@ -311,7 +311,7 @@ ul.nav.nav-tabs {
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
         color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-          content: "\e90e"; }
+          content: "\e90f"; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
         border-bottom: 1px solid #625e57; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item a label {
@@ -522,6 +522,13 @@ section.results_section {
             text-transform: uppercase;
             z-index: 1;
             background: rgba(39, 39, 39, 0.5); }
+          section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .virtual_tour_label {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 10; }
+            section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .virtual_tour_label i {
+              font-size: 35px; }
           section.results_section .results_container .container-fluid .object_block_container .object_block .img_block img {
             display: block; }
         section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .title_container {

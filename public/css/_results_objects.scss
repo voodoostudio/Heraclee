@@ -19,6 +19,15 @@
             z-index: 1;
             background: rgba($main_dark_clr, 0.5);
           }
+          .virtual_tour_label {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 10;
+            i {
+              font-size: 35px;
+            }
+          }
           img {
             display: block;
           }

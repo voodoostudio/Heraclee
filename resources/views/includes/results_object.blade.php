@@ -9,6 +9,11 @@
             @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
                 <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
+            @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
+                <div class="virtual_tour_label">
+                    <i class="icn icon-360"></i>
+                </div>
+            @endif
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
                     @if(!empty($property['pictures']))
