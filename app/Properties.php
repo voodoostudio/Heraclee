@@ -1565,6 +1565,38 @@ class Properties extends Model
     }
 
     /**
+     * Returns a list of property_id (sale)
+     *
+     * @return array
+     */
+    public static function getPropertySaleId()
+    {
+        $property_id = DB::table('apimo_properties')
+            ->where('category', 1)
+            ->orWhere('category', 4)
+            ->orWhere('category', 5)
+            ->orWhere('category', 6)
+            ->pluck('property_id')
+            ->toArray();
+        return $property_id;
+    }
+
+    /**
+     * Returns a list of property_id (rent)
+     *
+     * @return array
+     */
+    public static function getPropertyRentId()
+    {
+        $property_id = DB::table('apimo_properties')
+            ->where('category', 2)
+            ->orWhere('category', 3)
+            ->pluck('property_id')
+            ->toArray();
+        return $property_id;
+    }
+
+    /**
      * Returns a list of cities with real estate
      *
      * @return array

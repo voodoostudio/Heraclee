@@ -324,8 +324,16 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
+
+            /* navigation */
+            $property_id = Properties::getPropertySaleId();
+            $current_index = array_search($id , $property_id);
+            $next = $current_index + 1;
+            $prev = $current_index - 1;
+
+            /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev]);
         } else {
             return redirect('results');
         }
@@ -336,8 +344,16 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
+
+            /* navigation */
+            $property_id = Properties::getPropertyRentId();
+            $current_index = array_search($id , $property_id);
+            $next = $current_index + 1;
+            $prev = $current_index - 1;
+
+            /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev]);
         } else {
             return redirect('results');
         }

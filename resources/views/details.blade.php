@@ -16,20 +16,24 @@
         $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
     @endphp
 
-    <section class="objects_nav_section" style="display: none">
+    <section class="objects_nav_section">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <a href="#" class="nav_link prev">
-                        <i class="icn icon-arrow_big_left"></i>
-                        <span>Previous property</span>
-                    </a>
+                    @if($prev > 0)
+                        <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
+                            <i class="icn icon-arrow_big_left"></i>
+                            <span>Previous property</span>
+                        </a>
+                    @endif
                 </div>
                 <div class="col-md-6">
-                    <a href="#" class="nav_link next">
-                        <span>Next property</span>
-                        <i class="icn icon-arrow_big_right"></i>
-                    </a>
+                    @if($next < count($property_id))
+                        <a href="?id={{ $property_id[$next] }} " class="nav_link next">
+                            <span>Next property</span>
+                            <i class="icn icon-arrow_big_right"></i>
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>
