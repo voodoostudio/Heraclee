@@ -19,13 +19,20 @@
             z-index: 1;
             background: rgba($main_dark_clr, 0.5);
           }
-          .virtual_tour_label {
+          .virtual_tour_label_container {
             position: absolute;
-            right: 10px;
-            top: 10px;
-            z-index: 10;
-            i {
-              font-size: 35px;
+            top: 0;
+            right: 0;
+            border-top: 90px solid $main_brown_clr;
+            border-left: 90px solid transparent;
+            .virtual_tour_label {
+              position: absolute;
+              right: 10px;
+              top: -80px;
+              z-index: 10;
+              i {
+                font-size: 35px;
+              }
             }
           }
           img {

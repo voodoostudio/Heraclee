@@ -10,8 +10,10 @@
                 <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
             @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
-                <div class="virtual_tour_label">
-                    <i class="icn icon-360"></i>
+                <div class="virtual_tour_label_container">
+                    <div class="virtual_tour_label">
+                        <i class="icn icon-360"></i>
+                    </div>
                 </div>
             @endif
             <div class="gallery_view">
