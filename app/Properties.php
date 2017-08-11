@@ -376,6 +376,7 @@ class Properties extends Model
                 $lang_short = LaravelLocalization::getCurrentLocale();
                 $lang = LaravelLocalization::getCurrentLocaleRegional();
                 if($search_keywords != '') {
+                    //dump(explode(" ", $search_keywords));
                     //take reference in the services
                     $services = DB::table('apimo_property_service')
                         ->where('value', 'like', '%' . $search_keywords . '%')

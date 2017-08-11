@@ -135,9 +135,20 @@ function initResultsMap()  {
     // create an array of markers based on a given "locations" array.
     // The map() method here has nothing to do with the Google Maps API.
     var markers = locations.map(function (location) {
+        var markerIcon = {
+            url: '/img/map_pin.svg',
+            labelOrigin: new google.maps.Point(45,5)
+        };
+
         var marker = new google.maps.Marker({
             position: location,
-            icon: '/img/map_pin.svg'
+            icon: markerIcon,
+            label: {
+                text: '' + location['counter'] + '',
+                color: "black",
+                fontSize: "16px",
+                fontWeight: "bold"
+            }
         });
 
         if (location.hasOwnProperty("info")) {
