@@ -23,14 +23,14 @@
                     @if($prev > 0)
                         <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
                             <i class="icn icon-arrow_big_left"></i>
-                            <span>Previous property</span>
+                            <span>Previous</span>
                         </a>
                     @endif
                 </div>
                 <div class="col-md-6">
                     @if($next < count($property_id))
                         <a href="?id={{ $property_id[$next] }} " class="nav_link next">
-                            <span>Next property</span>
+                            <span>Next</span>
                             <i class="icn icon-arrow_big_right"></i>
                         </a>
                     @endif

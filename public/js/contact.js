@@ -1,3 +1,3 @@
-$(document).ready(function() {
-    initContactMap();
+$(window).on('load', function () {
+    contactMapInit();
 });
