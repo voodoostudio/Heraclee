@@ -19,7 +19,7 @@
     <section class="objects_nav_section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-6">
                     @if($prev > 0)
                         <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
                             <i class="icn icon-arrow_big_left"></i>
@@ -27,7 +27,7 @@
                         </a>
                     @endif
                 </div>
-                <div class="col-md-6">
+                <div class="col-6">
                     @if($next < count($property_id))
                         <a href="?id={{ $property_id[$next] }} " class="nav_link next">
                             <span>{{ trans('lang.next') }}</span>
