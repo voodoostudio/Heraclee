@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6">
-                    @if($prev > 0)
+                    @if($prev > -1)
                         <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
                             <i class="icn icon-arrow_big_left"></i>
                             <span>{{ trans('lang.previous') }}</span>

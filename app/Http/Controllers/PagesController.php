@@ -66,6 +66,9 @@ class PagesController extends Controller
     public function results()
     {
         SyncWithApimo::update();
+
+
+
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
@@ -139,6 +142,16 @@ class PagesController extends Controller
             Session::put('search.bedrooms_max', '');
         }
 
+
+       /* $sss = 'bla';
+        if(!empty($sss)) {
+            session_start();
+            $_SESSION['favcolor'] = Session::get("search.search_keywords");
+        }*/
+
+        dump(Session::get("search.search_keywords"));
+
+
         $properties_obj = new Properties();
         $properties = $properties_obj->getProperties(
             Session::get("search.items"),
@@ -169,6 +182,7 @@ class PagesController extends Controller
         );
 
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
+
         $count_items = $properties_obj->property_count;
         return view(
             'results',
@@ -324,9 +338,19 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
+            $property_id = Properties::getPropertyId(
+                Session::get("search.sell_type"),
+                Session::get("search.object_type"),
+                Session::get("search.object_place"),
+                Session::get("search.search_keywords"),
+                Session::get("search.price_min"),
+                Session::get("search.price_max"),
+                Session::get("search.surface_min"),
+                Session::get("search.surface_max"),
+                Session::get("search.bedrooms_min"),
+                Session::get("search.bedrooms_max")
+            );
 
-            /* navigation */
-            $property_id = Properties::getPropertySaleId();
             $current_index = array_search($id , $property_id);
             $next = $current_index + 1;
             $prev = $current_index - 1;
@@ -344,9 +368,19 @@ class PagesController extends Controller
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
+            $property_id = Properties::getPropertyId(
+                Session::get("search.sell_type"),
+                Session::get("search.object_type"),
+                Session::get("search.object_place"),
+                Session::get("search.search_keywords"),
+                Session::get("search.price_min"),
+                Session::get("search.price_max"),
+                Session::get("search.surface_min"),
+                Session::get("search.surface_max"),
+                Session::get("search.bedrooms_min"),
+                Session::get("search.bedrooms_max")
+            );
 
-            /* navigation */
-            $property_id = Properties::getPropertyRentId();
             $current_index = array_search($id , $property_id);
             $next = $current_index + 1;
             $prev = $current_index - 1;

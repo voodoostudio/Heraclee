@@ -164,7 +164,7 @@
                 $('#newsletter_submit').one("click", function (e) {
                     e.preventDefault();
 
-                    var url = "newsletter";
+                    var url = "../newsletter";
                     var csrf = $('input[name=_token]').val();
                     var email = $('#newsletter').find('#email').val();
                     var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;

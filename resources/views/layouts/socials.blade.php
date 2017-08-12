@@ -122,6 +122,34 @@
     })
 </script>
 
+<script>
+    $(document).ready(function(){
+        $('#newsletter_submit').one("click", function (e) {
+            e.preventDefault();
+
+            var url = "../newsletter";
+            var csrf = $('input[name=_token]').val();
+            var email = $('#newsletter').find('#email').val();
+            var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+
+            if (pattern.test(email)) {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {email: email, _token: csrf},
+                    cache: false,
+                    success: function () {
+                        $('.message-send').append('<div class = \"success\" style = \"color: forestgreen; font-size: 0.75rem; position: absolute;\">{{ trans('lang.message_send') }}</div>').hide(3000);
+                        $('#newsletter_submit').attr('disabled', 'disabled');
+                    }
+                });
+            } else {
+                $('#newsletter_submit').removeAttr('disabled', 'disabled');
+            }
+        });
+    });
+</script>
+
 @yield('javascript')
 
 </body>

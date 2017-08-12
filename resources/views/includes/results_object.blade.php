@@ -9,6 +9,7 @@
             @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
                 <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
+
             @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
                 <div class="virtual_tour_label_container">
                     <div class="virtual_tour_label">
@@ -16,18 +17,25 @@
                     </div>
                 </div>
             @endif
+
+            @php
+                $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] : route('locationsDetails') . '?id=' . $property['property_id'];
+                $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
+                $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
+            @endphp
+
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
                     @if(!empty($property['pictures']))
                         @foreach($property['pictures'] as $picture)
                             <li>
-                                <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                                <a href="{{ $link }}">
                                     <img src="{{$picture['url']}}" alt="">
                                 </a>
                             </li>
                         @endforeach
                     @else
-                        <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                        <a href="{{ $link }}">
                             <li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>
                         </a>
                     @endif
@@ -35,21 +43,16 @@
             </div>
         </div>
 
-        @php
-            $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
-            $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
-        @endphp
-
         <div class="info_block_container">
             <div class="info_block">
                 <div class="title_container">
-                    <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif">
+                    <a href="{{ $link }}">
                         <h2>{{$property['type']}}</h2>
                     </a>
                     <ul class="social_networks_share">
-                        <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{ $comment_title }}+@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif"><i class="icn icon-twitter"></i></a></li>
-                        <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url=@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}}@elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)){{ route('locationsDetails') }}?id={{$property['property_id']}}@endif&title={{ $comment_title }}&summary={{ $comment_description }}"><i class="icn icon-linked_in"></i></a></li>
-                        <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/share.php?u=@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif"><i class="icn icon-facebook"></i></a></li>
+                        <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{ $comment_title }}+{{ $link }}"><i class="icn icon-twitter"></i></a></li>
+                        <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.linkedin.com/shareArticle?mini=true&url={{ $link }}&title={{ $comment_title }}&summary={{ $comment_description }}"><i class="icn icon-linked_in"></i></a></li>
+                        <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://www.facebook.com/share.php?u={{ $link }}"><i class="icn icon-facebook"></i></a></li>
                     </ul>
                 </div>
                 <div class="description_container">

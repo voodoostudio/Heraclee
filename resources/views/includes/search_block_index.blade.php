@@ -11,10 +11,10 @@
                         <div class="col-12 col-lg-4">
                             <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(1)" >{{ trans('lang.rent') }}</a>
+                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(3)" >{{ trans('lang.rent') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '1') active @endif" href="#" onclick="setSellType(3)" >{{ trans('lang.sale') }}</a>
+                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '1') active @endif" href="#" onclick="setSellType(1)" >{{ trans('lang.sale') }}</a>
                                 </li>
                             </ul>
                             <input type="hidden" id="sell_type_val" name="sell_type" value="{{$search['sell_type']}}">
