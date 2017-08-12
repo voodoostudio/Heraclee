@@ -1581,7 +1581,6 @@ class Properties extends Model
         $bedrooms_min = '',
         $bedrooms_max = ''
     )
-
     {
         if ($sell_type == 1) {
             $sell_type_array = [1, 4, 5, 6];

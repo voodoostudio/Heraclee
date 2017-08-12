@@ -30,7 +30,7 @@
                         @foreach($property['pictures'] as $picture)
                             <li>
                                 <a href="{{ $link }}">
-                                    <img src="{{$picture['url']}}" alt="">
+                                    <img src="{{ $picture['url'] }}" alt="">
                                 </a>
                             </li>
                         @endforeach

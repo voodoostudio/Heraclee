@@ -87,7 +87,7 @@
                         <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} max</span></label>
                             <div class="input_container">
-                                <input type="number" name="bedrooms_max" value="{{$search['bedrooms_max']}}" placeholder="Max">
+                                <input type="number" name="bedrooms_max" value="{{ $search['bedrooms_max'] }}" placeholder="Max">
                             </div>
                         </div>
                     </div>

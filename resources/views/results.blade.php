@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="results_container {{$view_type}} @if($view_type == 'list_view') hidden-sm-down  @endif">
+        <div class="results_container {{ $view_type }} @if($view_type == 'list_view') hidden-sm-down  @endif">
             <div id="results_map"></div>
             <div class="container-fluid">
                 <div class="results_carousel row">

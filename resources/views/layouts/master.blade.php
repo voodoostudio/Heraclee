@@ -75,7 +75,7 @@
         <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
         <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
         <script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
-        @if(LaravelLocalization::getCurrentLocale() == 'fr')
+        @if( LaravelLocalization::getCurrentLocale() == 'fr' )
             <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         @endif
         <script type="text/javascript" src="/js/scripts.js"></script>
@@ -189,7 +189,7 @@
 
         @yield('javascript')
         <script>
-            $(window).on('load', function () {
+            $(window).on('load', function() {
                 $('body').removeClass('preloader_active');
                 $('.preloader_container').fadeOut();
             });

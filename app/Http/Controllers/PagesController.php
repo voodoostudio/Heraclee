@@ -142,16 +142,6 @@ class PagesController extends Controller
             Session::put('search.bedrooms_max', '');
         }
 
-
-       /* $sss = 'bla';
-        if(!empty($sss)) {
-            session_start();
-            $_SESSION['favcolor'] = Session::get("search.search_keywords");
-        }*/
-
-        dump(Session::get("search.search_keywords"));
-
-
         $properties_obj = new Properties();
         $properties = $properties_obj->getProperties(
             Session::get("search.items"),

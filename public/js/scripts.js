@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-
     $('.scroll_to_top a').click(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
@@ -14,8 +12,6 @@ $(document).ready(function() {
         theme: 'tooltipster-punk',
         side: 'top'
     });
-
-
 
     $('header .menu-icon').on('click', function () {
         $('header').toggleClass('opened');
@@ -31,7 +27,6 @@ $(document).ready(function() {
             $(this).closest('form').attr('action', '../locations/results');
         }
     });
-
 
     $('.search_section .input_container input').keyup(function() {
        activateResetFiltser();
