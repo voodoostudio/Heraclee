@@ -19,13 +19,18 @@ use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
-
     public function index()
     {
         Session::forget('search');
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
 
         if (isset($_GET['items'])) {
             Session::put('search.items', $_GET['items']);
@@ -60,15 +65,12 @@ class PagesController extends Controller
             Session::get("search.object_place")
         );
 
-        return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties,  'search' => Session::get('search')]);
+        return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
     }
 
     public function results()
     {
         SyncWithApimo::update();
-
-
-
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);

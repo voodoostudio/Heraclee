@@ -27,13 +27,31 @@
             <div class="gallery_view">
                 <ul class="gallery result_preview_gallery">
                     @if(!empty($property['pictures']))
-                        @foreach($property['pictures'] as $picture)
-                            <li>
-                                <a href="{{ $link }}">
-                                    <img src="{{ $picture['url'] }}" alt="">
-                                </a>
-                            </li>
-                        @endforeach
+                        @if($view_type == 'grid_view')
+                            @php
+                                $counter = 1;
+                            @endphp
+                            @foreach($property['pictures'] as $picture)
+                                @if($counter == 1)
+                                    <li>
+                                        <a href="{{ $link }}">
+                                            <img src="{{ $picture['url'] }}" alt="">
+                                        </a>
+                                    </li>
+                                @endif
+                                @php
+                                    $counter++;
+                                @endphp
+                            @endforeach
+                        @else
+                            @foreach($property['pictures'] as $picture)
+                                <li>
+                                    <a href="{{ $link }}">
+                                        <img src="{{ $picture['url'] }}" alt="">
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
                     @else
                         <a href="{{ $link }}">
                             <li class="no_image"><img src="/img/no_photo_570.svg" alt=""></li>
