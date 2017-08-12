@@ -10,6 +10,8 @@ return [
     'selected'              => 'sélectionné',
     'none_selected'         => 'Aucune sélection',
     'all_selected'          => 'Tous sélectionnés',
+    'previous'              => 'Précédent',
+    'next'                  => 'Suivant',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',
@@ -34,6 +36,7 @@ return [
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
     'back_to_gallery'       => 'Retour à la galerie',
+    'show_image_on_fullscreen' => 'Afficher l\'image en plein écran',
     'contact_agent_to_visit' => 'Contacter l’agent pour visiter',
     'name'                  => 'Nom',
     'telephone'             => 'Téléphone',

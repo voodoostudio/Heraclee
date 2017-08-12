@@ -10,8 +10,12 @@ $(document).ready(function() {
     $('.tooltip').tooltipster({
         animation: 'fade',
         delay: 100,
-        theme: 'tooltipster-punk'
+        repositionOnScroll: true,
+        theme: 'tooltipster-punk',
+        side: 'top'
     });
+
+
 
     $('header .menu-icon').on('click', function () {
         $('header').toggleClass('opened');

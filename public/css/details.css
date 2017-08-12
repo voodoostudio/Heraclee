@@ -90,10 +90,13 @@ textarea {
 input {
   height: 42px; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
 
 textarea {
   height: 150px;
@@ -130,7 +133,7 @@ a:focus {
     height: 40px;
     width: 40px;
     border: none;
-    padding: 12px;
+    padding: 10px;
     background-color: #625e57;
     color: #fdfdfd;
     cursor: pointer; }
@@ -521,8 +524,10 @@ section.gallery_section .gallery_container {
         height: 100%; }
     section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
       position: absolute;
-      left: 50px;
-      top: 50px;
+      left: 25px;
+      top: 25px;
+      line-height: 1;
+      opacity: 1;
       font-size: 32px; }
     section.gallery_section .gallery_container .gallery_view .object_title {
       position: absolute;

@@ -90,10 +90,13 @@ textarea {
 input {
   height: 42px; }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield; }
 
 textarea {
   height: 150px;
@@ -130,7 +133,7 @@ a:focus {
     height: 40px;
     width: 40px;
     border: none;
-    padding: 12px;
+    padding: 10px;
     background-color: #625e57;
     color: #fdfdfd;
     cursor: pointer; }

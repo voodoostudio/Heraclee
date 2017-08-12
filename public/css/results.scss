@@ -72,7 +72,7 @@ section.results_section {
             color: $main_brown_clr;
             background-color: transparent;
             border: none;
-            font-size: 20px;
+            font-size: 22px;
             text-decoration: none;
           }
           &[aria-label="Previous"],
@@ -80,6 +80,9 @@ section.results_section {
             font-size: 8px;
             line-height: 42px;
             color: $main_divider_clr;
+            &:hover {
+              font-size: 10px;
+            }
           }
         }
         &.active {

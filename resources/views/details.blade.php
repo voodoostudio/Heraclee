@@ -23,14 +23,14 @@
                     @if($prev > 0)
                         <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
                             <i class="icn icon-arrow_big_left"></i>
-                            <span>Previous</span>
+                            <span>{{ trans('lang.previous') }}</span>
                         </a>
                     @endif
                 </div>
                 <div class="col-md-6">
                     @if($next < count($property_id))
                         <a href="?id={{ $property_id[$next] }} " class="nav_link next">
-                            <span>Next</span>
+                            <span>{{ trans('lang.next') }}</span>
                             <i class="icn icon-arrow_big_right"></i>
                         </a>
                     @endif
@@ -57,7 +57,7 @@
                     @endforeach
                 </ul>
                 {{--<a data-fancybox="gallery" class="fullscreen_btn" href="/img/details/img_7.png"><i class="icn icon-fullscreen"></i></a>--}}
-                <button class="fullscreen_btn"><i class="icn icon-fullscreen"></i></button>
+                <button class="fullscreen_btn tooltip" title="{{ trans('lang.show_image_on_fullscreen') }}" data-placement="right"><i class="icn icon-fullscreen"></i></button>
                 <div class="object_title">
                     <div class="container-fluid">
                         <div class="row">
