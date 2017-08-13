@@ -245,7 +245,14 @@ function infowindow_objectsInit() {
         speed: 100,
         dots: true,
         swipe: true,
-        prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
+        prevArrow: '<button type="button" class="slick-prev tooltip" title="Prev property"><i class="icn icon-arrow_big_left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next tooltip" title="Next property"><i class="icn icon-arrow_big_right"></i></button>'
+    });
+    $('.infowindow_container button.tooltip').tooltipster({
+        animation: 'fade',
+        delay: 100,
+        repositionOnScroll: true,
+        theme: 'tooltipster-punk',
+        side: 'bottom'
     });
 }
