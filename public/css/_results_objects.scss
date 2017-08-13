@@ -59,8 +59,8 @@
               padding: 2px 0 0;
             }
           }
-          .properties_container {
-            ul.properties {
+          .parameters_container {
+            ul.parameters {
               display: table;
               width: 100%;
               li {
@@ -101,11 +101,11 @@
               padding: 9px 15px 8px;
             }
           }
-          .properties_container {
+          .parameters_container {
             border-top: 1px solid $main_divider_clr;
             margin-top: 20px;
             padding: 25px 10px 0;
-            ul.properties {
+            ul.parameters {
               li {
                 display: inline-block;
                 margin-right: 10%;
@@ -306,10 +306,10 @@
                 display: none;
               }
             }
-            .properties_container {
+            .parameters_container {
               padding: 0;
               margin-top: 10px;
-              ul.properties {
+              ul.parameters {
                 width: auto;
                 margin: 15px auto 0;
                 li {

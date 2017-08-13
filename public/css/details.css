@@ -211,7 +211,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer; }
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-        content: "\e910";
+        content: "\e911";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -219,7 +219,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: #625e57; }
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-        content: "\e90f";
+        content: "\e910";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -301,7 +301,7 @@ ul.nav.nav-tabs {
               top: 0;
               display: block;
               font-family: 'icomoon' !important;
-              content: "\e910";
+              content: "\e911";
               speak: none;
               font-style: normal;
               font-weight: normal;
@@ -314,7 +314,7 @@ ul.nav.nav-tabs {
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
         color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-          content: "\e90f"; }
+          content: "\e910"; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
         border-bottom: 1px solid #625e57; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item a label {
@@ -440,9 +440,9 @@ ul.nav.nav-tabs {
       font-size: 1rem;
       float: left; }
       .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-        content: "\e90f"; }
+        content: "\e911"; }
   .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-    content: "\e90e"; }
+    content: "\e910"; }
 
 /*Bootstrap select END*/
 .icn_container {
@@ -644,36 +644,36 @@ section.gallery_section .gallery_container {
     pointer-events: none; }
   section.gallery_section .gallery_container > .container-fluid {
     padding: 0 5px; }
-    section.gallery_section .gallery_container > .container-fluid .properties_container {
+    section.gallery_section .gallery_container > .container-fluid .parameters_container {
       overflow: hidden;
       padding: 0 10px 10px; }
-      section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties {
+      section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters {
         padding: 20px 20px;
         display: table;
         margin: 0 auto;
         -webkit-box-shadow: 0px 0px 20px -5px black;
         -moz-box-shadow: 0px 0px 20px -5px black;
         box-shadow: 0px 0px 20px -5px black; }
-        section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li {
+        section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li {
           display: inline-block;
           margin-right: 20px;
           text-align: center;
           padding: 5px 0; }
-          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.no_text {
+          section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li.no_text {
             margin-right: 10px; }
-            section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.no_text:last-child {
+            section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li.no_text:last-child {
               margin-right: -10px; }
-          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li i {
+          section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li i {
             font-size: 1.375rem;
             line-height: 1.25rem;
             float: left;
             color: #ccac83; }
-          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .prop_val {
+          section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val {
             font-size: 1rem;
             margin-left: 10px; }
-            section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .prop_val span {
+            section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val span {
               color: #fdfdfd; }
-          section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li.inactive {
+          section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li.inactive {
             opacity: 0.3; }
   section.gallery_section .gallery_container .social_networks_share {
     position: absolute;
@@ -899,3 +899,5 @@ section.location_section .map_container {
           color: #ff78ce; }
         section.location_section .map_container .map_sidebar ul li.map_universities .checkbox_container label.checkbox_label {
           color: #d462fa; }
+
+/*# sourceMappingURL=details.css.map */

@@ -83,8 +83,8 @@
                     <!-- Agent Modal Popup -->
                     @include('includes.agent_contact_modal')
                 </div>
-                <div class="properties_container">
-                    <ul class="properties">
+                <div class="parameters_container">
+                    <ul class="parameters">
                         @if(!empty($property['area_surface']))
                             <li>
                                 <span class="property_container">

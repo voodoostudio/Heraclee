@@ -92,8 +92,8 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="properties_container">
-                    <ul class="properties">
+                <div class="parameters_container">
+                    <ul class="parameters">
                         @if(!empty($property['area_surface']))
                             <li><span class="icn_container tooltip" title="{{ trans('lang.living_space') }}"><i class="icn icon-area"></i></span><span class="prop_val"><span>{{$property['area_surface']}}m<sup>2</sup></span></span></li>
                         @endif

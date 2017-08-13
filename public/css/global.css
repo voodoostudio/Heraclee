@@ -211,7 +211,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer; }
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-        content: "\e910";
+        content: "\e911";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -219,7 +219,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: #625e57; }
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-        content: "\e90f";
+        content: "\e910";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -301,7 +301,7 @@ ul.nav.nav-tabs {
               top: 0;
               display: block;
               font-family: 'icomoon' !important;
-              content: "\e910";
+              content: "\e911";
               speak: none;
               font-style: normal;
               font-weight: normal;
@@ -314,7 +314,7 @@ ul.nav.nav-tabs {
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
         color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-          content: "\e90f"; }
+          content: "\e910"; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
         border-bottom: 1px solid #625e57; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item a label {
@@ -440,9 +440,9 @@ ul.nav.nav-tabs {
       font-size: 1rem;
       float: left; }
       .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-        content: "\e90f"; }
+        content: "\e911"; }
   .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-    content: "\e90e"; }
+    content: "\e910"; }
 
 /*Bootstrap select END*/
 .icn_container {
@@ -1012,90 +1012,77 @@ footer {
 @keyframes cssload-rotate-one {
   0% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
-
   100% {
     transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
 @-o-keyframes cssload-rotate-one {
   0% {
     -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
-
   100% {
     -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
 @-ms-keyframes cssload-rotate-one {
   0% {
     -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
-
   100% {
     -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
 @-webkit-keyframes cssload-rotate-one {
   0% {
     -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
-
   100% {
     -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
 @-moz-keyframes cssload-rotate-one {
   0% {
     -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
-
   100% {
     -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); } }
 @keyframes cssload-rotate-two {
   0% {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
-
   100% {
     transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
 @-o-keyframes cssload-rotate-two {
   0% {
     -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
-
   100% {
     -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
 @-ms-keyframes cssload-rotate-two {
   0% {
     -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
-
   100% {
     -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
 @-webkit-keyframes cssload-rotate-two {
   0% {
     -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
-
   100% {
     -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
 @-moz-keyframes cssload-rotate-two {
   0% {
     -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
-
   100% {
     -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); } }
 @keyframes cssload-rotate-three {
   0% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
-
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 @-o-keyframes cssload-rotate-three {
   0% {
     -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
-
   100% {
     -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 @-ms-keyframes cssload-rotate-three {
   0% {
     -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
-
   100% {
     -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 @-webkit-keyframes cssload-rotate-three {
   0% {
     -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
-
   100% {
     -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 @-moz-keyframes cssload-rotate-three {
   0% {
     -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
-
   100% {
     -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
+
+/*# sourceMappingURL=global.css.map */

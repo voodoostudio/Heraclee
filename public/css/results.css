@@ -211,7 +211,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer; }
       .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-        content: "\e910";
+        content: "\e911";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -219,7 +219,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: #625e57; }
       .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-        content: "\e90f";
+        content: "\e910";
         font-family: icomoon;
         color: #625e57;
         font-size: 20px; }
@@ -301,7 +301,7 @@ ul.nav.nav-tabs {
               top: 0;
               display: block;
               font-family: 'icomoon' !important;
-              content: "\e910";
+              content: "\e911";
               speak: none;
               font-style: normal;
               font-weight: normal;
@@ -314,7 +314,7 @@ ul.nav.nav-tabs {
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
         color: #ccac83; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-          content: "\e90f"; }
+          content: "\e910"; }
       .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
         border-bottom: 1px solid #625e57; }
         .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item a label {
@@ -440,9 +440,9 @@ ul.nav.nav-tabs {
       font-size: 1rem;
       float: left; }
       .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-        content: "\e90f"; }
+        content: "\e911"; }
   .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-    content: "\e90e"; }
+    content: "\e910"; }
 
 /*Bootstrap select END*/
 .icn_container {
@@ -554,16 +554,16 @@ section.results_section {
           section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .title_container ul.social_networks_share {
             float: right;
             padding: 2px 0 0; }
-        section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties {
+        section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters {
           display: table;
           width: 100%; }
-          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li .icn_container {
+          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li .icn_container {
             margin-right: 10px; }
-            section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li .icn_container .icn {
+            section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li .icn_container .icn {
               color: #ccac83;
               font-size: 20px;
               float: left; }
-          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li .prop_val {
+          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li .prop_val {
             margin-top: 2px; }
         section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .description_container {
           display: table;
@@ -584,14 +584,14 @@ section.results_section {
             text-align: center;
             float: right;
             padding: 9px 15px 8px; }
-        section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container {
+        section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container {
           border-top: 1px solid #aaa296;
           margin-top: 20px;
           padding: 25px 10px 0; }
-          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li {
+          section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li {
             display: inline-block;
             margin-right: 10%; }
-            section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li:last-of-type {
+            section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li:last-of-type {
               margin: 0; }
     section.results_section .results_container #results_map {
       visibility: hidden; }
@@ -737,20 +737,20 @@ section.results_section {
         section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
         section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container a.btn {
           display: none; }
-        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container,
-        section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container {
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container,
+        section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container {
           padding: 0;
           margin-top: 10px; }
-          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties,
-          section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
+          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters,
+          section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters {
             width: auto;
             margin: 15px auto 0; }
-            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li,
-            section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
+            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li,
+            section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li {
               margin-right: 15px;
               display: inline-block; }
-              section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .property_container,
-              section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .property_container {
+              section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .property_container,
+              section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .property_container {
                 display: table;
                 margin: 0 auto; }
   section.results_section .results_container.map_view {
@@ -871,7 +871,14 @@ section.results_section {
         section.results_section #results_map .gm-style-iw .infowindow_container button.slick-arrow.slick-prev {
           left: 10px; }
         section.results_section #results_map .gm-style-iw .infowindow_container button.slick-arrow.slick-next {
-          right: 10px; }
+          right: 10px;
+          animation: pulse 1s 5;
+          margin: 0 auto;
+          display: table;
+          margin-top: 50px;
+          animation-direction: alternate;
+          -webkit-animation-name: pulse;
+          animation-name: pulse; }
       section.results_section #results_map .gm-style-iw .infowindow_container ul.slick-dots {
         position: absolute;
         display: table;
@@ -896,3 +903,22 @@ section.results_section {
             background-color: #aaa296; }
   section.results_section .slick-track {
     min-width: 100%; }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.8); }
+
+  50% {
+    -webkit-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.3); }
+
+  100% {
+    transform: scale(1); } }

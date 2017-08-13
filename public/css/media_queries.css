@@ -9,7 +9,7 @@
       left: 0; }
     section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block {
       padding: 20px 20px 20px 20px; }
-      section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .properties_container {
+      section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .parameters_container {
         margin-top: 14px;
         padding: 15px 10px 0; }
       section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_description {
@@ -97,10 +97,10 @@
 
   section.results_section h1 {
     font-size: 1.5rem; }
-  section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li {
+  section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li {
     line-height: 13px;
     font-size: 13px; }
-    section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .properties_container ul.properties li .icn_container .icn {
+    section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .parameters_container ul.parameters li .icn_container .icn {
       font-size: 13px; }
   section.results_section .results_container.list_view .container-fluid .object_block_container .object_block .info_block .title_container a h2 {
     font-size: 20px; }
@@ -124,7 +124,7 @@
       line-height: 30px; }
     section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .title_container a h2 {
       margin-bottom: 6px; }
-    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .properties_container {
+    section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .parameters_container {
       margin-top: 8px;
       padding: 8px 10px 0; }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
@@ -133,17 +133,17 @@
     font-size: 1rem; }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
     font-size: 0.85rem; }
-  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container {
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container {
     margin-top: 0;
     padding: 0; }
-    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
+    section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters {
       margin: 10px auto 0; }
-      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
+      section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li {
         font-size: 0.85rem;
         margin-right: 7px; }
-        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container {
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container {
           margin-right: 0; }
-          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
+          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container .icn {
             line-height: 20px;
             font-size: 0.85rem;
             margin-right: 7px; }
@@ -245,11 +245,11 @@
           font-size: 0.875rem; }
         section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
           font-size: 0.75rem; }
-        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties {
+        section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters {
           margin: 5px auto 0; }
-          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li {
+          section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li {
             font-size: 0.75rem; }
-            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .properties_container ul.properties li .icn_container .icn {
+            section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container .icn, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container ul.parameters li .icn_container .icn {
               line-height: 17px;
               font-size: 0.75rem; }
   section.results_section .results_container.map_view #results_map {
@@ -292,16 +292,16 @@
     margin: 0 -5px; }
     section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
       height: 75px; }
-  section.gallery_section .gallery_container > .container-fluid .properties_container {
+  section.gallery_section .gallery_container > .container-fluid .parameters_container {
     margin: 0 -5px; }
-    section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties {
+    section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters {
       padding: 10px; }
-      section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li {
+      section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li {
         padding: 2px 0;
         margin-right: 15px; }
-        section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .icn_container i {
+        section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .icn_container i {
           font-size: 1rem; }
-        section.gallery_section .gallery_container > .container-fluid .properties_container ul.properties li .prop_val {
+        section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val {
           font-size: 0.75rem; }
 
   section.object_info_section .outer_block_container .inner_block_container {
@@ -473,7 +473,7 @@
           left: 5px; }
   section.gallery_section .gallery_container > .container-fluid {
     padding: 0; }
-    section.gallery_section .gallery_container > .container-fluid .properties_container {
+    section.gallery_section .gallery_container > .container-fluid .parameters_container {
       padding: 0 5px 10px; }
   section.gallery_section .gallery_container .social_networks_share {
     right: 20px;
@@ -590,3 +590,5 @@
     padding: 15px; }
 
   /* Bootstrap modal popup END*/ }
+
+/*# sourceMappingURL=media_queries.css.map */
