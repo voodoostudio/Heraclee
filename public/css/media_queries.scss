@@ -481,6 +481,46 @@
     div.menu-icon {
       display: block;
     }
+
+    &.minimized {
+      .logo {
+        padding: 5px 0;
+        img {
+          max-width: 39px;
+        }
+      }
+      .navigation_container {
+        padding-top: 3px;
+        .navigation_block {
+          margin: 0 auto;
+          .lang_currency_container li {
+            ul.language_select {
+              padding: 2px 0 0;
+            }
+          }
+        }
+        nav {
+          margin-top: 2px;
+          margin-left: 0;
+          padding-top: 15px;
+          ul.nav {
+            li.nav-item {
+              margin-bottom: 10px;
+              padding-right: 0;
+              a.nav-link {
+                padding: 8px 5px;
+                font-size: 0.875rem;
+                line-height: 0.875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    padding-top: 80px;
   }
 
   section.search_section {

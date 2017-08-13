@@ -73,21 +73,30 @@ p {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  z-index: 99999;
   display: table;
   width: 100%;
+  background: $main_dark_clr;
   @include my_box_shadow(0px 6px 20px -10px black);
   .logo {
     float: left;
     padding: 23px 0;
+    @include my_transition(.2s ease-in-out);
     img {
       max-width: 90px;
+      @include my_transition(.2s ease-in-out);
     }
   }
   .navigation_container {
     padding-top: 15px;
+    @include my_transition(.2s ease-in-out);
     .navigation_block {
       margin-left: 170px;
+      @include my_transition(.2s ease-in-out);
       .header_tel {
+        @include my_transition(.2s ease-in-out);
         font-size: 0.813rem;
         line-height: 27px;
       }
@@ -100,6 +109,7 @@ header {
             float: left;
             //margin-right: 30px;
             padding: 6px 0;
+            @include my_transition(.2s ease-in-out);
             li {
               float: left;
               text-transform: uppercase;
@@ -147,6 +157,7 @@ header {
       border-top: 1px solid rgba($main_gray_clr, 0.3);
       padding: 20px 0 15px;
       margin-top: 15px;
+      @include my_transition(.2s ease-in-out);
       ul.nav {
         width: 100%;
         display: table;
@@ -154,6 +165,7 @@ header {
           margin-bottom: 10px;
           padding-right: 45px;
           display: inline-block;
+          @include my_transition(.2s ease-in-out);
           &:last-of-type {
             padding-right: 0;
           }
@@ -162,6 +174,7 @@ header {
             padding: 8px 5px;
             font-size: 1.063rem;
             line-height: 1.063rem;
+            @include my_transition(.2s ease-in-out);
             &.active {
               color: $main_brown_clr;
               font-family: opensans_regular;
@@ -229,6 +242,49 @@ header {
       }
     }
   }
+  &.minimized {
+    .logo {
+      padding: 10px 0;
+      img {
+        max-width: 52px;
+      }
+    }
+    .navigation_container {
+      padding-top: 5px;
+      .navigation_block {
+        margin-left: 100px;
+        .header_tel {
+          line-height: 20px;
+          font-size: 0.75rem;
+        }
+        .lang_currency_container li {
+          ul.language_select {
+            padding: 5px 0 2px;
+          }
+        }
+      }
+      nav {
+        margin-top: 5px;
+        margin-left: 100px;
+        padding: 5px 0 10px;
+        ul.nav {
+          li.nav-item {
+            margin-bottom: 0;
+            padding-right: 15px;
+            a.nav-link {
+              padding: 3px 5px;
+              font-size: 0.75rem;
+              line-height: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding-top: 137px;
 }
 
 section.search_section {

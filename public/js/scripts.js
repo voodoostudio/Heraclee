@@ -5,6 +5,17 @@ $(document).ready(function() {
         return false;
     });
 
+    $(document).on("scroll", function(){
+        if
+        ($(document).scrollTop() > 100){
+            $("header").addClass("minimized");
+        }
+        else
+        {
+            $("header").removeClass("minimized");
+        }
+    });
+
     $('.tooltip').tooltipster({
         animation: 'fade',
         delay: 100,
