@@ -40,10 +40,9 @@ section.team_members_section {
           text-overflow: ellipsis; }
           section.team_members_section .outer_block_container .inner_block_container .info_container ul li:last-of-type {
             margin-bottom: 0; }
-      section.team_members_section .outer_block_container .inner_block_container a.btn {
-        display: table;
-        margin: 0 auto 0; }
+      section.team_members_section .outer_block_container .inner_block_container .btn_container {
+        text-align: center; }
+        section.team_members_section .outer_block_container .inner_block_container .btn_container a.btn {
+          margin: 0 auto 0; }
     section.team_members_section .outer_block_container:hover .inner_block_container {
       border-color: #ccac83; }
-
-/*# sourceMappingURL=team.css.map */

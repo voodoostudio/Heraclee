@@ -37,7 +37,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 margin_top_20">
-                                    <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    <div class="btn_container">
+                                        <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +66,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 margin_top_20">
-                                    <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    <div class="btn_container">
+                                        <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +95,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 margin_top_20">
-                                    <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    <div class="btn_container">
+                                        <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -118,13 +124,14 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 margin_top_20">
-                                    <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    <div class="btn_container">
+                                        <a href="mailto:email@mailserver.com" class="btn">{{ trans('lang.send_me_message') }}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>

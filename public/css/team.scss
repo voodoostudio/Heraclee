@@ -46,10 +46,13 @@ section.team_members_section {
           }
         }
       }
-      a.btn {
-        display: table;
-        margin: 0 auto 0;
+      .btn_container {
+        text-align: center;
+        a.btn {
+          margin: 0 auto 0;
+        }
       }
+
     }
     &:hover {
       .inner_block_container {
