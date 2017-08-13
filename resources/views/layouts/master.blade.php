@@ -11,14 +11,27 @@
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
 
-        <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
-        <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
-        <link rel="stylesheet" type="text/css" href="/css/global.css">
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/global.css">--}}
+        {!! Minify::stylesheet(array(
+                                        '/css/libraries/normalize.css',
+                                        '/css/libraries/bootstrap.min.css',
+                                        '/css/libraries/bootstrap-multiselect.css',
+                                        '/css/libraries/tooltipster.min.css',
+                                        '/css/libraries/fontawesome/css/font-awesome.min.css',
+                                        '/css/libraries/slick.css',
+                                        '/css/custom_icons/style.css',
+                                        '/css/global.css'
+                                    )
+                              )
+        !!}
+
         @yield('css')
 
         <link rel="stylesheet" type="text/css" href="/css/media_queries.css">
@@ -78,7 +91,9 @@
         @if( LaravelLocalization::getCurrentLocale() == 'fr' )
             <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         @endif
-        <script type="text/javascript" src="/js/scripts.js"></script>
+
+        {!! Minify::javascript(array('/js/scripts.js')) !!}
+        {{--<script type="text/javascript" src="/js/scripts.js"></script>--}}
 
         <script>
             window.fbAsyncInit = function() {
