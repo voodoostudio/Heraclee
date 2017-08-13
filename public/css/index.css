@@ -680,7 +680,8 @@ section.carousel_offers_section {
             .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block .gallery_view .gallery.slick-slider .slick-arrow {
               position: absolute;
               top: 50%;
-              margin-top: -16px;
+              margin-top: -30px;
+              padding: 10px 20px;
               color: white;
               font-size: 30px;
               background: transparent;
@@ -694,9 +695,9 @@ section.carousel_offers_section {
                 -o-transform: scale(1.2);
                 transform: scale(1.2); }
               .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block .gallery_view .gallery.slick-slider .slick-arrow.slick-prev {
-                left: 10px; }
+                left: 0; }
               .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block .gallery_view .gallery.slick-slider .slick-arrow.slick-next {
-                right: 10px; }
+                right: 0; }
             .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block .gallery_view .gallery.slick-slider .slick-list {
               height: 100%; }
               .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block .gallery_view .gallery.slick-slider .slick-list .slick-track {

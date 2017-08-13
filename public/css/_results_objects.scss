@@ -166,7 +166,8 @@
                 .slick-arrow {
                   position: absolute;
                   top: 50%;
-                  margin-top: -16px;
+                  margin-top: -30px;
+                  padding: 10px 20px;
                   color: white;
                   font-size: 30px;
                   background: transparent;
@@ -177,10 +178,10 @@
                     @include my_transform(scale(1.2));
                   }
                   &.slick-prev {
-                    left: 10px;
+                    left: 0;
                   }
                   &.slick-next {
-                    right: 10px;
+                    right: 0;
                   }
                 }
                 .slick-list {
