@@ -43,7 +43,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">

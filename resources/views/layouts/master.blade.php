@@ -11,7 +11,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
 
-        <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
         <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
         <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
@@ -231,7 +231,7 @@
         <script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+        <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.min.js"></script>
         <script type="text/javascript" src="/js/functions.min.js"></script>
         <script>
             $('select').multiselect({
