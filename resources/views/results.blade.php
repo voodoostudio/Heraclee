@@ -4,7 +4,7 @@
 
 @section('title', 'Results page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/results.css">
+    <link rel="stylesheet" type="text/css" href="/css/results.min.css">
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
@@ -159,7 +159,7 @@
         ];
     </script>
 
-    <script type="text/javascript" src="/js/results.js"></script>
+    <script type="text/javascript" src="/js/results.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             @if($view_type == 'list_view')

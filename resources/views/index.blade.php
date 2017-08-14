@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Home page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.min.css">
 @stop
 
 @section('content')
@@ -53,5 +53,5 @@
 @endsection
 
 @section('javascript')
-    <script src="/js/index.js"></script>
+    <script src="/js/index.min.js"></script>
 @stop

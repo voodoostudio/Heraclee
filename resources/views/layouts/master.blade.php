@@ -11,30 +11,197 @@
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
 
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/global.css">--}}
-        {!! Minify::stylesheet(array(
-                                        '/css/libraries/normalize.css',
-                                        '/css/libraries/bootstrap.min.css',
-                                        '/css/libraries/bootstrap-multiselect.css',
-                                        '/css/libraries/tooltipster.min.css',
-                                        '/css/libraries/fontawesome/css/font-awesome.min.css',
-                                        '/css/libraries/slick.css',
-                                        '/css/custom_icons/style.css',
-                                        '/css/global.css'
-                                    )
-                              )
-        !!}
+        <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap-multiselect.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
+        <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
+        <link rel="stylesheet" type="text/css" href="/css/global.min.css">
 
+        <style>
+            .cssload-loader {
+                position: relative;
+                left: calc(50% - 68px);
+                width: 136px;
+                height: 136px;
+                border-radius: 50%;
+                -o-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                perspective: 1700px;
+            }
+            .cssload-inner {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                -o-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                border-radius: 50%;
+                -o-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+            }
+            .cssload-inner.cssload-one {
+                left: 0%;
+                top: 0%;
+                animation: cssload-rotate-one 1s linear infinite;
+                -o-animation: cssload-rotate-one 1s linear infinite;
+                -ms-animation: cssload-rotate-one 1s linear infinite;
+                -webkit-animation: cssload-rotate-one 1s linear infinite;
+                -moz-animation: cssload-rotate-one 1s linear infinite;
+                border-bottom: 6px solid rgb(204,172,131);
+            }
+            .cssload-inner.cssload-two {
+                right: 0%;
+                top: 0%;
+                animation: cssload-rotate-two 1s linear infinite;
+                -o-animation: cssload-rotate-two 1s linear infinite;
+                -ms-animation: cssload-rotate-two 1s linear infinite;
+                -webkit-animation: cssload-rotate-two 1s linear infinite;
+                -moz-animation: cssload-rotate-two 1s linear infinite;
+                border-right: 6px solid rgb(204,172,131);
+            }
+            .cssload-inner.cssload-three {
+                right: 0%;
+                bottom: 0%;
+                animation: cssload-rotate-three 1s linear infinite;
+                -o-animation: cssload-rotate-three 1s linear infinite;
+                -ms-animation: cssload-rotate-three 1s linear infinite;
+                -webkit-animation: cssload-rotate-three 1s linear infinite;
+                -moz-animation: cssload-rotate-three 1s linear infinite;
+                border-top: 6px solid rgb(204,172,131);
+            }
+            @keyframes cssload-rotate-one {
+                0% {
+                    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+                }
+                100% {
+                    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+                }
+            }
+            @-o-keyframes cssload-rotate-one {
+                0% {
+                    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+                }
+                100% {
+                    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+                }
+            }
+            @-ms-keyframes cssload-rotate-one {
+                0% {
+                    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+                }
+                100% {
+                    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+                }
+            }
+            @-webkit-keyframes cssload-rotate-one {
+                0% {
+                    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+                }
+                100% {
+                    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+                }
+            }
+            @-moz-keyframes cssload-rotate-one {
+                0% {
+                    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+                }
+                100% {
+                    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+                }
+            }
+            @keyframes cssload-rotate-two {
+                0% {
+                    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+                }
+                100% {
+                    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+                }
+            }
+            @-o-keyframes cssload-rotate-two {
+                0% {
+                    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+                }
+                100% {
+                    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+                }
+            }
+            @-ms-keyframes cssload-rotate-two {
+                0% {
+                    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+                }
+                100% {
+                    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+                }
+            }
+            @-webkit-keyframes cssload-rotate-two {
+                0% {
+                    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+                }
+                100% {
+                    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+                }
+            }
+            @-moz-keyframes cssload-rotate-two {
+                0% {
+                    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+                }
+                100% {
+                    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+                }
+            }
+            @keyframes cssload-rotate-three {
+                0% {
+                    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+                }
+                100% {
+                    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+                }
+            }
+            @-o-keyframes cssload-rotate-three {
+                0% {
+                    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+                }
+                100% {
+                    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+                }
+            }
+            @-ms-keyframes cssload-rotate-three {
+            0% {
+                    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+                }
+                100% {
+                    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+                }
+            }
+            @-webkit-keyframes cssload-rotate-three {
+                0% {
+                    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+                }
+                100% {
+                    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+                }
+            }
+            @-moz-keyframes cssload-rotate-three {
+                0% {
+                    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+                }
+                100% {
+                    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+                }
+            }
+        </style>
         @yield('css')
 
-        <link rel="stylesheet" type="text/css" href="/css/media_queries.css">
+        <link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->
@@ -65,7 +232,7 @@
         <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
-        <script type="text/javascript" src="/js/functions.js"></script>
+        <script type="text/javascript" src="/js/functions.min.js"></script>
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
@@ -92,8 +259,7 @@
             <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         @endif
 
-        {!! Minify::javascript(array('/js/scripts.js')) !!}
-        {{--<script type="text/javascript" src="/js/scripts.js"></script>--}}
+        <script type="text/javascript" src="/js/scripts.min.js"></script>
 
         <script>
             window.fbAsyncInit = function() {
