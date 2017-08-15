@@ -334,7 +334,7 @@
                             url: $this.attr('action'),
                             data: $this.serialize()
                         }).done(function (data) {
-                            $response.html('<p>' + data.msg + '</p>');
+                            $response.html('<p class = "'+ data.status +'">' + data.msg + '</p>');
                             if(data.status == 'success') {
                                 $form.reset();
                             }
