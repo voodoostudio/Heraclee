@@ -11,6 +11,7 @@
 @stop
 
 @section('content')
+
     @php
         $all_property = [];
         $prop = [];
@@ -37,6 +38,7 @@
     @endphp
 
     @include('includes.search_block')
+
 
     <section class="results_section">
         <div class="container-fluid">
@@ -164,8 +166,8 @@
         $(document).ready(function () {
             @if($view_type == 'list_view')
                 listView_galleryInit();
-            @endif
-            @if($view_type == 'map_view') {
+                @endif
+                @if($view_type == 'map_view') {
                 $('.results_section .multiselect-native-select').hide();
                 if ($('.result_preview_gallery').hasClass('slick-initialized')) {
                     $('.result_preview_gallery').slick('unslick');
@@ -175,7 +177,7 @@
             @endif
         });
         $(window).on('load', function () {
-            @if($view_type == 'map_view') {
+                @if($view_type == 'map_view') {
                 resultsMapInit();
             }
             @endif
