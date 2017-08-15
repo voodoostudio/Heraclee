@@ -327,6 +327,12 @@ class PagesController extends Controller
 
     public function details()
     {
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
@@ -349,7 +355,7 @@ class PagesController extends Controller
 
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
         } else {
             return redirect('results');
         }
@@ -460,24 +466,27 @@ class PagesController extends Controller
 
     public function newsletter(Request $request)
     {
-        $this->validate($request, [
-            'email' => 'required|email',
-        ]);
+        $subscribers = new Subscribers;
+        $subscribers->email = $request->email;
+        $check_subscriber = Subscribers::select('email')->get();
 
-        if($request->ajax()){
-            $subscribers = new Subscribers;
-            $subscribers->email = $request->email;
-            $check_subscriber = Subscribers::select('email')->get();
+        $response = array(
+            'status' => 'success',
+            'msg' => 'Your email was successfully registered',
+        );
 
-            if (stristr((string)$check_subscriber, $subscribers->email) === false) {
-                $subscribers->save();
-            }
+        $error = array(
+            'status' => 'error',
+            'msg' => 'Your email is already registered in our database'
+        );
 
-            /*$response = array(
-                'status' => 'success',
-                'msg' => 'Setting created successfully',
-            );
-            return dump($request->json($response));*/
+        if (stristr((string)$check_subscriber, $subscribers->email) === false) {
+            $subscribers->save();
+
+            return $response;
+
+        } else {
+            return $error;
         }
     }
 

@@ -314,29 +314,40 @@
 </script>
 
 <script>
-    $(document).ready(function(){
-        $('#newsletter_submit').one("click", function (e) {
-            e.preventDefault();
+    $(document).ready(function () {
+        $('#newsletter').submit(function () {
+            var $this       = $(this),
+                $response   = $('#response'),
+                $mail       = $('#newsletter').find('#email').val(),
+                $form       = $('#newsletter')[0],
+                testmail    = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i,
+                hasError    = false;
 
-            var url = "../newsletter";
-            var csrf = $('input[name=_token]').val();
-            var email = $('#newsletter').find('#email').val();
-            var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+            $response.find('p').remove();
 
-            if (pattern.test(email)) {
+            if (!testmail.test($mail)) {
+                $response.html('<p class="error">Please enter a valid email</p>');
+                hasError = true;
+            }
+
+            if (hasError === false) {
+                $response.find('p').remove();
                 $.ajax({
                     type: "POST",
-                    url: url,
-                    data: {email: email, _token: csrf},
+                    dataType: 'json',
                     cache: false,
-                    success: function () {
-                        $('.message-send').append('<div class = \"success\" style = \"color: forestgreen; font-size: 0.75rem; position: absolute;\">{{ trans('lang.message_send') }}</div>').hide(3000);
-                        $('#newsletter_submit').attr('disabled', 'disabled');
+                    url: $this.attr('action'),
+                    data: $this.serialize()
+                }).done(function (data) {
+                    $response.html('<p>' + data.msg + '</p>');
+                    if(data.status == 'success') {
+                        $form.reset();
                     }
-                });
-            } else {
-                $('#newsletter_submit').removeAttr('disabled', 'disabled');
+                }).fail(function() {
+                    $response.html('<p>An error occurred, please try again</p>');
+                })
             }
+            return false;
         });
     });
 </script>
