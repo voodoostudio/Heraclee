@@ -645,3 +645,17 @@ footer {
     transform: translate(-50%,-50%);
   }
 }
+
+#response {
+  p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 0.75rem;
+    &.error {
+      color: $error_clr;
+    }
+    &.success {
+      color: $success_clr;
+    }
+  }
+}

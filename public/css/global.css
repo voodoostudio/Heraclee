@@ -1023,3 +1023,12 @@ footer {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%); }
+
+#response p {
+  margin: 0;
+  padding-top: 5px;
+  font-size: 0.75rem; }
+  #response p.error {
+    color: #c54545; }
+  #response p.success {
+    color: #69bf7f; }
