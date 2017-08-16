@@ -1,0 +1,1 @@
+Lang.addMessages({"en":{"lang.next_property":"Next property","lang.prev_property":"Previous property"},"fr":{"lang.next_property":"Suivant bien","lang.prev_property":"Pr\u00e9c\u00e9dent bien"}});

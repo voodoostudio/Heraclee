@@ -32,6 +32,8 @@ return [
     'map'                   => 'Map',
     'your_real_estate_search' => 'Your real estate search',
     'contact_the_agent'     => 'Contact the agent',
+    'next_property'         => 'Next property',
+    'prev_property'         => 'Previous property',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',

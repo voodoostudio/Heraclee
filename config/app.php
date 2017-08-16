@@ -167,12 +167,12 @@ return [
          * Localization
          */
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-
+        JsLocalization\JsLocalizationServiceProvider::class,
         /*
          * Minify
          */
         GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
-        'Devfactory\Minify\MinifyServiceProvider',
+
         /*
          * Package Service Providers...
          */
@@ -237,7 +237,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
-        'Minify'        => 'Devfactory\Minify\Facades\MinifyFacade',
     ],
 
 ];

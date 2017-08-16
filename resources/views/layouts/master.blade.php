@@ -1,3 +1,4 @@
+
 <!doctype html>
 
 <html lang="en">
@@ -9,6 +10,7 @@
         <meta name="keywords" content="heraclee, website, responsive">
         {{ csrf_field() }}
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
 
         <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
         <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap.min.css">
@@ -199,7 +201,7 @@
             }
         </style>
         @yield('css')
-
+        @include('js-localization::head')
         <link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -231,7 +233,7 @@
         <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
-        <script type="text/javascript" src="/js/functions.min.js"></script>
+        <script type="text/javascript" src="/js/functions.js"></script>
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
@@ -347,6 +349,7 @@
             });
         </script>
 
+        @yield('js-localization.head')
         @yield('javascript')
         <script>
             $(window).on('load', function() {

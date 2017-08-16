@@ -32,6 +32,8 @@ return [
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobiliére',
     'contact_the_agent'     => 'Contactez l’agent',
+    'next_property'         => 'Suivant bien',
+    'prev_property'         => 'Précédent bien',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
