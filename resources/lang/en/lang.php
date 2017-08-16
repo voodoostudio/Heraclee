@@ -32,8 +32,6 @@ return [
     'map'                   => 'Map',
     'your_real_estate_search' => 'Your real estate search',
     'contact_the_agent'     => 'Contact the agent',
-    'next_property'         => 'Next property',
-    'prev_property'         => 'Previous property',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',
@@ -129,4 +127,6 @@ return [
     'your_name_must_consist_at_least_characters'        => 'Your name must consist at least 2 characters',
     'please_provide_valid_email_address'        => 'Please provide a valid email address',
     'message_send'        => 'Message send',
+    'enter_valid_email'     => 'Please enter a valid email',
+    'an_error_has_occured'     => 'An error occurred, please try again',
 ];

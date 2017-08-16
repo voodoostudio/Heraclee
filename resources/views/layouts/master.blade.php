@@ -323,7 +323,7 @@
                         $response.find('p').remove();
 
                     if (!testmail.test($mail)) {
-                        $response.html('<p class="error">Please enter a valid email</p>');
+                        $response.html('<p class="error">{{ trans('lang.enter_valid_email') }}</p>');
                         hasError = true;
                     }
 
@@ -341,7 +341,7 @@
                                 $form.reset();
                             }
                         }).fail(function() {
-                            $response.html('<p>An error occurred, please try again</p>');
+                            $response.html('<p>{{ trans('lang.an_error_has_occured') }}</p>');
                         })
                     }
                     return false;

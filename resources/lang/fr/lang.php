@@ -32,8 +32,6 @@ return [
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobiliére',
     'contact_the_agent'     => 'Contactez l’agent',
-    'next_property'         => 'Suivant bien',
-    'prev_property'         => 'Précédent bien',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
@@ -121,12 +119,14 @@ return [
     'footer_list_9'        => 'Villas à louer saint-tropez',
 
 // EMAIL PAGE
-    'email_title'        => 'You have a new contact Via the contact form',
-    'sent_via'        => 'Sent via',
+    'email_title'           => 'You have a new contact Via the contact form',
+    'sent_via'              => 'Sent via',
 
 // SOCIALS PAGE
-    'required'        => 'required',
-    'your_name_must_consist_at_least_characters'        => 'Your name must consist at least 2 characters',
-    'please_provide_valid_email_address'        => 'Please provide a valid email address',
-    'message_send'        => 'Message sent',
+    'required'              => 'Champs obligatoires',
+    'your_name_must_consist_at_least_characters'        => 'Votre nom doit comporter au moins 2 caractères',
+    'please_provide_valid_email_address'        => 'Veuillez fournir une adresse email valide',
+    'message_send'          => 'Message envoyé',
+    'enter_valid_email'     => 'Entrez un email valide',
+    'an_error_has_occured'     => 'Une erreur s\'est produite, réessayez',
 ];
