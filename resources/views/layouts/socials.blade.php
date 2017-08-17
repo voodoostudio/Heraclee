@@ -296,7 +296,9 @@
                     required: true,
                     email: true
                 },
-                message: "{{ trans('lang.required') }}"
+                message: {
+                    required: true
+                }
             },
             messages: {
                 name: {
@@ -307,7 +309,40 @@
                 }
             },
             submitHandler: function (form) {
-                form.submit();
+                var $response   = $('#message-box'),
+                    $mail       = $('#contactForm').find('#email').val(),
+                    $name       = $('#contactForm').find('#name').val(),
+                    $message    = $('#contactForm').find('#message').val(),
+                    $form       = $('#contactForm')[0],
+                    testmail    = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i,
+                    hasError    = false;
+
+                $response.find('p').remove();
+
+                if (!testmail.test($mail) || !$name || !$message) {
+                    hasError = true;
+                }
+
+                console.log(form.action);
+
+                if (hasError === false) {
+                    $response.find('p').remove();
+                    $.ajax({
+                        type: form.method,
+                        dataType: 'json',
+                        cache: false,
+                        url: form.action,
+                        data: $(form).serialize()
+                    }).done(function (data) {
+                        $response.html('<p class = "'+ data.status +'">' + data.msg + '</p>');
+                        if(data.status == 'success') {
+                            $form.reset();
+                        }
+                    }).fail(function() {
+                        $response.html('<p>An error occurred, please try again</p>');
+                    })
+                }
+                return false;
             }
         })
     })
@@ -339,7 +374,7 @@
                     url: $this.attr('action'),
                     data: $this.serialize()
                 }).done(function (data) {
-                    $response.html('<p>' + data.msg + '</p>');
+                    $response.html('<p class = "'+ data.status +'">' + data.msg + '</p>');
                     if(data.status == 'success') {
                         $form.reset();
                     }

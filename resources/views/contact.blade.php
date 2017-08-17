@@ -38,7 +38,7 @@
                 <div class="inner_block_container">
                     <h2>{{ trans('lang.contact_us') }}</h2>
                     <p>{{ trans('lang.contact_form_description') }}</p>
-                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST">
+                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST" novalidate>
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-12 col-md-4">
@@ -81,6 +81,7 @@
                             </div>
                         </div>
                     </form>
+                    <div id="message-box"></div>
                 </div>
             </div>
         </div>

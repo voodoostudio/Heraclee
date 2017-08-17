@@ -411,6 +411,16 @@ class PagesController extends Controller
             'bodyMessage' => $request->message,
         ];
 
+        $success = array(
+            'status' => 'success',
+            'msg' => 'Your email was successfully send',
+        );
+
+        $error = array(
+            'status' => 'error',
+            'msg' => 'Your email wasn\'t send (error)'
+        );
+
         $subscribers = new Subscribers;
         $subscribers->email = $request->email;
         $check_subscriber = Subscribers::select('email')->get();
@@ -421,12 +431,17 @@ class PagesController extends Controller
             }
         }
 
-        Mail::send('emails.email', $data, function($message) use ($data){
-            $message->from($data['email'],'Heraclee Contact form');
+        Mail::send('emails.email', $data, function ($message) use ($data) {
+            $message->from($data['email'], 'Heraclee Contact form');
             $message->to(env('CONTACT_EMAIL'));
         });
 
-        return redirect()->route('contact');
+        if (Mail::failures()) {
+            return $error;
+        } else {
+            return $success;
+        }
+
     }
 
     public function postContactToAgent(Request $request)
@@ -446,6 +461,16 @@ class PagesController extends Controller
             'bodyMessage' => $request->message,
         ];
 
+        $success = array(
+            'status' => 'success',
+            'msg' => 'Your email was successfully send',
+        );
+
+        $error = array(
+            'status' => 'error',
+            'msg' => 'Your email wasn\'t send (error)'
+        );
+
         $subscribers = new Subscribers;
         $subscribers->email = $request->email;
         $check_subscriber = Subscribers::select('email')->get();
@@ -461,7 +486,12 @@ class PagesController extends Controller
             $message->to($data['to']);
         });
 
-        return redirect()->back();
+        if (Mail::failures()) {
+            return $error;
+        } else {
+            return $success;
+        }
+
     }
 
     public function newsletter(Request $request)

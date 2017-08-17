@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <form id = "contactForm" action="{{ route('contact.post.agent') }}"  method="POST">
+                    <form id = "contactForm" action="{{ route('contact.post.agent') }}"  method="POST" novalidate>
                         {{ csrf_field() }}
                         <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">
                         <div class="row">
@@ -77,6 +77,7 @@
                             </div>
                         </div>
                     </form>
+                    <div id="message-box"></div>
                 </div>
             </div>
         </div>
