@@ -132,5 +132,5 @@ return [
     'please_provide_valid_email_address'        => 'Veuillez fournir une adresse email valide',
     'message_send'          => 'Message envoyé',
     'enter_valid_email'     => 'Entrez un email valide',
-    'an_error_has_occured'     => 'Une erreur s\'est produite, réessayez',
+    'an_error_has_occured'  => 'Une erreur s\'est produite, réessayez',
 ];
