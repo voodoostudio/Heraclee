@@ -1,0 +1,2103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+<!-- ********** -->
+<!-- Barre de Contrôle Arrondie -->
+<!-- id : controlBar_rounded -->
+<!-- ********** -->
+
+  <krpano controlBar_roundedbuilt="false" controlBar_roundednbbuttons="0" controlBar_roundedIsOpened="false" />
+
+  <events name="controlBar_roundedevents" 
+
+
+    onxmlcomplete="controlBar_roundedbuildMenuBar();" keep="true"/>
+  <action name="controlBar_roundedbuildMenuBar">
+    ifnot (controlBar_roundedbuilt, controlBar_roundedbuildMenu(); set(controlBar_roundedbuilt, true););
+  </action>
+
+
+
+  <action name="controlBar_roundedbuildMenu">
+    txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+
+
+
+
+    if (controlBar_roundednbbuttons LT 6,
+      if (scene.count GT 1,
+        set(layer[controlBar_roundedbtn_prev_pano].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_prev_pano].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_prev_pano].y     , get(plugin[get(btnbgname)].childy));
+        inc(controlBar_roundednbbuttons);
+        txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+
+        set(layer[controlBar_roundedbtn_next_pano].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_next_pano].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_next_pano].y     , get(plugin[get(btnbgname)].childy));
+        inc(controlBar_roundednbbuttons);
+        txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+      );
+    ,
+      set(layer[controlBar_roundedbtn_next_pano].disabled, true);
+      set(layer[controlBar_roundedbtn_prev_pano].disabled, true);
+    );
+
+
+
+
+
+
+    if (controlBar_roundednbbuttons LT 6,
+      set(layer[controlBar_roundedbtn_autorotate_on ].parent, get(btnbgname));
+      set(layer[controlBar_roundedbtn_autorotate_on ].x     , get(plugin[get(btnbgname)].childx));
+      set(layer[controlBar_roundedbtn_autorotate_on ].y     , get(plugin[get(btnbgname)].childy));
+      set(layer[controlBar_roundedbtn_autorotate_off].parent, get(btnbgname));
+      set(layer[controlBar_roundedbtn_autorotate_off].x     , get(plugin[get(btnbgname)].childx));
+      set(layer[controlBar_roundedbtn_autorotate_off].y     , get(plugin[get(btnbgname)].childy));
+      inc(controlBar_roundednbbuttons);
+      txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+    ,
+      set(layer[controlBar_roundedbtn_autorotate_on].disabled, true);
+      set(layer[controlBar_roundedbtn_autorotate_off].disabled, true);
+    );
+
+
+
+    if (controlBar_roundednbbuttons LT 6,
+      if (device.desktop,
+        set(layer[controlBar_roundedbtn_ctrlmode_drag_to].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_ctrlmode_drag_to].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_ctrlmode_drag_to].y     , get(plugin[get(btnbgname)].childy));
+        set(layer[controlBar_roundedbtn_ctrlmode_move_to].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_ctrlmode_move_to].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_ctrlmode_move_to].y     , get(plugin[get(btnbgname)].childy));
+        inc(controlBar_roundednbbuttons);
+        txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+      );
+    ,
+      set(layer[controlBar_roundedbtn_ctrlmode_drag_to].disabled, true);
+      set(layer[controlBar_roundedbtn_ctrlmode_move_to].disabled, true);
+    );
+
+
+
+    if (controlBar_roundednbbuttons LT 6,
+      if (device.desktop,
+        set(layer[controlBar_roundedbtn_display_help].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_display_help].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_display_help].y     , get(plugin[get(btnbgname)].childy));
+        set(layer[controlBar_roundedbtn_close_help  ].parent, get(btnbgname));
+        set(layer[controlBar_roundedbtn_close_help  ].x     , get(plugin[get(btnbgname)].childx));
+        set(layer[controlBar_roundedbtn_close_help  ].y     , get(plugin[get(btnbgname)].childy));
+        inc(controlBar_roundednbbuttons);
+        txtadd(btnbgname, "controlBar_roundedbtnbg", get(controlBar_roundednbbuttons));
+      );
+    ,
+      set(layer[controlBar_roundedbtn_display_help].disabled, true);
+      set(layer[controlBar_roundedbtn_close_help].disabled, true);
+    );
+
+	
+
+  </action>
+
+<events name="controlBar_roundedStartTourEvents" onTourStart="controlBar_roundedCallOnStartTour();" keep="true" />
+
+<action name="controlBar_roundedCallOnStartTour">
+	
+	controlBar_roundedshowMenuControls();
+</action>
+
+
+
+
+  <layer name="controlBar_roundedmenu_roundcorner_bg"
+          keep="true"
+          url="%FIRSTXML%/graphics/roundcornerbar/footer.png"
+          zorder="1"
+          align="bottomright"
+          handcursor="false"
+          edge="right"
+          x="0"
+          y="0"
+          rotate="180"
+          capture="false"
+          visible="false" />
+
+  <style name="controlBar_rounded_btn_style"
+         keep="true"
+         align="bottomright"
+         onhover="controlBar_roundedshowMenuTooltip();"
+         onout="hideTooltip();"
+         zorder="3"
+         />
+
+  <style name="controlBar_roundedbtnbgstyle" keep="true" pixelhittest="true" align="bottomright" zorder="2" alpha="0" />
+
+  <layer name="controlBar_roundedbtnbg0" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_1.png" style="controlBar_roundedbtnbgstyle" x="144" y="0"   childx="10" childy="6"  crop="0|0|48|49" onovercrop="0|49|48|49" ondowncrop="0|98|48|49" visible="false" />
+  <layer name="controlBar_roundedbtnbg1" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_2.png" style="controlBar_roundedbtnbgstyle" x="129" y="39"  childx="14" childy="10" crop="0|0|56|56" onovercrop="0|56|56|56" ondowncrop="0|112|56|56" visible="false" />
+  <layer name="controlBar_roundedbtnbg2" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_3.png" style="controlBar_roundedbtnbgstyle" x="106" y="75"  childx="15" childy="14" crop="0|0|60|60" onovercrop="0|60|60|60" ondowncrop="0|120|60|60" visible="false" /> 
+  <layer name="controlBar_roundedbtnbg3" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_4.png" style="controlBar_roundedbtnbgstyle" x="75"  y="106" childx="14" childy="15" crop="0|0|60|60" onovercrop="0|60|60|60" ondowncrop="0|120|60|60" visible="false" />
+  <layer name="controlBar_roundedbtnbg4" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_5.png" style="controlBar_roundedbtnbgstyle" x="39"  y="129" childx="10" childy="14" crop="0|0|56|56" onovercrop="0|56|56|56" ondowncrop="0|112|56|56" visible="false" />
+  <layer name="controlBar_roundedbtnbg5" url="%FIRSTXML%/graphics/roundcornerbar/btn_round_corner_6.png" style="controlBar_roundedbtnbgstyle" x="0"   y="144" childx="6"  childy="10" crop="0|0|48|48" onovercrop="0|48|48|48" ondowncrop="0|96|48|48" visible="false" />
+
+
+  <layer name="controlBar_roundedbtn_prev_pano"
+         url="%FIRSTXML%/graphics/roundcornerbar/btn_previous_scene.png"
+         onclick="loadPreviousScene();
+"
+         style="controlBar_rounded_btn_style"
+         visible="false"
+         tooltip="controlBar_roundedprevSceneTip"
+         />
+  <layer name="controlBar_roundedbtn_next_pano"
+         url="%FIRSTXML%/graphics/roundcornerbar/btn_next_scene.png"
+         onclick="loadNextScene();
+"
+         style="controlBar_rounded_btn_style"
+         visible="false"
+         tooltip="controlBar_roundednextSceneTip"
+         />
+
+
+
+
+
+
+
+  <layer name="controlBar_roundedbtn_autorotate_on"
+          url="%FIRSTXML%/graphics/roundcornerbar/btn_start_autorotation.png"
+          onclick="resumeautorotation();
+"
+          style="controlBar_rounded_btn_style"
+          visible="false"
+          tooltip="controlBar_roundedautorotateOnTip"
+          />
+  <layer name="controlBar_roundedbtn_autorotate_off"
+          url="%FIRSTXML%/graphics/roundcornerbar/btn_stop_autorotation.png"
+          onclick="pauseautorotation();
+"
+          style="controlBar_rounded_btn_style"
+          visible="false"
+          tooltip="controlBar_roundedautorotateOffTip"
+          />
+
+	<events name="controlBar_roundedAutorotationEvents"
+		onstartautorotation="controlBar_roundedupdateAutorotationButtons();"
+		onresumeautorotation="controlBar_roundedupdateAutorotationButtons();"
+		onstopautorotation="controlBar_roundedupdateAutorotationButtons();"
+		onpauseautorotation="controlBar_roundedupdateAutorotationButtons();"
+		keep="true"/>
+	<action name="controlBar_roundedHideAutorotationButtons">
+		set(layer[controlBar_roundedbtn_autorotate_off].visible, false);
+		set(layer[controlBar_roundedbtn_autorotate_on].visible , false);
+	</action>
+	<action name="controlBar_roundedShowAutorotationButtons">
+		if(autorotate.enabled == false,
+			set(layer[controlBar_roundedbtn_autorotate_off].visible, false);
+			set(layer[controlBar_roundedbtn_autorotate_on].visible , true);
+		,
+			set(layer[controlBar_roundedbtn_autorotate_off].visible, true);
+			set(layer[controlBar_roundedbtn_autorotate_on].visible , false);
+		);
+	</action>
+	<action name="controlBar_roundedupdateAutorotationButtons">
+		if (controlBar_roundedIsOpened,
+			controlBar_roundedShowAutorotationButtons();
+		,
+			controlBar_roundedHideAutorotationButtons();
+		);
+	</action>
+
+
+
+  <events name="controlBar_roundedcontrolmodechangeevent"
+          oncontrolmodechanged="controlBar_roundedupdateControlModeButtons();"
+          keep="true"/>
+	<action name="controlBar_roundedHideControlModeButtons">
+		set(layer[controlBar_roundedbtn_ctrlmode_move_to].visible, false);
+		set(layer[controlBar_roundedbtn_ctrlmode_drag_to].visible, false);
+	</action>
+	<action name="controlBar_roundedShowControlModeButtons">
+		if (tour_controlmodemousetype == "moveto",
+			set(layer[controlBar_roundedbtn_ctrlmode_drag_to].visible, true);
+			set(layer[controlBar_roundedbtn_ctrlmode_move_to].visible, false);
+		,
+			set(layer[controlBar_roundedbtn_ctrlmode_move_to].visible, true);
+			set(layer[controlBar_roundedbtn_ctrlmode_drag_to].visible, false);
+		);
+	</action>
+	<action name="controlBar_roundedupdateControlModeButtons">
+	if (device.desktop,
+		if (controlBar_roundedIsOpened,
+			controlBar_roundedShowControlModeButtons();
+		,
+			controlBar_roundedHideControlModeButtons();
+		);
+	,
+		controlBar_roundedHideControlModeButtons();
+	);
+	</action>
+  <layer name="controlBar_roundedbtn_ctrlmode_move_to"
+          url="%FIRSTXML%/graphics/roundcornerbar/btn_move_to.png"
+          style="controlBar_rounded_btn_style"
+          tooltip="controlBar_roundedctrlmodeMoveTip"
+          onclick="setControlMode(moveto);"
+          visible="false"
+          devices="desktop"
+          />
+  <layer name="controlBar_roundedbtn_ctrlmode_drag_to"
+          url="%FIRSTXML%/graphics/roundcornerbar/btn_drag_to.png"
+          style="controlBar_rounded_btn_style"
+          tooltip="controlBar_roundedctrlmodeDragTip"
+          onclick="setControlMode(drag2d);"
+          visible="false"
+          devices="desktop"
+          />
+
+    <layer name="controlBar_roundedbtn_display_help"
+            url="%FIRSTXML%/graphics/roundcornerbar/btn_help.png"
+            onclick="controlBar_roundeddisplayHelp();"
+            style="controlBar_rounded_btn_style"
+            visible="false"
+            tooltip="controlBar_roundeddisplayHelpTip"
+            devices="desktop"
+            />
+    <layer name="controlBar_roundedbtn_close_help"
+            url="%FIRSTXML%/graphics/roundcornerbar/btn_help.png"
+            onclick="controlBar_roundedcloseHelp();"
+            style="controlBar_rounded_btn_style"
+            tooltip="controlBar_roundedhideHelpTip"
+            devices="desktop"
+            visible="false"
+            />
+
+
+
+
+  <style name="controlBar_roundedroundcorner_btn_nav_style"
+         keep="true"
+         pixelhittest="true"
+         onhover="controlBar_roundedshowMenuTooltip();"
+         onout="hideTooltip();"
+         />
+
+  
+  <layer name="controlBar_roundedmenu_navigation_bg"
+          keep="true"
+          type="container"
+          zorder="2"
+          align="bottomright"
+          edge="bottomright"
+          x="10"
+          y="10"
+          width="102"
+          height="102"
+          visible="true"
+          capture="false">
+
+    <layer name="controlBar_roundedbtn_in"
+         zorder="1"
+            url="%FIRSTXML%/graphics/roundcornerbar/btn_zoom_in.png"
+            style="controlBar_roundedroundcorner_btn_nav_style"
+            crop="0|0|66|33"
+            onovercrop="0|33|66|33"
+            ondown="viewControlZoomIn(false);"
+            onup="viewControlZoomStop();
+"
+            x="0" y="0"
+            edge="bottom"
+            align="center"
+            visible="false"
+            tooltip="controlBar_roundedzoomInTip"
+             />
+    <layer name="controlBar_roundedbtn_out"
+         zorder="1"
+            url="%FIRSTXML%/graphics/roundcornerbar/btn_zoom_out.png"
+            style="controlBar_roundedroundcorner_btn_nav_style"
+            crop="0|0|66|33"
+            onovercrop="0|33|66|33"
+            ondown="viewControlZoomOut(false);
+"
+            onup="viewControlZoomStop();
+"
+            x="0" y="0"
+            edge="top"
+            align="center"
+            visible="false"
+            tooltip="controlBar_roundedzoomOutTip"
+             />
+
+    <layer name="controlBar_roundedbtn_left"
+           zorder="0"
+           ondown="viewControlMoveLeft(false);
+"
+           onup="viewControlMoveHoriStop();
+"
+            url="%FIRSTXML%/graphics/roundcornerbar/btn_move_left.png"
+            style="controlBar_roundedroundcorner_btn_nav_style"
+            crop="0|0|29|74"
+            onovercrop="0|74|29|74"
+            x="0" y="0"
+            edge="left"
+            align="left"
+            visible="false"
+            tooltip="controlBar_roundedmoveLeftTip"
+            />
+    <layer name="controlBar_roundedbtn_right"
+           zorder="0"
+           ondown="viewControlMoveRight(false);
+"
+           onup="viewControlMoveHoriStop();
+"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_move_right.png"
+           style="controlBar_roundedroundcorner_btn_nav_style"
+           crop="0|0|29|74"
+           onovercrop="0|74|29|74"
+           x="0" y="0"
+           edge="right"
+           align="right"
+           visible="false"
+           tooltip="controlBar_roundedmoveRightTip"
+           />
+
+    <layer name="controlBar_roundedbtn_up"
+           zorder="0"
+           ondown="viewControlMoveUp(false);
+"
+           onup="viewControlMoveVertStop();
+"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_move_up.png"
+           style="controlBar_roundedroundcorner_btn_nav_style"
+           crop="0|0|74|29"
+           onovercrop="0|29|74|29"
+           x="0" y="0"
+           align="top"
+           edge="top"
+           visible="false"
+           tooltip="controlBar_roundedmoveUpTip"
+           />
+    <layer name="controlBar_roundedbtn_down"
+           zorder="0"
+           ondown="viewControlMoveDown(false);
+"
+           onup="viewControlMoveVertStop();
+"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_move_down.png"
+           style="controlBar_roundedroundcorner_btn_nav_style"
+           crop="0|0|74|29"
+           onovercrop="0|29|74|29"
+           x="0" y="0"
+           edge="bottom"
+           align="bottom"
+           visible="false"
+           tooltip="controlBar_roundedmoveDownTip"
+           />
+
+    <layer name="controlBar_roundedbtn_hidecontrols"
+           onclick="controlBar_roundedhideMenuControls();hideTourControls();
+"
+           x="0" y="0"
+           keep="true"
+           zorder="2"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_hide_controls.png"
+                 crop="0| 0|28|28"
+           onovercrop="0|28|28|28"
+           ondowncrop="0|56|28|28"
+           style="controlBar_roundedroundcorner_btn_nav_style"
+           edge="center"
+           align="center"
+           height="28"
+           width="28"
+           visible="false"
+           tooltip="controlBar_roundedhideControlsTip"
+           />
+    <layer name="controlBar_roundedbtn_showcontrols"
+           onclick="controlBar_roundedshowMenuControls();showTourControls();
+"
+           x="0" y="0"
+           keep="true"
+           zorder="2"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_show_controls.png"
+                 crop="0| 0|28|28"
+           onovercrop="0|28|28|28"
+           ondowncrop="0|56|28|28"
+           style="controlBar_roundedroundcorner_btn_nav_style"
+           edge="center"
+           align="center"
+           visible="false"
+           height="28"
+           width="28"
+           tooltip="controlBar_roundeddisplayControlsTip"
+           />
+  </layer>
+
+  <style name="controlBar_roundedbtn_fs_bg_style" keep="true"
+         url="%FIRSTXML%/graphics/roundcornerbar/btn_fs_bg.png"
+         align="topright"
+         zorder="1"
+         x="0" y="0"
+         crop="      0|  0|50|50"
+         onovercrop="0| 50|50|50"
+         ondowncrop="0|100|50|50"
+         onhover="controlBar_roundedshowMenuTooltip();"
+         onout="hideTooltip();"
+         />
+  <style name="controlBar_roundedbtn_fs_style" keep="true" align="topright"
+         devices="fullscreensupport"
+         x="5" y="5"
+         onhover="controlBar_roundedshowMenuTooltip();"
+         onout="hideTooltip();"
+         />
+  <layer name="controlBar_roundedbtn_openfs_bg"
+         style="controlBar_roundedbtn_fs_bg_style"
+         onclick="enterFullscreen();
+"
+         visible="false"
+         devices="fullscreensupport"
+         alpha="0"
+         tooltip="controlBar_roundedopenFsTip"
+          >
+    <layer name="controlBar_roundedbtn_openfs"
+           style="controlBar_roundedbtn_fs_style"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_enter_fs.png"
+           onclick="enterFullscreen();
+"
+           tooltip="controlBar_roundedopenFsTip"
+           />
+  </layer>
+
+  <layer name="controlBar_roundedbtn_closefs_bg"
+          style="controlBar_roundedbtn_fs_bg_style"
+          visible="false"
+          alpha="0"
+          devices="fullscreensupport"
+          onclick="exitFullscreen();
+"
+          tooltip="controlBar_roundedcloseFsTip"
+         onhover="controlBar_roundedshowMenuTooltip();"
+         onout="hideTooltip();"
+          >
+    <layer name="controlBar_roundedbtn_closefs"
+           style="controlBar_roundedbtn_fs_style"
+           url="%FIRSTXML%/graphics/roundcornerbar/btn_close_fs.png"
+           onclick="exitFullscreen();
+"
+           tooltip="controlBar_roundedcloseFsTip"
+          />
+  </layer>
+
+  <events name="controlBar_roundedmenufullscreenchangeevent"
+          onenterfullscreen="controlBar_roundedupdateFullscreenButtons();"
+          onexitfullscreen="controlBar_roundedupdateFullscreenButtons();"
+          keep="true"/>
+	<action name="controlBar_roundedHideFullscreenButtons">
+		tween(layer[controlBar_roundedbtn_openfs_bg].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtn_openfs_bg].visible , false));
+		tween(layer[controlBar_roundedbtn_closefs_bg].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtn_closefs_bg].visible , false));
+	</action>
+	<action name="controlBar_roundedShowFullscreenButtons">
+		if (device.fullscreensupport,
+			if(tour_fullscreen,
+				if(layer[controlBar_roundedbtn_openfs_bg].visible,
+					set(layer[controlBar_roundedbtn_openfs_bg].visible , false);
+					set(layer[controlBar_roundedbtn_closefs_bg].visible, true);
+				,
+					set(layer[controlBar_roundedbtn_openfs_bg].visible , false);
+					set(layer[controlBar_roundedbtn_closefs_bg].visible, true);
+					tween(layer[controlBar_roundedbtn_openfs_bg].alpha, 1, 0.5);
+					tween(layer[controlBar_roundedbtn_closefs_bg].alpha, 1, 0.5);
+				);
+			,
+				if(layer[controlBar_roundedbtn_closefs_bg].visible,
+					set(layer[controlBar_roundedbtn_openfs_bg].visible ,true);
+					set(layer[controlBar_roundedbtn_closefs_bg].visible,false);
+				,
+					set(layer[controlBar_roundedbtn_openfs_bg].visible , true);
+					set(layer[controlBar_roundedbtn_closefs_bg].visible, false);
+					tween(layer[controlBar_roundedbtn_openfs_bg].alpha, 1, 0.5);
+					tween(layer[controlBar_roundedbtn_closefs_bg].alpha, 1, 0.5);
+				);
+			);
+		,
+			controlBar_roundedHideFullscreenButtons();
+		);
+	</action>
+	<action name="controlBar_roundedupdateFullscreenButtons">
+		if (controlBar_roundedIsOpened,
+			controlBar_roundedShowFullscreenButtons();
+		,
+			controlBar_roundedHideFullscreenButtons();
+		);
+	</action>
+
+
+
+
+
+
+  <action name="controlBar_roundedhideMenuControls">
+    set(controlBar_roundedIsOpened, false);
+    if (controlBar_roundednbbuttons GT 0,
+      stoptween(layer[controlBar_roundedmenu_roundcorner_bg].rotate);
+      stoptween(layer[controlBar_roundedbtnbg0].alpha);
+      stoptween(layer[controlBar_roundedbtnbg1].alpha);
+      stoptween(layer[controlBar_roundedbtnbg2].alpha);
+      stoptween(layer[controlBar_roundedbtnbg3].alpha);
+      stoptween(layer[controlBar_roundedbtnbg4].alpha);
+      stoptween(layer[controlBar_roundedbtnbg5].alpha);
+
+      tween(layer[controlBar_roundedbtnbg0].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg0].visible, false));
+      tween(layer[controlBar_roundedbtnbg1].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg1].visible, false));
+      tween(layer[controlBar_roundedbtnbg2].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg2].visible, false));
+      tween(layer[controlBar_roundedbtnbg3].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg3].visible, false));
+      tween(layer[controlBar_roundedbtnbg4].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg4].visible, false));
+      tween(layer[controlBar_roundedbtnbg5].alpha, 0, 0.5, easeOutQuad, set(layer[controlBar_roundedbtnbg5].visible, false));
+    );
+
+      set(layer[controlBar_roundedbtn_showcontrols].visible, true);
+      set(layer[controlBar_roundedbtn_hidecontrols].visible, false);
+      set(layer[controlBar_roundedbtn_in].visible, false);
+      set(layer[controlBar_roundedbtn_out].visible, false);
+      set(layer[controlBar_roundedbtn_up].visible, false);
+      set(layer[controlBar_roundedbtn_down].visible, false);
+      set(layer[controlBar_roundedbtn_left].visible, false);
+      set(layer[controlBar_roundedbtn_right].visible, false);
+      ifnot(layer[controlBar_roundedbtn_prev_pano].disabled,
+      if (scene.count GT 1,
+        set(layer[controlBar_roundedbtn_prev_pano].visible, false);
+        set(layer[controlBar_roundedbtn_next_pano].visible, false);
+      );
+      );
+
+    controlBar_roundedupdateFullscreenButtons();
+	ifnot(layer[controlBar_roundedbtn_autorotate_on].disabled,controlBar_roundedupdateAutorotationButtons(););
+
+
+	ifnot(layer[controlBar_roundedbtn_ctrlmode_drag_to].disabled,controlBar_roundedupdateControlModeButtons(););
+
+	ifnot(layer[controlBar_roundedbtn_display_help].disabled,controlBar_roundedupdateHelpButtons(););
+
+    if (controlBar_roundednbbuttons GT 0,
+      tween(layer[controlBar_roundedmenu_roundcorner_bg].rotate, 180, 0.5, easeOutQuad, set(layer[controlBar_roundedmenu_roundcorner_bg].visible, false););
+    );
+  </action>
+  <action name="controlBar_roundedshowMenuControls">
+    set(controlBar_roundedIsOpened, true);
+    if (controlBar_roundednbbuttons GT 0,
+      stoptween(layer[controlBar_roundedmenu_roundcorner_bg].rotate);
+      stoptween(layer[controlBar_roundedbtnbg0].alpha);
+      stoptween(layer[controlBar_roundedbtnbg1].alpha);
+      stoptween(layer[controlBar_roundedbtnbg2].alpha);
+      stoptween(layer[controlBar_roundedbtnbg3].alpha);
+      stoptween(layer[controlBar_roundedbtnbg4].alpha);
+      stoptween(layer[controlBar_roundedbtnbg5].alpha);
+    );
+
+      set(layer[controlBar_roundedbtn_hidecontrols].visible, true);
+      set(layer[controlBar_roundedbtn_showcontrols].visible, false);
+
+
+    set(layer[controlBar_roundedmenu_roundcorner_bg].visible, true);
+    tween(layer[controlBar_roundedmenu_roundcorner_bg].rotate, 0, 0.5, easeOutQuad,
+
+      if (controlBar_roundednbbuttons GT 0,
+        set(  layer[controlBar_roundedbtnbg0].visible, true);
+        tween(layer[controlBar_roundedbtnbg0].alpha  , 1, 0.5);
+        set(  layer[controlBar_roundedbtnbg1].visible, true);
+        tween(layer[controlBar_roundedbtnbg1].alpha  , 1, 0.5);
+        set(  layer[controlBar_roundedbtnbg2].visible, true);
+        tween(layer[controlBar_roundedbtnbg2].alpha  , 1, 0.5);
+        set(  layer[controlBar_roundedbtnbg3].visible, true);
+        tween(layer[controlBar_roundedbtnbg3].alpha  , 1, 0.5);
+        set(  layer[controlBar_roundedbtnbg4].visible, true);
+        tween(layer[controlBar_roundedbtnbg4].alpha  , 1, 0.5);
+        set(  layer[controlBar_roundedbtnbg5].visible, true);
+        tween(layer[controlBar_roundedbtnbg5].alpha  , 1, 0.5);
+      );
+
+      set(layer[controlBar_roundedbtn_in].visible, true);
+      set(layer[controlBar_roundedbtn_out].visible, true);
+      set(layer[controlBar_roundedbtn_up].visible, true);
+      set(layer[controlBar_roundedbtn_down].visible, true);
+      set(layer[controlBar_roundedbtn_left].visible, true);
+      set(layer[controlBar_roundedbtn_right].visible, true);
+    ifnot(layer[controlBar_roundedbtn_prev_pano].disabled,
+      if (scene.count GT 1,
+        set(layer[controlBar_roundedbtn_prev_pano].visible, true);
+        set(layer[controlBar_roundedbtn_next_pano].visible, true);
+      );
+    );
+
+      controlBar_roundedupdateFullscreenButtons();
+	ifnot(layer[controlBar_roundedbtn_autorotate_on].disabled,controlBar_roundedupdateAutorotationButtons(););
+
+
+	ifnot(layer[controlBar_roundedbtn_ctrlmode_drag_to].disabled,controlBar_roundedupdateControlModeButtons(););
+
+	ifnot(layer[controlBar_roundedbtn_display_help].disabled,controlBar_roundedupdateHelpButtons(););
+    );
+  </action>
+
+
+  <layer name="controlBar_roundedhelpScreenBg"
+          url="%FIRSTXML%/graphics/roundcornerbar/help_screen_bg.png"
+          keep="true"
+          align="bottomright"
+          x="0"
+          y="0"
+          rotate="-90"
+          zorder="97"
+          onclick="controlBar_roundedcloseHelp();"
+          visible="false"
+          >
+  <layer name="controlBar_roundedhelpScreen" 
+          keep="true"
+          align="center"
+          x="0"
+          y="0"
+          displayed="false"
+          onclick="controlBar_roundedcloseHelp();"
+         url="%FIRSTXML%/graphics/roundcornerbar/help_screen.png" 
+         zorder="0"
+         />
+  <layer name="controlBar_roundedbtnCloseHelpScreen"
+          url="%FIRSTXML%/graphics/roundcornerbar/btn_close_window.png"
+          keep="true"
+          align="topright"
+          onclick="controlBar_roundedcloseHelp();"
+          tooltip="controlBar_roundedhideHelpTip"
+          onhover="controlBar_roundedshowMenuTooltip();"
+          onout="hideTooltip();"
+          x="100"
+          y="10"
+          zorder="1"
+           />
+  </layer>
+  <action name="controlBar_roundeddisplayHelp">
+	if (device.desktop,
+		set(layer[controlBar_roundedhelpScreen].displayed, true);
+
+	
+
+		controlBar_roundedupdateHelpButtons();
+	);
+  </action>
+  <action name="controlBar_roundedcloseHelp">
+	if (device.desktop,
+		set(layer[controlBar_roundedhelpScreen].displayed, false);
+		controlBar_roundedupdateHelpButtons();
+		
+
+	
+
+	);
+  </action>
+	<action name="controlBar_roundedHideHelpButtons">
+		set(layer[controlBar_roundedbtn_display_help].visible, false);
+		set(layer[controlBar_roundedbtn_close_help].visible, false);
+		ifnot(layer[controlBar_roundedhelpScreenBg].rotate == -90,
+			tween(layer[controlBar_roundedhelpScreenBg].rotate, -90, 0.7, easeOutQuad, set(layer[controlBar_roundedhelpScreenBg].visible, false););
+		);
+	</action>
+	<action name="controlBar_roundedShowHelpButtons">
+		if (layer[controlBar_roundedhelpScreen].displayed,
+			set(layer[controlBar_roundedbtn_close_help].visible, true);
+			set(layer[controlBar_roundedbtn_display_help].visible, false);
+			set(layer[controlBar_roundedhelpScreenBg].visible, true);
+			ifnot(layer[controlBar_roundedhelpScreenBg].rotate == 0,
+				tween(layer[controlBar_roundedhelpScreenBg].rotate, 0, 0.7);
+			);
+		,
+			set(layer[controlBar_roundedbtn_display_help].visible, true);
+			set(layer[controlBar_roundedbtn_close_help].visible, false);
+			ifnot(layer[controlBar_roundedhelpScreenBg].rotate == -90,
+				tween(layer[controlBar_roundedhelpScreenBg].rotate, -90, 0.7, easeOutQuad, set(layer[controlBar_roundedhelpScreenBg].visible, false););
+			);
+		);
+	</action>
+	<action name="controlBar_roundedupdateHelpButtons">
+	if (device.desktop,
+		if (controlBar_roundedIsOpened,
+			controlBar_roundedShowHelpButtons();
+		,
+			controlBar_roundedHideHelpButtons();
+		);
+	,
+		controlBar_roundedHideHelpButtons();
+	);
+	</action>
+
+
+
+
+
+  <action name="controlBar_roundedshowMenuTooltip">
+    if (tooltip !== null,
+      getmessage(tooltipmess, get(tooltip));
+      showTooltip('plugin', controlBar_roundedmenuTooltipStyle, bottomright);
+    );
+  </action>
+
+  <layer name="controlBar_roundedmenuTooltipStyle"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="true"
+	backgroundcolor="0x9b8b75"
+	backgroundalpha="0.80000000000000004"
+	border="false"
+	css="color:#000000;font-family:Arial Rounded MT Bold;font-weight:bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	edge="bottomright"
+	selectable="false"
+	zorder="0"
+	padding="2"
+	xoffset="0"
+	yoffset="0"
+	visible="false"
+	html=""
+         />
+
+<!-- ********** -->
+<!-- Boussole -->
+<!-- id : compass -->
+<!-- ********** -->
+
+  <layer name="compassbackground"
+         url="%FIRSTXML%/graphics/compass/compassbg53a0d7.png"
+         keep="true"
+         handcursor="false"
+         capture="false"
+         align="topright"
+         x="0"
+         y="0"
+         zorder="4"
+         visible="false"
+         active="true"
+         started="false"
+
+         height="100"
+         width="100"
+
+         >
+
+
+
+
+    <layer name="compasspointer"
+           url="%FIRSTXML%/graphics/compass/compasspointerb17135.png"
+           keep="true"
+           align="center"
+           handcursor="false"
+           capture="false"
+           zorder="1"
+           height="100%"
+           width="100%"
+          />
+  </layer>
+
+  <events name="compassevts"
+          keep="true"
+          onnewpano="compassUpdateOrientation();"
+          onviewchanged="compassUpdateOrientation();"
+    onTourStart="set(layer[compassbackground].started, true);showcompass();"
+          hidetourcontrols="hidecompass();"
+          showtourcontrols="set(layer[compassbackground].started, true);showcompass();"
+         />
+
+  <action name="compassUpdateOrientation">
+    if(scene[get(xml.scene)].planar,
+      set(layer[compassbackground].active, false);
+      hidecompass();
+    ,
+
+      set(layer[compassbackground].active, true);
+      mod(compasshlookat, view.hlookat, 360);
+      mul(compassheading, -1, get(scene[get(xml.scene)].heading));
+      if (compassheading == null, set(compassheading, 0));
+      sub(layer[compasspointer].rotate, compasshlookat, compassheading);
+
+      showcompass();
+    );
+  </action>
+
+ 
+  <action name="hidecompass">
+    set(layer[compassbackground].visible, false);
+  </action>
+  <action name="showcompass">
+    if(tour_displaycontrols,
+    if(layer[compassbackground].active AND layer[compassbackground].started,set(layer[compassbackground].visible, true););
+    ,hidecompass(););
+  </action>
+
+<!-- ********* -->
+<!-- Gyroscope -->
+<!-- ********* -->
+
+
+
+<plugin name="gyroscope"
+        url="%FIRSTXML%/graphics/gyro2.js"
+        keep="true"
+        devices="no-desktop.and.html5"
+
+        onunavailable="checkGyroUnavailable();"
+        sensor_mode="1"
+        friction="auto"
+        autocalibration="true"
+        touch_mode="full"
+        onavailable="delayedcall(1, checkGyroAvailability(););"
+        enabled="false"
+        activated="false"
+        />
+
+<events name="gyroscopeEvents" onnewpano="planarGyroscopeTest();" keep="true" />
+
+<action name="planarGyroscopeTest">
+  if(plugin[gyroscope],
+          if(scene[get(xml.scene)].full360,
+            set(sceneisfull360, false);
+            sub(viewhfov, panoview.hmax, panoview.hmin);
+            if (viewhfov == 360,
+              sub(viewvfov, panoview.vmax, panoview.vmin);
+              if (viewvfov == 180,
+                set(sceneisfull360, true);
+              );
+            );
+            if (sceneisfull360,
+              set(plugin[gyroscope].camroll, true);
+            ,
+              set(plugin[gyroscope].camroll, false);
+            );
+          ,
+            set(plugin[gyroscope].camroll, false);
+          );
+  );
+</action>
+
+<action name="changeGyroscopeState">
+  if(plugin[gyroscope],
+    if (plugin[gyroscope].isavailable,
+        if(%1,
+          set(plugin[gyroscope].activated,true);
+        ,
+          set(plugin[gyroscope].activated,false);
+        );
+        if (%1 != plugin[gyroscope].enabled,
+          if(plugin[gyroscope].activated,
+            switch(plugin[gyroscope].enabled);
+          ,
+            set(plugin[gyroscope].enabled, false);
+          );
+          if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+        );
+    );
+  );
+</action>
+
+<action name="checkGyroAvailability">
+  if(plugin[gyroscope],
+    if (plugin[gyroscope].isavailable,
+      ifnot(tour_firstlittleplanet,
+        
+        switch(plugin[gyroscope].enabled);
+        set(plugin[gyroscope].activated,true);
+        
+        set(tour_gyroscopedevices, true);
+        events.dispatch(ongyroscopeavailable);
+      ,
+        delayedcall(1, checkGyroAvailability(););
+      );
+    ,
+      set(tour_gyroscopedevices, false);
+    );
+    if (plugin[gyroscope].enabled, events.dispatch(ongyroscopeon);, events.dispatch(ongyroscopeoff););
+  ,
+    checkGyroUnavailable();
+  );
+</action>
+
+<action name="checkGyroUnavailable">
+  set(plugin[gyroscope].activated, false);
+  set(plugin[gyroscope].enabled, false);
+  set(tour_gyroscopedevices, false);
+  events.dispatch(ongyroscopeunavailable);
+</action>
+
+<!-- ********** -->
+<!-- Partage Social -->
+<!-- id : socialShare -->
+<!-- ********** -->
+
+<ptplugin name="socialShare" engine="kolorBox">
+	<settings>
+		<option name="position" value="bottomleft" type="string" />
+		<option name="margin_x" value="50" type="int" />
+		<option name="margin_y" value="50" type="int" />
+		<option name="external_padding" value="15" type="int" />
+		<option name="animate" value="false" type="bool" />
+		<option name="draggable_box" value="false" type="bool" />
+		<option name="container_auto_size" value="true" type="bool" />
+		<option name="container_color" value="3665ff" type="string" />
+		<option name="container_alpha" value="0.90000762951094837" type="float" />
+		<option name="container_topleft_border_radius" value="15" type="int" />
+		<option name="container_topright_border_radius" value="15" type="int" />
+		<option name="container_bottomleft_border_radius" value="15" type="int" />
+		<option name="container_bottomright_border_radius" value="15" type="int" />
+		<option name="container_border_width" value="0" type="int" />
+		<option name="container_border_color" value="ffffff" type="string" />
+		<option name="container_border_alpha" value="1" type="float" />
+		<option name="overlay_displayed" value="false" type="bool" />
+		<option name="overlay_color" value="000000" type="string" />
+		<option name="overlay_alpha" value="0.50000762951094835" type="float" />
+
+		<option name="social_btn" value="facebook#twitter#email" type="string" />
+		<option name="social_orientation" value="horizontal" type="string" />
+		<option name="social_btn_size" value="64" type="int" />
+		<option name="inner_margin" value="10" type="int" />
+		
+		
+		<option name="title_displayed" value="false" type="bool" />
+		<option name="caption_displayed" value="false" type="bool" />
+		<option name="close_displayed" value="true" type="bool" />
+		<option name="close_position" value="topright" type="string" />
+		<option name="close_text" value="socialShareclose_text" type="string" />
+
+		<option name="close_callback" value="invokeKrFunction('closeKolorBoxCallback_socialShare')" type="string" />
+		<option name="zorder" value="6" type="int" />
+		<option name="use_i18n" value="true" type="bool" />
+	</settings>
+	<internaldata>
+		
+	</internaldata>
+</ptplugin>
+
+<action name="kolorBoxJsReady_socialShare">
+	set(ptplugin[socialShare].jsready, true);
+
+</action>
+
+
+
+<action name="showSocialShare_socialShare">
+	ifnot(ptplugin[socialShare].isOpen,
+		set(ptplugin[socialShare].isOpen, true);
+		pauseautorotation(forceplugin);
+
+			js(invokePluginFunction(socialShare, loadSingleArrayItem, social));
+		events.dispatch(onremovedisplayedobject);
+	);
+</action>
+
+<action name="toggleSocialShare_socialShare">
+	js(invokePluginFunction(socialShare, toggleKolorBox, %1));
+</action>
+
+
+<action name="closeKolorBox_socialShare">
+	js(invokePluginFunction(socialShare, closeKolorBox));
+</action>
+
+<action name="closeKolorBoxCallback_socialShare">
+	resumeautorotation(forceplugin);
+
+	
+	set(ptplugin[socialShare].isOpen, false);
+</action>
+
+<action name="changeLanguage_socialShare">
+	if(ptplugin[socialShare].jsready,
+		js(invokePluginFunction(socialShare, changeLanguage));
+	);
+</action>
+
+<events name="kolorBoxEvents_socialShare" 
+	keep="true"
+	onsharetour="showSocialShare_socialShare();" 
+	
+	
+	changetourlanguage="changeLanguage_socialShare();"
+	/>
+
+<!-- ********** -->
+<!-- Simple Barre de Miniatures -->
+<!-- id : thumbnailsBar -->
+<!-- ********** -->
+
+
+
+
+
+<layer name="thumbnailsBar_thumbnailsBar" 
+	keep="true" 
+	type="container" 
+	visible="false"
+	align="top" 
+	
+		width="100%" 
+		height="0" 
+		accuracy="1"
+	
+	x="0"
+	y="0"
+	
+	bgcolor="0xdedede"
+	bgalpha="0.10000762951094835"
+	
+	zorder="7"
+/>
+
+
+
+<layer name="thumbnailBorderSource_thumbnailsBar"
+	keep="true"
+	visible="false"
+	
+	borderWidth="2"
+	borderColorDefault="0xe6e6e6" 
+	borderColorHover="0xffffff"
+	borderColorSelected="0xffffff"
+	borderAlphaDefault="0.50000762951094835" 
+	borderAlphaHover="1"
+	borderAlphaSelected="1"
+	
+	url=""
+	offsetX="0"
+	offsetY="0"
+	quarterHeight="0"
+/>
+
+<layer name="tooltipStyle_thumbnailsBar"
+	keep="true"
+	enabled="false"
+	capture="false"
+	url="%FIRSTXML%/graphics/textfield.swf"
+	align="center"
+	background="false"
+	border="false"
+	css="color:#ffffff;font-family:Arial Rounded MT Bold;font-size:14px;text-align:left;"
+	height="20"
+	autoheight="true"
+	autowidth="auto"
+	selectable="false"
+	zorder="0"
+	padding="2"
+	xoffset="0"
+	yoffset="0"
+	visible="false"
+	html=""
+	edge="top"
+/>
+	
+	<krpano arrow1Loaded_thumbnailsBar="false" arrow2Loaded_thumbnailsBar="false" borderLoaded_thumbnailsBar="false" thumbnailsLoadedCounter_thumbnailsBar="0" thumbsCount_thumbnailsBar="0" thumbsCounter_thumbnailsBar="0" firstInit_thumbnailsBar="false" />
+	
+	
+	<events name="thumbnailsScrollEvents_thumbnailsBar" 
+		keep="true" 
+		
+		onxmlcomplete="ifnot(startResize_thumbnailsBar,set(isLoaded_thumbnailsBar, true);if(isStarted_thumbnailsBar,onLoadCompleteHandler_thumbnailsBar();););"
+		onTourStart="set(isStarted_thumbnailsBar, true);if(isLoaded_thumbnailsBar,onLoadCompleteHandler_thumbnailsBar(););"
+		onnewpano="if(startResize_thumbnailsBar,if(firstInit_thumbnailsBar,onLoadCompleteHandler_thumbnailsBar();););"
+		onresize="onResizeHandler_thumbnailsBar();"
+		hidetourthumbnails="hideWithThumbnailsButton_thumbnailsBar();" 
+		showtourthumbnails="showWithThumbnailsButton_thumbnailsBar();" 
+		hidetourcontrols="hideWithControlsBar_thumbnailsBar();" 
+		showtourcontrols="showWithControlsBar_thumbnailsBar();" 
+		onenterfullscreen="delayedcall(0.2,scrollToCurrentThumb_thumbnailsBar(););"
+		onexitfullscreen="delayedcall(0.2,scrollToCurrentThumb_thumbnailsBar(););"
+	/>
+	
+	
+	<layer name="scrollAreaContainer_thumbnailsBar" 
+		keep="true"
+		type="container" 
+		align="topleft"
+		x="10"
+		y="10"
+		
+		marginX="10"
+		marginY="10"
+		
+		width="0" 
+		height="0"
+		
+		targetWidth="0"
+		targetHeight="0"
+		
+		scrollSpeedInit="10"
+		scrollSpeed="10"
+		scrollSpeedMax="70"
+		scrollSpeedAcceleration="20"
+		
+		parent="thumbnailsBar_thumbnailsBar"
+		
+		thumbWidth="0"
+		thumbHeight="0"
+		
+		itemWidth="100"
+		itemHeight="50"
+		
+		offsetX="0"
+		offsetY="0"
+		
+		thumbSpacer="10"
+		currentThumbsCount="0"
+		
+		adjustToContent="false"
+		
+		zorder="1"
+		visible="false"
+		ready="false"
+	>
+	
+		
+		<layer name="thumbsScrollArea_thumbnailsBar" 
+			url="%FIRSTXML%/graphics/scrollarea.swf" 
+			alturl="%FIRSTXML%/graphics/scrollarea.js" 
+			align="top"
+			onhover_autoscrolling="false"
+			
+			x="0"
+			y="0"
+			 
+				direction="h" 
+		/>
+	
+	</layer>
+	
+	
+	
+	<layer name="scrollPrevArrow_thumbnailsBar" 
+		keep="true"
+		type="image"
+		visible="false"
+		parent="thumbnailsBar_thumbnailsBar"
+		targetHeight="0"
+		targetWidth="0"
+		zorder="2"
+		onloaded="loadedImages_thumbnailsBar(arrow1);"
+			url="%FIRSTXML%/graphics/thumbnailsbar/btn_scroll_left.png"
+			align="left"
+	/>
+	
+	
+	
+	<layer name="scrollNextArrow_thumbnailsBar" 
+		keep="true"
+		type="image"
+		visible="false"
+		parent="thumbnailsBar_thumbnailsBar"
+		targetHeight="0"
+		targetWidth="0"
+		zorder="2"
+		onloaded="loadedImages_thumbnailsBar(arrow2);"
+			url="%FIRSTXML%/graphics/thumbnailsbar/btn_scroll_right.png"
+			align="right"
+	/>
+	
+	<action name="loadedImages_thumbnailsBar">
+		if(%1 == "arrow1",
+			set(arrow1Loaded_thumbnailsBar, true);
+		);
+		if(%1 == "arrow2",
+			set(arrow2Loaded_thumbnailsBar, true);
+		);
+		if(%1 == "border",
+			if(layer[thumbnailBorderSource_thumbnailsBar].url,
+				set(borderLoaded_thumbnailsBar, true);
+			);
+		);
+		if(%1 == "thumbnail",
+			inc(thumbnailsLoadedCounter_thumbnailsBar);
+		);
+	</action>
+	
+	<action name="onLoadCompleteHandler_thumbnailsBar">
+		
+		set(thumbsCount_thumbnailsBar, 0);
+		
+		
+		set(thumbsCount_thumbnailsBar, get(scene.count));
+		
+		
+		
+		
+		
+		
+		
+		loadThumbs_thumbnailsBar();
+		
+		if(firstInit_thumbnailsBar,
+			onLoadCompleteHandlerPartThree_thumbnailsBar();
+		,
+			onLoadCompleteHandlerPartTwo_thumbnailsBar();
+		);
+	</action>
+	
+	<action name="onLoadCompleteHandlerPartTwo_thumbnailsBar">
+		set(imgCounter_thumbnailsBar, 3);
+		
+		if(arrow1Loaded_thumbnailsBar,
+			dec(imgCounter_thumbnailsBar);
+		);
+		if(arrow2Loaded_thumbnailsBar,
+			dec(imgCounter_thumbnailsBar);
+		);
+		if(thumbsCount_thumbnailsBar == thumbnailsLoadedCounter_thumbnailsBar,
+			dec(imgCounter_thumbnailsBar);
+		);
+		
+		if(imgCounter_thumbnailsBar LE 0,
+			stopdelayedcall(delayedCallOnLoadComplete_thumbnailsBar);
+			onLoadCompleteHandlerPartThree_thumbnailsBar();
+		,
+			delayedcall(delayedCallOnLoadComplete_thumbnailsBar, 0.2, onLoadCompleteHandlerPartTwo_thumbnailsBar());
+		);
+	</action>
+	
+	<action name="onLoadCompleteHandlerPartThree_thumbnailsBar">
+		resetMouseBehavior_thumbnailsBar();
+		highlightCurrentThumb_thumbnailsBar();
+		
+		
+		if(layer[scrollAreaContainer_thumbnailsBar].adjustToContent,
+			mul(adjustWidth_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].marginX), 2);
+			add(adjustWidth_thumbnailsBar, get(layer[thumbsScrollArea_thumbnailsBar].width));
+			mul(adjustHeight_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].marginY), 2);
+			add(adjustHeight_thumbnailsBar, get(layer[thumbsScrollArea_thumbnailsBar].height));
+			
+			
+			if(adjustWidth_thumbnailsBar GT stagewidth,
+				set(adjustWidth_thumbnailsBar, get(stagewidth));
+				set(layer[scrollAreaContainer_thumbnailsBar].adjustToContent, false);
+			,
+				if(adjustHeight_thumbnailsBar GT stageheight,
+					set(adjustHeight_thumbnailsBar, get(stageheight));
+					set(layer[scrollAreaContainer_thumbnailsBar].adjustToContent, false);
+				);
+			);
+			
+			setSize_thumbnailsBar(get(adjustWidth_thumbnailsBar), get(adjustHeight_thumbnailsBar));
+		);
+		
+		setupArrows_thumbnailsBar(true);
+		
+		
+		if (thumbsCounter_thumbnailsBar LE 0,
+			set(layer[thumbnailsBar_thumbnailsBar].visible, false);
+		);
+		
+		
+		set(startResize_thumbnailsBar, true);
+		set(firstInit_thumbnailsBar, true);
+	</action>
+	
+	
+	<action name="onResizeHandler_thumbnailsBar">
+		
+		delayedcall(0.1, onResizeCallback_thumbnailsBar(false); );
+	</action>
+	
+	
+	<action name="onResizeCallback_thumbnailsBar">
+		if(startResize_thumbnailsBar,
+			setSize_thumbnailsBar(get(layer[scrollAreaContainer_thumbnailsBar].targetWidth), get(layer[scrollAreaContainer_thumbnailsBar].targetHeight));
+			setupArrows_thumbnailsBar(%1);
+			
+			
+			if (thumbsCounter_thumbnailsBar LE 0,
+				set(layer[thumbnailsBar_thumbnailsBar].visible, false);
+			);
+		);
+	</action>
+	
+	
+		<action name="showWithThumbnailsButton_thumbnailsBar">
+			set(layer[thumbnailsBar_thumbnailsBar].visible, true);
+			onResizeCallback_thumbnailsBar(true);
+		</action>
+		
+		<action name="hideWithThumbnailsButton_thumbnailsBar">
+			set(layer[thumbnailsBar_thumbnailsBar].visible, false);
+		</action>
+	
+	
+		<action name="showWithControlsBar_thumbnailsBar">
+			
+				if (tour_displaythumbnails,
+					set(layer[thumbnailsBar_thumbnailsBar].visible, true);
+					onResizeCallback_thumbnailsBar(true);
+				,
+					set(layer[thumbnailsBar_thumbnailsBar].visible, false);
+				);
+		</action>
+		
+		<action name="hideWithControlsBar_thumbnailsBar">
+			set(layer[thumbnailsBar_thumbnailsBar].visible, false);
+		</action>
+	
+	
+	<action name="thumbnailBorderDrawInit_thumbnailsBar">
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].offsetX, get(layer[thumbnailBorderSource_thumbnailsBar].borderWidth));
+		set(layer[scrollAreaContainer_thumbnailsBar].offsetY, get(layer[thumbnailBorderSource_thumbnailsBar].borderWidth));
+		
+		
+		mul(totalOffsetX_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].borderWidth), 2);
+		mul(totalOffsetY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].borderWidth), 2);
+		
+		
+		if(startResize_thumbnailsBar,
+			sub(layer[scrollAreaContainer_thumbnailsBar].itemWidth, get(totalOffsetX_thumbnailsBar));
+			sub(layer[scrollAreaContainer_thumbnailsBar].itemHeight, get(totalOffsetY_thumbnailsBar));
+		);
+		
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].thumbWidth, get(layer[scrollAreaContainer_thumbnailsBar].itemWidth));
+		set(layer[scrollAreaContainer_thumbnailsBar].thumbHeight, get(layer[scrollAreaContainer_thumbnailsBar].itemHeight));
+		
+		add(layer[scrollAreaContainer_thumbnailsBar].itemWidth, get(totalOffsetX_thumbnailsBar));
+		add(layer[scrollAreaContainer_thumbnailsBar].itemHeight, get(totalOffsetY_thumbnailsBar));
+	</action>
+		
+	
+	<action name="thumbnailBorderImageInit_thumbnailsBar">
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].offsetX, get(layer[thumbnailBorderSource_thumbnailsBar].offsetX));
+		set(layer[scrollAreaContainer_thumbnailsBar].offsetY, get(layer[thumbnailBorderSource_thumbnailsBar].offsetY));
+		
+		
+		mul(totalOffsetX_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].offsetX), 2);
+		mul(totalOffsetY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].offsetY), 2);
+		
+		
+		if(startResize_thumbnailsBar,
+			sub(layer[scrollAreaContainer_thumbnailsBar].itemWidth, get(totalOffsetX_thumbnailsBar));
+			sub(layer[scrollAreaContainer_thumbnailsBar].itemHeight, get(totalOffsetY_thumbnailsBar));
+		);
+		
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].thumbWidth, get(layer[scrollAreaContainer_thumbnailsBar].itemWidth));
+		set(layer[scrollAreaContainer_thumbnailsBar].thumbHeight, get(layer[scrollAreaContainer_thumbnailsBar].itemHeight));
+		
+		add(layer[scrollAreaContainer_thumbnailsBar].itemWidth, get(totalOffsetX_thumbnailsBar));
+		add(layer[scrollAreaContainer_thumbnailsBar].itemHeight, get(totalOffsetY_thumbnailsBar));
+		
+		
+		div(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight, get(layer[thumbnailBorderSource_thumbnailsBar].height), 4);
+		
+		
+		set(cropX_thumbnailsBar, 0);
+		set(cropY_thumbnailsBar, 0);
+		set(cropW_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].width));
+		set(cropH_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight));
+		txtadd(layer[thumbnailBorderSource_thumbnailsBar].cropDefault, get(cropX_thumbnailsBar), '|', get(cropY_thumbnailsBar), '|', get(cropW_thumbnailsBar), '|', get(cropH_thumbnailsBar));
+
+		
+		add(cropY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight));
+		txtadd(layer[thumbnailBorderSource_thumbnailsBar].cropHover, get(cropX_thumbnailsBar), '|', get(cropY_thumbnailsBar), '|', get(cropW_thumbnailsBar), '|', get(cropH_thumbnailsBar));
+		
+		
+		add(cropY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight));
+		txtadd(layer[thumbnailBorderSource_thumbnailsBar].cropSelected, get(cropX_thumbnailsBar), '|', get(cropY_thumbnailsBar), '|', get(cropW_thumbnailsBar), '|', get(cropH_thumbnailsBar));
+		
+		
+		add(cropY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight));
+		txtadd(layer[thumbnailBorderSource_thumbnailsBar].cropVisited, get(cropX_thumbnailsBar), '|', get(cropY_thumbnailsBar), '|', get(cropW_thumbnailsBar), '|', get(cropH_thumbnailsBar));
+		
+		
+		set(scaleX_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].offsetX));
+		set(scaleY_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].offsetY));
+		sub(scaleW_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].width), get(totalOffsetX_thumbnailsBar));
+		sub(scaleH_thumbnailsBar, get(layer[thumbnailBorderSource_thumbnailsBar].quarterHeight), get(totalOffsetY_thumbnailsBar));
+		txtadd(layer[thumbnailBorderSource_thumbnailsBar].scale9grid, get(scaleX_thumbnailsBar), '|', get(scaleY_thumbnailsBar), '|', get(scaleW_thumbnailsBar), '|', get(scaleH_thumbnailsBar));
+	</action>
+	
+	
+	<action name="loadThumbs_thumbnailsBar">
+		if(layer[thumbnailBorderSource_thumbnailsBar].url,
+			set(imgCounter_thumbnailsBar, 1);
+		,
+			set(imgCounter_thumbnailsBar, 0);
+		);
+		
+		if(layer[thumbnailBorderSource_thumbnailsBar].url,
+			if(borderLoaded_thumbnailsBar,
+				dec(imgCounter_thumbnailsBar);
+			);
+		);
+		
+		if(imgCounter_thumbnailsBar LE 0,
+			stopdelayedcall(delayedCallOnLoadCompleteBorder_thumbnailsBar);
+			loadThumbsPartTwo_thumbnailsBar();
+		,
+			delayedcall(delayedCallOnLoadCompleteBorder_thumbnailsBar, 0.2, loadThumbs_thumbnailsBar());
+		);
+	</action>
+	
+	<action name="loadThumbsPartTwo_thumbnailsBar">
+		ifnot(layer[scrollAreaContainer_thumbnailsBar].ready,
+			
+			
+			if(layer[thumbnailBorderSource_thumbnailsBar].url,
+				thumbnailBorderImageInit_thumbnailsBar();
+			,
+				thumbnailBorderDrawInit_thumbnailsBar();
+			);
+			
+			
+			set(thumbsCounter_thumbnailsBar, 0);
+			
+			
+			set(i_thumbnailsBar_wait,30);
+			
+			
+				for( set(i_thumbnailsBar, 0), i_thumbnailsBar LT scene.count, inc(i_thumbnailsBar),
+					if(i_thumbnailsBar_wait == i_thumbnailsBar,
+						add(i_thumbnailsBar_wait,30);
+						wait(0);
+					);
+					createThumb_thumbnailsBar(get(scene[get(i_thumbnailsBar)].name), get(scene[get(i_thumbnailsBar)].thumburl), get(i_thumbnailsBar), get(scene[get(i_thumbnailsBar)].titleid));
+					inc(thumbsCounter_thumbnailsBar);
+				);
+			
+			
+			
+			
+			
+			
+			set(layer[scrollAreaContainer_thumbnailsBar].currentThumbsCount, get(thumbsCounter_thumbnailsBar));
+			
+			
+			setSize_thumbnailsBar(get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].width), get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].height));
+			
+			
+			set(layer[scrollAreaContainer_thumbnailsBar].visible, true);
+			
+			
+				if (tour_displaycontrols,
+					showWithControlsBar_thumbnailsBar();
+				,
+					hideWithControlsBar_thumbnailsBar();
+				);
+			
+			
+			set(layer[scrollAreaContainer_thumbnailsBar].ready, true);
+		);
+	</action>
+	
+	
+	<action name="setSize_thumbnailsBar">
+		
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].targetWidth, %1);
+		set(layer[scrollAreaContainer_thumbnailsBar].targetHeight, %2);
+		
+		
+		set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].width, %1);
+		set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].height, %2);
+		layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].updatepos();
+		
+		
+		mul(totalMarginX_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].marginX), 2);
+		mul(totalMarginY_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].marginY), 2);
+		
+			add(totalPluginHeight_thumbnailsBar, get(totalMarginY_thumbnailsBar), get(layer[scrollAreaContainer_thumbnailsBar].itemHeight));
+			
+			
+			
+			if(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].pixelheight LT totalPluginHeight_thumbnailsBar,
+				set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].height, get(totalPluginHeight_thumbnailsBar));
+			);
+		
+		layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].updatepos();
+		
+		
+		sub(containerWidth_thumbnailsBar, get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].pixelwidth), get(totalMarginX_thumbnailsBar));
+		sub(containerHeight_thumbnailsBar, get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].pixelheight), get(totalMarginY_thumbnailsBar));
+
+		
+		set(layer[scrollAreaContainer_thumbnailsBar].width, get(containerWidth_thumbnailsBar));
+		set(layer[scrollAreaContainer_thumbnailsBar].height, get(containerHeight_thumbnailsBar));
+		
+		set(scrollAreaSize_thumbnailsBar, 0);
+		
+		
+		mul(totalThumbsSpacer_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].currentThumbsCount), get(layer[scrollAreaContainer_thumbnailsBar].thumbSpacer));
+		sub(totalThumbsSpacer_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].thumbSpacer));
+		
+		set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible, true);
+		
+
+			mul(scrollAreaSize_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].itemWidth), get(layer[scrollAreaContainer_thumbnailsBar].currentThumbsCount));
+			add(scrollAreaSize_thumbnailsBar, get(totalThumbsSpacer_thumbnailsBar));
+			
+			set(layer[thumbsScrollArea_thumbnailsBar].width, get(scrollAreaSize_thumbnailsBar));
+			set(layer[thumbsScrollArea_thumbnailsBar].height, get(layer[scrollAreaContainer_thumbnailsBar].itemHeight));
+			
+			
+			if(layer[scrollAreaContainer_thumbnailsBar].width LT layer[scrollAreaContainer_thumbnailsBar].itemWidth,
+				set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible, false);
+			,
+				verifyThumbnailsBarVisibility_thumbnailsBar();
+			);
+			
+		
+		
+		if(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].width LT 0,
+			set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible, false);
+		);
+		
+	</action>
+	
+	
+	<action name="verifyThumbnailsBarVisibility_thumbnailsBar">
+		if(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible,
+			set(boolValue_thumbnailsBar, false);
+			
+			if (tour_displaythumbnails,
+				if (tour_displaycontrols,
+					set(boolValue_thumbnailsBar, true);
+				);
+			);
+			
+			set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible, get(boolValue_thumbnailsBar));
+		);
+	</action>
+	
+	
+	<action name="createThumb_thumbnailsBar">
+
+			add(offsetFactor_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].itemWidth), get(layer[scrollAreaContainer_thumbnailsBar].thumbSpacer));
+	
+			mul(thumbIncPos_thumbnailsBar, %3, get(offsetFactor_thumbnailsBar));
+			
+			
+			if(layer[thumbnailBorderSource_thumbnailsBar].url,
+				add(thumbIncPos_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].offsetX));
+			);
+			
+		
+		mul(negativeOffsetX_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].offsetX), -1);
+		mul(negativeOffsetY_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].offsetY), -1);
+		
+		set(thumbName, 'thumb_');
+		txtadd(thumbName, %1);
+		txtadd(thumbName, '_thumbnailsBar');
+		addlayer(get(thumbName));
+		
+		set(thumbBorderName, 'thumbBorder_');
+		txtadd(thumbBorderName, %1);
+		txtadd(thumbBorderName, '_thumbnailsBar');
+		addlayer(get(thumbBorderName));
+		
+		
+		ifnot(layer[thumbnailBorderSource_thumbnailsBar].url,
+			set(layer[get(thumbBorderName)].type, container);
+			set(layer[get(thumbBorderName)].parent, thumbsScrollArea_thumbnailsBar);
+		);
+		
+		
+		set(layer[get(thumbName)].onloaded, loadedImages_thumbnailsBar("thumbnail"););
+		set(layer[get(thumbName)].url, %2);
+		set(layer[get(thumbName)].keep, true);
+		set(layer[get(thumbName)].width, get(layer[scrollAreaContainer_thumbnailsBar].thumbWidth));
+		set(layer[get(thumbName)].height, get(layer[scrollAreaContainer_thumbnailsBar].thumbHeight));
+		set(layer[get(thumbName)].align, topleft);
+		
+		
+			set(layer[get(thumbName)].y, get(layer[scrollAreaContainer_thumbnailsBar].offsetY));
+		
+			if(layer[thumbnailBorderSource_thumbnailsBar].url,
+				set(layer[get(thumbName)].parent, thumbsScrollArea_thumbnailsBar);
+				set(layer[get(thumbName)].x, get(thumbIncPos_thumbnailsBar));
+			,
+				set(layer[get(thumbName)].parent, get(thumbBorderName));
+				set(layer[get(thumbName)].x, get(layer[scrollAreaContainer_thumbnailsBar].offsetX));
+				set(layer[get(thumbName)].onclick, resetMouseBehavior_thumbnailsBar(); mainloadscene(%1); highlightThumb_thumbnailsBar(%1));
+			);	
+			
+		
+		
+		set(layer[get(thumbBorderName)].keep, true);
+		set(layer[get(thumbBorderName)].width, get(layer[scrollAreaContainer_thumbnailsBar].itemWidth));
+		set(layer[get(thumbBorderName)].height, get(layer[scrollAreaContainer_thumbnailsBar].itemHeight));
+		set(layer[get(thumbBorderName)].align, topleft);
+		
+		if(layer[thumbnailBorderSource_thumbnailsBar].url,
+			set(layer[get(thumbBorderName)].url, get(layer[thumbnailBorderSource_thumbnailsBar].url));
+			set(layer[get(thumbBorderName)].scale9grid, get(layer[thumbnailBorderSource_thumbnailsBar].scale9grid));
+			set(layer[get(thumbBorderName)].parent, get(thumbName));
+			set(layer[get(thumbBorderName)].x, get(negativeOffsetX_thumbnailsBar));
+			set(layer[get(thumbBorderName)].y, get(negativeOffsetY_thumbnailsBar));
+			set(layer[get(thumbBorderName)].onclick, resetMouseBehavior_thumbnailsBar(); mainloadscene(%1); highlightThumb_thumbnailsBar(%1));
+		,
+			
+				set(layer[get(thumbBorderName)].x, get(thumbIncPos_thumbnailsBar)); 
+				
+		);
+		
+		
+		setupMouseBehavior_thumbnailsBar(%1, %4);
+		
+	</action>
+	
+	
+	<action name="removeThumb_thumbnailsBar">
+		set(thumbName, 'thumb_');
+		txtadd(thumbName, %1);
+		txtadd(thumbName, '_thumbnailsBar');
+		removelayer(get(thumbName));
+		
+		set(thumbBorderName, 'thumbBorder_');
+		txtadd(thumbBorderName, %1);
+		txtadd(thumbBorderName, '_thumbnailsBar');
+		removelayer(get(thumbBorderName));
+	</action>
+	
+	
+	
+	<action name="setupArrows_thumbnailsBar">
+		
+		if(layer[scrollAreaContainer_thumbnailsBar].adjustToContent,
+			hideArrows_thumbnailsBar();
+		,
+			ifnot(device.touchdevice,
+				
+					if(layer[scrollAreaContainer_thumbnailsBar].width LT layer[thumbsScrollArea_thumbnailsBar].width,
+				
+					showArrows_thumbnailsBar();
+				,
+					hideArrows_thumbnailsBar();
+				);
+			,
+				hideArrows_thumbnailsBar();
+			);
+		);
+		
+		
+		if(%1,
+			scrollToCurrentThumb_thumbnailsBar();
+		);
+		
+		
+			
+			if(layer[scrollAreaContainer_thumbnailsBar].width LT layer[scrollAreaContainer_thumbnailsBar].itemWidth,
+				set(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].visible, false);
+			);
+	</action>
+	
+	
+	<action name="showArrows_thumbnailsBar">
+		
+		
+		
+		
+		set(layer[scrollPrevArrow_thumbnailsBar].visible, true);
+		set(layer[scrollNextArrow_thumbnailsBar].visible, true);
+		
+		
+		
+			
+			add(totalArrowSize_thumbnailsBar, get(layer[scrollPrevArrow_thumbnailsBar].width), get(layer[scrollNextArrow_thumbnailsBar].width));
+		
+			
+			sub(scrollAreaContainerSize_thumbnailsBar, get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].pixelwidth), get(totalArrowSize_thumbnailsBar));
+		
+			set(layer[scrollAreaContainer_thumbnailsBar].width, get(scrollAreaContainerSize_thumbnailsBar));
+			
+			set(layer[scrollAreaContainer_thumbnailsBar].x, get(layer[scrollPrevArrow_thumbnailsBar].width));
+			
+		
+		
+		set(layer[scrollPrevArrow_thumbnailsBar].onhover, scrollPrev_thumbnailsBar(););
+		set(layer[scrollNextArrow_thumbnailsBar].onhover, scrollNext_thumbnailsBar(););
+		
+		set(layer[scrollPrevArrow_thumbnailsBar].onclick, scrollPrev_thumbnailsBar(get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeedAcceleration)););
+		set(layer[scrollNextArrow_thumbnailsBar].onclick, scrollNext_thumbnailsBar(get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeedAcceleration)););
+		
+		
+		
+		
+		
+		set(layer[scrollPrevArrow_thumbnailsBar].onout, set(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed, get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeedInit)););
+		set(layer[scrollNextArrow_thumbnailsBar].onout, set(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed, get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeedInit)););
+		
+	</action>
+	
+	
+	
+	
+	<action name="hideArrows_thumbnailsBar">
+		
+		set(layer[scrollPrevArrow_thumbnailsBar].visible, false);
+		set(layer[scrollNextArrow_thumbnailsBar].visible, false);
+		
+		
+
+			mul(totalMargin_thumbnailsBar, get(layer[scrollAreaContainer_thumbnailsBar].marginX), 2);
+			
+			sub(scrollAreaContainerSize_thumbnailsBar, get(layer[get(layer[scrollAreaContainer_thumbnailsBar].parent)].pixelwidth), get(totalMargin_thumbnailsBar));
+
+			set(layer[scrollAreaContainer_thumbnailsBar].width, get(scrollAreaContainerSize_thumbnailsBar));
+			set(layer[scrollAreaContainer_thumbnailsBar].x, get(layer[scrollAreaContainer_thumbnailsBar].marginX));
+			 
+			
+	</action>
+	
+	
+	<action name="scrollPrev_thumbnailsBar">
+		
+		
+		if(%1,
+			inc(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed, %1);
+		);
+		
+		layer[thumbsScrollArea_thumbnailsBar].stopscrolling();
+		
+		set(scrollLimit_thumbnailsBar, 0);
+		
+		
+			
+				sub(scrollLimit_thumbnailsBar, get(layer[thumbsScrollArea_thumbnailsBar].width), get(layer[scrollAreaContainer_thumbnailsBar].width));
+				div(scrollLimit_thumbnailsBar, 2);
+			
+			add(layer[thumbsScrollArea_thumbnailsBar].x, get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed));
+			if(layer[thumbsScrollArea_thumbnailsBar].x GE scrollLimit_thumbnailsBar,
+				set(layer[thumbsScrollArea_thumbnailsBar].x, get(scrollLimit_thumbnailsBar));
+			);
+		
+		if(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed LT layer[scrollAreaContainer_thumbnailsBar].scrollSpeedMax,
+			inc(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed);
+		);
+		
+	</action>
+	
+	
+	<action name="scrollNext_thumbnailsBar">
+		
+		
+		if(%1,
+			inc(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed, %1);
+		);
+		
+		layer[thumbsScrollArea_thumbnailsBar].stopscrolling();
+		
+			
+			sub(scrollLimit_thumbnailsBar, get(layer[thumbsScrollArea_thumbnailsBar].width), get(layer[scrollAreaContainer_thumbnailsBar].width));
+			
+				div(scrollLimit_thumbnailsBar, 2);
+			mul(scrollLimit_thumbnailsBar, -1);
+			
+			sub(layer[thumbsScrollArea_thumbnailsBar].x, get(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed));
+			if(layer[thumbsScrollArea_thumbnailsBar].x LE scrollLimit_thumbnailsBar,
+				set(layer[thumbsScrollArea_thumbnailsBar].x, get(scrollLimit_thumbnailsBar));
+			);
+		
+		if(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed LT layer[scrollAreaContainer_thumbnailsBar].scrollSpeedMax,
+			inc(layer[scrollAreaContainer_thumbnailsBar].scrollSpeed);
+		);
+		
+	</action>
+	
+	
+	<action name="resetMouseBehavior_thumbnailsBar">
+	
+		
+		
+		
+		set(j_thumbnailsBar_wait,30);
+		
+			for( set(j_thumbnailsBar, 0), j_thumbnailsBar LT scene.count, inc(j_thumbnailsBar),
+				if(j_thumbnailsBar_wait == j_thumbnailsBar,
+					add(j_thumbnailsBar_wait,30);
+					wait(0);
+				);
+				set(thumbBorderName, 'thumbBorder_');
+				txtadd(thumbBorderName, get(scene[get(j_thumbnailsBar)].name));
+				txtadd(thumbBorderName, '_thumbnailsBar');
+				
+				setupMouseBehavior_thumbnailsBar(get(scene[get(j_thumbnailsBar)].name), get(scene[get(j_thumbnailsBar)].titleid));
+			);
+		
+	</action>
+	
+	
+	<action name="setupMouseBehavior_thumbnailsBar">
+
+		set(thumbName, 'thumb_');
+		txtadd(thumbName, %1);
+		txtadd(thumbName, '_thumbnailsBar');
+		
+		set(thumbBorderName, 'thumbBorder_');
+		txtadd(thumbBorderName, %1);
+		txtadd(thumbBorderName, '_thumbnailsBar');
+		
+		if(layer[thumbnailBorderSource_thumbnailsBar].url,
+			set(layer[get(thumbBorderName)].crop, get(layer[thumbnailBorderSource_thumbnailsBar].cropDefault));
+			set(layer[get(thumbBorderName)].onovercrop, get(layer[thumbnailBorderSource_thumbnailsBar].cropHover));
+			set(layer[get(thumbBorderName)].ondowncrop, get(layer[thumbnailBorderSource_thumbnailsBar].cropHover));
+			set(layer[get(thumbBorderName)].tooltip, %2);
+				set(layer[get(thumbBorderName)].onhover, showTooltip('plugin', tooltipStyle_thumbnailsBar));
+				set(layer[get(thumbBorderName)].onout, hideTooltip());
+		,
+			set(layer[get(thumbBorderName)].bgcolor, get(layer[thumbnailBorderSource_thumbnailsBar].borderColorDefault));
+			set(layer[get(thumbBorderName)].bgalpha, get(layer[thumbnailBorderSource_thumbnailsBar].borderAlphaDefault));
+				set(layer[get(thumbName)].tooltip, %2);
+				set(layer[get(thumbName)].onhover, showTooltip('plugin', tooltipStyle_thumbnailsBar));
+			
+			set(layer[get(thumbName)].onover, 
+				set(layer[get(parent)].bgcolor, get(layer[thumbnailBorderSource_thumbnailsBar].borderColorHover));
+				set(layer[get(parent)].bgalpha, get(layer[thumbnailBorderSource_thumbnailsBar].borderAlphaHover));
+			);
+			
+			set(layer[get(thumbName)].onout, 
+				set(layer[get(parent)].bgcolor, get(layer[thumbnailBorderSource_thumbnailsBar].borderColorDefault));
+				set(layer[get(parent)].bgalpha, get(layer[thumbnailBorderSource_thumbnailsBar].borderAlphaDefault));
+				hideTooltip();
+			);
+		);
+	
+	</action>
+	
+	
+	<action name="highlightCurrentThumb_thumbnailsBar">
+			highlightThumb_thumbnailsBar(get(xml.scene));
+	</action>
+	
+	
+	<action name="highlightThumb_thumbnailsBar">
+	
+		set(thumbBorderName, 'thumbBorder_');
+		txtadd(thumbBorderName, %1);
+		txtadd(thumbBorderName, '_thumbnailsBar');
+		
+		if(layer[thumbnailBorderSource_thumbnailsBar].url,
+			set(layer[get(thumbBorderName)].crop, get(layer[thumbnailBorderSource_thumbnailsBar].cropSelected));
+			set(layer[get(thumbBorderName)].onovercrop, get(layer[thumbnailBorderSource_thumbnailsBar].cropSelected));
+			set(layer[get(thumbBorderName)].ondowncrop, get(layer[thumbnailBorderSource_thumbnailsBar].cropSelected));
+		,
+			set(thumbName, 'thumb_');
+			txtadd(thumbName, %1);
+			txtadd(thumbName, '_thumbnailsBar');
+			
+			set(layer[get(thumbBorderName)].bgcolor, get(layer[thumbnailBorderSource_thumbnailsBar].borderColorSelected));
+			set(layer[get(thumbBorderName)].bgalpha, get(layer[thumbnailBorderSource_thumbnailsBar].borderAlphaSelected));
+			
+			set(layer[get(thumbName)].onover, "");
+			set(layer[get(thumbName)].onout, hideTooltip(););
+		);
+
+		scrollToThumb_thumbnailsBar(%1);
+	</action>
+	
+	
+	<action name="scrollToCurrentThumb_thumbnailsBar">
+			scrollToThumb_thumbnailsBar(get(xml.scene));
+	</action>
+	
+	
+	<action name="scrollToThumb_thumbnailsBar">
+		
+		set(thumbName, 'thumb_');
+		set(thumbBorderName, 'thumbBorder_');
+		
+		txtadd(thumbName, %1);
+		txtadd(thumbName, '_thumbnailsBar');
+		txtadd(thumbBorderName, %1);
+		txtadd(thumbBorderName, '_thumbnailsBar');
+
+			set(posX_thumbnailsBar, 0);
+			if(layer[thumbnailBorderSource_thumbnailsBar].url,
+				div(halfThumbWidth_thumbnailsBar, get(layer[get(thumbName)].width), 2);
+				ifnot(layer[scrollAreaContainer_thumbnailsBar].adjustToContent,
+					add(posX_thumbnailsBar, get(layer[get(thumbName)].x), get(halfThumbWidth_thumbnailsBar));
+				);
+				if(layer[thumbsScrollArea_thumbnailsBar].scrolltocenter,
+					layer[thumbsScrollArea_thumbnailsBar].scrolltocenter(get(posX_thumbnailsBar), 0);
+				);
+			,
+				div(halfThumbWidth_thumbnailsBar, get(layer[get(thumbBorderName)].width), 2);
+				ifnot(layer[scrollAreaContainer_thumbnailsBar].adjustToContent,
+					add(posX_thumbnailsBar, get(layer[get(thumbBorderName)].x), get(halfThumbWidth_thumbnailsBar));
+				);
+				if(layer[thumbsScrollArea_thumbnailsBar].scrolltocenter,
+					layer[thumbsScrollArea_thumbnailsBar].scrolltocenter(get(posX_thumbnailsBar), 0);
+				);
+			);
+		
+	</action>
+	
+
+
+
+
+<action name="viewControlMoveUp">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(isfullvertical == false AND calc(view.vlookat-%2) LT view.vlookatmin,
+				moveto(get(view.hlookat), get(view.vlookatmin));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat-%2));
+			);
+		,
+			set(vlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveDown">
+	if(%1,
+		if(%2,
+			set(isfullvertical, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewvfov, panoview.vmax, panoview.vmin);
+				if (viewvfov == 180,
+					set(isfullvertical, true);
+				);
+			);
+			if(sceneisfull360 == false AND calc(view.vlookat+%2) GT view.vlookatmax,
+				moveto(get(view.hlookat), get(view.vlookatmax));
+			,
+				moveto(get(view.hlookat), calc(view.vlookat+%2));
+			);
+		,
+			set(vlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveVertStop());
+		);
+	,
+		set(vlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveLeft">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat-%2) LT view.hlookatmin,
+				moveto(get(view.hlookatmin), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat-%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, -1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+		);
+	,
+		set(hlookat_moveforce, -1);
+	);
+</action>
+<action name="viewControlMoveRight">
+	if(%1,
+		if(%2,
+			set(isfullhorizontal, false);
+			ifnot(scene[get(xml.scene)].planar,
+				sub(viewhfov, panoview.hmax, panoview.hmin);
+				if (viewhfov == 360,
+					set(isfullhorizontal, true);
+				);
+			);
+			if(isfullhorizontal == false AND calc(view.hlookat+%2) GT view.hlookatmax,
+				moveto(get(view.hlookatmax), get(view.vlookat));
+			,
+				moveto(calc(view.hlookat+%2), get(view.vlookat));
+			);
+		,
+			set(hlookat_moveforce, +1);
+			delayedcall(0.1, viewControlMoveHoriStop());
+			
+		);
+	,
+		set(hlookat_moveforce, +1);
+	);
+</action>
+<action name="viewControlMoveHoriStop">
+	set(hlookat_moveforce, 0);
+</action>
+<action name="viewControlMoveVertStop">
+	set(vlookat_moveforce, 0);
+</action>
+
+<action name="viewControlZoomIn">
+	if(%1,
+		if(%2,
+			if(%2 LT view.fovmin,
+				zoomto(get(view.fovmin));
+			,
+				if(%2 LT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, -1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, -1);
+	);
+</action>
+<action name="viewControlZoomOut">
+	if(%1,
+		if(%2,
+			if(%2 GT view.fovmax,
+				zoomto(get(view.fovmax));
+			,
+				if(%2 GT view.fov,
+					zoomto(%2);
+				);
+			);
+		,
+			set(fov_moveforce, +1);
+			delayedcall(0.1, viewControlZoomStop());
+		);
+	,
+		set(fov_moveforce, +1);
+	);
+</action>
+<action name="viewControlZoomStop">
+	set(fov_moveforce, 0);
+</action>
+
+  <!-- Hide / Show Controls -->
+  <action name="hideTourControls">set(tour_displaycontrols, false);events.dispatch(hidetourcontrols);</action>
+  <action name="showTourControls">set(tour_displaycontrols, true); events.dispatch(showtourcontrols);</action>
+
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);js(setFullscreen(false));</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);js(setFullscreen(true));</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+  <action name="enterFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,true);events.dispatch(onenterfullscreen);</action>
+  <action name="exitFullScreenFallback">set(fullscreen,false);</action>
+  <action name="enterFullScreenFallback">set(fullscreen,true);</action>
+  
+  <action name="resizeFullScreenEvent">delayedcall(0,updatescreen(););</action>
+
+</krpano>
