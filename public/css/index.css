@@ -472,6 +472,11 @@ ul.nav.nav-tabs {
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
   border-bottom-color: #ccac83; }
 
+#message-box p {
+  margin-bottom: 10px; }
+  #message-box p.success {
+    color: #69bf7f; }
+
 section.top_offer_section {
   height: 700px;
   background-size: cover;

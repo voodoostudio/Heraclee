@@ -336,7 +336,7 @@
                                     $form.reset();
                                 }
                             }).fail(function() {
-                                $response.html('<p>An error occurred, please try again</p>');
+                                $response.html('<p>{{ trans('lang.an_error_has_occured') }}</p>');
                             })
                         }
                         return false;
@@ -358,7 +358,7 @@
                         $response.find('p').remove();
 
                     if (!testmail.test($mail)) {
-                        $response.html('<p class="error">Please enter a valid email</p>');
+                        $response.html('<p class="error">{{ trans('lang.please_provide_valid_email_address') }}</p>');
                         hasError = true;
                     }
 
@@ -374,9 +374,12 @@
                             $response.html('<p class = "'+ data.status +'">' + data.msg + '</p>');
                             if(data.status == 'success') {
                                 $form.reset();
+                                setTimeout(function(){
+                                    $('.bottom_footer_section #response').fadeOut();
+                                }, 4000);
                             }
                         }).fail(function() {
-                            $response.html('<p>An error occurred, please try again</p>');
+                            $response.html('<p>{{ trans('lang.an_error_has_occured') }}</p>');
                         })
                     }
                     return false;

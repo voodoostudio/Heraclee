@@ -413,12 +413,12 @@ class PagesController extends Controller
 
         $success = array(
             'status' => 'success',
-            'msg' => 'Your email was successfully send',
+            'msg' => trans('lang.email_was_sent'),
         );
 
         $error = array(
             'status' => 'error',
-            'msg' => 'Your email wasn\'t send (error)'
+            'msg' => trans('lang.email_was_not_sent')
         );
 
         $subscribers = new Subscribers;
@@ -463,12 +463,12 @@ class PagesController extends Controller
 
         $success = array(
             'status' => 'success',
-            'msg' => 'Your email was successfully send',
+            'msg' => trans('lang.email_was_sent'),
         );
 
         $error = array(
             'status' => 'error',
-            'msg' => 'Your email wasn\'t send (error)'
+            'msg' => trans('lang.email_was_not_sent')
         );
 
         $subscribers = new Subscribers;
@@ -502,12 +502,12 @@ class PagesController extends Controller
 
         $response = array(
             'status' => 'success',
-            'msg' => 'Your email was successfully registered',
+            'msg' => trans('lang.email_was_registered'),
         );
 
         $error = array(
             'status' => 'error',
-            'msg' => 'Your email is already registered in our database'
+            'msg' => trans('lang.email_is_already_registered')
         );
 
         if (stristr((string)$check_subscriber, $subscribers->email) === false) {

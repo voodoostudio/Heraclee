@@ -119,8 +119,12 @@ return [
     'footer_list_9'        => 'Villas à louer saint-tropez',
 
 // EMAIL PAGE
-    'email_title'           => 'You have a new contact Via the contact form',
-    'sent_via'              => 'Sent via',
+    'email_title'           => 'Vous avez un nouveau contact via le formulaire de contact',
+    'sent_via'              => 'Envoyé via',
+    'email_was_sent'        => 'Votre email a été envoyé avec succès',
+    'email_was_not_sent'    => 'Votre e-mail n\'a pas été envoyé (erreur)',
+    'email_was_registered'  => 'Votre email a été enregistré avec succès',
+    'email_is_already_registered'  => 'Votre courriel est déjà enregistré dans notre base de données',
 
 // SOCIALS PAGE
     'required'              => 'Champs obligatoires',

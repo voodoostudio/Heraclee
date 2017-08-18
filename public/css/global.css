@@ -472,6 +472,11 @@ ul.nav.nav-tabs {
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
   border-bottom-color: #ccac83; }
 
+#message-box p {
+  margin-bottom: 10px; }
+  #message-box p.success {
+    color: #69bf7f; }
+
 body {
   font: 16px 'opensans_light';
   color: #fdfdfd;
@@ -1024,11 +1029,14 @@ footer {
     top: 50%;
     transform: translate(-50%, -50%); }
 
-#response p {
-  margin: 0;
-  padding-top: 5px;
-  font-size: 0.75rem; }
-  #response p.error {
-    color: #c54545; }
-  #response p.success {
-    color: #69bf7f; }
+#response {
+  position: absolute;
+  bottom: -20px; }
+  #response p {
+    margin: 0;
+    padding-top: 5px;
+    font-size: 0.75rem; }
+    #response p.error {
+      color: #c54545; }
+    #response p.success {
+      color: #69bf7f; }

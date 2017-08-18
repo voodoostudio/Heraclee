@@ -472,6 +472,11 @@ ul.nav.nav-tabs {
 .tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
   border-bottom-color: #ccac83; }
 
+#message-box p {
+  margin-bottom: 10px; }
+  #message-box p.success {
+    color: #69bf7f; }
+
 section.search_section {
   margin-top: 30px; }
 

@@ -542,3 +542,13 @@ ul.nav.nav-tabs {
   }
 }
 //Toooltipster END
+
+#message-box {
+  p {
+    margin-bottom: 10px;
+    &.success {
+      color: $success_clr;
+    }
+  }
+}
+
