@@ -821,28 +821,26 @@
                                     <div class="energy_block_title">
                                         <h5>Emission of greenhouse gases (GHG)</h5>
                                         <p>
-                                            <span>(primary energy source)</span><br>
-                                            for heating, production of domestic hot water<br>
-                                            and cooling
+                                            for heating, production of domestic hot water<br> and cooling<br><br>
                                         </p>
                                     </div>
                                     <div class="energy_block_value">
-                                        <p>Conventional energy consumption:&nbsp;</p>
-                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                        <p>Emissions estimate:&nbsp;</p>
+                                        <p><span>39</span> kg éqCO2/m<sup>2</sup>.yr</p>
                                     </div>
                                     <div class="energy_block_diagram">
                                         <div class="energy_block_diagram_left">
-                                            <p>Energy efficient housing</p>
+                                            <p>Low greenhouse gas emissions</p>
                                             <img src="/img/details/ges_active.svg">
-                                            <p>High energy consumption housing</p>
+                                            <p>High greenhouse gas emissions</p>
                                         </div>
                                         <div class="energy_block_diagram_right">
                                             <p>Housing</p>
                                             <div class="energy_block_diagram_pointer">
                                                 <div class="energy_block_diagram_arrow">
-                                                    <span>131</span>
+                                                    <span>39</span>
                                                 </div>
-                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                                <p>kg éqCO2/m<sup>2</sup>.yr</p>
                                             </div>
                                         </div>
                                     </div>
