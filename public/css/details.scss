@@ -310,7 +310,7 @@ section.object_info_section {
   .outer_block_container {
     margin-top: 20px;
     .inner_block_container {
-      p {
+      p.description {
         font-family: opensans_light;
         &:last-of-type {
           margin-bottom: 60px;
@@ -422,6 +422,67 @@ section.object_info_section {
               border: none;
               margin: 0;
               padding: 0;
+            }
+          }
+        }
+        .energy_block {
+          font-size: 0.875rem;
+          .energy_block_title {
+            margin-bottom: 10px;
+            h5 {
+              text-align: center;
+              margin: 0 0 10px;
+            }
+            p {
+              text-align: center;
+              font-size: 0.875rem;
+            }
+          }
+          .energy_block_value {
+            margin-bottom: 10px;
+            p:first-of-type {
+              float: left;
+            }
+            p:last-of-type {
+              text-align: right;
+            }
+          }
+          .energy_block_diagram {
+            .energy_block_diagram_left {
+              float: left;
+              padding-right: 10px;
+              p:first-of-type {
+                margin-bottom: 5px;
+              }
+              p:last-of-type {
+                margin-top: 5px;
+              }
+            }
+            .energy_block_diagram_right {
+              text-align: right;
+              position: relative;
+              p:first-of-type {
+                margin-bottom: 5px;
+              }
+              .energy_block_diagram_pointer {
+                position: absolute;
+                top: 24px;
+                right: 0;
+                .energy_block_diagram_arrow {
+                  background: url(/img/details/energy_pointer.svg) right center no-repeat;
+                  height: 29px;
+                  position: relative;
+                  span {
+                    font-size: 1rem;
+                    color: $main_light_clr;
+                    width: 48px;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    line-height: 29px;
+                  }
+                }
+              }
             }
           }
         }

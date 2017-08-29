@@ -56,7 +56,6 @@
                         @endif
                     @endforeach
                 </ul>
-                {{--<a data-fancybox="gallery" class="fullscreen_btn" href="/img/details/img_7.png"><i class="icn icon-fullscreen"></i></a>--}}
                 <button class="fullscreen_btn tooltip" title="{{ trans('lang.show_image_on_fullscreen') }}" data-placement="right"><i class="icn icon-fullscreen"></i></button>
                 <div class="object_title">
                     <div class="container-fluid">
@@ -199,7 +198,7 @@
             <div class="outer_block_container">
                 <div class="inner_block_container">
                     @if(!empty($property['comments']['comment']))
-                        <p class="margin_bottom_20">
+                        <p class="margin_bottom_20 description">
                             {{$property['comments']['comment']}}
                         </p>
                     @endif
@@ -782,6 +781,74 @@
                                 -
                             @endif
                         </ul>
+
+                        <h4>Energy consumption and emission</h4>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-lg-5">
+                                <div class="energy_block">
+                                    <div class="energy_block_title">
+                                        <h5>Energy consumption</h5>
+                                        <p>
+                                            <span>(primary energy source)</span><br>
+                                            for heating, production of domestic hot water<br>
+                                            and cooling
+                                        </p>
+                                    </div>
+                                    <div class="energy_block_value">
+                                        <p>Conventional energy consumption:&nbsp;</p>
+                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                    </div>
+                                    <div class="energy_block_diagram">
+                                        <div class="energy_block_diagram_left">
+                                            <p>Energy efficient housing</p>
+                                            <img src="/img/details/dpe_active.svg">
+                                            <p>High energy consumption housing</p>
+                                        </div>
+                                        <div class="energy_block_diagram_right">
+                                            <p>Housing</p>
+                                            <div class="energy_block_diagram_pointer">
+                                                <div class="energy_block_diagram_arrow">
+                                                    <span>131</span>
+                                                </div>
+                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
+                                <div class="energy_block">
+                                    <div class="energy_block_title">
+                                        <h5>Emission of greenhouse gases (GHG)</h5>
+                                        <p>
+                                            <span>(primary energy source)</span><br>
+                                            for heating, production of domestic hot water<br>
+                                            and cooling
+                                        </p>
+                                    </div>
+                                    <div class="energy_block_value">
+                                        <p>Conventional energy consumption:&nbsp;</p>
+                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                    </div>
+                                    <div class="energy_block_diagram">
+                                        <div class="energy_block_diagram_left">
+                                            <p>Energy efficient housing</p>
+                                            <img src="/img/details/ges_active.svg">
+                                            <p>High energy consumption housing</p>
+                                        </div>
+                                        <div class="energy_block_diagram_right">
+                                            <p>Housing</p>
+                                            <div class="energy_block_diagram_pointer">
+                                                <div class="energy_block_diagram_arrow">
+                                                    <span>131</span>
+                                                </div>
+                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -716,9 +716,9 @@ section.agent_info_section .outer_block_container {
 
 section.object_info_section .outer_block_container {
   margin-top: 20px; }
-  section.object_info_section .outer_block_container .inner_block_container p {
+  section.object_info_section .outer_block_container .inner_block_container p.description {
     font-family: opensans_light; }
-    section.object_info_section .outer_block_container .inner_block_container p:last-of-type {
+    section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
       margin-bottom: 60px; }
   section.object_info_section .outer_block_container .inner_block_container .object_details_container h4 {
     font-size: 1.25rem;
@@ -817,6 +817,50 @@ section.object_info_section .outer_block_container {
         border: none;
         margin: 0;
         padding: 0; }
+  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block {
+    font-size: 0.875rem; }
+    section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title {
+      margin-bottom: 10px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title h5 {
+        text-align: center;
+        margin: 0 0 10px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title p {
+        text-align: center;
+        font-size: 0.875rem; }
+    section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value {
+      margin-bottom: 10px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value p:first-of-type {
+        float: left; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value p:last-of-type {
+        text-align: right; }
+    section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left {
+      float: left;
+      padding-right: 10px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:first-of-type {
+        margin-bottom: 5px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:last-of-type {
+        margin-top: 5px; }
+    section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right {
+      text-align: right;
+      position: relative; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right p:first-of-type {
+        margin-bottom: 5px; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer {
+        position: absolute;
+        top: 24px;
+        right: 0; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow {
+          background: url(/img/details/energy_pointer.svg) right center no-repeat;
+          height: 29px;
+          position: relative; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
+            font-size: 1rem;
+            color: #fdfdfd;
+            width: 48px;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            line-height: 29px; }
 
 section.location_section .map_container {
   position: relative;
