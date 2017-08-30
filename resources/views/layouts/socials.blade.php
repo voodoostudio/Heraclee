@@ -265,6 +265,7 @@
 <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
 <script type="text/javascript" src="/js/libraries/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/libraries/bootstrap-multiselect.js"></script>
+<script type="text/javascript" src="/js/functions.js"></script>
 <script>
     $('select').multiselect({
         includeSelectAllOption: true,
