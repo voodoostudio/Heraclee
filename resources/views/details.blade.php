@@ -782,65 +782,61 @@
                             @endif
                         </ul>
 
-                        <h4>Energy consumption and emission</h4>
-                        <div class="row">
+                        <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
+                        <div class="row" style="margin-bottom: -20px">
                             <div class="col-xs-12 col-md-6 col-lg-5">
-                                <div class="energy_block">
+                                <div class="energy_block dpe">
                                     <div class="energy_block_title">
-                                        <h5>Energy consumption</h5>
-                                        <p>
-                                            <span>(primary energy source)</span><br>
-                                            for heating, production of domestic hot water<br>
-                                            and cooling
-                                        </p>
+                                        <h5>{{ trans('lang.energy_consumption') }}</h5>
+                                        <p><span>{{ trans('lang.primary_energy_source') }}</span><br>{!! trans('lang.energy_title_desc') !!}</p>
                                     </div>
                                     <div class="energy_block_value">
-                                        <p>Conventional energy consumption:&nbsp;</p>
-                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                        <p>{{ trans('lang.conventional_energy_consumption') }}&nbsp;</p>
+                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                     </div>
                                     <div class="energy_block_diagram">
                                         <div class="energy_block_diagram_left">
-                                            <p>Energy efficient housing</p>
+                                            <p>{{ trans('lang.energy_efficient_housing') }}</p>
                                             <img src="/img/details/dpe_active.svg">
-                                            <p>High energy consumption housing</p>
+                                            <p>{{ trans('lang.high_energy_efficient_housing') }}</p>
                                         </div>
                                         <div class="energy_block_diagram_right">
-                                            <p>Housing</p>
+                                            <p>{{ trans('lang.housing') }}</p>
+                                            <div class="energy_block_diagram_pointer_line"></div>
                                             <div class="energy_block_diagram_pointer">
                                                 <div class="energy_block_diagram_arrow">
                                                     <span>131</span>
                                                 </div>
-                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.yr</p>
+                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
-                                <div class="energy_block">
+                                <div class="energy_block ges">
                                     <div class="energy_block_title">
-                                        <h5>Emission of greenhouse gases (GHG)</h5>
-                                        <p>
-                                            for heating, production of domestic hot water<br> and cooling<br><br>
-                                        </p>
+                                        <h5>{{ trans('lang.emission_of_greenhouse_gases') }}</h5>
+                                        <p>{!! trans('lang.energy_title_desc') !!}<br><br></p>
                                     </div>
                                     <div class="energy_block_value">
-                                        <p>Emissions estimate:&nbsp;</p>
-                                        <p><span>39</span> kg éqCO2/m<sup>2</sup>.yr</p>
+                                        <p>{{ trans('lang.emissions_estimate') }}&nbsp;</p>
+                                        <p><span>39</span> kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                     </div>
                                     <div class="energy_block_diagram">
                                         <div class="energy_block_diagram_left">
-                                            <p>Low greenhouse gas emissions</p>
+                                            <p>{{ trans('lang.low_greenhouse_gas_emissions') }}</p>
                                             <img src="/img/details/ges_active.svg">
-                                            <p>High greenhouse gas emissions</p>
+                                            <p>{{ trans('lang.high_greenhouse_gas_emissions') }}</p>
                                         </div>
                                         <div class="energy_block_diagram_right">
-                                            <p>Housing</p>
+                                            <p>{{ trans('lang.housing') }}</p>
+                                            <div class="energy_block_diagram_pointer_line"></div>
                                             <div class="energy_block_diagram_pointer">
                                                 <div class="energy_block_diagram_arrow">
                                                     <span>39</span>
                                                 </div>
-                                                <p>kg éqCO2/m<sup>2</sup>.yr</p>
+                                                <p>kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                             </div>
                                         </div>
                                     </div>

@@ -331,7 +331,7 @@
   section.object_info_section .outer_block_container .inner_block_container {
     padding: 20px;
     font-size: 0.875rem; }
-    section.object_info_section .outer_block_container .inner_block_container p:last-of-type {
+    section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
       margin-bottom: 30px; }
     section.object_info_section .outer_block_container .inner_block_container .object_details_container h4 {
       font-size: 1rem;
@@ -508,6 +508,45 @@
     padding: 15px; }
     section.object_info_section .outer_block_container .inner_block_container .object_details_container {
       padding-left: 0; }
+      section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block {
+        font-size: 0.75rem; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title {
+          margin-bottom: 5px; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title h5 {
+            margin: 0 0 5px; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value {
+          margin-bottom: 5px; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left {
+          float: left;
+          padding-right: 5px;
+          max-width: 185px; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p {
+            font-size: 0.75rem; }
+            section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:first-of-type {
+              margin-bottom: 5px; }
+            section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:last-of-type {
+              margin-top: 5px; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left img {
+            position: relative;
+            z-index: 1;
+            width: 100%; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right:after {
+          top: 33px; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right p:first-of-type {
+          margin-bottom: 5px;
+          font-size: 0.75rem; }
+        section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer {
+          top: 21px;
+          right: -1px; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow {
+            height: 23px;
+            background-size: 48px; }
+            section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
+              font-size: 0.75rem;
+              width: 36px;
+              line-height: 26px; }
+          section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer p {
+            font-size: 0.6rem; }
 
   section.agent_info_section .outer_block_container {
     margin-top: 10px; }

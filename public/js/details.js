@@ -1,13 +1,10 @@
 $(document).ready(function() {
 
-
     $('button.fullscreen_btn').on('click', function () {
         var currentSlide = $('.details_gallery').slick('slickCurrentSlide');
         var slide_scr = $('.details_gallery .slick-slide[data-slick-index="'+currentSlide+'"] img').attr('src');
         $.fancybox.open([{src  : slide_scr}]);
     });
-
-
 
     $('.details_gallery').slick({
         slidesToShow: 1,
@@ -18,6 +15,7 @@ $(document).ready(function() {
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>'
     });
+
     $('.details_gallery_thumbnails').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
@@ -39,6 +37,205 @@ $(document).ready(function() {
     $('.gallery_view button.close_panorama').on('click', function () {
         $('.gallery_container').removeClass('display_panorama');
     });
+
+    dpe_ges_pointer();
+
+    function dpe_ges_pointer() {
+        var dpe_pointer = 131;
+        var ges_pointer = 39;
+        $( "section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block.dpe .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer" ).css( "top", function() {
+            if ($(window).width() < 576) {
+                if (dpe_pointer <= 50) {
+                    return 22;
+                }
+                else if ((dpe_pointer >= 51) && (dpe_pointer <= 90)) {
+                    return 48;
+                }
+                else if ((dpe_pointer >= 91) && (dpe_pointer <= 150)) {
+                    return 75;
+                }
+                else if ((dpe_pointer >= 151) && (dpe_pointer <= 230)) {
+                    return 101;
+                }
+                else if ((dpe_pointer >= 231) && (dpe_pointer <= 330)) {
+                    return 128;
+                }
+                else if ((dpe_pointer >= 331) && (dpe_pointer <= 450)) {
+                    return 154;
+                }
+                else if (dpe_pointer > 450) {
+                    return 180;
+                }
+            }
+            else {
+                if (dpe_pointer <= 50) {
+                    return 22;
+                }
+                else if ((dpe_pointer >= 51) && (dpe_pointer <= 90)) {
+                    return 57;
+                }
+                else if ((dpe_pointer >= 91) && (dpe_pointer <= 150)) {
+                    return 92;
+                }
+                else if ((dpe_pointer >= 151) && (dpe_pointer <= 230)) {
+                    return 127;
+                }
+                else if ((dpe_pointer >= 231) && (dpe_pointer <= 330)) {
+                    return 162;
+                }
+                else if ((dpe_pointer >= 331) && (dpe_pointer <= 450)) {
+                    return 197;
+                }
+                else if (dpe_pointer > 450) {
+                    return 232;
+                }
+            }
+        });
+        $( "section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block.dpe .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer_line" ).css( "top", function() {
+            if ($(window).width() < 576) {
+                if (dpe_pointer <= 50) {
+                    return 33;
+                }
+                else if ((dpe_pointer >= 51) && (dpe_pointer <= 90)) {
+                    return 59;
+                }
+                else if ((dpe_pointer >= 91) && (dpe_pointer <= 150)) {
+                    return 86;
+                }
+                else if ((dpe_pointer >= 151) && (dpe_pointer <= 230)) {
+                    return 112;
+                }
+                else if ((dpe_pointer >= 231) && (dpe_pointer <= 330)) {
+                    return 139;
+                }
+                else if ((dpe_pointer >= 331) && (dpe_pointer <= 450)) {
+                    return 165;
+                }
+                else if (dpe_pointer > 450) {
+                    return 191;
+                }
+            }
+            else {
+                if (dpe_pointer <= 50) {
+                    return 36;
+                }
+                else if ((dpe_pointer >= 51) && (dpe_pointer <= 90)) {
+                    return 71;
+                }
+                else if ((dpe_pointer >= 91) && (dpe_pointer <= 150)) {
+                    return 106;
+                }
+                else if ((dpe_pointer >= 151) && (dpe_pointer <= 230)) {
+                    return 141;
+                }
+                else if ((dpe_pointer >= 231) && (dpe_pointer <= 330)) {
+                    return 176;
+                }
+                else if ((dpe_pointer >= 331) && (dpe_pointer <= 450)) {
+                    return 211;
+                }
+                else if (dpe_pointer > 450) {
+                    return 246;
+                }
+            }
+        });
+        $( "section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block.ges .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer" ).css( "top", function() {
+            if ($(window).width() < 576) {
+                if (ges_pointer <= 5) {
+                    return 22;
+                }
+                else if ((ges_pointer >= 6) && (ges_pointer <= 10)) {
+                    return 48;
+                }
+                else if ((ges_pointer >= 11) && (ges_pointer <= 20)) {
+                    return 75;
+                }
+                else if ((ges_pointer >= 21) && (ges_pointer <= 35)) {
+                    return 101;
+                }
+                else if ((ges_pointer >= 36) && (ges_pointer <= 55)) {
+                    return 128;
+                }
+                else if ((ges_pointer >= 56) && (ges_pointer <= 80)) {
+                    return 154;
+                }
+                else if (ges_pointer > 80) {
+                    return 180;
+                }
+            }
+            else {
+                if (ges_pointer <= 5) {
+                    return 22;
+                }
+                else if ((ges_pointer >= 6) && (ges_pointer <= 10)) {
+                    return 57;
+                }
+                else if ((ges_pointer >= 11) && (ges_pointer <= 20)) {
+                    return 92;
+                }
+                else if ((ges_pointer >= 21) && (ges_pointer <= 35)) {
+                    return 127;
+                }
+                else if ((ges_pointer >= 36) && (ges_pointer <= 55)) {
+                    return 162;
+                }
+                else if ((ges_pointer >= 56) && (ges_pointer <= 80)) {
+                    return 197;
+                }
+                else if (ges_pointer > 80) {
+                    return 232;
+                }
+            }
+        });
+        $( "section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block.ges .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer_line" ).css( "top", function() {
+            if ($(window).width() < 576) {
+                if (ges_pointer <= 5) {
+                    return 33;
+                }
+                else if ((ges_pointer >= 6) && (ges_pointer <= 10)) {
+                    return 59;
+                }
+                else if ((ges_pointer >= 11) && (ges_pointer <= 20)) {
+                    return 86;
+                }
+                else if ((ges_pointer >= 21) && (ges_pointer <= 35)) {
+                    return 112;
+                }
+                else if ((ges_pointer >= 36) && (ges_pointer <= 55)) {
+                    return 139;
+                }
+                else if ((ges_pointer >= 56) && (ges_pointer <= 80)) {
+                    return 165;
+                }
+                else if (ges_pointer > 80) {
+                    return 191;
+                }
+            }
+            else {
+                if (ges_pointer <= 5) {
+                    return 36;
+                }
+                else if ((ges_pointer >= 6) && (ges_pointer <= 10)) {
+                    return 71;
+                }
+                else if ((ges_pointer >= 11) && (ges_pointer <= 20)) {
+                    return 106;
+                }
+                else if ((ges_pointer >= 21) && (ges_pointer <= 35)) {
+                    return 141;
+                }
+                else if ((ges_pointer >= 36) && (ges_pointer <= 55)) {
+                    return 176;
+                }
+                else if ((ges_pointer >= 56) && (ges_pointer <= 80)) {
+                    return 211;
+                }
+                else if (ges_pointer > 80) {
+                    return 246;
+                }
+            }
+        });
+    }
 
     var map;
     var latlong;
