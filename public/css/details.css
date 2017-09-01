@@ -878,9 +878,9 @@ section.object_info_section .outer_block_container {
             position: relative; }
             section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
               font-family: opensans_semibold;
-              font-size: 1rem;
+              font-size: 0.85rem;
               color: #272727;
-              width: 48px;
+              width: 50px;
               position: absolute;
               right: 0;
               text-align: center;
