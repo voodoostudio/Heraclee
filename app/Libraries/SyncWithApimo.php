@@ -110,7 +110,7 @@ class SyncWithApimo
                             ) : ''),
                             'pictures' => self::addOrUpdatePictures($property['pictures']),
                             'areas' => self::addOrUpdateAreas($property['areas'], $property['id']),
-                            'regulations' => '',
+                            'regulations' => self::addOrUpdateRegulations($property['regulations'], $property['id']),
                         ]
                     );
                     self::addOrUpdateUser($property['user']);
@@ -236,7 +236,7 @@ class SyncWithApimo
                                 ) : ''),
                                 'pictures' => self::addOrUpdatePictures($property['pictures']),
                                 'areas' => self::addOrUpdateAreas($property['areas'], $property['id']),
-                                'regulations' => '',
+                                'regulations' => self::addOrUpdateRegulations($property['regulations']),
                             ]
                         );
                         self::addOrUpdateUser($property['user']);
@@ -407,6 +407,26 @@ class SyncWithApimo
                 );
             }
 
+        }
+    }
+
+    protected static function addOrUpdateRegulations($regulations,$property_id)
+    {
+        if (is_array($regulations) && !empty($regulations)) {
+            foreach ($regulations as $regulation) {
+                DB::insert(
+                    'REPLACE INTO apimo_property_regulations SET property_id = ?,
+                                                      type = ?, 
+                                                      value = ?,
+                                                      date =?',
+                    [
+                        $property_id,
+                        $regulation['type'],
+                        $regulation['value'],
+                        $regulation['date'],
+                    ]
+                );
+            }
         }
     }
 

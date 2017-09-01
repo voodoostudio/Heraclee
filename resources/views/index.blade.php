@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @section('title', 'Home page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/index.min.css">

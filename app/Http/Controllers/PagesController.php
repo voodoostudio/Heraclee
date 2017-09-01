@@ -173,6 +173,7 @@ class PagesController extends Controller
             Session::get("search.bedrooms_max")
         );
 
+
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
 
         $count_items = $properties_obj->property_count;

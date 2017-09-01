@@ -14,9 +14,10 @@ class ApimoRegulations extends Migration
     public function up()
     {
         Schema::create('apimo_property_regulations', function (Blueprint $table) {
-            $table->integer('type')->unique();
+            $table->integer('property_id');
+            $table->integer('type');
             $table->string('value');
-            $table->date('date');
+            $table->date('date')->nullable();
             $table->timestamps();
         });
     }

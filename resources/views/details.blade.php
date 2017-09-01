@@ -1,4 +1,7 @@
 @extends('layouts.socials')
+
+{{--{{ dd($property) }}--}}
+
 @section('title', 'Details page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">
@@ -782,8 +785,10 @@
                             @endif
                         </ul>
 
+                    @if($property['regulations'] != null)
                         <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
                         <div class="row" style="margin-bottom: -20px">
+                            @if($property['regulations'][0] != null)
                             <div class="col-xs-12 col-md-6 col-lg-5">
                                 <div class="energy_block dpe">
                                     <div class="energy_block_title">
@@ -792,7 +797,7 @@
                                     </div>
                                     <div class="energy_block_value">
                                         <p>{{ trans('lang.conventional_energy_consumption') }}&nbsp;</p>
-                                        <p><span>131</span> kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                        <p><span>{{ $property['regulations']['0']['value'] }}</span>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                     </div>
                                     <div class="energy_block_diagram">
                                         <div class="energy_block_diagram_left">
@@ -805,7 +810,7 @@
                                             <div class="energy_block_diagram_pointer_line"></div>
                                             <div class="energy_block_diagram_pointer">
                                                 <div class="energy_block_diagram_arrow">
-                                                    <span>131</span>
+                                                    <span>{{ $property['regulations']['0']['value'] }}</span>
                                                 </div>
                                                 <p>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                             </div>
@@ -813,6 +818,8 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
+                            @if($property['regulations'][1] != null)
                             <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
                                 <div class="energy_block ges">
                                     <div class="energy_block_title">
@@ -821,7 +828,7 @@
                                     </div>
                                     <div class="energy_block_value">
                                         <p>{{ trans('lang.emissions_estimate') }}&nbsp;</p>
-                                        <p><span>39</span> kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                        <p><span>{{ $property['regulations']['1']['value'] }}</span> kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                     </div>
                                     <div class="energy_block_diagram">
                                         <div class="energy_block_diagram_left">
@@ -834,7 +841,7 @@
                                             <div class="energy_block_diagram_pointer_line"></div>
                                             <div class="energy_block_diagram_pointer">
                                                 <div class="energy_block_diagram_arrow">
-                                                    <span>39</span>
+                                                    <span>{{ $property['regulations']['1']['value'] }}</span>
                                                 </div>
                                                 <p>kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                             </div>
@@ -842,8 +849,10 @@
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

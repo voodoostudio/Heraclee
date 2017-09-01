@@ -73,6 +73,7 @@ class Properties extends Model
             $array['heating'] = self::getHeatingByIds($property[0]['heating']);
             $array['water'] = self:: getWaterByIds($property[0]['water']);
             $array['comments'] = self::getCommentsByIds($property[0]['property_id']);
+            $array['regulations'] = self::getRegulationsById($property[0]['property_id']);
         }
 
         return $array;
@@ -905,6 +906,7 @@ class Properties extends Model
                 $array[$property['property_id']]['areas'] = self::getAreasByIds($property['areas']);
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
+                $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
                 ///dump();
             }
         }
@@ -1541,6 +1543,16 @@ class Properties extends Model
         }
 
         return $area;
+    }
+
+    public static function getRegulationsById($property_id){
+        $r = [];
+        if ($property_id != 0) {
+            $r = DB::select("SELECT value FROM apimo_property_regulations
+                                                  WHERE property_id = ? AND type IN (1,2)", [$property_id]);
+
+        }
+        return $r;
     }
 
     /**
