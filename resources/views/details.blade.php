@@ -785,74 +785,75 @@
                             @endif
                         </ul>
 
-                    @if($property['regulations'] != null)
-                        <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
-                        <div class="row" style="margin-bottom: -20px">
-                            @if($property['regulations'][0] != null)
-                            <div class="col-xs-12 col-md-6 col-lg-5">
-                                <div class="energy_block dpe">
-                                    <div class="energy_block_title">
-                                        <h5>{{ trans('lang.energy_consumption') }}</h5>
-                                        <p><span>{{ trans('lang.primary_energy_source') }}</span><br>{!! trans('lang.energy_title_desc') !!}</p>
-                                    </div>
-                                    <div class="energy_block_value">
-                                        <p>{{ trans('lang.conventional_energy_consumption') }}&nbsp;</p>
-                                        <p><span>{{ $property['regulations']['0']['value'] }}</span>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
-                                    </div>
-                                    <div class="energy_block_diagram">
-                                        <div class="energy_block_diagram_left">
-                                            <p>{{ trans('lang.energy_efficient_housing') }}</p>
-                                            <img src="/img/details/dpe_active.svg">
-                                            <p>{{ trans('lang.high_energy_efficient_housing') }}</p>
-                                        </div>
-                                        <div class="energy_block_diagram_right">
-                                            <p>{{ trans('lang.housing') }}</p>
-                                            <div class="energy_block_diagram_pointer_line"></div>
-                                            <div class="energy_block_diagram_pointer">
-                                                <div class="energy_block_diagram_arrow">
-                                                    <span>{{ $property['regulations']['0']['value'] }}</span>
+                        @if($property['regulations'] != null && intval($property['regulations']['0']['value']) > 0 && intval($property['regulations']['1']['value']) > 0)
+                            <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
+                            <div class="row" style="margin-bottom: -20px">
+                                @if($property['regulations'][0] != null && intval($property['regulations']['0']['value']) > 0)
+                                    <div class="col-xs-12 col-md-6 col-lg-5">
+                                        <div class="energy_block dpe">
+                                            <div class="energy_block_title">
+                                                <h5>{{ trans('lang.energy_consumption') }}</h5>
+                                                <p><span>{{ trans('lang.primary_energy_source') }}</span><br>{!! trans('lang.energy_title_desc') !!}</p>
+                                            </div>
+                                            <div class="energy_block_value">
+                                                <p>{{ trans('lang.conventional_energy_consumption') }}&nbsp;</p>
+                                                <p><span>{{ $property['regulations']['0']['value'] }}</span>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                            </div>
+                                            <div class="energy_block_diagram">
+                                                <div class="energy_block_diagram_left">
+                                                    <p>{{ trans('lang.energy_efficient_housing') }}</p>
+                                                    <img src="/img/details/dpe_active.svg">
+                                                    <p>{{ trans('lang.high_energy_efficient_housing') }}</p>
                                                 </div>
-                                                <p>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                                <div class="energy_block_diagram_right">
+                                                    <p>{{ trans('lang.housing') }}</p>
+                                                    <div class="energy_block_diagram_pointer_line"></div>
+                                                    <div class="energy_block_diagram_pointer">
+                                                        <div class="energy_block_diagram_arrow">
+                                                            <span>{{ $property['regulations']['0']['value'] }}</span>
+                                                        </div>
+                                                        <p>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            @endif
-                            @if($property['regulations'][1] != null)
-                            <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
-                                <div class="energy_block ges">
-                                    <div class="energy_block_title">
-                                        <h5>{{ trans('lang.emission_of_greenhouse_gases') }}</h5>
-                                        <p>{!! trans('lang.energy_title_desc') !!}<br><br></p>
-                                    </div>
-                                    <div class="energy_block_value">
-                                        <p>{{ trans('lang.emissions_estimate') }}&nbsp;</p>
-                                        <p><span>{{ $property['regulations']['1']['value'] }}</span> kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
-                                    </div>
-                                    <div class="energy_block_diagram">
-                                        <div class="energy_block_diagram_left">
-                                            <p>{{ trans('lang.low_greenhouse_gas_emissions') }}</p>
-                                            <img src="/img/details/ges_active.svg">
-                                            <p>{{ trans('lang.high_greenhouse_gas_emissions') }}</p>
-                                        </div>
-                                        <div class="energy_block_diagram_right">
-                                            <p>{{ trans('lang.housing') }}</p>
-                                            <div class="energy_block_diagram_pointer_line"></div>
-                                            <div class="energy_block_diagram_pointer">
-                                                <div class="energy_block_diagram_arrow">
-                                                    <span>{{ $property['regulations']['1']['value'] }}</span>
+                                @endif
+
+                                @if($property['regulations'][1] != null && intval($property['regulations']['1']['value']) > 0)
+                                    <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
+                                        <div class="energy_block ges">
+                                            <div class="energy_block_title">
+                                                <h5>{{ trans('lang.emission_of_greenhouse_gases') }}</h5>
+                                                <p>{!! trans('lang.energy_title_desc') !!}<br><br></p>
+                                            </div>
+                                            <div class="energy_block_value">
+                                                <p>{{ trans('lang.emissions_estimate') }}&nbsp;</p>
+                                                <p><span>{{ $property['regulations']['1']['value'] }}</span> kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                            </div>
+                                            <div class="energy_block_diagram">
+                                                <div class="energy_block_diagram_left">
+                                                    <p>{{ trans('lang.low_greenhouse_gas_emissions') }}</p>
+                                                    <img src="/img/details/ges_active.svg">
+                                                    <p>{{ trans('lang.high_greenhouse_gas_emissions') }}</p>
                                                 </div>
-                                                <p>kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                                <div class="energy_block_diagram_right">
+                                                    <p>{{ trans('lang.housing') }}</p>
+                                                    <div class="energy_block_diagram_pointer_line"></div>
+                                                    <div class="energy_block_diagram_pointer">
+                                                        <div class="energy_block_diagram_arrow">
+                                                            <span>{{ $property['regulations']['1']['value'] }}</span>
+                                                        </div>
+                                                        <p>kg éqCO2/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             </div>
-                            @endif
-                        </div>
+                        @endif
                     </div>
-                    @endif
                 </div>
             </div>
         </div>
