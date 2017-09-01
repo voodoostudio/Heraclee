@@ -797,7 +797,7 @@
                                             </div>
                                             <div class="energy_block_value">
                                                 <p>{{ trans('lang.conventional_energy_consumption') }}&nbsp;</p>
-                                                <p><span>{{ $property['regulations']['0']['value'] }}</span>kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
+                                                <p><span>{{ $property['regulations']['0']['value'] }}</span> kWh<sub>EP</sub>/m<sup>2</sup>.{{ trans('lang.year_short') }}</p>
                                             </div>
                                             <div class="energy_block_diagram">
                                                 <div class="energy_block_diagram_left">
