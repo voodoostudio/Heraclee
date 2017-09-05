@@ -236,7 +236,7 @@ class SyncWithApimo
                                 ) : ''),
                                 'pictures' => self::addOrUpdatePictures($property['pictures']),
                                 'areas' => self::addOrUpdateAreas($property['areas'], $property['id']),
-                                'regulations' => self::addOrUpdateRegulations($property['regulations']),
+                                'regulations' => self::addOrUpdateRegulations($property['regulations'], $property['id']),
                             ]
                         );
                         self::addOrUpdateUser($property['user']);

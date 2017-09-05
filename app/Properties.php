@@ -1545,13 +1545,13 @@ class Properties extends Model
         return $area;
     }
 
-    public static function getRegulationsById($property_id){
+    protected static function getRegulationsById($property_id){
         $r = [];
         if ($property_id != 0) {
             $r = DB::select("SELECT value FROM apimo_property_regulations
                                                   WHERE property_id = ? AND type IN (1,2)", [$property_id]);
-
         }
+
         return $r;
     }
 
