@@ -56,9 +56,9 @@
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="#">{{ trans('lang.homepage') }}Locaux commerciaux</a>--}}
                     {{--</li>--}}
-                    <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">{{ trans('lang.agency') }}</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">{{ trans('lang.agency') }}</a>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>
                     </li>
