@@ -2,7 +2,6 @@ section.contact_info_section {
   margin-top: 60px; }
 
 section.contact_map_section {
-  margin-top: 50px;
   position: relative; }
   section.contact_map_section #contact_map {
     height: 640px; }

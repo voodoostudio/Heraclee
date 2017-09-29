@@ -8,11 +8,11 @@
 
 @section('content')
 
-    <section class="contact_info_section">
-        <div class="container-fluid">
-            <p>{{ trans('lang.contact_page_description') }}</p>
-        </div>
-    </section>
+    {{--<section class="contact_info_section">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<p>{{ trans('lang.contact_page_description') }}</p>--}}
+        {{--</div>--}}
+    {{--</section>--}}
     <section class="contact_map_section">
         <div id="contact_map"></div>
         <div class="address_block">
