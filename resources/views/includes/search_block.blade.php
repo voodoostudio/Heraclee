@@ -35,19 +35,15 @@
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-4 margin_bottom_10">
-                            <label class="form_el_label"><i
-                                        class="icn icon-country"></i><span>{{ trans('lang.country') }}</span></label>
+                            <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.country') }}</span></label>
                             <select multiple="multiple" name="object_place[]" title="">
-
                                 <option value="FR">France</option>
                                 <option value="MU">Maurice</option>
                                 <option value="US">USA</option>
-
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-4 margin_bottom_10">
-                            <label class="form_el_label"><i
-                                        class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
+                            <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                             <select multiple="multiple" name="object_place[]" title="">
                                 @foreach($city_list as $city)
                                     <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>

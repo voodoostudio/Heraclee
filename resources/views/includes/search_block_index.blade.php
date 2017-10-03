@@ -8,7 +8,7 @@
                         <i class="fa fa-refresh" aria-hidden="true"></i>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-lg-4">
+                        <div class="col-12 col-lg-6">
                             <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
                                     <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(3)" >{{ trans('lang.rent') }}</a>
@@ -19,34 +19,36 @@
                             </ul>
                             <input type="hidden" id="sell_type_val" name="sell_type" value="{{$search['sell_type']}}">
                         </div>
-
-                        <div class="col-12 col-lg-8">
-                            <div class="row">
-                                <div class="col-xl-4 col-sm-6 margin_bottom_10">
-                                    <label class="form_el_label"><i
-                                                class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
-                                    <select multiple="multiple" name="object_type[]" title="">
-                                        @foreach($type as $item)
-                                            <option value="{{$item['reference']}}">{{$item['value']}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-xl-4 col-sm-6 margin_bottom_10">
-                                    <label class="form_el_label"><i
-                                                class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
-                                    <select multiple="multiple" name="object_place[]" title="">
-                                        @foreach($city_list as $city)
-                                            <option value="{{$city['city_id']}}">{{$city['name']}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-xl-4 col-sm-12 margin_bottom_10">
-                                    <div class="input_container search_input">
-                                        <input type="text" name="search_keywords" value="" placeholder="{{ trans('lang.enter_keyword') }}">
-                                        <button type="submit"><i class="icn icon-search"></i></button>
-                                    </div>
-                                </div>
+                        <div class="col-12 col-sm-6 push-sm-6 push-lg-0 margin_bottom_10">
+                            <div class="input_container search_input">
+                                <input type="text" name="search_keywords" value="" placeholder="{{ trans('lang.enter_keyword') }}">
+                                <button type="submit"><i class="icn icon-search"></i></button>
                             </div>
+                        </div>
+                        <div class="col-sm-6 pull-sm-6 col-lg-4 pull-lg-0 margin_bottom_10">
+                            <label class="form_el_label"><i
+                                        class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
+                            <select multiple="multiple" name="object_type[]" title="">
+                                @foreach($type as $item)
+                                    <option value="{{$item['reference']}}">{{$item['value']}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.country') }}</span></label>
+                            <select multiple="multiple" name="object_place[]" title="">
+                                <option value="FR">France</option>
+                                <option value="MU">Maurice</option>
+                                <option value="US">USA</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-lg-4 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
+                            <select multiple="multiple" name="object_place[]" title="">
+                                @foreach($city_list as $city)
+                                    <option value="{{$city['city_id']}}">{{$city['name']}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="row">

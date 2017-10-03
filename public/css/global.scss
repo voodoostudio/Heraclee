@@ -298,8 +298,8 @@ section.search_section {
         height: 32px;
         text-align: center;
         padding: 5px;
-        right: 15px;
-        top: 15px;
+        right: 10px;
+        top: 10px;
         opacity: 0.5;
         @include my_transition(.2s ease-in-out);
         i {
@@ -315,10 +315,10 @@ section.search_section {
         }
       }
       ul.nav.nav-tabs {
-        margin-top: 27px;
+        margin-top: 10px;
       }
       .input_container.search_input {
-        margin-top: 27px;
+        margin-top: 10px;
       }
     }
   }
