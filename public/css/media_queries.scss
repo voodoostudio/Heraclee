@@ -905,14 +905,23 @@
 
   footer {
     margin-top: 30px;
-    section.bottom_footer_section .copyright {
+    section.bottom_footer_section {
+      p {
+        margin-top: 30px;
+      }
+      .copyright {
       font-size: 0.8125rem;
+      }
     }
     ul.social_networks li a,
     ul.social_networks li a:hover {
       width: 40px;
       line-height: 40px;
     }
+  }
+
+  footer section.bottom_footer_section p {
+    margin-right: 0;
   }
 }
 

@@ -955,20 +955,21 @@ footer {
     padding: 30px 0; }
     footer section.bottom_footer_section p {
       font-size: 0.8125rem;
-      margin-right: 124px;
-      margin-bottom: 15px; }
+      margin-right: 50px;
+      margin-bottom: 15px;
+      text-align: justify; }
     footer section.bottom_footer_section .copyright {
       margin-top: 30px;
       text-transform: uppercase;
       font-size: 0.9375rem;
       margin-right: 0; }
     footer section.bottom_footer_section h4 {
-      font-size: 0.9375rem;
+      font-size: 1.3rem;
       text-transform: uppercase;
       text-align: center;
       margin-bottom: 0; }
     footer section.bottom_footer_section .contact_block {
-      margin: 20px auto;
+      margin: 34px auto;
       display: table; }
       footer section.bottom_footer_section .contact_block a.footer_logo_link {
         display: table-cell;

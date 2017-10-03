@@ -5,47 +5,47 @@
             <div class="row">
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_1') }}</li>
+                        <li>{{ trans('lang.footer_keyword_1') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_2') }}</li>
+                        <li>{{ trans('lang.footer_keyword_2') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_3') }}</li>
+                        <li>{{ trans('lang.footer_keyword_3') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_4') }}</li>
+                        <li>{{ trans('lang.footer_keyword_4') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_5') }}</li>
+                        <li>{{ trans('lang.footer_keyword_5') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_6') }}</li>
+                        <li>{{ trans('lang.footer_keyword_6') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_7') }}</li>
+                        <li>{{ trans('lang.footer_keyword_7') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_8') }}</li>
+                        <li>{{ trans('lang.footer_keyword_8') }}</li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_list_9') }}</li>
+                        <li>{{ trans('lang.footer_keyword_9') }}</li>
                     </ul>
                 </div>
             </div>
@@ -54,10 +54,7 @@
     <section class="bottom_footer_section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-8">
-                    <p>{{ trans('lang.footer_description') }}</p>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="col-sm-12 col-md-6 push-md-6 col-lg-4 push-lg-8">
                     <h4>{{ trans('lang.footer_title') }}</h4>
                     <div class="contact_block">
                         <a class="footer_logo_link" href="{{ route('index') }}"><img src="/img/logo.svg"></a>
@@ -74,6 +71,9 @@
                         </div>
                     </form>
                     <div id="response"></div>
+                </div>
+                <div class="col-sm-12 col-md-6 pull-md-6 col-lg-8 pull-lg-4">
+                    <p>{!! trans('lang.footer_description') !!}</p>
                 </div>
             </div>
             <div class="row">

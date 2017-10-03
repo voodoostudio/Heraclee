@@ -119,18 +119,20 @@ return [
 
 //    FOOTER
     'footer_title'          => 'Heraclee - Agence Immobilière Saint Tropez',
-    'footer_description'    => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut',
+    'footer_description'    => 'Notre agence Heraclee, spécialiste de l\'immobilier de luxe au niveau de la Riviera Française, est basée depuis 7 ans dans l\'emblématique ville de Saint Tropez. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez. </br></br>
+                                De ce fait, en passant par les services de notre agence immobilière, les clients ont dès lors l\'opportunité de pouvoir accéder à des biens d\'exception via les nombreuses locations ou ventes situées pour la plupart dans les communes de St-Tropez et de Ramatuelle. De plus, l\'immobilier de luxe s\'avérant être en constante évolution tout comme les exigences et attentes de nos potentiels futurs acquéreurs, nous nous efforçons à ce titre de trouver le bien immobilier correspondant aux critères de sélection les plus pointus. </br></br>
+                                C\'est d\'ailleurs dans le but de garantir à notre clientèle une satisfaction totale que notre agence immobilière est composée d\'une équipe d\'experts disposant tous d\'un large domaine de compétences, notamment en matière d\'aspects juridiques et fiscaux. Le professionnalisme avéré de notre agence immobilière de St-Tropez, lui a entre autres permis de développer un réseau conséquent ayant lui-même conduit à la détention d\'un portefeuille à fort potentiel.',
     'subscribe_to_newsletter' => 'Inscrivez-vous à notre newsletter',
     'copyright_text'        => 'Heraclee- Création et développement par voodoo studio',
-    'footer_list_1'        => 'Immobilier de luxe saint-tropez',
-    'footer_list_2'        => 'Location saint-tropez',
-    'footer_list_3'        => 'Vente immobilier saint-tropez',
-    'footer_list_4'        => 'Luxury real estate  saint-tropez',
-    'footer_list_5'        => 'Villas prestige saint-tropez',
-    'footer_list_6'        => 'Immobilier saint-tropez',
-    'footer_list_7'        => 'Immobilier golfe de saint-tropez',
-    'footer_list_8'        => 'Villas à vendre saint-tropez',
-    'footer_list_9'        => 'Villas à louer saint-tropez',
+    'footer_keyword_1'        => 'Immobilier de luxe saint-tropez',
+    'footer_keyword_2'        => 'Location saint-tropez',
+    'footer_keyword_3'        => 'Vente immobilier saint-tropez',
+    'footer_keyword_4'        => 'Luxury real estate  saint-tropez',
+    'footer_keyword_5'        => 'Villas prestige saint-tropez',
+    'footer_keyword_6'        => 'Immobilier saint-tropez',
+    'footer_keyword_7'        => 'Immobilier golfe de saint-tropez',
+    'footer_keyword_8'        => 'Villas à vendre saint-tropez',
+    'footer_keyword_9'        => 'Villas à louer saint-tropez',
 
 // EMAIL PAGE
     'email_title'           => 'Vous avez un nouveau contact via le formulaire de contact',

@@ -428,12 +428,17 @@
 
   footer {
     margin-top: 30px; }
+    footer section.bottom_footer_section p {
+      margin-top: 30px; }
     footer section.bottom_footer_section .copyright {
       font-size: 0.8125rem; }
     footer ul.social_networks li a,
     footer ul.social_networks li a:hover {
       width: 40px;
-      line-height: 40px; } }
+      line-height: 40px; }
+
+  footer section.bottom_footer_section p {
+    margin-right: 0; } }
 @media screen and (max-width: 575px) {
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 5px; }
