@@ -18,6 +18,7 @@ return [
     'rent'                  => 'Rent',
     'sale'                  => 'Sale',
     'property_type'         => 'Property type',
+    'country'               => 'Country',
     'town'                  => 'Town',
     'enter_keyword'         => 'Enter a keyword',
     'price'                 => 'Price',

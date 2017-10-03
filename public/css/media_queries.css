@@ -31,9 +31,6 @@
       font-size: 0.875rem;
       line-height: 0.875rem; }
 
-  section.search_section .outer_block_container .inner_block_container .input_container.search_input {
-    margin-top: 0; }
-
   section.agent_info_section .outer_block_container .inner_block_container .object_info {
     margin-top: 15px; }
     section.agent_info_section .outer_block_container .inner_block_container .object_info p {
@@ -438,6 +435,8 @@
 @media screen and (max-width: 575px) {
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 5px; }
+    section.search_section .outer_block_container .inner_block_container .input_container.search_input {
+      margin-top: 5px; }
 
   section.top_offer_section {
     height: 250px; }

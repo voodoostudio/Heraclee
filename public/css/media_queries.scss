@@ -56,16 +56,6 @@
     }
   }
 
-  section.search_section {
-    .outer_block_container {
-      .inner_block_container {
-        .input_container.search_input {
-          margin-top: 0;
-        }
-      }
-    }
-  }
-
   section.agent_info_section {
     .outer_block_container {
       .inner_block_container {
@@ -928,6 +918,9 @@
     .outer_block_container {
       .inner_block_container {
         padding: 40px 15px 5px;
+        .input_container.search_input {
+          margin-top: 5px;
+        }
       }
     }
   }
