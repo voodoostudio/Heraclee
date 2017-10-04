@@ -788,7 +788,7 @@
                         @if($property['regulations'] != null && intval($property['regulations']['0']['value']) > 0 && intval($property['regulations']['1']['value']) > 0)
                             <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
                             <div class="row" style="margin-bottom: -20px">
-                                @if($property['regulations'][0] != null && intval($property['regulations']['0']['value']) > 0)
+                                @if(!empty(intval($property['regulations']['0']['value'])) || $property['regulations']['0']['value'] > 0)
                                     <div class="col-xs-12 col-md-6 col-lg-5">
                                         <div class="energy_block dpe">
                                             <div class="energy_block_title">
@@ -968,11 +968,11 @@
         </script>
     @endif
     <script>
-        var dpe_pointer = {{$property['regulations']['0']['value']}};
-        var ges_pointer = {{$property['regulations']['1']['value']}};
+        {{--var dpe_pointer = {{$property['regulations']['0']['value']}};--}}
+        {{--var ges_pointer = {{$property['regulations']['1']['value']}};--}}
 
-        {{--var dpe_pointer = @if(!empty($property['regulations']['0']['value'])) {{ $property['regulations']['0']['value'] }} @else {{ '0' }} @endif;--}}
-        {{--var ges_pointer = @if(!empty($property['regulations']['1']['value'])) {{ $property['regulations']['1']['value'] }} @else {{ '0' }}@endif;--}}
+        var dpe_pointer = @if(!empty($property['regulations']['0']['value'])) {{ $property['regulations']['0']['value'] }} @else {{ '0' }} @endif;
+        var ges_pointer = @if(!empty($property['regulations']['1']['value'])) {{ $property['regulations']['1']['value'] }} @else {{ '0' }}@endif;
 
         var object_lat = {{$property['latitude']}};
         var object_long = {{$property['longitude']}};
