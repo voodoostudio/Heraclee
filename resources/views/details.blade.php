@@ -968,8 +968,8 @@
         </script>
     @endif
     <script>
-        var dpe_pointer = {{$property['regulations']['0']['value']}};
-        var ges_pointer = {{$property['regulations']['1']['value']}};
+        var dpe_pointer = @if(!empty($property['regulations']['0']['value'])) {{ $property['regulations']['0']['value'] }} @else {{ '0' }} @endif;
+        var ges_pointer = @if(!empty($property['regulations']['1']['value'])) {{ $property['regulations']['1']['value'] }} @else {{ '0' }} @endif;
         var object_lat = {{$property['latitude']}};
         var object_long = {{$property['longitude']}};
     </script>
