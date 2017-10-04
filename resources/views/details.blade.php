@@ -789,8 +789,6 @@
                             <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
                             <div class="row" style="margin-bottom: -20px">
                                 @if(!empty(intval($property['regulations']['0']['value'])) || $property['regulations']['0']['value'] > 0)
-
-
                                     <div class="col-xs-12 col-md-6 col-lg-5">
                                         <div class="energy_block dpe">
                                             <div class="energy_block_title">
