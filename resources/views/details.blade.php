@@ -785,7 +785,7 @@
                             @endif
                         </ul>
 
-                        @if($property['regulations'] != null && intval($property['regulations']['0']['value']) > 0 && intval($property['regulations']['1']['value']) > 0)
+                        {{--@if($property['regulations'] != null && intval($property['regulations']['0']['value']) > 0 && intval($property['regulations']['1']['value']) > 0)--}}
                             <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
                             <div class="row" style="margin-bottom: -20px">
                                 @if(!empty(intval($property['regulations']['0']['value'])) || $property['regulations']['0']['value'] > 0)
@@ -852,7 +852,7 @@
                                     </div>
                                 @endif
                             </div>
-                        @endif
+                        {{--@endif--}}
                     </div>
                 </div>
             </div>
