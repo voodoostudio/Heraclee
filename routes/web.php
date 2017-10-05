@@ -22,6 +22,22 @@ Route::group(
                 'uses' => 'PagesController@index',
                 'as' => 'index',
         ]);
+        Route::get('/countries/france', [
+                'uses' => 'PagesController@index',
+                'as' => 'france',
+        ]);
+        Route::get('/countries/swiss', [
+                'uses' => 'PagesController@index',
+                'as' => 'swiss',
+        ]);
+        Route::get('/countries/usa', [
+                'uses' => 'PagesController@index',
+                'as' => 'usa',
+        ]);
+        Route::get('/countries/mauritius', [
+                'uses' => 'PagesController@index',
+                'as' => 'mauritius',
+        ]);
 
         Route::match(['GET', 'POST'], '/achat/results', [
                 'uses' => 'PagesController@results',

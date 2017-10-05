@@ -45,11 +45,23 @@
                         <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">{{ trans('lang.homepage') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>
+                        <a class="nav-link {{ ($current_page == 'france') ? 'active' : '' }}" href="{{ route('france') }}">France</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'locations' || $current_page == 'locationsDetails') ? 'active' : '' }}" href="{{ route('locations') }}">{{ trans('lang.rent') }}</a>
+                        <a class="nav-link {{ ($current_page == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">Suisse</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($current_page == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">USA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($current_page == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">Ile Maurice</a>
+                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($current_page == 'locations' || $current_page == 'locationsDetails') ? 'active' : '' }}" href="{{ route('locations') }}">{{ trans('lang.rent') }}</a>--}}
+                    {{--</li>--}}
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link" href="#">{{ trans('lang.homepage') }}Promotions</a>--}}
                     {{--</li>--}}

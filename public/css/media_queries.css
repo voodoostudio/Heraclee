@@ -24,6 +24,11 @@
     section.results_section .results_container.map_view .results_carousel.slick-slider .slick-arrow.slick-prev {
       left: initial;
       right: 55px !important; } }
+@media screen and (min-width: 1200px) {
+  section.search_section {
+    margin-top: 70px; }
+    section.search_section .outer_block_container .inner_block_container .input_container.search_input {
+      margin-top: 27px; } }
 @media screen and (max-width: 1199px) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px; }
@@ -57,8 +62,6 @@
       right: 10px; }
     section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
       margin-top: 0; }
-    section.search_section .outer_block_container .inner_block_container .input_container.search_input {
-      margin-top: 27px; }
 
   section.top_offer_section {
     height: 550px; }
@@ -657,3 +660,5 @@
     padding: 15px; }
 
   /* Bootstrap modal popup END*/ }
+
+/*# sourceMappingURL=media_queries.css.map */

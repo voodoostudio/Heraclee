@@ -68,6 +68,199 @@ class PagesController extends Controller
         return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
     }
 
+    public function france()
+    {
+        Session::forget('search');
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
+        if (isset($_GET['items'])) {
+            Session::put('search.items', $_GET['items']);
+        } elseif (!Session::has('search.items')) {
+            Session::put('search.items', 10);
+        }
+
+        if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
+            Session::put('search.sell_type', $_POST['sell_type']);
+        } elseif (!Session::has('search.sell_type')) {
+            Session::put('search.sell_type', 3);
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
+        $properties_obj = new Properties();
+        $properties = $properties_obj->getProperties(
+            Session::get("search.items"),
+            $cur_page,
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        return view('france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
+    }
+    public function swiss()
+    {
+        Session::forget('search');
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
+        if (isset($_GET['items'])) {
+            Session::put('search.items', $_GET['items']);
+        } elseif (!Session::has('search.items')) {
+            Session::put('search.items', 10);
+        }
+
+        if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
+            Session::put('search.sell_type', $_POST['sell_type']);
+        } elseif (!Session::has('search.sell_type')) {
+            Session::put('search.sell_type', 3);
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
+        $properties_obj = new Properties();
+        $properties = $properties_obj->getProperties(
+            Session::get("search.items"),
+            $cur_page,
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        return view('swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
+    }
+    public function usa()
+    {
+        Session::forget('search');
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
+        if (isset($_GET['items'])) {
+            Session::put('search.items', $_GET['items']);
+        } elseif (!Session::has('search.items')) {
+            Session::put('search.items', 10);
+        }
+
+        if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
+            Session::put('search.sell_type', $_POST['sell_type']);
+        } elseif (!Session::has('search.sell_type')) {
+            Session::put('search.sell_type', 3);
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
+        $properties_obj = new Properties();
+        $properties = $properties_obj->getProperties(
+            Session::get("search.items"),
+            $cur_page,
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        return view('usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
+    }
+    public function mauritius()
+    {
+        Session::forget('search');
+        $city_list = Properties::getCityList();
+        $type = Properties::getAvailablePropertyType();
+        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
+        if (isset($_GET['items'])) {
+            Session::put('search.items', $_GET['items']);
+        } elseif (!Session::has('search.items')) {
+            Session::put('search.items', 10);
+        }
+
+        if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
+            Session::put('search.sell_type', $_POST['sell_type']);
+        } elseif (!Session::has('search.sell_type')) {
+            Session::put('search.sell_type', 3);
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
+        $properties_obj = new Properties();
+        $properties = $properties_obj->getProperties(
+            Session::get("search.items"),
+            $cur_page,
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        return view('mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
+    }
+
     public function results()
     {
         SyncWithApimo::update();

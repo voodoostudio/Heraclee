@@ -47,6 +47,18 @@
   }
 }
 
+@media screen and ( min-width: 1200px ) {
+  section.search_section {
+    margin-top: 70px;
+    .outer_block_container {
+      .inner_block_container {
+        .input_container.search_input {
+          margin-top: 27px;
+        }
+      }
+    }
+  }
+}
 @media screen and ( max-width: 1199px ) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px;
@@ -142,9 +154,6 @@
         }
         ul.nav.nav-tabs {
           margin-top: 0;
-        }
-        .input_container.search_input {
-          margin-top: 27px;
         }
       }
     }

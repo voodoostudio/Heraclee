@@ -752,8 +752,8 @@ section.search_section {
       height: 32px;
       text-align: center;
       padding: 5px;
-      right: 10px;
-      top: 10px;
+      right: 15px;
+      top: 15px;
       opacity: 0.5;
       -webkit-transition: 0.2s ease-in-out;
       -moz-transition: 0.2s ease-in-out;
@@ -772,7 +772,7 @@ section.search_section {
           -o-transform: rotate(90deg);
           transform: rotate(90deg); }
     section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
-      margin-top: 10px; }
+      margin-top: 27px; }
     section.search_section .outer_block_container .inner_block_container .input_container.search_input {
       margin-top: 10px; }
 
@@ -1041,3 +1041,5 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
+
+/*# sourceMappingURL=global.css.map */
