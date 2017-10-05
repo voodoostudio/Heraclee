@@ -55,6 +55,9 @@
   section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 600px; } }
 @media screen and (max-width: 991px) {
+  header .navigation_container nav ul.nav li.nav-item {
+    padding-right: 18px; }
+
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 50px 30px; }
     section.search_section .outer_block_container .inner_block_container .reset_filters_btn {
