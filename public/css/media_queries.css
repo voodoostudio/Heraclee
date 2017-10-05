@@ -429,6 +429,10 @@
         section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
           font-size: 1.125rem; }
 
+  section.article_section .outer_block_container .inner_block_container {
+    padding: 20px;
+    font-size: .875rem; }
+
   footer {
     margin-top: 30px; }
     footer section.bottom_footer_section p {
@@ -659,6 +663,24 @@
   .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
     padding: 15px; }
 
-  /* Bootstrap modal popup END*/ }
+  /* Bootstrap modal popup END*/
+  section.news_list_section {
+    margin-top: 10px; }
+    section.news_list_section .outer_block_container {
+      margin-top: 30px; }
+      section.news_list_section .outer_block_container .inner_block_container {
+        padding: 20px 20px; }
+        section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_img {
+          float: none;
+          margin-right: 0;
+          text-align: center; }
+        section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info p {
+          margin-top: 10px;
+          text-align: justify; }
+        section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h2 {
+          margin: 20px 0 10px;
+          font-size: 1.25rem;
+          line-height: 1.25rem;
+          text-align: center; } }
 
 /*# sourceMappingURL=media_queries.css.map */

@@ -72,6 +72,9 @@
                         {{--<a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">{{ trans('lang.agency') }}</a>--}}
                     {{--</li>--}}
                     <li class="nav-item">
+                        <a class="nav-link {{ ($current_page == 'news' || $current_page == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">Actualité</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>
                     </li>
                 </ul>
