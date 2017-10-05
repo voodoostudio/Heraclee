@@ -48,6 +48,21 @@
                         <li>{{ trans('lang.footer_keyword_9') }}</li>
                     </ul>
                 </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <ul>
+                        <li>{{ trans('lang.footer_keyword_10') }}</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <ul>
+                        <li>{{ trans('lang.footer_keyword_11') }}</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <ul>
+                        <li>{{ trans('lang.footer_keyword_12') }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
