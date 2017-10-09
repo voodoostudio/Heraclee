@@ -23,8 +23,7 @@
                         <div class="col-12 col-lg-8">
                             <div class="row">
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
-                                    <label class="form_el_label"><i
-                                                class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
+                                    <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
                                     <select id="prop_type_select" multiple="multiple" name="object_type[]" title="">
                                         @foreach($type as $item)
                                             <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
@@ -32,8 +31,7 @@
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
-                                    <label class="form_el_label"><i
-                                                class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
+                                    <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                                     <select multiple="multiple" name="object_place[]" title="">
                                         @foreach($city_list as $city)
                                             <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>

@@ -165,7 +165,7 @@ label.form_el_label {
     margin-right: 5px;
     float: left; }
   label.form_el_label span {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 12px; }
 
 /*Nav tabs styles START*/
@@ -1041,5 +1041,3 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
-
-/*# sourceMappingURL=global.css.map */

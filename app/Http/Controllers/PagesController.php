@@ -402,6 +402,11 @@ class PagesController extends Controller
         return view('news_details');
     }
 
+    public function news_admin()
+    {
+        return view('news_admin');
+    }
+
     public function contact()
     {
         return view('contact');

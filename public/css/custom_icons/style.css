@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?t22kom');
-  src:  url('fonts/icomoon.eot?t22kom#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?t22kom') format('truetype'),
-    url('fonts/icomoon.woff?t22kom') format('woff'),
-    url('fonts/icomoon.svg?t22kom#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?j1r3dv');
+  src:  url('fonts/icomoon.eot?j1r3dv#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?j1r3dv') format('truetype'),
+    url('fonts/icomoon.woff?j1r3dv') format('woff'),
+    url('fonts/icomoon.svg?j1r3dv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -132,57 +132,60 @@
 .icon-parking:before {
   content: "\e923";
 }
-.icon-petrol:before {
+.icon-pencil:before {
   content: "\e924";
 }
-.icon-pharmacy:before {
+.icon-petrol:before {
   content: "\e925";
 }
-.icon-police:before {
+.icon-pharmacy:before {
   content: "\e926";
 }
-.icon-posts:before {
+.icon-police:before {
   content: "\e927";
 }
-.icon-price:before {
+.icon-posts:before {
   content: "\e928";
 }
-.icon-restaurant:before {
+.icon-price:before {
   content: "\e929";
 }
-.icon-rooms:before {
+.icon-restaurant:before {
   content: "\e92a";
 }
-.icon-school:before {
+.icon-rooms:before {
   content: "\e92b";
 }
-.icon-search:before {
+.icon-school:before {
   content: "\e92c";
 }
-.icon-security:before {
+.icon-search:before {
   content: "\e92d";
 }
-.icon-send_message:before {
+.icon-security:before {
   content: "\e92e";
 }
-.icon-swim:before {
+.icon-send_message:before {
   content: "\e92f";
 }
-.icon-twitter:before {
+.icon-swim:before {
   content: "\e930";
 }
-.icon-university:before {
+.icon-twitter:before {
   content: "\e931";
 }
-.icon-up_page:before {
+.icon-university:before {
   content: "\e932";
 }
-.icon-wheelchair:before {
+.icon-up_page:before {
   content: "\e933";
 }
-.icon-wifi:before {
+.icon-wheelchair:before {
   content: "\e934";
 }
-.icon-window_view:before {
+.icon-wifi:before {
   content: "\e935";
+}
+.icon-window_view:before {
+  content: "\e936";
 }
