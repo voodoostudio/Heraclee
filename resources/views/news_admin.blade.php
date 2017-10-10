@@ -29,7 +29,7 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade" id="list_of_articles">
+        <div role="tabpanel" class="tab-pane fade in show active" id="list_of_articles">
             <section class="news_list_section">
                 <div class="container-fluid">
                     <div class="row">
@@ -148,7 +148,7 @@
                 </div>
             </section>
         </div>
-        <div role="tabpanel" class="tab-pane fade in show active" id="edit_article">
+        <div role="tabpanel" class="tab-pane fade" id="edit_article">
             <section class="news_list_section">
                 <div class="container-fluid">
                     <div class="outer_block_container">
@@ -237,13 +237,6 @@
                 previousMonth: '<i class="icn icon-arrow_big_left"></i>',
                 nextMonth: '<i class="icn icon-arrow_big_right"></i>'
             }
-//            methods: {
-//                initialize: function ($datepicker) {
-//                    $('.form_el_label').on('click', function (e) {
-//                        gj.datepicker.methods.hide($datepicker)
-//                    })
-//                }
-//            }
         });
 
 
