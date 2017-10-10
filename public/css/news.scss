@@ -1,5 +1,6 @@
 @import "fonts";
 @import "variables";
+//@import "libraries/bootstrap/bootstrap";
 
 .outer_block_container {
   .inner_block_container {
@@ -145,6 +146,7 @@ section.news_admin_nav_section {
           .dz-preview {
             margin: 0 10px;
             min-height: 92px;
+            background: transparent;
             .dz-image {
               @include my_border_radius(0);
               border: 1px solid $main_brown_clr;
@@ -153,14 +155,91 @@ section.news_admin_nav_section {
             }
           }
         }
+        textarea {
+          height: 133px;
+        }
         button.btn {
           float: right;
         }
       }
-
     }
   }
 }
+
+
+//Datepicker START
+.gj-datepicker {
+  width: 100%;
+  .gj-textbox-md {
+    border: 1px solid $main_gray_clr;
+    padding: 0 12px;
+    width: 100%;
+    background-color: transparent;
+    color: $main_light_clr;
+    font-size: 0.875rem;
+    font-family: 'opensans_light';
+    &:focus {
+      border: 1px solid $main_gray_clr;
+    }
+  }
+  .datepicker_btn {
+    width: 42px;
+    height: 42px;
+    color: $main_gray_clr;
+    padding: 11px;
+    font-size: 21px;
+    border-left: 1px solid $main_gray_clr;
+  }
+}
+.gj-calendar-md {
+  background: $main_dark_clr;
+  color: $main_light_clr;
+  border-color: $main_gray_clr;
+  font-family: 'opensans_light';
+  table tr {
+    th {
+      div {
+        i {
+          font-weight: bold;
+          font-size: 18px;
+          position: relative;
+          top: 2px;
+        }
+      }
+    }
+    td {
+      div {
+        border: 1px solid transparent;
+      }
+      &[type="today"] div {
+        color: $main_brown_clr;
+      }
+      &[type="selected"] div {
+        background: transparent;
+        border-color: $main_brown_clr;
+        @include my_border_radius(0);
+      }
+      &[type="other-month"] {
+        div {
+          opacity: 0.4;
+          color: $main_light_clr;
+        }
+      }
+      &.gj-cursor-pointer {
+        div:hover {
+          @include my_border_radius(0);
+          background: $main_brown_clr;
+        }
+        &[type="today"] {
+          div:hover {
+            color: $main_light_clr;
+          }
+        }
+      }
+    }
+  }
+}
+//Datepicker END
 
 section.article_section {
   margin-top: 40px;

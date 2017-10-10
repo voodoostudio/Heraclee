@@ -203,7 +203,7 @@ ul.nav.nav-tabs {
       background: transparent;
       cursor: pointer;
       &:before {
-        content: "\e911";
+        content: "\e912";
         font-family: icomoon;
         color: $main_gray_clr;
         font-size: 20px;
@@ -213,7 +213,7 @@ ul.nav.nav-tabs {
       background-position: 0 0;
       border-color: $main_gray_clr;
       &:before {
-        content: "\e910";
+        content: "\e911";
         font-family: icomoon;
         color: $main_gray_clr;
         font-size: 20px;
@@ -306,7 +306,7 @@ ul.nav.nav-tabs {
                 top: 0;
                 display: block;
                 font-family: 'icomoon' !important;
-                content: "\e911";
+                content: "\e912";
                 speak: none;
                 font-style: normal;
                 font-weight: normal;
@@ -324,7 +324,7 @@ ul.nav.nav-tabs {
           a {
             color: $main_brown_clr;
             label.checkbox:before {
-              content: "\e910";
+              content: "\e911";
             }
           }
         }
@@ -484,7 +484,7 @@ ul.nav.nav-tabs {
               font-size: 1rem;
               float: left;
               &:before {
-                content: "\e911";
+                content: "\e912";
               }
             }
           }
@@ -492,7 +492,7 @@ ul.nav.nav-tabs {
             a {
               span.check-mark {
                 &:before {
-                  content: "\e910";
+                  content: "\e911";
                 }
               }
             }

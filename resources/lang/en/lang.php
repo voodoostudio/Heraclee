@@ -123,7 +123,7 @@ return [
                                 Indeed, in visiting the services of our real estate agency, customers have the opportunity to be able to access exceptional property via the many rentals or sales located for the most part in the towns of St Tropez and Ramatuelle. Furthermore, the luxury real estate being in constant evolution as are the requirements and expectations of our future potential buyers, we strive to find the property corresponding to the most sophisticated selection criteria.  </br></br>
                                 It is with the goal of ensuring total satisfaction for our clients that our real estate agency is composed of a team of experts, all with a wide range of expertise, notably in matters of tax and legal aspects. The proven professionalism of our St. Tropez real estate agency, has, among other things, allowed us to develop a network leading to retaining a portfolio with a strong potential."',
     'subscribe_to_newsletter' => 'Subscribe to our newsletter',
-    'copyright_text'        => 'Heraclee- Creation and development by voodoo studio',
+    'copyright_text'        => 'Heraclee - Creation and development by voodoo studio',
     'footer_keyword_1'        => 'Saint-Tropez luxury real estate',
     'footer_keyword_2'        => 'Saint-Tropez real estate',
     'footer_keyword_3'        => 'Saint-Tropez golf real estate',

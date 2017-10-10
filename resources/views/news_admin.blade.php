@@ -2,9 +2,10 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/news.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/dropzone.min.css">
-    <link href="http://code.gijgo.com/1.5.1/css/gijgo.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/news.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -14,13 +15,13 @@
         <div class="container-fluid">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#list_of_articles" role="tab" data-toggle="tab">List of articles</a>
+                    <a class="nav-link" href="#list_of_articles" role="tab" data-toggle="tab">List of articles</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style="display: none">
                     <a class="nav-link" href="#categories" role="tab" data-toggle="tab">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#edit_article" role="tab" data-toggle="tab">New article</a>
+                    <a class="nav-link active" href="#edit_article" role="tab" data-toggle="tab">New article</a>
                 </li>
             </ul>
         </div>
@@ -28,7 +29,7 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in show active" id="list_of_articles">
+        <div role="tabpanel" class="tab-pane fade" id="list_of_articles">
             <section class="news_list_section">
                 <div class="container-fluid">
                     <div class="row">
@@ -112,7 +113,7 @@
                 </div>
             </section>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="categories">
+        <div role="tabpanel" class="tab-pane fade" id="categories" style="display: none">
             <section class="news_categories_section">
                 <div class="container-fluid">
                     <div class="outer_block_container">
@@ -147,7 +148,7 @@
                 </div>
             </section>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="edit_article">
+        <div role="tabpanel" class="tab-pane fade in show active" id="edit_article">
             <section class="news_list_section">
                 <div class="container-fluid">
                     <div class="outer_block_container">
@@ -163,49 +164,45 @@
                                                 </div>
                                             </div>
                                             <div class="col-12 margin_bottom_20">
-                                                <label class="form_el_label"><span>Category</span></label>
-                                                <select name="news_category" title="">
-                                                    <option value="0">Category name 1</option>
-                                                    <option value="1">Category name 2</option>
-                                                    <option value="2">Category name 3</option>
-                                                    <option value="3">Category name 4</option>
-                                                    <option value="4">Category name 5</option>
-                                                    <option value="5">Category name 6</option>
-                                                    <option value="6">Category name 7</option>
-                                                </select>
+                                                <label class="form_el_label"><span>Posting date</span></label>
+                                                <div class="input_container">
+                                                    {{--<input type="date" name="date" id="date" placeholder="Posting date">--}}
+                                                    <input name="date" placeholder="Posting date" id="article_datepicker" />
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="dropzone dz-clickable" id="article_img_dropzone">
+                                        <div class="dropzone dz-clickable" id="article_header_dropzone">
                                             <div class="dz-default dz-message" data-dz-message="">
-                                                <span>Drop article image here to upload</span>
+                                                <span>Drop article header image here to upload</span>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 margin_bottom_20">
-                                        <label class="form_el_label"><span>Posting date</span></label>
-                                        <div class="input_container">
-                                            <input type="date" name="date" id="date" placeholder="Posting date">
-                                            {{--<input id="datepicker" width="100%" />--}}
+                                    {{--<div class="col-md-6 margin_bottom_20">--}}
+                                        {{--<label class="form_el_label"><span>Category</span></label>--}}
+                                        {{--<select name="news_category" title="">--}}
+                                            {{--<option value="0">Category name 1</option>--}}
+                                            {{--<option value="1">Category name 2</option>--}}
+                                            {{--<option value="2">Category name 3</option>--}}
+                                            {{--<option value="3">Category name 4</option>--}}
+                                            {{--<option value="4">Category name 5</option>--}}
+                                            {{--<option value="5">Category name 6</option>--}}
+                                            {{--<option value="6">Category name 7</option>--}}
+                                        {{--</select>--}}
+                                    {{--</div>--}}
+
+                                    <div class="col-12 margin_bottom_20">
+                                        <div class="dropzone dz-clickable" id="article_body_dropzone">
+                                            <div class="dz-default dz-message" data-dz-message="">
+                                                <span>Drop article body image here to upload</span>
+                                            </div>
                                         </div>
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class='input-group date' id='datetimepicker1'>--}}
-                                                {{--<input type='text' class="form-control" />--}}
-                                                {{--<span class="input-group-addon">--}}
-                                                    {{--<span class="glyphicon glyphicon-calendar"></span>--}}
-                                                {{--</span>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
                                     </div>
-                                    <div class="col-md-6 margin_bottom_20">
-                                        <label class="form_el_label"><span>URL to origin source</span></label>
-                                        <div class="input_container">
-                                            <input type="text" name="url" id="url" placeholder="URL">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 margin_bottom_20">
+
+                                    <div class="col-12 margin_bottom_20">
                                         <label class="form_el_label"><span>Text *</span></label>
                                         <div class="input_container">
                                             <textarea name="text_content" id="text_content" cols="30" rows="10"></textarea>
@@ -226,25 +223,30 @@
 
 @section('javascript')
     <script type="text/javascript" src="/js/libraries/dropzone.min.js"></script>
-    {{--<script type="text/javascript" src="/js/libraries/moment.min.js"></script>--}}
-    {{--<script type="text/javascript" src="/js/libraries/bootstrap-datetimepicker.min.js"></script>--}}
-    <script>
+    <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
+
+    <script type="text/javascript">
         Dropzone.autoDiscover = false;
-        $("div#article_img_dropzone").dropzone({ url: "/file/post" });
+        $("div#article_header_dropzone").dropzone({ url: "/file/post" });
+        $("div#article_body_dropzone").dropzone({ url: "/file/post" });
+
+        $('#article_datepicker').datepicker({
+            showOtherMonths: true,
+            icons: {
+                rightIcon: '<div class="datepicker_btn"><i class="icn icon-calendar"></i></div>',
+                previousMonth: '<i class="icn icon-arrow_big_left"></i>',
+                nextMonth: '<i class="icn icon-arrow_big_right"></i>'
+            }
+//            methods: {
+//                initialize: function ($datepicker) {
+//                    $('.form_el_label').on('click', function (e) {
+//                        gj.datepicker.methods.hide($datepicker)
+//                    })
+//                }
+//            }
+        });
 
 
-
-
-//        $('#datepicker').datepicker({
-//            uiLibrary: 'bootstrap4',
-//            iconsLibrary: 'fontawesome'
-//        });
     </script>
-    {{--<script type="text/javascript">--}}
-        {{--$(function () {--}}
-            {{--$('#datetimepicker1').datetimepicker();--}}
-        {{--});--}}
-    {{--</script>--}}
+
 @stop
-
-

@@ -118,7 +118,8 @@ section.news_admin_nav_section {
     margin: 0; }
   #edit_article .outer_block_container .inner_block_container form .dropzone .dz-preview {
     margin: 0 10px;
-    min-height: 92px; }
+    min-height: 92px;
+    background: transparent; }
     #edit_article .outer_block_container .inner_block_container form .dropzone .dz-preview .dz-image {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
@@ -126,8 +127,61 @@ section.news_admin_nav_section {
       border: 1px solid #ccac83;
       width: 100px;
       height: 92px; }
+#edit_article .outer_block_container .inner_block_container form textarea {
+  height: 133px; }
 #edit_article .outer_block_container .inner_block_container form button.btn {
   float: right; }
+
+.gj-datepicker {
+  width: 100%; }
+  .gj-datepicker .gj-textbox-md {
+    border: 1px solid #625e57;
+    padding: 0 12px;
+    width: 100%;
+    background-color: transparent;
+    color: #fdfdfd;
+    font-size: 0.875rem;
+    font-family: 'opensans_light'; }
+    .gj-datepicker .gj-textbox-md:focus {
+      border: 1px solid #625e57; }
+  .gj-datepicker .datepicker_btn {
+    width: 42px;
+    height: 42px;
+    color: #625e57;
+    padding: 11px;
+    font-size: 21px;
+    border-left: 1px solid #625e57; }
+
+.gj-calendar-md {
+  background: #272727;
+  color: #fdfdfd;
+  border-color: #625e57;
+  font-family: 'opensans_light'; }
+  .gj-calendar-md table tr th div i {
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    top: 2px; }
+  .gj-calendar-md table tr td div {
+    border: 1px solid transparent; }
+  .gj-calendar-md table tr td[type="today"] div {
+    color: #ccac83; }
+  .gj-calendar-md table tr td[type="selected"] div {
+    background: transparent;
+    border-color: #ccac83;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0; }
+  .gj-calendar-md table tr td[type="other-month"] div {
+    opacity: 0.4;
+    color: #fdfdfd; }
+  .gj-calendar-md table tr td.gj-cursor-pointer div:hover {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background: #ccac83; }
+  .gj-calendar-md table tr td.gj-cursor-pointer[type="today"] div:hover {
+    color: #fdfdfd; }
 
 section.article_section {
   margin-top: 40px; }
