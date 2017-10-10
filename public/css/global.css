@@ -627,6 +627,7 @@ header {
               text-transform: uppercase;
               font-size: 0.813rem; }
     header .navigation_container nav {
+      width: calc(100% - 170px);
       margin-left: 170px;
       border-top: 1px solid rgba(98, 94, 87, 0.3);
       padding: 20px 0 15px;

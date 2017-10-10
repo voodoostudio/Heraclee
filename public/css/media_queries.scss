@@ -59,6 +59,7 @@
     }
   }
 }
+
 @media screen and ( max-width: 1199px ) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px;
@@ -144,8 +145,25 @@
 }
 
 @media screen and ( max-width: 991px ) {
-  header .navigation_container nav ul.nav li.nav-item {
-    padding-right: 18px;
+  header {
+    .logo {
+      padding: 15px 0;
+      img {
+        max-width: 84px;
+      }
+    }
+    .navigation_container {
+      padding-top: 10px;
+      nav {
+        padding: 10px 0 10px;
+        ul.nav li.nav-item {
+          padding-right: 10px;
+          a.nav-link {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
   }
   section.search_section {
     .outer_block_container {
@@ -459,6 +477,7 @@
       padding-right: 34px;
       padding-top: 10px;
       nav {
+        width: 100%;
         margin-top: 10px;
         margin-left: 0;
         margin-right: -34px;

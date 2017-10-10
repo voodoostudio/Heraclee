@@ -77,6 +77,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="#">Newsletters</a>
+                    </li>
                 </ul>
             </nav>
         </div>

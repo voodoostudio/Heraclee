@@ -153,6 +153,7 @@ header {
       }
     }
     nav {
+      width: calc(100% - 170px);
       margin-left: 170px;
       border-top: 1px solid rgba($main_gray_clr, 0.3);
       padding: 20px 0 15px;
