@@ -11,13 +11,102 @@
     $lang = LaravelLocalization::getCurrentLocaleRegional();
 @endphp
 @section('content')
-    <section class="news_admin_nav_section">
+
+    <section class="news_list_section">
+        <div class="container-fluid">
+            <h1>List of articles</h1>
+            <div class="row">
+                <div class="col-xs-12 col-xl-6">
+                    <div class="outer_block_container">
+                        <div class="inner_block_container">
+                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
+                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="article_info_block">
+                                <div class="article_img">
+                                    <a href="{{ route('news_details') }}">
+                                        <img src="/img/details/no_agent_photo.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="article_info">
+                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xl-6">
+                    <div class="outer_block_container">
+                        <div class="inner_block_container">
+                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
+                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="article_info_block">
+                                <div class="article_img">
+                                    <a href="{{ route('news_details') }}">
+                                        <img src="/img/details/no_agent_photo.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="article_info">
+                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xl-6">
+                    <div class="outer_block_container">
+                        <div class="inner_block_container">
+                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
+                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="article_info_block">
+                                <div class="article_img">
+                                    <a href="{{ route('news_details') }}">
+                                        <img src="/img/details/no_agent_photo.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="article_info">
+                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xl-6">
+                    <div class="outer_block_container">
+                        <div class="inner_block_container">
+                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
+                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="article_info_block">
+                                <div class="article_img">
+                                    <a href="{{ route('news_details') }}">
+                                        <img src="/img/details/no_agent_photo.svg" alt="">
+                                    </a>
+                                </div>
+                                <div class="article_info">
+                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <a href="{{ route('news_edit') }}" class="btn">New article</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="news_admin_nav_section" style="display: none">
         <div class="container-fluid">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" href="#list_of_articles" role="tab" data-toggle="tab">List of articles</a>
                 </li>
-                <li class="nav-item" style="display: none">
+                <li class="nav-item">
                     <a class="nav-link" href="#categories" role="tab" data-toggle="tab">Categories</a>
                 </li>
                 <li class="nav-item">
@@ -28,7 +117,7 @@
     </section>
 
     <!-- Tab panes -->
-    <div class="tab-content">
+    <div class="tab-content" style="display: none">
         <div role="tabpanel" class="tab-pane fade in show active" id="list_of_articles">
             <section class="news_list_section">
                 <div class="container-fluid">
@@ -113,7 +202,7 @@
                 </div>
             </section>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="categories" style="display: none">
+        <div role="tabpanel" class="tab-pane fade" id="categories" >
             <section class="news_categories_section">
                 <div class="container-fluid">
                     <div class="outer_block_container">
