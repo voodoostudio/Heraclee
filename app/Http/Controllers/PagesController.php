@@ -407,6 +407,11 @@ class PagesController extends Controller
         return view('news_admin');
     }
 
+    public function news_edit()
+    {
+        return view('news_edit');
+    }
+
     public function contact()
     {
         return view('contact');

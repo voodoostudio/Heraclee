@@ -105,7 +105,7 @@ section.news_admin_nav_section {
   #categories .outer_block_container .inner_block_container form button {
     margin-top: 20px; }
 
-#edit_article .outer_block_container .inner_block_container form .dropzone {
+.article_edit_section .outer_block_container .inner_block_container form .dropzone {
   background: transparent;
   border: 1px dashed #625e57;
   margin-top: 27px;
@@ -113,23 +113,23 @@ section.news_admin_nav_section {
   display: flex;
   align-items: center;
   justify-content: center; }
-  #edit_article .outer_block_container .inner_block_container form .dropzone .dz-message {
+  .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-message {
     color: #625e57;
     margin: 0; }
-  #edit_article .outer_block_container .inner_block_container form .dropzone .dz-preview {
+  .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview {
     margin: 0 10px;
     min-height: 92px;
     background: transparent; }
-    #edit_article .outer_block_container .inner_block_container form .dropzone .dz-preview .dz-image {
+    .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview .dz-image {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       border-radius: 0;
       border: 1px solid #ccac83;
       width: 100px;
       height: 92px; }
-#edit_article .outer_block_container .inner_block_container form textarea {
+.article_edit_section .outer_block_container .inner_block_container form textarea {
   height: 133px; }
-#edit_article .outer_block_container .inner_block_container form button.btn {
+.article_edit_section .outer_block_container .inner_block_container form button.btn {
   float: right; }
 
 .gj-datepicker {
