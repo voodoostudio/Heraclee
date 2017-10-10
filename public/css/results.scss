@@ -48,54 +48,6 @@ section.results_section {
 
   @import "results_objects";
 
-  nav {
-    display: table;
-    margin: 0 auto;
-    ul.pagination {
-      border: 1px solid $main_divider_clr;
-      border-radius: 0;
-      margin: 20px 0 0;
-      li {
-        a.page-link {
-          background-color: transparent;
-          padding: 0;
-          height: 40px;
-          width: 37px;
-          line-height: 40px;
-          text-align: center;
-          border: none;
-          border-radius: 0;
-          color: $main_light_clr;
-          font-size: 18px;
-          &:focus,
-          &:hover {
-            color: $main_brown_clr;
-            background-color: transparent;
-            border: none;
-            font-size: 22px;
-            text-decoration: none;
-          }
-          &[aria-label="Previous"],
-          &[aria-label="Next"] {
-            font-size: 8px;
-            line-height: 42px;
-            color: $main_divider_clr;
-            &:hover {
-              font-size: 10px;
-            }
-          }
-        }
-        &.active {
-          .page-link {
-            background-color: transparent;
-            font-size: 22px;
-            color: $main_brown_clr;
-          }
-        }
-      }
-    }
-  }
-
   //.refresh_results {
   //  position: absolute;
   //  text-align: center;

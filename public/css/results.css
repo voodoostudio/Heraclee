@@ -794,40 +794,6 @@ section.results_section {
           background-color: #aaa296; }
     section.results_section .results_container.map_view nav {
       display: none; }
-  section.results_section nav {
-    display: table;
-    margin: 0 auto; }
-    section.results_section nav ul.pagination {
-      border: 1px solid #aaa296;
-      border-radius: 0;
-      margin: 20px 0 0; }
-      section.results_section nav ul.pagination li a.page-link {
-        background-color: transparent;
-        padding: 0;
-        height: 40px;
-        width: 37px;
-        line-height: 40px;
-        text-align: center;
-        border: none;
-        border-radius: 0;
-        color: #fdfdfd;
-        font-size: 18px; }
-        section.results_section nav ul.pagination li a.page-link:focus, section.results_section nav ul.pagination li a.page-link:hover {
-          color: #ccac83;
-          background-color: transparent;
-          border: none;
-          font-size: 22px;
-          text-decoration: none; }
-        section.results_section nav ul.pagination li a.page-link[aria-label="Previous"], section.results_section nav ul.pagination li a.page-link[aria-label="Next"] {
-          font-size: 8px;
-          line-height: 42px;
-          color: #aaa296; }
-          section.results_section nav ul.pagination li a.page-link[aria-label="Previous"]:hover, section.results_section nav ul.pagination li a.page-link[aria-label="Next"]:hover {
-            font-size: 10px; }
-      section.results_section nav ul.pagination li.active .page-link {
-        background-color: transparent;
-        font-size: 22px;
-        color: #ccac83; }
   section.results_section #results_map .gm-style-iw {
     width: 300px !important;
     top: 20px !important;

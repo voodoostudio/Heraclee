@@ -24,13 +24,14 @@
 /* END Semibold*/
 h1 {
   font-size: 1.25rem;
-  margin: 0 0 10px 0;
+  margin: 0;
   text-transform: uppercase;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccac83; }
 
 .title_container {
-  position: relative; }
+  position: relative;
+  margin-bottom: 30px; }
   .title_container a {
     position: absolute;
     right: 0;
@@ -49,7 +50,7 @@ h1 {
 section.news_list_section {
   margin-top: 40px; }
   section.news_list_section .outer_block_container {
-    margin-top: 30px; }
+    margin-bottom: 30px; }
     section.news_list_section .outer_block_container .inner_block_container {
       padding: 20px 20px; }
       section.news_list_section .outer_block_container .inner_block_container .article_info_block {
@@ -75,6 +76,8 @@ section.news_list_section {
           font-size: 0.875rem; }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info p {
           font-size: 0.875rem; }
+  section.news_list_section nav ul.pagination {
+    margin-top: 10px; }
 
 section.news_admin_nav_section {
   margin-top: 40px; }
@@ -98,9 +101,6 @@ section.news_admin_nav_section {
         color: #fdfdfd; }
     #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements .edit_btn {
       margin-right: 8px; }
-
-#news_edit .outer_block_container {
-  margin-top: 30px; }
 
 .article_edit_section {
   margin-top: 40px; }
@@ -185,7 +185,8 @@ section.news_admin_nav_section {
 section.article_section {
   margin-top: 40px; }
   section.article_section .outer_block_container .inner_block_container h2 {
-    font-size: 0.875rem; }
+    font-size: 0.875rem;
+    margin-top: 10px; }
   section.article_section .outer_block_container .inner_block_container .img_container {
     margin: 40px 0;
     text-align: center; }
