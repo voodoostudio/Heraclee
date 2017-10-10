@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?3qtuqm');
-  src:  url('fonts/icomoon.eot?3qtuqm#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?3qtuqm') format('truetype'),
-    url('fonts/icomoon.woff?3qtuqm') format('woff'),
-    url('fonts/icomoon.svg?3qtuqm#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?yylp07');
+  src:  url('fonts/icomoon.eot?yylp07#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?yylp07') format('truetype'),
+    url('fonts/icomoon.woff?yylp07') format('woff'),
+    url('fonts/icomoon.svg?yylp07#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -45,150 +45,156 @@
 .icon-arrow_dropdown_right:before {
   content: "\e906";
 }
-.icon-arrow_right:before {
+.icon-arrow_left:before {
   content: "\e907";
 }
-.icon-bakery:before {
+.icon-arrow_right:before {
   content: "\e908";
 }
-.icon-Bank:before {
+.icon-bakery:before {
   content: "\e909";
 }
-.icon-bathroom:before {
+.icon-Bank:before {
   content: "\e90a";
 }
-.icon-beach:before {
+.icon-bathroom:before {
   content: "\e90b";
 }
-.icon-bedroom:before {
+.icon-beach:before {
   content: "\e90c";
 }
-.icon-building:before {
+.icon-bedroom:before {
   content: "\e90d";
 }
-.icon-cafe:before {
+.icon-building:before {
   content: "\e90e";
 }
-.icon-calendar:before {
+.icon-cafe:before {
   content: "\e90f";
 }
-.icon-cancel:before {
+.icon-calendar:before {
   content: "\e910";
 }
-.icon-checkbox_active:before {
+.icon-cancel:before {
   content: "\e911";
 }
-.icon-checkbox:before {
+.icon-checkbox_active:before {
   content: "\e912";
 }
-.icon-conditioner:before {
+.icon-checkbox:before {
   content: "\e913";
 }
-.icon-country:before {
+.icon-conditioner:before {
   content: "\e914";
 }
-.icon-dentist:before {
+.icon-country:before {
   content: "\e915";
 }
-.icon-doctor:before {
+.icon-dentist:before {
   content: "\e916";
 }
-.icon-elevator:before {
+.icon-doctor:before {
   content: "\e917";
 }
-.icon-facebook:before {
+.icon-elevator:before {
   content: "\e918";
 }
-.icon-floor:before {
+.icon-facebook:before {
   content: "\e919";
 }
-.icon-fullscreen:before {
+.icon-floor:before {
   content: "\e91a";
 }
-.icon-furniture:before {
+.icon-fullscreen:before {
   content: "\e91b";
 }
-.icon-garden:before {
+.icon-furniture:before {
   content: "\e91c";
 }
-.icon-grid:before {
+.icon-garden:before {
   content: "\e91d";
 }
-.icon-hospital:before {
+.icon-grid:before {
   content: "\e91e";
 }
-.icon-linked_in:before {
+.icon-hospital:before {
   content: "\e91f";
 }
-.icon-list:before {
+.icon-linked_in:before {
   content: "\e920";
 }
-.icon-map:before {
+.icon-list:before {
   content: "\e921";
 }
-.icon-more:before {
+.icon-map:before {
   content: "\e922";
 }
-.icon-no_image:before {
+.icon-more:before {
   content: "\e923";
 }
-.icon-parking:before {
+.icon-no_image:before {
   content: "\e924";
 }
-.icon-pencil:before {
+.icon-parking:before {
   content: "\e925";
 }
-.icon-petrol:before {
+.icon-pencil:before {
   content: "\e926";
 }
-.icon-pharmacy:before {
+.icon-petrol:before {
   content: "\e927";
 }
-.icon-police:before {
+.icon-pharmacy:before {
   content: "\e928";
 }
-.icon-posts:before {
+.icon-plus:before {
   content: "\e929";
 }
-.icon-price:before {
+.icon-police:before {
   content: "\e92a";
 }
-.icon-restaurant:before {
+.icon-posts:before {
   content: "\e92b";
 }
-.icon-rooms:before {
+.icon-price:before {
   content: "\e92c";
 }
-.icon-school:before {
+.icon-restaurant:before {
   content: "\e92d";
 }
-.icon-search:before {
+.icon-rooms:before {
   content: "\e92e";
 }
-.icon-security:before {
+.icon-school:before {
   content: "\e92f";
 }
-.icon-send_message:before {
+.icon-search:before {
   content: "\e930";
 }
-.icon-swim:before {
+.icon-security:before {
   content: "\e931";
 }
-.icon-twitter:before {
+.icon-send_message:before {
   content: "\e932";
 }
-.icon-university:before {
+.icon-swim:before {
   content: "\e933";
 }
-.icon-up_page:before {
+.icon-twitter:before {
   content: "\e934";
 }
-.icon-wheelchair:before {
+.icon-university:before {
   content: "\e935";
 }
-.icon-wifi:before {
+.icon-up_page:before {
   content: "\e936";
 }
-.icon-window_view:before {
+.icon-wheelchair:before {
   content: "\e937";
+}
+.icon-wifi:before {
+  content: "\e938";
+}
+.icon-window_view:before {
+  content: "\e939";
 }

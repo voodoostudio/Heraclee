@@ -24,13 +24,30 @@
 /* END Semibold*/
 h1 {
   font-size: 1.25rem;
-  margin: 40px 0 10px 0;
+  margin: 0 0 10px 0;
   text-transform: uppercase;
   padding-bottom: 10px;
   border-bottom: 1px solid #ccac83; }
 
+.title_container {
+  position: relative; }
+  .title_container a {
+    position: absolute;
+    right: 0;
+    top: -7px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccac83;
+    color: #ccac83; }
+    .title_container a:hover {
+      color: #fdfdfd; }
+
 section.news_list_section {
-  margin-top: 10px; }
+  margin-top: 40px; }
   section.news_list_section .outer_block_container {
     margin-top: 30px; }
     section.news_list_section .outer_block_container .inner_block_container {
@@ -48,63 +65,71 @@ section.news_list_section {
           display: table; }
           section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a h2 {
             margin: 15px 0 15px;
-            font-size: 1.563rem;
-            line-height: 1.563rem;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
             text-transform: uppercase;
             color: #fdfdfd; }
           section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a:hover h2 {
             color: #ccac83; }
+        section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h3 {
+          font-size: 0.875rem; }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info p {
           font-size: 0.875rem; }
 
 section.news_admin_nav_section {
   margin-top: 40px; }
 
+#news_admin .news_list_section .title_container a i {
+  display: table;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg); }
 #news_admin .news_list_section .outer_block_container .inner_block_container {
   position: relative; }
-  #news_admin .news_list_section .outer_block_container .inner_block_container button {
+  #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements {
     position: absolute;
-    color: #ccac83;
-    top: 10px; }
-    #news_admin .news_list_section .outer_block_container .inner_block_container button.edit_btn {
-      right: 35px; }
-    #news_admin .news_list_section .outer_block_container .inner_block_container button.remove_btn {
-      right: 10px; }
-    #news_admin .news_list_section .outer_block_container .inner_block_container button:hover {
-      color: #fdfdfd; }
-#news_admin .news_list_section a.btn {
-  float: right;
-  margin-top: 30px; }
+    top: 10px;
+    right: 12px; }
+    #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements button, #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements a {
+      color: #ccac83; }
+      #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements button:hover, #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements a:hover {
+        color: #fdfdfd; }
+    #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements .edit_btn {
+      margin-right: 8px; }
 
 #news_edit .outer_block_container {
   margin-top: 30px; }
 
-.article_edit_section .outer_block_container .inner_block_container form .dropzone {
-  background: transparent;
-  border: 1px dashed #625e57;
-  margin-top: 27px;
-  min-height: 133px;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-message {
-    color: #625e57;
-    margin: 0; }
-  .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview {
-    margin: 0 10px;
-    min-height: 92px;
-    background: transparent; }
-    .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview .dz-image {
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      border-radius: 0;
-      border: 1px solid #ccac83;
-      width: 100px;
-      height: 92px; }
-.article_edit_section .outer_block_container .inner_block_container form textarea {
-  height: 133px; }
-.article_edit_section .outer_block_container .inner_block_container form button.btn {
-  float: right; }
+.article_edit_section {
+  margin-top: 40px; }
+  .article_edit_section .outer_block_container .inner_block_container form .dropzone {
+    background: transparent;
+    border: 1px dashed #625e57;
+    margin-top: 27px;
+    min-height: 133px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-message {
+      color: #625e57;
+      margin: 0; }
+    .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview {
+      margin: 0 10px;
+      min-height: 92px;
+      background: transparent; }
+      .article_edit_section .outer_block_container .inner_block_container form .dropzone .dz-preview .dz-image {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        border: 1px solid #ccac83;
+        width: 100px;
+        height: 92px; }
+  .article_edit_section .outer_block_container .inner_block_container form textarea {
+    height: 133px; }
+  .article_edit_section .outer_block_container .inner_block_container form button.btn {
+    float: right; }
 
 .gj-datepicker {
   width: 100%; }
@@ -159,7 +184,10 @@ section.news_admin_nav_section {
 
 section.article_section {
   margin-top: 40px; }
+  section.article_section .outer_block_container .inner_block_container h2 {
+    font-size: 0.875rem; }
   section.article_section .outer_block_container .inner_block_container .img_container {
+    margin: 40px 0;
     text-align: center; }
   section.article_section .outer_block_container .inner_block_container p {
     text-align: justify;

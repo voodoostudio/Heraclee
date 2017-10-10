@@ -14,7 +14,14 @@
 
     <section class="article_edit_section">
         <div class="container-fluid">
-            <h1>Edit article</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="title_container">
+                        <h1>Edit articles</h1>
+                        <a href="{{ route('news_admin') }}"><i class="icn icon-arrow_left"></i></a>
+                    </div>
+                </div>
+            </div>
             <div class="outer_block_container">
                 <div class="inner_block_container">
                     <form action="">

@@ -14,13 +14,22 @@
 
     <section class="news_list_section">
         <div class="container-fluid">
-            <h1>List of articles</h1>
+            <div class="row">
+                <div class="col-12">
+                    <div class="title_container">
+                        <h1>List of articles</h1>
+                        <a href="{{ route('news_edit') }}"><i class="icn icon-cancel"></i></a>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12 col-xl-6">
                     <div class="outer_block_container">
                         <div class="inner_block_container">
-                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
-                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="edit_elements">
+                                <a href="{{ route('news_edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
+                                <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            </div>
                             <div class="article_info_block">
                                 <div class="article_img">
                                     <a href="{{ route('news_details') }}">
@@ -28,8 +37,8 @@
                                     </a>
                                 </div>
                                 <div class="article_info">
-                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
+                                    <h3>05.06.2017</h3>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +47,10 @@
                 <div class="col-xs-12 col-xl-6">
                     <div class="outer_block_container">
                         <div class="inner_block_container">
-                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
-                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="edit_elements">
+                                <a href="{{ route('news_edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
+                                <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            </div>
                             <div class="article_info_block">
                                 <div class="article_img">
                                     <a href="{{ route('news_details') }}">
@@ -48,7 +59,8 @@
                                 </div>
                                 <div class="article_info">
                                     <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <h3>05.06.2017</h3>
+                                    {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>--}}
                                 </div>
                             </div>
                         </div>
@@ -57,8 +69,10 @@
                 <div class="col-xs-12 col-xl-6">
                     <div class="outer_block_container">
                         <div class="inner_block_container">
-                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
-                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="edit_elements">
+                                <a href="{{ route('news_edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
+                                <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            </div>
                             <div class="article_info_block">
                                 <div class="article_img">
                                     <a href="{{ route('news_details') }}">
@@ -67,7 +81,8 @@
                                 </div>
                                 <div class="article_info">
                                     <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <h3>05.06.2017</h3>
+                                    {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus.</p>--}}
                                 </div>
                             </div>
                         </div>
@@ -76,8 +91,10 @@
                 <div class="col-xs-12 col-xl-6">
                     <div class="outer_block_container">
                         <div class="inner_block_container">
-                            <button class="edit_btn"><i class="icn icon-pencil"></i></button>
-                            <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            <div class="edit_elements">
+                                <a href="{{ route('news_edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
+                                <button class="remove_btn"><i class="icn icon-cancel"></i></button>
+                            </div>
                             <div class="article_info_block">
                                 <div class="article_img">
                                     <a href="{{ route('news_details') }}">
@@ -86,14 +103,12 @@
                                 </div>
                                 <div class="article_info">
                                     <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <h3>05.06.2017</h3>
+                                    {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus.</p>--}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <a href="{{ route('news_edit') }}" class="btn">New article</a>
                 </div>
             </div>
         </div>

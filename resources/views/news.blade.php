@@ -21,8 +21,8 @@
                                     </a>
                                 </div>
                                 <div class="article_info">
-                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
+                                    <h3>05.06.2017</h3>
                                 </div>
                             </div>
                         </div>
@@ -38,8 +38,8 @@
                                     </a>
                                 </div>
                                 <div class="article_info">
-                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <a href="{{ route('news_details') }}"><h2>Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
+                                    <h3>05.06.2017</h3>
                                 </div>
                             </div>
                         </div>
@@ -55,8 +55,8 @@
                                     </a>
                                 </div>
                                 <div class="article_info">
-                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
+                                    <h3>05.06.2017</h3>
                                 </div>
                             </div>
                         </div>
@@ -72,8 +72,8 @@
                                     </a>
                                 </div>
                                 <div class="article_info">
-                                    <a href="{{ route('news_details') }}"><h2>News title</h2></a>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus. Nulla consectetur a ipsum id faucibus.</p>
+                                    <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2></a>
+                                    <h3>05.06.2017</h3>
                                 </div>
                             </div>
                         </div>
