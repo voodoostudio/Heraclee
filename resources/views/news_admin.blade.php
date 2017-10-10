@@ -15,13 +15,13 @@
         <div class="container-fluid">
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link" href="#list_of_articles" role="tab" data-toggle="tab">List of articles</a>
+                    <a class="nav-link active" href="#list_of_articles" role="tab" data-toggle="tab">List of articles</a>
                 </li>
                 <li class="nav-item" style="display: none">
                     <a class="nav-link" href="#categories" role="tab" data-toggle="tab">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#edit_article" role="tab" data-toggle="tab">New article</a>
+                    <a class="nav-link" href="#edit_article" role="tab" data-toggle="tab">New article</a>
                 </li>
             </ul>
         </div>
