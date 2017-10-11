@@ -25,10 +25,8 @@
       left: initial;
       right: 55px !important; } }
 @media screen and (min-width: 1200px) {
-  section.search_section {
-    margin-top: 70px; }
-    section.search_section .outer_block_container .inner_block_container .input_container.search_input {
-      margin-top: 27px; } }
+  section.search_section .outer_block_container .inner_block_container .input_container.search_input {
+    margin-top: 27px; } }
 @media screen and (max-width: 1199px) {
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 33px; }
@@ -345,7 +343,6 @@
           font-size: 0.75rem; }
 
   section.object_info_section .outer_block_container .inner_block_container {
-    padding: 20px;
     font-size: 0.875rem; }
     section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
       margin-bottom: 30px; }
@@ -447,6 +444,9 @@
     padding: 20px;
     font-size: .875rem; }
 
+  .outer_block_container .inner_block_container {
+    padding: 20px; }
+
   footer {
     margin-top: 30px; }
     footer section.bottom_footer_section p {
@@ -456,10 +456,7 @@
     footer ul.social_networks li a,
     footer ul.social_networks li a:hover {
       width: 40px;
-      line-height: 40px; }
-
-  footer section.bottom_footer_section p {
-    margin-right: 0; } }
+      line-height: 40px; } }
 @media screen and (max-width: 575px) {
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 5px; }
@@ -475,6 +472,9 @@
       section.top_offer_section .info_block h3 {
         font-size: 15px;
         margin-bottom: 10px; }
+
+  section.latest_news_section {
+    display: none; }
 
   section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 10px;
@@ -695,4 +695,11 @@
           margin: 20px 0 10px;
           font-size: 1.25rem;
           line-height: 1.25rem;
-          text-align: center; } }
+          text-align: center; }
+
+  #news_admin .news_list_section .outer_block_container .inner_block_container {
+    padding-top: 40px;
+    padding-bottom: 12px; }
+
+  .gj-calendar-md {
+    left: 12px !important; } }

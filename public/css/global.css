@@ -224,7 +224,7 @@ ul.nav.nav-tabs {
         color: #625e57;
         font-size: 20px; }
     .my_checkbox label .my_checkbox_text {
-      font-size: 1rem;
+      font-size: 0.875rem;
       margin: 0 0 0 25px;
       line-height: 20px;
       display: inline-block;

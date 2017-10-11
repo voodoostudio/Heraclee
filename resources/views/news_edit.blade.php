@@ -34,7 +34,7 @@
                                             <input type="text" name="title" id="title" placeholder="Title">
                                         </div>
                                     </div>
-                                    <div class="col-12 margin_bottom_20">
+                                    <div class="col-12">
                                         <label class="form_el_label"><span>Posting date</span></label>
                                         <div class="input_container">
                                             {{--<input type="date" name="date" id="date" placeholder="Posting date">--}}
@@ -52,19 +52,6 @@
                                 </div>
                             </div>
 
-                            {{--<div class="col-md-6 margin_bottom_20">--}}
-                            {{--<label class="form_el_label"><span>Category</span></label>--}}
-                            {{--<select name="news_category" title="">--}}
-                            {{--<option value="0">Category name 1</option>--}}
-                            {{--<option value="1">Category name 2</option>--}}
-                            {{--<option value="2">Category name 3</option>--}}
-                            {{--<option value="3">Category name 4</option>--}}
-                            {{--<option value="4">Category name 5</option>--}}
-                            {{--<option value="5">Category name 6</option>--}}
-                            {{--<option value="6">Category name 7</option>--}}
-                            {{--</select>--}}
-                            {{--</div>--}}
-
                             <div class="col-12 margin_bottom_20">
                                 <div class="dropzone dz-clickable" id="article_body_dropzone">
                                     <div class="dz-default dz-message" data-dz-message="">
@@ -79,7 +66,16 @@
                                     <textarea name="text_content" id="text_content" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="my_checkbox">
+                                    <label>
+                                        <input required="" type="checkbox" name="subscribe" id="subscribe" value="true" aria-required="true" checked="checked">
+                                        <span class="fake_checkbox"></span>
+                                        <span class="my_checkbox_text">Publier</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <button class="btn" type="submit">Save</button>
                             </div>
                         </div>

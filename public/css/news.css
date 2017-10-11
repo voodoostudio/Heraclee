@@ -102,6 +102,14 @@ section.news_admin_nav_section {
         color: #fdfdfd; }
     #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements .edit_btn {
       margin-right: 8px; }
+  #news_admin .news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h3 {
+    margin: 0; }
+  #news_admin .news_list_section .outer_block_container .inner_block_container .published_label {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    font-size: 0.875rem;
+    color: #ccac83; }
 
 .article_edit_section {
   margin-top: 40px; }

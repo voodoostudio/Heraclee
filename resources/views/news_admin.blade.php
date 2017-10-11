@@ -39,6 +39,7 @@
                                 <div class="article_info">
                                     <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
                                     <h3>05.06.2017</h3>
+                                    <span class="published_label">Published</span>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +105,7 @@
                                 <div class="article_info">
                                     <a href="{{ route('news_details') }}"><h2>News title</h2></a>
                                     <h3>05.06.2017</h3>
-                                    {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non metus.</p>--}}
+                                    <span class="published_label">Published</span>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +158,6 @@
             </ul>
         </div>
     </section>
-
     <!-- Tab panes -->
     <div class="tab-content" style="display: none">
         <div role="tabpanel" class="tab-pane fade in show active" id="list_of_articles">
@@ -369,8 +369,6 @@
                 nextMonth: '<i class="icn icon-arrow_big_right"></i>'
             }
         });
-
-
     </script>
 
 @stop
