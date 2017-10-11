@@ -131,52 +131,6 @@ section.news_admin_nav_section {
   }
 }
 
-//#categories {
-//  .outer_block_container {
-//    margin-top: 30px;
-//    .inner_block_container {
-//      ul {
-//        li {
-//          display: table;
-//          width: 100%;
-//          color: $main_brown_clr;
-//          &:not(:last-of-type) {
-//            margin-bottom: 15px;
-//          }
-//          span {
-//            display: block;
-//            width: calc(100% - 21px);
-//            float: left;
-//            position: relative;
-//            overflow: hidden;
-//            &:after {
-//              content: '';
-//              height: 2px;
-//              width: 100%;
-//              border-bottom: 1px solid #444;
-//              position: absolute;
-//              bottom: 2px;
-//              margin-left: 4px;
-//            }
-//          }
-//        }
-//      }
-//      button.remove_btn {
-//        float: right;
-//        color: $main_brown_clr;
-//        &:hover {
-//          color: $main_light_clr;
-//        }
-//      }
-//      form {
-//        button {
-//          margin-top: 20px;
-//        }
-//      }
-//    }
-//  }
-//}
-
 .article_edit_section {
   margin-top: 40px;
   .outer_block_container {
@@ -216,7 +170,6 @@ section.news_admin_nav_section {
     }
   }
 }
-
 
 //Datepicker START
 .gj-datepicker {
@@ -296,6 +249,15 @@ section.article_section {
   margin-top: 40px;
   .outer_block_container {
     .inner_block_container {
+      position: relative;
+      .social_networks_share {
+        position: absolute;
+        right: 17px;
+        top: 12px;
+      }
+      h1 {
+        padding-right: 65px;
+      }
       h2 {
         font-size: 0.875rem;
         margin-top: 10px;

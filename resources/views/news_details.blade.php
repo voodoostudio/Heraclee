@@ -12,6 +12,11 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
+                    <ul class="social_networks_share">
+                        <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-twitter"></i></a></li>
+                        <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-linked_in"></i></a></li>
+                        <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-facebook"></i></a></li>
+                    </ul>
                     <h1>Article title</h1>
                     <h2>05.06.2017</h2>
                     <div class="img_container">
