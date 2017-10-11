@@ -73,7 +73,8 @@ section.news_list_section {
           section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a:hover h2 {
             color: #ccac83; }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h3 {
-          font-size: 0.875rem; }
+          font-size: 0.875rem;
+          color: rgba(253, 253, 253, 0.4); }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info p {
           font-size: 0.875rem; }
   section.news_list_section nav ul.pagination {
@@ -186,7 +187,8 @@ section.article_section {
   margin-top: 40px; }
   section.article_section .outer_block_container .inner_block_container h2 {
     font-size: 0.875rem;
-    margin-top: 10px; }
+    margin-top: 10px;
+    color: rgba(253, 253, 253, 0.4); }
   section.article_section .outer_block_container .inner_block_container .img_container {
     margin: 40px 0;
     text-align: center; }

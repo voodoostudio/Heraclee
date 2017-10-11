@@ -79,6 +79,11 @@ Route::group(
                 'as' => 'news_edit',
         ]);
 
+        Route::get('/newsletters', [
+                'uses' => 'PagesController@newsletters',
+                'as' => 'newsletters',
+        ]);
+
         Route::get('/contact', [
                 'uses' => 'PagesController@contact',
                 'as' => 'contact',

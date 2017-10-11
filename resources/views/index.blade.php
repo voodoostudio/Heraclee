@@ -35,6 +35,62 @@
         @endphp
     @endforeach
 
+    <section class="latest_news_section">
+        <div class="container-fluid">
+            <div class="latest_news_container">
+                <div class="marquee_title">
+                    <span>Latest news</span>
+                </div>
+                <div class="marquee">
+                    <ul class="">
+                        <li>
+                            <a href="#">Article title 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 3</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 4</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 5</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 6</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 7</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 8</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 9</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 10</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 11</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 12</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 13</a>
+                        </li>
+                        <li>
+                            <a href="#">Article title 14</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @include('includes.search_block_index')
 
     <section class="results_section">
@@ -55,4 +111,5 @@
 
 @section('javascript')
     <script src="/js/index.min.js"></script>
+    <script src="/js/libraries/jquery.marquee.min.js"></script>
 @stop
