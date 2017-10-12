@@ -10,6 +10,19 @@ body {
     height: 100vh;
     overflow: hidden;
   }
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url(/img/pattern.svg) no-repeat;
+    background-size: 100%;
+    background-position-y: 0;
+    opacity: 0.1;
+    z-index: -1;
+  }
 }
 
 .container-fluid {
@@ -65,6 +78,7 @@ p {
 
 .outer_block_container {
   padding: 13px;
+  background: $main_dark_clr;
   @include my_box_shadow(0px 0px 20px -5px black);
   .inner_block_container {
     border: 1px solid #ccac83;
@@ -580,6 +594,7 @@ nav {
 
 footer {
   margin-top: 90px;
+  background: $main_dark_clr;
   section.top_footer_section {
     background-color: #323232;
     padding: 30px 0;

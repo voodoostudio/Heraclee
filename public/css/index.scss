@@ -31,6 +31,7 @@ section.latest_news_section {
   margin-top: 40px;
   .latest_news_container {
     border: 1px solid $main_gray_clr;
+    background: $main_dark_clr;
     .marquee_title {
       float: left;
       padding: 10px;

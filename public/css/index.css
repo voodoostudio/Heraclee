@@ -501,7 +501,8 @@ section.top_offer_section {
 section.latest_news_section {
   margin-top: 40px; }
   section.latest_news_section .latest_news_container {
-    border: 1px solid #625e57; }
+    border: 1px solid #625e57;
+    background: #272727; }
     section.latest_news_section .latest_news_container .marquee_title {
       float: left;
       padding: 10px;
@@ -887,13 +888,13 @@ section.results_section {
   0% {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0); }
-
   100% {
     -webkit-transform: translate(-100%, 0);
     transform: translate(-100%, 0); } }
 @keyframes scroll {
   0% {
     transform: translate(0, 0); }
-
   100% {
     transform: translate(-100%, 0); } }
+
+/*# sourceMappingURL=index.css.map */
