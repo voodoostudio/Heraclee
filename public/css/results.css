@@ -491,7 +491,8 @@ section.results_section {
     width: 100%;
     max-width: 800px;
     margin: 0;
-    display: table; }
+    display: table;
+    background: #272727; }
     section.results_section .view_type_container .view_type li {
       float: left;
       width: 33.333333%;
@@ -519,7 +520,8 @@ section.results_section {
       overflow: hidden; }
       section.results_section .results_container .container-fluid .object_block_container .object_block {
         width: 100%;
-        position: relative; }
+        position: relative;
+        background: #272727; }
         section.results_section .results_container .container-fluid .object_block_container .object_block .img_block {
           width: 100%; }
           section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .activity_label,
@@ -614,7 +616,8 @@ section.results_section {
       section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block {
         border: 1px solid #625e57;
         margin-top: 50px;
-        display: table; }
+        display: table;
+        background: #272727; }
         section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .img_block {
           position: absolute;
           height: 100%;
@@ -869,3 +872,5 @@ section.results_section {
             background-color: #aaa296; }
   section.results_section .slick-track {
     min-width: 100%; }
+
+/*# sourceMappingURL=results.css.map */

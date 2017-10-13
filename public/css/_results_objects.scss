@@ -8,6 +8,7 @@
       .object_block {
         width: 100%;
         position: relative;
+        background: $main_dark_clr;
         .img_block {
           width: 100%;
           .activity_label,
@@ -141,6 +142,7 @@
           border: 1px solid $main_gray_clr;
           margin-top: 50px;
           display: table;
+          background: $main_dark_clr;
           .img_block {
             position: absolute;
             height: 100%;

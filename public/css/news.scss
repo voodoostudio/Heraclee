@@ -76,6 +76,13 @@ section.news_list_section {
   }
   nav ul.pagination {
     margin-top: 10px;
+    li {
+      ul.pages {
+        li {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 

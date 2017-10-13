@@ -79,6 +79,8 @@ section.news_list_section {
           font-size: 0.875rem; }
   section.news_list_section nav ul.pagination {
     margin-top: 10px; }
+    section.news_list_section nav ul.pagination li ul.pages li {
+      display: inline-block; }
 
 section.news_admin_nav_section {
   margin-top: 40px; }
