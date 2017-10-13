@@ -136,6 +136,27 @@ section.news_admin_nav_section {
   .outer_block_container {
     .inner_block_container {
       form {
+        .label_container {
+          ul.nav.nav-tabs {
+            border: none;
+            float: right;
+            margin-bottom: 9px;
+            margin-top: 5px;
+            li.nav-item {
+              &:not(:last-of-type) {
+                margin-right: 10px !important;
+              }
+              a.nav-link {
+                line-height: 1;
+                font-size: 0.875rem;
+                &.active {
+                  color: $main_brown_clr;
+                  background: none;
+                }
+              }
+            }
+          }
+        }
         .dropzone {
           background: transparent;
           border: 1px dashed $main_gray_clr;

@@ -113,6 +113,19 @@ section.news_admin_nav_section {
 
 .article_edit_section {
   margin-top: 40px; }
+  .article_edit_section .outer_block_container .inner_block_container form .label_container ul.nav.nav-tabs {
+    border: none;
+    float: right;
+    margin-bottom: 9px;
+    margin-top: 5px; }
+    .article_edit_section .outer_block_container .inner_block_container form .label_container ul.nav.nav-tabs li.nav-item:not(:last-of-type) {
+      margin-right: 10px !important; }
+    .article_edit_section .outer_block_container .inner_block_container form .label_container ul.nav.nav-tabs li.nav-item a.nav-link {
+      line-height: 1;
+      font-size: 0.875rem; }
+      .article_edit_section .outer_block_container .inner_block_container form .label_container ul.nav.nav-tabs li.nav-item a.nav-link.active {
+        color: #ccac83;
+        background: none; }
   .article_edit_section .outer_block_container .inner_block_container form .dropzone {
     background: transparent;
     border: 1px dashed #625e57;
@@ -211,3 +224,5 @@ section.article_section {
     section.article_section .outer_block_container .inner_block_container p {
       text-align: justify;
       font-size: 0.9rem; }
+
+/*# sourceMappingURL=news.css.map */

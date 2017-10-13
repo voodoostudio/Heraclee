@@ -29,9 +29,28 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Title *</span></label>
-                                        <div class="input_container">
-                                            <input type="text" name="title" id="title" placeholder="Title">
+                                        <div class="label_container">
+                                            <label class="form_el_label"><span>Title *</span></label>
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="#fr_title" role="tab" data-toggle="tab">FR</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#en_title" role="tab" data-toggle="tab">EN</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in show active" id="fr_title">
+                                                <div class="input_container">
+                                                    <input type="text" name="title" placeholder="Title">
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="en_title" >
+                                                <div class="input_container">
+                                                    <input type="text" name="title" placeholder="Title">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -51,7 +70,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-12 margin_bottom_20">
                                 <div class="dropzone dz-clickable" id="article_body_dropzone">
                                     <div class="dz-default dz-message" data-dz-message="">
@@ -59,11 +77,29 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-12 margin_bottom_20">
-                                <label class="form_el_label"><span>Text *</span></label>
-                                <div class="input_container">
-                                    <textarea name="text_content" id="text_content" cols="30" rows="10"></textarea>
+                                <div class="label_container">
+                                    <label class="form_el_label"><span>Text *</span></label>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#fr_text" role="tab" data-toggle="tab">FR</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#en_text" role="tab" data-toggle="tab">EN</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in show active" id="fr_text">
+                                        <div class="input_container">
+                                            <textarea name="text_content" id="text_content" cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="en_text" >
+                                        <div class="input_container">
+                                            <textarea name="text_content" id="text_content" cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -97,14 +133,13 @@
 
         $('#article_datepicker').datepicker({
             showOtherMonths: true,
+            format: 'yyyy-mm-dd',
             icons: {
                 rightIcon: '<div class="datepicker_btn"><i class="icn icon-calendar"></i></div>',
                 previousMonth: '<i class="icn icon-arrow_big_left"></i>',
                 nextMonth: '<i class="icn icon-arrow_big_right"></i>'
             }
         });
-
-
     </script>
 
 @stop
