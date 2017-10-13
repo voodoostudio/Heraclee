@@ -113,5 +113,15 @@ Route::group(
                 'uses' => 'PagesController@api',
                 'as' => 'api',
         ]);
+
+        Route::get('/login', [
+            'uses' => 'PagesController@login',
+            'as' => 'login',
+        ]);
+
+        Route::get('/password_recover', [
+            'uses' => 'PagesController@password_recover',
+            'as' => 'password_recover',
+        ]);
     }
 );

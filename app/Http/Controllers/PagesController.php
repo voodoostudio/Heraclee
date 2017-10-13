@@ -568,4 +568,14 @@ class PagesController extends Controller
 
         dd($values);
     }
+
+    public function login()
+    {
+        return view('login');
+    }
+
+    public function password_recover()
+    {
+        return view('password_recover');
+    }
 }

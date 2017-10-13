@@ -227,4 +227,12 @@ section.article_section {
       text-align: justify;
       font-size: 0.9rem; }
 
+section.login_section {
+  margin-top: 40px; }
+  section.login_section .outer_block_container .inner_block_container a {
+    color: #ccac83;
+    font-size: 0.875rem; }
+    section.login_section .outer_block_container .inner_block_container a i.icn {
+      margin-right: 10px; }
+
 /*# sourceMappingURL=news.css.map */
