@@ -11,224 +11,46 @@
     <section class="news_list_section">
         <div class="container-fluid">
             <div class="news_carousel">
-                <div class="news_slide">
-                    <div class="row">
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news_slide">
-                    <div class="row">
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news_slide">
-                    <div class="row">
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet. Nunc interdum nisi sed sem aliquam fringilla eget non.</h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="{{ route('news_details') }}">
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="{{ route('news_details') }}"><h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h2></a>
-                                            <h3>05.06.2017</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @foreach (array_chunk($news->toArray(), 6) as $content)
+                    <div class = "news_slide">
+                        <div class="row">
+                            @foreach($content as $item)
+                                <div class="col-xs-12 col-xl-6">
+                                    <div class="outer_block_container">
+                                        <div class="inner_block_container">
+                                            <div class="article_info_block">
+                                                <div class="article_img">
+                                                    <a href="{{ route('news_details', ['id' => $item['id']]) }}">
+                                                        @php
+                                                            $image_counter = 1;
+                                                        @endphp
+                                                        @foreach(json_decode($item['front_image']) as $key => $image)
+                                                            @if($image_counter == 1)
+                                                                <img style = "max-width: 150px; max-height: 150px;" src="../front_image/{{ $image }}" alt="{{ $key }}">
+                                                            @endif
+                                                            @php
+                                                                $image_counter++;
+                                                            @endphp
+                                                        @endforeach
 
+                                                        @if(empty(json_decode($item['front_image'])))
+                                                            <img src="/img/details/no_agent_photo.svg" alt="">
+                                                        @endif
+                                                    </a>
+                                                </div>
+                                                <div class="article_info">
+                                                    <a href="{{ route('news_details', ['id' => $item['id']]) }}"><h2>@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</h2></a>
+                                                    <h3>{{ $item['date'] }}</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
             <div class="row">
                 <div class="col-12">
                     <nav>

@@ -22,19 +22,21 @@ Route::group(
                 'uses' => 'PagesController@index',
                 'as' => 'index',
         ]);
-        Route::get('/countries/france', [
+
+        Route::get('/france', [
                 'uses' => 'PagesController@index',
                 'as' => 'france',
         ]);
-        Route::get('/countries/swiss', [
+
+        Route::get('/swiss', [
                 'uses' => 'PagesController@index',
                 'as' => 'swiss',
         ]);
-        Route::get('/countries/usa', [
+        Route::get('/usa', [
                 'uses' => 'PagesController@index',
                 'as' => 'usa',
         ]);
-        Route::get('/countries/mauritius', [
+        Route::get('/mauritius', [
                 'uses' => 'PagesController@index',
                 'as' => 'mauritius',
         ]);
@@ -47,6 +49,46 @@ Route::group(
         Route::match(['GET', 'POST'], '/locations/results', [
             'uses' => 'PagesController@locations',
             'as' => 'locations',
+        ]);
+
+        Route::match(['GET', 'POST'], '/achat/results/france', [
+            'uses' => 'PagesController@results',
+            'as' => 'results_fr',
+        ]);
+
+        Route::match(['GET', 'POST'], '/locations/results/france', [
+            'uses' => 'PagesController@locations',
+            'as' => 'locations_fr',
+        ]);
+
+        Route::match(['GET', 'POST'], '/achat/results/swiss', [
+            'uses' => 'PagesController@results',
+            'as' => 'results_ch',
+        ]);
+
+        Route::match(['GET', 'POST'], '/locations/results/swiss', [
+            'uses' => 'PagesController@locations',
+            'as' => 'locations_ch',
+        ]);
+
+        Route::match(['GET', 'POST'], '/achat/results/usa', [
+            'uses' => 'PagesController@results',
+            'as' => 'results_us',
+        ]);
+
+        Route::match(['GET', 'POST'], '/locations/results/usa', [
+            'uses' => 'PagesController@locations',
+            'as' => 'locations_us',
+        ]);
+
+        Route::match(['GET', 'POST'], '/achat/results/mauritius', [
+            'uses' => 'PagesController@results',
+            'as' => 'results_za',
+        ]);
+
+        Route::match(['GET', 'POST'], '/locations/results/mauritius', [
+            'uses' => 'PagesController@locations',
+            'as' => 'locations_za',
         ]);
 
         Route::get('/achat/details', [
@@ -64,7 +106,7 @@ Route::group(
                 'as' => 'news',
         ]);
 
-        Route::get('/news_details', [
+        Route::get('/news_details/{id}', [
                 'uses' => 'PagesController@news_details',
                 'as' => 'news_details',
         ]);
@@ -114,6 +156,14 @@ Route::group(
                 'as' => 'api',
         ]);
 
+        /* Admin Panel */
+        Route::resource('/admin/posts', 'PostsController');
+
+//        Route::post('/admin/upload', [
+//            'uses' => 'PostsController@upload',
+//            'as' => 'posts.upload',
+//        ]);
+
         Route::get('/login', [
             'uses' => 'PagesController@login',
             'as' => 'login',
@@ -123,5 +173,9 @@ Route::group(
             'uses' => 'PagesController@password_recover',
             'as' => 'password_recover',
         ]);
+
+        Auth::routes();
+
+        Route::get('/admin', 'PostsController@index')->name('admin');
     }
 );

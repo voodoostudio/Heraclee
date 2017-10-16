@@ -111,8 +111,46 @@ class Properties extends Model
         $offset = ($page - 1) * $items;
         $array = [];
         $conditions_where = [];
+        $country_array = [];
+        $country = [];
 
-        if(($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en')){
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
+
+        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+            $country_array = ['FR', 'CH', 'US', 'ZA'];
+        }
+
+        if(in_array('france', $country)) {
+            $country_array = ['FR'];
+        }
+
+        if(in_array('swiss', $country)) {
+            $country_array = ['CH'];
+        }
+
+        if(in_array('usa', $country)) {
+            $country_array = ['US'];
+        }
+
+        if(in_array('mauritius', $country)) {
+            $country_array = ['ZA'];
+        }
+
+        if(
+            ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
+            ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
+            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/country/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
+            ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
+            ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
+        ){
             $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
             if ($sell_type == 1) {
@@ -365,6 +403,7 @@ class Properties extends Model
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
+            ->whereIn('country', $country_array)
             ->limit($items)
             ->offset($offset)
             ->orderBy('property_id', 'DESC')
@@ -567,6 +606,7 @@ class Properties extends Model
             ->whereIn('type', $object_type)
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
+            ->whereIn('country', $country_array)
             ->get()
             ->count();
 
@@ -619,8 +659,46 @@ class Properties extends Model
 
         $array = [];
         $conditions_where = [];
+        $country_array = [];
+        $country = [];
 
-        if(($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en')){
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
+
+        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+            $country_array = ['FR', 'CH', 'US', 'ZA'];
+        }
+
+        if(in_array('france', $country)) {
+            $country_array = ['FR'];
+        }
+
+        if(in_array('swiss', $country)) {
+            $country_array = ['CH'];
+        }
+
+        if(in_array('usa', $country)) {
+            $country_array = ['US'];
+        }
+
+        if(in_array('mauritius', $country)) {
+            $country_array = ['ZA'];
+        }
+
+        if(
+            ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
+            ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
+            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/country/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
+            ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
+            ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
+        ){
             $sell_type_array = [1, 2, 3, 4, 5, 6];
         } else {
             if ($sell_type == 1) {
@@ -873,6 +951,7 @@ class Properties extends Model
                         ->orWhereIn('property_id', $commentary);
                 }
             })
+            ->whereIn('country', $country_array)
             ->get();
 //
 //
@@ -1858,7 +1937,42 @@ class Properties extends Model
      */
     public static function getCityList()
     {
-        $cities = DB::table('apimo_city')->get()->toArray();
+
+        $country_array =[];
+        $country = [];
+
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
+
+        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+            $country_array[] = ['FR', 'CH', 'US', 'ZA'];
+        }
+
+        if(in_array('france', $country)) {
+            $country_array[] = ['FR'];
+        }
+
+        if(in_array('swiss', $country)) {
+            $country_array[] = ['CH'];
+        }
+
+        if(in_array('usa', $country)) {
+            $country_array[] = ['US'];
+        }
+
+        if(in_array('mauritius', $country)) {
+            $country_array[] = ['ZA'];
+        }
+
+        $properties = DB::table('apimo_properties')->whereIn('country', $country_array)->pluck('city');
+        $cities = DB::table('apimo_city')->whereIn('city_id', $properties)->get();
 
         return $cities;
     }

@@ -15,10 +15,10 @@
                         <ul class="lang_currency_container">
                             <li>
                                 <ul class="language_select">
-                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $langItem)
                                         <li>
                                             <a class="ravis-btn btn-type-2 {{ ($localeCode == App::getLocale()) ? 'active' : '' }}" rel="alternate" hreflang="{{$localeCode}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode) }}">
-                                                <span>{{ $properties['native'] }}</span>
+                                                <span>{{ $langItem['native'] }}</span>
                                            </a>
                                         </li>
                                     @endforeach
@@ -37,7 +37,12 @@
 
             <?php
                 $current_page = Route::getCurrentRoute()->getName();
-            ?>
+                /* from search page (results: 'locations, achat') */
+//                preg_match("/[^\/]+$/", route('france'), $france);
+//                preg_match("/[^\/]+$/", route('swiss'), $swiss);
+//                preg_match("/[^\/]+$/", route('usa'), $usa);
+//                preg_match("/[^\/]+$/", route('mauritius'), $mauritius);
+             ?>
 
             <nav>
                 <ul class="nav justify-content-center">
@@ -45,16 +50,16 @@
                         <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">{{ trans('lang.homepage') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'france') ? 'active' : '' }}" href="{{ route('france') }}">France</a>
+                        <a class="nav-link {{ (($current_page == 'france')) ? 'active' : '' }}" href="{{ route('france') }}">France{{ (($current_page == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">Suisse</a>
+                        <a class="nav-link {{ (($current_page == 'swiss')) ? 'active' : '' }}" href="{{ route('swiss') }}">Suisse{{ (($current_page == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">USA</a>
+                        <a class="nav-link {{ (($current_page == 'usa')) ? 'active' : '' }}" href="{{ route('usa') }}">USA{{ (($current_page == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">Ile Maurice</a>
+                        <a class="nav-link {{ (($current_page == 'mauritius')) ? 'active' : '' }}" href="{{ route('mauritius') }}">Ile Maurice{{ (($current_page == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}

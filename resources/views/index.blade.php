@@ -7,6 +7,7 @@
 
 @section('content')
     @php
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
         $post_counter = 1;
     @endphp
     @foreach($properties as $property)
@@ -43,48 +44,11 @@
                 </div>
                 <div class="marquee">
                     <ul class="">
-                        <li>
-                            <a href="#">Article title 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 3</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 4</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 5</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 6</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 7</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 8</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 9</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 10</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 11</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 12</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 13</a>
-                        </li>
-                        <li>
-                            <a href="#">Article title 14</a>
-                        </li>
+                        @foreach($last_news as $item)
+                            <li>
+                                <a href="{{ route('news_details', ['id' => $item['id']]) }}">@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

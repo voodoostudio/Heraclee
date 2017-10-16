@@ -1,5 +1,8 @@
 <section class="search_section">
-    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results @endif" method="post">
+    @php
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
+    @endphp
+    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results/@if((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')){{ $country['0'] }}@endif @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results/@if((!empty($country[0]) && $country['0'] != 'fr') || (!empty($country[0]) && $country['0'] != 'en')){{ $country['0'] }}@endif @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
@@ -31,6 +34,7 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i
                                                 class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>

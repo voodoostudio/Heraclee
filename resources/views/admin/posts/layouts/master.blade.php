@@ -1,7 +1,7 @@
 
 <!doctype html>
 
-<html lang="{{ LaravelLocalization::getCurrentLocale() }}">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <title>Heraclee - @yield('title')</title>
@@ -208,23 +208,7 @@
         <![endif]-->
     </head>
 
-    <body id="{{ !empty(Route::getCurrentRoute()) ? Route::getCurrentRoute()->getName() : '' }}" class="preloader_active">
-
-        @include('includes.header')
-
-        <div class="preloader_container">
-            <div class="preloader">
-                <div class="cssload-loader">
-                    <div class="cssload-inner cssload-one"></div>
-                    <div class="cssload-inner cssload-two"></div>
-                    <div class="cssload-inner cssload-three"></div>
-                </div>
-            </div>
-        </div>
-
-        <main>
-            @yield('content')
-        </main>
+        @yield('content')
 
         @include('includes.footer')
 

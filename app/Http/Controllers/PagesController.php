@@ -13,6 +13,7 @@ use App\Properties;
 use App\Team;
 use App\Services;
 use App\Subscribers;
+use App\Posts;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -65,7 +66,33 @@ class PagesController extends Controller
             Session::get("search.object_place")
         );
 
-        return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'search' => Session::get('search')]);
+        /* Last 10 news on main page */
+        $last_news = Posts::limit(10)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
+
+        /* Count items (for menu) */
+        $count_items = $properties_obj->property_count;
+
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
+
+        if(empty($country[0]) || $country[0] == 'fr' || $country[0] == 'en') {
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+        }
+
+        if($country[0] == 'france') {
+           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+        }
+
+        if($country[0] == 'swiss') {
+            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+        }
+
+        if($country[0] == 'usa') {
+            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+        }
+
+        if($country[0] == 'mauritius') {
+            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+        }
     }
 
     public function results()
@@ -74,7 +101,19 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
-        $url_page = '/achat/results?page=';
+        $country = [];
+
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
+
+        $url_page = '/achat/results/' . implode($country) . '?page=';
 
         $view_type = 'grid_view';
 
@@ -198,7 +237,8 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
-        $url_page = '/locations/results?page=';
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
+        $url_page = '/locations/results/' . stristr($country[0], '?', true) . '?page=';
 
         $view_type = 'grid_view';
 
@@ -392,15 +432,15 @@ class PagesController extends Controller
         }
     }
 
-    public function news()
-    {
-        return view('news');
-    }
+//    public function news()
+//    {
+//        return view('news');
+//    }
 
-    public function news_details()
-    {
-        return view('news_details');
-    }
+//    public function news_details()
+//    {
+//        return view('news_details');
+//    }
 
     public function news_admin()
     {
@@ -553,6 +593,29 @@ class PagesController extends Controller
         return view('team');
     }
 
+    /**
+     * Display a listing of news.
+     */
+
+    public function news()
+    {
+        $news = Posts::where('status', '=', 'on')->get();
+
+        return view('news', ['news' => $news]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     */
+    public function news_details($id)
+    {
+        $news = Posts::find($id);
+
+        return view('news_details', ['item' => $news]);
+    }
+
     public function api()
     {
         $ch = curl_init();
@@ -569,13 +632,13 @@ class PagesController extends Controller
         dd($values);
     }
 
-    public function login()
-    {
-        return view('login');
-    }
-
-    public function password_recover()
-    {
-        return view('password_recover');
-    }
+//    public function login()
+//    {
+//        return view('login');
+//    }
+//
+//    public function password_recover()
+//    {
+//        return view('password_recover');
+//    }
 }
