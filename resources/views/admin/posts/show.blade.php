@@ -41,7 +41,7 @@
                         <h2>{{ $posts->date }}</h2>
                         <div class="img_container">
                             @foreach(json_decode($posts->front_image) as $key => $image)
-                                <img style = "max-width: 1024px;" src="../../front_image/{{ $image }}" alt="{{ $key }}">
+                                <img style = "max-width: 1024px;" src="../../../front_image/{{ $image }}" alt="{{ $key }}">
                             @endforeach
                             {{--@if(!empty($item['front_image']))--}}
                             {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['front_image'] }}" alt="">--}}
@@ -51,7 +51,7 @@
                         </div>
                         <div class="img_container">
                             @foreach(json_decode($posts->body_image) as $key => $image)
-                                <img style = "max-width: 1024px;" src="../../body_image/{{ $image }}" alt="{{ $key }}">
+                                <img style = "max-width: 1024px;" src="../../../body_image/{{ $image }}" alt="{{ $key }}">
                             @endforeach
                             {{--@if(!empty($item['body_image']))--}}
                             {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['body_image'] }}" alt="">--}}

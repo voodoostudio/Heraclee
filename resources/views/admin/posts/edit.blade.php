@@ -102,7 +102,7 @@
 
                                 <div class="col-md-6">
                                     <div class = "preview-image">
-                                        <h6>Preview</h6>
+                                        {{--<h6>Preview</h6>--}}
                                         @foreach(json_decode($posts->front_image) as $key => $image)
                                             <div style = "display: inline-block; padding: 10px; border: 1px dashed #625e57; min-width: 60px; min-height: 60px;">
                                                 <img style = "max-width: 60px; height: 40px;" src = "../../../front_image/{{ $image }}" />
@@ -116,7 +116,7 @@
 
                                 <div class="col-12 margin_bottom_20">
                                     <div class = "preview-image">
-                                        <h6>Preview</h6>
+                                        {{--<h6>Preview</h6>--}}
                                         @foreach(json_decode($posts->body_image) as $key => $image)
                                             <div style = "display: inline-block; padding: 10px; border: 1px dashed #625e57; min-width: 60px; min-height: 60px;">
                                                 <img style = "max-width: 60px; height: 40px;" src = "../../../body_image/{{ $image }}" />
