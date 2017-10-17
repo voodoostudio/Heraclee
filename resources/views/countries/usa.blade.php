@@ -55,4 +55,5 @@
 
 @section('javascript')
     <script src="/js/index.min.js"></script>
+    <script src="/js/libraries/jquery.marquee.min.js"></script>
 @stop

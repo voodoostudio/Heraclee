@@ -186,7 +186,7 @@ header {
         display: table;
         li.nav-item {
           margin-bottom: 10px;
-          padding-right: 45px;
+          padding-right: 40px;
           display: inline-block;
           @include my_transition(.2s ease-in-out);
           &:last-of-type {

@@ -35,8 +35,6 @@
         @endphp
     @endforeach
 
-    @include('includes.latest_news')
-
     @include('includes.search_block_index')
 
     <section class="results_section">
@@ -57,4 +55,5 @@
 
 @section('javascript')
     <script src="/js/index.min.js"></script>
+    <script src="/js/libraries/jquery.marquee.min.js"></script>
 @stop

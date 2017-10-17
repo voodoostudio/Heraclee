@@ -30,8 +30,6 @@ $(document).ready(function() {
 
     var country = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
     var lang = $('html').attr('lang');
-    console.log(country);
-    console.log(lang);
 
     $('section.search_section ul.nav-tabs li.nav-item a.nav-link').on('click', function () {
         var type_value = $('section.search_section input#sell_type_val').val();
