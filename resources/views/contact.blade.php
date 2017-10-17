@@ -1,4 +1,4 @@
-@extends('layouts.master')
+ @extends('layouts.master')
 @section('title', 'Contact page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/contact.min.css">
@@ -26,7 +26,7 @@
                     </p>
                     <ul>
                         <li>{{ trans('lang.phone') }} : <a href="tel:+330494542001">+33 (0)4 94 54 20 01</a></li>
-                        <li><a href="mailto:agence@heraclee.com">agence@heraclee.com</a></li>
+                        <li><a href="mailto:info@heraclee.com">info@heraclee.com</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,19 +47,19 @@
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id = "name" name = "name" placeholder="{{ trans('lang.name') }}">
+                                            <input type="text" id="name" name="name" placeholder="{{ trans('lang.name') }}">
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>{{ trans('lang.telephone') }}</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.telephone') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="number" id = "phone" name = "phone" placeholder="{{ trans('lang.telephone') }}">
+                                            <input type="text" id="phone" name="phone" pattern="[+]+[0-9]" placeholder="{{ trans('lang.telephone') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
                                         <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id = "email" name = "email" placeholder="{{ trans('lang.email') }}">
+                                            <input type="text" id="email" name="email" placeholder="{{ trans('lang.email') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">

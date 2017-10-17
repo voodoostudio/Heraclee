@@ -150,7 +150,8 @@ a:focus {
       text-transform: none; }
   .input_container label.error {
     color: #c54545;
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    margin-bottom: 0; }
 
 sup {
   font-size: 0.650em; }
@@ -872,5 +873,3 @@ section.results_section {
             background-color: #aaa296; }
   section.results_section .slick-track {
     min-width: 100%; }
-
-/*# sourceMappingURL=results.css.map */

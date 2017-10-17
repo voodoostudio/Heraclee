@@ -467,6 +467,7 @@ class PagesController extends Controller
         $this->validate($request, [
             'name' => 'required|min:2',
             'email' => 'required|email',
+            'phone' => 'required',
             'message' => 'required',
         ]);
 
@@ -515,6 +516,7 @@ class PagesController extends Controller
         $this->validate($request, [
             'name' => 'required|min:2',
             'email' => 'required|email',
+            'phone' => 'required',
             'message' => 'required',
         ]);
 

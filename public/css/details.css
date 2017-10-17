@@ -150,7 +150,8 @@ a:focus {
       text-transform: none; }
   .input_container label.error {
     color: #c54545;
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    margin-bottom: 0; }
 
 sup {
   font-size: 0.650em; }

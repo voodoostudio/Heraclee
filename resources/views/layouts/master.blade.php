@@ -290,6 +290,9 @@
                             required: true,
                             minlength: 2
                         },
+                        phone: {
+                            required: true
+                        },
                         email: {
                             required: true,
                             email: true
@@ -309,6 +312,7 @@
                     submitHandler: function (form) {
                         var $response   = $('#message-box'),
                             $mail       = $('#contactForm').find('#email').val(),
+                            $phone       = $('#contactForm').find('#phone').val(),
                             $name       = $('#contactForm').find('#name').val(),
                             $message    = $('#contactForm').find('#message').val(),
                             $form       = $('#contactForm')[0],
@@ -317,7 +321,7 @@
 
                         $response.find('p').remove();
 
-                        if (!testmail.test($mail) || !$name || !$message) {
+                        if (!testmail.test($mail) || !$phone || !$name || !$message) {
                             hasError = true;
                         }
 

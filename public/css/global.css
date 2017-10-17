@@ -150,7 +150,8 @@ a:focus {
       text-transform: none; }
   .input_container label.error {
     color: #c54545;
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    margin-bottom: 0; }
 
 sup {
   font-size: 0.650em; }
@@ -659,7 +660,7 @@ header {
         display: table; }
         header .navigation_container nav ul.nav li.nav-item {
           margin-bottom: 10px;
-          padding-right: 35px;
+          padding-right: 45px;
           display: inline-block;
           -webkit-transition: 0.2s ease-in-out;
           -moz-transition: 0.2s ease-in-out;
@@ -1097,5 +1098,3 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
-
-/*# sourceMappingURL=global.css.map */

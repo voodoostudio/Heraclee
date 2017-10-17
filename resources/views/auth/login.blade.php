@@ -32,7 +32,7 @@
                                     <div class="col-12 col-sm-6 margin_bottom_20">
                                         <div class="my_checkbox">
                                             <label>
-                                                <input required="" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                <input checked="checked" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                                 <span class="fake_checkbox"></span>
                                                 <span class="my_checkbox_text">Remember me</span>
                                             </label>
@@ -41,9 +41,9 @@
                                     <div class="col-12 col-sm-6 margin_bottom_10">
                                         <button class="btn pull-right" type="submit">Login</button>
                                     </div>
-                                    <div class="col-12">
-                                        <a href="{{ route('password.request') }}" class="forgot_password"><i class="icn icon-rooms"></i><span>Forgot my password</span></a>
-                                    </div>
+                                    {{--<div class="col-12">--}}
+                                        {{--<a href="{{ route('password.request') }}" class="forgot_password"><i class="icn icon-rooms"></i><span>Forgot my password</span></a>--}}
+                                    {{--</div>--}}
                                 </div>
                             </form>
                         </div>

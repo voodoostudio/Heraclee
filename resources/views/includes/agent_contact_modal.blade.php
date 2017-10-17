@@ -33,26 +33,26 @@
                             </div>
                         </div>
                     </div>
-                    <form id = "contactForm" action="{{ route('contact.post.agent') }}"  method="POST" novalidate>
+                    <form id="contactForm" action="{{ route('contact.post.agent') }}"  method="POST" novalidate>
                         {{ csrf_field() }}
                         <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">
                         <div class="row">
                             <div class="col-md-6 margin_bottom_20">
                                 <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
                                 <div class="input_container">
-                                    <input type="text" name = "name" id = "name" placeholder="{{ trans('lang.name') }}">
+                                    <input type="text" name = "name" id="name" placeholder="{{ trans('lang.name') }}">
                                 </div>
                             </div>
                             <div class="col-md-6 margin_bottom_20">
-                                <label class="form_el_label"><span>{{ trans('lang.telephone')}}</span></label>
+                                <label class="form_el_label"><span>{{ trans('lang.telephone') }} *</span></label>
                                 <div class="input_container">
                                     <input type="text" name = "phone" id="phone" placeholder="{{ trans('lang.telephone')}}">
                                 </div>
                             </div>
-                            <div class="col-md-6 margin_bottom_20">
+                            <div class="col-12 margin_bottom_20">
                                 <label class="form_el_label"><span>{{ trans('lang.email')}} *</span></label>
                                 <div class="input_container">
-                                    <input type="text" id = "email" name = "email" placeholder="{{ trans('lang.email')}}">
+                                    <input type="text" id = "email" name="email" placeholder="{{ trans('lang.email')}}">
                                 </div>
                                 <div class="my_checkbox margin_top_10">
                                     <label>
@@ -62,13 +62,13 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-6 margin_bottom_20">
-                                <label class="form_el_label"><span>{{ trans('lang.postal_code') }}</span></label>
-                                <div class="input_container">
-                                    <input type="text" name = "post_code" id = "post_code" placeholder="{{ trans('lang.postal_code') }}">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
+                            {{--<div class="col-md-6 margin_bottom_20">--}}
+                                {{--<label class="form_el_label"><span>{{ trans('lang.postal_code') }}</span></label>--}}
+                                {{--<div class="input_container">--}}
+                                    {{--<input type="text" name = "post_code" id = "post_code" placeholder="{{ trans('lang.postal_code') }}">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            <div class="col-12">
                                 <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
                                 <div class="input_container">
                                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
