@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostsController extends Controller
 {
@@ -203,6 +204,7 @@ class PostsController extends Controller
                     $front_image_title['image_' . $key] = $file_name;
                     $file->move(public_path("/front_image"), $file_name);
                 }
+                $posts->front_image = json_encode($front_image_title);
             }
 
             if($request->hasFile('body_image'))
@@ -212,13 +214,12 @@ class PostsController extends Controller
                     $body_image_title['image_' . $key] = $file_name;
                     $file->move(public_path("/body_image"), $file_name);
                 }
+                $posts->body_image = json_encode($body_image_title);
             }
 
             $posts->title_fr        = Input::get('title_fr');
             $posts->title_en        = Input::get('title_en');
             $posts->date            = Input::get('date');
-            $posts->front_image     = json_encode($front_image_title);
-            $posts->body_image      = json_encode($body_image_title);
             $posts->description_fr  = Input::get('description_fr');
             $posts->description_en  = Input::get('description_en');
             $posts->status          = Input::get('status');
