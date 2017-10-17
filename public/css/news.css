@@ -125,6 +125,17 @@ section.news_admin_nav_section {
 
 .article_edit_section {
   margin-top: 40px; }
+  .article_edit_section .error_list {
+    margin-bottom: 20px;
+    margin-left: 20px; }
+    .article_edit_section .error_list li {
+      list-style: disc;
+      font-family: opensans_light;
+      color: #c54545;
+      font-size: 0.875rem;
+      margin-bottom: 10px; }
+      .article_edit_section .error_list li:last-of-type {
+        margin-bottom: 0; }
   .article_edit_section .outer_block_container .inner_block_container form .label_container ul.nav.nav-tabs {
     border: none;
     float: right;
@@ -246,5 +257,3 @@ section.login_section {
     font-size: 0.875rem; }
     section.login_section .outer_block_container .inner_block_container a i.icn {
       margin-right: 10px; }
-
-/*# sourceMappingURL=news.css.map */

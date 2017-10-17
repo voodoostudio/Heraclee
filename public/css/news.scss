@@ -151,6 +151,20 @@ section.news_admin_nav_section {
 
 .article_edit_section {
   margin-top: 40px;
+  .error_list {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    li {
+      list-style: disc;
+      font-family: opensans_light;
+      color: $error_clr;
+      font-size: 0.875rem;
+      margin-bottom: 10px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
   .outer_block_container {
     .inner_block_container {
       form {

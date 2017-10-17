@@ -26,7 +26,6 @@
             </div>
         </div>
         <main>
-            {{ Html::ul($errors->all()) }}
             <section class="article_edit_section">
                 <div class="container-fluid">
                     <div class="row">
@@ -37,9 +36,10 @@
                             </div>
                         </div>
                     </div>
+                    {{ Html::ul($errors->all(), array('class' => 'error_list')) }}
                     <div class="outer_block_container">
                         <div class="inner_block_container">
-                            <form method="POST" action = "{{ route('posts.store') }}" enctype="multipart/form-data" style = "background: #272727; border: none;"> {{--action = "{{ route('posts.store') }}"--}}
+                            <form method="POST" id="articleEditForm" action = "{{ route('posts.store') }}" enctype="multipart/form-data" style = "background: #272727; border: none;">
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-md-6">
