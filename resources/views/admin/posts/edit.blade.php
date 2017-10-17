@@ -302,7 +302,7 @@
 
 
 
-$('#article_datepicker').datepicker({
+            $('#article_datepicker').datepicker({
                 showOtherMonths: true,
                 format: 'yyyy-mm-dd',
                 icons: {

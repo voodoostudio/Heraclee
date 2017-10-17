@@ -451,3 +451,17 @@ function dpe_ges_pointer(dpe_pointer, ges_pointer) {
         }
     });
 }
+
+function tallestArticleBlock() {
+    console.log('test');
+    var maxHeight = -1;
+
+    $('section.news_list_section .article_info_block').each(function() {
+        maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+    });
+
+    $('section.news_list_section .article_info_block').each(function() {
+        $(this).height(maxHeight);
+    });
+    console.log(maxHeight);
+}

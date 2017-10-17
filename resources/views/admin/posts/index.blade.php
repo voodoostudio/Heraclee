@@ -79,7 +79,7 @@
                                                     @endphp
                                                     @foreach(json_decode($items['front_image']) as $key => $image)
                                                         @if($image_counter == 1)
-                                                            <img style = "max-width: 150px; max-height: 150px;" src="../../front_image/{{ $image }}" alt="{{ $key }}">
+                                                            <img src="../../front_image/{{ $image }}" alt="{{ $key }}">
                                                         @endif
                                                         @php
                                                             $image_counter++;
@@ -93,7 +93,7 @@
                                             </div>
                                             <div class="article_info">
                                                 <a href="{{ URL::to('admin/posts/' . $items->id) }}"><h2>@if($lang == 'fr_FR') {{ $items['title_fr'] }} @elseif($lang == 'en_GB') {{ $items['title_en'] }}  @endif</h2></a>
-                                                <h3>05.06.2017</h3>
+                                                <h3>{{ $items['date'] }}</h3>
                                                 <span class="published_label">{{ ($items['status'] == 'on') ? 'Published' : ''}}</span>
                                             </div>
                                         </div>
@@ -145,5 +145,7 @@
                 nextMonth: '<i class="icn icon-arrow_big_right"></i>'
             }
         });
+
+        tallestArticleBlock();
     </script>
 @stop

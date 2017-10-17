@@ -26,7 +26,7 @@
                                                         @endphp
                                                         @foreach(json_decode($item['front_image']) as $key => $image)
                                                             @if($image_counter == 1)
-                                                                <img style = "max-width: 150px; max-height: 150px;" src="../front_image/{{ $image }}" alt="{{ $key }}">
+                                                                <img src="../front_image/{{ $image }}" alt="{{ $key }}">
                                                             @endif
                                                             @php
                                                                 $image_counter++;
@@ -110,6 +110,8 @@
                 $('.news_carousel').slick('slickGoTo', destinationSlide - 1);
             }
         });
+
+        tallestArticleBlock();
     </script>
 @stop
 
