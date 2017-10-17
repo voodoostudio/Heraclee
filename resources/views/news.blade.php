@@ -40,7 +40,7 @@
                                                 </div>
                                                 <div class="article_info">
                                                     <a href="{{ route('news_details', ['id' => $item['id']]) }}"><h2>@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</h2></a>
-                                                    <h3>{{ $item['date'] }}</h3>
+                                                    <h3>{{ (!empty($item['date'])) ? date('d.m.Y', strtotime($item['date'])) : '' }}</h3>
                                                 </div>
                                             </div>
                                         </div>

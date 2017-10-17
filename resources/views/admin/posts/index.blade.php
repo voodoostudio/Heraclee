@@ -93,7 +93,7 @@
                                             </div>
                                             <div class="article_info">
                                                 <a href="{{ URL::to('admin/posts/' . $items->id) }}"><h2>@if($lang == 'fr_FR') {{ $items['title_fr'] }} @elseif($lang == 'en_GB') {{ $items['title_en'] }}  @endif</h2></a>
-                                                <h3>{{ $items['date'] }}</h3>
+                                                <h3>{{ (!empty($items->date)) ? date('d.m.Y', strtotime($items->date)) : '' }}</h3>
                                                 <span class="published_label">{{ ($items['status'] == 'on') ? 'Published' : ''}}</span>
                                             </div>
                                         </div>

@@ -38,7 +38,7 @@
                             <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-facebook"></i></a></li>
                         </ul>
                         <h1>@if($lang == 'fr_FR') {{ $posts->title_fr }} @elseif($lang == 'en_GB') {{ $posts->title_en }}  @endif</h1>
-                        <h2>{{ $posts->date }}</h2>
+                        <h2>{{ (!empty($posts->date)) ? date('d.m.Y', strtotime($posts->date)) : '' }}</h2>
                         <div class="img_container">
                             @foreach(json_decode($posts->front_image) as $key => $image)
                                 <img style = "max-width: 1024px;" src="../../../front_image/{{ $image }}" alt="{{ $key }}">

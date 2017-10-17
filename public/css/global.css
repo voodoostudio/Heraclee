@@ -492,16 +492,11 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background: url(/img/pattern.svg) no-repeat;
-    background-size: 120%;
-    background-position-x: 10%;
-    opacity: 0.1;
-    z-index: -1; }
-  body#france:after {
     background: url(/img/bg_pattern.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
-    opacity: 0.5; }
+    opacity: 0.5;
+    z-index: -1; }
 
 .container-fluid {
   max-width: 1200px; }
@@ -1098,3 +1093,5 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
+
+/*# sourceMappingURL=global.css.map */
