@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    setBodyPaddingBottom();
+    $(window).resize(function () {
+        setBodyPaddingBottom();
+    });
+    $(window).on("orientationchange", function () {
+        setBodyPaddingBottom();
+    });
+
     $('.scroll_to_top a').click(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;

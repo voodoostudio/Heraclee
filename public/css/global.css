@@ -478,10 +478,16 @@ ul.nav.nav-tabs {
   #message-box p.success {
     color: #69bf7f; }
 
+html {
+  height: 100%;
+  box-sizing: border-box; }
+
 body {
   font: 16px 'opensans_light';
   color: #fdfdfd;
-  background: #272727; }
+  background: #272727;
+  position: relative;
+  min-height: 100%; }
   body.preloader_active {
     height: 100vh;
     overflow: hidden; }
@@ -990,6 +996,9 @@ nav {
       color: #ccac83; }
 
 footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   margin-top: 90px;
   background: #272727; }
   footer section.top_footer_section {

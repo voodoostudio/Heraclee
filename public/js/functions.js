@@ -465,3 +465,10 @@ function tallestArticleBlock() {
     });
     console.log(maxHeight);
 }
+
+function setBodyPaddingBottom() {
+    //this function sets body padding-bottom according to the footer size
+    var footer_height = $('footer').height() + 90;
+
+    $('body').css({"padding-bottom": footer_height});
+}

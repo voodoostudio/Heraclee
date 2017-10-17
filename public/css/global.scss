@@ -2,10 +2,17 @@
 @import "variables";
 @import "forms";
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
   font: 16px 'opensans_light';
   color: $main_light_clr;
   background: $main_dark_clr;
+  position: relative;
+  min-height: 100%;
   &.preloader_active {
     height: 100vh;
     overflow: hidden;
@@ -594,6 +601,9 @@ nav {
 }
 
 footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   margin-top: 90px;
   background: $main_dark_clr;
   section.top_footer_section {
