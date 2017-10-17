@@ -34,8 +34,8 @@
     @endphp
     @foreach(json_decode($item['front_image']) as $picture)
         @if($image_counter == 1)
-            <meta property="og:image" content="{{$picture}}" />
-            <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{$picture}}" />
+            <meta property="og:image" content="../front_image/{{$picture}}" />
+            <meta prefix="og: http://ogp.me/ns#" property="og:image" content="../front_image/{{$picture}}" />
         @endif
         @php
             $image_counter++;
