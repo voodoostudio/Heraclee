@@ -51,7 +51,8 @@ class PostsController extends Controller
         $body_image_title = [];
 
         $rules = array(
-            'title_fr'       => 'required',
+            'title_fr'      => 'required',
+            'title_en'      => 'required'
         );
 
         $posts = new Posts;
@@ -180,7 +181,8 @@ class PostsController extends Controller
         $body_image_title = [];
 
         $rules = array(
-            'title_fr'       => 'required',
+            'title_fr'      => 'required',
+            'title_en'      => 'required'
         );
 
         $validator = Validator::make(Input::all(), $rules);
