@@ -35,6 +35,8 @@
         @endphp
     @endforeach
 
+    @include('includes.latest_news')
+
     @include('includes.search_block_index')
 
     <section class="results_section">
