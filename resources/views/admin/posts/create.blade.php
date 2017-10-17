@@ -80,36 +80,23 @@
                                         </div>
                                     </div>
 
-                                    {{--<div class="col-md-6">--}}
-                                        {{--<div class="dropzone" id="article_header_dropzone" >--}}
-                                            {{--<div class="dz-default dz-message" data-dz-message="">--}}
-                                                {{--<span>Drop article header image here to upload</span>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-
-
-                                    {{--<div class="col-12 margin_bottom_20">--}}
-                                        {{--<div class="dropzone dz-clickable" id="article_body_dropzone">--}}
-                                            {{--<div class="dz-default dz-message" data-dz-message="">--}}
-                                                {{--<span>Drop article body image here to upload</span>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-
                                     <div class="col-md-6">
-                                        <div class="fallback dropzone" id="article_header_dropzone">
-                                            <input name="front_image[]" type="file" multiple />
+                                        <div class="img_upload_container">
+                                            <div class="img_upload">
+                                                <input name="front_image[]" type="file" id="header_img"  class="input_file"/>
+                                                <label for="header_img"><span>Choose a header image</span></label>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="col-12 margin_bottom_20">
-                                        <div class="fallback dropzone">
-                                            <input name="body_image[]" type="file" multiple />
+                                        <div class="img_upload_container">
+                                            <div class="img_upload">
+                                                <input name="body_image[]" type="file" id="body_img" class="input_file"/>
+                                                <label for="body_img"><span>Choose a body image</span></label>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    {{--<div id="dropzone-previews" style="min-height: 200px; border: 2px dotted #D2D6DE; padding: 20px"><span>Drop article header image here to upload</span></div>--}}
 
                                     <div class="col-12 margin_bottom_20">
                                         <div class="label_container">
@@ -162,76 +149,9 @@
     <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
 
     <script type="text/javascript">
+        showSelectedFileName();
 
-            {{--Dropzone.autoDiscover = false;--}}
-            {{--$("#article_header_dropzone").dropzone({--}}
-                {{--url: '{{ route('posts.upload') }}',--}}
-                {{--paramName: 'front_image',--}}
-                {{--uploadMultiple: true,--}}
-                {{--acceptedFiles: 'image/*',--}}
-                {{--maxFiles: 10,--}}
-                {{--parallelUploads: 10,--}}
-                {{--addRemoveLinks: true,--}}
-                {{--maxFileSize: 50,--}}
-                {{--autoProcessQueue: false,--}}
-                {{--init: function() {--}}
-                    {{--var submitButton = document.querySelector("#btn-add-submit");--}}
-                    {{--myDropzone = this;--}}
-                    {{--submitButton.addEventListener("click", function() {--}}
-                        {{--myDropzone.processQueue();--}}
-                    {{--});--}}
-                {{--}--}}
-            {{--});--}}
-
-
-        {{--Dropzone.options.uploadImage = {--}}
-            {{--url: '{{ route('posts.upload') }}',--}}
-            {{--paramName: 'front_image',--}}
-            {{--uploadMultiple: true,--}}
-            {{--acceptedFiles: 'image/*',--}}
-            {{--maxFiles: 10,--}}
-            {{--parallelUploads: 10,--}}
-            {{--previewsContainer: '#dropzone-previews',--}}
-            {{--clickable: "#dropzone-previews",--}}
-            {{--addRemoveLinks: true,--}}
-            {{--maxFileSize: 50,--}}
-            {{--autoProcessQueue: false,--}}
-
-            {{--init: function() {--}}
-                {{--var submitButton = document.querySelector("#btn-add-submit");--}}
-                {{--myDropzone = this;--}}
-                {{--submitButton.addEventListener("click", function() {--}}
-                    {{--myDropzone.processQueue();--}}
-                {{--});--}}
-            {{--}--}}
-         {{--};--}}
-
-
-        {{--$("div#article_header_dropzone").dropzone({--}}
-             {{--url: '{{ route('posts.store') }}',--}}
-             {{--paramName: 'front_image',--}}
-             {{--uploadMultiple: true,--}}
-             {{--acceptedFiles: 'image/*',--}}
-             {{--maxFiles: 10,--}}
-             {{--parallelUploads: 10,--}}
-             {{--previewsContainer: '#dropzone-previews',--}}
-             {{--clickable: "#dropzone-previews",--}}
-             {{--addRemoveLinks: true,--}}
-             {{--autoProcessQueue: false,--}}
-             {{--maxFileSize: 50,--}}
-             {{--init: function() {--}}
-                 {{--var submitButton = document.querySelector("#btn-add-submit");--}}
-                 {{--myDropzone = this;--}}
-                 {{--submitButton.addEventListener("click", function() {--}}
-                     {{--myDropzone.processQueue();--}}
-                 {{--});--}}
-             {{--}--}}
-         {{--});--}}
-
-
-
-
-$('#article_datepicker').datepicker({
+        $('#article_datepicker').datepicker({
             showOtherMonths: true,
             format: 'yyyy-mm-dd',
             icons: {

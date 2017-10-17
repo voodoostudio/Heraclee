@@ -56,7 +56,7 @@
                     <nav>
                         <ul class="pagination">
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
+                                <a href="javascript:void(0);" class="page-link" aria-label="Previous">
                                     <i class="icn icon-arrow_dropdown_left"></i>
                                 </a>
                             </li>
@@ -66,7 +66,7 @@
                                 </ul>
                             </li>
                             <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
+                                <a href="javascript:void(0);" class="page-link" aria-label="Next">
                                     <i class="icn icon-arrow_dropdown_right"></i>
                                 </a>
                             </li>
@@ -86,7 +86,7 @@
         });
         var slidesAmount = $('.news_list_section .news_carousel div.news_slide:not(.slick-cloned)').length;
         for (var i = 1; i <= slidesAmount; i++) {
-            $("ul.pagination li ul.pages").append( '<li class="page-item"><a href="#" class="page-link">'+i+'</a></li>' );
+            $("ul.pagination li ul.pages").append( '<li class="page-item"><a href="javascript:void(0);" class="page-link">'+i+'</a></li>' );
         }
 
         $('ul.pagination li ul.pages li.page-item:nth-child(1)').addClass('active');
