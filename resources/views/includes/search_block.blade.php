@@ -29,7 +29,6 @@
                                     <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
                                     <select id="prop_type_select" multiple="multiple" name="object_type[]" title="">
                                         @foreach($type as $item)
-                                            {{ dump($type) }}
                                             <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
                                         @endforeach
                                     </select>

@@ -9,6 +9,7 @@ use LaravelLocalization;
 class Properties extends Model
 {
     public $property_count;
+    public $all_property_count;
 
     /**
      * @param int $items
@@ -124,7 +125,7 @@ class Properties extends Model
             $country[] = $check;
         }
 
-        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+        if($check == false || in_array('results', $country) || $check == 'fr' || $check == 'en') {
             $country_array = ['FR', 'CH', 'US', 'ZA'];
         }
 
@@ -610,6 +611,12 @@ class Properties extends Model
             ->get()
             ->count();
 
+
+        $this->all_property_count = DB::table('apimo_properties')
+            ->whereIn('country', $country_array)
+            ->get()
+            ->count();
+
         if (count($properties) > 0) {
             foreach ($properties as $property) {
                 $array[$property['property_id']] = $property;
@@ -953,14 +960,6 @@ class Properties extends Model
             })
             ->whereIn('country', $country_array)
             ->get();
-//
-//
-//        $this->property_count = DB::table('apimo_properties')
-//            ->whereIn('type', $object_type)
-//            ->whereIn('category', $sell_type_array)
-//            ->whereIn('city', $object_place)
-//            ->where($conditions_where)
-//            ->get()->count();
 
         if (count($properties) > 0) {
             foreach ($properties as $property) {
@@ -1951,7 +1950,7 @@ class Properties extends Model
             $country[] = $check;
         }
 
-        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+        if($check == false || in_array('results', $country) || $check == 'fr' || $check == 'en') {
             $country_array[] = ['FR', 'CH', 'US', 'ZA'];
         }
 

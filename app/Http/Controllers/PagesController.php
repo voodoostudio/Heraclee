@@ -17,6 +17,7 @@ use App\Posts;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use LaravelLocalization;
 
 class PagesController extends Controller
 {
@@ -70,7 +71,7 @@ class PagesController extends Controller
         $last_news = Posts::limit(10)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
         /* Count items (for menu) */
-        $count_items = $properties_obj->property_count;
+        $count_items = $properties_obj->all_property_count;
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
@@ -79,19 +80,19 @@ class PagesController extends Controller
         }
 
         if($country[0] == 'france') {
-           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'mauritius') {
-            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'search' => Session::get('search')]);
+            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
     }
 
@@ -101,6 +102,7 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+        $lang = LaravelLocalization::getCurrentLocale();
         $country = [];
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
@@ -113,8 +115,7 @@ class PagesController extends Controller
             $country[] = $check;
         }
 
-        $url_page = '/achat/results/' . implode($country) . '?page=';
-
+        $url_page =  '/' . $lang. '/achat/results/' . ($country != 'results') ? implode($country) . '?page=' : '?page=';
         $view_type = 'grid_view';
 
         if (isset($_COOKIE['typeView'])) {
@@ -237,9 +238,20 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
-        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
-        $url_page = '/locations/results/' . stristr($country[0], '?', true) . '?page=';
+        $lang = LaravelLocalization::getCurrentLocale();
+        $country = [];
 
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
+
+        $url_page =  '/' . $lang. '/locations/results/' . ($country != 'results') ? implode($country) . '?page=' : '?page=';
         $view_type = 'grid_view';
 
         if (isset($_COOKIE['typeView'])) {
