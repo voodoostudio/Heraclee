@@ -156,7 +156,7 @@ return [
 // AUTHORISATION
     'password'              => 'Mot de passe',
     'remember_me'           => 'Se souvenir de moi',
-    'log_in'                 => 'Connexion',
+    'log_in'                => 'Connexion',
 
 //NEWS PAGES
     'latest_news'           => 'Dernières nouvelles',
