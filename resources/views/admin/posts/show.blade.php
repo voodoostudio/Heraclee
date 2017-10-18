@@ -32,15 +32,14 @@
             <div class="container-fluid">
                 <div class="outer_block_container">
                     <div class="inner_block_container">
-                        <ul class="social_networks_share">
-                            <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-twitter"></i></a></li>
-                            <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-linked_in"></i></a></li>
-                            <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-facebook"></i></a></li>
-                        </ul>
-
                         <div class="title_container">
                             <h1>@if($lang == 'fr_FR') {{ $posts->title_fr }} @elseif($lang == 'en_GB') {{ $posts->title_en }}  @endif</h1>
                             <a class="action_link" href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
+                            <ul class="social_networks_share">
+                                <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-twitter"></i></a></li>
+                                <li><a class="linkedin-share-button" onclick="window.open($(this).attr('href'), 'Linkedin', config='height=560, width=500, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-linked_in"></i></a></li>
+                                <li><a class="fb-share-button" onclick="window.open($(this).attr('href'), 'Facebook', config='height=100, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="#"><i class="icn icon-facebook"></i></a></li>
+                            </ul>
                         </div>
 
                         <h2>{{ (!empty($posts->date)) ? date('d.m.Y', strtotime($posts->date)) : '' }}</h2>
