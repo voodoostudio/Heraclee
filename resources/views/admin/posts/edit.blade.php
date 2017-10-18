@@ -35,7 +35,7 @@
                     <div class="col-12">
                         <div class="title_container">
                             <h1>{{ trans('lang.editing_article') }}</h1>
-                            <a href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
+                            <a class="action_link" href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
                     </div>
                 </div>

@@ -170,5 +170,5 @@ return [
     'creating_article'      => 'Création d’article',
     'editing_article'       => 'Modification de l\'article',
     'choose_header_img'     => 'Choisissez une image d\'en-tête',
-    'choose_body_img'       => 'Choisissez une image du corps',
+    'choose_body_img'       => 'Choisissez une image de corps',
 ];

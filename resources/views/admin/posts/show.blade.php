@@ -40,13 +40,13 @@
 
                         <div class="title_container">
                             <h1>@if($lang == 'fr_FR') {{ $posts->title_fr }} @elseif($lang == 'en_GB') {{ $posts->title_en }}  @endif</h1>
-                            <a href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
+                            <a class="action_link" href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
 
                         <h2>{{ (!empty($posts->date)) ? date('d.m.Y', strtotime($posts->date)) : '' }}</h2>
                         <div class="img_container">
                             @foreach(json_decode($posts->front_image) as $key => $image)
-                                <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
+                                <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                             @endforeach
                             {{--@if(!empty($item['front_image']))--}}
                             {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['front_image'] }}" alt="">--}}
@@ -64,7 +64,7 @@
                                         <img src = "" alt = ""/>
                                     </a>
                                 @else
-                                    <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
+                                    <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
                                 @endif
                             @endforeach
                         </div>

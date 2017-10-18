@@ -52,7 +52,8 @@ class PostsController extends Controller
 
         $rules = array(
             'title_fr'      => 'required',
-            'title_en'      => 'required'
+            'title_en'      => 'required',
+            'date'          => 'required'
         );
 
         $posts = new Posts;
@@ -189,7 +190,8 @@ class PostsController extends Controller
 
         $rules = array(
             'title_fr'      => 'required',
-            'title_en'      => 'required'
+            'title_en'      => 'required',
+            'date'          => 'required'
         );
 
         $validator = Validator::make(Input::all(), $rules);

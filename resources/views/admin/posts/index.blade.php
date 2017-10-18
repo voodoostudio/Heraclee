@@ -55,7 +55,7 @@
                         <div class="col-12">
                             <div class="title_container">
                                 <h1>{{ trans('lang.list_of_articles') }}</h1>
-                                <a href="{{ URL::to('admin/posts/create') }}"><i class="icn icon-cancel"></i></a>
+                                <a class="action_link" href="{{ URL::to('admin/posts/create') }}"><i class="icn icon-cancel"></i></a>
                             </div>
                         </div>
                     </div>

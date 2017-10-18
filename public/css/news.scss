@@ -11,10 +11,10 @@ h1 {
 .title_container {
   position: relative;
   margin-bottom: 30px;
-  a {
+  a.action_link {
     position: absolute;
     right: 0;
-    top: -7px;
+    bottom: 0;
     width: 40px;
     height: 40px;
     font-size: 16px;
@@ -372,15 +372,20 @@ section.article_section {
   margin-top: 40px;
   .outer_block_container {
     .inner_block_container {
-      padding-top: 50px;
-      position: relative;
-      .social_networks_share {
-        position: absolute;
-        right: 17px;
-        top: 12px;
-      }
-      h1 {
-        padding-right: 65px;
+      .title_container {
+        position: relative;
+        margin-bottom: 0;
+        a.action_link {
+          left: 0;
+        }
+        h1 {
+          padding: 0 65px 10px 55px;
+        }
+        .social_networks_share {
+          position: absolute;
+          right: 0;
+          bottom: 5px;
+        }
       }
       h2 {
         font-size: 0.875rem;
@@ -390,6 +395,9 @@ section.article_section {
       .img_container {
         margin: 40px 0;
         text-align: center;
+        img {
+          max-width: 100%;
+        }
       }
       p {
         text-align: justify;

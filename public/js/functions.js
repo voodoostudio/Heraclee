@@ -453,7 +453,6 @@ function dpe_ges_pointer(dpe_pointer, ges_pointer) {
 }
 
 function tallestArticleBlock() {
-    console.log('test');
     var maxHeight = -1;
 
     $('section.news_list_section .article_info_block').each(function() {
@@ -463,7 +462,6 @@ function tallestArticleBlock() {
     $('section.news_list_section .article_info_block').each(function() {
         $(this).height(maxHeight);
     });
-    console.log(maxHeight);
 }
 
 function setBodyPaddingBottom() {
