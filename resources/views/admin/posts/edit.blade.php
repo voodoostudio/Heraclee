@@ -87,7 +87,7 @@
                                         <div class="img_preview">
                                             @foreach(json_decode($posts->front_image) as $key => $image)
                                                 <div class="img_preview_thumbnail" >
-                                                    <img src = "../../../front_image/{{ $image }}" />
+                                                    <img src = "{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" />
                                                 </div>
                                             @endforeach
                                         </div>
@@ -103,7 +103,7 @@
                                         <div class="img_preview">
                                             @foreach(json_decode($posts->body_image) as $key => $image)
                                                 <div class="img_preview_thumbnail" >
-                                                    <img src = "../../../body_image/{{ $image }}" />
+                                                    <img src = "{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $image }}" />
                                                 </div>
                                             @endforeach
                                         </div>

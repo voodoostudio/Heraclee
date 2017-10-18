@@ -34,13 +34,22 @@
                     <h2>{{ (!empty($item['date'])) ? date('d.m.Y', strtotime($item['date'])) : '' }}</h2>
                     <div class="img_container">
                         @foreach(json_decode($item['front_image']) as $key => $image)
-                            <img style = "max-width: 1024px;" src="../../front_image/{{ $image }}" alt="{{ $key }}">
+                            <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                         @endforeach
-
                     </div>
+
                     <div class="img_container">
-                        @foreach(json_decode($item['body_image']) as $key => $image)
-                            <img style = "max-width: 1024px;" src="../../body_image/{{ $image }}" alt="{{ $key }}">
+                        @foreach(json_decode($item['body_image']) as $key => $file)
+                            @php
+                                $extension = new SplFileInfo($file);
+                            @endphp
+                            @if(strtolower($extension->getExtension()) == 'pdf')
+                                <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">PDF
+                                    <img src = "" alt = ""/>
+                                </a>
+                            @else
+                                <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
+                            @endif
                         @endforeach
 
                             {{--<object data="http://heraclee.com/wp-content/uploads/2017/03/Article-news.pdf" type="application/pdf" width="100%" height="600">--}}

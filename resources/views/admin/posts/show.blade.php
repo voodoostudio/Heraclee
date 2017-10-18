@@ -46,7 +46,7 @@
                         <h2>{{ (!empty($posts->date)) ? date('d.m.Y', strtotime($posts->date)) : '' }}</h2>
                         <div class="img_container">
                             @foreach(json_decode($posts->front_image) as $key => $image)
-                                <img style = "max-width: 1024px;" src="../../../front_image/{{ $image }}" alt="{{ $key }}">
+                                <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                             @endforeach
                             {{--@if(!empty($item['front_image']))--}}
                             {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['front_image'] }}" alt="">--}}
@@ -55,14 +55,18 @@
                             {{--@endif--}}
                         </div>
                         <div class="img_container">
-                            @foreach(json_decode($posts->body_image) as $key => $image)
-                                <img style = "max-width: 1024px;" src="../../../body_image/{{ $image }}" alt="{{ $key }}">
+                            @foreach(json_decode($posts->body_image) as $key => $file)
+                                @php
+                                    $extension = new SplFileInfo($file);
+                                @endphp
+                                @if(strtolower($extension->getExtension()) == 'pdf')
+                                    <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">PDF
+                                        <img src = "" alt = ""/>
+                                    </a>
+                                @else
+                                    <img style = "max-width: 1024px;" src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
+                                @endif
                             @endforeach
-                            {{--@if(!empty($item['body_image']))--}}
-                            {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['body_image'] }}" alt="">--}}
-                            {{--@else--}}
-                            {{--<img src="/img/details/no_agent_photo.svg" alt="">--}}
-                            {{--@endif--}}
                         </div>
                         @if($lang == 'fr_FR') <p>{{ $posts->description_fr }}</p> @elseif($lang == 'en_GB') <p>{{ $posts->description_en }}/<p>  @endif
                     </div>

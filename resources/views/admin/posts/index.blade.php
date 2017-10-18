@@ -79,7 +79,7 @@
                                                     @endphp
                                                     @foreach(json_decode($items['front_image']) as $key => $image)
                                                         @if($image_counter == 1)
-                                                            <img src="../../front_image/{{ $image }}" alt="{{ $key }}">
+                                                            <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                                                         @endif
                                                         @php
                                                             $image_counter++;

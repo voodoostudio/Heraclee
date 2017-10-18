@@ -72,26 +72,33 @@ class PostsController extends Controller
             if($request->hasFile('front_image'))
             {
                 foreach ($front_image as $key => $file) {
-                    $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-                    $front_image_title['image_' . $key] = $file_name;
-                    $file->move(public_path("/front_image"), $file_name);
+                    $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                    $front_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                    $file->move(public_path("/posts/front_image/" . date('F_Y')), $file_name);
                 }
+                $posts->front_image = json_encode($front_image_title);
             }
 
             if($request->hasFile('body_image'))
             {
                 foreach ($body_image as $key => $file) {
-                    $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-                    $body_image_title['image_' . $key] = $file_name;
-                    $file->move(public_path("/body_image"), $file_name);
+                    if($file->getClientOriginalExtension() == 'pdf') {
+                        //$im = new Imagick();
+                        $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                        $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                        $file->move(public_path("/posts/pdf/" . date('F_Y')), $file_name);
+                    } else {
+                        $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                        $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                        $file->move(public_path("/posts/body_image/" . date('F_Y')), $file_name);
+                    }
                 }
+                $posts->body_image = json_encode($body_image_title);
             }
 
             $posts->title_fr        = Input::get('title_fr');
             $posts->title_en        = Input::get('title_en');
             $posts->date            = Input::get('date');
-            $posts->front_image     = json_encode($front_image_title);
-            $posts->body_image      = json_encode($body_image_title);
             $posts->description_fr  = Input::get('description_fr');
             $posts->description_en  = Input::get('description_en');
             $posts->status          = Input::get('status');
@@ -202,9 +209,9 @@ class PostsController extends Controller
             if($request->hasFile('front_image'))
             {
                 foreach ($front_image as $key => $file) {
-                    $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-                    $front_image_title['image_' . $key] = $file_name;
-                    $file->move(public_path("/front_image"), $file_name);
+                    $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                    $front_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                    $file->move(public_path("/posts/front_image/" . date('F_Y')), $file_name);
                 }
                 $posts->front_image = json_encode($front_image_title);
             }
@@ -212,9 +219,16 @@ class PostsController extends Controller
             if($request->hasFile('body_image'))
             {
                 foreach ($body_image as $key => $file) {
-                    $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-                    $body_image_title['image_' . $key] = $file_name;
-                    $file->move(public_path("/body_image"), $file_name);
+                    if($file->getClientOriginalExtension() == 'pdf') {
+                        //$im = new Imagick();
+                        $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                        $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                        $file->move(public_path("/posts/pdf/" . date('F_Y')), $file_name);
+                    } else {
+                        $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
+                        $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
+                        $file->move(public_path("/posts/body_image/" . date('F_Y')), $file_name);
+                    }
                 }
                 $posts->body_image = json_encode($body_image_title);
             }
