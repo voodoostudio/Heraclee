@@ -61,9 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <ul class="pages">
-
-                                </ul>
+                                <ul class="pages"></ul>
                             </li>
                             <li class="page-item">
                                 <a href="javascript:void(0);" class="page-link" aria-label="Next">

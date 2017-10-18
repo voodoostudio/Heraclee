@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="latest_news_container">
             <div class="marquee_title">
-                <span>Latest news</span>
+                <span>{{ trans('lang.latest_news') }}</span>
             </div>
             <div class="marquee">
                 <ul class="">

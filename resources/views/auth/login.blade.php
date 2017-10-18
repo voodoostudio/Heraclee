@@ -18,15 +18,15 @@
                                 {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Email *</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" name="email" placeholder="Email" required>
+                                            <input type="text" name="email" placeholder="{{ trans('lang.email') }}" required>
                                         </div>
                                     </div>
                                     <div class="col-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>Password *</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.password') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="password" name="password" placeholder="Password" required>
+                                            <input type="password" name="password" placeholder="{{ trans('lang.password') }}" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 margin_bottom_20">
@@ -34,12 +34,12 @@
                                             <label>
                                                 <input checked="checked" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                                 <span class="fake_checkbox"></span>
-                                                <span class="my_checkbox_text">Remember me</span>
+                                                <span class="my_checkbox_text">{{ trans('lang.remember_me') }}</span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="col-12 col-sm-6 margin_bottom_10">
-                                        <button class="btn pull-right" type="submit">Login</button>
+                                        <button class="btn pull-right" type="submit">{{ trans('lang.log_in') }}</button>
                                     </div>
                                     {{--<div class="col-12">--}}
                                         {{--<a href="{{ route('password.request') }}" class="forgot_password"><i class="icn icon-rooms"></i><span>Forgot my password</span></a>--}}

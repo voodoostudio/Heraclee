@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="title_container">
-                                <h1>List of articles</h1>
+                                <h1>{{ trans('lang.list_of_articles') }}</h1>
                                 <a href="{{ URL::to('admin/posts/create') }}"><i class="icn icon-cancel"></i></a>
                             </div>
                         </div>
@@ -94,7 +94,7 @@
                                             <div class="article_info">
                                                 <a href="{{ URL::to('admin/posts/' . $items->id) }}"><h2>@if($lang == 'fr_FR') {{ $items['title_fr'] }} @elseif($lang == 'en_GB') {{ $items['title_en'] }}  @endif</h2></a>
                                                 <h3>{{ (!empty($items->date)) ? date('d.m.Y', strtotime($items->date)) : '' }}</h3>
-                                                <span class="published_label">{{ ($items['status'] == 'on') ? 'Published' : ''}}</span>
+                                                <span class="published_label">{{ ($items['status'] == 'on') ? trans('lang.published') : ''}}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -102,27 +102,6 @@
                             </div>
                         @endforeach
                     </div>
-                    {{--<div class="row">--}}
-                        {{--<div class="col-12">--}}
-                            {{--<nav>--}}
-                                {{--<ul class="pagination">--}}
-                                    {{--<li class="page-item">--}}
-                                        {{--<a href="#" class="page-link" aria-label="Previous">--}}
-                                            {{--<i class="icn icon-arrow_dropdown_left"></i>--}}
-                                        {{--</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="page-item">--}}
-                                        {{--<a href="#" class="page-link">1</a>--}}
-                                    {{--</li>--}}
-                                    {{--<li class="page-item">--}}
-                                        {{--<a href="#" class="page-link" aria-label="Next">--}}
-                                            {{--<i class="icn icon-arrow_dropdown_right"></i>--}}
-                                        {{--</a>--}}
-                                    {{--</li>--}}
-                                {{--</ul>--}}
-                            {{--</nav>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
                 </div>
             </section>
         </main>

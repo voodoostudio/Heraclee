@@ -152,4 +152,23 @@ return [
     'message_send'          => 'Message envoyé',
     'enter_valid_email'     => 'Entrez un email valide',
     'an_error_has_occured'  => 'Une erreur s\'est produite, réessayez',
+
+// AUTHORISATION
+    'password'              => 'Mot de passe',
+    'remember_me'           => 'Se souvenir de moi',
+    'log_in'                 => 'Connexion',
+
+//NEWS PAGES
+    'latest_news'           => 'Dernières nouvelles',
+    'list_of_articles'      => 'Liste des articles',
+    'published'             => 'Publié',
+    'title'                 => 'Titre',
+    'posting_date'          => 'Date de publication',
+    'article_text'          => 'Texte de l\'article',
+    'save'                  => 'Enregistrer',
+    'publish'               => 'Publier',
+    'creating_article'      => 'Création d’article',
+    'editing_article'       => 'Modification de l\'article',
+    'choose_header_img'     => 'Choisissez une image d\'en-tête',
+    'choose_body_img'       => 'Choisissez une image du corps',
 ];

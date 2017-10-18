@@ -152,4 +152,23 @@ return [
     'message_send'          => 'Message sent',
     'enter_valid_email'     => 'Please enter a valid email',
     'an_error_has_occured'  => 'An error occurred, please try again',
+
+// AUTHORISATION
+    'password'              => 'Password',
+    'remember_me'           => 'Remember me',
+    'log_in'                 => 'Log in',
+
+//NEWS PAGES
+    'latest_news'           => 'Latest news',
+    'list_of_articles'      => 'List of articles',
+    'published'             => 'Published',
+    'title'                 => 'Title',
+    'posting_date'          => 'Posting date',
+    'article_text'          => 'Article text',
+    'save'                  => 'Save',
+    'publish'               => 'Publish',
+    'creating_article'      => 'Creating new article',
+    'editing_article'       => 'Editing article',
+    'choose_header_img'     => 'Choose a header image',
+    'choose_body_img'       => 'Choose a body image',
 ];
