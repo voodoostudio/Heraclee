@@ -1,6 +1,13 @@
 <section class="search_section">
     @php
-        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
+        $country = [];
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
     @endphp
     <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @endif" method="post">
         {{ csrf_field() }}
