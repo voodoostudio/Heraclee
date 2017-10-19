@@ -1395,9 +1395,12 @@
   /* Bootstrap modal popup END*/
 
   section.news_list_section {
-    margin-top: 10px;
+    margin-top: 40px;
+    .news_carousel.slick-slider .slick-track .slick-slide {
+      padding: 0;
+    }
     .outer_block_container {
-      margin-top: 30px;
+      margin-bottom: 15px;
       .inner_block_container {
         padding: 20px 20px;
         .article_info_block {
@@ -1405,6 +1408,12 @@
             float: none;
             margin-right: 0;
             text-align: center;
+            a {
+              img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
           }
           .article_info {
             p {
