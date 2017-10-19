@@ -61,7 +61,7 @@
                                     $jpg_preview = preg_replace('"\.pdf$"', '.jpg', $file);
                                 @endphp
                                 @if(strtolower($extension->getExtension()) == 'pdf')
-                                    <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">PDF
+                                    <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">
                                         <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = ""/>
                                     </a>
                                 @else
