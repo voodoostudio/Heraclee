@@ -148,7 +148,7 @@ class Properties extends Model
         if(
             ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
             ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
-            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/country/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
+            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
             ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
             ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
         ){
@@ -702,7 +702,7 @@ class Properties extends Model
         if(
             ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
             ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
-            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/country/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
+            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
             ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
             ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
         ){
