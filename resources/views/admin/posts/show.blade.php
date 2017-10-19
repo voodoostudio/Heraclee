@@ -62,7 +62,7 @@
                                 @endphp
                                 @if(strtolower($extension->getExtension()) == 'pdf')
                                     <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">
-                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = ""/>
+                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = "{{ $key }}"/>
                                     </a>
                                 @else
                                     <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">

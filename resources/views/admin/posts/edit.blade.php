@@ -101,10 +101,20 @@
                                 <div class="col-12 margin_bottom_20">
                                     <div class="img_upload_container">
                                         <div class="img_preview">
-                                            @foreach(json_decode($posts->body_image) as $key => $image)
-                                                <div class="img_preview_thumbnail" >
-                                                    <img src = "{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $image }}" />
-                                                </div>
+                                            @foreach(json_decode($posts->body_image) as $key => $file)
+                                                @php
+                                                    $extension = new SplFileInfo($file);
+                                                    $jpg_preview = preg_replace('"\.pdf$"', '.jpg', $file);
+                                                @endphp
+                                                @if(strtolower($extension->getExtension()) == 'pdf')
+                                                    <div class="img_preview_thumbnail" >
+                                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = "{{ $key }}"/>
+                                                    </div>
+                                                @else
+                                                    <div class="img_preview_thumbnail" >
+                                                        <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
+                                                    </div>
+                                                @endif
                                             @endforeach
                                         </div>
                                         <div class="img_upload">

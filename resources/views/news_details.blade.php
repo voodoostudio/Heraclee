@@ -44,25 +44,16 @@
                         @foreach(json_decode($item['body_image']) as $key => $file)
                             @php
                                 $extension = new SplFileInfo($file);
+                                $jpg_preview = preg_replace('"\.pdf$"', '.jpg', $file);
                             @endphp
                             @if(strtolower($extension->getExtension()) == 'pdf')
-                                <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">PDF
-                                    <img src = "" alt = ""/>
+                                <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">
+                                    <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = "{{ $key }}"/>
                                 </a>
                             @else
                                 <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
                             @endif
                         @endforeach
-
-                            {{--<object data="http://heraclee.com/wp-content/uploads/2017/03/Article-news.pdf" type="application/pdf" width="100%" height="600">--}}
-                                {{--alt : <a href="http://heraclee.com/wp-content/uploads/2017/03/Article-news.pdf">test.pdf</a>--}}
-                            {{--</object>--}}
-
-                            {{--<a href="http://heraclee.com/wp-content/uploads/2017/03/News.pdf">--}}
-                                {{--<img class="alignnone wp-image-1229363 size-full" src="http://heraclee.com/wp-content/uploads/2017/03/var.jpg" alt="var" width="728" height="971" srcset="http://heraclee.com/wp-content/uploads/2017/03/var.jpg 728w, http://heraclee.com/wp-content/uploads/2017/03/var-225x300.jpg 225w, http://heraclee.com/wp-content/uploads/2017/03/var-500x667.jpg 500w, http://heraclee.com/wp-content/uploads/2017/03/var-600x800.jpg 600w" sizes="(max-width: 728px) 100vw, 728px"></a>--}}
-
-                            {{--<iframe src="http://docs.google.com/gview?url=http://heraclee.com/wp-content/uploads/2017/03/Article-news.pdf&embedded=true"--}}
-                                    {{--style="width:100%; height:500px;" frameborder="0"></iframe>--}}
                     </div>
                     @if($lang == 'fr_FR') <p>{{ $item['description_fr'] }}</p> @elseif($lang == 'en_GB') <p>{{ $item['description_en'] }}/<p>  @endif
                 </div>
