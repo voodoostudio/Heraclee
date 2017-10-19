@@ -78,8 +78,6 @@ class PostsController extends Controller
                     $file->move(public_path("/posts/front_image/" . date('F_Y')), $file_name);
                 }
                 $posts->front_image = json_encode($front_image_title);
-            } else {
-                $posts->front_image = json_encode($front_image_title);
             }
 
             if($request->hasFile('body_image'))
@@ -101,8 +99,6 @@ class PostsController extends Controller
                         $file->move(public_path("/posts/body_image/" . date('F_Y')), $file_name);
                     }
                 }
-                $posts->body_image = json_encode($body_image_title);
-            } else {
                 $posts->body_image = json_encode($body_image_title);
             }
 
@@ -226,7 +222,7 @@ class PostsController extends Controller
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
-                $posts->front_image = json_encode($front_image_title);
+                $posts->front_image = Posts::where('id', '=', $id)->value('front_image');
             }
 
             if($request->hasFile('body_image'))
@@ -250,7 +246,7 @@ class PostsController extends Controller
                 }
                 $posts->body_image = json_encode($body_image_title);
             } else {
-                $posts->body_image = json_encode($body_image_title);
+                $posts->body_image = Posts::where('id', '=', $id)->value('body_image');
             }
 
             $posts->title_fr        = Input::get('title_fr');
