@@ -328,43 +328,55 @@ section.news_admin_nav_section {
   color: $main_light_clr;
   border-color: $main_gray_clr;
   font-family: 'opensans_light';
-  table tr {
-    th {
-      div {
-        i {
-          font-weight: bold;
-          font-size: 18px;
-          position: relative;
-          top: 2px;
+  table {
+    thead {
+      tr:last-of-type {
+        th {
+          div {
+            color: $main_brown_clr;
+            opacity: 0.7;
+          }
         }
       }
     }
-    td {
-      div {
-        border: 1px solid transparent;
-      }
-      &[type="today"] div {
-        color: $main_brown_clr;
-      }
-      &[type="selected"] div {
-        background: transparent;
-        border-color: $main_brown_clr;
-        @include my_border_radius(0);
-      }
-      &[type="other-month"] {
+    tr {
+      th {
         div {
-          opacity: 0.4;
-          color: $main_light_clr;
+          i {
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            top: 2px;
+          }
         }
       }
-      &.gj-cursor-pointer {
-        div:hover {
-          @include my_border_radius(0);
-          background: $main_brown_clr;
+      td {
+        div {
+          border: 1px solid transparent;
         }
-        &[type="today"] {
-          div:hover {
+        &[type="today"] div {
+          color: $main_brown_clr;
+        }
+        &[type="selected"] div {
+          background: transparent;
+          border-color: $main_brown_clr;
+          @include my_border_radius(0);
+        }
+        &[type="other-month"] {
+          div {
+            opacity: 0.4;
             color: $main_light_clr;
+          }
+        }
+        &.gj-cursor-pointer {
+          div:hover {
+            @include my_border_radius(0);
+            background: $main_brown_clr;
+          }
+          &[type="today"] {
+            div:hover {
+              color: $main_light_clr;
+            }
           }
         }
       }

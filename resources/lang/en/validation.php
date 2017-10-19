@@ -114,6 +114,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title_fr' => '"Title FR"',
+        'title_en' => '"Title EN"',
+        'date' => '"Posting date"',
+    ],
 
 ];

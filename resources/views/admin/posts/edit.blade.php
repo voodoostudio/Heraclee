@@ -77,7 +77,6 @@
                                             <div class="input_container">
                                                 <input name="date" placeholder="{{ trans('lang.posting_date') }}" value = "{{ $posts->date }}" id="article_datepicker" readonly="readonly"/>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -167,58 +166,6 @@
                 </div>
             </div>
         </section>
-    {{--{{ Form::model($posts, array('route' => array('posts.update', $posts->id), 'method' => 'PUT', 'files' => true)) }}--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('title_fr', 'Title (fr)') }}--}}
-        {{--{{ Form::text('title_fr', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('title_en', 'Title (en)') }}--}}
-        {{--{{ Form::text('title_en', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('date', 'date') }}--}}
-        {{--{{ Form::date('date', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('front_image', 'Image') }}--}}
-        {{--<div>--}}
-            {{--<img style = "max-width: 300px;" src = "../../../front_image/{{ $posts->front_image }}" />--}}
-        {{--</div>--}}
-        {{--{{ Form::file('front_image', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('body_image', 'Body Image') }}--}}
-        {{--<div>--}}
-            {{--<img style = "max-width: 300px;" src = "../../../body_image/{{ $posts->front_image }}" />--}}
-        {{--</div>--}}
-        {{--{{ Form::file('body_image', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('description_fr', 'Description (fr)') }}--}}
-        {{--{{ Form::textarea('description_fr', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('description_en', 'Description (en)') }}--}}
-        {{--{{ Form::textarea('description_en', null, array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--<div class="form-group">--}}
-        {{--{{ Form::label('status', 'Active') }}--}}
-        {{--{{ Form::checkbox('status', Input::old('status'), array('class' => 'form-control')) }}--}}
-    {{--</div>--}}
-
-    {{--{{ Form::submit('Update!', array('class' => 'btn btn-primary')) }}--}}
-
-    {{--{{ Form::close() }}--}}
-
     </main>
     @endsection
 
@@ -231,11 +178,26 @@
 
             $('#article_datepicker').datepicker({
                 showOtherMonths: true,
+                selectOtherMonths: false,
                 format: 'yyyy-mm-dd',
                 icons: {
                     rightIcon: '<div class="datepicker_btn"><i class="icn icon-calendar"></i></div>',
                     previousMonth: '<i class="icn icon-arrow_big_left"></i>',
                     nextMonth: '<i class="icn icon-arrow_big_right"></i>'
+                }
+            });
+
+            $('#article_datepicker').on('click', function () {
+                $( ".datepicker_btn" ).trigger( "click" );
+            });
+
+            $(document).mouseup(function(e)
+            {
+                var container = $(".gj-calendar");
+
+                if (!container.is(e.target) && container.has(e.target).length === 0)
+                {
+                    container.hide();
                 }
             });
         </script>
