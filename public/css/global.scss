@@ -705,6 +705,7 @@ footer {
         }
       }
       &.scroll_to_top {
+        display: none;
         background-color: $main_gray_clr;
       }
       &.twitter {

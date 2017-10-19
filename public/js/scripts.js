@@ -22,6 +22,16 @@ $(document).ready(function() {
         {
             $("header").removeClass("minimized");
         }
+
+
+        if
+        ($(document).scrollTop() > 500){
+            $("footer .scroll_to_top").fadeIn();
+        }
+        else
+        {
+            $("footer .scroll_to_top").fadeOut();
+        }
     });
 
     $('.tooltip').tooltipster({
