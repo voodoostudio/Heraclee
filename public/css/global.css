@@ -878,6 +878,8 @@ section.search_section {
         color: #fdfdfd; }
 
 /*Slick START*/
+.slick-slider .slick-track {
+  min-width: 100%; }
 .slick-slider .slick-arrow {
   position: absolute;
   top: 50%;
