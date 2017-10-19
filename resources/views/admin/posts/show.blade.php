@@ -53,14 +53,16 @@
                             {{--<img src="/img/details/no_agent_photo.svg" alt="">--}}
                             {{--@endif--}}
                         </div>
+
                         <div class="img_container">
                             @foreach(json_decode($posts->body_image) as $key => $file)
                                 @php
                                     $extension = new SplFileInfo($file);
+                                    $jpg_preview = preg_replace('"\.pdf$"', '.jpg', $file);
                                 @endphp
                                 @if(strtolower($extension->getExtension()) == 'pdf')
                                     <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">PDF
-                                        <img src = "" alt = ""/>
+                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = ""/>
                                     </a>
                                 @else
                                     <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">

@@ -84,10 +84,15 @@ class PostsController extends Controller
             {
                 foreach ($body_image as $key => $file) {
                     if($file->getClientOriginalExtension() == 'pdf') {
-                        //$im = new Imagick();
                         $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                         $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
                         $file->move(public_path("/posts/pdf/" . date('F_Y')), $file_name);
+
+
+                        $pdf_path = 'posts/pdf/' . date('F_Y') . '/' . $file_name;
+                        $jpg_path = preg_replace('"\.pdf$"', '.jpg', $pdf_path);
+
+                        exec("convert \"{$pdf_path}[0]\" \"{$jpg_path}\"");
                     } else {
                         $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                         $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
