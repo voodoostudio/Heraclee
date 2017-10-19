@@ -81,7 +81,7 @@
                                     <div class="col-md-6">
                                         <div class="img_upload_container">
                                             <div class="img_upload">
-                                                <input name="front_image[]" type="file" id="header_img"  class="input_file"/>
+                                                <input name="front_image[]" type="file" accept="image/*" id="header_img" class="input_file"/>
                                                 <label for="header_img"><span>{{ trans('lang.choose_header_img') }}</span></label>
                                             </div>
                                         </div>

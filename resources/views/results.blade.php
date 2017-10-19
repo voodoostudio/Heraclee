@@ -45,7 +45,15 @@
 
     @include('includes.search_block')
 
-
+    @if($count_items == 0)
+    <section class="results_section">
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
+            </div>
+        </div>
+    </section>
+    @else
     <section class="results_section">
         <div class="container-fluid">
             <h1>{{ trans('lang.your_real_estate_search') }}</h1>
@@ -95,6 +103,7 @@
             @include('includes.pagination')
         </div>
     </section>
+    @endif
 @stop
 
 @section('javascript')

@@ -38,6 +38,11 @@
     @include('includes.search_block_index')
 
     <section class="results_section">
+        @if($count_items == 0)
+            <div class="container-fluid">
+                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
+            </div>
+        @endif
         <div class="results_container map_view">
             <div class="container-fluid">
                 <div class="results_carousel row">

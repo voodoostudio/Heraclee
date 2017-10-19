@@ -564,6 +564,14 @@ p {
     border: 1px solid #ccac83;
     padding: 40px; }
 
+h1.no_results {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.25rem !important;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccac83; }
+
 header {
   position: fixed;
   top: 0;
@@ -1102,5 +1110,3 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
-
-/*# sourceMappingURL=global.css.map */

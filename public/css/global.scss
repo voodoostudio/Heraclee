@@ -93,6 +93,16 @@ p {
   }
 }
 
+h1.no_results {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.25rem !important;
+
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccac83;
+}
+
 header {
   position: fixed;
   top: 0;

@@ -294,7 +294,7 @@ section.article_section {
     section.article_section .outer_block_container .inner_block_container .title_container .social_networks_share {
       position: absolute;
       right: 0;
-      bottom: 5px; }
+      bottom: 10px; }
   section.article_section .outer_block_container .inner_block_container h2 {
     font-size: 0.875rem;
     margin-top: 10px;
