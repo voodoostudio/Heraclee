@@ -73,9 +73,9 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <label class="form_el_label"><span>{{ trans('lang.posting_date') }}</span></label>
+                                            <label class="form_el_label"><span>{{ trans('lang.posting_date') }} *</span></label>
                                             <div class="input_container">
-                                                <input name="date" placeholder="{{ trans('lang.posting_date') }}" value = "{{ $posts->date }}" id="article_datepicker" />
+                                                <input name="date" placeholder="{{ trans('lang.posting_date') }}" value = "{{ $posts->date }}" id="article_datepicker" readonly="readonly"/>
                                             </div>
 
                                         </div>
@@ -118,7 +118,7 @@
                                             @endforeach
                                         </div>
                                         <div class="img_upload">
-                                            <input name="body_image[]" type="file" id="body_img" class="input_file"/>
+                                            <input name="body_image[]" type="file" accept="image/*, application/pdf" id="body_img" class="input_file"/>
                                             <label for="body_img"><span>{{ trans('lang.choose_body_img') }}</span></label>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
 
                                 <div class="col-12 margin_bottom_20">
                                     <div class="label_container">
-                                        <label class="form_el_label"><span>{{ trans('lang.article_text') }} *</span></label>
+                                        <label class="form_el_label"><span>{{ trans('lang.article_text') }}</span></label>
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" href="#fr_text" role="tab" data-toggle="tab">FR</a>
