@@ -2,7 +2,7 @@
     @php
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
     @endphp
-    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results/@if((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')){{ $country['0'] }}@endif @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results/@if((!empty($country[0]) && $country['0'] != 'fr') || (!empty($country[0]) && $country['0'] != 'en')){{ $country['0'] }}@endif @endif" method="post">
+    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @endif" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
