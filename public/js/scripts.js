@@ -46,14 +46,6 @@ $(document).ready(function() {
         $('header').toggleClass('opened');
     });
 
-    // if( stristr($check, '?') == true) {
-    //     $country[] = stristr($check, '?', true);
-    // } else {
-    //     $country[] = $check;
-    // }
-
-
-
     var country = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
     var country_arr = [];
     var countryWithoutPage = country.substr(0, country.lastIndexOf("?"));

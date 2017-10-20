@@ -157,13 +157,16 @@ Route::group(
         ]);
 
         /* Admin Panel */
+
+        /* CRUD POSTS */
         Route::resource('/admin/posts', 'PostsController');
 
-//        Route::post('/admin/upload', [
-//            'uses' => 'PostsController@upload',
-//            'as' => 'posts.upload',
-//        ]);
+        /* CRUD GALLERY */
+        Route::get('/admin/gallery', 'GalleryController@index');
+        Route::post('/admin/gallery', 'GalleryController@upload');
+        Route::delete('/admin/gallery/{id}', 'GalleryController@destroy');
 
+        /* AUTH */
         Route::get('/login', [
             'uses' => 'PagesController@login',
             'as' => 'login',
