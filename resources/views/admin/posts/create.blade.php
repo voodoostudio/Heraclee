@@ -4,7 +4,6 @@
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/libraries/dropzone.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/news.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php

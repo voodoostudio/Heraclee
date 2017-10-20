@@ -2,9 +2,6 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/libraries/dropzone.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/news.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php
@@ -26,31 +23,8 @@
         </div>
 
         <main>
-            {{--<div class="nav-wrapper">--}}
-                {{--<div class="container">--}}
-                    {{--<a href="{{ url('/') }}" class="flow-text">Laravel</a>--}}
-                    {{--<ul class="right hide-on-med-and-down">--}}
-                        {{--@if (Auth::guest())--}}
-                            {{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
-                            {{--<li><a href="{{ url('/register') }}">Register</a></li>--}}
-                        {{--@else--}}
-                            {{--<li>--}}
-                                {{--<a class="dropdown-button" data-activates="authdropdown" href="#">--}}
-                                    {{--{{ Auth::user()->name }}--}}
-                                    {{--<i class="material-icons right">arrow_drop_down</i>--}}
-                                {{--</a>--}}
-                            {{--</li>--}}
-                        {{--@endif--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-
-
             <section class="news_list_section">
                 <div class="container-fluid">
-                    {{--<div style = "text-align: center; position: relative; top: -20px;" >--}}
-                        {{--<a class = "btn" href="{{ url('admin/logout') }}">Logout</a>--}}
-                    {{--</div>--}}
                     <div class="row">
                         <div class="col-12">
                             <div class="title_container">
@@ -68,7 +42,7 @@
                                             <a href="{{ URL::to('admin/posts/' . $items->id . '/edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
                                             {{ Form::open(array('url' => 'admin/posts/' . $items->id, 'class' => 'pull-right')) }}
                                                 {{ Form::hidden('_method', 'DELETE') }}
-                                                <button type = "submit" class = "remove_btn"><i class="icn icon-cancel"></i></button>
+                                                <button type="submit" class = "remove_btn"><i class="icn icon-cancel"></i></button>
                                             {{ Form::close() }}
                                         </div>
                                         <div class="article_info_block">
@@ -112,19 +86,6 @@
     <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
 
     <script type="text/javascript">
-        Dropzone.autoDiscover = false;
-        $("div#article_header_dropzone").dropzone({ url: "/file/post" });
-        $("div#article_body_dropzone").dropzone({ url: "/file/post" });
-
-        $('#article_datepicker').datepicker({
-            showOtherMonths: true,
-            icons: {
-                rightIcon: '<div class="datepicker_btn"><i class="icn icon-calendar"></i></div>',
-                previousMonth: '<i class="icn icon-arrow_big_left"></i>',
-                nextMonth: '<i class="icn icon-arrow_big_right"></i>'
-            }
-        });
-
         tallestArticleBlock();
     </script>
 @stop

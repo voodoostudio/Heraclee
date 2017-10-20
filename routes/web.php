@@ -111,16 +111,6 @@ Route::group(
                 'as' => 'news_details',
         ]);
 
-        Route::get('/news_admin', [
-                'uses' => 'PagesController@news_admin',
-                'as' => 'news_admin',
-        ]);
-
-        Route::get('/news_edit', [
-                'uses' => 'PagesController@news_edit',
-                'as' => 'news_edit',
-        ]);
-
         Route::get('/newsletters', [
                 'uses' => 'PagesController@newsletters',
                 'as' => 'newsletters',
@@ -179,6 +169,8 @@ Route::group(
 
         Auth::routes();
 
-        Route::get('/admin', 'PostsController@index')->name('admin');
+//        Route::get('/admin', 'PostsController@index')->name('posts');
+
+        Route::get('/admin', 'DashboardController@index')->name('admin');
     }
 );
