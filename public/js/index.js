@@ -20,6 +20,19 @@ $(document).ready(function() {
         ]
     });
 
+    if($('.index_main_carousel_section')[0]) {
+        $('.index_main_carousel').slick({
+            infinite: true,
+            lazyLoad: 'progressive',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+            prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
+            autoplay: true
+        });
+    }
+
     function setSellType(id) {
         $('#sell_type_val').val(id);
     }

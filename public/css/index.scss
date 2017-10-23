@@ -27,6 +27,29 @@ section.top_offer_section {
   }
 }
 
+section.index_main_carousel_section {
+  .slick-slider {
+    .slick-arrow {
+      z-index: 99;
+      &.slick-prev {
+        left: 40px;
+      }
+      &.slick-next {
+        right: 40px;
+      }
+    }
+    .slick-list {
+      .slick-track {
+        .slick-slide {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
 section.latest_news_section {
   margin-top: 40px;
   .latest_news_container {

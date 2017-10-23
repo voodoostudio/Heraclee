@@ -364,6 +364,7 @@ section.admin_gallery_section {
     top: -10px;
     width: 30px;
     height: 30px;
+    padding: 4px;
     background-color: #272727;
     border: 1px solid #ccac83; }
   section.admin_gallery_section form.form-image-upload button[type='submit'] {

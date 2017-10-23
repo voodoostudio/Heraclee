@@ -36,6 +36,16 @@
         @endphp
     @endforeach
 
+    <section class="index_main_carousel_section" style="display: none">
+        <ul class="index_main_carousel">
+            <li><img src="/img/homepage_img.jpg" alt=""></li>
+            <li><img src="/img/homepage_img.jpg" alt=""></li>
+            <li><img src="/img/homepage_img.jpg" alt=""></li>
+            <li><img src="/img/homepage_img.jpg" alt=""></li>
+            <li><img src="/img/homepage_img.jpg" alt=""></li>
+        </ul>
+    </section>
+
     @include('includes.latest_news')
 
     @include('includes.search_block_index')

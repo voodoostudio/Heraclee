@@ -499,6 +499,15 @@ section.top_offer_section {
       font-size: 1.563rem;
       margin-bottom: 25px; }
 
+section.index_main_carousel_section .slick-slider .slick-arrow {
+  z-index: 99; }
+  section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev {
+    left: 40px; }
+  section.index_main_carousel_section .slick-slider .slick-arrow.slick-next {
+    right: 40px; }
+section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img {
+  width: 100%; }
+
 section.latest_news_section {
   margin-top: 40px; }
   section.latest_news_section .latest_news_container {
