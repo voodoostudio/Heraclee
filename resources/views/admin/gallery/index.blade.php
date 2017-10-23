@@ -62,6 +62,7 @@
                                     <div class="col-lg-4">
                                         <form action="{{ URL::to('admin/gallery/') }}" class="form-image-upload" method="POST" enctype="multipart/form-data">
                                             {!! csrf_field() !!}
+                                            <input type="hidden" name="page" value="homepage" class="form-control">
 
                                             @if ($message = Session::get('success'))
                                                 <div class="alert alert-success alert-block">
@@ -87,13 +88,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="page" value = "homepage" class="form-control">
                                                 <div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">
                                                     <button type="submit" class="btn">Upload</button>
                                                 </div>
                                                 <div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">
                                                     <label class="form_el_label"><span>What to display on main page ?</span></label>
-                                                    <div class="switch-field">
+                                                    <div class="switch_field">
+                                                        <input type="hidden" name="main_img_radio" value="gallery" class="form-control">
                                                         <input type="radio" id="gallery" name="switch_2" value="gallery" checked/>
                                                         <label for="gallery">Gallery</label>
                                                         <input type="radio" id="last_object" name="switch_2" value="last_object" />
@@ -161,5 +162,10 @@
             });
 
             showSelectedFileName();
+
+            $('.switch_field input[type="radio"]').on('click', function () {
+                console.log('test');
+                $('.switch_field input[type="hidden"]').val(this.value);
+            });
         </script>
     @stop

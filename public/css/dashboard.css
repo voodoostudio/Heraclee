@@ -376,21 +376,21 @@ section.admin_gallery_section {
     padding: 0 !important;
     border: 1px solid #ccac83; }
 
-.switch-field {
+.switch_field {
   border: 1px solid #ccac83;
   overflow: hidden; }
-  .switch-field input {
+  .switch_field input {
     position: absolute !important;
     clip: rect(0, 0, 0, 0);
     height: 1px;
     width: 1px;
     border: 0;
     overflow: hidden; }
-    .switch-field input:checked + label {
+    .switch_field input:checked + label {
       background-color: #ccac83;
       -webkit-box-shadow: none;
       box-shadow: none; }
-  .switch-field label {
+  .switch_field label {
     float: left;
     background-color: #272727;
     color: #fdfdfd;
@@ -406,7 +406,7 @@ section.admin_gallery_section {
     -ms-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out; }
-    .switch-field label:hover {
+    .switch_field label:hover {
       cursor: pointer; }
 
 /*# sourceMappingURL=dashboard.css.map */
