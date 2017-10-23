@@ -35,7 +35,8 @@ class GalleryController extends Controller
     public function upload(Request $request)
     {
         $rules = array(
-            'title'      => 'required'
+            'title'      => 'required',
+            'image'      => 'required'
         );
 
         $gallery = new Gallery;

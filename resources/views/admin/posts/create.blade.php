@@ -2,7 +2,6 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/libraries/dropzone.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
@@ -31,7 +30,7 @@
                         <div class="col-12">
                             <div class="title_container">
                                 <h1>{{ trans('lang.creating_article') }}</h1>
-                                <a class="action_link" href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
+                                <a class="action_link" href="{{ URL::to('admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
                             </div>
                         </div>
                     </div>
@@ -142,7 +141,6 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="/js/libraries/dropzone.min.js"></script>
     <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
 
     <script type="text/javascript">

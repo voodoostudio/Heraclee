@@ -200,7 +200,7 @@
             }
         </style>
         @yield('css')
-        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.min.css">
         @include('js-localization::head')
         <link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">
         <!--[if lt IE 9]>

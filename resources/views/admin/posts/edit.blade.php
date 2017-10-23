@@ -4,7 +4,6 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/libraries/dropzone.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
 @stop
 @php
@@ -26,17 +25,17 @@
         </div>
     </div>
     <main>
-    {{ Html::ul($errors->all()) }}
         <section class="article_edit_section">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="title_container">
                             <h1>{{ trans('lang.editing_article') }}</h1>
-                            <a class="action_link" href="{{ URL::to('admin/') }}"><i class="icn icon-arrow_left"></i></a>
+                            <a class="action_link" href="{{ URL::to('admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
                     </div>
                 </div>
+                {{ Html::ul($errors->all(), array('class' => 'error_list')) }}
                 <div class="outer_block_container">
                     <div class="inner_block_container">
                         {{ Form::model($posts, array('route' => array('posts.update', $posts->id), 'method' => 'PUT', 'files' => true)) }}
@@ -168,7 +167,6 @@
     @endsection
 
     @section('javascript')
-        <script type="text/javascript" src="/js/libraries/dropzone.min.js"></script>
         <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
 
         <script type="text/javascript">
