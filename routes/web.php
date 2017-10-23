@@ -154,6 +154,7 @@ Route::group(
         /* CRUD GALLERY */
         Route::get('/admin/gallery', 'GalleryController@index');
         Route::post('/admin/gallery', 'GalleryController@upload');
+        Route::post('/admin/gallery/show', 'GalleryController@show');
         Route::delete('/admin/gallery/{id}', 'GalleryController@destroy');
 
         /* AUTH */

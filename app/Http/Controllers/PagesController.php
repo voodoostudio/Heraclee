@@ -8,12 +8,14 @@
 
 namespace App\Http\Controllers;
 
+use App\GallerySettings;
 use App\Libraries\SyncWithApimo;
 use App\Properties;
 use App\Team;
 use App\Services;
 use App\Subscribers;
 use App\Posts;
+use App\Gallery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -70,29 +72,39 @@ class PagesController extends Controller
         /* Last 10 news on main page */
         $last_news = Posts::limit(10)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
+        /* Gallery (slider) */
+        $gallery = Gallery::all();
+
+        /* Gallery settings (Show gallery or show last properties) */
+        $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();
+        $france_gallery_settings = GallerySettings::where('page', '=', 'france')->get();
+        $swiss_gallery_settings = GallerySettings::where('page', '=', 'swiss')->get();
+        $usa_gallery_settings = GallerySettings::where('page', '=', 'usa')->get();
+        $mauritius_gallery_settings = GallerySettings::where('page', '=', 'mauritius')->get();
+
         /* Count items (for menu) */
         $count_items = $properties_obj->all_property_count;
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == 'fr' || $country[0] == 'en') {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {
-           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'mauritius') {
-            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
     }
 

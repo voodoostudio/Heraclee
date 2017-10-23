@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Gallery;
+use App\GallerySettings;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
@@ -24,7 +25,8 @@ class GalleryController extends Controller
     public function index()
     {
         $gallery = Gallery::get();
-        return view('admin.gallery.index',compact('gallery'));
+        $gallery_settings = GallerySettings::get();
+        return view('admin.gallery.index', ['gallery' => $gallery, 'gallery_settings' => $gallery_settings]);
     }
 
     /**
@@ -50,12 +52,11 @@ class GalleryController extends Controller
 
             if($request->hasFile('image')) {
                 $file_name = sha1(rand() . time() . rand()) . '.' . $request->image->getClientOriginalExtension();
-                $request->image->move(public_path("/gallery/home_page/" . date('F_Y')), $file_name);
+                $request->image->move(public_path("/gallery/" . $request->page . "/" . date('F_Y')), $file_name);
                 $gallery->image = $file_name;
             }
 
             $gallery->title = Input::get('name');
-            $gallery->show = Input::get('show');
             $gallery->page = Input::get('page');
 
             $gallery->save();
@@ -64,6 +65,40 @@ class GalleryController extends Controller
             return Redirect::to('admin/gallery');
         }
     }
+
+    public function show(Request $request)
+    {
+        $page = GallerySettings::where('page', $request->page)->first();
+
+        if($request->page == 'homepage') {
+            $page->show = Input::get('show');
+            $page->save();
+        }
+
+        if($request->page == 'france') {
+            $page->show = Input::get('show');
+            $page->save();
+        }
+
+        if($request->page == 'swiss') {
+            $page->show = Input::get('show');
+            $page->save();
+        }
+
+        if($request->page == 'usa') {
+            $page->show = Input::get('show');
+            $page->save();
+        }
+
+        if($request->page == 'mauritius') {
+            $page->show = Input::get('show');
+            $page->save();
+        }
+
+        Session::flash('message', 'Successfully created post!');
+        return Redirect::to('admin/gallery/');
+    }
+
 
     /**
      * Remove Image function
