@@ -159,5 +159,7 @@
                     closeEffect: "none"
                 });
             });
+
+            showSelectedFileName();
         </script>
     @stop
