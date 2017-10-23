@@ -210,7 +210,7 @@
                                                     @foreach($gallery as $image)
                                                         @if( $settings['page'] == $image->page)
                                                             <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
-                                                                <a data-fancybox="gallery" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
+                                                                <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
                                                                     <div class="img_container">
                                                                         <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
                                                                         <div class='text-center'>
