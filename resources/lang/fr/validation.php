@@ -119,6 +119,8 @@ return [
     'attributes' => [
         'title_fr' => '"Titre FR"',
         'title_en' => '"Titre EN"',
-        'date' => '"Date de publication"',
+        'date' => '"Titre de publication"',
+        'title' => '"Titre"',
+        'image' => '"Image"',
     ],
 ];
