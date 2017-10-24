@@ -189,18 +189,19 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form action="{{ URL::to('admin/gallery/show') }}"  method="POST" >
+                                            <form action="{{ URL::to('admin/gallery/show') }}"  method="POST" id="switch_form">
                                                 {!! csrf_field() !!}
-                                                <div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">
-                                                    <label class="form_el_label"><span>What to display on main page ?</span></label>
-                                                    <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
-                                                    <div class="switch_field">
-                                                        <input type="radio" id="gallery_{{ $settings['page'] }}" name="show" value="1" {{ ($settings['show'] == 1) ? 'checked' : '' }} />
-                                                        <label for="gallery_{{ $settings['page'] }}">Gallery</label>
-                                                        <input type="radio" id="last_object_{{ $settings['page'] }}" name="show" value="0" {{ ($settings['show'] == 0) ? 'checked' : '' }} />
-                                                        <label for="last_object_{{ $settings['page'] }}">Last object</label>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label class="form_el_label"><span>What to display on main page ?</span></label>
+                                                        <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
+                                                        <div class="switch_field">
+                                                            <input type="radio" id="gallery_{{ $settings['page'] }}" name="show" value="1" {{ ($settings['show'] == 1) ? 'checked' : '' }} />
+                                                            <label for="gallery_{{ $settings['page'] }}">Gallery</label>
+                                                            <input type="radio" id="last_object_{{ $settings['page'] }}" name="show" value="0" {{ ($settings['show'] == 0) ? 'checked' : '' }} />
+                                                            <label for="last_object_{{ $settings['page'] }}">Last object</label>
+                                                        </div>
                                                     </div>
-                                                    <button type="submit" class="btn">+</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -298,6 +299,7 @@
     @section('javascript')
         <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
         <script type="text/javascript">
+            checkCookie();
             $(document).ready(function(){
                 $(".fancybox").fancybox({
                     openEffect: "none",
@@ -307,9 +309,22 @@
 
             showSelectedFileName();
 
-//            $('.switch_field input[type="radio"]').on('click', function () {
-//                console.log('test');
-//                $('.switch_field input[type="hidden"]').val(this.value);
-//            });
+            $('.form-image-upload button[type="submit"]').on('click', function () {
+                var currentTab = $(this).closest('div.tab-pane').attr('id');
+                setCookie("currentAdminTab", currentTab, 365);
+            });
+
+            $('.switch_field input[type="radio"]').on('click', function () {
+                $(this).closest('form').submit();
+                var currentTab = $(this).closest('div.tab-pane').attr('id');
+                setCookie("currentAdminTab", currentTab, 365);
+            });
+
+
+
+            function checkCookie() {
+                var currentAdminTab = getCookie("currentAdminTab");
+                $(".nav-tabs .nav-item a.nav-link[href='#" + currentAdminTab + "']").trigger('click');
+            }
         </script>
     @stop
