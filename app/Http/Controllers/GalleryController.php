@@ -66,6 +66,12 @@ class GalleryController extends Controller
         }
     }
 
+    /**
+     * Show pages
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function show(Request $request)
     {
         $page = GallerySettings::where('page', $request->page)->first();
@@ -99,6 +105,21 @@ class GalleryController extends Controller
         return Redirect::to('admin/gallery/');
     }
 
+
+    /**
+     * Multiple remove image
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function destroy_all(Request $request)
+    {
+        $gallery = new Gallery;
+        $id = $request->gallery;
+
+        $gallery::whereIn('id', $id)->delete();
+        return Redirect::to('admin/gallery');
+    }
 
     /**
      * Remove Image function

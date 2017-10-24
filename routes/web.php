@@ -155,7 +155,8 @@ Route::group(
         Route::get('/admin/gallery', 'GalleryController@index');
         Route::post('/admin/gallery', 'GalleryController@upload');
         Route::post('/admin/gallery/show', 'GalleryController@show');
-        Route::delete('/admin/gallery/{id}', 'GalleryController@destroy');
+        Route::get('/admin/gallery/{id}', 'GalleryController@destroy');
+        Route::post('/admin/gallery/destroy', 'GalleryController@destroy_all');
 
         /* AUTH */
         Route::get('/login', [

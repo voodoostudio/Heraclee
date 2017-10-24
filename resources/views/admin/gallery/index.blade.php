@@ -1,5 +1,5 @@
 @extends('admin.posts.layouts.master')
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 @section('title', 'Details page')
 @section('css')
 
@@ -206,27 +206,34 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                @if($gallery->count())
-                                                    @foreach($gallery as $image)
-                                                        @if( $settings['page'] == $image->page)
-                                                            <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
-                                                                <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
-                                                                    <div class="img_container">
-                                                                        <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
-                                                                        <div class='text-center'>
-                                                                            <small class='text-muted'>{{ $image->name }}</small>
-                                                                        </div> <!-- text-center / end -->
-                                                                    </div>
-                                                                </a>
-                                                                <form action="{{ URL::to('admin/gallery/' . $image->id) }}" method="POST">
-                                                                    <input type="hidden" name="_method" value="delete">
-                                                                    {!! csrf_field() !!}
-                                                                    <button type="submit" class="remove_btn"><i class="icn icon-cancel"></i></button>
-                                                                </form>
-                                                            </div> <!-- col-6 / end -->
-                                                        @endif
-                                                    @endforeach
-                                                @endif
+                                                <form action="{{ URL::to('admin/gallery/destroy') }}"  method="POST" >
+                                                    {{--<input type="hidden" name="_method" value="delete">--}}
+                                                    {!! csrf_field() !!}
+                                                    @if($gallery->count())
+                                                        @foreach($gallery as $image)
+                                                            @if( $settings['page'] == $image->page)
+                                                                <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
+                                                                    <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
+                                                                        <div class="img_container">
+                                                                            <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
+                                                                            <div class='text-center'>
+                                                                                <small class='text-muted'>{{ $image->name }}</small>
+                                                                            </div> <!-- text-center / end -->
+                                                                        </div>
+                                                                    </a>
+                                                                    <a class="remove_btn" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
+                                                                    {{--<form action="{{ URL::to('admin/gallery/' . $image->id) }}" method="POST">--}}
+                                                                        {{--<input type="hidden" name="_method" value="delete">--}}
+                                                                        {{--{!! csrf_field() !!}--}}
+                                                                        {{--<button type="submit" class="remove_btn"><i class="icn icon-cancel"></i></button>--}}
+                                                                    {{--</form>--}}
+                                                                    <input type="checkbox" name="gallery[]" value="{{$image->id}}" />
+                                                                </div> <!-- col-6 / end -->
+                                                            @endif
+                                                        @endforeach
+                                                            <button type="submit" class="remove_btn">Delete</button>
+                                                    @endif
+                                                </form>
                                             </div> <!-- row / end -->
                                         </div>
                                     </div>
