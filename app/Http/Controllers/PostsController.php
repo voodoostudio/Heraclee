@@ -83,13 +83,15 @@ class PostsController extends Controller
 
                     /* resize */
                     list($width, $height) = getimagesize($path);
-                    $prop = $height / $width;
-                    $new_width = 3000;
-                    $height_new = $new_width * $prop;
+                    if($width > 3000) {
+                        $prop = $height / $width;
+                        $new_width = 3000;
+                        $height_new = $new_width * $prop;
 
-                    /* save new image */
-                    $image->resize($new_width , $height_new);
-                    $image->save($path);
+                        /* save new image */
+                        $image->resize($new_width , $height_new);
+                        $image->save($path);
+                    }
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -120,13 +122,15 @@ class PostsController extends Controller
 
                         /* resize */
                         list($width, $height) = getimagesize($path);
-                        $prop = $height / $width;
-                        $new_width = 3000;
-                        $height_new = $new_width * $prop;
+                        if($width > 3000) {
+                            $prop = $height / $width;
+                            $new_width = 3000;
+                            $height_new = $new_width * $prop;
 
-                        /* save new image */
-                        $image->resize($new_width , $height_new);
-                        $image->save($path);
+                            /* save new image */
+                            $image->resize($new_width , $height_new);
+                            $image->save($path);
+                        }
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);
@@ -221,13 +225,15 @@ class PostsController extends Controller
 
                     /* resize */
                     list($width, $height) = getimagesize($path);
-                    $prop = $height / $width;
-                    $new_width = 3000;
-                    $height_new = $new_width * $prop;
+                    if($width > 3000) {
+                        $prop = $height / $width;
+                        $new_width = 3000;
+                        $height_new = $new_width * $prop;
 
-                    /* save new image */
-                    $image->resize($new_width , $height_new);
-                    $image->save($path);
+                        /* save new image */
+                        $image->resize($new_width , $height_new);
+                        $image->save($path);
+                    }
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -258,13 +264,15 @@ class PostsController extends Controller
 
                         /* resize */
                         list($width, $height) = getimagesize($path);
-                        $prop = $height / $width;
-                        $new_width = 3000;
-                        $height_new = $new_width * $prop;
+                        if($width > 3000) {
+                            $prop = $height / $width;
+                            $new_width = 3000;
+                            $height_new = $new_width * $prop;
 
-                        /* save new image */
-                        $image->resize($new_width , $height_new);
-                        $image->save($path);
+                            /* save new image */
+                            $image->resize($new_width , $height_new);
+                            $image->save($path);
+                        }
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);

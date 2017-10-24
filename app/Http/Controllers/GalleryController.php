@@ -65,13 +65,15 @@ class GalleryController extends Controller
 
                 /* resize */
                 list($width, $height) = getimagesize($path);
-                $prop = $height / $width;
-                $new_width = 3000;
-                $height_new = $new_width * $prop;
+                if($width > 3000) {
+                    $prop = $height / $width;
+                    $new_width = 3000;
+                    $height_new = $new_width * $prop;
 
-                /* save new image */
-                $image->resize($new_width , $height_new);
-                $image->save($path);
+                    /* save new image */
+                    $image->resize($new_width , $height_new);
+                    $image->save($path);
+                }
 
                 $gallery->image = $file_name;
             }
