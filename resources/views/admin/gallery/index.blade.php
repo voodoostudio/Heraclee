@@ -120,7 +120,15 @@
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
                                                         <div class="row">
-                                                            @foreach($gallery as $image)
+                                                            @php
+                                                                $counter = [];
+                                                                foreach($gallery as $image) {
+                                                                    if( $settings['page'] == $image->page) {
+                                                                        $counter[] = $image->image;
+                                                                    }
+                                                                }
+                                                            @endphp
+                                                            @foreach($gallery as $key => $image)
                                                                 @if( $settings['page'] == $image->page)
                                                                     <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
                                                                         <div class="thumbnail_container">
@@ -133,24 +141,26 @@
                                                                                 </div>
                                                                             </a>
                                                                             <a class="remove_btn" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
-                                                                            <div class="my_checkbox">
-                                                                                <label>
-                                                                                    <input type="checkbox" name="gallery[]" value="{{$image->id}}" />
-                                                                                    <span class="fake_checkbox"></span>
-                                                                                </label>
-                                                                            </div>
+                                                                            @if(count($counter) >= 2)
+                                                                                <div class="my_checkbox">
+                                                                                    <label>
+                                                                                        <input type="checkbox" name="gallery[]" value="{{$image->id}}" />
+                                                                                        <span class="fake_checkbox"></span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            @endif
                                                                         </div>
                                                                     </div>
                                                                 @endif
                                                             @endforeach
                                                         </div>
-                                                        @if( $settings['page'] == $image->page)
-                                                            <div class="row">
-                                                                <div class="col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                @if(count($counter) >= 2)
                                                                     <button type="submit" class="btn float-right" disabled>Delete</button>
-                                                                </div>
+                                                                @endif
                                                             </div>
-                                                        @endif
+                                                        </div>
                                                     @endif
                                                 </form>
                                             </div> <!-- row / end -->
