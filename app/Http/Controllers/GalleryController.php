@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class GalleryController extends Controller
 {
@@ -26,6 +28,7 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::get();
         $gallery_settings = GallerySettings::get();
+       // dump();
         return view('admin.gallery.index', ['gallery' => $gallery, 'gallery_settings' => $gallery_settings]);
     }
 
@@ -51,8 +54,25 @@ class GalleryController extends Controller
         } else {
 
             if($request->hasFile('image')) {
+
+                /* download file */
                 $file_name = sha1(rand() . time() . rand()) . '.' . $request->image->getClientOriginalExtension();
                 $request->image->move(public_path("/gallery/" . $request->page . "/" . date('F_Y')), $file_name);
+
+                /* crop image */
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/" . $request->page . "/" . date('F_Y') . '/' . $file_name;
+                $image = Image::make($path);
+
+                /* resize */
+                list($width, $height) = getimagesize($path);
+                $prop = $height / $width;
+                $new_width = 3000;
+                $height_new = $new_width * $prop;
+
+                /* save new image */
+                $image->resize($new_width , $height_new);
+                $image->save($path);
+
                 $gallery->image = $file_name;
             }
 
@@ -105,7 +125,6 @@ class GalleryController extends Controller
         return Redirect::to('admin/gallery/');
     }
 
-
     /**
      * Multiple remove image
      *
@@ -114,10 +133,9 @@ class GalleryController extends Controller
 
     public function destroy_all(Request $request)
     {
-        $gallery = new Gallery;
         $id = $request->gallery;
 
-        $gallery::whereIn('id', $id)->delete();
+        Gallery::whereIn('id', $id)->delete();
         return Redirect::to('admin/gallery');
     }
 

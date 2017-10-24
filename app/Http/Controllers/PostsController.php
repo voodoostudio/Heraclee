@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostsController extends Controller
 {
@@ -76,6 +76,20 @@ class PostsController extends Controller
                     $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                     $front_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
                     $file->move(public_path("/posts/front_image/" . date('F_Y')), $file_name);
+
+                    /* crop image */
+                    $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/front_image/" . date('F_Y') . '/' . $file_name;
+                    $image = Image::make($path);
+
+                    /* resize */
+                    list($width, $height) = getimagesize($path);
+                    $prop = $height / $width;
+                    $new_width = 3000;
+                    $height_new = $new_width * $prop;
+
+                    /* save new image */
+                    $image->resize($new_width , $height_new);
+                    $image->save($path);
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -99,6 +113,20 @@ class PostsController extends Controller
                         $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                         $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
                         $file->move(public_path("/posts/body_image/" . date('F_Y')), $file_name);
+
+                        /* crop image */
+                        $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/body_image/" . date('F_Y') . '/' . $file_name;
+                        $image = Image::make($path);
+
+                        /* resize */
+                        list($width, $height) = getimagesize($path);
+                        $prop = $height / $width;
+                        $new_width = 3000;
+                        $height_new = $new_width * $prop;
+
+                        /* save new image */
+                        $image->resize($new_width , $height_new);
+                        $image->save($path);
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);
@@ -120,43 +148,6 @@ class PostsController extends Controller
             return Redirect::to('admin/posts');
         }
     }
-
-//    public function upload(Request $request)
-//    {
-//        $front_image_title = [];
-//        $body_image_title = [];
-//        $posts = new Posts;
-//        $front_image = $request->file('front_image');
-//        $body_image = $request->file('body_image');
-//
-//        if($request->hasFile('front_image'))
-//        {
-//            foreach ($front_image as $key => $file) {
-//                $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-//                $front_image_title['image_' . $key] = $file_name;
-//                $file->move(public_path("/front_image"), $file_name);
-//            }
-//        }
-//
-//        if($request->hasFile('body_image'))
-//        {
-//            foreach ($body_image as $key => $file) {
-//                $file_name =  rand() . time() . rand() . '.' . $file->getClientOriginalExtension();
-//                $body_image_title['image_' . $key] = $file_name;
-//                $file->move(public_path("/body_image"), $file_name);
-//            }
-//        }
-//
-//        $posts->front_image     = json_encode($front_image_title);
-//        $posts->body_image      = json_encode($body_image_title);
-//
-//        $posts->save();
-//
-//        // redirect
-//        //Session::flash('message', 'Successfully created post!');
-//        return Redirect::to('admin/posts');
-//
-//    }
 
     /**
      * Display the specified resource.
@@ -223,6 +214,20 @@ class PostsController extends Controller
                     $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                     $front_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
                     $file->move(public_path("/posts/front_image/" . date('F_Y')), $file_name);
+
+                    /* crop image */
+                    $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/front_image/" . date('F_Y') . '/' . $file_name;
+                    $image = Image::make($path);
+
+                    /* resize */
+                    list($width, $height) = getimagesize($path);
+                    $prop = $height / $width;
+                    $new_width = 3000;
+                    $height_new = $new_width * $prop;
+
+                    /* save new image */
+                    $image->resize($new_width , $height_new);
+                    $image->save($path);
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -246,6 +251,20 @@ class PostsController extends Controller
                         $file_name = sha1(rand() . time() . rand()) . '.' . $file->getClientOriginalExtension();
                         $body_image_title[$file->getClientOriginalExtension() . '_' . $key] = $file_name;
                         $file->move(public_path("/posts/body_image/" . date('F_Y')), $file_name);
+
+                        /* crop image */
+                        $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/body_image/" . date('F_Y') . '/' . $file_name;
+                        $image = Image::make($path);
+
+                        /* resize */
+                        list($width, $height) = getimagesize($path);
+                        $prop = $height / $width;
+                        $new_width = 3000;
+                        $height_new = $new_width * $prop;
+
+                        /* save new image */
+                        $image->resize($new_width , $height_new);
+                        $image->save($path);
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);
