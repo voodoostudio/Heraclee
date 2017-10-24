@@ -38,31 +38,43 @@ section.admin_gallery_section {
   img {
     width: 100%;
   }
-  a.thumbnail {
-    display: block;
-    height: 150px;
-    overflow: hidden;
-    border: 1px solid $main_brown_clr;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    .img_container {
-      @include vertical-align();
-      img {
-        display: block;
+  .thumbnail_container {
+    position: relative;
+    a.thumbnail {
+      display: block;
+      height: 150px;
+      overflow: hidden;
+      border: 1px solid $main_brown_clr;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      .img_container {
+        @include vertical-align();
+        img {
+          display: block;
+        }
       }
     }
+    a.remove_btn {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+      background-color: $main_dark_clr;
+      border: 1px solid $main_brown_clr;
+    }
+    .my_checkbox {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
   }
-  button.remove_btn {
-    position: absolute;
-    right: 5px;
-    top: -10px;
-    width: 30px;
-    height: 30px;
-    padding: 4px;
-    background-color: $main_dark_clr;
-    border: 1px solid $main_brown_clr;
-  }
+
   form.form-image-upload {
     button[type='submit'] {
       margin-top: 7px;
@@ -80,10 +92,6 @@ section.admin_gallery_section {
     }
   }
 }
-
-
-
-
 
 .switch_field {
   border: 1px solid $main_brown_clr;

@@ -58,98 +58,6 @@
 
 
                 <div class="tab-content">
-                    {{--<div role="tabpanel" class="tab-pane fade in show active" id="homepage">--}}
-                        {{--<div class="outer_block_container">--}}
-                            {{--<div class="inner_block_container">--}}
-                                {{--<div class="row">--}}
-                                    {{--<div class="col-lg-4">--}}
-                                        {{--<form action="{{ URL::to('admin/gallery/') }}" class="form-image-upload" method="POST" enctype="multipart/form-data">--}}
-                                            {{--{!! csrf_field() !!}--}}
-                                            {{--<input type="hidden" name="page" value="homepage" class="form-control">--}}
-
-                                            {{--@if ($message = Session::get('success'))--}}
-                                                {{--<div class="alert alert-success alert-block">--}}
-                                                    {{--<button type="button" class="close" data-dismiss="alert">×</button>--}}
-                                                    {{--<strong>{{ $message }}</strong>--}}
-                                                {{--</div>--}}
-                                            {{--@endif--}}
-
-                                            {{--<div class="row">--}}
-                                                {{--<div class="col-md-6 col-lg-12 margin_bottom_20">--}}
-                                                    {{--<label class="form_el_label"><span>Title *</span></label>--}}
-                                                    {{--<div class="input_container">--}}
-                                                        {{--<input type="text" name="title" class="" placeholder="Title">--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-
-                                                {{--<div class="col-md-6 col-lg-12 margin_bottom_20">--}}
-                                                    {{--<label class="form_el_label"><span>Image *</span></label>--}}
-                                                    {{--<div class="img_upload_container">--}}
-                                                        {{--<div class="img_upload">--}}
-                                                            {{--<input name="image" type="file" accept="image/*" id="header_img" class="input_file"/>--}}
-                                                            {{--<label for="header_img"><span>{{ trans('lang.choose_header_img') }}</span></label>--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--<div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">--}}
-                                                    {{--<button type="submit" class="btn">Upload</button>--}}
-                                                {{--</div>--}}
-                                                {{--<div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">--}}
-                                                    {{--<label class="form_el_label"><span>What to display on main page ?</span></label>--}}
-                                                    {{--<div class="switch_field">--}}
-                                                        {{--<input type="hidden" name="main_img_radio" value="gallery" class="form-control">--}}
-                                                        {{--<input type="radio" id="gallery" name="switch_2" value="gallery" checked/>--}}
-                                                        {{--<label for="gallery">Gallery</label>--}}
-                                                        {{--<input type="radio" id="last_object" name="switch_2" value="last_object" />--}}
-                                                        {{--<label for="last_object">Last object</label>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                            {{--</div>--}}
-                                        {{--</form>--}}
-                                        {{--<form action="{{ URL::to('admin/gallery/') }}"  method="POST" >--}}
-                                            {{--{!! csrf_field() !!}--}}
-                                            {{--<div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">--}}
-                                                {{--<label class="form_el_label"><span>What to display on main page ?</span></label>--}}
-                                                {{--<input type="hidden" name="page" value="homepage" class="form-control">--}}
-                                                {{--<div class="switch_field">--}}
-                                                    {{--<input type="radio" id="gallery_homepage" name="show" value="1" checked/>--}}
-                                                    {{--<label for="gallery_homepage">Gallery</label>--}}
-                                                    {{--<input type="radio" id="last_object_homepage" name="show" value="0" />--}}
-                                                    {{--<label for="last_object_homepage">Last object</label>--}}
-                                                {{--</div>--}}
-                                                {{--<button type="submit" class="btn">+</button>--}}
-                                            {{--</div>--}}
-                                        {{--</form>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="col-lg-8">--}}
-                                        {{--<div class="row">--}}
-                                            {{--@if($gallery->count())--}}
-                                                {{--@foreach($gallery as $image)--}}
-                                                    {{--<div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>--}}
-
-                                                            {{--<a data-fancybox="gallery" class="thumbnail" href="{{ URL::to('/') }}/gallery/home_page/{{ date('F_Y') }}/{{ $image->image }}">--}}
-                                                                {{--<div class="img_container">--}}
-                                                                    {{--<img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/home_page/{{ date('F_Y') }}/{{ $image->image }}" />--}}
-                                                                    {{--<div class='text-center'>--}}
-                                                                        {{--<small class='text-muted'>{{ $image->name }}</small>--}}
-                                                                    {{--</div> <!-- text-center / end -->--}}
-                                                                {{--</div>--}}
-                                                            {{--</a>--}}
-
-                                                        {{--<form action="{{ URL::to('admin/gallery/' . $image->id) }}" method="POST">--}}
-                                                            {{--<input type="hidden" name="_method" value="delete">--}}
-                                                            {{--{!! csrf_field() !!}--}}
-                                                            {{--<button type="submit" class="remove_btn"><i class="icn icon-cancel"></i></button>--}}
-                                                        {{--</form>--}}
-                                                    {{--</div> <!-- col-6 / end -->--}}
-                                                {{--@endforeach--}}
-                                            {{--@endif--}}
-                                        {{--</div> <!-- row / end -->--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-
                     @foreach($gallery_settings as $settings)
                         <div role="tabpanel" class="tab-pane fade {{ ($settings['page'] == 'homepage') ? 'in show active' : '' }}" id="{{ $settings['page'] }}" >
                             <div class="outer_block_container">
@@ -211,28 +119,38 @@
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
-                                                        @foreach($gallery as $image)
-                                                            @if( $settings['page'] == $image->page)
-                                                                <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
-                                                                    <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
-                                                                        <div class="img_container">
-                                                                            <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
-                                                                            <div class='text-center'>
-                                                                                <small class='text-muted'>{{ $image->name }}</small>
-                                                                            </div> <!-- text-center / end -->
+                                                        <div class="row">
+                                                            @foreach($gallery as $image)
+                                                                @if( $settings['page'] == $image->page)
+                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
+                                                                        <div class="thumbnail_container">
+                                                                            <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
+                                                                                <div class="img_container">
+                                                                                    <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
+                                                                                    <div class='text-center'>
+                                                                                        <small class='text-muted'>{{ $image->name }}</small>
+                                                                                    </div> <!-- text-center / end -->
+                                                                                </div>
+                                                                            </a>
+                                                                            <a class="remove_btn" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
+                                                                            <div class="my_checkbox">
+                                                                                <label>
+                                                                                    <input type="checkbox" name="gallery[]" value="{{$image->id}}" />
+                                                                                    <span class="fake_checkbox"></span>
+                                                                                </label>
+                                                                            </div>
                                                                         </div>
-                                                                    </a>
-                                                                    <a class="remove_btn" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
-                                                                    {{--<form action="{{ URL::to('admin/gallery/' . $image->id) }}" method="POST">--}}
-                                                                        {{--<input type="hidden" name="_method" value="delete">--}}
-                                                                        {{--{!! csrf_field() !!}--}}
-                                                                        {{--<button type="submit" class="remove_btn"><i class="icn icon-cancel"></i></button>--}}
-                                                                    {{--</form>--}}
-                                                                    <input type="checkbox" name="gallery[]" value="{{$image->id}}" />
-                                                                </div> <!-- col-6 / end -->
-                                                            @endif
-                                                        @endforeach
-                                                            <button type="submit" class="remove_btn">Delete</button>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                        @if( $settings['page'] == $image->page)
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <button type="submit" class="btn float-right">Delete</button>
+                                                                </div>
+                                                            </div>
+                                                        @endif
                                                     @endif
                                                 </form>
                                             </div> <!-- row / end -->
@@ -242,54 +160,6 @@
                             </div>
                         </div>
                     @endforeach
-                    {{--<div role="tabpanel" class="tab-pane fade" id="swiss" >--}}
-                        {{--<form action="{{ URL::to('admin/gallery/') }}"  method="POST" >--}}
-                            {{--{!! csrf_field() !!}--}}
-                            {{--<div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">--}}
-                                {{--<label class="form_el_label"><span>What to display on main page ?</span></label>--}}
-                                {{--<input type="hidden" name="page" value="swiss" class="form-control">--}}
-                                {{--<div class="switch_field">--}}
-                                    {{--<input type="radio" id="gallery_swiss" name="show" value="1" checked/>--}}
-                                    {{--<label for="gallery_swiss">Gallery</label>--}}
-                                    {{--<input type="radio" id="last_object_swiss" name="show" value="0" />--}}
-                                    {{--<label for="last_object_swiss">Last object</label>--}}
-                                {{--</div>--}}
-                                {{--<button type="submit" class="btn">+</button>--}}
-                            {{--</div>--}}
-                        {{--</form>--}}
-                    {{--</div>--}}
-                    {{--<div role="tabpanel" class="tab-pane fade" id="usa" >--}}
-                        {{--<form action="{{ URL::to('admin/gallery/') }}"  method="POST" >--}}
-                            {{--{!! csrf_field() !!}--}}
-                            {{--<div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">--}}
-                                {{--<label class="form_el_label"><span>What to display on main page ?</span></label>--}}
-                                {{--<input type="hidden" name="page" value="usa" class="form-control">--}}
-                                {{--<div class="switch_field">--}}
-                                    {{--<input type="radio" id="gallery_usa" name="show" value="1" checked/>--}}
-                                    {{--<label for="gallery_usa">Gallery</label>--}}
-                                    {{--<input type="radio" id="last_object_usa" name="show" value="0" />--}}
-                                    {{--<label for="last_object_usa">Last object</label>--}}
-                                {{--</div>--}}
-                                {{--<button type="submit" class="btn">+</button>--}}
-                            {{--</div>--}}
-                        {{--</form>--}}
-                    {{--</div>--}}
-                    {{--<div role="tabpanel" class="tab-pane fade" id="mauritius" >--}}
-                        {{--<form action="{{ URL::to('admin/gallery/') }}"  method="POST" >--}}
-                            {{--{!! csrf_field() !!}--}}
-                            {{--<div class="col-12 pull-sm-6 col-sm-6 pull-lg-0 col-lg-12">--}}
-                                {{--<label class="form_el_label"><span>What to display on main page ?</span></label>--}}
-                                {{--<input type="hidden" name="page" value="mauritius" class="form-control">--}}
-                                {{--<div class="switch_field">--}}
-                                    {{--<input type="radio" id="gallery_mauritius" name="show" value="1" checked/>--}}
-                                    {{--<label for="gallery">Gallery</label>--}}
-                                    {{--<input type="radio" id="last_object_mauritius" name="show" value="0" />--}}
-                                    {{--<label for="last_object_mauritius">Last object</label>--}}
-                                {{--</div>--}}
-                                {{--<button type="submit" class="btn">+</button>--}}
-                            {{--</div>--}}
-                        {{--</form>--}}
-                    {{--</div>--}}
                 </div>
             </div>
         </section>
@@ -309,6 +179,11 @@
 
             showSelectedFileName();
 
+            $('.nav-tabs .nav-item a.nav-link').on('click', function () {
+                var currentTab = $(this).attr('href').replace('#', '');
+                setCookie("currentAdminTab", currentTab, 365);
+            });
+
             $('.form-image-upload button[type="submit"]').on('click', function () {
                 var currentTab = $(this).closest('div.tab-pane').attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
@@ -319,8 +194,6 @@
                 var currentTab = $(this).closest('div.tab-pane').attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
             });
-
-
 
             function checkCookie() {
                 var currentAdminTab = getCookie("currentAdminTab");

@@ -342,31 +342,40 @@ section.admin_gallery_section {
     margin-bottom: 20px; }
   section.admin_gallery_section img {
     width: 100%; }
-  section.admin_gallery_section a.thumbnail {
-    display: block;
-    height: 150px;
-    overflow: hidden;
-    border: 1px solid #ccac83;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d; }
-    section.admin_gallery_section a.thumbnail .img_container {
-      position: relative;
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%); }
-      section.admin_gallery_section a.thumbnail .img_container img {
-        display: block; }
-  section.admin_gallery_section button.remove_btn {
-    position: absolute;
-    right: 5px;
-    top: -10px;
-    width: 30px;
-    height: 30px;
-    padding: 4px;
-    background-color: #272727;
-    border: 1px solid #ccac83; }
+  section.admin_gallery_section .thumbnail_container {
+    position: relative; }
+    section.admin_gallery_section .thumbnail_container a.thumbnail {
+      display: block;
+      height: 150px;
+      overflow: hidden;
+      border: 1px solid #ccac83;
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d; }
+      section.admin_gallery_section .thumbnail_container a.thumbnail .img_container {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+        section.admin_gallery_section .thumbnail_container a.thumbnail .img_container img {
+          display: block; }
+    section.admin_gallery_section .thumbnail_container a.remove_btn {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+      background-color: #272727;
+      border: 1px solid #ccac83; }
+    section.admin_gallery_section .thumbnail_container .my_checkbox {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      display: block;
+      width: 20px;
+      height: 20px; }
   section.admin_gallery_section form.form-image-upload button[type='submit'] {
     margin-top: 7px; }
 
