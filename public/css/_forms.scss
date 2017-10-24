@@ -27,6 +27,17 @@ button {
   &:hover {
     border-color: $main_brown_clr;
   }
+  &.disabled,
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+    &:hover {
+      border-color: $main_gray_clr;
+    }
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .btn:not(.dropdown-toggle):before {
@@ -44,9 +55,6 @@ button {
 .btn:not(.dropdown-toggle):hover:before {
   top: 0;
   left: 0;
-}
-.btn.disabled {
-  opacity: 0.5;
 }
 /*Buttons style END*/
 

@@ -64,7 +64,7 @@
                                 <div class="inner_block_container">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <form action="{{ URL::to('admin/gallery/') }}" class="form-image-upload" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ URL::to('admin/gallery/') }}" class="image_upload_form" method="POST" enctype="multipart/form-data">
                                                 {!! csrf_field() !!}
                                                 <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
 
@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                <form action="{{ URL::to('admin/gallery/destroy') }}"  method="POST" >
+                                                <form action="{{ URL::to('admin/gallery/destroy') }}"  method="POST" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
@@ -147,7 +147,7 @@
                                                         @if( $settings['page'] == $image->page)
                                                             <div class="row">
                                                                 <div class="col-12">
-                                                                    <button type="submit" class="btn float-right">Delete</button>
+                                                                    <button type="submit" class="btn float-right" disabled>Delete</button>
                                                                 </div>
                                                             </div>
                                                         @endif
@@ -179,12 +179,22 @@
 
             showSelectedFileName();
 
+
+            $('form.gallery_content_form input[name="gallery[]"]').change(function() {
+                var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
+                if(totalCheckedImg >=1) {
+                    $('form.gallery_content_form button.btn').attr('disabled', false);
+                } else {
+                    $('form.gallery_content_form button.btn').attr('disabled', true);
+                }
+            });
+
             $('.nav-tabs .nav-item a.nav-link').on('click', function () {
                 var currentTab = $(this).attr('href').replace('#', '');
                 setCookie("currentAdminTab", currentTab, 365);
             });
 
-            $('.form-image-upload button[type="submit"]').on('click', function () {
+            $('.image_upload_form button[type="submit"]').on('click', function () {
                 var currentTab = $(this).closest('div.tab-pane').attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
             });

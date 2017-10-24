@@ -54,6 +54,13 @@ button {
   box-shadow: 0px 0px 20px -5px black; }
   .btn:not(.dropdown-toggle):hover {
     border-color: #ccac83; }
+  .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
+    opacity: 0.4;
+    cursor: default; }
+    .btn:not(.dropdown-toggle).disabled:hover, .btn:not(.dropdown-toggle):disabled:hover {
+      border-color: #625e57; }
+    .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
+      display: none; }
 
 .btn:not(.dropdown-toggle):before {
   content: '';
@@ -72,9 +79,6 @@ button {
 .btn:not(.dropdown-toggle):hover:before {
   top: 0;
   left: 0; }
-
-.btn.disabled {
-  opacity: 0.5; }
 
 /*Buttons style END*/
 input,

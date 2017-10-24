@@ -32,7 +32,7 @@ section.admin_gallery_section {
     margin-bottom: 20px;
     background: $main_dark_clr;
   }
-  .form-image-upload {
+  .image_upload_form {
     margin-bottom: 20px;
   }
   img {
@@ -75,7 +75,7 @@ section.admin_gallery_section {
     }
   }
 
-  form.form-image-upload {
+  form.image_upload_form {
     button[type='submit'] {
       margin-top: 7px;
     }

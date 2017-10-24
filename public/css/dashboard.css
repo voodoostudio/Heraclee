@@ -338,7 +338,7 @@ section.admin_gallery_section {
   section.admin_gallery_section .nav.nav-tabs {
     margin-bottom: 20px;
     background: #272727; }
-  section.admin_gallery_section .form-image-upload {
+  section.admin_gallery_section .image_upload_form {
     margin-bottom: 20px; }
   section.admin_gallery_section img {
     width: 100%; }
@@ -376,7 +376,7 @@ section.admin_gallery_section {
       display: block;
       width: 20px;
       height: 20px; }
-  section.admin_gallery_section form.form-image-upload button[type='submit'] {
+  section.admin_gallery_section form.image_upload_form button[type='submit'] {
     margin-top: 7px; }
 
 .fancybox-container {
