@@ -64,6 +64,21 @@
                                 <div class="inner_block_container">
                                     <div class="row">
                                         <div class="col-lg-4">
+                                            <form action="{{ URL::to('admin/gallery/show') }}"  method="POST" id="switch_form">
+                                                {!! csrf_field() !!}
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <label class="form_el_label"><span>What to display on main page ?</span></label>
+                                                        <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
+                                                        <div class="switch_field">
+                                                            <input type="radio" id="gallery_{{ $settings['page'] }}" name="show" value="1" {{ ($settings['show'] == 1) ? 'checked' : '' }} />
+                                                            <label for="gallery_{{ $settings['page'] }}">Gallery</label>
+                                                            <input type="radio" id="last_object_{{ $settings['page'] }}" name="show" value="0" {{ ($settings['show'] == 0) ? 'checked' : '' }} />
+                                                            <label for="last_object_{{ $settings['page'] }}">Last object</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
                                             <form action="{{ URL::to('admin/gallery/') }}" class="image_upload_form" method="POST" enctype="multipart/form-data">
                                                 {!! csrf_field() !!}
                                                 <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
@@ -94,21 +109,6 @@
                                                     </div>
                                                     <div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">
                                                         <button type="submit" class="btn">Upload</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <form action="{{ URL::to('admin/gallery/show') }}"  method="POST" id="switch_form">
-                                                {!! csrf_field() !!}
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <label class="form_el_label"><span>What to display on main page ?</span></label>
-                                                        <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
-                                                        <div class="switch_field">
-                                                            <input type="radio" id="gallery_{{ $settings['page'] }}" name="show" value="1" {{ ($settings['show'] == 1) ? 'checked' : '' }} />
-                                                            <label for="gallery_{{ $settings['page'] }}">Gallery</label>
-                                                            <input type="radio" id="last_object_{{ $settings['page'] }}" name="show" value="0" {{ ($settings['show'] == 0) ? 'checked' : '' }} />
-                                                            <label for="last_object_{{ $settings['page'] }}">Last object</label>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
@@ -154,13 +154,22 @@
                                                                 @endif
                                                             @endforeach
                                                         </div>
+                                                        @if(count($counter) >= 2)
                                                         <div class="row">
-                                                            <div class="col-12">
-                                                                @if(count($counter) >= 2)
-                                                                    <button type="submit" class="btn float-right" disabled>Delete</button>
-                                                                @endif
+                                                            <div class="col-6">
+                                                                <div class="my_checkbox">
+                                                                    <label>
+                                                                        <input required="" type="checkbox" name="subscribe" id="check_all" value="true">
+                                                                        <span class="fake_checkbox"></span>
+                                                                        <span class="my_checkbox_text">Check all</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <button type="submit" class="btn float-right" disabled>Delete</button>
                                                             </div>
                                                         </div>
+                                                        @endif
                                                     @endif
                                                 </form>
                                             </div> <!-- row / end -->
@@ -180,6 +189,7 @@
         <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
         <script type="text/javascript">
             checkCookie();
+
             $(document).ready(function(){
                 $(".fancybox").fancybox({
                     openEffect: "none",
@@ -189,6 +199,8 @@
 
             showSelectedFileName();
 
+            var currentSwitch = $('.switch_field input[checked]').attr('id');
+            setCookie("currentSwitch", currentSwitch, 365);
 
             $('form.gallery_content_form input[name="gallery[]"]').change(function() {
                 var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
@@ -199,9 +211,28 @@
                 }
             });
 
+            $('form.gallery_content_form input#check_all').change(function() {
+                if(this.checked) {
+                    $('form.gallery_content_form input[name="gallery[]"]').prop('checked', true);
+                    $('form.gallery_content_form button.btn').attr('disabled', false);
+                } else {
+                    $('form.gallery_content_form input[name="gallery[]"]').prop('checked', false);
+                    $('form.gallery_content_form button.btn').attr('disabled', true);
+                }
+            });
+
             $('.nav-tabs .nav-item a.nav-link').on('click', function () {
                 var currentTab = $(this).attr('href').replace('#', '');
                 setCookie("currentAdminTab", currentTab, 365);
+
+                currentSwitch = $('#' + currentTab + ' .switch_field input[checked]').attr('id');
+                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
+                console.log(currentSwitch);
+                if(currentSwitch == 'gallery') {
+                    $('.tab-pane#' + currentTab + ' .gallery_content_form').show();
+                } else {
+                    $('.tab-pane#' + currentTab + ' .gallery_content_form').hide();
+                }
             });
 
             $('.image_upload_form button[type="submit"]').on('click', function () {
@@ -212,12 +243,22 @@
             $('.switch_field input[type="radio"]').on('click', function () {
                 $(this).closest('form').submit();
                 var currentTab = $(this).closest('div.tab-pane').attr('id');
+                currentSwitch = $(this).attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
+                setCookie("currentSwitch", currentSwitch, 365);
             });
 
             function checkCookie() {
                 var currentAdminTab = getCookie("currentAdminTab");
+                var currentSwitch = getCookie("currentSwitch");
                 $(".nav-tabs .nav-item a.nav-link[href='#" + currentAdminTab + "']").trigger('click');
+                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
+
+                if(currentSwitch == 'gallery') {
+                    $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').show();
+                } else {
+                    $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').hide();
+                }
             }
         </script>
     @stop
