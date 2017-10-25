@@ -65,7 +65,7 @@ class GalleryController extends Controller
 
                 /* resize & crop image */
                 list($width, $height) = getimagesize($path);
-                $ratio = 16 / 9;
+                $ratio = round((16 / 9), 2);
                 $new_width = 3000;
 
                 if($width > $new_width) {
