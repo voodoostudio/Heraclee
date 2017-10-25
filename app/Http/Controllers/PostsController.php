@@ -81,17 +81,23 @@ class PostsController extends Controller
                     $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/front_image/" . date('F_Y') . '/' . $file_name;
                     $image = Image::make($path);
 
-                    /* resize */
+                    /* resize & crop image */
                     list($width, $height) = getimagesize($path);
-                    if($width > 3000) {
+                    $ratio = 16 / 9;
+                    $new_width = 3000;
+
+                    if($width > $new_width) {
                         $prop = $height / $width;
-                        $new_width = 3000;
                         $height_new = $new_width * $prop;
 
-                        /* save new image */
                         $image->resize($new_width , $height_new);
-                        $image->save($path);
+                        $image->fit($new_width, intval($new_width / $ratio));
+                    } else {
+                        $image->fit($width, intval($width / $ratio));
                     }
+
+                    /* save new image */
+                    $image->save($path);
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -120,17 +126,23 @@ class PostsController extends Controller
                         $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/body_image/" . date('F_Y') . '/' . $file_name;
                         $image = Image::make($path);
 
-                        /* resize */
+                        /* resize & crop image */
                         list($width, $height) = getimagesize($path);
-                        if($width > 3000) {
+                        $ratio = 16 / 9;
+                        $new_width = 3000;
+
+                        if($width > $new_width) {
                             $prop = $height / $width;
-                            $new_width = 3000;
                             $height_new = $new_width * $prop;
 
-                            /* save new image */
                             $image->resize($new_width , $height_new);
-                            $image->save($path);
+                            $image->fit($new_width, intval($new_width / $ratio));
+                        } else {
+                            $image->fit($width, intval($width / $ratio));
                         }
+
+                        /* save new image */
+                        $image->save($path);
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);
@@ -223,17 +235,23 @@ class PostsController extends Controller
                     $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/front_image/" . date('F_Y') . '/' . $file_name;
                     $image = Image::make($path);
 
-                    /* resize */
+                    /* resize & crop image */
                     list($width, $height) = getimagesize($path);
-                    if($width > 3000) {
+                    $ratio = 16 / 9;
+                    $new_width = 3000;
+
+                    if($width > $new_width) {
                         $prop = $height / $width;
-                        $new_width = 3000;
                         $height_new = $new_width * $prop;
 
-                        /* save new image */
                         $image->resize($new_width , $height_new);
-                        $image->save($path);
+                        $image->fit($new_width, intval($new_width / $ratio));
+                    } else {
+                        $image->fit($width, intval($width / $ratio));
                     }
+
+                    /* save new image */
+                    $image->save($path);
                 }
                 $posts->front_image = json_encode($front_image_title);
             } else {
@@ -262,17 +280,23 @@ class PostsController extends Controller
                         $path = $_SERVER['DOCUMENT_ROOT'] . "/posts/body_image/" . date('F_Y') . '/' . $file_name;
                         $image = Image::make($path);
 
-                        /* resize */
+                        /* resize & crop image */
                         list($width, $height) = getimagesize($path);
-                        if($width > 3000) {
+                        $ratio = 16 / 9;
+                        $new_width = 3000;
+
+                        if($width > $new_width) {
                             $prop = $height / $width;
-                            $new_width = 3000;
                             $height_new = $new_width * $prop;
 
-                            /* save new image */
                             $image->resize($new_width , $height_new);
-                            $image->save($path);
+                            $image->fit($new_width, intval($new_width / $ratio));
+                        } else {
+                            $image->fit($width, intval($width / $ratio));
                         }
+
+                        /* save new image */
+                        $image->save($path);
                     }
                 }
                 $posts->body_image = json_encode($body_image_title);
