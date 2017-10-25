@@ -91,9 +91,9 @@ class PostsController extends Controller
                         $height_new = $new_width * $prop;
 
                         $image->resize($new_width , $height_new);
-                        $image->fit($new_width, intval($new_width / $ratio));
+                        $image->fit($new_width, intval(round($new_width / $ratio), 12));
                     } else {
-                        $image->fit($width, intval($width / $ratio));
+                        $image->fit($width, intval(round($width / $ratio), 12));
                     }
 
                     /* save new image */
@@ -136,9 +136,9 @@ class PostsController extends Controller
                             $height_new = $new_width * $prop;
 
                             $image->resize($new_width , $height_new);
-                            $image->fit($new_width, intval($new_width / $ratio));
+                            $image->fit($new_width, intval(round($new_width / $ratio), 12));
                         } else {
-                            $image->fit($width, intval($width / $ratio));
+                            $image->fit($width, intval(round($width / $ratio), 12));
                         }
 
                         /* save new image */
@@ -245,9 +245,9 @@ class PostsController extends Controller
                         $height_new = $new_width * $prop;
 
                         $image->resize($new_width , $height_new);
-                        $image->fit($new_width, intval($new_width / $ratio));
+                        $image->fit($new_width, intval(round($new_width / $ratio), 12));
                     } else {
-                        $image->fit($width, intval($width / $ratio));
+                        $image->fit($width, intval(round($width / $ratio), 12));
                     }
 
                     /* save new image */
@@ -290,9 +290,9 @@ class PostsController extends Controller
                             $height_new = $new_width * $prop;
 
                             $image->resize($new_width , $height_new);
-                            $image->fit($new_width, intval($new_width / $ratio));
+                            $image->fit($new_width, intval(round($new_width / $ratio), 12));
                         } else {
-                            $image->fit($width, intval($width / $ratio));
+                            $image->fit($width, intval(round($width / $ratio), 12));
                         }
 
                         /* save new image */
