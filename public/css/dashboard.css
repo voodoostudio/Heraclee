@@ -307,16 +307,6 @@ section.article_section {
     text-align: justify;
     font-size: 0.9rem; }
 
-section.login_section {
-  margin-top: 40px; }
-  section.login_section .outer_block_container .inner_block_container .my_checkbox {
-    display: none; }
-  section.login_section .outer_block_container .inner_block_container a {
-    color: #ccac83;
-    font-size: 0.875rem; }
-    section.login_section .outer_block_container .inner_block_container a i.icn {
-      margin-right: 10px; }
-
 section.admin_nav_menu {
   margin-top: 40px; }
   section.admin_nav_menu .title_container h1 {
@@ -418,5 +408,13 @@ section.admin_gallery_section {
     transition: all 0.1s ease-in-out; }
     .switch_field label:hover {
       cursor: pointer; }
+
+section.login_section {
+  margin-top: 40px; }
+  section.login_section .outer_block_container .inner_block_container a {
+    color: #ccac83;
+    font-size: 0.875rem; }
+    section.login_section .outer_block_container .inner_block_container a i.icn {
+      margin-right: 10px; }
 
 /*# sourceMappingURL=dashboard.css.map */

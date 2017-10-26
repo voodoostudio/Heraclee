@@ -130,3 +130,18 @@ section.admin_gallery_section {
     }
   }
 }
+
+section.login_section {
+  margin-top: 40px;
+  .outer_block_container {
+    .inner_block_container {
+      a {
+        color: $main_brown_clr;
+        font-size: 0.875rem;
+        i.icn {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
