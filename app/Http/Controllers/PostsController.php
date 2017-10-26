@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
+use LaravelLocalization;
 
 class PostsController extends Controller
 {
@@ -49,6 +50,7 @@ class PostsController extends Controller
     {
         $front_image_title = [];
         $body_image_title = [];
+        $lang = LaravelLocalization::getCurrentLocale();
 
         $rules = array(
             'title_fr'      => 'required',
@@ -57,7 +59,6 @@ class PostsController extends Controller
         );
 
         $posts = new Posts;
-
         $validator = Validator::make(Input::all(), $rules);
 
         // process the login
@@ -163,8 +164,7 @@ class PostsController extends Controller
             $posts->save();
 
             // redirect
-            Session::flash('message', 'Successfully created post!');
-            return Redirect::to('admin/posts');
+            return Redirect::to($lang . '/admin/posts');
         }
     }
 
@@ -206,6 +206,7 @@ class PostsController extends Controller
     {
         $front_image_title = [];
         $body_image_title = [];
+        $lang = LaravelLocalization::getCurrentLocale();
 
         $rules = array(
             'title_fr'      => 'required',
@@ -320,8 +321,7 @@ class PostsController extends Controller
             $posts->save();
 
             // redirect
-            Session::flash('message', 'Successfully update post!');
-            return Redirect::to('admin/posts');
+            return Redirect::to($lang . '/admin/posts');
         }
     }
 
@@ -355,7 +355,6 @@ class PostsController extends Controller
         }
 
         // redirect
-        Session::flash('message', 'Successfully deleted the nerd!');
-        return Redirect::to('admin/posts');
+        return back();
     }
 }

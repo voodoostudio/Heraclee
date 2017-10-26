@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php
-    $lang = LaravelLocalization::getCurrentLocaleRegional();
+    $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
 
@@ -30,7 +30,7 @@
                         <div class="col-12">
                             <div class="title_container">
                                 <h1>{{ trans('lang.creating_article') }}</h1>
-                                <a class="action_link" href="{{ URL::to('admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
+                                <a class="action_link" href="{{ URL::to($lang . '/admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
                             </div>
                         </div>
                     </div>

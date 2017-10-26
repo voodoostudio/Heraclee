@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php
-    $lang = LaravelLocalization::getCurrentLocaleRegional();
+    $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
 
@@ -34,7 +34,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3 margin_bottom_20">
-                        <a href="{{ URL::to('admin/gallery') }}">
+                        <a href="{{ URL::to($lang . '/admin/gallery') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
                                     <h2>Gallery</h2>
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 margin_bottom_20">
-                        <a href="{{ URL::to('admin/posts') }}">
+                        <a href="{{ URL::to($lang . '/admin/posts') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
                                     <h2>News</h2>

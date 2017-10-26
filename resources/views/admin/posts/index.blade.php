@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 @stop
 @php
-    $lang = LaravelLocalization::getCurrentLocaleRegional();
+    $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
 
@@ -29,8 +29,8 @@
                         <div class="col-12">
                             <div class="title_container">
                                 <h1>{{ trans('lang.list_of_articles') }}</h1>
-                                <a class="action_link" href="{{ URL::to('admin') }}"><i class="icn icon-arrow_left"></i></a>
-                                <a class="action_link add_new" href="{{ URL::to('admin/posts/create') }}"><i class="icn icon-cancel"></i></a>
+                                <a class="action_link" href="{{ URL::to($lang . '/admin') }}"><i class="icn icon-arrow_left"></i></a>
+                                <a class="action_link add_new" href="{{ URL::to($lang . '/admin/posts/create') }}"><i class="icn icon-cancel"></i></a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                                 <div class="outer_block_container">
                                     <div class="inner_block_container">
                                         <div class="edit_elements">
-                                            <a href="{{ URL::to('admin/posts/' . $items->id . '/edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
+                                            <a href="{{ URL::to($lang . '/admin/posts/' . $items->id . '/edit') }}" class="edit_btn"><i class="icn icon-pencil"></i></a>
                                             {{ Form::open(array('url' => 'admin/posts/' . $items->id, 'class' => 'pull-right')) }}
                                                 {{ Form::hidden('_method', 'DELETE') }}
                                                 <button type="submit" class = "remove_btn"><i class="icn icon-cancel"></i></button>
@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="article_info_block">
                                             <div class="article_img">
-                                                <a href="{{ URL::to('admin/posts/' . $items->id) }}">
+                                                <a href="{{ URL::to($lang . '/admin/posts/' . $items->id) }}">
                                                     @php
                                                         $image_counter = 1;
                                                     @endphp
@@ -67,7 +67,7 @@
                                                 </a>
                                             </div>
                                             <div class="article_info">
-                                                <a href="{{ URL::to('admin/posts/' . $items->id) }}"><h2>@if($lang == 'fr_FR') {{ $items['title_fr'] }} @elseif($lang == 'en_GB') {{ $items['title_en'] }}  @endif</h2></a>
+                                                <a href="{{ URL::to($lang . '/admin/posts/' . $items->id) }}"><h2>@if($lang == 'fr') {{ $items['title_fr'] }} @elseif($lang == 'en') {{ $items['title_en'] }}  @endif</h2></a>
                                                 <h3>{{ (!empty($items->date)) ? date('d.m.Y', strtotime($items->date)) : '' }}</h3>
                                                 <span class="published_label">{{ ($items['status'] == 'on') ? trans('lang.published') : ''}}</span>
                                             </div>

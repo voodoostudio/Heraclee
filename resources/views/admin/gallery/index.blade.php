@@ -115,7 +115,7 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                <form action="{{ URL::to('admin/gallery/destroy') }}"  method="POST" class="gallery_content_form">
+                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  method="POST" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())

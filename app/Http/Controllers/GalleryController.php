@@ -96,8 +96,8 @@ class GalleryController extends Controller
 
             $gallery->save();
 
-            Session::flash('message', 'Successfully created post!');
-            return Redirect::to('admin/gallery');
+            //redirect
+            return back();
         }
     }
 
@@ -136,8 +136,8 @@ class GalleryController extends Controller
             $page->save();
         }
 
-        Session::flash('message', 'Successfully created post!');
-        return Redirect::to('admin/gallery/');
+        //redirect
+        return back();
     }
 
     /**
@@ -158,7 +158,8 @@ class GalleryController extends Controller
                 Gallery::whereIn('id', $id)->delete();
             }
         }
-        return Redirect::to('admin/gallery');
+        //redirect
+        return back();
     }
 
     /**
@@ -178,7 +179,7 @@ class GalleryController extends Controller
             }
         }
 
-        Session::flash('message', 'Successfully remove post!');
-        return Redirect::to('admin/gallery');
+        //redirect
+        return back();
     }
 }

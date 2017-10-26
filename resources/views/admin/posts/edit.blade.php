@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
 @stop
 @php
-    $lang = LaravelLocalization::getCurrentLocaleRegional();
+    $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
 
@@ -31,7 +31,7 @@
                     <div class="col-12">
                         <div class="title_container">
                             <h1>{{ trans('lang.editing_article') }}</h1>
-                            <a class="action_link" href="{{ URL::to('admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
+                            <a class="action_link" href="{{ URL::to($lang . '/admin/posts') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
                     </div>
                 </div>
