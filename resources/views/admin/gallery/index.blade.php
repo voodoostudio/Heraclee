@@ -230,8 +230,10 @@
                 console.log(currentSwitch);
                 if(currentSwitch == 'gallery') {
                     $('.tab-pane#' + currentTab + ' .gallery_content_form').show();
+                    console.log('tabs');
                 } else {
                     $('.tab-pane#' + currentTab + ' .gallery_content_form').hide();
+                    console.log('tabs');
                 }
             });
 
@@ -250,14 +252,16 @@
 
             function checkCookie() {
                 var currentAdminTab = getCookie("currentAdminTab");
-                var currentSwitch = getCookie("currentSwitch");
                 $(".nav-tabs .nav-item a.nav-link[href='#" + currentAdminTab + "']").trigger('click');
-                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
 
+                var currentSwitch = getCookie("currentSwitch");
+                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
                 if(currentSwitch == 'gallery') {
                     $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').show();
+                    console.log('cookies');
                 } else {
                     $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').hide();
+                    console.log('cookies');
                 }
             }
         </script>
