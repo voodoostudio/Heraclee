@@ -336,20 +336,13 @@ section.admin_gallery_section {
     position: relative; }
     section.admin_gallery_section .thumbnail_container a.thumbnail {
       display: block;
-      height: 150px;
       overflow: hidden;
       border: 1px solid #ccac83;
       -webkit-transform-style: preserve-3d;
       -moz-transform-style: preserve-3d;
       transform-style: preserve-3d; }
-      section.admin_gallery_section .thumbnail_container a.thumbnail .img_container {
-        position: relative;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); }
-        section.admin_gallery_section .thumbnail_container a.thumbnail .img_container img {
-          display: block; }
+      section.admin_gallery_section .thumbnail_container a.thumbnail .img_container img {
+        display: block; }
     section.admin_gallery_section .thumbnail_container a.remove_btn {
       position: absolute;
       right: -10px;
@@ -367,7 +360,8 @@ section.admin_gallery_section {
       width: 20px;
       height: 20px; }
   section.admin_gallery_section form.image_upload_form button[type='submit'] {
-    margin-top: 7px; }
+    margin-top: 7px;
+    float: right; }
 
 .fancybox-container {
   z-index: 999999; }

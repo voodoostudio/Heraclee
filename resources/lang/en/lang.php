@@ -186,6 +186,7 @@ return [
     'gallery'               => 'Gallery',
     'last_object'           => 'Last object',
     'image'                 => 'Image',
+    'choose_gallery_img'    => 'Choose image (min width 640px)',
     'upload'                => 'Upload',
     'delete'                => 'Delete',
     'check_all_images'      => 'Check all images',

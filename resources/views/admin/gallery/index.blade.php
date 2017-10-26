@@ -103,18 +103,17 @@
                                                         <div class="img_upload_container">
                                                             <div class="img_upload">
                                                                 <input name="image" type="file" accept="image/*" id="header_img_{{ $settings['page'] }}" class="input_file"/>
-                                                                <label for="header_img_{{ $settings['page'] }}"><span>{{ trans('lang.choose_header_img') }}</span></label>
+                                                                <label for="header_img_{{ $settings['page'] }}"><span>{{ trans('lang.choose_gallery_img') }}</span></label>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">
+                                                    <div class="col-12 margin_bottom_20">
                                                         <button type="submit" class="btn">{{ trans('lang.upload') }}</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="row">
                                                 <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  method="POST" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
@@ -130,7 +129,7 @@
                                                             @endphp
                                                             @foreach($gallery as $key => $image)
                                                                 @if( $settings['page'] == $image->page)
-                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_20'>
+                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30'>
                                                                         <div class="thumbnail_container">
                                                                             <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
                                                                                 <div class="img_container">
@@ -156,8 +155,8 @@
                                                         </div>
                                                         @if(count($counter) >= 2)
                                                         <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="my_checkbox">
+                                                            <div class="col-12 col-sm-6 margin_bottom_20">
+                                                                <div class="my_checkbox check_all">
                                                                     <label>
                                                                         <input required="" type="checkbox" name="subscribe" id="check_all" value="true">
                                                                         <span class="fake_checkbox"></span>
@@ -165,14 +164,13 @@
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
+                                                            <div class="col-12 col-sm-6">
                                                                 <button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>
                                                             </div>
                                                         </div>
                                                         @endif
                                                     @endif
                                                 </form>
-                                            </div> <!-- row / end -->
                                         </div>
                                     </div>
                                 </div>

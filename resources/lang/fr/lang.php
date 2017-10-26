@@ -186,6 +186,7 @@ return [
     'gallery'               => 'Galeries',
     'last_object'           => 'Dernier objet',
     'image'                 => 'Image',
+    'choose_gallery_img'    => 'Choisir l\'image (largeur min 640px)',
     'upload'                => 'Téléverser',
     'delete'                => 'Effacer',
     'check_all_images'      => 'Vérifier toutes les images',

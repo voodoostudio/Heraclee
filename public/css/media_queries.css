@@ -56,10 +56,7 @@
     height: 350px; }
 
   section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
-    height: 600px; }
-
-  section.admin_gallery_section a.thumbnail {
-    height: 120px; } }
+    height: 600px; } }
 @media screen and (max-width: 991px) {
   header .logo {
     padding: 15px 0; }
