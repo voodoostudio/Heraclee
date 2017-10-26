@@ -63,7 +63,7 @@ class PostsController extends Controller
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('admin/posts/create')
+            return Redirect::to($lang . '/admin/posts/create')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'));
         } else {

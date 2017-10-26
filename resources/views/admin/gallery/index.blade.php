@@ -31,7 +31,7 @@
                     <div class="col-12">
                         <div class="title_container">
                             <h1>{{ trans('lang.gallery_configuration') }}</h1>
-                            <a class="action_link" href="{{ URL::to('admin') }}"><i class="icn icon-arrow_left"></i></a>
+                            <a class="action_link" href="{{ URL::to($lang . '/admin') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                                 <div class="inner_block_container">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <form action="{{ URL::to('admin/gallery/show') }}"  method="POST" id="switch_form">
+                                            <form action="{{ URL::to($lang . '/admin/gallery/show') }}"  method="POST" id="switch_form">
                                                 {!! csrf_field() !!}
                                                 <div class="row">
                                                     <div class="col-12">
@@ -79,7 +79,7 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form action="{{ URL::to('admin/gallery/') }}" class="image_upload_form" method="POST" enctype="multipart/form-data">
+                                            <form action="" class="image_upload_form" method="POST" enctype="multipart/form-data">
                                                 {!! csrf_field() !!}
                                                 <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
 

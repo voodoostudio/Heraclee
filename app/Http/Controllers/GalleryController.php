@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
+use LaravelLocalization;
 
 
 class GalleryController extends Controller
@@ -44,11 +45,12 @@ class GalleryController extends Controller
             'image'      => 'required|dimensions:min_width=640'
         );
 
+        $lang = LaravelLocalization::getCurrentLocale();
         $gallery = new Gallery;
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::to('admin/gallery')
+            return Redirect::to($lang . '/admin/gallery')
                 ->withErrors($validator)
                 ->withInput(Input::except('password'));
         } else {
