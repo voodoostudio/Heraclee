@@ -199,9 +199,6 @@
 
             showSelectedFileName();
 
-            var currentSwitch = $('.switch_field input[checked]').attr('id');
-            setCookie("currentSwitch", currentSwitch, 365);
-
             $('form.gallery_content_form input[name="gallery[]"]').change(function() {
                 var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
                 if(totalCheckedImg >=1) {
@@ -221,30 +218,31 @@
                 }
             });
 
+            var currentTab = '';
+            var currentSwitch = '';
             $('.nav-tabs .nav-item a.nav-link').on('click', function () {
-                var currentTab = $(this).attr('href').replace('#', '');
+                currentTab = $(this).attr('href').replace('#', '');
                 setCookie("currentAdminTab", currentTab, 365);
 
                 currentSwitch = $('#' + currentTab + ' .switch_field input[checked]').attr('id');
+                setCookie("currentSwitch", currentSwitch, 365);
                 currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
-                console.log(currentSwitch);
+
                 if(currentSwitch == 'gallery') {
                     $('.tab-pane#' + currentTab + ' .gallery_content_form').show();
-                    console.log('tabs');
                 } else {
                     $('.tab-pane#' + currentTab + ' .gallery_content_form').hide();
-                    console.log('tabs');
                 }
             });
 
             $('.image_upload_form button[type="submit"]').on('click', function () {
-                var currentTab = $(this).closest('div.tab-pane').attr('id');
+                currentTab = $(this).closest('div.tab-pane').attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
             });
 
             $('.switch_field input[type="radio"]').on('click', function () {
                 $(this).closest('form').submit();
-                var currentTab = $(this).closest('div.tab-pane').attr('id');
+                currentTab = $(this).closest('div.tab-pane').attr('id');
                 currentSwitch = $(this).attr('id');
                 setCookie("currentAdminTab", currentTab, 365);
                 setCookie("currentSwitch", currentSwitch, 365);
@@ -253,15 +251,14 @@
             function checkCookie() {
                 var currentAdminTab = getCookie("currentAdminTab");
                 $(".nav-tabs .nav-item a.nav-link[href='#" + currentAdminTab + "']").trigger('click');
-
-                var currentSwitch = getCookie("currentSwitch");
-                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
-                if(currentSwitch == 'gallery') {
-                    $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').show();
-                    console.log('cookies');
-                } else {
-                    $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').hide();
-                    console.log('cookies');
+                if(currentAdminTab != '') {
+                    currentSwitch = getCookie("currentSwitch");
+                    currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
+                    if(currentSwitch == 'gallery') {
+                        $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').show();
+                    } else {
+                        $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').hide();
+                    }
                 }
             }
         </script>
