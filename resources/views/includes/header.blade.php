@@ -54,16 +54,16 @@
                         <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">{{ trans('lang.homepage') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/france' || $cp == '/' . $lang . '/locations/results/france' || $cp == '/france')) ? 'active' : '' }}" href="{{ route('france') }}">France{{ (($current_page == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ (($cp == '/' . $lang . '/france' || $cp == '/' . $lang . '/locations/results/france' || $cp == '/france')) ? 'active' : '' }}" href="{{ route('france') }}">{{ trans('lang.france') }}{{ (($current_page == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/swiss' || $cp == '/' . $lang . '/locations/results/swiss' || $cp == '/swiss')) ? 'active' : '' }}" href="{{ route('swiss') }}">Suisse{{ (($current_page == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ (($cp == '/' . $lang . '/swiss' || $cp == '/' . $lang . '/locations/results/swiss' || $cp == '/swiss')) ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($current_page == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/usa' || $cp == '/' . $lang . '/locations/results/usa' || $cp == '/usa')) ? 'active' : '' }}" href="{{ route('usa') }}">USA{{ (($current_page == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ (($cp == '/' . $lang . '/usa' || $cp == '/' . $lang . '/locations/results/usa' || $cp == '/usa')) ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($current_page == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/mauritius' || $cp == '/' . $lang . '/locations/results/mauritius' || $cp == '/mauritius')) ? 'active' : '' }}" href="{{ route('mauritius') }}">Ile Maurice{{ (($current_page == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ (($cp == '/' . $lang . '/mauritius' || $cp == '/' . $lang . '/locations/results/mauritius' || $cp == '/mauritius')) ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($current_page == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}
@@ -81,10 +81,10 @@
                         {{--<a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">{{ trans('lang.agency') }}</a>--}}
                     {{--</li>--}}
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'news' || $current_page == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">Actualité</a>
+                        <a class="nav-link {{ ($current_page == 'news' || $current_page == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">{{ trans('lang.news') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'newsletters') ? 'active' : '' }}" href="{{ route('newsletters') }}">Newsletters</a>
+                        <a class="nav-link {{ ($current_page == 'newsletters') ? 'active' : '' }}" href="{{ route('newsletters') }}">{{ trans('lang.newsletters') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>

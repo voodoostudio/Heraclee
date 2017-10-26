@@ -12,6 +12,10 @@ return [
     'all_selected'          => 'All selected',
     'previous'              => 'Previous',
     'next'                  => 'Next',
+    'france'                => 'France',
+    'swiss'                 => 'Swiss',
+    'usa'                   => 'USA',
+    'mauritius'             => 'Mauritius',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',
@@ -173,4 +177,16 @@ return [
     'choose_header_img'     => 'Choose a header image',
     'choose_body_img'       => 'Choose a body image or pdf',
     'currently_no_newsletters'  => 'Currently no newsletters found',
+    'news'                  => 'News',
+    'newsletters'           => 'Newsletters',
+
+// GALLERY CONFIG PAGE
+    'gallery_configuration' => 'Gallery configuration',
+    'what_to_display'       => 'What to display on homepage?',
+    'gallery'               => 'Gallery',
+    'last_object'           => 'Last object',
+    'image'                 => 'Image',
+    'upload'                => 'Upload',
+    'delete'                => 'Delete',
+    'check_all_images'      => 'Check all images',
 ];

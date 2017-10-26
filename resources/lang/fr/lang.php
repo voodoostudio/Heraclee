@@ -12,6 +12,10 @@ return [
     'all_selected'          => 'Tous sélectionnés',
     'previous'              => 'Précédent',
     'next'                  => 'Suivant',
+    'france'                => 'France',
+    'swiss'                 => 'Suisse',
+    'usa'                   => 'USA',
+    'mauritius'             => 'Ile Maurice',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',
@@ -159,7 +163,7 @@ return [
     'remember_me'           => 'Se souvenir de moi',
     'log_in'                => 'Connexion',
 
-//NEWS PAGES
+// NEWS PAGES
     'latest_news'           => 'Dernières nouvelles',
     'list_of_articles'      => 'Liste des articles',
     'published'             => 'Publié',
@@ -173,4 +177,17 @@ return [
     'choose_header_img'     => 'Choisissez une image d\'en-tête',
     'choose_body_img'       => 'Choisissez une image ou pdf de corps',
     'currently_no_newsletters'  => 'Actuellement aucune newsletter',
+    'news'                  => 'Actualité',
+    'newsletters'           => 'Newsletters',
+
+// GALLERY CONFIG PAGE
+    'gallery_configuration' => 'Configuration de la galerie',
+    'what_to_display'       => 'Que voulez-vous afficher sur la page d’accueil ?',
+    'gallery'               => 'Galeries',
+    'last_object'           => 'Dernier objet',
+    'image'                 => 'Image',
+    'upload'                => 'Téléverser',
+    'delete'                => 'Effacer',
+    'check_all_images'      => 'Vérifier toutes les images',
+
 ];

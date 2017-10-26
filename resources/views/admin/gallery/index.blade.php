@@ -30,7 +30,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="title_container">
-                            <h1>Gallery configuration</h1>
+                            <h1>{{ trans('lang.gallery_configuration') }}</h1>
                             <a class="action_link" href="{{ URL::to('admin') }}"><i class="icn icon-arrow_left"></i></a>
                         </div>
                     </div>
@@ -38,19 +38,19 @@
 
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#homepage" role="tab" data-toggle="tab">Homepage</a>
+                        <a class="nav-link active" href="#homepage" role="tab" data-toggle="tab">{{ trans('lang.homepage') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#france" role="tab" data-toggle="tab">France</a>
+                        <a class="nav-link" href="#france" role="tab" data-toggle="tab">{{ trans('lang.france') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#swiss" role="tab" data-toggle="tab">Swiss</a>
+                        <a class="nav-link" href="#swiss" role="tab" data-toggle="tab">{{ trans('lang.swiss') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#usa" role="tab" data-toggle="tab">USA</a>
+                        <a class="nav-link" href="#usa" role="tab" data-toggle="tab">{{ trans('lang.usa') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#mauritius" role="tab" data-toggle="tab">Ile Maurice</a>
+                        <a class="nav-link" href="#mauritius" role="tab" data-toggle="tab">{{ trans('lang.mauritius') }}</a>
                     </li>
                 </ul>
                 {{ Html::ul($errors->all(), array('class' => 'error_list')) }}
@@ -68,13 +68,13 @@
                                                 {!! csrf_field() !!}
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <label class="form_el_label"><span>What to display on main page ?</span></label>
+                                                        <label class="form_el_label"><span>{{ trans('lang.what_to_display') }}</span></label>
                                                         <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
                                                         <div class="switch_field">
                                                             <input type="radio" id="gallery_{{ $settings['page'] }}" name="show" value="1" {{ ($settings['show'] == 1) ? 'checked' : '' }} />
-                                                            <label for="gallery_{{ $settings['page'] }}">Gallery</label>
+                                                            <label for="gallery_{{ $settings['page'] }}">{{ trans('lang.gallery') }}</label>
                                                             <input type="radio" id="last_object_{{ $settings['page'] }}" name="show" value="0" {{ ($settings['show'] == 0) ? 'checked' : '' }} />
-                                                            <label for="last_object_{{ $settings['page'] }}">Last object</label>
+                                                            <label for="last_object_{{ $settings['page'] }}">{{ trans('lang.last_object') }}</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -92,14 +92,14 @@
 
                                                 <div class="row">
                                                     <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                        <label class="form_el_label"><span>Title *</span></label>
+                                                        <label class="form_el_label"><span>{{ trans('lang.title') }} *</span></label>
                                                         <div class="input_container">
                                                             <input type="text" name="title" class="" placeholder="Title">
                                                         </div>
                                                     </div>
 
                                                     <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                        <label class="form_el_label"><span>Image *</span></label>
+                                                        <label class="form_el_label"><span>{{ trans('lang.image') }} *</span></label>
                                                         <div class="img_upload_container">
                                                             <div class="img_upload">
                                                                 <input name="image" type="file" accept="image/*" id="header_img_{{ $settings['page'] }}" class="input_file"/>
@@ -108,7 +108,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">
-                                                        <button type="submit" class="btn">Upload</button>
+                                                        <button type="submit" class="btn">{{ trans('lang.upload') }}</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -161,12 +161,12 @@
                                                                     <label>
                                                                         <input required="" type="checkbox" name="subscribe" id="check_all" value="true">
                                                                         <span class="fake_checkbox"></span>
-                                                                        <span class="my_checkbox_text">Check all</span>
+                                                                        <span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>
                                                                     </label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-6">
-                                                                <button type="submit" class="btn float-right" disabled>Delete</button>
+                                                                <button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>
                                                             </div>
                                                         </div>
                                                         @endif
