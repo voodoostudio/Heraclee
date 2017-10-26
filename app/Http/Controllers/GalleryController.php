@@ -41,7 +41,7 @@ class GalleryController extends Controller
     {
         $rules = array(
             'title'      => 'required',
-            'image'      => 'required'
+            'image'      => 'required|dimensions:min_width=640'
         );
 
         $gallery = new Gallery;
