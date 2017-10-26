@@ -69,6 +69,15 @@ class PostsController extends Controller
 
             $front_image = $request->file('front_image');
             $body_image = $request->file('body_image');
+            $size = [
+                ['width' => '9999', 'next_width' => '3200'],
+                ['width' => '3200', 'next_width' => '2880'], ['width' => '2880', 'next_width' => '2560'],
+                ['width' => '2560', 'next_width' => '2048'], ['width' => '2048', 'next_width' => '1920'],
+                ['width' => '1920', 'next_width' => '1600'], ['width' => '1600', 'next_width' => '1366'],
+                ['width' => '1366', 'next_width' => '1280'], ['width' => '1280', 'next_width' => '1024'],
+                ['width' => '1024', 'next_width' => '960'], ['width' => '960', 'next_width' => '864'],
+                ['width' => '864', 'next_width' => '720'], ['width' => '720', 'next_width' => '640'],
+            ];
 
             if($request->hasFile('front_image'))
             {
@@ -83,17 +92,14 @@ class PostsController extends Controller
 
                     /* resize & crop image */
                     list($width, $height) = getimagesize($path);
-                    $ratio = round((16 / 9), 2);
-                    $new_width = 3000;
+                    $ratio = 16 / 9;
 
-                    if($width > $new_width) {
-                        $prop = $height / $width;
-                        $height_new = $new_width * $prop;
-
-                        $image->resize($new_width , $height_new);
-                        $image->fit($new_width, intval(round($new_width / $ratio), 12));
-                    } else {
-                        $image->fit($width, intval(round($width / $ratio), 12));
+                    foreach($size as $image_size) {
+                        if($width < $image_size['width'] && $width > $image_size['next_width']) {
+                            $image->fit($image_size['next_width'], intval($image_size['next_width'] / $ratio));
+                        } elseif($width == $image_size['width']){
+                            $image->fit($image_size['width'], intval($image_size['width'] / $ratio));
+                        }
                     }
 
                     /* save new image */
@@ -128,17 +134,14 @@ class PostsController extends Controller
 
                         /* resize & crop image */
                         list($width, $height) = getimagesize($path);
-                        $ratio = round((16 / 9), 2);
-                        $new_width = 3000;
+                        $ratio = 16 / 9;
 
-                        if($width > $new_width) {
-                            $prop = $height / $width;
-                            $height_new = $new_width * $prop;
-
-                            $image->resize($new_width , $height_new);
-                            $image->fit($new_width, intval(round($new_width / $ratio), 12));
-                        } else {
-                            $image->fit($width, intval(round($width / $ratio), 12));
+                        foreach($size as $image_size) {
+                            if($width < $image_size['width'] && $width > $image_size['next_width']) {
+                                $image->fit($image_size['next_width'], intval($image_size['next_width'] / $ratio));
+                            } elseif($width == $image_size['width']){
+                                $image->fit($image_size['width'], intval($image_size['width'] / $ratio));
+                            }
                         }
 
                         /* save new image */
@@ -223,6 +226,15 @@ class PostsController extends Controller
 
             $front_image = $request->file('front_image');
             $body_image = $request->file('body_image');
+            $size = [
+                ['width' => '9999', 'next_width' => '3200'],
+                ['width' => '3200', 'next_width' => '2880'], ['width' => '2880', 'next_width' => '2560'],
+                ['width' => '2560', 'next_width' => '2048'], ['width' => '2048', 'next_width' => '1920'],
+                ['width' => '1920', 'next_width' => '1600'], ['width' => '1600', 'next_width' => '1366'],
+                ['width' => '1366', 'next_width' => '1280'], ['width' => '1280', 'next_width' => '1024'],
+                ['width' => '1024', 'next_width' => '960'], ['width' => '960', 'next_width' => '864'],
+                ['width' => '864', 'next_width' => '720'], ['width' => '720', 'next_width' => '640'],
+            ];
 
             if($request->hasFile('front_image'))
             {
@@ -237,17 +249,14 @@ class PostsController extends Controller
 
                     /* resize & crop image */
                     list($width, $height) = getimagesize($path);
-                    $ratio = round((16 / 9), 2);
-                    $new_width = 3000;
+                    $ratio = 16 / 9;
 
-                    if($width > $new_width) {
-                        $prop = $height / $width;
-                        $height_new = $new_width * $prop;
-
-                        $image->resize($new_width , $height_new);
-                        $image->fit($new_width, intval(round($new_width / $ratio), 12));
-                    } else {
-                        $image->fit($width, intval(round($width / $ratio), 12));
+                    foreach($size as $image_size) {
+                        if($width < $image_size['width'] && $width > $image_size['next_width']) {
+                            $image->fit($image_size['next_width'], intval($image_size['next_width'] / $ratio));
+                        } elseif($width == $image_size['width']){
+                            $image->fit($image_size['width'], intval($image_size['width'] / $ratio));
+                        }
                     }
 
                     /* save new image */
@@ -282,17 +291,14 @@ class PostsController extends Controller
 
                         /* resize & crop image */
                         list($width, $height) = getimagesize($path);
-                        $ratio = round((16 / 9), 2);
-                        $new_width = 3000;
+                        $ratio = 16 / 9;
 
-                        if($width > $new_width) {
-                            $prop = $height / $width;
-                            $height_new = $new_width * $prop;
-
-                            $image->resize($new_width , $height_new);
-                            $image->fit($new_width, intval(round($new_width / $ratio), 12));
-                        } else {
-                            $image->fit($width, intval(round($width / $ratio), 12));
+                        foreach($size as $image_size) {
+                            if($width < $image_size['width'] && $width > $image_size['next_width']) {
+                                $image->fit($image_size['next_width'], intval($image_size['next_width'] / $ratio));
+                            } elseif($width == $image_size['width']){
+                                $image->fit($image_size['width'], intval($image_size['width'] / $ratio));
+                            }
                         }
 
                         /* save new image */
@@ -329,7 +335,24 @@ class PostsController extends Controller
     {
         // delete
         $posts = Posts::find($id);
-        $posts->delete();
+        $posts_image = Posts::where('id', '=', $id)->get()->toArray();
+
+        foreach($posts_image as $item) {
+            foreach (json_decode($item['front_image'], true) as $image_path) {
+                if(!empty($item['front_image'])) {
+                    $front_image_path = $_SERVER['DOCUMENT_ROOT'] . "/posts/front_image/" . date('F_Y') . '/' . $image_path;
+                    unlink($front_image_path);
+                }
+            }
+
+            foreach (json_decode($item['body_image'], true) as $image_path) {
+                if(!empty($item['body_image'])) {
+                    $body_image_path = $_SERVER['DOCUMENT_ROOT'] . "/posts/body_image/" . date('F_Y') . '/' . $image_path;
+                    unlink($body_image_path);
+                }
+            }
+            $posts->delete();
+        }
 
         // redirect
         Session::flash('message', 'Successfully deleted the nerd!');

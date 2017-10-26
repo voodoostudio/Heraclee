@@ -53,6 +53,16 @@ class GalleryController extends Controller
                 ->withInput(Input::except('password'));
         } else {
 
+            $size = [
+                ['width' => '9999', 'next_width' => '3200'],
+                ['width' => '3200', 'next_width' => '2880'], ['width' => '2880', 'next_width' => '2560'],
+                ['width' => '2560', 'next_width' => '2048'], ['width' => '2048', 'next_width' => '1920'],
+                ['width' => '1920', 'next_width' => '1600'], ['width' => '1600', 'next_width' => '1366'],
+                ['width' => '1366', 'next_width' => '1280'], ['width' => '1280', 'next_width' => '1024'],
+                ['width' => '1024', 'next_width' => '960'], ['width' => '960', 'next_width' => '864'],
+                ['width' => '864', 'next_width' => '720'], ['width' => '720', 'next_width' => '640'],
+            ];
+
             if($request->hasFile('image')) {
 
                 /* download file */
@@ -66,16 +76,13 @@ class GalleryController extends Controller
                 /* resize & crop image */
                 list($width, $height) = getimagesize($path);
                 $ratio = 16 / 9;
-                $new_width = 3000;
 
-                if($width > $new_width) {
-                    $prop = $height / $width;
-                    $height_new = $new_width * $prop;
-
-                    $image->resize($new_width , $height_new);
-                    $image->fit($new_width, intval(round($new_width / $ratio), 12));
-                } else {
-                    $image->fit($width, intval(round($width / $ratio), 12));
+                foreach($size as $image_size) {
+                    if($width < $image_size['width'] && $width > $image_size['next_width']) {
+                        $image->fit($image_size['next_width'], intval($image_size['next_width'] / $ratio));
+                    } elseif($width == $image_size['width']){
+                        $image->fit($image_size['width'], intval($image_size['width'] / $ratio));
+                    }
                 }
 
                 /* save new image */
@@ -84,7 +91,7 @@ class GalleryController extends Controller
                 $gallery->image = $file_name;
             }
 
-            $gallery->title = Input::get('name');
+            $gallery->title = Input::get('title');
             $gallery->page = Input::get('page');
 
             $gallery->save();
@@ -142,8 +149,15 @@ class GalleryController extends Controller
     public function destroy_all(Request $request)
     {
         $id = $request->gallery;
+        $image = Gallery::whereIn('id', $id)->get()->toArray();
 
-        Gallery::whereIn('id', $id)->delete();
+        foreach($image as $item) {
+            if(!empty($item['page'])) {
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . date('F_Y') . '/' . $item['image'];
+                unlink($path);
+                Gallery::whereIn('id', $id)->delete();
+            }
+        }
         return Redirect::to('admin/gallery');
     }
 
@@ -154,7 +168,15 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        Gallery::find($id)->delete();
+        $image = Gallery::where('id', '=', $id)->get()->toArray();
+
+        foreach($image as $item) {
+            if(!empty($item['page'])) {
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . date('F_Y') . '/' . $item['image'];
+                unlink($path);
+                Gallery::find($id)->delete();
+            }
+        }
 
         Session::flash('message', 'Successfully remove post!');
         return Redirect::to('admin/gallery');
