@@ -16,7 +16,7 @@
                 <ul class="index_main_carousel">
                     @foreach($gallery as $image)
                         @if($image['page'] == 'homepage')
-                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image['image'] }}" alt=""></li>
+                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image['image'] }}" alt="{{ $image['title'] }}"></li>
                         @endif
                     @endforeach
                 </ul>

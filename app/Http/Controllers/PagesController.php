@@ -73,7 +73,7 @@ class PagesController extends Controller
         $last_news = Posts::limit(10)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
         /* Gallery (slider) */
-        $gallery = Gallery::all();
+        $gallery = Gallery::inRandomOrder()->get();
 
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();

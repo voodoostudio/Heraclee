@@ -79,9 +79,9 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form action="" class="image_upload_form" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ URL::to($lang . '/admin/gallery') }}" method="POST" id="upload" enctype="multipart/form-data">
                                                 {!! csrf_field() !!}
-                                                <input type="hidden" name="page" value="{{ $settings['page'] }}" class="form-control">
+                                                <input type="hidden" name="page" id="page" value="{{ $settings['page'] }}" class="form-control">
 
                                                 @if ($message = Session::get('success'))
                                                     <div class="alert alert-success alert-block">
@@ -94,7 +94,7 @@
                                                     <div class="col-md-6 col-lg-12 margin_bottom_20">
                                                         <label class="form_el_label"><span>{{ trans('lang.title') }} *</span></label>
                                                         <div class="input_container">
-                                                            <input type="text" name="title" class="" placeholder="Title">
+                                                            <input type="text" name="title" id="title" class="" placeholder="Title">
                                                         </div>
                                                     </div>
 
@@ -108,13 +108,13 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 margin_bottom_20">
-                                                        <button type="submit" class="btn">{{ trans('lang.upload') }}</button>
+                                                        <button type="submit" id="button_upload" class="btn">{{ trans('lang.upload') }}</button>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
                                         <div class="col-lg-8">
-                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  method="POST" class="gallery_content_form">
+                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  method="POST" id="multiple_destroy" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
@@ -129,7 +129,7 @@
                                                             @endphp
                                                             @foreach($gallery as $key => $image)
                                                                 @if( $settings['page'] == $image->page)
-                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30'>
+                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30' data-id="{{ $image->id }}">
                                                                         <div class="thumbnail_container">
                                                                             <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
                                                                                 <div class="img_container">
@@ -139,7 +139,7 @@
                                                                                     </div> <!-- text-center / end -->
                                                                                 </div>
                                                                             </a>
-                                                                            <a class="remove_btn" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
+                                                                            <a class="remove_btn" id="{{ $image->id }}" href = "{{ URL::to('admin/gallery/' . $image->id) }}"><i class="icn icon-cancel"></i></a>
                                                                             @if(count($counter) >= 2)
                                                                                 <div class="my_checkbox">
                                                                                     <label>
@@ -171,6 +171,7 @@
                                                         @endif
                                                     @endif
                                                 </form>
+                                            </div> <!-- row / end -->
                                         </div>
                                     </div>
                                 </div>
@@ -185,6 +186,134 @@
 
     @section('javascript')
         <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
+        <script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
+
+        {{--<script>--}}
+            {{--jQuery(document).ready(function () {--}}
+                {{--jQuery("#upload").validate({--}}
+                    {{--rules: {--}}
+                        {{--title: {--}}
+                            {{--required: true,--}}
+                            {{--minlength: 2--}}
+                        {{--},--}}
+                        {{--image: {--}}
+                            {{--required: true--}}
+                        {{--}--}}
+                    {{--},--}}
+                    {{--submitHandler: function (form) {--}}
+                        {{--var formData = new FormData(form);--}}
+
+                        {{--console.log($('#multiple_destroy .margin_bottom_20')[0]);--}}
+
+                        {{--$.ajax({--}}
+                            {{--type: form.method,--}}
+                            {{--url: form.action,--}}
+                            {{--data: formData,--}}
+                            {{--cache: false,--}}
+                            {{--contentType: false,--}}
+                            {{--processData: false--}}
+                        {{--}).done(function (formData) {--}}
+                            {{--$('#multiple_destroy .row').append($('#multiple_destroy .margin_bottom_20')[0]);--}}
+                        {{--})--}}
+                    {{--}--}}
+                {{--})--}}
+            {{--})--}}
+        {{--</script>--}}
+
+        <script>
+            $(document).ready(function(){
+                $(function(){
+                    $('#multiple_destroy').submit(function(e){
+                        e.preventDefault();
+                        var form = $(this);
+                        var url = form.attr('action');
+                        var data = form.serialize();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: data,
+                            success: function(msg) {
+                                $('#multiple_destroy').fadeOut(800);
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                $('.remove_btn').click(function(e){
+                    e.preventDefault();
+                    var url = $(this).attr('href');
+                    var id = $(this).attr('id');
+
+                    $.ajax({
+                        url: url,
+                        success: function(msg) {
+                            $('#multiple_destroy div[data-id="' + id + '"]').fadeOut(100);
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                $(function(){
+                    $('#switch_form').submit(function(e){
+                        e.preventDefault();
+                        var form = $(this);
+                        var url = form.attr('action');
+                        var data = form.serialize();
+                        var type = $('#switch_form input[type="radio"]').attr('id');
+
+                        $.ajax({
+                            type: 'POST',
+                            url: url,
+                            data: data,
+                            success: function(msg) {
+                                if($('#' + type).is(':checked')){
+                                    $('#multiple_destroy').fadeIn(600);
+                                } else {
+                                    $('#multiple_destroy').fadeOut(100);
+                                }
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+        {{--<script>--}}
+            {{--$(document).ready(function(){--}}
+                {{--$(function(){--}}
+                    {{--$('#upload').submit(function(e){--}}
+                        {{--e.preventDefault();--}}
+                        {{--var form = $(this);--}}
+                        {{--var url = form.attr('action');--}}
+                        {{--var data = form.serialize();--}}
+                        {{--var formData = new FormData(form);--}}
+                        {{--console.log(data + '&image=eG79FzyhQfw.jpg');--}}
+
+                        {{--$.ajax({--}}
+                            {{--type: 'POST',--}}
+                            {{--url: url,--}}
+                            {{--data: data + '&image=eG79FzyhQfw.jpg',--}}
+                            {{--success: function(msg) {--}}
+                                {{--$('#multiple_destroy').fadeIn(600);--}}
+                            {{--},--}}
+                            {{--cache: false,--}}
+                            {{--contentType: false,--}}
+                            {{--processData: false--}}
+                        {{--});--}}
+                    {{--});--}}
+                {{--});--}}
+            {{--});--}}
+        {{--</script>--}}
+
         <script type="text/javascript">
             checkCookie();
 
