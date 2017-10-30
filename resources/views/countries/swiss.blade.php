@@ -9,6 +9,7 @@
     @php
         $lang = LaravelLocalization::getCurrentLocaleRegional();
         $post_counter = 1;
+        $slider_image = [];
     @endphp
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'swiss' && $settings['show'] == 1)
@@ -16,8 +17,22 @@
                 <ul class="index_main_carousel">
                     @foreach($gallery as $image)
                         @if($image['page'] == 'swiss')
-                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image['image'] }}" alt=""></li>
+                            @php
+                                $slider_image[] = $image;
+                            @endphp
                         @endif
+                    @endforeach
+                    @php
+                        shuffle($slider_image);
+                        $image_counter = 1;
+                    @endphp
+                    @foreach($slider_image as $item)
+                        @if($image_counter == 1)
+                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $item['image'] }}" alt=""></li>
+                        @endif
+                        @php
+                            $image_counter++;
+                        @endphp
                     @endforeach
                 </ul>
             </section>

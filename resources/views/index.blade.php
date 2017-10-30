@@ -9,44 +9,60 @@
     @php
         $lang = LaravelLocalization::getCurrentLocaleRegional();
         $post_counter = 1;
+        $slider_image = [];
     @endphp
+
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
             <section class="index_main_carousel_section">
                 <ul class="index_main_carousel">
                     @foreach($gallery as $image)
                         @if($image['page'] == 'homepage')
-                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image['image'] }}" alt="{{ $image['title'] }}"></li>
+                            @php
+                                $slider_image[] = $image;
+                            @endphp
                         @endif
+                    @endforeach
+                    @php
+                        shuffle($slider_image);
+                        $image_counter = 1;
+                    @endphp
+                    @foreach($slider_image as $item)
+                        @if($image_counter == 1)
+                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $item['image'] }}" alt=""></li>
+                        @endif
+                        @php
+                            $image_counter++;
+                        @endphp
                     @endforeach
                 </ul>
             </section>
-            @else
-                @foreach($properties as $property)
-                    @if($post_counter == 1)
+        @else
+            @foreach($properties as $property)
+                @if($post_counter == 1)
+                    @php
+                        $image_counter = 1;
+                    @endphp
+                    @foreach($property['pictures'] as $picture)
+                        @if($image_counter == 1)
+                            <section class="top_offer_section" style="background-image: url('{{$picture['url']}}')">
+                                @endif
+                                @php
+                                    $image_counter++;
+                                @endphp
+                                @endforeach
+                                <div class="info_block">
+                                    <h1>{{$property['type']}}</h1>
+                                    <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
+                                    <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif" class="btn">{{ trans('lang.see_property') }}</a>
+                                </div>
+                                <div class="gradient_bottom"></div>
+                            </section>
+                        @endif
                         @php
-                            $image_counter = 1;
+                            $post_counter++;
                         @endphp
-                        @foreach($property['pictures'] as $picture)
-                            @if($image_counter == 1)
-                                <section class="top_offer_section" style="background-image: url('{{$picture['url']}}')">
-                                    @endif
-                                    @php
-                                        $image_counter++;
-                                    @endphp
-                                    @endforeach
-                                    <div class="info_block">
-                                        <h1>{{$property['type']}}</h1>
-                                        <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
-                                        <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details') }}?id={{$property['property_id']}} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails') }}?id={{$property['property_id']}} @endif" class="btn">{{ trans('lang.see_property') }}</a>
-                                    </div>
-                                    <div class="gradient_bottom"></div>
-                                </section>
-                            @endif
-                            @php
-                                $post_counter++;
-                            @endphp
-                        @endforeach
+                    @endforeach
         @endif
     @endforeach
 

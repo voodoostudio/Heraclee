@@ -50,9 +50,13 @@ class GalleryController extends Controller
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails()) {
-            return Redirect::to($lang . '/admin/gallery')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
+//            return Redirect::to($lang . '/admin/gallery')
+//                ->withErrors($validator)
+//                ->withInput(Input::except('password'));
+
+            return response()->json([
+                'errors' =>$validator->errors()->all()
+            ]);
         } else {
 
             $size = [
@@ -91,15 +95,23 @@ class GalleryController extends Controller
                 $image->save($path);
 
                 $gallery->image = $file_name;
+                $gallery->title = Input::get('title');
+                $gallery->page = Input::get('page');
+
+                $gallery->save();
+
+                //redirect
+                return response()->json([
+                    'id'    => $gallery->id,
+                    'title' => Input::get('title'),
+                    'image' => "/gallery/" . $request->page . "/" . date('F_Y') . '/' . $file_name,
+                    'page'  => Input::get('page')
+                ]);
+            } else {
+                return response()->json([
+                    'error' => 'fail',
+                ]);
             }
-
-            $gallery->title = Input::get('title');
-            $gallery->page = Input::get('page');
-
-            $gallery->save();
-
-            //redirect
-            return back();
         }
     }
 
@@ -182,6 +194,10 @@ class GalleryController extends Controller
         }
 
         //redirect
+//        return response()->json([
+//            'id'    => $id,
+//        ]);
+
         return back();
     }
 }

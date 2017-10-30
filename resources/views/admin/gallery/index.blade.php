@@ -55,7 +55,9 @@
                 </ul>
                 {{ Html::ul($errors->all(), array('class' => 'error_list')) }}
 
-
+                <div class="errors" style="display:none">
+                    <ul class="error_list"></ul>
+                </div>
 
                 <div class="tab-content">
                     @foreach($gallery_settings as $settings)
@@ -64,7 +66,7 @@
                                 <div class="inner_block_container">
                                     <div class="row">
                                         <div class="col-lg-4">
-                                            <form action="{{ URL::to($lang . '/admin/gallery/show') }}"  method="POST" id="switch_form">
+                                            <form action="{{ URL::to($lang . '/admin/gallery/show') }}"  method="POST" id="switch_form_{{ $settings['page'] }}">
                                                 {!! csrf_field() !!}
                                                 <div class="row">
                                                     <div class="col-12">
@@ -79,7 +81,7 @@
                                                     </div>
                                                 </div>
                                             </form>
-                                            <form action="{{ URL::to($lang . '/admin/gallery') }}" method="POST" id="upload" class="image_upload_form" method="POST" enctype="multipart/form-data">
+                                            <form action="{{ URL::to($lang . '/admin/gallery') }}" method="POST" id="upload_{{$settings['page']}}" class="image_upload_form" method="POST" enctype="multipart/form-data">
                                                 {!! csrf_field() !!}
                                                 <input type="hidden" name="page" id="page" value="{{ $settings['page'] }}" class="form-control">
 
@@ -115,11 +117,11 @@
                                         </div>
                                         <div class="col-lg-8">
                                             <div class="row">
-                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  id="multiple_destroy" method="POST" class="gallery_content_form">
+                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  id="multiple_destroy_{{ $settings['page'] }}" method="POST" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
-                                                        <div class="row">
+                                                        <div class="row" id="display_image">
                                                             @php
                                                                 $counter = [];
                                                                 foreach($gallery as $image) {
@@ -130,7 +132,7 @@
                                                             @endphp
                                                             @foreach($gallery as $key => $image)
                                                                 @if( $settings['page'] == $image->page)
-                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30' data-id="{{ $image->id }}">
+                                                                    <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30' id="gallery_image" data-id="{{ $image->id }}">
                                                                         <div class="thumbnail_container">
                                                                             <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
                                                                                 <div class="img_container">
@@ -188,131 +190,195 @@
     @section('javascript')
         <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
 
+        <script>
+            jQuery(document).ready(function () {
+                @foreach($gallery_settings as $settings)
+                    jQuery("#upload_{{$settings['page']}}").validate({
+                        submitHandler: function (form) {
+                            var formData = new FormData(form);
+                            $.ajax({
+                                type: form.method,
+                                url: form.action,
+                                dataType: 'json',
+                                data: formData,
+                                cache: false,
+                                contentType: false,
+                                processData: false
+                            }).done(function (formData) {
+                                if($.isEmptyObject(formData.errors)) {
+                                    $('#multiple_destroy_{{$settings['page']}} #display_image').append('' +
+                                        '<div class="col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30" id="gallery_image" data-id="' + formData.id + '">' +
+                                            '<div class="thumbnail_container">' +
+                                                '<a data-fancybox="gallery_homepage" class="thumbnail" href="' + formData.image + '">' +
+                                                    '<div class="img_container">' +
+                                                        '<img class="img-responsive" alt="" src="' + formData.image + '">' +
+                                                    '</div>' +
+                                                '</a>' +
+                                                '<a class="remove_btn" id="' + formData.id + '" href = "{{ URL::to('admin/gallery/')}}/' + formData.id + '">' +
+                                                    '<i class="icn icon-cancel"></i>' +
+                                                '</a>' +
+                                                '<div class="my_checkbox"><label><input type="checkbox" name="gallery[]" value="' + formData.id + '" /><span class="fake_checkbox"></span></label></div>' +
+                                                '</div>' +
+                                        '</div>'
+                                    );
+
+                                    if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                        $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide()
+                                    } else {
+                                        $('#multiple_destroy_{{$settings['page']}} .my_checkbox').show()
+                                    }
+
+                                    $(".img_upload_container .img_upload span").replaceWith("<span>Choisissez une image d'en-tête</span>");
+
+                                    form.reset();
+
+                                    if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length === 2) {
+                                        $('#multiple_destroy_{{$settings['page']}}').append('' +
+                                            '<div class="row">' +
+                                                '<div class="col-6">' +
+                                                    '<div class="my_checkbox">' +
+                                                        '<label>' +
+                                                            '<input required="" type="checkbox" name="subscribe" id="check_all" value="true">' +
+                                                            '<span class="fake_checkbox"></span>' +
+                                                            '<span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>' +
+                                                        '</label>' +
+                                                    '</div>' +
+                                                '</div>' +
+                                                '<div class="col-6">' +
+                                                    '<button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>' +
+                                                '</div>' +
+                                            '</div>'
+                                        );
+                                    }
+
+                                    $('.remove_btn').on('click', function (e) {
+                                        e.preventDefault();
+                                        var url = $(this).attr('href');
+                                        var id = $(this).attr('id');
+                                        console.log(id);
+                                        $.ajax({
+                                            url: url,
+                                            success: function () {
+                                                $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
+                                                if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
+                                                    $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
+                                                }
+                                            }
+                                        });
+                                    });
+
+                                    $('form.gallery_content_form input[name="gallery[]"]').change(function () {
+                                        var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
+                                        if (totalCheckedImg >= 1) {
+                                            $('form.gallery_content_form button.btn').attr('disabled', false);
+                                        } else {
+                                            $('form.gallery_content_form button.btn').attr('disabled', true);
+                                        }
+                                    });
+
+                                    $('form.gallery_content_form input#check_all').change(function () {
+                                        if (this.checked) {
+                                            $('form.gallery_content_form input[name="gallery[]"]').prop('checked', true);
+                                            $('form.gallery_content_form button.btn').attr('disabled', false);
+                                        } else {
+                                            $('form.gallery_content_form input[name="gallery[]"]').prop('checked', false);
+                                            $('form.gallery_content_form button.btn').attr('disabled', true);
+                                        }
+                                    });
+
+                                    console.log(formData.id);
+                                    console.log($('#multiple_destroy_{{$settings['page']}} #gallery_image').length);
+                                } else {
+                                    error_message(formData.errors);
+                                }
+                            })
+                        }
+                    });
+                @endforeach
+
+                function error_message (msg) {
+                    $(".error_list").html('');
+                    $(".errors").css('display','block');
+                    $.each( msg, function( key, value ) {
+                        $(".errors").find("ul").append('<li>' + value + '</li>');
+                    });
+                }
+            })
+        </script>
+
         {{--<script>--}}
-        {{--jQuery(document).ready(function () {--}}
-        {{--jQuery("#upload").validate({--}}
-        {{--rules: {--}}
-        {{--title: {--}}
-        {{--required: true,--}}
-        {{--minlength: 2--}}
-        {{--},--}}
-        {{--image: {--}}
-        {{--required: true--}}
-        {{--}--}}
-        {{--},--}}
-        {{--submitHandler: function (form) {--}}
-        {{--var formData = new FormData(form);--}}
+            {{--$(document).ready(function(){--}}
+                {{--@foreach($gallery_settings as $settings)--}}
+                    {{--$('#multiple_destroy_{{$settings['page']}}').submit(function(e){--}}
+                        {{--e.preventDefault();--}}
+                        {{--var form = $(this);--}}
+                        {{--var url = form.attr('action');--}}
+                        {{--var data = form.serialize();--}}
 
-        {{--console.log($('#multiple_destroy .margin_bottom_20')[0]);--}}
-
-        {{--$.ajax({--}}
-        {{--type: form.method,--}}
-        {{--url: form.action,--}}
-        {{--data: formData,--}}
-        {{--cache: false,--}}
-        {{--contentType: false,--}}
-        {{--processData: false--}}
-        {{--}).done(function (formData) {--}}
-        {{--$('#multiple_destroy .row').append($('#multiple_destroy .margin_bottom_20')[0]);--}}
-        {{--})--}}
-        {{--}--}}
-        {{--})--}}
-        {{--})--}}
+                        {{--$.ajax({--}}
+                            {{--type: 'POST',--}}
+                            {{--url: url,--}}
+                            {{--data: data,--}}
+                            {{--success: function(msg) {--}}
+                                {{--$('#multiple_destroy_{{$settings['page']}} #gallery_image').remove();--}}
+                            {{--}--}}
+                        {{--});--}}
+                    {{--});--}}
+                {{--@endforeach--}}
+            {{--});--}}
         {{--</script>--}}
 
         <script>
             $(document).ready(function(){
-                $(function(){
-                    $('#multiple_destroy').submit(function(e){
-                        e.preventDefault();
-                        var form = $(this);
-                        var url = form.attr('action');
-                        var data = form.serialize();
-
-                        $.ajax({
-                            type: 'POST',
-                            url: url,
-                            data: data,
-                            success: function(msg) {
-                                $('#multiple_destroy').fadeOut(800);
-                            }
-                        });
-                    });
-                });
-            });
-        </script>
-
-        <script>
-            $(document).ready(function(){
-                $('.remove_btn').click(function(e){
+                $('.remove_btn').on('click', function(e){
                     e.preventDefault();
                     var url = $(this).attr('href');
                     var id = $(this).attr('id');
-
+                    console.log(id);
                     $.ajax({
                         url: url,
+                        cache: false,
                         success: function(msg) {
-                            $('#multiple_destroy div[data-id="' + id + '"]').fadeOut(100);
+                            @foreach($gallery_settings as $settings)
+                                $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
+                                if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
+                                    $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
+                                }
+                            @endforeach
                         }
                     });
+
                 });
             });
-
         </script>
 
         <script>
             $(document).ready(function(){
-                $(function(){
-                    $('#switch_form').submit(function(e){
+                @foreach($gallery_settings as $settings)
+                    $('#switch_form_{{$settings['page']}}').submit(function(e){
                         e.preventDefault();
                         var form = $(this);
                         var url = form.attr('action');
                         var data = form.serialize();
-                        var type = $('#switch_form input[type="radio"]').attr('id');
 
                         $.ajax({
                             type: 'POST',
                             url: url,
                             data: data,
                             success: function(msg) {
-                                if($('#' + type).is(':checked')){
-                                    $('#multiple_destroy').fadeIn(600);
+                                if($('#gallery_{{$settings['page']}}').is(':checked')){
+                                    $('#multiple_destroy_{{$settings['page']}}').fadeIn(600);
                                 } else {
-                                    $('#multiple_destroy').fadeOut(100);
+                                    $('#multiple_destroy_{{$settings['page']}}').fadeOut(100);
                                 }
                             }
                         });
                     });
-                });
+                @endforeach
             });
         </script>
-
-        {{--<script>--}}
-        {{--$(document).ready(function(){--}}
-        {{--$(function(){--}}
-        {{--$('#upload').submit(function(e){--}}
-        {{--e.preventDefault();--}}
-        {{--var form = $(this);--}}
-        {{--var url = form.attr('action');--}}
-        {{--var data = form.serialize();--}}
-        {{--var formData = new FormData(form);--}}
-        {{--console.log(data + '&image=eG79FzyhQfw.jpg');--}}
-
-        {{--$.ajax({--}}
-        {{--type: 'POST',--}}
-        {{--url: url,--}}
-        {{--data: data + '&image=eG79FzyhQfw.jpg',--}}
-        {{--success: function(msg) {--}}
-        {{--$('#multiple_destroy').fadeIn(600);--}}
-        {{--},--}}
-        {{--cache: false,--}}
-        {{--contentType: false,--}}
-        {{--processData: false--}}
-        {{--});--}}
-        {{--});--}}
-        {{--});--}}
-        {{--});--}}
-        {{--</script>--}}
 
         <script type="text/javascript">
             checkCookie();
