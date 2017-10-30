@@ -28,6 +28,8 @@ section.top_offer_section {
 }
 
 section.index_main_carousel_section {
+  max-height: 700px;
+  overflow: hidden;
   .slick-slider {
     .slick-arrow {
       z-index: 99;

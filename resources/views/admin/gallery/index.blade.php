@@ -161,7 +161,7 @@
                                                             <div class="col-6">
                                                                 <div class="my_checkbox">
                                                                     <label>
-                                                                        <input required="" type="checkbox" name="subscribe" id="check_all" value="true">
+                                                                        <input type="checkbox" name="check_all" id="check_all" value="true">
                                                                         <span class="fake_checkbox"></span>
                                                                         <span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>
                                                                     </label>
@@ -253,6 +253,7 @@
                                     }
 
                                     $('.remove_btn').on('click', function (e) {
+                                        alert('remove');
                                         e.preventDefault();
                                         var url = $(this).attr('href');
                                         var id = $(this).attr('id');
@@ -415,12 +416,15 @@
             var currentSwitch = '';
             $('.nav-tabs .nav-item a.nav-link').on('click', function () {
                 currentTab = $(this).attr('href').replace('#', '');
-                setCookie("currentAdminTab", currentTab, 365);
+                setCookie("currentTab", currentTab, 365);
 
                 currentSwitch = $('#' + currentTab + ' .switch_field input[checked]').attr('id');
+                console.log('Tab click switch: '+currentSwitch);
                 setCookie("currentSwitch", currentSwitch, 365);
-                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
 
+                console.log('Tab click tab: '+currentTab);
+
+                currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
                 if(currentSwitch == 'gallery') {
                     $('.tab-pane#' + currentTab + ' .gallery_content_form').show();
                 } else {
@@ -430,27 +434,32 @@
 
             $('.image_upload_form button[type="submit"]').on('click', function () {
                 currentTab = $(this).closest('div.tab-pane').attr('id');
-                setCookie("currentAdminTab", currentTab, 365);
+                setCookie("currentTab", currentTab, 365);
             });
 
             $('.switch_field input[type="radio"]').on('click', function () {
                 $(this).closest('form').submit();
                 currentTab = $(this).closest('div.tab-pane').attr('id');
                 currentSwitch = $(this).attr('id');
-                setCookie("currentAdminTab", currentTab, 365);
+
+                console.log('Switch click tab: '+currentTab);
+                console.log('Switch click switch: '+currentSwitch);
+
+                setCookie("currentTab", currentTab, 365);
                 setCookie("currentSwitch", currentSwitch, 365);
             });
 
             function checkCookie() {
-                var currentAdminTab = getCookie("currentAdminTab");
-                $(".nav-tabs .nav-item a.nav-link[href='#" + currentAdminTab + "']").trigger('click');
-                if(currentAdminTab != '') {
+                currentTab = getCookie("currentTab");
+                $(".nav-tabs .nav-item a.nav-link[href='#" + currentTab + "']").trigger('click');
+
+                if(currentTab != '') {
                     currentSwitch = getCookie("currentSwitch");
                     currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
                     if(currentSwitch == 'gallery') {
-                        $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').show();
+                        $('.tab-pane#' + currentTab + ' .gallery_content_form').show();
                     } else {
-                        $('.tab-pane#' + currentAdminTab + ' .gallery_content_form').hide();
+                        $('.tab-pane#' + currentTab + ' .gallery_content_form').hide();
                     }
                 }
             }
