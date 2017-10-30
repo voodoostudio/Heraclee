@@ -206,6 +206,7 @@
                                 processData: false
                             }).done(function (formData) {
                                 if($.isEmptyObject(formData.errors)) {
+                                    $(".error_list").html('');
                                     $('#multiple_destroy_{{$settings['page']}} #display_image').append('' +
                                         '<div class="col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30" id="gallery_image" data-id="' + formData.id + '">' +
                                             '<div class="thumbnail_container">' +
@@ -339,7 +340,7 @@
                     $.ajax({
                         url: url,
                         cache: false,
-                        success: function(msg) {
+                        success: function() {
                             @foreach($gallery_settings as $settings)
                                 $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
                                 if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
@@ -349,25 +350,24 @@
                             @endforeach
                         }
                     });
-
                 });
             });
         </script>
 
         <script>
             $(document).ready(function(){
+
                 @foreach($gallery_settings as $settings)
                     $('#switch_form_{{$settings['page']}}').submit(function(e){
                         e.preventDefault();
                         var form = $(this);
                         var url = form.attr('action');
                         var data = form.serialize();
-
-                        $.ajax({
+                    $.ajax({
                             type: 'POST',
                             url: url,
                             data: data,
-                            success: function(msg) {
+                            success: function() {
                                 if($('#gallery_{{$settings['page']}}').is(':checked')){
                                     $('#multiple_destroy_{{$settings['page']}}').fadeIn(600);
                                 } else {
