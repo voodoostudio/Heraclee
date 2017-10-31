@@ -189,6 +189,6 @@ return [
     'choose_gallery_img'    => 'Choisir l\'image (largeur min 640px)',
     'upload'                => 'Téléverser',
     'delete'                => 'Effacer',
-    'check_all_images'      => 'Vérifier toutes les images',
+    'check_all_images'      => 'Sélectionner toutes les images',
 
 ];
