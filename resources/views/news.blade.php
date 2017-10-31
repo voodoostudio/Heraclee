@@ -51,27 +51,29 @@
                     </div>
                 @endforeach
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="javascript:void(0);" class="page-link" aria-label="Previous">
-                                    <i class="icn icon-arrow_dropdown_left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <ul class="pages"></ul>
-                            </li>
-                            <li class="page-item">
-                                <a href="javascript:void(0);" class="page-link" aria-label="Next">
-                                    <i class="icn icon-arrow_dropdown_right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+            @if($news->isEmpty() == false)
+                <div class="row">
+                    <div class="col-12">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="javascript:void(0);" class="page-link" aria-label="Previous">
+                                        <i class="icn icon-arrow_dropdown_left"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <ul class="pages"></ul>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0);" class="page-link" aria-label="Next">
+                                        <i class="icn icon-arrow_dropdown_right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
     </section>
 @endsection

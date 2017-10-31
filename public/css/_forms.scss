@@ -125,6 +125,7 @@ a:focus {
     background-color: $main_gray_clr;
     color: $main_light_clr;
     cursor: pointer;
+    border-radius: 0;
   }
   .input_label {
     position: absolute;

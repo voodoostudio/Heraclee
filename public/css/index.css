@@ -140,7 +140,8 @@ a:focus {
     padding: 10px;
     background-color: #625e57;
     color: #fdfdfd;
-    cursor: pointer; }
+    cursor: pointer;
+    border-radius: 0; }
   .input_container .input_label {
     position: absolute;
     right: 1px;

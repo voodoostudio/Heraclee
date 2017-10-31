@@ -140,7 +140,8 @@ a:focus {
     padding: 10px;
     background-color: #625e57;
     color: #fdfdfd;
-    cursor: pointer; }
+    cursor: pointer;
+    border-radius: 0; }
   .input_container .input_label {
     position: absolute;
     right: 1px;
@@ -1117,5 +1118,3 @@ footer {
       color: #c54545; }
     #response p.success {
       color: #69bf7f; }
-
-/*# sourceMappingURL=global.css.map */
