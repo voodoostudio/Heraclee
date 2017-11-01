@@ -28,7 +28,7 @@
                     @endphp
                     @foreach($slider_image as $item)
                         @if($image_counter == 1)
-                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $item['image'] }}" alt=""></li>
+                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt=""></li>
                         @endif
                         @php
                             $image_counter++;

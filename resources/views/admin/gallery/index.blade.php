@@ -134,9 +134,9 @@
                                                                 @if( $settings['page'] == $image->page)
                                                                     <div class='col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30' id="gallery_image" data-id="{{ $image->id }}">
                                                                         <div class="thumbnail_container">
-                                                                            <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}">
+                                                                            <a data-fancybox="gallery_{{ $settings['page'] }}" class="thumbnail" href="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $image->created_at->format('F_Y') }}/{{ $image->image }}">
                                                                                 <div class="img_container">
-                                                                                    <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $image->image }}" />
+                                                                                    <img class="img-responsive" alt="" src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $image->created_at->format('F_Y') }}/{{ $image->image }}" />
                                                                                     <div class='text-center'>
                                                                                         <small class='text-muted'>{{ $image->name }}</small>
                                                                                     </div> <!-- text-center / end -->
@@ -157,20 +157,20 @@
                                                             @endforeach
                                                         </div>
                                                         @if(count($counter) >= 2)
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="my_checkbox">
-                                                                    <label>
-                                                                        <input type="checkbox" name="check_all" id="check_all" value="true">
-                                                                        <span class="fake_checkbox"></span>
-                                                                        <span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>
-                                                                    </label>
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div class="my_checkbox">
+                                                                        <label>
+                                                                            <input type="checkbox" name="check_all" id="check_all" value="true">
+                                                                            <span class="fake_checkbox"></span>
+                                                                            <span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-6">
-                                                                <button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>
-                                                            </div>
-                                                        </div>
                                                         @endif
                                                     @endif
                                                 </form>
@@ -194,109 +194,109 @@
             jQuery(document).ready(function () {
                 @foreach($gallery_settings as $settings)
                     jQuery("#upload_{{$settings['page']}}").validate({
-                        submitHandler: function (form) {
-                            var formData = new FormData(form);
-                            $.ajax({
-                                type: form.method,
-                                url: form.action,
-                                dataType: 'json',
-                                data: formData,
-                                cache: false,
-                                contentType: false,
-                                processData: false
-                            }).done(function (formData) {
-                                if($.isEmptyObject(formData.errors)) {
-                                    $(".error_list").html('');
-                                    $('#multiple_destroy_{{$settings['page']}} #display_image').append('' +
-                                        '<div class="col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30" id="gallery_image" data-id="' + formData.id + '">' +
-                                            '<div class="thumbnail_container">' +
-                                                '<a data-fancybox="gallery_homepage" class="thumbnail" href="' + formData.image + '">' +
-                                                    '<div class="img_container">' +
-                                                        '<img class="img-responsive" alt="" src="' + formData.image + '">' +
-                                                    '</div>' +
-                                                '</a>' +
-                                                '<a class="remove_btn" id="' + formData.id + '" href = "{{ URL::to('admin/gallery/')}}/' + formData.id + '">' +
-                                                    '<i class="icn icon-cancel"></i>' +
-                                                '</a>' +
-                                                '<div class="my_checkbox"><label><input type="checkbox" name="gallery[]" value="' + formData.id + '" /><span class="fake_checkbox"></span></label></div>' +
-                                                '</div>' +
+                    submitHandler: function (form) {
+                        var formData = new FormData(form);
+                        $.ajax({
+                            type: form.method,
+                            url: form.action,
+                            dataType: 'json',
+                            data: formData,
+                            cache: false,
+                            contentType: false,
+                            processData: false
+                        }).done(function (formData) {
+                            if($.isEmptyObject(formData.errors)) {
+                                $(".error_list").html('');
+                                $('#multiple_destroy_{{$settings['page']}} #display_image').append('' +
+                                    '<div class="col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30" id="gallery_image" data-id="' + formData.id + '">' +
+                                    '<div class="thumbnail_container">' +
+                                    '<a data-fancybox="gallery_homepage" class="thumbnail" href="' + formData.image + '">' +
+                                    '<div class="img_container">' +
+                                    '<img class="img-responsive" alt="" src="' + formData.image + '">' +
+                                    '</div>' +
+                                    '</a>' +
+                                    '<a class="remove_btn" id="' + formData.id + '" href = "{{ URL::to('admin/gallery/')}}/' + formData.id + '">' +
+                                    '<i class="icn icon-cancel"></i>' +
+                                    '</a>' +
+                                    '<div class="my_checkbox"><label><input type="checkbox" name="gallery[]" value="' + formData.id + '" /><span class="fake_checkbox"></span></label></div>' +
+                                    '</div>' +
+                                    '</div>'
+                                );
+
+                                if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide()
+                                } else {
+                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').show()
+                                }
+
+                                $(".img_upload_container .img_upload span").replaceWith("<span>Choisissez une image d'en-tête</span>");
+
+                                form.reset();
+
+                                if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length === 2) {
+                                    $('#multiple_destroy_{{$settings['page']}}').append('' +
+                                        '<div class="row">' +
+                                        '<div class="col-6">' +
+                                        '<div class="my_checkbox">' +
+                                        '<label>' +
+                                        '<input required="" type="checkbox" name="subscribe" id="check_all" value="true">' +
+                                        '<span class="fake_checkbox"></span>' +
+                                        '<span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>' +
+                                        '</label>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '<div class="col-6">' +
+                                        '<button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>' +
+                                        '</div>' +
                                         '</div>'
                                     );
-
-                                    if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
-                                        $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide()
-                                    } else {
-                                        $('#multiple_destroy_{{$settings['page']}} .my_checkbox').show()
-                                    }
-
-                                    $(".img_upload_container .img_upload span").replaceWith("<span>Choisissez une image d'en-tête</span>");
-
-                                    form.reset();
-
-                                    if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length === 2) {
-                                        $('#multiple_destroy_{{$settings['page']}}').append('' +
-                                            '<div class="row">' +
-                                                '<div class="col-6">' +
-                                                    '<div class="my_checkbox">' +
-                                                        '<label>' +
-                                                            '<input required="" type="checkbox" name="subscribe" id="check_all" value="true">' +
-                                                            '<span class="fake_checkbox"></span>' +
-                                                            '<span class="my_checkbox_text">{{ trans('lang.check_all_images') }}</span>' +
-                                                        '</label>' +
-                                                    '</div>' +
-                                                '</div>' +
-                                                '<div class="col-6">' +
-                                                    '<button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>' +
-                                                '</div>' +
-                                            '</div>'
-                                        );
-                                    }
-
-                                    $('.remove_btn').on('click', function (e) {
-                                        alert('remove');
-                                        e.preventDefault();
-                                        var url = $(this).attr('href');
-                                        var id = $(this).attr('id');
-                                        console.log(id);
-                                        $.ajax({
-                                            url: url,
-                                            success: function () {
-                                                $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
-                                                if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
-                                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
-                                                    $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
-                                                }
-                                            }
-                                        });
-                                    });
-
-                                    $('form.gallery_content_form input[name="gallery[]"]').change(function () {
-                                        var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
-                                        if (totalCheckedImg >= 1) {
-                                            $('form.gallery_content_form button.btn').attr('disabled', false);
-                                        } else {
-                                            $('form.gallery_content_form button.btn').attr('disabled', true);
-                                        }
-                                    });
-
-                                    $('form.gallery_content_form input#check_all').change(function () {
-                                        if (this.checked) {
-                                            $('form.gallery_content_form input[name="gallery[]"]').prop('checked', true);
-                                            $('form.gallery_content_form button.btn').attr('disabled', false);
-                                        } else {
-                                            $('form.gallery_content_form input[name="gallery[]"]').prop('checked', false);
-                                            $('form.gallery_content_form button.btn').attr('disabled', true);
-                                        }
-                                    });
-
-                                    console.log(formData.id);
-                                    console.log($('#multiple_destroy_{{$settings['page']}} #gallery_image').length);
-                                } else {
-                                    error_message(formData.errors);
                                 }
-                            })
-                        }
-                    });
+
+                                $('.remove_btn').on('click', function (e) {
+                                    alert('remove');
+                                    e.preventDefault();
+                                    var url = $(this).attr('href');
+                                    var id = $(this).attr('id');
+                                    console.log(id);
+                                    $.ajax({
+                                        url: url,
+                                        success: function () {
+                                            $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
+                                            if ($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                                $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
+                                                $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
+                                            }
+                                        }
+                                    });
+                                });
+
+                                $('form.gallery_content_form input[name="gallery[]"]').change(function () {
+                                    var totalCheckedImg = $('form.gallery_content_form').find('input[name="gallery[]"]:checked').length;
+                                    if (totalCheckedImg >= 1) {
+                                        $('form.gallery_content_form button.btn').attr('disabled', false);
+                                    } else {
+                                        $('form.gallery_content_form button.btn').attr('disabled', true);
+                                    }
+                                });
+
+                                $('form.gallery_content_form input#check_all').change(function () {
+                                    if (this.checked) {
+                                        $('form.gallery_content_form input[name="gallery[]"]').prop('checked', true);
+                                        $('form.gallery_content_form button.btn').attr('disabled', false);
+                                    } else {
+                                        $('form.gallery_content_form input[name="gallery[]"]').prop('checked', false);
+                                        $('form.gallery_content_form button.btn').attr('disabled', true);
+                                    }
+                                });
+
+                                console.log(formData.id);
+                                console.log($('#multiple_destroy_{{$settings['page']}} #gallery_image').length);
+                            } else {
+                                error_message(formData.errors);
+                            }
+                        })
+                    }
+                });
                 @endforeach
 
                 function error_message (msg) {
@@ -310,25 +310,25 @@
         </script>
 
         {{--<script>--}}
-            {{--$(document).ready(function(){--}}
-                {{--@foreach($gallery_settings as $settings)--}}
-                    {{--$('#multiple_destroy_{{$settings['page']}}').submit(function(e){--}}
-                        {{--e.preventDefault();--}}
-                        {{--var form = $(this);--}}
-                        {{--var url = form.attr('action');--}}
-                        {{--var data = form.serialize();--}}
+        {{--$(document).ready(function(){--}}
+        {{--@foreach($gallery_settings as $settings)--}}
+        {{--$('#multiple_destroy_{{$settings['page']}}').submit(function(e){--}}
+        {{--e.preventDefault();--}}
+        {{--var form = $(this);--}}
+        {{--var url = form.attr('action');--}}
+        {{--var data = form.serialize();--}}
 
-                        {{--$.ajax({--}}
-                            {{--type: 'POST',--}}
-                            {{--url: url,--}}
-                            {{--data: data,--}}
-                            {{--success: function(msg) {--}}
-                                {{--$('#multiple_destroy_{{$settings['page']}} #gallery_image').remove();--}}
-                            {{--}--}}
-                        {{--});--}}
-                    {{--});--}}
-                {{--@endforeach--}}
-            {{--});--}}
+        {{--$.ajax({--}}
+        {{--type: 'POST',--}}
+        {{--url: url,--}}
+        {{--data: data,--}}
+        {{--success: function(msg) {--}}
+        {{--$('#multiple_destroy_{{$settings['page']}} #gallery_image').remove();--}}
+        {{--}--}}
+        {{--});--}}
+        {{--});--}}
+        {{--@endforeach--}}
+        {{--});--}}
         {{--</script>--}}
 
         <script>
@@ -344,10 +344,10 @@
                         success: function() {
                             @foreach($gallery_settings as $settings)
                                 $('#multiple_destroy_{{$settings['page']}} div[data-id="' + id + '"]').remove();
-                                if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
-                                    $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
-                                    $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
-                                }
+                            if($('#multiple_destroy_{{$settings['page']}} #gallery_image').length <= 1) {
+                                $('#multiple_destroy_{{$settings['page']}} .my_checkbox').hide();
+                                $('#multiple_destroy_{{$settings['page']}} button.float-right').hide();
+                            }
                             @endforeach
                         }
                     });
@@ -360,23 +360,23 @@
 
                 @foreach($gallery_settings as $settings)
                     $('#switch_form_{{$settings['page']}}').submit(function(e){
-                        e.preventDefault();
-                        var form = $(this);
-                        var url = form.attr('action');
-                        var data = form.serialize();
+                    e.preventDefault();
+                    var form = $(this);
+                    var url = form.attr('action');
+                    var data = form.serialize();
                     $.ajax({
-                            type: 'POST',
-                            url: url,
-                            data: data,
-                            success: function() {
-                                if($('#gallery_{{$settings['page']}}').is(':checked')){
-                                    $('#multiple_destroy_{{$settings['page']}}').fadeIn(600);
-                                } else {
-                                    $('#multiple_destroy_{{$settings['page']}}').fadeOut(100);
-                                }
+                        type: 'POST',
+                        url: url,
+                        data: data,
+                        success: function() {
+                            if($('#gallery_{{$settings['page']}}').is(':checked')){
+                                $('#multiple_destroy_{{$settings['page']}}').fadeIn(600);
+                            } else {
+                                $('#multiple_destroy_{{$settings['page']}}').fadeOut(100);
                             }
-                        });
+                        }
                     });
+                });
                 @endforeach
             });
         </script>
@@ -464,4 +464,4 @@
                 }
             }
         </script>
-    @stop
+@stop
