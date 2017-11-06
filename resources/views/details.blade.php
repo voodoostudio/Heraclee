@@ -186,8 +186,6 @@
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
                                 <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
-                                <p class="">Created : {{ date('d.m.Y', strtotime($property['created_at'])) }}</p>
-                                <p class="">Last update : {{ date('d.m.Y', strtotime($property['updated_at'])) }}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
                                 <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">{{ trans('lang.i_am_interested') }}</button>
                             </div>
@@ -202,6 +200,14 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
+                    <p class="publication_date">
+                        <span>
+                            {{ trans('lang.created_at') }} {{ date('d.m.Y', strtotime($property['created_at'])) }}
+                        </span>
+                        <span>
+                             {{ trans('lang.updated_at') }} {{ date('d.m.Y', strtotime($property['updated_at'])) }}
+                        </span>
+                    </p>
                     @if(!empty($property['comments']['comment']))
                         <p class="margin_bottom_20 description">
                             {{$property['comments']['comment']}}

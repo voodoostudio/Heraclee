@@ -56,7 +56,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.css">
+    <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
@@ -275,8 +275,8 @@
 <script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
 <script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.js"></script>
-<script type="text/javascript" src="/js/functions.js"></script>
+<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>
+<script type="text/javascript" src="/js/functions.min.js"></script>
 <script>
     $('select').multiselect({
         includeSelectAllOption: true,

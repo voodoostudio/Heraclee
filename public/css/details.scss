@@ -229,6 +229,7 @@ section.gallery_section {
           padding: 20px 20px;
           display: table;
           margin: 0 auto;
+          background: $main_dark_clr;
           @include my_box_shadow(0px 0px 20px -5px black);
           li {
             display: inline-block;
@@ -310,6 +311,13 @@ section.object_info_section {
   .outer_block_container {
     margin-top: 20px;
     .inner_block_container {
+      p.publication_date {
+        opacity: 0.5;
+        margin-bottom: 20px;
+        span:last-of-type {
+          float: right;
+        }
+      }
       p.description {
         font-family: opensans_light;
         &:last-of-type {

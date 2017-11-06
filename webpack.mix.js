@@ -11,5 +11,14 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/app.js', 'public/js');
+
+mix.sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.styles(['resources/assets/includes/libraries/normalize.css',
+        'resources/assets/includes/libraries/slick.css',
+        'resources/assets/includes/libraries/datepicker.css',
+    ]);
+
+mix.version();
+

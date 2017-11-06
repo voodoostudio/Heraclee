@@ -662,6 +662,7 @@ section.gallery_section .gallery_container {
         padding: 20px 20px;
         display: table;
         margin: 0 auto;
+        background: #272727;
         -webkit-box-shadow: 0px 0px 20px -5px black;
         -moz-box-shadow: 0px 0px 20px -5px black;
         box-shadow: 0px 0px 20px -5px black; }
@@ -722,6 +723,11 @@ section.agent_info_section .outer_block_container {
 
 section.object_info_section .outer_block_container {
   margin-top: 20px; }
+  section.object_info_section .outer_block_container .inner_block_container p.publication_date {
+    opacity: 0.5;
+    margin-bottom: 20px; }
+    section.object_info_section .outer_block_container .inner_block_container p.publication_date span:last-of-type {
+      float: right; }
   section.object_info_section .outer_block_container .inner_block_container p.description {
     font-family: opensans_light; }
     section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
@@ -980,3 +986,5 @@ section.location_section .map_container {
           color: #ff78ce; }
         section.location_section .map_container .map_sidebar ul li.map_universities .checkbox_container label.checkbox_label {
           color: #d462fa; }
+
+/*# sourceMappingURL=details.css.map */
