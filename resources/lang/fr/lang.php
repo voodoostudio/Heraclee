@@ -37,7 +37,7 @@ return [
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobiliére',
     'contact_the_agent'     => 'Contactez l’agent',
-    'currently_no_results'  => 'Actuellement aucune résultats',
+    'currently_no_results'  => 'Actuellement aucun résultat',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
