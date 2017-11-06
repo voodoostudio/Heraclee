@@ -624,7 +624,7 @@ class PagesController extends Controller
 
     public function news()
     {
-        $news = Posts::where('status', '=', 'on')->get();
+        $news = Posts::where('status', '=', 'on')->orderBy('date', 'desc')->get();
 
         return view('news', ['news' => $news]);
     }
