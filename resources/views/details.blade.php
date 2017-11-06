@@ -185,7 +185,9 @@
                         </div>
                         <div class="col-xs-12 col-xl-4">
                             <div class="object_info">
-                                <p class="object_id">{{ trans('lang.id') }} : {{$property['property_id']}}</p>
+                                <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
+                                <p class="">Created : {{ date('d-m-Y', strtotime($property['created_at'])) }}</p>
+                                <p class="">Last update : {{ date('d-m-Y', strtotime($property['updated_at'])) }}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
                                 <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">{{ trans('lang.i_am_interested') }}</button>
                             </div>

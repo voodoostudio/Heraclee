@@ -47,8 +47,8 @@ class SyncWithApimo
                 );
                 if (empty($checkExistence)) {
                     DB::insert(
-                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`)
-                                VALUES ( :property_id, :reference, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations)',
+                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
+                                VALUES ( :property_id, :reference, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
                         [
                             'property_id' => $property['id'],
                             'reference' => $property['reference'],
@@ -111,6 +111,8 @@ class SyncWithApimo
                             'pictures' => self::addOrUpdatePictures($property['pictures']),
                             'areas' => self::addOrUpdateAreas($property['areas'], $property['id']),
                             'regulations' => self::addOrUpdateRegulations($property['regulations'], $property['id']),
+                            'created_at' => $property['created_at'],
+                            'updated_at' => $property['updated_at'],
                         ]
                     );
                     self::addOrUpdateUser($property['user']);
@@ -167,7 +169,9 @@ class SyncWithApimo
                                  `tags_customized` = :tags_customized, 
                                  `pictures` = :pictures, 
                                  `areas` = :areas, 
-                                 `regulations` =:regulations
+                                 `regulations` =:regulations,
+                                 `created_at` = :created_at, 
+                                 `updated_at` = :updated_at 
                                  WHERE property_id = :property_id',
                             [
                                 'property_id' => $property['id'],
@@ -237,6 +241,8 @@ class SyncWithApimo
                                 'pictures' => self::addOrUpdatePictures($property['pictures']),
                                 'areas' => self::addOrUpdateAreas($property['areas'], $property['id']),
                                 'regulations' => self::addOrUpdateRegulations($property['regulations'], $property['id']),
+                                'created_at' => $property['created_at'],
+                                'updated_at' => $property['updated_at'],
                             ]
                         );
                         self::addOrUpdateUser($property['user']);

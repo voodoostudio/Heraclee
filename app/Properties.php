@@ -211,6 +211,7 @@ class Properties extends Model
 
         $properties = DB::table('apimo_properties')
             ->where($conditions_where)
+            ->where('reference', 'like',  'HSTP%' )
             ->where(function($query) use ($search_keywords) {
                 $lang_short = LaravelLocalization::getCurrentLocale();
                 $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -413,6 +414,7 @@ class Properties extends Model
 
         $this->property_count = DB::table('apimo_properties')
             ->where($conditions_where)
+            ->where('reference', 'like',  'HSTP%' )
             ->where(function($query) use ($search_keywords) {
                 $lang_short = LaravelLocalization::getCurrentLocale();
                 $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -614,6 +616,7 @@ class Properties extends Model
 
         $this->all_property_count = DB::table('apimo_properties')
             ->whereIn('country', $country_array)
+            ->where('reference', 'like',  'HSTP%' )
             ->get()
             ->count();
 
@@ -768,6 +771,7 @@ class Properties extends Model
             ->whereIn('category', $sell_type_array)
             ->whereIn('city', $object_place)
             ->where($conditions_where)
+            ->where('reference', 'like',  'HSTP%' )
             ->where(function($query) use ($search_keywords) {
                 $lang_short = LaravelLocalization::getCurrentLocale();
                 $lang = LaravelLocalization::getCurrentLocaleRegional();
