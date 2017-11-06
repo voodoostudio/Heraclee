@@ -13,6 +13,16 @@
     <meta name="keywords" content="heraclee, website, responsive">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71420108-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-71420108-6');
+    </script>
+
     @php
         $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
         $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');

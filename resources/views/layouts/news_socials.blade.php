@@ -13,13 +13,21 @@
     <meta name="keywords" content="heraclee, website, responsive">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
-    {{--{{ dd($item->toArray()) }}--}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71420108-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-@php
-    $lang = LaravelLocalization::getCurrentLocale();
-    $comment_description = (isset($item['title_' . $lang]) ? $item['title_' . $lang] : '');
-    $comment_title = (isset($item['description_' . $lang]) ? $item['description_' . $lang] : '');
-@endphp
+        gtag('config', 'UA-71420108-6');
+    </script>
+
+    @php
+        $lang = LaravelLocalization::getCurrentLocale();
+        $comment_description = (isset($item['title_' . $lang]) ? $item['title_' . $lang] : '');
+        $comment_title = (isset($item['description_' . $lang]) ? $item['description_' . $lang] : '');
+    @endphp
 
 <!-- SOCIAL SHARE -->
     <meta property="og:title" content="{{ $comment_title }}" />
