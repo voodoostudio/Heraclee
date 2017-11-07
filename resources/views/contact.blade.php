@@ -1,4 +1,4 @@
- @extends('layouts.master')
+@extends('layouts.master')
 @section('title', 'Contact page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="/css/contact.min.css">

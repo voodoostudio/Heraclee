@@ -57,6 +57,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ ($cp == 'virtual-tours') ? 'active' : '' }}" href="{{ route('virtual-tours') }}">Virtual tours</a>
+                    </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}
                     {{--</li>--}}

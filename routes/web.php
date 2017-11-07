@@ -146,6 +146,21 @@ Route::group(
                 'as' => 'api',
         ]);
 
+        Route::get('/virtual-tours', [
+            'uses' => 'PagesController@virtual_tours',
+            'as' => 'virtual-tours',
+        ]);
+
+        Route::get('/details-tour/{id}', [
+            'uses' => 'PagesController@details_virtual_tour',
+            'as' => 'details-tour',
+        ]);
+
+//        Route::post('city_list/{id}/{country}', [
+//            'uses' => 'PagesController@getCityList',
+//            'as' => 'city_list',
+//        ]);
+
         /* Admin Panel */
 
         /* CRUD POSTS */

@@ -19,6 +19,7 @@ use App\Gallery;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 use LaravelLocalization;
 
 class PagesController extends Controller
@@ -26,6 +27,7 @@ class PagesController extends Controller
     public function index()
     {
         Session::forget('search');
+
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
@@ -630,6 +632,36 @@ class PagesController extends Controller
     }
 
     /**
+     * Display a listing of virtual tours.
+     */
+
+    public function virtual_tours()
+    {
+        $preview = [];
+        $properties = DB::table('apimo_properties')->get();
+
+        foreach ($properties as $key => $property) {
+            if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js')) {
+                $preview[$property['property_id']] = [$property['pictures']];
+            }
+        }
+
+        return view('tours', ['properties' => $properties, 'preview_tour' => $preview]);
+    }
+
+    /**
+     * Display virtual tour.
+     */
+
+    public function details_virtual_tour($id)
+    {
+        $tour = DB::table('apimo_properties')
+            ->where('property_id', $id)->first();
+        return view('details_tour', ['tour' => $tour]);
+    }
+
+
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -640,6 +672,58 @@ class PagesController extends Controller
 
         return view('news_details', ['item' => $news]);
     }
+
+
+//    public static function getCityList($id, $country)
+//    {
+//        $country_array =[];
+//
+//        if($country == false || $country == 'results' || $country == 'fr' || $country == 'en') {
+//            $country_array = ['FR', 'CH', 'US', 'ZA'];
+//        }
+//
+//        if($country == 'france') {
+//            $country_array = ['FR'];
+//        }
+//
+//        if($country == 'swiss') {
+//            $country_array = ['CH'];
+//        }
+//
+//        if($country == 'usa') {
+//            $country_array = ['US'];
+//        }
+//
+//        if($country == 'mauritius') {
+//            $country_array = ['ZA'];
+//        }
+//
+//        if(
+//            ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
+//            ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
+//            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
+//            ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
+//            ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
+//        ){
+//            $sell_type_array = [1, 2, 3, 4, 5, 6];
+//        } else {
+//            if ($id == 1) {
+//                $sell_type_array = [1, 4, 5, 6];
+//            } else {
+//                $sell_type_array = [2, 3];
+//            }
+//        }
+//
+//        $properties = DB::table('apimo_properties')
+//            ->whereIn('category',  $sell_type_array )
+//            ->where('reference', 'like',  'HSTP%' )
+//            ->whereIn('country', $country_array)->pluck('city');
+//
+//        $cities = DB::table('apimo_city')->whereIn('city_id', $properties)->get();
+//
+//        return json_encode($cities);
+//
+//    }
 
     public function api()
     {

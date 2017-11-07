@@ -34,7 +34,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i
                                                 class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use LaravelLocalization;
@@ -1974,7 +1975,10 @@ class Properties extends Model
             $country_array[] = ['ZA'];
         }
 
-        $properties = DB::table('apimo_properties')->whereIn('country', $country_array)->pluck('city');
+        $properties = DB::table('apimo_properties')
+            ->where('reference', 'like',  'HSTP%' )
+            ->whereIn('country', $country_array)->pluck('city');
+
         $cities = DB::table('apimo_city')->whereIn('city_id', $properties)->get();
 
         return $cities;

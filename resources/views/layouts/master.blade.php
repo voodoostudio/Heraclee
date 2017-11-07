@@ -411,5 +411,48 @@
                 $('.preloader_container').fadeOut();
             });
         </script>
+
+        {{--<script>--}}
+            {{--$(document).ready(function(){--}}
+                {{--$('.search_section a[onclick]').on( "click", function() {--}}
+                    {{--var csrf_token = $('.search_section input[name="_token"]').val();--}}
+                    {{--var type_sell = $('.search_section input[name="sell_type"]').val();--}}
+                    {{--var country = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);--}}
+                    {{--var country_arr = [];--}}
+                    {{--var countryWithoutPage = country.substr(0, country.lastIndexOf("?"));--}}
+                    {{--var lang = $('html').attr('lang');--}}
+
+                    {{--if(countryWithoutPage === '') {--}}
+                        {{--country_arr = [country][0];--}}
+                    {{--} else {--}}
+                        {{--country_arr = [countryWithoutPage][0];--}}
+                    {{--}--}}
+
+                    {{--var url = '/city_list/' + type_sell + '/' + country_arr;--}}
+
+                    {{--$.ajax({--}}
+                        {{--type: 'POST',--}}
+                        {{--url: url,--}}
+                        {{--dataType: 'json',--}}
+                        {{--data: {--}}
+                          {{--'_token': csrf_token,--}}
+                          {{--'id': type_sell,--}}
+                          {{--'country': country_arr--}}
+                        {{--},--}}
+                        {{--success: function(data) {--}}
+                            {{--$('select[name="object_place[]"]').multiselect('rebuild').html('');--}}
+
+                            {{--$.each( data, function( key, value ) {--}}
+                                {{--$('.search_section select[name="object_place[]"]').append('<option value="' + value.city_id + '">' + value.name + '</option>');--}}
+                            {{--});--}}
+
+                            {{--$('select[name="object_place[]"]').multiselect('rebuild');--}}
+                        {{--}--}}
+                    {{--});--}}
+
+                {{--});--}}
+            {{--});--}}
+        {{--</script>--}}
+
     </body>
 </html>
