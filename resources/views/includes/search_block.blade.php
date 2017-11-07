@@ -99,6 +99,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12 margin_top_20">
+                            <button class="btn" style="float: right">Rechercher</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
