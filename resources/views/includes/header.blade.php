@@ -36,34 +36,26 @@
             </div>
 
             <?php
-                $current_page = Route::getCurrentRoute()->getName();
                 $lang = LaravelLocalization::getCurrentLocale();
-                $cp = $_SERVER['REQUEST_URI'];
-                /* from search page (results: 'locations, achat') */
-//                preg_match("/[^\/]+$/", route('france'), $france);
-//                preg_match("/[^\/]+$/", route('swiss'), $swiss);
-//                preg_match("/[^\/]+$/", route('usa'), $usa);
-//                preg_match("/[^\/]+$/", route('mauritius'), $mauritius);
+                $cp = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
              ?>
-
-
 
             <nav>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'index') ? 'active' : '' }}" href="{{ route('index') }}">{{ trans('lang.homepage') }}</a>
+                        <a class="nav-link {{ ($cp == '' || $cp == '' . $lang) ? 'active' : '' }}" href="{{ route('index') }}">{{ trans('lang.homepage') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/france' || $cp == '/' . $lang . '/locations/results/france' || $cp == '/france')) ? 'active' : '' }}" href="{{ route('france') }}">{{ trans('lang.france') }}{{ (($current_page == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ (($cp == 'france')) ? 'active' : '' }}" href="{{ route('france') }}">{{ trans('lang.france') }}{{ (($cp == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/swiss' || $cp == '/' . $lang . '/locations/results/swiss' || $cp == '/swiss')) ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($current_page == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/usa' || $cp == '/' . $lang . '/locations/results/usa' || $cp == '/usa')) ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($current_page == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ (($cp == '/' . $lang . '/mauritius' || $cp == '/' . $lang . '/locations/results/mauritius' || $cp == '/mauritius')) ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($current_page == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <a class="nav-link {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}
@@ -81,13 +73,13 @@
                         {{--<a class="nav-link {{ ($current_page == 'team') ? 'active' : '' }}" href="{{ route('team') }}">{{ trans('lang.agency') }}</a>--}}
                     {{--</li>--}}
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'news' || $current_page == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">{{ trans('lang.news') }}</a>
+                        <a class="nav-link {{ ($cp == 'news' || $cp == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">{{ trans('lang.news') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'newsletters') ? 'active' : '' }}" href="{{ route('newsletters') }}">{{ trans('lang.newsletters') }}</a>
+                        <a class="nav-link {{ ($cp == 'newsletters') ? 'active' : '' }}" href="{{ route('newsletters') }}">{{ trans('lang.newsletters') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($current_page == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>
+                        <a class="nav-link {{ ($cp == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>
                     </li>
                 </ul>
             </nav>
