@@ -38,6 +38,7 @@ return [
     'your_real_estate_search' => 'Your real estate search',
     'contact_the_agent'     => 'Contact the agent',
     'currently_no_results'  => 'Currently no results found',
+    'search'                => 'Search',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',

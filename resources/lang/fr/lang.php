@@ -38,6 +38,7 @@ return [
     'your_real_estate_search' => 'Votre recherche immobiliére',
     'contact_the_agent'     => 'Contactez l’agent',
     'currently_no_results'  => 'Actuellement aucun résultat',
+    'search'                => 'Rechercher',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',

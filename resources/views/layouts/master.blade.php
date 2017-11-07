@@ -29,6 +29,7 @@
         <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
         <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
         <link rel="stylesheet" type="text/css" href="/css/global.min.css">
+        {{--<link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">--}}
         {{--<link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">--}}
         <style>
             .cssload-loader {
@@ -212,7 +213,7 @@
 
         @yield('css')
         @include('js-localization::head')
-        <link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/media_queries.css">
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->

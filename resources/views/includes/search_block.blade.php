@@ -101,7 +101,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 margin_top_20">
-                            <button class="btn" style="float: right">Rechercher</button>
+                            <button class="btn" id="submit_search_form" style="float: right">{{ trans('lang.search') }}</button>
                         </div>
                     </div>
                 </div>

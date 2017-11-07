@@ -92,4 +92,7 @@ $(document).ready(function() {
         }
     });
 
+    $('button#submit_search_form').on('click', function () {
+        $(".search_section form").submit();
+    });
 });
