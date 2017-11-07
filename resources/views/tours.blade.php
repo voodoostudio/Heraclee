@@ -14,15 +14,19 @@
             ->whereIn('picture_id', $preview)
             ->get();
         @endphp
+
+        {{--  ************************************  --}}
+        {{--  *           ДЛЯ ВАНИ               *  --}}
+        {{--  *   PROPERTY_ID - это у нас $key   *  --}}
+        {{--  ************************************  --}}
+
+        {{ dump($key) }}
+
         @foreach($image as $item)
             <a href="{{ route('details-tour', $key) }}">
                 <img src="{{ $item['url'] }}" alt="">
             </a>
-
         @endforeach
-
-
-        {{--<img src="{{ $preview['url'] }}" alt="">--}}
     @endforeach
 
 
