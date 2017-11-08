@@ -9,7 +9,7 @@
 
     <section class="homepage_title_section">
         <div class="container-fluid">
-            <h1 class="hidden-md-up">Agence immobiliére de prestige - Saint-Tropez</h1>
+            <h1 class="hidden-md-up">Heraclee <br>Agence immobiliére de prestige <br>Saint-Tropez</h1>
         </div>
     </section>
 

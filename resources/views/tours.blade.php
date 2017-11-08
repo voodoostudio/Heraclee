@@ -22,7 +22,7 @@
                     {{--{{ dump($key) }}--}}
 
                     @foreach($image as $item)
-                        <div class="col-md-6 margin_bottom_20">
+                        <div class="col-sm-6">
                             <div class="object_block">
                                 <div class="img_block">
                                     <a href="{{ route('details-tour', $key) }}">

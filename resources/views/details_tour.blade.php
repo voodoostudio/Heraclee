@@ -4,10 +4,7 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/details.min.css">
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
+    {{--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>--}}
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -31,6 +28,6 @@
         </script>
     @endif
 
-    <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
+    {{--<script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>--}}
     {{--<script type="text/javascript" src="/js/details.min.js"></script>--}}
 @stop

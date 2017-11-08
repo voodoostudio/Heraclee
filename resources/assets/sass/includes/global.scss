@@ -138,6 +138,7 @@ header {
         padding: 0;
         border: none;
         line-height: 27px;
+        color: #c3baac;
       }
       .lang_currency_container {
         float: right;
@@ -762,5 +763,12 @@ footer {
     &.success {
       color: $success_clr;
     }
+  }
+}
+
+section.virtual_tours_section {
+  margin-top: 40px;
+  .object_block {
+    margin-bottom: 30px;
   }
 }

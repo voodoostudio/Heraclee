@@ -1402,6 +1402,7 @@ header .navigation_container .navigation_block h1 {
   padding: 0;
   border: none;
   line-height: 27px;
+  color: #c3baac;
 }
 
 header .navigation_container .navigation_block .lang_currency_container {
@@ -2108,6 +2109,14 @@ footer ul.social_networks li.linkedin {
 
 #response p.success {
   color: #69bf7f;
+}
+
+section.virtual_tours_section {
+  margin-top: 40px;
+}
+
+section.virtual_tours_section .object_block {
+  margin-bottom: 30px;
 }
 
 section.contact_info_section {
@@ -2999,18 +3008,20 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 #index section.description_section {
-  margin-top: 50px;
-  text-align: center;
+  margin-top: 20px;
+  text-align: justify;
 }
 
 #index section.description_section h1 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin: 0;
   line-height: 1.5;
+  border-bottom: 1px solid #ccac83;
+  padding-bottom: 40px;
 }
 
 #index section.results_section {
-  margin-top: 70px;
+  margin-top: 45px;
 }
 
 #index section.results_section h1 {
@@ -6225,7 +6236,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
     margin-top: 0;
   }
-  section.top_offer_section {
+  #index section.top_offer_section {
     height: 550px;
   }
   #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
@@ -6459,32 +6470,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     top: 5px;
     right: 5px;
   }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide {
-    margin: 0 5px;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container {
-    bottom: -60px;
-    padding: 0 10px;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info {
-    padding: 10px 10px 10px 10px;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a {
-    font-size: 0.875rem;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price, section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city {
-    font-size: 0.75rem;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block {
-    margin-top: 0;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties {
-    margin: 5px auto 0;
-  }
-  section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li {
-    font-size: 0.75rem;
-    margin-right: 7px;
-  }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
     margin: 20px 0 70px;
     height: calc(100% - 90px);
@@ -6623,21 +6608,47 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 0;
     border: none;
   }
-  section.carousel_offers_section {
+  #index section.top_offer_section {
+    height: 400px;
+  }
+  #index section.top_offer_section .info_block h1 {
+    font-size: 40px;
+  }
+  #index section.top_offer_section .info_block h3 {
+    font-size: 25px;
+  }
+  #index section.carousel_offers_section {
     margin-top: 30px;
   }
-  section.carousel_offers_section h2 {
+  #index section.carousel_offers_section h2 {
     margin-bottom: 20px;
     font-size: 1.5625rem;
   }
-  section.top_offer_section {
-    height: 400px;
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide {
+    margin: 0 5px;
   }
-  section.top_offer_section .info_block h1 {
-    font-size: 40px;
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container {
+    bottom: -60px;
+    padding: 0 10px;
   }
-  section.top_offer_section .info_block h3 {
-    font-size: 25px;
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info {
+    padding: 10px 10px 10px 10px;
+  }
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a {
+    font-size: 0.875rem;
+  }
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price, #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city {
+    font-size: 0.75rem;
+  }
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block {
+    margin-top: 0;
+  }
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties {
+    margin: 5px auto 0;
+  }
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li {
+    font-size: 0.75rem;
+    margin-right: 7px;
   }
   section.contact_info_section {
     margin-top: 30px;
@@ -6741,21 +6752,33 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.search_section .outer_block_container .inner_block_container .input_container.search_input {
     margin-top: 5px;
   }
-  section.top_offer_section {
+  #index section.top_offer_section {
     height: 250px;
   }
-  section.top_offer_section .info_block {
+  #index section.top_offer_section .info_block {
     bottom: 20px;
   }
-  section.top_offer_section .info_block h1 {
+  #index section.top_offer_section .info_block h1 {
     font-size: 25px;
   }
-  section.top_offer_section .info_block h3 {
+  #index section.top_offer_section .info_block h3 {
     font-size: 15px;
     margin-bottom: 10px;
   }
-  section.latest_news_section .marquee_title {
+  #index section.latest_news_section .marquee_title {
     display: none;
+  }
+  #index section.description_section {
+    margin-top: 30px;
+  }
+  #index section.description_section h1 {
+    font-size: 0.8rem;
+  }
+  #index section.results_section {
+    margin-top: 40px;
+  }
+  #index section.results_section h1 {
+    margin-bottom: 45px;
   }
   #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 10px;
@@ -6974,6 +6997,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
     max-height: 100%;
   }
+  section.results_section .results_container.grid_view .container-fluid .results_carousel.slick-slider .slick-arrow.slick-next, section.results_section .results_container.map_view .container-fluid .results_carousel.slick-slider .slick-arrow.slick-next {
+    right: 15px !important;
+  }
+  section.results_section .results_container.grid_view .container-fluid .results_carousel.slick-slider .slick-arrow.slick-prev, section.results_section .results_container.map_view .container-fluid .results_carousel.slick-slider .slick-arrow.slick-prev {
+    left: 15px;
+    right: initial;
+  }
   section.results_section .results_container.map_view #results_map {
     height: 400px;
   }
@@ -7015,18 +7045,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   .agent_info_block .agent_info ul li {
     font-size: 0.85rem;
-  }
-  #index section.description_section {
-    margin-top: 30px;
-  }
-  #index section.description_section h1 {
-    font-size: 0.875rem;
-  }
-  #index section.results_section {
-    margin-top: 40px;
-  }
-  #index section.results_section h1 {
-    margin-bottom: 45px;
   }
   /* Bootstrap modal popup START*/
   .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
