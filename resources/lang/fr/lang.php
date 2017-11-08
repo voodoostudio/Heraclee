@@ -36,7 +36,7 @@ return [
     'list'                  => 'Liste',
     'grid'                  => 'Grille',
     'map'                   => 'Carte',
-    'your_real_estate_search' => 'Votre recherche immobiliére',
+    'your_real_estate_search' => 'Votre recherche immobilière',
     'contact_the_agent'     => 'Contactez l’agent',
     'currently_no_results'  => 'Actuellement aucun résultat',
     'search'                => 'Rechercher',

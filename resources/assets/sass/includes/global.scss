@@ -428,8 +428,9 @@ section.search_section {
     float: left;
     margin-right: 30px;
     img {
-      border: 1px solid $main_brown_clr;
-      height: 100%;
+      //border: 1px solid $main_brown_clr;
+      //height: 100%;
+      max-width: 150px;
     }
   }
   .agent_info {

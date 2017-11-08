@@ -10,24 +10,31 @@
                         <div class="col-md-12">
                             <div class="agent_info_block">
                                 <div class="agent_img">
-                                    @if(!empty($property['user']['picture']))
-                                        <img src="{{$property['user']['picture']}}" alt="">
-                                    @else
-                                        <img src="/img/details/no_agent_photo.svg" alt="">
-                                    @endif
+                                    {{--@if(!empty($property['user']['picture']))--}}
+                                    {{--<img src="{{$property['user']['picture']}}" alt="">--}}
+                                    {{--@else--}}
+                                    {{--<img src="/img/details/no_agent_photo.svg" alt="">--}}
+                                    {{--@endif--}}
+                                    <img src="/img/logo.svg" alt="">
                                 </div>
                                 <div class="agent_info">
-                                    <p>{{ trans('lang.contact_agent_to_visit')}}</p>
+                                    <p>{{ trans('lang.contact_agent_to_visit') }}</p>
                                     <p class="agent_name">
-                                        {{$property['user']['firstname']}} {{$property['user']['lastname']}}
+                                        {{-- {{$property['user']['firstname']}} {{$property['user']['lastname']}}--}}
+                                        SAINT-TROPEZ
                                     </p>
                                     <ul>
-                                        @if(!empty($property['user']['phone']))
-                                            <li><a href="tel:{{$property['user']['phone']}}">{{$property['user']['phone']}}</a></li>
-                                        @endif
-                                        @if(!empty($property['user']['email']))
-                                            <li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>
-                                        @endif
+                                        {{--@if(!empty($property['user']['phone']))--}}
+                                        {{--<li><a href="tel:{{$property['user']['phone']}}">{{$property['user']['phone']}}</a></li>--}}
+                                        {{--@endif--}}
+                                        {{--@if(!empty($property['user']['email']))--}}
+                                        {{--<li><a href="mailto:{{$property['user']['email']}}">{{$property['user']['email']}}</a></li>--}}
+                                        {{--@endif--}}
+
+                                        <li><a href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a></li>
+
+                                        <li><a href="mailto:info@heraclee.com">info@heraclee.com</a></li>
+
                                     </ul>
                                 </div>
                             </div>

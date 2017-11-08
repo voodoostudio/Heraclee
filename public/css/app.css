@@ -1724,8 +1724,7 @@ section.search_section .outer_block_container .inner_block_container .input_cont
 }
 
 .agent_info_block .agent_img img {
-  border: 1px solid #ccac83;
-  height: 100%;
+  max-width: 150px;
 }
 
 .agent_info_block .agent_info {
