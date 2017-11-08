@@ -16,6 +16,7 @@ return [
     'swiss'                 => 'Swiss',
     'usa'                   => 'USA',
     'mauritius'             => 'Mauritius',
+    'virtual_tours'         => 'Virtual tours',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',
@@ -29,6 +30,7 @@ return [
     'surface'               => 'Surface area',
     'bedrooms'              => 'Bedrooms',
     'homepage_description'  => 'Our agency, Heraclee, specializing in luxury real estate in the French Riviera, has been based for 7 years in the emblematic city of Saint-Tropez. The luxury real estate market in the Cote d\'Azur being one of the most attractive in the country, we offer the best of the St. Tropez real estate.',
+    'homepage_title'        => 'Heraclee <br>Agence immobiliére de prestige <br>Saint-Tropez',
 
 //    RESULTS PAGE
     'results_per_page'      => 'results per page',

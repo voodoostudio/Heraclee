@@ -17,6 +17,12 @@
         $comment_title = (isset($item['title_' . $lang]) ? $item['title_' . $lang] : '');
     @endphp
 
+    <section class="page_title_section hidden-md-up">
+        <div class="container-fluid">
+            <h1>{{ trans('lang.news') }}</h1>
+        </div>
+    </section>
+
     <section class="article_section">
         <div class="container-fluid">
             <div class="outer_block_container">

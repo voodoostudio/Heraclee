@@ -6168,11 +6168,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
 
 @media screen and (max-width: 1199px) {
   header .navigation_container .navigation_block {
-    margin-left: 155px;
+    margin-left: 140px;
   }
   header .navigation_container nav {
-    width: calc(100% - 155px);
-    margin-left: 155px;
+    width: calc(100% - 140px);
+    margin-left: 140px;
   }
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 15px;
@@ -6213,12 +6213,12 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     max-width: 84px;
   }
   header .navigation_container .navigation_block {
-    margin-left: 140px;
+    margin-left: 100px;
   }
   header .navigation_container nav {
     padding: 10px 0 10px;
-    width: calc(100% - 140px);
-    margin-left: 140px;
+    width: calc(100% - 100px);
+    margin-left: 100px;
   }
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 0;

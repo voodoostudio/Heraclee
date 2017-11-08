@@ -9,7 +9,7 @@
 
     <section class="homepage_title_section">
         <div class="container-fluid">
-            <h1 class="hidden-md-up">Heraclee <br>Agence immobiliére de prestige <br>Saint-Tropez</h1>
+            <h1 class="hidden-md-up">{!! trans('lang.homepage_title') !!}</h1>
         </div>
     </section>
 

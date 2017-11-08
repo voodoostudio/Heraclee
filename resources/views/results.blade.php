@@ -43,6 +43,12 @@
 
     @endphp
 
+    <section class="page_title_section hidden-md-up">
+        <div class="container-fluid">
+            <h1>{{ trans('lang.news') }}</h1>
+        </div>
+    </section>
+
     @include('includes.search_block')
 
     @if($count_items == 0)

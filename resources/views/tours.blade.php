@@ -4,6 +4,12 @@
 @stop
 
 @section('content')
+    <section class="page_title_section hidden-md-up">
+        <div class="container-fluid">
+            <h1>{{ trans('lang.virtual_tours') }}</h1>
+        </div>
+    </section>
+
     <section class="virtual_tours_section">
         <div class="container-fluid">
             <div class="row">

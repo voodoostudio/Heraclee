@@ -62,11 +62,11 @@
 @media screen and ( max-width: 1199px ) {
   header .navigation_container {
     .navigation_block {
-      margin-left: 155px;
+      margin-left: 140px;
     }
     nav {
-      width: calc(100% - 155px);
-      margin-left: 155px;
+      width: calc(100% - 140px);
+      margin-left: 140px;
       ul.nav li.nav-item {
         padding-right: 15px;
         a.nav-link {
@@ -164,12 +164,12 @@
     }
     .navigation_container {
       .navigation_block {
-        margin-left: 140px;
+        margin-left: 100px;
       }
       nav {
         padding: 10px 0 10px;
-        width: calc(100% - 140px);
-        margin-left: 140px;
+        width: calc(100% - 100px);
+        margin-left: 100px;
         ul.nav li.nav-item {
           padding-right: 0;
           a.nav-link {
