@@ -1480,7 +1480,7 @@ header .navigation_container nav ul.nav {
 
 header .navigation_container nav ul.nav li.nav-item {
   margin-bottom: 10px;
-  padding-right: 20px;
+  padding-right: 15px;
   display: inline-block;
   transition: 0.2s ease-in-out;
 }
@@ -2834,7 +2834,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   color: #69bf7f;
 }
 
-#index section.top_offer_section {
+#index section.top_offer_section,
+#france section.top_offer_section,
+#swiss section.top_offer_section,
+#usa section.top_offer_section,
+#mauritius section.top_offer_section {
   height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2842,7 +2846,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   position: relative;
 }
 
-#index section.top_offer_section .info_block {
+#index section.top_offer_section .info_block,
+#france section.top_offer_section .info_block,
+#swiss section.top_offer_section .info_block,
+#usa section.top_offer_section .info_block,
+#mauritius section.top_offer_section .info_block {
   position: absolute;
   bottom: 40px;
   width: 100%;
@@ -2851,48 +2859,88 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   z-index: 2;
 }
 
-#index section.top_offer_section .info_block h1 {
+#index section.top_offer_section .info_block h1,
+#france section.top_offer_section .info_block h1,
+#swiss section.top_offer_section .info_block h1,
+#usa section.top_offer_section .info_block h1,
+#mauritius section.top_offer_section .info_block h1 {
   font-family: opensans_regular;
   font-size: 3.125rem;
   margin-bottom: 10px;
 }
 
-#index section.top_offer_section .info_block h3 {
+#index section.top_offer_section .info_block h3,
+#france section.top_offer_section .info_block h3,
+#swiss section.top_offer_section .info_block h3,
+#usa section.top_offer_section .info_block h3,
+#mauritius section.top_offer_section .info_block h3 {
   font-size: 1.563rem;
   margin-bottom: 25px;
 }
 
-#index section.index_main_carousel_section {
+#index section.index_main_carousel_section,
+#france section.index_main_carousel_section,
+#swiss section.index_main_carousel_section,
+#usa section.index_main_carousel_section,
+#mauritius section.index_main_carousel_section {
   max-height: 700px;
   overflow: hidden;
 }
 
-#index section.index_main_carousel_section .slick-slider .slick-arrow {
+#index section.index_main_carousel_section .slick-slider .slick-arrow,
+#france section.index_main_carousel_section .slick-slider .slick-arrow,
+#swiss section.index_main_carousel_section .slick-slider .slick-arrow,
+#usa section.index_main_carousel_section .slick-slider .slick-arrow,
+#mauritius section.index_main_carousel_section .slick-slider .slick-arrow {
   z-index: 99;
 }
 
-#index section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev {
+#index section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+#france section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+#swiss section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+#usa section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+#mauritius section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev {
   left: 40px;
 }
 
-#index section.index_main_carousel_section .slick-slider .slick-arrow.slick-next {
+#index section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+#france section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+#swiss section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+#usa section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+#mauritius section.index_main_carousel_section .slick-slider .slick-arrow.slick-next {
   right: 40px;
 }
 
-#index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img {
+#index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img,
+#france section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img,
+#swiss section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img,
+#usa section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img,
+#mauritius section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img {
   width: 100%;
 }
 
-#index section.latest_news_section {
+#index section.latest_news_section,
+#france section.latest_news_section,
+#swiss section.latest_news_section,
+#usa section.latest_news_section,
+#mauritius section.latest_news_section {
   margin-top: 40px;
 }
 
-#index section.latest_news_section .latest_news_container {
+#index section.latest_news_section .latest_news_container,
+#france section.latest_news_section .latest_news_container,
+#swiss section.latest_news_section .latest_news_container,
+#usa section.latest_news_section .latest_news_container,
+#mauritius section.latest_news_section .latest_news_container {
   border: 1px solid #625e57;
   background: #272727;
 }
 
-#index section.latest_news_section .latest_news_container .marquee_title {
+#index section.latest_news_section .latest_news_container .marquee_title,
+#france section.latest_news_section .latest_news_container .marquee_title,
+#swiss section.latest_news_section .latest_news_container .marquee_title,
+#usa section.latest_news_section .latest_news_container .marquee_title,
+#mauritius section.latest_news_section .latest_news_container .marquee_title {
   float: left;
   padding: 10px;
   margin-right: 20px;
@@ -2903,14 +2951,26 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border: 1px solid #ccac83;
 }
 
-#index section.latest_news_section .latest_news_container .marquee {
+#index section.latest_news_section .latest_news_container .marquee,
+#france section.latest_news_section .latest_news_container .marquee,
+#swiss section.latest_news_section .latest_news_container .marquee,
+#usa section.latest_news_section .latest_news_container .marquee,
+#mauritius section.latest_news_section .latest_news_container .marquee {
   overflow: hidden;
   margin-right: 20px;
   margin-left: 20px;
   position: relative;
 }
 
-#index section.latest_news_section .latest_news_container .marquee:before, #index section.latest_news_section .latest_news_container .marquee:after {
+#index section.latest_news_section .latest_news_container .marquee:before, #index section.latest_news_section .latest_news_container .marquee:after,
+#france section.latest_news_section .latest_news_container .marquee:before,
+#france section.latest_news_section .latest_news_container .marquee:after,
+#swiss section.latest_news_section .latest_news_container .marquee:before,
+#swiss section.latest_news_section .latest_news_container .marquee:after,
+#usa section.latest_news_section .latest_news_container .marquee:before,
+#usa section.latest_news_section .latest_news_container .marquee:after,
+#mauritius section.latest_news_section .latest_news_container .marquee:before,
+#mauritius section.latest_news_section .latest_news_container .marquee:after {
   content: '';
   position: absolute;
   width: 20px;
@@ -2918,55 +2978,99 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   box-shadow: 0px 0px 15px 5px #272727;
 }
 
-#index section.latest_news_section .latest_news_container .marquee:before {
+#index section.latest_news_section .latest_news_container .marquee:before,
+#france section.latest_news_section .latest_news_container .marquee:before,
+#swiss section.latest_news_section .latest_news_container .marquee:before,
+#usa section.latest_news_section .latest_news_container .marquee:before,
+#mauritius section.latest_news_section .latest_news_container .marquee:before {
   left: -20px;
 }
 
-#index section.latest_news_section .latest_news_container .marquee:after {
+#index section.latest_news_section .latest_news_container .marquee:after,
+#france section.latest_news_section .latest_news_container .marquee:after,
+#swiss section.latest_news_section .latest_news_container .marquee:after,
+#usa section.latest_news_section .latest_news_container .marquee:after,
+#mauritius section.latest_news_section .latest_news_container .marquee:after {
   right: -20px;
 }
 
-#index section.latest_news_section .latest_news_container .marquee ul li {
+#index section.latest_news_section .latest_news_container .marquee ul li,
+#france section.latest_news_section .latest_news_container .marquee ul li,
+#swiss section.latest_news_section .latest_news_container .marquee ul li,
+#usa section.latest_news_section .latest_news_container .marquee ul li,
+#mauritius section.latest_news_section .latest_news_container .marquee ul li {
   display: inline-block;
   margin-right: 40px;
   line-height: 42px;
 }
 
-#index section.latest_news_section .latest_news_container .marquee .js-marquee {
+#index section.latest_news_section .latest_news_container .marquee .js-marquee,
+#france section.latest_news_section .latest_news_container .marquee .js-marquee,
+#swiss section.latest_news_section .latest_news_container .marquee .js-marquee,
+#usa section.latest_news_section .latest_news_container .marquee .js-marquee,
+#mauritius section.latest_news_section .latest_news_container .marquee .js-marquee {
   margin-right: 0 !important;
 }
 
-#index section.carousel_offers_section {
+#index section.carousel_offers_section,
+#france section.carousel_offers_section,
+#swiss section.carousel_offers_section,
+#usa section.carousel_offers_section,
+#mauritius section.carousel_offers_section {
   margin-top: 70px;
 }
 
-#index section.carousel_offers_section h2 {
+#index section.carousel_offers_section h2,
+#france section.carousel_offers_section h2,
+#swiss section.carousel_offers_section h2,
+#usa section.carousel_offers_section h2,
+#mauritius section.carousel_offers_section h2 {
   font-size: 2.5rem;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 40px;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide {
   margin: 0 15px;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block {
   position: relative;
   margin-bottom: 93px;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container {
   overflow: hidden;
   background-color: #ccac83;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container img {
   transition: 0.3s;
   width: 100%;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading {
   text-align: center;
   display: table;
   width: 100px;
@@ -2982,37 +3086,61 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   cursor: pointer;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container .loading .icn {
   display: table-cell;
   vertical-align: middle;
   color: #ccac83;
   font-size: 10px;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover img {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
   opacity: 0.6;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_img_container:hover .loading {
   opacity: 1;
   transition: 0.3s;
 }
 
-#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container {
+#index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container,
+#france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container,
+#swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container,
+#usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container,
+#mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .object_info_container {
   position: absolute;
   padding: 0 20px;
   width: 100%;
   bottom: -81px;
 }
 
-#index section.description_section {
+#index section.description_section,
+#france section.description_section,
+#swiss section.description_section,
+#usa section.description_section,
+#mauritius section.description_section {
   margin-top: 20px;
   text-align: justify;
 }
 
-#index section.description_section h1 {
+#index section.description_section h1,
+#france section.description_section h1,
+#swiss section.description_section h1,
+#usa section.description_section h1,
+#mauritius section.description_section h1 {
   font-size: 1.1rem;
   margin: 0;
   line-height: 1.5;
@@ -3020,11 +3148,19 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   padding-bottom: 40px;
 }
 
-#index section.results_section {
+#index section.results_section,
+#france section.results_section,
+#swiss section.results_section,
+#usa section.results_section,
+#mauritius section.results_section {
   margin-top: 45px;
 }
 
-#index section.results_section h1 {
+#index section.results_section h1,
+#france section.results_section h1,
+#swiss section.results_section h1,
+#usa section.results_section h1,
+#mauritius section.results_section h1 {
   margin-bottom: 70px;
 }
 
@@ -6172,7 +6308,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-left: 140px;
   }
   header .navigation_container nav ul.nav li.nav-item {
-    padding-right: 15px;
+    padding-right: 10px;
   }
   header .navigation_container nav ul.nav li.nav-item a.nav-link {
     font-size: 0.875rem;
@@ -6236,7 +6372,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
     margin-top: 0;
   }
-  #index section.top_offer_section {
+  #index section.top_offer_section,
+  #france section.top_offer_section,
+  #swiss section.top_offer_section,
+  #usa section.top_offer_section,
+  #mauritius section.top_offer_section {
     height: 550px;
   }
   #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
@@ -6608,45 +6748,101 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 0;
     border: none;
   }
-  #index section.top_offer_section {
+  #index section.top_offer_section,
+  #france section.top_offer_section,
+  #swiss section.top_offer_section,
+  #usa section.top_offer_section,
+  #mauritius section.top_offer_section {
     height: 400px;
   }
-  #index section.top_offer_section .info_block h1 {
+  #index section.top_offer_section .info_block h1,
+  #france section.top_offer_section .info_block h1,
+  #swiss section.top_offer_section .info_block h1,
+  #usa section.top_offer_section .info_block h1,
+  #mauritius section.top_offer_section .info_block h1 {
     font-size: 40px;
   }
-  #index section.top_offer_section .info_block h3 {
+  #index section.top_offer_section .info_block h3,
+  #france section.top_offer_section .info_block h3,
+  #swiss section.top_offer_section .info_block h3,
+  #usa section.top_offer_section .info_block h3,
+  #mauritius section.top_offer_section .info_block h3 {
     font-size: 25px;
   }
-  #index section.carousel_offers_section {
+  #index section.carousel_offers_section,
+  #france section.carousel_offers_section,
+  #swiss section.carousel_offers_section,
+  #usa section.carousel_offers_section,
+  #mauritius section.carousel_offers_section {
     margin-top: 30px;
   }
-  #index section.carousel_offers_section h2 {
+  #index section.carousel_offers_section h2,
+  #france section.carousel_offers_section h2,
+  #swiss section.carousel_offers_section h2,
+  #usa section.carousel_offers_section h2,
+  #mauritius section.carousel_offers_section h2 {
     margin-bottom: 20px;
     font-size: 1.5625rem;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide {
     margin: 0 5px;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container {
     bottom: -60px;
     padding: 0 10px;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info {
     padding: 10px 10px 10px 10px;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info a {
     font-size: 0.875rem;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price, #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price, #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.price,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .subtitle span.city {
     font-size: 0.75rem;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block {
     margin-top: 0;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties {
     margin: 5px auto 0;
   }
-  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li {
+  #index section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li,
+  #france section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li,
+  #swiss section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li,
+  #usa section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li,
+  #mauritius section.carousel_offers_section .carousel.offers_carousel .slick-slide.object_block .outer_block_container .object_info .properties_block .properties li {
     font-size: 0.75rem;
     margin-right: 7px;
   }
@@ -6764,32 +6960,68 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     display: block;
     margin: 0 auto;
   }
-  #index section.top_offer_section {
+  #index section.top_offer_section,
+  #france section.top_offer_section,
+  #swiss section.top_offer_section,
+  #usa section.top_offer_section,
+  #mauritius section.top_offer_section {
     height: 250px;
   }
-  #index section.top_offer_section .info_block {
+  #index section.top_offer_section .info_block,
+  #france section.top_offer_section .info_block,
+  #swiss section.top_offer_section .info_block,
+  #usa section.top_offer_section .info_block,
+  #mauritius section.top_offer_section .info_block {
     bottom: 20px;
   }
-  #index section.top_offer_section .info_block h1 {
+  #index section.top_offer_section .info_block h1,
+  #france section.top_offer_section .info_block h1,
+  #swiss section.top_offer_section .info_block h1,
+  #usa section.top_offer_section .info_block h1,
+  #mauritius section.top_offer_section .info_block h1 {
     font-size: 25px;
   }
-  #index section.top_offer_section .info_block h3 {
+  #index section.top_offer_section .info_block h3,
+  #france section.top_offer_section .info_block h3,
+  #swiss section.top_offer_section .info_block h3,
+  #usa section.top_offer_section .info_block h3,
+  #mauritius section.top_offer_section .info_block h3 {
     font-size: 15px;
     margin-bottom: 10px;
   }
-  #index section.latest_news_section .marquee_title {
+  #index section.latest_news_section .marquee_title,
+  #france section.latest_news_section .marquee_title,
+  #swiss section.latest_news_section .marquee_title,
+  #usa section.latest_news_section .marquee_title,
+  #mauritius section.latest_news_section .marquee_title {
     display: none;
   }
-  #index section.description_section {
+  #index section.description_section,
+  #france section.description_section,
+  #swiss section.description_section,
+  #usa section.description_section,
+  #mauritius section.description_section {
     margin-top: 30px;
   }
-  #index section.description_section h1 {
+  #index section.description_section h1,
+  #france section.description_section h1,
+  #swiss section.description_section h1,
+  #usa section.description_section h1,
+  #mauritius section.description_section h1 {
     font-size: 0.8rem;
   }
-  #index section.results_section {
+  #index section.results_section,
+  #france section.results_section,
+  #swiss section.results_section,
+  #usa section.results_section,
+  #mauritius section.results_section {
     margin-top: 40px;
   }
-  #index section.results_section h1 {
+  #index section.results_section h1,
+  #france section.results_section h1,
+  #swiss section.results_section h1,
+  #usa section.results_section h1,
+  #mauritius section.results_section h1 {
     margin-bottom: 45px;
   }
   #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {

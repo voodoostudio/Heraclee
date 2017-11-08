@@ -68,7 +68,7 @@
       width: calc(100% - 140px);
       margin-left: 140px;
       ul.nav li.nav-item {
-        padding-right: 15px;
+        padding-right: 10px;
         a.nav-link {
           font-size: 0.875rem;
           line-height: 0.875rem;
@@ -199,7 +199,11 @@
     }
   }
 
-  #index {
+  #index,
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
     section.top_offer_section {
       height: 550px;
     }
@@ -827,7 +831,11 @@
     }
   }
 
-  #index {
+  #index,
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
     section.top_offer_section {
       height: 400px;
       .info_block {
@@ -1030,7 +1038,11 @@
     }
   }
 
-  #index {
+  #index,
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
     section.top_offer_section {
       height: 250px;
       .info_block {

@@ -2,7 +2,11 @@
 @import "variables";
 @import "forms";
 
-#index {
+#index,
+#france,
+#swiss,
+#usa,
+#mauritius {
   section.top_offer_section {
     height: 700px;
     background-size: cover;
