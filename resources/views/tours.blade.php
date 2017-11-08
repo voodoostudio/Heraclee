@@ -26,30 +26,29 @@
                     {{--  ************************************  --}}
 
                     {{--{{ dump($key) }}--}}
-
                     @foreach($image as $item)
                         <div class="col-sm-6">
                             <div class="object_block">
                                 <div class="img_block">
-                                    <a href="{{ route('details-tour', $key) }}">
+                                    <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}} @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}} @endif">
                                         <img src="{{ $item['url'] }}" alt="" style="width: 100%">
                                     </a>
                                 </div>
 
-                                {{--<div class="info_block_container">--}}
-                                    {{--<div class="info_block">--}}
-                                        {{--<div class="title_container">--}}
-                                            {{--<a href="{{ route('details-tour', $key) }}">--}}
-                                                {{--<h2>Title</h2>--}}
-                                            {{--</a>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="description_container">--}}
-                                            {{--<h3>City<span></span></h3>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                                <div class="info_block_container">
+                                    <div class="info_block">
+                                        <div class="title_container">
+                                            <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}} @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}} @endif">
+                                                <h2>{{ $preview['title'] }}</h2>
+                                            </a>
+                                        </div>
+                                        <div class="description_container">
+                                            <h3>{{ $preview['city'] }}<span></span></h3>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            {{--<a href="{{ route('details-tour', $key) }}">--}}
+                            {{--<a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}} @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}} @endif">--}}
                                 {{--<img src="{{ $item['url'] }}" alt="" style="width: 100%">--}}
                             {{--</a>--}}
                         </div>

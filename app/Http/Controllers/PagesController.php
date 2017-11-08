@@ -642,9 +642,24 @@ class PagesController extends Controller
 
         foreach ($properties as $key => $property) {
             if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js')) {
-                $preview[$property['property_id']] = [$property['pictures']];
+                /* for title */
+                $path = glob($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/*.xml');
+                $filename = basename($path[0],'.xml');
+                $title = str_replace(array('_', 'core'), ' ', $filename);
+
+                /*city*/
+                $city = DB::table('apimo_city')->where('city_id', $property['city'])->value('name');
+
+                $preview[$property['property_id']] = [
+                    'image'     => $property['pictures'],
+                    'sell_type' => $property['category'],
+                    'title'     => ucfirst($title),
+                    'city'      => $city
+                ];
             }
         }
+
+
 
         return view('tours', ['properties' => $properties, 'preview_tour' => $preview]);
     }
