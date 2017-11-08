@@ -13,6 +13,7 @@
       text-align: center;
     }
   }
+
   section.top_offer_section {
     height: 700px;
     background-size: cover;
@@ -172,6 +173,16 @@
           }
         }
       }
+    }
+  }
+
+  section.description_section {
+    margin-top: 50px;
+    text-align: center;
+    h1 {
+      font-size: 1rem;
+      margin: 0;
+      line-height: 1.5;
     }
   }
 

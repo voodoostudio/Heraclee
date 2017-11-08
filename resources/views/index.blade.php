@@ -77,6 +77,12 @@
 
     @include('includes.search_block_index')
 
+    <section class="description_section">
+        <div class="container-fluid">
+            <h1>{!! trans('lang.homepage_description') !!}</h1>
+        </div>
+    </section>
+
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">

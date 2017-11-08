@@ -2998,6 +2998,17 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   bottom: -81px;
 }
 
+#index section.description_section {
+  margin-top: 50px;
+  text-align: center;
+}
+
+#index section.description_section h1 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
 #index section.results_section {
   margin-top: 70px;
 }
@@ -3672,7 +3683,6 @@ section.results_section .view_type_container .view_type {
   max-width: 800px;
   margin: 0;
   display: table;
-  background: #272727;
 }
 
 section.results_section .view_type_container .view_type li {
@@ -3686,6 +3696,7 @@ section.results_section .view_type_container .view_type li {
   cursor: pointer;
   border: 1px solid #ccac83;
   border-right: none;
+  background-color: #272727;
 }
 
 section.results_section .view_type_container .view_type li i.icn {
@@ -6156,13 +6167,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.875rem;
     line-height: 0.875rem;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info {
     margin-top: 15px;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info p {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info p, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info p {
     display: inline-block;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     margin: 0 30px;
   }
   section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
@@ -6217,31 +6228,31 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.top_offer_section {
     height: 550px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 500px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title h2 {
+  #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
     font-size: 2.125rem;
   }
-  section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
     font-size: 1rem;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
     height: 100px;
   }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
     width: 50%;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
     font-size: 1rem;
     line-height: 1rem;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {
     height: 40px;
     line-height: 40px;
     font-size: 1rem;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
     font-size: 1rem;
     padding: 10px 25px 8px;
   }
@@ -6510,92 +6521,92 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
     height: 230px;
   }
-  section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
+  #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 25px;
     top: 25px;
     font-size: 20px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title {
+  #details section.gallery_section .gallery_container .gallery_view .object_title, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title {
     padding: 0 40px;
     bottom: 15%;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
     font-size: 1rem;
     padding: 4px 15px 3px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title h2 {
+  #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
     font-size: 1.25rem;
     margin-top: 5px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title h3 {
+  #details section.gallery_section .gallery_container .gallery_view .object_title h3, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h3 {
     font-size: 1rem;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 400px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow {
     font-size: 30px;
     line-height: 30px;
     margin-top: -15px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next {
     right: 25px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev {
     left: 25px;
   }
-  section.gallery_section .gallery_container .gallery_view .panorama_link_container {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container {
     width: 250px;
   }
-  section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
     right: 15px;
     bottom: 15px;
     font-size: 0.875rem;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid {
     margin: 0 -5px;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider .slick-list .slick-track .slick-slide {
     height: 75px;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container {
     margin: 0 -5px;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters {
     padding: 10px;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li {
     padding: 2px 0;
     margin-right: 15px;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .icn_container i {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .icn_container i, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .icn_container i {
     font-size: 1rem;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container ul.parameters li .prop_val {
     font-size: 0.75rem;
   }
-  section.object_info_section .outer_block_container .inner_block_container {
+  #details section.object_info_section .outer_block_container .inner_block_container, #locationsDetails section.object_info_section .outer_block_container .inner_block_container {
     font-size: 0.875rem;
   }
-  section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
+  #details section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
     margin-bottom: 30px;
   }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container h4 {
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container h4, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container h4 {
     font-size: 1rem;
     margin-top: 15px;
   }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
     width: 100%;
     margin-bottom: 15px;
     font-size: 0.875rem;
   }
-  section.agent_info_section .outer_block_container .inner_block_container {
+  #details section.agent_info_section .outer_block_container .inner_block_container, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container {
     padding: 20px;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info p {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info p, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info p {
     display: block;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     margin: 0 30px 0 0;
   }
   .agent_info_block .agent_info p {
@@ -6746,174 +6757,174 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.latest_news_section .marquee_title {
     display: none;
   }
-  section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
+  #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 10px;
     top: 10px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title {
+  #details section.gallery_section .gallery_container .gallery_view .object_title, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title {
     padding: 0 25px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
     font-size: 0.875rem;
     padding: 2px 10px 1px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title h2 {
+  #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
     font-size: 1rem;
     margin-top: 2px;
   }
-  section.gallery_section .gallery_container .gallery_view .object_title h3 {
+  #details section.gallery_section .gallery_container .gallery_view .object_title h3, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h3 {
     font-size: 0.875rem;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 250px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow {
     line-height: 30px;
     margin-top: -15px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-next {
     right: 10px;
   }
-  section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev {
+  #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-arrow.slick-prev {
     left: 10px;
   }
-  section.gallery_section .gallery_container .gallery_view .panorama_link_container:before {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container:before, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container:before {
     display: none;
   }
-  section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
     right: 10px;
     bottom: 10px;
     font-size: 0.75rem;
   }
-  section.gallery_section .gallery_container .gallery_view button.close_panorama {
+  #details section.gallery_section .gallery_container .gallery_view button.close_panorama, #locationsDetails section.gallery_section .gallery_container .gallery_view button.close_panorama {
     font-size: 0.75rem;
     right: 10px;
     left: initial;
     bottom: 10px;
     margin: 0;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid {
     padding: 0 10px;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails {
     margin-top: 10px;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide {
     padding: 0 5px;
     height: 40px;
   }
-  section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide.slick-current:before {
+  #details section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide.slick-current:before, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid .gallery_thumbnails.slick-slider.details_gallery_thumbnails .slick-list .slick-track .slick-slide.slick-current:before {
     width: calc(100% - 10px);
     left: 5px;
   }
-  section.gallery_section .gallery_container > .container-fluid {
+  #details section.gallery_section .gallery_container > .container-fluid, #locationsDetails section.gallery_section .gallery_container > .container-fluid {
     padding: 0;
   }
-  section.gallery_section .gallery_container > .container-fluid .parameters_container {
+  #details section.gallery_section .gallery_container > .container-fluid .parameters_container, #locationsDetails section.gallery_section .gallery_container > .container-fluid .parameters_container {
     padding: 0 5px 10px;
   }
-  section.gallery_section .gallery_container .social_networks_share {
+  #details section.gallery_section .gallery_container .social_networks_share, #locationsDetails section.gallery_section .gallery_container .social_networks_share {
     right: 20px;
     top: 5px;
     padding: 5px;
   }
-  section.object_info_section .outer_block_container .inner_block_container {
-    padding: 15px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container {
-    padding-left: 0;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block {
-    font-size: 0.75rem;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title {
-    margin-bottom: 5px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title h5 {
-    margin: 0 0 5px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value {
-    margin-bottom: 5px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left {
-    float: left;
-    padding-right: 5px;
-    max-width: 185px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p {
-    font-size: 0.75rem;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:first-of-type {
-    margin-bottom: 5px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:last-of-type {
-    margin-top: 5px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right:after {
-    top: 33px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right p:first-of-type {
-    margin-bottom: 5px;
-    font-size: 0.75rem;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer {
-    top: 21px;
-    right: -1px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow {
-    height: 23px;
-    background-size: 48px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
-    font-size: 0.75rem;
-    width: 42px;
-    line-height: 26px;
-  }
-  section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer p {
-    font-size: 0.6rem;
-  }
-  section.agent_info_section .outer_block_container {
+  #details section.agent_info_section .outer_block_container, #locationsDetails section.agent_info_section .outer_block_container {
     margin-top: 10px;
   }
-  section.agent_info_section .outer_block_container .inner_block_container {
+  #details section.agent_info_section .outer_block_container .inner_block_container, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container {
     padding: 15px;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info {
     text-align: center;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
     font-size: 1rem;
     line-height: 1rem;
     margin-bottom: 0;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
     float: none;
     margin: 15px auto;
     font-size: 1rem;
   }
-  section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     margin-right: 0;
   }
-  section.location_section .map_container #object_map {
-    height: 532px;
-  }
-  section.location_section .map_container .map_sidebar {
+  #details section.object_info_section .outer_block_container .inner_block_container, #locationsDetails section.object_info_section .outer_block_container .inner_block_container {
     padding: 15px;
   }
-  section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label {
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container {
+    padding-left: 0;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block {
+    font-size: 0.75rem;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title {
+    margin-bottom: 5px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title h5, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_title h5 {
+    margin: 0 0 5px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_value {
+    margin-bottom: 5px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left {
+    float: left;
+    padding-right: 5px;
+    max-width: 185px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p {
+    font-size: 0.75rem;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:first-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:first-of-type {
+    margin-bottom: 5px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:last-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left p:last-of-type {
+    margin-top: 5px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left img, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_left img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right:after, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right:after {
+    top: 33px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right p:first-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right p:first-of-type {
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer {
+    top: 21px;
+    right: -1px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow {
+    height: 23px;
+    background-size: 48px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
+    font-size: 0.75rem;
+    width: 42px;
+    line-height: 26px;
+  }
+  #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer p, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer p {
+    font-size: 0.6rem;
+  }
+  #details section.location_section .map_container #object_map, #locationsDetails section.location_section .map_container #object_map {
+    height: 532px;
+  }
+  #details section.location_section .map_container .map_sidebar, #locationsDetails section.location_section .map_container .map_sidebar {
+    padding: 15px;
+  }
+  #details section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label, #locationsDetails section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label {
     width: 35px;
     height: 35px;
   }
-  section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label span {
+  #details section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label span, #locationsDetails section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label span {
     left: 35px;
     line-height: 35px;
   }
-  section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label:hover span {
+  #details section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label:hover span, #locationsDetails section.location_section .map_container .map_sidebar ul li .checkbox_container label.checkbox_label:hover span {
     padding: 0 10px;
   }
   .btn:not(.dropdown-toggle) {
@@ -7004,6 +7015,18 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   .agent_info_block .agent_info ul li {
     font-size: 0.85rem;
+  }
+  #index section.description_section {
+    margin-top: 30px;
+  }
+  #index section.description_section h1 {
+    font-size: 0.875rem;
+  }
+  #index section.results_section {
+    margin-top: 40px;
+  }
+  #index section.results_section h1 {
+    margin-bottom: 45px;
   }
   /* Bootstrap modal popup START*/
   .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
