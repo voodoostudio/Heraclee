@@ -7,9 +7,9 @@
 
 @section('content')
 
-    <section class="homepage_title_section">
+    <section class="page_title_section hidden-md-up">
         <div class="container-fluid">
-            <h1 class="hidden-md-up">{!! trans('lang.homepage_title') !!}</h1>
+            <h1>{!! trans('lang.homepage_title') !!}</h1>
         </div>
     </section>
 

@@ -3,17 +3,6 @@
 @import "forms";
 
 #index {
-  section.homepage_title_section {
-    z-index: 1;
-    h1 {
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      margin: 0;
-      padding: 20px 0;
-      text-align: center;
-    }
-  }
-
   section.top_offer_section {
     height: 700px;
     background-size: cover;

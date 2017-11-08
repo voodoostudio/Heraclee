@@ -373,6 +373,17 @@ section.search_section {
   }
 }
 
+section.page_title_section {
+  h1 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    border: none;
+  }
+}
+
 .object_info_container {
   .object_info {
     background-color: #272727;

@@ -2,7 +2,7 @@
 
 @section('title', 'Home page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/index.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/index.min.css">--}}
 @stop
 
 @section('content')
@@ -11,6 +11,11 @@
         $post_counter = 1;
         $slider_image = [];
     @endphp
+    <section class="page_title_section hidden-md-up">
+        <div class="container-fluid">
+            <h1>{!! trans('lang.mauritius') !!}</h1>
+        </div>
+    </section>
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'mauritius' && $settings['show'] == 1)
             <section class="index_main_carousel_section">
@@ -89,6 +94,6 @@
 @endsection
 
 @section('javascript')
-    <script src="/js/index.min.js"></script>
-    <script src="/js/libraries/jquery.marquee.min.js"></script>
+    {{--<script src="/js/index.min.js"></script>--}}
+    {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
 @stop
