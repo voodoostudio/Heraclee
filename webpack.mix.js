@@ -46,6 +46,9 @@ mix.scripts([
     'public/js/libraries/tooltipster.min.js',
 ], 'public/js/libraries.js');
 
+mix.options({
+    processCssUrls: false
+});
 
 if (mix.inProduction()) {
     mix.version();

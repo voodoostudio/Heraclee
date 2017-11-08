@@ -2,10 +2,17 @@
 
 @section('title', 'Home page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/index.min.css')}}">
+    {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/index.min.css')}}">--}}
 @stop
 
 @section('content')
+
+    <section class="homepage_title_section">
+        <div class="container-fluid">
+            <h1 class="hidden-md-up">Agence immobiliére de prestige - Saint-Tropez</h1>
+        </div>
+    </section>
+
     @php
         $lang = LaravelLocalization::getCurrentLocaleRegional();
         $post_counter = 1;
@@ -90,4 +97,7 @@
 @section('javascript')
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
+    <script>
+        orderSelectOptions();
+    </script>
 @stop

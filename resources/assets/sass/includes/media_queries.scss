@@ -68,7 +68,7 @@
       width: calc(100% - 155px);
       margin-left: 155px;
       ul.nav li.nav-item {
-        padding-right: 25px;
+        padding-right: 15px;
         a.nav-link {
           font-size: 0.875rem;
           line-height: 0.875rem;
@@ -161,7 +161,6 @@
       }
     }
     .navigation_container {
-      padding-top: 10px;
       .navigation_block {
         margin-left: 140px;
       }
@@ -170,7 +169,7 @@
         width: calc(100% - 140px);
         margin-left: 140px;
         ul.nav li.nav-item {
-          padding-right: 8px;
+          padding-right: 0;
           a.nav-link {
             font-size: 0.75rem;
           }
@@ -182,6 +181,7 @@
   main {
     padding-top: 114px;
   }
+
   section.search_section {
     .outer_block_container {
       .inner_block_container {
@@ -499,7 +499,7 @@
       display: block;
     }
     .navigation_container {
-      padding-right: 34px;
+      padding-right: 70px;
       padding-top: 10px;
       nav {
         width: 100%;
@@ -515,6 +515,7 @@
         text-align: center;
         display: table;
         margin: 0 auto;
+        padding: 10px 0;
         .lang_currency_container {
           float: none;
           display: inline-block;
@@ -522,9 +523,9 @@
       }
     }
     .logo {
-      padding: 15px 0;
+      padding: 10px 0;
       img {
-        max-width: 50px;
+        max-width: 70px;
       }
     }
     div.menu-icon {
@@ -533,10 +534,7 @@
 
     &.minimized {
       .logo {
-        padding: 5px 0;
-        img {
-          max-width: 39px;
-        }
+        padding: 8px 0;
       }
       .navigation_container {
         padding-top: 3px;
@@ -569,7 +567,7 @@
   }
 
   main {
-    padding-top: 80px;
+    padding-top: 90px;
   }
 
   .outer_block_container {
@@ -1028,7 +1026,9 @@
   }
 
   section.latest_news_section {
-    display: none;
+    .marquee_title {
+      display: none;
+    }
   }
 
   section.gallery_section {

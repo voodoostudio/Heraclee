@@ -196,5 +196,7 @@
             }
             @endif
         });
+
+        orderSelectOptions();
     </script>
 @stop

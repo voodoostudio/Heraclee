@@ -8,10 +8,11 @@
         <div class="navigation_container">
             <div class="navigation_block">
                 <div class="row">
-                    <div class="col-12 col-md-6">
-                        <a class="header_tel" href="tel:+330494542001">+33 (0)4 94 54 20 01</a>
+                    <div class="col-12 col-md-10">
+                        <a class="header_tel hidden-md-up" href="tel:+330494542001">+33 (0)4 94 54 20 01</a>
+                        <h1 class="hidden-sm-down">Agence immobiliére de prestige - Saint-Tropez</h1>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-2">
                         <ul class="lang_currency_container">
                             <li>
                                 <ul class="language_select">

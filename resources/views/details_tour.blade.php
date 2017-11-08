@@ -14,7 +14,7 @@
 @endphp
 @section('content')
     @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $tour['property_id'] . '/property_' . $tour['property_id'] . '.js'))
-        <div style="height: 600px" id="object_panorama"></div>
+        <div style="height: 80vh" id="object_panorama"></div>
     @endif
 @endsection
 
