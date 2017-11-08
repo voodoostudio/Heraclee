@@ -1,0 +1,565 @@
+
+/*Buttons style START*/
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: $main_light_clr;
+  padding: 0;
+  font: 1rem opensans_regular;
+  border-radius: 0;
+}
+.btn:not(.dropdown-toggle) {
+  height: 50px;
+  padding: 0 65px;
+  font: 1.25rem opensans_light;
+  line-height: 50px;
+  border-radius: 0;
+  background: $main_dark_clr;
+  color: $main_light_clr;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $main_gray_clr;
+  z-index: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include my_transition(0.3s);
+  @include my_box_shadow(0px 0px 20px -5px black);
+  &:hover {
+    border-color: $main_brown_clr;
+  }
+  &.disabled,
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+    &:hover {
+      border-color: $main_gray_clr;
+    }
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.btn:not(.dropdown-toggle):before {
+  content: '';
+  position: absolute;
+  background-color: $main_brown_clr;
+  height: 100%;
+  width: 100%;
+  left: -100%;
+  top: -100%;
+  z-index: -1;
+  @include my_transition(0.3s);
+}
+
+.btn:not(.dropdown-toggle):hover:before {
+  top: 0;
+  left: 0;
+}
+/*Buttons style END*/
+
+
+input,
+textarea {
+  border: 1px solid $main_gray_clr;
+  padding: 0 12px;
+  width: 100%;
+  background-color: transparent;
+  color: $main_light_clr;
+  font-size: 0.875rem;
+  font-family: 'opensans_light';
+}
+input {
+  height: 42px;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+textarea {
+  height: 150px;
+  padding: 12px;
+  resize: none;
+}
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: $main_gray_clr !important;
+}
+a:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.input_container {
+  position: relative;
+  background-color: $main_dark_clr;
+
+  input {
+    color: $main_light_clr;
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      color: $main_light_clr !important;
+      -webkit-box-shadow: 0 0 0 30px $main_dark_clr inset !important;
+      -webkit-text-fill-color: $main_light_clr !important;
+    }
+    @include my_border_radius(0);
+  }
+  button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    height: 40px;
+    width: 45px;
+    border: none;
+    padding: 10px;
+    background-color: $main_gray_clr;
+    color: $main_light_clr;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  .input_label {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 45px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $main_gray_clr;
+    span {
+      text-transform: none;
+    }
+  }
+  label.error {
+    color: $error_clr;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+  }
+}
+sup {
+  font-size: 0.650em;
+}
+label.form_el_label {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: $main_brown_clr;
+  line-height: 12px;
+  i.icn {
+    font-size: 12px;
+    margin-right: 5px;
+    float: left;
+  }
+  span {
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+}
+
+/*Nav tabs styles START*/
+ul.nav.nav-tabs {
+  border: 1px solid $main_brown_clr;
+  li.nav-item {
+    width: 50%;
+    margin: 0!important;
+    text-align: center;
+    a.nav-link {
+      line-height: 40px;
+      padding: 0;
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      border: none;
+      color: $main_light_clr;
+      font-family: opensans_light, Raleway, sans-serif;
+      &.active {
+        color: $main_light_clr;
+        border-radius: 0;
+        background-color: $main_brown_clr;
+      }
+    }
+  }
+}
+/*Nav tabs styles END*/
+
+/*Checkboxes styles START*/
+.my_checkbox {
+  float: left;
+  min-height: 0;
+  label {
+    display: block;
+    padding: 0 !important;
+    position: relative;
+    margin: 0;
+    input[type=checkbox] {
+      display: none;
+    }
+    input[type="checkbox"] + span.fake_checkbox {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      &:before {
+        content: "\e913";
+        font-family: icomoon;
+        color: $main_gray_clr;
+        font-size: 20px;
+      }
+    }
+    input[type="checkbox"]:checked + span.fake_checkbox {
+      background-position: 0 0;
+      border-color: $main_gray_clr;
+      &:before {
+        content: "\e912";
+        font-family: icomoon;
+        color: $main_gray_clr;
+        font-size: 20px;
+      }
+    }
+    .my_checkbox_text {
+      font-size: 0.875rem;
+      margin: 0 0 0 25px;
+      line-height: 20px;
+      display: inline-block;
+      color: $main_light_clr;
+    }
+    .my_checkbox_text a {
+      color: #f94c3f;
+    }
+    .my_checkbox_text a:hover {
+      color: #f94c3f;
+    }
+  }
+}
+/*Checkboxes styles END*/
+
+/*Bootstrap select START*/
+.multiselect-native-select {
+  .btn-group {
+    width: 100%;
+    .multiselect.dropdown-toggle {
+      padding: 0 30px 0 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      text-transform: initial;
+      color: $main_light_clr;
+      border: 1px solid $main_gray_clr;
+      @include my_border_radius(0);
+      line-height: 40px;
+      background-color: $main_dark_clr;
+      outline-offset: 0;
+      width: 100%;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      outline: none;
+      &::after {
+        position: absolute;
+        top: 18px;
+        right: 15px;
+        left: initial;
+        pointer-events: none;
+        border-top-color: $main_gray_clr;
+        border-width: 5px;
+        margin: 0;
+      }
+    }
+    .multiselect-container.dropdown-menu {
+      border: 1px solid $main_gray_clr;
+      @include my_border_radius(0);
+      margin: 0;
+      border-top: none;
+      padding: 5px;
+      color: $main_light_clr;
+      background-color: $main_dark_clr;
+      width: 100%;
+      min-width: 100%;
+      li {
+        padding: 5px 0 5px 5px;
+        a {
+          display: block;
+          width: 100%;
+          outline: none;
+          color: $main_light_clr;
+
+          label {
+            width: 100%;
+            position: relative;
+            padding: 0;
+            //&:hover {
+            //  color: $main_brown_clr;
+            //}
+            input {
+              display: none;
+            }
+            &.checkbox {
+              padding-left: 20px;
+              line-height: 1rem;
+              &:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: block;
+                font-family: 'icomoon' !important;
+                content: "\e913";
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+        &.active {
+          a {
+            color: $main_brown_clr;
+            label.checkbox:before {
+              content: "\e912";
+            }
+          }
+        }
+        &.multiselect-item {
+          border-bottom: 1px solid $main_gray_clr;
+          a {
+            label {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+    &.open {
+      .multiselect.dropdown-toggle {
+        border-color: $main_gray_clr !important;
+        &::after {
+          top: 17px;
+          border-top-color: $main_gray_clr;
+          @include my_transform(rotate(180deg));
+        }
+      }
+    }
+  }
+}
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+  width: 100%;
+}
+.btn-group.bootstrap-select {
+  width: 100%;
+  font-size: 1rem;
+  outline: none;
+  .dropdown-toggle {
+    padding: 0 30px 0 10px;
+    font-size: 1rem;
+    text-transform: initial;
+    color: $main_light_clr;
+    border: 1px solid $main_gray_clr;
+    @include my_border_radius(0);
+    line-height: 38px;
+    background-color: $main_dark_clr;
+    outline-offset: 0;
+    &::after {
+      top: 20px;
+      right: 15px;
+      left: initial;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-top-color: $main_gray_clr;
+      border-width: 5px;
+      margin: 0;
+    }
+    span.filter-option {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .bs-caret {
+      display: none;
+    }
+    &:focus,
+    &:active {
+      outline: none !important;
+    }
+  }
+  .dropdown-menu.open {
+    border: 1px solid $main_gray_clr;
+    @include my_border_radius(0);
+    margin: 0;
+    border-top: none;
+    padding: 5px;
+    color: $main_light_clr;
+    background-color: $main_dark_clr;
+    ul.dropdown-menu.inner {
+      display: table;
+      li {
+        padding: 5px;
+        a {
+          display: block;
+          width: 100%;
+          outline: none;
+          &:hover {
+            color: $main_light_clr;
+          }
+        }
+        &.selected {
+          a {
+            color: $main_light_clr;
+          }
+        }
+      }
+    }
+  }
+  &.dropup {
+    .dropdown-menu.open {
+      border-bottom: none;
+      border-top: 1px solid $main_gray_clr;
+    }
+  }
+  &.open {
+    .dropdown-toggle {
+      border: 1px solid $main_gray_clr !important;
+      &::after {
+        top: 13px;
+        border-top-color: $main_gray_clr;
+        @include my_transform(rotate(180deg));
+      }
+    }
+    .dropdown-menu.open {
+      display: table;
+      .bs-actionsbox {
+        button {
+          font-size: 10px;
+          padding: 0;
+        }
+      }
+    }
+  }
+  &.show-tick {
+    .dropdown-menu.open {
+      ul.dropdown-menu.inner {
+        li {
+          &:first-child {
+            border-bottom: 1px solid $main_gray_clr;
+          }
+          a {
+            display: block;
+            width: 100%;
+            outline: none;
+            padding-left: 20px;
+            position: relative;
+            &:hover {
+              color: $main_gray_clr;
+            }
+            span.check {
+              margin: 0;
+            }
+            span.check-mark {
+              position: absolute;
+              left: 0;
+              top: 0;
+              display: block;
+              margin: 0 10px 0 0;
+              font-family: 'icomoon'!important;
+              speak: none;
+              font-style: normal;
+              font-weight: normal;
+              font-variant: normal;
+              text-transform: none;
+              line-height: 1;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              font-size: 1rem;
+              float: left;
+              &:before {
+                content: "\e913";
+              }
+            }
+          }
+          &.selected {
+            a {
+              span.check-mark {
+                &:before {
+                  content: "\e912";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*Bootstrap select END*/
+
+//Toooltipster START
+.icn_container {
+  display: table;
+  float: left;
+  opacity: 1;
+  position: relative;
+  cursor: default;
+}
+.tooltipster-sidetip {
+  .tooltipster-box {
+    background: $main_brown_clr;
+    border: none;
+    border-radius: 0;
+    @include my_box_shadow(0px 0px 20px -5px black);
+    .tooltipster-content {
+      padding: 0 15px 0;
+      font-size: 0.875rem;
+      line-height: 1.875rem;
+    }
+  }
+  &.tooltipster-top {
+    .tooltipster-arrow-border {
+      border-top-color: $main_brown_clr;
+    }
+    .tooltipster-arrow-background {
+      border-top-color: $main_brown_clr;
+    }
+  }
+  &.tooltipster-bottom {
+    .tooltipster-arrow-border {
+      border-bottom-color: $main_brown_clr;
+    }
+    .tooltipster-arrow-background {
+      border-bottom-color: $main_brown_clr;
+    }
+  }
+}
+//Toooltipster END
+
+#message-box {
+  p {
+    margin-bottom: 10px;
+    &.success {
+      color: $success_clr;
+    }
+  }
+}
+

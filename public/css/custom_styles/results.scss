@@ -1,0 +1,180 @@
+@import "custom_styles/fonts";
+@import "custom_styles/variables";
+@import "custom_styles/forms";
+
+section.search_section {
+  margin-top: 30px;
+}
+
+section.results_section {
+  margin-top: 40px;
+  h1 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+  .view_type_container {
+    .view_type {
+      width: 100%;
+      max-width: 800px;
+      margin: 0;
+      display: table;
+      background: $main_dark_clr;
+      li {
+        float: left;
+        width: 33.333333%;
+        line-height: 38px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 1rem;
+        cursor: pointer;
+        border: 1px solid $main_brown_clr;
+        border-right: none;
+        i.icn {
+          font-size: 16px;
+          margin-right: 10px;
+        }
+      }
+      li:last-of-type {
+        border-right: 2px solid $main_brown_clr;
+      }
+      li.active {
+        background-color: $main_brown_clr;
+        color: white;
+      }
+    }
+  }
+
+  @import "custom_styles/results_objects";
+
+  //.refresh_results {
+  //  position: absolute;
+  //  text-align: center;
+  //  cursor: pointer;
+  //  z-index: 1;
+  //  width: 42px;
+  //  height: 42px;
+  //  @include my_transition(.2s ease-in-out);
+  //  i {
+  //    font-size: 32px;
+  //    line-height: 42px;
+  //  }
+  //  &:hover {
+  //    @include my_transform(rotate(90deg));
+  //  }
+  //}
+  //span.multiselect-native-select {
+  //  float: right;
+  //  width: 100%;
+  //  padding-left: 45px;
+  //}
+
+  #results_map {
+    .gm-style-iw {
+      width: 300px !important;
+      top: 20px !important;
+      left: -145px !important;
+      .infowindow_container {
+        width: 300px;
+        .object_img {
+          position: relative;
+          width: 300px;
+          height: 200px;
+          overflow: hidden;
+          background-color: $main_dark_clr;
+          img {
+            position: absolute;
+            max-width: 100%;
+            min-height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: block;
+            margin: 0 auto;
+
+          }
+        }
+        .object_info_container {
+          width: 300px;
+          .object_info {
+            padding: 20px 15px 20px 15px;
+            a {
+              display: table;
+              font-size: 1rem;
+            }
+            .subtitle {
+              span {
+                font-size: 0.75rem;
+              }
+            }
+            .properties_block {
+              margin-top: 5px;
+              .properties {
+                margin: 7px auto 0;
+                li {
+                  font-size: 0.75rem;
+                  margin-right: 10px;
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                  .icn_container {
+                    .icn {
+                      margin-right: 7px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        button.slick-arrow {
+          z-index: 9999999;
+          font-size: 22px;
+          top: initial;
+          bottom: 5px;
+          opacity: 1;
+          &.slick-prev {
+            left: 10px;
+          }
+          &.slick-next {
+            right: 10px;
+          }
+        }
+        ul.slick-dots {
+          position: absolute;
+          display: table;
+          left: 50%;
+          transform: translate(-50%,0);
+          bottom: 5px;
+          li {
+            display: inline-block;
+            line-height: 6px;
+            margin-right: 2px;
+            &:last-of-type {
+              margin-right: 0;
+            }
+            button {
+              border: none;
+              padding: 0;
+              font-size: 0;
+              line-height: 0;
+              background-color: #625e57;
+              height: 6px;
+              width: 6px;
+            }
+            &.slick-active {
+              button {
+                background-color: #aaa296;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .slick-track {
+    min-width: 100%;
+  }
+}

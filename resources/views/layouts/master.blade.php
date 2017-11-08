@@ -21,16 +21,16 @@
         </script>
 
         {{ csrf_field() }}
-        <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
-        <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
-        <link rel="stylesheet" type="text/css" href="/css/global.min.css">
-        {{--<link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">--}}
-        {{--<link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
+        {{--<link rel="stylesheet" type="text/css" href="/css/global.min.css">--}}
+        <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
         <style>
             .cssload-loader {
                 position: relative;
@@ -213,7 +213,7 @@
 
         @yield('css')
         @include('js-localization::head')
-        <link rel="stylesheet" type="text/css" href="/css/media_queries.css">
+        {{--<link rel="stylesheet" type="text/css" href="/css/media_queries.css">--}}
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->
@@ -238,13 +238,15 @@
         </main>
 
         @include('includes.footer')
+        <script type="text/javascript" src="{{mix('js/libraries.js')}}"></script>
+        <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
 
-        <script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>
+        {{--<script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>--}}
         {{--<script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>--}}
-        <script type="text/javascript" src="/js/libraries/tether.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>
-        <script type="text/javascript" src="/js/functions.min.js"></script>
+        {{--<script type="text/javascript" src="/js/libraries/tether.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/js/functions.min.js"></script>--}}
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
@@ -264,15 +266,17 @@
                 }
             });
         </script>
-        <script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/slick.min.js"></script>
-        <script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
+        {{--<script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/js/libraries/slick.min.js"></script>--}}
+        {{--<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>--}}
+
+
+
         @if( LaravelLocalization::getCurrentLocale() == 'fr' )
             <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         @endif
 
-        {{--<script type="text/javascript" src="/js/scripts.min.js"></script>--}}
-        <script type="text/javascript" src="/js/scripts.js"></script>
+        {{--<script type="text/javascript" src="/js/scripts.js"></script>--}}
 
         <script>
             window.fbAsyncInit = function() {
@@ -411,48 +415,5 @@
                 $('.preloader_container').fadeOut();
             });
         </script>
-
-        {{--<script>--}}
-            {{--$(document).ready(function(){--}}
-                {{--$('.search_section a[onclick]').on( "click", function() {--}}
-                    {{--var csrf_token = $('.search_section input[name="_token"]').val();--}}
-                    {{--var type_sell = $('.search_section input[name="sell_type"]').val();--}}
-                    {{--var country = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);--}}
-                    {{--var country_arr = [];--}}
-                    {{--var countryWithoutPage = country.substr(0, country.lastIndexOf("?"));--}}
-                    {{--var lang = $('html').attr('lang');--}}
-
-                    {{--if(countryWithoutPage === '') {--}}
-                        {{--country_arr = [country][0];--}}
-                    {{--} else {--}}
-                        {{--country_arr = [countryWithoutPage][0];--}}
-                    {{--}--}}
-
-                    {{--var url = '/city_list/' + type_sell + '/' + country_arr;--}}
-
-                    {{--$.ajax({--}}
-                        {{--type: 'POST',--}}
-                        {{--url: url,--}}
-                        {{--dataType: 'json',--}}
-                        {{--data: {--}}
-                          {{--'_token': csrf_token,--}}
-                          {{--'id': type_sell,--}}
-                          {{--'country': country_arr--}}
-                        {{--},--}}
-                        {{--success: function(data) {--}}
-                            {{--$('select[name="object_place[]"]').multiselect('rebuild').html('');--}}
-
-                            {{--$.each( data, function( key, value ) {--}}
-                                {{--$('.search_section select[name="object_place[]"]').append('<option value="' + value.city_id + '">' + value.name + '</option>');--}}
-                            {{--});--}}
-
-                            {{--$('select[name="object_place[]"]').multiselect('rebuild');--}}
-                        {{--}--}}
-                    {{--});--}}
-
-                {{--});--}}
-            {{--});--}}
-        {{--</script>--}}
-
     </body>
 </html>

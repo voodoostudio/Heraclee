@@ -2,9 +2,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 @section('title', 'Details page')
 @section('css')
-
-    <link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">
-    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">--}}
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocale();
@@ -188,7 +186,7 @@
     @endsection
 
     @section('javascript')
-        <script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>
+        {{--<script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>--}}
 
         <script>
             jQuery(document).ready(function () {
@@ -308,28 +306,6 @@
                 }
             })
         </script>
-
-        {{--<script>--}}
-        {{--$(document).ready(function(){--}}
-        {{--@foreach($gallery_settings as $settings)--}}
-        {{--$('#multiple_destroy_{{$settings['page']}}').submit(function(e){--}}
-        {{--e.preventDefault();--}}
-        {{--var form = $(this);--}}
-        {{--var url = form.attr('action');--}}
-        {{--var data = form.serialize();--}}
-
-        {{--$.ajax({--}}
-        {{--type: 'POST',--}}
-        {{--url: url,--}}
-        {{--data: data,--}}
-        {{--success: function(msg) {--}}
-        {{--$('#multiple_destroy_{{$settings['page']}} #gallery_image').remove();--}}
-        {{--}--}}
-        {{--});--}}
-        {{--});--}}
-        {{--@endforeach--}}
-        {{--});--}}
-        {{--</script>--}}
 
         <script>
             $(document).ready(function(){

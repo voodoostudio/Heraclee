@@ -163,11 +163,11 @@ class GalleryController extends Controller
     public function destroy_all(Request $request)
     {
         $id = $request->gallery;
-        $image = Gallery::whereIn('id', $id)->get()->toArray();
+        $image = Gallery::whereIn('id', $id)->get();
 
         foreach($image as $item) {
             if(!empty($item['page'])) {
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . date('F_Y') . '/' . $item['image'];
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . $item->created_at->format('F_Y') . '/' . $item['image'];
                 unlink($path);
                 Gallery::whereIn('id', $id)->delete();
             }
@@ -183,11 +183,11 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        $image = Gallery::where('id', '=', $id)->get()->toArray();
+        $image = Gallery::where('id', '=', $id)->get();
 
         foreach($image as $item) {
             if(!empty($item['page'])) {
-                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . date('F_Y') . '/' . $item['image'];
+                $path = $_SERVER['DOCUMENT_ROOT'] . "/gallery/"  . $item['page'] . '/' . $item->created_at->format('F_Y') . '/' . $item['image'];
                 unlink($path);
                 Gallery::find($id)->delete();
             }

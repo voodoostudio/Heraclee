@@ -2,7 +2,7 @@
 
 @section('title', 'Home page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/index.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/index.min.css')}}">
 @stop
 
 @section('content')
@@ -29,7 +29,7 @@
                     @endphp
                     @foreach($slider_image as $item)
                         @if($image_counter == 1)
-                            <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ date('F_Y') }}/{{ $item['image'] }}" alt=""></li>
+                                <li><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></li>
                         @endif
                         @php
                             $image_counter++;
@@ -63,20 +63,8 @@
                             $post_counter++;
                         @endphp
                     @endforeach
-        @endif
-    @endforeach
-
-
-
-    {{--<section class="index_main_carousel_section" style="display: none">--}}
-        {{--<ul class="index_main_carousel">--}}
-            {{--<li><img src="/img/homepage_img.jpg" alt=""></li>--}}
-            {{--<li><img src="/img/homepage_img.jpg" alt=""></li>--}}
-            {{--<li><img src="/img/homepage_img.jpg" alt=""></li>--}}
-            {{--<li><img src="/img/homepage_img.jpg" alt=""></li>--}}
-            {{--<li><img src="/img/homepage_img.jpg" alt=""></li>--}}
-        {{--</ul>--}}
-    {{--</section>--}}
+                @endif
+            @endforeach
 
     @include('includes.latest_news')
 
@@ -85,6 +73,7 @@
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">
+                <h1>{{ trans('lang.our_last_objects') }}</h1>
                 <div class="results_carousel row">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
@@ -99,6 +88,6 @@
 @endsection
 
 @section('javascript')
-    <script src="/js/index.min.js"></script>
-    <script src="/js/libraries/jquery.marquee.min.js"></script>
+    <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
+    {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
 @stop

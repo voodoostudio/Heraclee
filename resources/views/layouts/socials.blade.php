@@ -54,14 +54,17 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
-    <link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">
-    <link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/global.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
+    {{--<link rel="stylesheet" type="text/css" href="/css/global.min.css">--}}
+    {{----}}
+    <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
 
     <style>
         .cssload-loader {
@@ -245,7 +248,7 @@
 
     @yield('css')
 
-    <link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">--}}
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
     <![endif]-->
@@ -271,12 +274,15 @@
 
 @include('includes.footer')
 
-<script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/libraries/tether.min.js"></script>
-<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>
-<script type="text/javascript" src="/js/functions.min.js"></script>
+<script type="text/javascript" src="{{mix('js/libraries.js')}}"></script>
+<script type="text/javascript" src="{{mix('js/app.js')}}"></script>
+
+{{--<script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/tether.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/functions.min.js"></script>--}}
 <script>
     $('select').multiselect({
         includeSelectAllOption: true,
@@ -287,13 +293,13 @@
         allSelectedText: '{{ trans('lang.all_selected') }}'
     });
 </script>
-<script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>
-<script type="text/javascript" src="/js/libraries/slick.min.js"></script>
-<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>
+{{--<script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/slick.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>--}}
 @if( LaravelLocalization::getCurrentLocale() == 'fr' )
     <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
 @endif
-<script type="text/javascript" src="/js/scripts.min.js"></script>
+{{--<script type="text/javascript" src="/js/scripts.min.js"></script>--}}
 
 
 <script>

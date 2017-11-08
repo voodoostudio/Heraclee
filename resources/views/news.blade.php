@@ -2,7 +2,7 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/dashboard.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/dashboard.min.css')}}">
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();

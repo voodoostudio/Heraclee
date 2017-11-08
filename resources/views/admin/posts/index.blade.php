@@ -1,8 +1,8 @@
 @extends('admin.posts.layouts.master')
 
-@section('title', 'Details page')
+@section('title', 'Posts page')
 @section('css')
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">--}}
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocale();
@@ -83,8 +83,8 @@
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="/js/libraries/dropzone.min.js"></script>
-    <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
+    {{--<script type="text/javascript" src="/js/libraries/dropzone.min.js"></script>--}}
+    {{--<script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>--}}
 
     <script type="text/javascript">
         tallestArticleBlock();

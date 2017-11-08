@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title', 'Team page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/team.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/team.min.css')}}">--}}
 @stop
 
 @section('content')

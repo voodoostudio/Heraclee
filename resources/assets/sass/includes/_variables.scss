@@ -1,0 +1,47 @@
+$main_dark_clr: #272727;
+$main_light_clr: #fdfdfd;
+$main_brown_clr: #ccac83;
+$main_gray_clr: #625e57;
+$main_divider_clr: #aaa296;
+$error_clr: #c54545;
+$success_clr: #69bf7f;
+
+@mixin my_border_radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin my_transform($transform_parameter) {
+  -webkit-transform: $transform_parameter;
+  -moz-transform: $transform_parameter;
+  -ms-transform: $transform_parameter;
+  -o-transform: $transform_parameter;
+  transform: $transform_parameter;
+}
+
+@mixin my_transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin my_box_shadow($shadow_parameters) {
+  -webkit-box-shadow: $shadow_parameters;
+  -moz-box-shadow: $shadow_parameters;
+  box-shadow: $shadow_parameters;
+}
+@mixin my_gradient_bg($gradient_color) {
+  background: -webkit-linear-gradient(transparent, $gradient_color);
+  background: -moz-linear-gradient(transparent, $gradient_color);
+  background: -o-linear-gradient(transparent, $gradient_color);
+  background: linear-gradient(transparent, $gradient_color);
+}
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

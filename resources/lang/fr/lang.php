@@ -39,6 +39,7 @@ return [
     'contact_the_agent'     => 'Contactez l’agent',
     'currently_no_results'  => 'Actuellement aucun résultat',
     'search'                => 'Rechercher',
+    'our_last_objects'      => 'Nos derniers biens',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
@@ -72,10 +73,10 @@ return [
     'standing'              => 'Standing',
     'surfaces'              => 'Surfaces',
     'features'              => 'Prestations',
-    'equipments'            => 'Équipments',
+    'equipments'            => 'Équipements',
     'outdoor_spaces'        => 'Espaces extérieurs',
     'security'              => 'Sécurité',
-    'sports_equipment'      => 'Équipments sportifs',
+    'sports_equipment'      => 'Équipements sportifs',
     'banks'                 => 'Banques',
     'bakeries'              => 'Boulangeries',
     'cafes'                 => 'Cafés/Pubs',
@@ -125,8 +126,8 @@ return [
     'send_me_message'            => 'M’envoyer un message',
 
 //    FOOTER
-    'footer_title'          => 'Heraclee - Agence Immobilière Saint Tropez',
-    'footer_description'    => 'Notre agence Heraclee, spécialiste de l\'immobilier de luxe au niveau de la Riviera Française, est basée depuis 7 ans dans l\'emblématique ville de Saint Tropez. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez. </br></br>
+    'footer_title'          => 'Heraclee - Agence Immobilière Saint-Tropez',
+    'footer_description'    => 'Notre agence Heraclee, spécialiste de l\'immobilier de luxe au niveau de la Riviera Française, est basée depuis 7 ans dans l\'emblématique ville de Saint-Tropez. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez. </br></br>
                                 De ce fait, en passant par les services de notre agence immobilière, les clients ont dès lors l\'opportunité de pouvoir accéder à des biens d\'exception via les nombreuses locations ou ventes situées pour la plupart dans les communes de St-Tropez et de Ramatuelle. De plus, l\'immobilier de luxe s\'avérant être en constante évolution tout comme les exigences et attentes de nos potentiels futurs acquéreurs, nous nous efforçons à ce titre de trouver le bien immobilier correspondant aux critères de sélection les plus pointus. </br></br>
                                 C\'est d\'ailleurs dans le but de garantir à notre clientèle une satisfaction totale que notre agence immobilière est composée d\'une équipe d\'experts disposant tous d\'un large domaine de compétences, notamment en matière d\'aspects juridiques et fiscaux. Le professionnalisme avéré de notre agence immobilière de St-Tropez, lui a entre autres permis de développer un réseau conséquent ayant lui-même conduit à la détention d\'un portefeuille à fort potentiel.',
     'subscribe_to_newsletter' => 'Inscrivez-vous à notre newsletter',

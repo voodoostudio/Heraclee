@@ -4,7 +4,7 @@
 
 @section('title', 'Details page')
 @section('css')
-    <link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">
+    {{--<link rel="stylesheet" type="text/css" href="/css/libraries/datepicker.min.css">--}}
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocale();
@@ -167,7 +167,7 @@
     @endsection
 
     @section('javascript')
-        <script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>
+        {{--<script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>--}}
 
         <script type="text/javascript">
             showSelectedFileName();

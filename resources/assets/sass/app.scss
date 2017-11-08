@@ -1,9 +1,27 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+//@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import "includes/fonts";
 
 // Variables
-@import "variables";
+@import "includes/variables";
+
+// Forms
+@import "includes/forms";
+
+// Pages
+@import "includes/global";
+@import "includes/contact";
+@import "includes/index";
+@import "includes/results";
+@import "includes/results_objects";
+@import "includes/details";
+@import "includes/team";
+@import "includes/news";
+
+
+//Media queries
+@import "includes/media_queries";
 
 // Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";

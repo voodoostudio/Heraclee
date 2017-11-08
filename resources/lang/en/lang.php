@@ -39,6 +39,7 @@ return [
     'contact_the_agent'     => 'Contact the agent',
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
+    'our_last_objects'      => 'Our latest objects',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',
@@ -125,8 +126,8 @@ return [
     'send_me_message'            => 'Send me a message',
 
 //    FOOTER
-    'footer_title'          => 'Heraclee - Saint Tropez Real Estate Agency',
-    'footer_description'    => '"Our agency, Heraclee, specializing in luxury real estate in the French Riviera, has been based for 7 years in the emblematic city of Saint Tropez. The luxury real estate market in the Cote d\'Azur being one of the most attractive in the country, we offer the best of the St. Tropez real estate.  </br></br>
+    'footer_title'          => 'Heraclee - Saint-Tropez Real Estate Agency',
+    'footer_description'    => '"Our agency, Heraclee, specializing in luxury real estate in the French Riviera, has been based for 7 years in the emblematic city of Saint-Tropez. The luxury real estate market in the Cote d\'Azur being one of the most attractive in the country, we offer the best of the St. Tropez real estate.  </br></br>
                                 Indeed, in visiting the services of our real estate agency, customers have the opportunity to be able to access exceptional property via the many rentals or sales located for the most part in the towns of St Tropez and Ramatuelle. Furthermore, the luxury real estate being in constant evolution as are the requirements and expectations of our future potential buyers, we strive to find the property corresponding to the most sophisticated selection criteria.  </br></br>
                                 It is with the goal of ensuring total satisfaction for our clients that our real estate agency is composed of a team of experts, all with a wide range of expertise, notably in matters of tax and legal aspects. The proven professionalism of our St. Tropez real estate agency, has, among other things, allowed us to develop a network leading to retaining a portfolio with a strong potential."',
     'subscribe_to_newsletter' => 'Subscribe to our newsletter',
