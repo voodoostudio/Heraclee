@@ -1659,6 +1659,10 @@ section.search_section .outer_block_container .inner_block_container .input_cont
   margin-top: 10px;
 }
 
+section.search_section .outer_block_container .inner_block_container button#submit_search_form {
+  float: right;
+}
+
 .object_info_container .object_info {
   background-color: #272727;
   padding: 30px 30px 20px 30px;
@@ -6750,6 +6754,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.search_section .outer_block_container .inner_block_container .input_container.search_input {
     margin-top: 5px;
+  }
+  section.search_section .outer_block_container .inner_block_container button#submit_search_form {
+    float: none;
+    display: block;
+    margin: 0 auto;
   }
   #index section.top_offer_section {
     height: 250px;

@@ -1013,6 +1013,11 @@
         .input_container.search_input {
           margin-top: 5px;
         }
+        button#submit_search_form {
+          float: none;
+          display: block;
+          margin: 0 auto;
+        }
       }
     }
   }
