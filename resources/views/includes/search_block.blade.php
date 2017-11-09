@@ -46,20 +46,27 @@
                                     foreach($city_list as $city) {
                                         $city_arr[$city['name']] = ['city_id' => $city['city_id'] , 'name' => $city['name']];
                                     }
-
-                                    $city_arr['Cavalaire-sur-Mer'] = ['city_id' => '11111', 'name' => 'Cavalaire-sur-Mer'];
-                                    $city_arr['La Croix-Valmer'] = ['city_id' => '12111', 'name' => 'La Croix-Valmer'];
-                                    $city_arr['La Môle'] = ['city_id' => '13111', 'name' => 'La Môle'];
-                                    $city_arr['Rayol-Canadel-sur-Mer'] = ['city_id' => '14111', 'name' => 'Rayol-Canadel-sur-Mer'];
-                                    ksort($city_arr);
+                                    if($country[0] == 'france' || $country['0'] == 'results') {
+                                        $city_arr['Cavalaire-sur-Mer'] = ['city_id' => '11111', 'name' => 'Cavalaire-sur-Mer'];
+                                        $city_arr['La Croix-Valmer'] = ['city_id' => '12111', 'name' => 'La Croix-Valmer'];
+                                        $city_arr['La Môle'] = ['city_id' => '13111', 'name' => 'La Môle'];
+                                        $city_arr['Rayol-Canadel-sur-Mer'] = ['city_id' => '14111', 'name' => 'Rayol-Canadel-sur-Mer'];
+                                    }
+                                    if(isset($city_arr)){
+                                        ksort($city_arr);
+                                    }
                                 @endphp
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
-                                        @foreach($city_arr as $city)
-                                            <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
-                                        @endforeach
+                                        @if(!empty($city_arr))
+                                            @foreach($city_arr as $city)
+                                                <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
+                                            @endforeach
+                                        @else
+                                            <option value="0" disabled="disabled"></option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-12 margin_bottom_10">

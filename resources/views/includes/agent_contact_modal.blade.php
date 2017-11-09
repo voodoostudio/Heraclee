@@ -32,9 +32,7 @@
                                         {{--@endif--}}
 
                                         <li><a href="tel:+33 (0)4 94 54 20 01">+33 (0)4 94 54 20 01</a></li>
-
                                         <li><a href="mailto:info@heraclee.com">info@heraclee.com</a></li>
-
                                     </ul>
                                 </div>
                             </div>

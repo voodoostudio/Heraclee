@@ -634,7 +634,8 @@ $(document).ready(function() {
         $(".search_section form").submit();
     });
 
-    // $('#agencyContactModal').on('hidden.bs.modal', function (e) {
-    //     console.log('test')
-    // })
+    $('#agencyContactModal').on('show.bs.modal', function (e) {
+        // do something...
+        console.log('test');
+    })
 });
