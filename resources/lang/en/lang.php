@@ -48,7 +48,7 @@ return [
     'virtual_tour'          => 'Virtual tour',
     'back_to_gallery'       => 'Back to the gallery',
     'show_image_on_fullscreen' => 'Show image on full screen',
-    'contact_agent_to_visit' => 'Contact the agent to visit',
+    'contact_agent_to_visit' => 'Contact the agency to visit',
     'name'                  => 'Name',
     'telephone'             => 'Telephone',
     'email'                 => 'Email',
