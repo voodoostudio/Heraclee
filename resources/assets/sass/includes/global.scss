@@ -657,19 +657,22 @@ footer {
       text-transform: uppercase;
     }
     ul {
-      font-size: 0.75rem;
       li {
         margin-bottom: 15px;
+        h2 {
+          font-size: 0.75rem;
+        }
       }
     }
   }
   section.bottom_footer_section {
     padding: 30px 0;
-    p {
+    h1 {
       font-size: 0.8125rem;
       margin-right: 50px;
       margin-bottom: 15px;
       text-align: justify;
+      line-height: inherit;
     }
     .copyright {
       margin-top: 30px;

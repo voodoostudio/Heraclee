@@ -519,6 +519,7 @@ function getCookie(cname) {
     return "";
 }
 
+// Sorting select options in the Alphabetical order
 function orderSelectOptions() {
     var options = $('.search_section select#cities_select option');
     var arr = options.map(function(_, o) {

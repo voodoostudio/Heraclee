@@ -5,62 +5,62 @@
             <div class="row">
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_1') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_1') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_2') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_2') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_3') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_3') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_4') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_4') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_5') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_5') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_6') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_6') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_7') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_7') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_8') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_8') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_9') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_9') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_10') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_10') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_11') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_11') }}</h2></li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li>{{ trans('lang.footer_keyword_12') }}</li>
+                        <li><h2>{{ trans('lang.footer_keyword_12') }}</h2></li>
                     </ul>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                     <div id="response"></div>
                 </div>
                 <div class="col-sm-12 col-md-6 pull-md-6 col-lg-8 pull-lg-4">
-                    <p>{!! trans('lang.footer_description') !!}</p>
+                    <h1>{!! trans('lang.footer_description') !!}</h1>
                 </div>
             </div>
             <div class="row">

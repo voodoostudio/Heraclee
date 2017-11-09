@@ -202,6 +202,6 @@
             }
             @endif
         });
-//        orderSelectOptions();
+        orderSelectOptions();
     </script>
 @stop

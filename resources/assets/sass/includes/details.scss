@@ -215,6 +215,9 @@
           .close_panorama {
             display: block;
           }
+          button.fullscreen_btn {
+            display: none;
+          }
         }
         .gallery_nav {
           opacity: 0.3;

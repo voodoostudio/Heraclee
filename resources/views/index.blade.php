@@ -104,6 +104,6 @@
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
     <script>
-        orderSelectOptions();
+//        orderSelectOptions();
     </script>
 @stop

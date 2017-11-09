@@ -1977,23 +1977,24 @@ footer section.top_footer_section h3 {
   text-transform: uppercase;
 }
 
-footer section.top_footer_section ul {
-  font-size: 0.75rem;
-}
-
 footer section.top_footer_section ul li {
   margin-bottom: 15px;
+}
+
+footer section.top_footer_section ul li h2 {
+  font-size: 0.75rem;
 }
 
 footer section.bottom_footer_section {
   padding: 30px 0;
 }
 
-footer section.bottom_footer_section p {
+footer section.bottom_footer_section h1 {
   font-size: 0.8125rem;
   margin-right: 50px;
   margin-bottom: 15px;
   text-align: justify;
+  line-height: inherit;
 }
 
 footer section.bottom_footer_section .copyright {
@@ -5692,6 +5693,10 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: block;
 }
 
+#details section.gallery_section .gallery_container.display_panorama .gallery_view button.fullscreen_btn, #locationsDetails section.gallery_section .gallery_container.display_panorama .gallery_view button.fullscreen_btn {
+  display: none;
+}
+
 #details section.gallery_section .gallery_container.display_panorama .gallery_nav, #locationsDetails section.gallery_section .gallery_container.display_panorama .gallery_nav {
   opacity: 0.3;
   pointer-events: none;
@@ -6520,7 +6525,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.admin_gallery_section form.form-image-upload button[type='submit'] {
     float: right;
   }
-  footer section.bottom_footer_section p {
+  footer section.bottom_footer_section h1 {
     margin-right: 0;
   }
 }
@@ -6935,7 +6940,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   footer {
     margin-top: 30px;
   }
-  footer section.bottom_footer_section p {
+  footer section.bottom_footer_section h1 {
     margin-top: 30px;
   }
   footer section.bottom_footer_section .copyright {

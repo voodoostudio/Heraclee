@@ -48,10 +48,10 @@
                                         @foreach($city_list as $city)
                                             <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
                                         @endforeach
-                                        <option value="11111">Cavalaire-sur-Mer</option>
-                                        <option value="12111">La Croix-Valmer</option>
-                                        <option value="13111">La Môle</option>
-                                        <option value="14111">Rayol-Canadel-sur-Mer</option>
+                                            <option value="11111" {{ (($search['object_place']['0']) == '11111') ? 'selected' : '' }} >Cavalaire-sur-Mer</option>
+                                            <option value="12111" {{ (($search['object_place']['0']) == '12111') ? 'selected' : '' }} >La Croix-Valmer</option>
+                                            <option value="13111" {{ (($search['object_place']['0']) == '13111') ? 'selected' : '' }} >La Môle</option>
+                                            <option value="14111" {{ (($search['object_place']['0']) == '14111') ? 'selected' : '' }} >Rayol-Canadel-sur-Mer</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-12 margin_bottom_10">
