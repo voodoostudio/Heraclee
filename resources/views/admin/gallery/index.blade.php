@@ -114,8 +114,7 @@
                                             </form>
                                         </div>
                                         <div class="col-lg-8">
-                                            <div class="row">
-                                                <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  id="multiple_destroy_{{ $settings['page'] }}" method="POST" class="gallery_content_form">
+                                            <form action="{{ URL::to($lang . '/admin/gallery/destroy') }}"  id="multiple_destroy_{{ $settings['page'] }}" method="POST" class="gallery_content_form">
                                                     {{--<input type="hidden" name="_method" value="delete">--}}
                                                     {!! csrf_field() !!}
                                                     @if($gallery->count())
@@ -156,8 +155,8 @@
                                                         </div>
                                                         @if(count($counter) >= 2)
                                                             <div class="row">
-                                                                <div class="col-6">
-                                                                    <div class="my_checkbox">
+                                                                <div class="col-sm-6">
+                                                                    <div class="my_checkbox margin_bottom_20">
                                                                         <label>
                                                                             <input type="checkbox" name="check_all" id="check_all" value="true">
                                                                             <span class="fake_checkbox"></span>
@@ -165,14 +164,13 @@
                                                                         </label>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6">
+                                                                <div class="col-sm-6">
                                                                     <button type="submit" class="btn float-right" disabled>{{ trans('lang.delete') }}</button>
                                                                 </div>
                                                             </div>
                                                         @endif
                                                     @endif
                                                 </form>
-                                            </div> <!-- row / end -->
                                         </div>
                                     </div>
                                 </div>

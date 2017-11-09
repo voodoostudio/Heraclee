@@ -17,6 +17,7 @@ return [
     'usa'                   => 'USA',
     'mauritius'             => 'Ile Maurice',
     'virtual_tours'         => 'Visites virtuelles',
+    'luxury_real_estate_agency'  => 'Agence immobilière de prestige - Saint-Tropez',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',

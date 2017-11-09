@@ -983,15 +983,6 @@
     }
   }
 
-  section.article_section {
-    .outer_block_container {
-      .inner_block_container {
-        padding-top: 40px;
-        font-size: .875rem;
-      }
-    }
-  }
-
   section.admin_gallery_section {
     .nav.nav-tabs {
       li.nav-item {
@@ -1005,10 +996,7 @@
   section.virtual_tours_section {
     margin-top: 0;
   }
-  section.news_list_section,
-  section.article_section {
-    margin-top: 10px!important;
-  }
+
 
   footer {
     margin-top: 30px;
@@ -1494,54 +1482,6 @@
     }
   }
 
-  section.news_list_section {
-    margin-top: 40px;
-    .news_carousel.slick-slider .slick-track .slick-slide {
-      padding: 0;
-    }
-    .outer_block_container {
-      margin-bottom: 15px;
-      .inner_block_container {
-        padding: 20px 20px;
-        .article_info_block {
-          .article_img {
-            float: none;
-            margin-right: 0;
-            text-align: center;
-            a {
-              img {
-                max-width: 100%;
-                max-height: 100%;
-              }
-            }
-          }
-          .article_info {
-            p {
-              margin-top: 10px;
-              text-align: justify;
-            }
-            h2 {
-              margin: 20px 0 10px;
-              font-size: 1.25rem;
-              line-height: 1.25rem;
-              text-align: center;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  #news_admin {
-    .news_list_section {
-      .outer_block_container {
-        .inner_block_container {
-          padding-top: 40px;
-          padding-bottom: 12px;
-        }
-      }
-    }
-  }
   .gj-calendar-md {
     left: 12px !important;
   }
