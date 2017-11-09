@@ -975,7 +975,7 @@
         var page = '{{(isset($_GET['page'])) ? $_GET['page'] : ''}}';
         if(page === 'virtual') {
             $('.gallery_container').addClass('display_panorama');
-            $('section.objects_nav_section').hide();
+            $('section.objects_nav_section .container-fluid').hide();
         }
     </script>
 
