@@ -52,7 +52,7 @@
     .outer_block_container {
       .inner_block_container {
         .input_container.search_input {
-          margin-top: 27px;
+          margin-top: 29px;
         }
       }
     }
@@ -598,7 +598,14 @@
       }
     }
   }
-
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
+    section.search_section {
+      margin-top: 0;
+    }
+  }
   section.results_section {
     .results_container {
       &.grid_view,
@@ -996,7 +1003,7 @@
   }
 
   section.virtual_tours_section {
-    margin-top: 10px;
+    margin-top: 0;
   }
   section.news_list_section,
   section.article_section {

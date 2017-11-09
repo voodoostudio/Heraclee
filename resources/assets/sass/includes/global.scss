@@ -361,7 +361,7 @@ section.search_section {
         }
       }
       ul.nav.nav-tabs {
-        margin-top: 27px;
+        margin-top: 29px;
       }
       .input_container.search_input {
         margin-top: 10px;
@@ -790,6 +790,7 @@ section.virtual_tours_section {
     .container-fluid {
       .object_block_container {
         .object_block {
+          margin-top: 0!important;
           .info_block_container {
             .info_block {
               padding: 20px 30px 20px!important;

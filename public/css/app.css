@@ -1652,7 +1652,7 @@ section.search_section .outer_block_container .inner_block_container .reset_filt
 }
 
 section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
-  margin-top: 27px;
+  margin-top: 29px;
 }
 
 section.search_section .outer_block_container .inner_block_container .input_container.search_input {
@@ -2126,6 +2126,10 @@ footer ul.social_networks li.linkedin {
 
 section.virtual_tours_section {
   margin-top: 40px;
+}
+
+section.virtual_tours_section .results_container.grid_view .container-fluid .object_block_container .object_block {
+  margin-top: 0 !important;
 }
 
 section.virtual_tours_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block {
@@ -6300,7 +6304,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
 
 @media screen and (min-width: 1200px) {
   section.search_section .outer_block_container .inner_block_container .input_container.search_input {
-    margin-top: 27px;
+    margin-top: 29px;
   }
 }
 
@@ -6614,6 +6618,12 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.search_section .outer_block_container .inner_block_container .reset_filters_btn {
     top: 5px;
     right: 5px;
+  }
+  #france section.search_section,
+  #swiss section.search_section,
+  #usa section.search_section,
+  #mauritius section.search_section {
+    margin-top: 0;
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
     margin: 20px 0 70px;
@@ -6931,7 +6941,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.875rem;
   }
   section.virtual_tours_section {
-    margin-top: 10px;
+    margin-top: 0;
   }
   section.news_list_section,
   section.article_section {

@@ -1,6 +1,14 @@
 <section class="search_section">
     @php
-        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
+        $country = [];
+        preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
+        $check = isset($matches[0]) ? $matches[0] : false;
+
+        if( stristr($check, '?') == true) {
+            $country[] = stristr($check, '?', true);
+        } else {
+            $country[] = $check;
+        }
     @endphp
     <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @endif" method="post">
         {{ csrf_field() }}
@@ -27,8 +35,8 @@
                             <div class="row">
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
-                                    <select multiple="multiple" name="object_type[]" title="">
-                                    {{--<select name="object_type[]" title="">--}}
+                                    {{--<select multiple="multiple" name="object_type[]" title="">--}}
+                                    <select name="object_type[]" title="">
                                         @foreach($type as $item)
                                             <option value="{{$item['reference']}}">{{$item['value']}}</option>
                                         @endforeach
@@ -41,10 +49,12 @@
                                         @foreach($city_list as $city)
                                             <option value="{{$city['city_id']}}">{{$city['name']}}</option>
                                         @endforeach
+                                        @if($country[0] == 'france' || $country['0'] == 'fr' || $country['0'] == 'en' || $country['0'] == '')
                                             <option value="11111">Cavalaire-sur-Mer</option>
                                             <option value="12111">La Croix-Valmer</option>
                                             <option value="13111">La Môle</option>
                                             <option value="14111">Rayol-Canadel-sur-Mer</option>
+                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-12 margin_bottom_10">
