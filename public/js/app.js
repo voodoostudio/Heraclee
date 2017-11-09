@@ -635,7 +635,11 @@ $(document).ready(function() {
     });
 
     $('#agencyContactModal').on('show.bs.modal', function (e) {
-        // do something...
-        console.log('test');
-    })
+        $('body').css('overflow','hidden');
+        $('body').css('position','fixed');
+    });
+    $('#agencyContactModal').on('hide.bs.modal', function (e) {
+        $('body').css('overflow','initial');
+        $('body').css('position','relative');
+    });
 });
