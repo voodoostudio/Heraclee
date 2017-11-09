@@ -30,14 +30,14 @@
                             <div class="col-sm-6 object_block_container">
                                 <div class="object_block">
                                     <div class="img_block">
-                                        <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}} @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}} @endif">
+                                        <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}}&page=virtual @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}}&page=virtual @endif">
                                             <img src="{{ $item['url'] }}" alt="" style="width: 100%">
                                         </a>
                                     </div>
                                     <div class="info_block_container">
                                         <div class="info_block">
                                             <div class="title_container">
-                                                <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}} @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}} @endif">
+                                                <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/details?id={{$key}}&page=virtual @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/details?id={{$key}}&page=virtual @endif">
                                                     <h2>{{ $preview['title'] }}</h2>
                                                 </a>
                                             </div>

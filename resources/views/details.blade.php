@@ -971,6 +971,11 @@
 @endsection
 
 @section('javascript')
+    <script>
+        var page = '{{(isset($_GET['page'])) ? $_GET['page'] : ''}}';
+        console.log(page);
+    </script>
+
     @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
         <script type="text/javascript" src="/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.js"></script>
 
