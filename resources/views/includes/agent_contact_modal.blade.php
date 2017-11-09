@@ -40,7 +40,7 @@
                     </div>
                     <form id="contactForm" action="{{ route('contact.post.agent') }}"  method="POST" novalidate>
                         {{ csrf_field() }}
-                        <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">
+{{--                        <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">--}}
                         <div class="row">
                             <div class="col-md-6 margin_bottom_20">
                                 <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>

@@ -546,7 +546,8 @@ class PagesController extends Controller
         ]);
 
         $data = [
-            'to' => $request->to,
+//            'to' => $request->to,
+            'to' => 'info@heraclee.com',
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
