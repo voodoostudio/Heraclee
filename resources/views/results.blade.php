@@ -202,7 +202,6 @@
             }
             @endif
         });
-
         orderSelectOptions();
     </script>
 @stop
