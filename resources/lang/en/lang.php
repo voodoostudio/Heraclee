@@ -18,6 +18,8 @@ return [
     'mauritius'             => 'Mauritius',
     'virtual_tours'         => 'Virtual tours',
     'luxury_real_estate_agency'  => 'Luxury real estate agency - Saint-Tropez',
+    'select_the_city'       => 'Select a city:',
+    'select_the_object_type'       => 'Select the property type:',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',

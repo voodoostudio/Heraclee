@@ -290,6 +290,9 @@ ul.nav.nav-tabs {
       width: 100%;
       min-width: 100%;
       li {
+        &.disabled {
+          display: none;
+        }
         padding: 5px 0 5px 5px;
         a {
           display: block;
@@ -346,6 +349,7 @@ ul.nav.nav-tabs {
             }
           }
         }
+
       }
     }
     &.open {

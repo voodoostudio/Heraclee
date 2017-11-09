@@ -18,6 +18,8 @@ return [
     'mauritius'             => 'Ile Maurice',
     'virtual_tours'         => 'Visites virtuelles',
     'luxury_real_estate_agency'  => 'Agence immobilière de prestige - Saint-Tropez',
+    'select_the_city'       => 'Sélectionner une ville :',
+    'select_the_object_type'       => 'Sélectionnez un type de bien :',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',

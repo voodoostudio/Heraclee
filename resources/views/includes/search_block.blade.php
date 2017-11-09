@@ -37,6 +37,7 @@
                                     <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
                                     {{--<select id="prop_type_select" multiple="multiple" name="object_type[]" title="">--}}
                                     <select id="prop_type_select" name="object_type[]" title="">
+{{--                                        <option value="" selected disabled="disabled">{{ trans('lang.select_the_object_type') }}</option>--}}
                                         @foreach($type as $item)
                                             <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
                                         @endforeach
@@ -60,6 +61,7 @@
                                     <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
+{{--                                        <option value="" selected disabled="disabled">{{ trans('lang.select_the_city') }}</option>--}}
                                         @if(!empty($city_arr))
                                             @foreach($city_arr as $city)
                                                 <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>

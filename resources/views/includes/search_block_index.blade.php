@@ -37,6 +37,7 @@
                                     <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
                                     {{--<select multiple="multiple" name="object_type[]" title="">--}}
                                     <select name="object_type[]" title="">
+                                        {{--<option value="" selected disabled="disabled">{{ trans('lang.select_the_object_type') }}</option>--}}
                                         @foreach($type as $item)
                                             <option value="{{$item['reference']}}">{{$item['value']}}</option>
                                         @endforeach
@@ -61,6 +62,7 @@
                                     <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
+                                        {{--<option value="" selected disabled="disabled">{{ trans('lang.select_the_city') }}</option>--}}
                                         @if(!empty($city_arr))
                                             @foreach($city_arr as $city)
                                                 <option value="{{$city['city_id']}}">{{$city['name']}}</option>
