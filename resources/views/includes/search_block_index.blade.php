@@ -58,7 +58,7 @@
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
                                         @foreach($city_arr as $city)
-                                            <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
+                                            <option value="{{$city['city_id']}}">{{$city['name']}}</option>
                                         @endforeach
                                     </select>
                                 </div>

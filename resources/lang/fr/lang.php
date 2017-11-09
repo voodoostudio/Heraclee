@@ -182,7 +182,7 @@ return [
     'choose_header_img'     => 'Choisissez une image d\'en-tête',
     'choose_body_img'       => 'Choisissez une image ou pdf de corps',
     'currently_no_newsletters'  => 'Actuellement aucune newsletter',
-    'news'                  => 'Actualité',
+    'news'                  => 'Actualités',
     'newsletters'           => 'Newsletters',
 
 // GALLERY CONFIG PAGE

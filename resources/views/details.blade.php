@@ -194,7 +194,7 @@
                             <div class="object_info">
                                 <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
                                 <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
-                                <button type="button" class="btn dark" data-toggle="modal" data-target="#myModal">{{ trans('lang.i_am_interested') }}</button>
+                                <button type="button" class="btn dark" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.i_am_interested') }}</button>
                             </div>
                         </div>
                     </div>

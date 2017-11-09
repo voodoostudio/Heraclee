@@ -22,8 +22,6 @@ $(document).ready(function() {
         {
             $("header").removeClass("minimized");
         }
-
-
         if
         ($(document).scrollTop() > 500){
             $("footer .scroll_to_top").fadeIn();
@@ -95,4 +93,8 @@ $(document).ready(function() {
     $('button#submit_search_form').on('click', function () {
         $(".search_section form").submit();
     });
+
+    $('#agencyContactModal').on('hidden.bs.modal', function (e) {
+        // do something...
+    })
 });

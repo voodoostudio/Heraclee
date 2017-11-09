@@ -77,7 +77,7 @@
                     <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}<span></span></h3>
                     <?php $comments = str_limit((isset($property['comments']['comment'])?$property['comments']['comment']:''),400); ?>
                     <p class="object_description">{{$comments}}</p>
-                    <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#myModal">{{ trans('lang.contact_the_agent') }}</a>
+                    <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
 
                     <!-- Agent Modal Popup -->
