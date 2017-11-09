@@ -36,15 +36,15 @@
                                 </div>
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
-                                    <select multiple="multiple" name="object_place[]" title="">
-                                    {{--<select id="cities_select" name="object_place[]" title="">--}}
+                                    {{--<select multiple="multiple" name="object_place[]" title="">--}}
+                                    <select id="cities_select" name="object_place[]" title="">
                                         @foreach($city_list as $city)
                                             <option value="{{$city['city_id']}}">{{$city['name']}}</option>
                                         @endforeach
-                                            {{--<option value="0">Cavalaire-sur-Mer</option>--}}
-                                            {{--<option value="1">La Croix-Valmer</option>--}}
-                                            {{--<option value="2">La Môle</option>--}}
-                                            {{--<option value="3">Rayol-Canadel-sur-Mer</option>--}}
+                                            <option value="11111">Cavalaire-sur-Mer</option>
+                                            <option value="12111">La Croix-Valmer</option>
+                                            <option value="13111">La Môle</option>
+                                            <option value="14111">Rayol-Canadel-sur-Mer</option>
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-12 margin_bottom_10">

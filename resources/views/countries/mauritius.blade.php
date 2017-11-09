@@ -94,6 +94,7 @@
 @endsection
 
 @section('javascript')
+    <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     {{--<script src="/js/index.min.js"></script>--}}
     {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
 @stop
