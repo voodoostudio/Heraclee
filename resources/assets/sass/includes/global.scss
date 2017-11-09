@@ -783,7 +783,18 @@ footer {
 
 section.virtual_tours_section {
   margin-top: 40px;
-  .object_block {
-    margin-bottom: 30px;
+  .results_container.grid_view {
+    .container-fluid {
+      .object_block_container {
+        .object_block {
+          .info_block_container {
+            .info_block {
+              padding: 20px 30px 20px!important;
+            }
+          }
+        }
+      }
+    }
   }
 }
+

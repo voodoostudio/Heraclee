@@ -973,7 +973,10 @@
 @section('javascript')
     <script>
         var page = '{{(isset($_GET['page'])) ? $_GET['page'] : ''}}';
-        console.log(page);
+        if(page === 'virtual') {
+            $('.gallery_container').addClass('display_panorama');
+            $('section.objects_nav_section').hide();
+        }
     </script>
 
     @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
