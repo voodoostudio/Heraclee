@@ -42,19 +42,24 @@
                                         @endforeach
                                     </select>
                                 </div>
+                                @php
+                                    foreach($city_list as $city) {
+                                        $city_arr[$city['name']] = ['city_id' => $city['city_id'] , 'name' => $city['name']];
+                                    }
+
+                                    $city_arr['Cavalaire-sur-Mer'] = ['city_id' => '11111', 'name' => 'Cavalaire-sur-Mer'];
+                                    $city_arr['La Croix-Valmer'] = ['city_id' => '12111', 'name' => 'La Croix-Valmer'];
+                                    $city_arr['La Môle'] = ['city_id' => '13111', 'name' => 'La Môle'];
+                                    $city_arr['Rayol-Canadel-sur-Mer'] = ['city_id' => '14111', 'name' => 'Rayol-Canadel-sur-Mer'];
+                                    ksort($city_arr);
+                                @endphp
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i class="icn icon-country"></i><span>{{ trans('lang.town') }}</span></label>
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
-                                        @foreach($city_list as $city)
-                                            <option value="{{$city['city_id']}}">{{$city['name']}}</option>
+                                        @foreach($city_arr as $city)
+                                            <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
                                         @endforeach
-                                        @if($country[0] == 'france' || $country['0'] == 'fr' || $country['0'] == 'en' || $country['0'] == '')
-                                            <option value="11111">Cavalaire-sur-Mer</option>
-                                            <option value="12111">La Croix-Valmer</option>
-                                            <option value="13111">La Môle</option>
-                                            <option value="14111">Rayol-Canadel-sur-Mer</option>
-                                        @endif
                                     </select>
                                 </div>
                                 <div class="col-xl-4 col-sm-12 margin_bottom_10">
