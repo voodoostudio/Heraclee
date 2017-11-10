@@ -208,12 +208,8 @@
             <div class="outer_block_container">
                 <div class="inner_block_container">
                     <p class="publication_date">
-                        <span>
-                            {{ trans('lang.created_at') }} {{ date('d.m.Y', strtotime($property['created_at'])) }}
-                        </span>
-                        <span>
-                             {{ trans('lang.updated_at') }} {{ date('d.m.Y', strtotime($property['updated_at'])) }}
-                        </span>
+                        <span>{{ trans('lang.created_at') }} {{ date('d.m.Y', strtotime($property['created_at'])) }}</span>
+                        <span>{{ trans('lang.updated_at') }} {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>
                     </p>
                     @if(!empty($property['comments']['comment']))
                         <p class="margin_bottom_20 description">

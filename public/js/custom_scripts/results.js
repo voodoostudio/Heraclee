@@ -34,9 +34,9 @@ $(document).ready(function () {
                         $('.result_preview_gallery').slick('unslick');
                     }
                 }
-                else if ($(this).hasClass('list_view_btn')) {
-                    setCookie('typeView', 'list_view');
+                if ($(this).hasClass('list_view_btn')) {
                     listView_galleryInit();
+                    setCookie('typeView', 'list_view');
                 }
             }
         }

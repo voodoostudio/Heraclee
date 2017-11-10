@@ -79,14 +79,13 @@
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
-
+                    <ul class="creation_date">
+                        <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
+                        <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
+                    </ul>
                     <!-- Agent Modal Popup -->
                     @include('includes.agent_contact_modal')
                 </div>
-
-                <b>DATE CREATED:</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }} <br/>
-                <b>DATE UPDATED:</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}
-
                 <div class="parameters_container">
                     <ul class="parameters">
                         @if(!empty($property['area_surface']))

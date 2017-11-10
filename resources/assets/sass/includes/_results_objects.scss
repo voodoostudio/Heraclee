@@ -101,6 +101,22 @@
               float: right;
               padding: 9px 15px 8px;
             }
+            ul.creation_date {
+              position: relative;
+              display: table;
+              width: 100%;
+              li {
+                display: inline-block;
+                text-align: left;
+                width: 50%;
+                font-size: 0.875rem;
+                opacity: 0.5;
+                //color: $main_divider_clr;
+                &:last-of-type {
+                  text-align: right;
+                }
+              }
+            }
           }
           .parameters_container {
             border-top: 1px solid $main_divider_clr;
@@ -228,6 +244,9 @@
                 margin-top: 15px;
                 padding: 9px 30px 8px;
               }
+              ul.creation_date {
+                padding-top: 10px;
+              }
             }
           }
         }
@@ -324,7 +343,6 @@
                   }
                 }
               }
-
             }
           }
         }

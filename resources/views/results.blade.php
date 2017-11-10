@@ -19,10 +19,13 @@
 @section('content')
 
     @php
+
         $all_property = [];
         $prop = [];
 
         foreach($all_properties as $property) {
+            $prop_image[$property['property_id']] = $property['pictures'];
+
             $key = $property['latitude']." ".$property['longitude'];
             if(!isset($all_property[$key])) $all_property[$key] = [];
             $all_property[$key][] = [
@@ -40,7 +43,11 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
+        foreach($prop_image as $picture) {
+            foreach($picture as $item) {
 
+            }
+        }
     @endphp
 
     @include('includes.search_block')
@@ -198,6 +205,18 @@
             }
             @endif
         });
-//        orderSelectOptions();
+        $('.view_type li').on('click', function () {
+                if ($(this).hasClass('list_view_btn')) {
+                    $('.gallery_view ul.result_preview_gallery').html(`
+                    {{--@foreach($prop_image as $picture)--}}
+                        {{--@foreach($picture as $item)--}}
+                            {{--<li>--}}
+                                {{--<img src="{{ $item['url'] }}" alt="">--}}
+                            {{--</li>--}}
+                        {{--@endforeach--}}
+                    {{--@endforeach--}}
+                    `)
+                }
+        });
     </script>
 @stop
