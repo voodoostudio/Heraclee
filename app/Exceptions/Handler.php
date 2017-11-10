@@ -55,6 +55,12 @@ class Handler extends ExceptionHandler
             return response()->view('errors.404', [], 404);
 
         }
+
+        if ($exception instanceof \Illuminate\Session\TokenMismatchException){
+            //Redirect to login form if session expires
+            return redirect($request->fullUrl())->with('errors',"The login form has expired, please try again. In the future, reload the login page if it has been open for several hours.");
+        }
+
         return parent::render($request, $exception);
     }
 
