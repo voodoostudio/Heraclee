@@ -674,6 +674,22 @@ footer {
       text-align: justify;
       line-height: inherit;
     }
+    .last_update {
+      display: table;
+      padding: 10px 15px;
+      border: 1px solid $main_brown_clr;
+      margin-top: 30px;
+      p {
+        color: $main_brown_clr;
+        line-height: 25px;
+        font-size: 0.875rem;
+        i {
+          margin-right: 15px;
+          font-size: 25px;
+          float: left;
+        }
+      }
+    }
     .copyright {
       margin-top: 30px;
       text-transform: uppercase;

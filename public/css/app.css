@@ -1997,6 +1997,25 @@ footer section.bottom_footer_section h1 {
   line-height: inherit;
 }
 
+footer section.bottom_footer_section .last_update {
+  display: table;
+  padding: 10px 15px;
+  border: 1px solid #ccac83;
+  margin-top: 30px;
+}
+
+footer section.bottom_footer_section .last_update p {
+  color: #ccac83;
+  line-height: 25px;
+  font-size: 0.875rem;
+}
+
+footer section.bottom_footer_section .last_update p i {
+  margin-right: 15px;
+  font-size: 25px;
+  float: left;
+}
+
 footer section.bottom_footer_section .copyright {
   margin-top: 30px;
   text-transform: uppercase;
