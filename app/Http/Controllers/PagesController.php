@@ -399,6 +399,18 @@ class PagesController extends Controller
             $view_type = $_COOKIE['typeView'];
         }
 
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
