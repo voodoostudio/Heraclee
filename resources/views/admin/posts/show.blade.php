@@ -34,15 +34,11 @@
                         </div>
 
                         <h2>{{ (!empty($posts->date)) ? date('d.m.Y', strtotime($posts->date)) : '' }}</h2>
-                        <div class="img_container">
+
+                        <div class="img_container" style="display: none">
                             @foreach(json_decode($posts->front_image) as $key => $image)
                                 <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                             @endforeach
-                            {{--@if(!empty($item['front_image']))--}}
-                            {{--<img style = "max-width: 1024px;" src="../front_image/{{ $item['front_image'] }}" alt="">--}}
-                            {{--@else--}}
-                            {{--<img src="/img/details/no_agent_photo.svg" alt="">--}}
-                            {{--@endif--}}
                         </div>
 
                         <div class="img_container">
