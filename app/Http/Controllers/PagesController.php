@@ -441,6 +441,24 @@ class PagesController extends Controller
 
     public function locationsDetails()
     {
+        $view_type = 'grid_view';
+
+        if (isset($_COOKIE['typeView'])) {
+            $view_type = $_COOKIE['typeView'];
+        }
+
+        if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
+            Session::put('search.object_type', $_POST['object_type']);
+        } elseif (!Session::has('search.object_type')) {
+            Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
+        }
+
+        if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
+            Session::put('search.object_place', $_POST['object_place']);
+        } elseif (!Session::has('search.object_place')) {
+            Session::put('search.object_place', Properties::getCityListIds());
+        }
+
         $id = $_GET['id'];
         if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
             $property = Properties::getProperty($id);
@@ -463,7 +481,7 @@ class PagesController extends Controller
 
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
         } else {
             return redirect('results');
         }
