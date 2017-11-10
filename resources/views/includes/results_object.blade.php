@@ -80,8 +80,14 @@
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
                     <ul class="creation_date">
-                        <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
-                        <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
+                        @php
+                            $date = new DateTime($property['created_at']);
+                            $now = new DateTime();
+                        @endphp
+                        @if($date->diff($now)->format("%m") < 3)
+                            <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
+                            <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
+                        @endif
                     </ul>
                     <!-- Agent Modal Popup -->
                     @include('includes.agent_contact_modal')

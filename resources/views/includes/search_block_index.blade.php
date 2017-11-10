@@ -64,7 +64,7 @@
                                         {{--<option value="" selected disabled="disabled">{{ trans('lang.select_the_city') }}</option>--}}
                                         @if(!empty($city_arr))
                                             @foreach($city_arr as $city)
-                                                <option value="{{$city['city_id']}}">{{$city['name']}}</option>
+                                                <option {{ ($city['city_id'] == '35970') ? 'selected' : '' }} value="{{$city['city_id']}}">{{$city['name']}}</option>
                                             @endforeach
                                             @else
                                             <option value="0" disabled="disabled"></option>

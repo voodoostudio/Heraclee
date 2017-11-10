@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-{{--@php--}}
-    {{--header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");--}}
-    {{--header("Cache-Control: no-store, no-cache, must-revalidate");--}}
-{{--@endphp--}}
+@php
+    header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
+    header("Cache-Control: no-store, no-cache, must-revalidate");
+@endphp
 
 
 {{--{{ dd($all_properties) }}--}}
@@ -43,11 +43,13 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
-        foreach($prop_image as $picture) {
+        /*foreach($prop_image as $key =>$picture) {
+            dump($picture);
+            dump($key);
             foreach($picture as $item) {
 
             }
-        }
+        }*/
     @endphp
 
     @include('includes.search_block')
@@ -151,8 +153,16 @@
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                                                 '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
-                                                '<br/><span><b>DATE CREATED:</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</span><br/>' +
-                                                '<span><b>DATE UPDATED:</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>' +
+                                                    '<br/><ul class="creation_date">' +
+                                                        @php
+                                                            $date = new DateTime($property['created_at']);
+                                                            $now = new DateTime();
+                                                        @endphp
+                                                        @if($date->diff($now)->format("%m") < 3)
+                                                            '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
+                                                            '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
+                                                        @endif
+                                                '</ul>' +
                                             '</div> ' +
                                             '<div class="properties_block"> ' +
                                                 '<ul class="properties"> ' +
@@ -207,15 +217,7 @@
         });
         $('.view_type li').on('click', function () {
                 if ($(this).hasClass('list_view_btn')) {
-                    $('.gallery_view ul.result_preview_gallery').html(`
-                    {{--@foreach($prop_image as $picture)--}}
-                        {{--@foreach($picture as $item)--}}
-                            {{--<li>--}}
-                                {{--<img src="{{ $item['url'] }}" alt="">--}}
-                            {{--</li>--}}
-                        {{--@endforeach--}}
-                    {{--@endforeach--}}
-                    `)
+                    $(".results_carousel").load('results');
                 }
         });
     </script>
