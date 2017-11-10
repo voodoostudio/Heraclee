@@ -83,6 +83,10 @@
                     <!-- Agent Modal Popup -->
                     @include('includes.agent_contact_modal')
                 </div>
+
+                <b>DATE CREATED:</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }} <br/>
+                <b>DATE UPDATED:</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}
+
                 <div class="parameters_container">
                     <ul class="parameters">
                         @if(!empty($property['area_surface']))

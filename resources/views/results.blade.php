@@ -144,6 +144,8 @@
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                                                 '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                                                '<br/><span><b>DATE CREATED:</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</span><br/>' +
+                                                '<span><b>DATE UPDATED:</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>' +
                                             '</div> ' +
                                             '<div class="properties_block"> ' +
                                                 '<ul class="properties"> ' +

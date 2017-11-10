@@ -44,7 +44,6 @@
                                     </select>
                                 </div>
                                 @php
-
                                     foreach($city_list as $city) {
                                         $city_arr[$city['name']] = ['city_id' => $city['city_id'] , 'name' => $city['name']];
                                     }
