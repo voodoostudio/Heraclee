@@ -19,6 +19,17 @@
             @endif
 
             @php
+                $date = new DateTime($property['created_at']);
+                $now = new DateTime();
+            @endphp
+            @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+            <ul class="creation_date">
+                <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
+                <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
+            </ul>
+            @endif
+
+            @php
                 $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] : route('locationsDetails') . '?id=' . $property['property_id'];
                 $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
                 $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
@@ -79,16 +90,6 @@
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
-                    <ul class="creation_date">
-                        @php
-                            $date = new DateTime($property['created_at']);
-                            $now = new DateTime();
-                        @endphp
-                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-                            <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
-                            <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
-                        @endif
-                    </ul>
                     <!-- Agent Modal Popup -->
                     @include('includes.agent_contact_modal')
                 </div>

@@ -729,6 +729,19 @@
           }
         }
       }
+      .container-fluid {
+        .object_block_container {
+          .object_block {
+            .img_block {
+              ul.creation_date {
+                li {
+                  font-size: 0.75rem;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -1042,7 +1055,6 @@
   section.virtual_tours_section {
     margin-top: 0;
   }
-
 
   footer {
     margin-top: 30px;

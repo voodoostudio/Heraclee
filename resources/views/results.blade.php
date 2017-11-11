@@ -43,9 +43,13 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
+        /*foreach($prop_image as $key =>$picture) {
+            dump($picture);
+            dump($key);
+            foreach($picture as $item) {
 
-
-
+            }
+        }*/
     @endphp
 
 
