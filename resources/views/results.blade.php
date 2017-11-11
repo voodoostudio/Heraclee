@@ -43,14 +43,26 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
-        /*foreach($prop_image as $key =>$picture) {
-            dump($picture);
-            dump($key);
-            foreach($picture as $item) {
 
-            }
-        }*/
+
+
     @endphp
+
+
+    @foreach($properties as $key => $picture)
+        @php
+            $links[$picture['property_id']] = $picture['pictures']
+        @endphp
+    @endforeach
+
+
+    @foreach($links as $key => $picture)
+        @foreach($picture as $item)
+            @php
+                $url[$key][] = $item['url'];
+            @endphp
+        @endforeach
+    @endforeach
 
     @include('includes.search_block')
 
@@ -158,7 +170,7 @@
                                                             $date = new DateTime($property['created_at']);
                                                             $now = new DateTime();
                                                         @endphp
-                                                        @if($date->diff($now)->format("%m") < 3)
+                                                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
                                                             '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
                                                             '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
                                                         @endif
@@ -217,8 +229,21 @@
         });
         $('.view_type li').on('click', function () {
                 if ($(this).hasClass('list_view_btn')) {
-                    $(".results_carousel").load('results');
+                   /* var id = $('.gallery_view > ul[data-id]').attr('data-id');
+                    console.log(id); */
+                    $.ajax({
+                        url: document.URL,
+                        cache: false,
+                        data: {
+                            view_type: 'list_view'
+                        },
+                        success: function(data){
+
+                        }
+                    });
                 }
         });
+
+
     </script>
 @stop

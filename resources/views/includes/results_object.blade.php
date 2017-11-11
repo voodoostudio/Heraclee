@@ -25,7 +25,7 @@
             @endphp
 
             <div class="gallery_view">
-                <ul class="gallery result_preview_gallery">
+                <ul class="gallery result_preview_gallery" data-id = "{{ $property['property_id'] }}">
                     @if(!empty($property['pictures']))
                         @if($view_type == 'grid_view')
                             @php
@@ -84,7 +84,7 @@
                             $date = new DateTime($property['created_at']);
                             $now = new DateTime();
                         @endphp
-                        @if($date->diff($now)->format("%m") < 3)
+                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
                             <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
                             <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
                         @endif
@@ -132,3 +132,4 @@
         </div>
     </div>
 </div>
+

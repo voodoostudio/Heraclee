@@ -249,7 +249,6 @@
                                 }
 
                                 $('.remove_btn').on('click', function (e) {
-                                    alert('remove');
                                     e.preventDefault();
                                     var url = $(this).attr('href');
                                     var id = $(this).attr('id');
