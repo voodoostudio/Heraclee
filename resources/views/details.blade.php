@@ -208,8 +208,14 @@
             <div class="outer_block_container">
                 <div class="inner_block_container">
                     <p class="publication_date">
-                        <span>{{ trans('lang.created_at') }} {{ date('d.m.Y', strtotime($property['created_at'])) }}</span>
-                        <span>{{ trans('lang.updated_at') }} {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>
+                        @php
+                            $date = new DateTime($property['created_at']);
+                            $now = new DateTime();
+                        @endphp
+                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                            <span>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</span>
+                            <span>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>
+                        @endif
                     </p>
                     @if(!empty($property['comments']['comment']))
                         <p class="margin_bottom_20 description">
