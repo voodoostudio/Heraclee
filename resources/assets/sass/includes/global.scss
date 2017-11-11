@@ -139,6 +139,9 @@ header {
         border: none;
         line-height: 27px;
         color: #c3baac;
+        span {
+          white-space: nowrap;
+        }
       }
       .lang_currency_container {
         float: right;

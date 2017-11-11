@@ -1405,6 +1405,10 @@ header .navigation_container .navigation_block h1 {
   color: #c3baac;
 }
 
+header .navigation_container .navigation_block h1 span {
+  white-space: nowrap;
+}
+
 header .navigation_container .navigation_block .lang_currency_container {
   float: right;
 }
@@ -6431,6 +6435,20 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container nav ul.nav li.nav-item a.nav-link {
     font-size: 0.75rem;
   }
+  header.minimized .navigation_container .navigation_block {
+    margin-left: 70px;
+  }
+  header.minimized .navigation_container .navigation_block h1 {
+    padding-top: 2px;
+  }
+  header.minimized .navigation_container nav {
+    margin-left: 70px;
+    margin-top: 3px;
+    width: calc(100% - 70px);
+  }
+  header.minimized .navigation_container nav ul.nav li.nav-item {
+    padding-right: 0;
+  }
   main {
     padding-top: 114px;
   }
@@ -6610,22 +6628,36 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container {
     padding-right: 70px;
     padding-top: 10px;
+    position: relative;
+    height: 90px;
   }
   header .navigation_container nav {
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 0;
+    position: absolute;
+    top: 90px;
+    width: calc(100% + 100px);
+    margin-top: 0;
     margin-right: -34px;
+    margin-left: -15px;
+    padding-left: 15px;
     display: none;
+    background: #272727;
   }
   header .navigation_container nav ul.nav li.nav-item {
     display: table;
   }
   header .navigation_container .navigation_block {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     text-align: center;
     display: table;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 0;
+  }
+  header .navigation_container .navigation_block h1 {
+    font-size: 0.875rem;
+    line-height: 24px;
   }
   header .navigation_container .navigation_block .lang_currency_container {
     float: none;
@@ -6639,12 +6671,15 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header div.menu-icon {
     display: block;
+    top: 30px;
+    right: 30px;
   }
   header.minimized .logo {
     padding: 8px 0;
   }
   header.minimized .navigation_container {
     padding-top: 3px;
+    height: 68px;
   }
   header.minimized .navigation_container .navigation_block {
     margin: 0 auto;
@@ -6653,18 +6688,26 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 2px 0 0;
   }
   header.minimized .navigation_container nav {
-    margin-top: 2px;
-    margin-left: 0;
-    padding-top: 15px;
+    position: absolute;
+    top: 68px;
+    width: calc(100% + 100px);
+    margin-top: 0;
+    margin-right: -34px;
+    margin-left: -15px;
+    padding-left: 15px;
+    background: #272727;
   }
   header.minimized .navigation_container nav ul.nav li.nav-item {
+    display: table;
     margin-bottom: 10px;
-    padding-right: 0;
   }
   header.minimized .navigation_container nav ul.nav li.nav-item a.nav-link {
     padding: 8px 5px;
-    font-size: 0.875rem;
     line-height: 0.875rem;
+    font-size: 0.75rem;
+  }
+  header.minimized div.menu-icon {
+    top: 24px;
   }
   main {
     padding-top: 90px;
@@ -7019,6 +7062,49 @@ section.team_members_section .outer_block_container:hover .inner_block_container
 }
 
 @media screen and (max-width: 575px) {
+  header .navigation_container {
+    padding-right: 50px;
+    height: 72px;
+  }
+  header .navigation_container .navigation_block h1 {
+    font-size: 0.75rem;
+    line-height: 15px;
+  }
+  header .navigation_container nav {
+    top: 72px;
+  }
+  header .logo {
+    padding: 11px 5px 11px 0;
+  }
+  header .logo img {
+    max-width: 50px;
+  }
+  header div.menu-icon {
+    display: block;
+    top: 25px;
+    right: 25px;
+  }
+  header.minimized .navigation_container {
+    padding-right: 40px;
+    height: 56px;
+  }
+  header.minimized .navigation_container .navigation_block h1 {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    padding: 4px 0 4px;
+  }
+  header.minimized .navigation_container nav {
+    top: 60px;
+  }
+  header.minimized .logo {
+    padding: 10px 0;
+  }
+  header.minimized .logo img {
+    max-width: 40px;
+  }
+  header.minimized div.menu-icon {
+    top: 20px;
+  }
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 20px;
   }

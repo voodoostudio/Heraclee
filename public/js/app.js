@@ -223,7 +223,6 @@ function resultsMapInit()  {
 }
 
 function listView_galleryInit() {
-    console.log('list view init');
     $('.result_preview_gallery').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
