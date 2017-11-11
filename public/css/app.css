@@ -6639,7 +6639,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container {
     padding-right: 70px;
     padding-top: 10px;
-    position: relative;
     height: 90px;
   }
   header .navigation_container nav {
@@ -7063,7 +7062,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.875rem;
   }
   section.virtual_tours_section {
-    margin-top: 0px;
+    margin-top: 0;
   }
   footer {
     margin-top: 30px;

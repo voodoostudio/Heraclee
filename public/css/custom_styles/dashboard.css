@@ -418,7 +418,9 @@ section.login_section {
 
   section.article_section .outer_block_container .inner_block_container {
     padding-top: 40px;
-    font-size: .875rem; } }
+    font-size: .875rem; }
+    section.article_section .outer_block_container .inner_block_container .title_container h1 {
+      font-size: 1rem; } }
 @media screen and (max-width: 575px) {
   section.news_list_section {
     margin-top: 0 !important; }
@@ -446,6 +448,12 @@ section.login_section {
 
   section.article_section {
     margin-top: 0 !important; }
+    section.article_section .outer_block_container .inner_block_container .title_container h1 {
+      font-size: 0.875rem;
+      padding-right: 15px; }
+    section.article_section .outer_block_container .inner_block_container .title_container .social_networks_share {
+      bottom: initial;
+      top: -25px; }
 
   #news_admin section.news_list_section .outer_block_container .inner_block_container {
     padding-top: 40px;

@@ -157,6 +157,11 @@ section.login_section {
       .inner_block_container {
         padding-top: 40px;
         font-size: .875rem;
+        .title_container {
+          h1 {
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
@@ -202,6 +207,20 @@ section.login_section {
   }
   section.article_section {
     margin-top: 0!important;
+    .outer_block_container {
+      .inner_block_container {
+        .title_container {
+          h1 {
+            font-size: 0.875rem;
+            padding-right: 15px;
+          }
+          .social_networks_share {
+            bottom: initial;
+            top: -25px;
+          }
+        }
+      }
+    }
   }
   #news_admin {
     section.news_list_section {
