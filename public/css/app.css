@@ -1667,6 +1667,13 @@ section.search_section .outer_block_container .inner_block_container button#subm
   float: right;
 }
 
+section.page_title_section {
+  position: fixed;
+  top: 90px;
+  width: 100%;
+  z-index: 99991;
+}
+
 section.page_title_section h1 {
   font-size: 1.25rem;
   text-transform: uppercase;
@@ -1674,6 +1681,21 @@ section.page_title_section h1 {
   padding: 20px 0;
   text-align: center;
   border: none;
+}
+
+section.page_title_section.minimized {
+  top: 68px;
+  background: #272727;
+}
+
+section.page_title_section.minimized h1 {
+  padding: 10px 0;
+  font-size: 1rem;
+  border-top: 1px solid #625e57;
+}
+
+section.page_title_section.hidden {
+  display: none;
 }
 
 .object_info_container .object_info {
@@ -1999,6 +2021,7 @@ footer section.bottom_footer_section h1 {
   margin-bottom: 15px;
   text-align: justify;
   line-height: inherit;
+  text-transform: none;
 }
 
 footer section.bottom_footer_section .last_update {
@@ -6698,7 +6721,10 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     top: 24px;
   }
   main {
-    padding-top: 90px;
+    padding-top: 150px;
+  }
+  #index main {
+    padding-top: 196px;
   }
   .outer_block_container .inner_block_container {
     padding: 20px;
@@ -6717,7 +6743,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #swiss section.search_section,
   #usa section.search_section,
   #mauritius section.search_section {
-    margin-top: 0;
+    margin-top: 0px;
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
     margin: 20px 0 70px;
@@ -6964,6 +6990,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.contact_info_section p {
     font-size: 0.875rem;
   }
+  section.contact_map_section {
+    margin-top: 0;
+  }
   section.contact_map_section #contact_map {
     height: 500px;
   }
@@ -7034,7 +7063,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.875rem;
   }
   section.virtual_tours_section {
-    margin-top: 0;
+    margin-top: 0px;
   }
   footer {
     margin-top: 30px;
@@ -7082,7 +7111,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header.minimized .navigation_container .navigation_block h1 {
     font-size: 0.7rem;
     line-height: 1.1;
-    padding: 4px 0 4px;
+    padding: 4px 5px 4px;
   }
   header.minimized .navigation_container nav {
     top: 60px;
@@ -7096,6 +7125,12 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header.minimized div.menu-icon {
     top: 20px;
   }
+  main {
+    padding-top: 129px;
+  }
+  #index main {
+    padding-top: 163px;
+  }
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 20px;
   }
@@ -7106,6 +7141,18 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     float: none;
     display: block;
     margin: 0 auto;
+  }
+  section.page_title_section {
+    top: 72px;
+  }
+  section.page_title_section h1 {
+    font-size: 1rem;
+  }
+  section.page_title_section.minimized {
+    top: 60px;
+  }
+  section.page_title_section.minimized h1 {
+    font-size: 0.875rem;
   }
   #index section.top_offer_section,
   #france section.top_offer_section,

@@ -17,10 +17,12 @@ $(document).ready(function() {
         if
         ($(document).scrollTop() > 100){
             $("header").addClass("minimized");
+            $("section.page_title_section").addClass("minimized");
         }
         else
         {
             $("header").removeClass("minimized");
+            $("section.page_title_section").removeClass("minimized");
         }
         if
         ($(document).scrollTop() > 500){
@@ -42,6 +44,7 @@ $(document).ready(function() {
 
     $('header .menu-icon').on('click', function () {
         $('header').toggleClass('opened');
+        $('section.page_title_section').toggleClass('hidden');
     });
 
     var country = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);

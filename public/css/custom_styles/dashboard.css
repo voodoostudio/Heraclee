@@ -421,7 +421,7 @@ section.login_section {
     font-size: .875rem; } }
 @media screen and (max-width: 575px) {
   section.news_list_section {
-    margin-top: 40px; }
+    margin-top: 0 !important; }
     section.news_list_section .news_carousel.slick-slider .slick-track .slick-slide {
       padding: 0; }
     section.news_list_section .outer_block_container {
@@ -443,6 +443,9 @@ section.login_section {
           font-size: 1.25rem;
           line-height: 1.25rem;
           text-align: center; }
+
+  section.article_section {
+    margin-top: 0 !important; }
 
   #news_admin section.news_list_section .outer_block_container .inner_block_container {
     padding-top: 40px;
