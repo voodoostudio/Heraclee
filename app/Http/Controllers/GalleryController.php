@@ -97,6 +97,7 @@ class GalleryController extends Controller
                 $gallery->image = $file_name;
                 $gallery->title = Input::get('title');
                 $gallery->page = Input::get('page');
+                $gallery->link = Input::get('link');
 
                 $gallery->save();
 

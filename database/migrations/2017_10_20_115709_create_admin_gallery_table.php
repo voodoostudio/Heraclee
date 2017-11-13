@@ -18,6 +18,7 @@ class CreateAdminGalleryTable extends Migration
             $table->string('title', 255)->nullable();
             $table->string('image', 1024)->nullable();
             $table->string('page', 100)->nullable();
+            $table->string('link', 1024)->nullable();
             $table->string('width', 25)->nullable();
             $table->string('height', 25)->nullable();
             $table->timestamps();

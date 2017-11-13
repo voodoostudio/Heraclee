@@ -107,6 +107,13 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="col-md-6 col-lg-12 margin_bottom_20">
+                                                        <label class="form_el_label"><span>Link</span></label>
+                                                        <div class="input_container">
+                                                            <input type="text" name="link" id="link" class="" placeholder="Link">
+                                                        </div>
+                                                    </div>
                                                     <div class="push-sm-6 col-sm-6 push-lg-0 col-lg-12 margin_bottom_20">
                                                         <button type="submit" id="button_upload" class="btn">{{ trans('lang.upload') }}</button>
                                                     </div>
