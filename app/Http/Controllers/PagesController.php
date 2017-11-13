@@ -87,30 +87,40 @@ class PagesController extends Controller
         /* Count items (for menu) */
         $count_items = $properties_obj->all_property_count;
 
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == 'fr' || $country[0] == 'en') {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {
-           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'mauritius') {
-            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
     }
 
-    public function results()
+    public function results(Request $request)
     {
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
@@ -118,7 +128,7 @@ class PagesController extends Controller
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
         $country = [];
-
+        $type_view = $request->view_type;
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
         $check = isset($matches[0]) ? $matches[0] : false;
@@ -240,12 +250,13 @@ class PagesController extends Controller
                 'city_list' => $city_list,
                 'type' => $type,
                 'search' => Session::get('search'),
-                'view_type' => $view_type
+                'view_type' => $view_type,
+                'type_view' => $type_view
             ]
         );
     }
 
-    public function locations()
+    public function locations(Request $request)
     {
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
@@ -253,6 +264,7 @@ class PagesController extends Controller
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
         $country = [];
+        $type_view = $request->view_type;
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
@@ -386,7 +398,8 @@ class PagesController extends Controller
                 'city_list' => $city_list,
                 'type' => $type,
                 'search' => Session::get('search'),
-                'view_type' => $view_type
+                'view_type' => $view_type,
+                'type_view' => $type_view
             ]
         );
     }
@@ -718,6 +731,17 @@ class PagesController extends Controller
 
         return view('news_details', ['item' => $news]);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     */
+//    public function view_type(Request $request)
+//    {
+//        $view_type = $request->view_type;
+//        return view('view_type', ['type_view' => $view_type]);
+//    }
 
 
 //    public static function getCityList($id, $country)

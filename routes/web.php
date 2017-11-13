@@ -156,6 +156,11 @@ Route::group(
             'as' => 'details-tour',
         ]);
 
+//        Route::post('/view-type', [
+//            'uses' => 'PagesController@view_type',
+//            'as' => 'view-type',
+//        ]);
+
 //        Route::post('city_list/{id}/{country}', [
 //            'uses' => 'PagesController@getCityList',
 //            'as' => 'city_list',

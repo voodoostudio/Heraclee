@@ -18,6 +18,8 @@
 
 @section('content')
 
+    @include('view_type')
+
     @php
 
         $all_property = [];
@@ -53,20 +55,22 @@
     @endphp
 
 
-    @foreach($properties as $key => $picture)
-        @php
-            $links[$picture['property_id']] = $picture['pictures']
-        @endphp
-    @endforeach
+    {{--@foreach($properties as $key => $picture)--}}
+        {{--@php--}}
+            {{--$links[$picture['property_id']] = $picture['pictures']--}}
+        {{--@endphp--}}
+    {{--@endforeach--}}
 
 
-    @foreach($links as $key => $picture)
-        @foreach($picture as $item)
-            @php
-                $url[$key][] = $item['url'];
-            @endphp
-        @endforeach
-    @endforeach
+    {{--@foreach($links as $key => $picture)--}}
+        {{--@foreach($picture as $item)--}}
+            {{--@php--}}
+                {{--$url[$key][] = $item['url'];--}}
+            {{--@endphp--}}
+        {{--@endforeach--}}
+    {{--@endforeach--}}
+
+
 
     @include('includes.search_block')
 
@@ -231,22 +235,25 @@
             }
             @endif
         });
-        $('.view_type li').on('click', function () {
-                if ($(this).hasClass('list_view_btn')) {
-                   /* var id = $('.gallery_view > ul[data-id]').attr('data-id');
-                    console.log(id); */
-                    $.ajax({
-                        url: document.URL,
-                        cache: false,
-                        data: {
-                            view_type: 'list_view'
-                        },
-                        success: function(data){
-
-                        }
-                    });
-                }
-        });
+        {{--$('.view_type li').on('click', function () {--}}
+                {{--if ($(this).hasClass('list_view_btn')) {--}}
+                   {{--/* var id = $('.gallery_view > ul[data-id]').attr('data-id');--}}
+                    {{--console.log(id); */--}}
+                   {{--var csrf_token = $('input[name="_token"]').val();--}}
+                    {{--$.ajax({--}}
+                        {{--type: 'POST',--}}
+                        {{--url: '{{URL::to('/view-type')}}',--}}
+                        {{--dataType: 'json',--}}
+                        {{--data: {--}}
+                            {{--_token: csrf_token,--}}
+                            {{--view_type: 'list_view'--}}
+                        {{--},--}}
+                        {{--success: function(data){--}}
+                            {{--console.log(view_type);--}}
+                        {{--}--}}
+                    {{--});--}}
+                {{--}--}}
+        {{--});--}}
 
 
     </script>
