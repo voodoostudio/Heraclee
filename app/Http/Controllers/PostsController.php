@@ -28,7 +28,17 @@ class PostsController extends Controller
     {
         $posts = Posts::orderBy('date', 'desc')->get();
 
-        return view('admin.posts.index', ['posts' => $posts]);
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('admin.posts.index', ['posts' => $posts, 'last_update' => $last_update]);
     }
 
     /**
@@ -38,7 +48,17 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('admin.posts.create', ['last_update' => $last_update]);
     }
 
     /**
@@ -170,7 +190,17 @@ class PostsController extends Controller
     {
         $posts = Posts::find($id);
 
-        return view('admin.posts.show', ['posts' => $posts]);
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('admin.posts.show', ['posts' => $posts, 'last_update' => $last_update]);
     }
 
     /**
@@ -183,7 +213,17 @@ class PostsController extends Controller
     {
         $posts = Posts::find($id);
 
-        return view('admin.posts.edit', ['posts' => $posts]);
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('admin.posts.edit', ['posts' => $posts, 'last_update' => $last_update]);
     }
 
 

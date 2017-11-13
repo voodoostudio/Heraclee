@@ -240,6 +240,16 @@ class PagesController extends Controller
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
 
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
         return view(
             'results',
             [
@@ -251,7 +261,8 @@ class PagesController extends Controller
                 'type' => $type,
                 'search' => Session::get('search'),
                 'view_type' => $view_type,
-                'type_view' => $type_view
+                'type_view' => $type_view,
+                'last_update' => $last_update
             ]
         );
     }
@@ -388,6 +399,17 @@ class PagesController extends Controller
 
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
+
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
         return view(
             'results',
             [
@@ -399,7 +421,8 @@ class PagesController extends Controller
                 'type' => $type,
                 'search' => Session::get('search'),
                 'view_type' => $view_type,
-                'type_view' => $type_view
+                'type_view' => $type_view,
+                'last_update' => $last_update
             ]
         );
     }
@@ -444,9 +467,19 @@ class PagesController extends Controller
             $next = $current_index + 1;
             $prev = $current_index - 1;
 
+            /* Last update on site */
+            $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+            $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+            $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+            $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+            $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+            $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+            $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type, 'last_update' => $last_update]);
         } else {
             return redirect('results');
         }
@@ -492,9 +525,19 @@ class PagesController extends Controller
             $next = $current_index + 1;
             $prev = $current_index - 1;
 
+            /* Last update on site */
+            $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+            $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+            $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+            $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+            $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+            $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+            $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type, 'last_update' => $last_update]);
         } else {
             return redirect('results');
         }
@@ -522,12 +565,32 @@ class PagesController extends Controller
 
     public function newsletters()
     {
-        return view('newsletters');
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('newsletters', ['last_update' => $last_update]);
     }
 
     public function contact()
     {
-        return view('contact');
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+        return view('contact', ['last_update' => $last_update]);
     }
 
     public function postContact(Request $request)
@@ -672,7 +735,18 @@ class PagesController extends Controller
     {
         $news = Posts::where('status', '=', 'on')->orderBy('date', 'desc')->get();
 
-        return view('news', ['news' => $news]);
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+
+
+        return view('news', ['news' => $news, 'last_update' => $last_update]);
     }
 
     /**
@@ -703,9 +777,17 @@ class PagesController extends Controller
             }
         }
 
+        /* Last update on site */
+        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
+        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
+        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
+        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
 
+        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
 
-        return view('tours', ['properties' => $properties, 'preview_tour' => $preview]);
+        return view('tours', ['properties' => $properties, 'preview_tour' => $preview, 'last_update' => $last_update]);
     }
 
     /**
