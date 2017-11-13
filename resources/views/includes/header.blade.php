@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="last_updates">
-                    <p>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
+                    {{--<p>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>--}}
                 </div>
             </div>
 

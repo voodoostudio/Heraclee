@@ -18,7 +18,7 @@
 
 @section('content')
 
-    @include('view_type')
+    {{--@include('view_type')--}}
 
     @php
 
@@ -91,13 +91,13 @@
                     <div class="view_type_container">
                         <ul class="view_type">
                             <li class="hidden-sm-down list_view_btn @if($view_type == 'list_view') active @endif">
-                                <i class="icn icon-list"></i>{{ trans('lang.list') }}
+                                <i class="icn icon-list"></i>{{ trans('lang.list') }} <span>({{$count_items}})</span>
                             </li>
                             <li class="grid_view_btn  @if($view_type == 'grid_view') active @endif">
-                                <i class="icn icon-grid"></i>{{ trans('lang.grid') }} ({{$count_items}})
+                                <i class="icn icon-grid"></i>{{ trans('lang.grid') }} <span>({{$count_items}})</span>
                             </li>
                             <li class="map_view_btn @if($view_type == 'map_view') active @endif">
-                                <i class="icn icon-map"></i>{{ trans('lang.map') }}
+                                <i class="icn icon-map"></i>{{ trans('lang.map') }} <span>({{$count_items}})</span>
                             </li>
                         </ul>
                     </div>
@@ -116,7 +116,6 @@
                 </div>
             </div>
         </div>
-
         <div class="results_container {{ $view_type }} @if($view_type == 'list_view') hidden-sm-down  @endif">
             <div id="results_map"></div>
             <div class="container-fluid">

@@ -3893,6 +3893,10 @@ section.results_section .view_type_container .view_type li {
   background-color: #272727;
 }
 
+section.results_section .view_type_container .view_type li span {
+  display: none;
+}
+
 section.results_section .view_type_container .view_type li i.icn {
   font-size: 16px;
   margin-right: 10px;
@@ -3905,6 +3909,10 @@ section.results_section .view_type_container .view_type li:last-of-type {
 section.results_section .view_type_container .view_type li.active {
   background-color: #ccac83;
   color: white;
+}
+
+section.results_section .view_type_container .view_type li.active span {
+  display: initial;
 }
 
 section.results_section .results_container {

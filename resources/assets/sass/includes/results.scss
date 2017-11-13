@@ -32,6 +32,9 @@ section.results_section {
         border: 1px solid $main_brown_clr;
         border-right: none;
         background-color: $main_dark_clr;
+        span {
+          display: none;
+        }
         i.icn {
           font-size: 16px;
           margin-right: 10px;
@@ -43,6 +46,9 @@ section.results_section {
       li.active {
         background-color: $main_brown_clr;
         color: white;
+        span {
+          display: initial;
+        }
       }
     }
   }
