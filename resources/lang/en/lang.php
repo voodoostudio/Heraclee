@@ -43,7 +43,7 @@ return [
     'grid'                  => 'Grid',
     'map'                   => 'Map',
     'your_real_estate_search' => 'Your real estate search',
-    'contact_the_agent'     => 'Contact the agent',
+    'contact_the_agent'     => 'Contact the agency',
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
     'our_last_objects'      => 'Our latest objects',

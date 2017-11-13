@@ -43,7 +43,7 @@ return [
     'grid'                  => 'Grille',
     'map'                   => 'Carte',
     'your_real_estate_search' => 'Votre recherche immobilière',
-    'contact_the_agent'     => 'Contactez l’agent',
+    'contact_the_agent'     => 'Contacter l’agence',
     'currently_no_results'  => 'Actuellement aucun résultat',
     'search'                => 'Rechercher',
     'our_last_objects'      => 'Nos derniers biens',
