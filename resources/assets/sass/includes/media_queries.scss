@@ -551,7 +551,7 @@
       .navigation_block {
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-60%);
         text-align: center;
         display: table;
         margin: 0 auto;
@@ -563,10 +563,15 @@
         .lang_currency_container {
           float: none;
           display: inline-block;
+          li {
+            ul.language_select {
+              padding: 0;
+            }
+          }
         }
-        .last_update {
+        .last_updates {
           width: 100%;
-          bottom: -8px;
+          bottom: -14px;
         }
       }
     }
@@ -591,6 +596,7 @@
         height: 68px;
         .navigation_block {
           margin: 0 auto;
+          transform: translateY(-50%);
           h1 {
 
           }
@@ -667,7 +673,7 @@
   #usa,
   #mauritius {
     section.search_section {
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
   section.results_section {
@@ -1101,6 +1107,10 @@
         h1 {
           font-size: 0.75rem;
           line-height: 15px;
+        }
+        .last_updates {
+          font-size: 0.65rem;
+          bottom: -10px;
         }
       }
       nav {
