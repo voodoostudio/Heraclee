@@ -89,9 +89,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6 pull-md-6 col-lg-8 pull-lg-4">
                     <h1>{!! trans('lang.footer_description') !!}</h1>
-                    <div class="last_update">
-                        <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
-                    </div>
+
                 </div>
             </div>
             <div class="row">

@@ -20,7 +20,7 @@ return [
     'luxury_real_estate_agency'  => 'Luxury real estate agency - <span>Saint-Tropez</span>',
     'select_the_city'       => 'Select a city:',
     'select_the_object_type'       => 'Select the property type:',
-    'last_website_update'       => 'The last update of the website ',
+    'last_website_update'       => 'Last updates: ',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',

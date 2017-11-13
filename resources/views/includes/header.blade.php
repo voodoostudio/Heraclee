@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-12 col-md-10">
                         <h1>{!! trans('lang.luxury_real_estate_agency') !!}</h1>
-                        {{--<a class="header_tel hidden-md-up" href="tel:+330494542001">+33 (0)4 94 54 20 01</a>--}}
+                        <a class="header_tel" href="tel:+330494542001">+33 (0)4 94 54 20 01</a>
                     </div>
                     <div class="col-12 col-md-2">
                         <ul class="lang_currency_container">
@@ -33,6 +33,9 @@
                             {{--</li>--}}
                         </ul>
                     </div>
+                </div>
+                <div class="last_updates">
+                    <p>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
                 </div>
             </div>
 

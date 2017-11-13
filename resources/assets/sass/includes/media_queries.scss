@@ -525,13 +525,14 @@
 }
 
 @media screen and ( max-width: 767px ) {
+
   header {
     &.opened .navigation_container nav {
       display: block;
     }
     .navigation_container {
       padding-right: 70px;
-      padding-top: 10px;
+      padding-top: 0;
       height: 90px;
       nav {
         position: absolute;
@@ -562,6 +563,10 @@
         .lang_currency_container {
           float: none;
           display: inline-block;
+        }
+        .last_update {
+          width: 100%;
+          bottom: -8px;
         }
       }
     }
@@ -625,6 +630,16 @@
     padding-top: 150px;
   }
   #index {
+    header {
+      .navigation_container .navigation_block {
+        h1 {
+          display: none;
+        }
+        .header_tel {
+          display: block;
+        }
+      }
+    }
     main {
       padding-top: 196px;
     }

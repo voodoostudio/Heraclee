@@ -124,12 +124,14 @@ header {
     padding-top: 15px;
     @include my_transition(.2s ease-in-out);
     .navigation_block {
+      position: relative;
       margin-left: 170px;
       @include my_transition(.2s ease-in-out);
       .header_tel {
         @include my_transition(.2s ease-in-out);
         font-size: 0.813rem;
         line-height: 27px;
+        display: none;
       }
       h1 {
         font-size: 1.25rem;
@@ -150,8 +152,7 @@ header {
           ul.language_select {
             display: table;
             float: left;
-            //margin-right: 30px;
-            padding: 6px 0;
+            padding: 6px 0 0;
             @include my_transition(.2s ease-in-out);
             li {
               float: left;
@@ -193,6 +194,14 @@ header {
             }
           }
         }
+      }
+      .last_updates {
+        position: absolute;
+        right: 0;
+        bottom: -12px;
+        font-size: 0.75rem;
+        line-height: 1;
+        color: $main_brown_clr;
       }
     }
     nav {
@@ -309,6 +318,9 @@ header {
           ul.language_select {
             padding: 5px 0 2px;
           }
+        }
+        .last_updates {
+          display: none;
         }
       }
       nav {
@@ -693,22 +705,6 @@ footer {
       text-align: justify;
       line-height: inherit;
       text-transform: none;
-    }
-    .last_update {
-      display: table;
-      padding: 10px 15px;
-      border: 1px solid $main_brown_clr;
-      margin-top: 30px;
-      p {
-        color: $main_brown_clr;
-        line-height: 25px;
-        font-size: 0.875rem;
-        i {
-          margin-right: 15px;
-          font-size: 25px;
-          float: left;
-        }
-      }
     }
     .copyright {
       margin-top: 30px;
