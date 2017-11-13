@@ -210,410 +210,433 @@ class Properties extends Model
             }
         };
 
-        $properties = DB::table('apimo_properties')
-            ->where($conditions_where)
-            ->where('reference', 'like',  'HSTP%' )
-            ->where(function($query) use ($search_keywords) {
-                $lang_short = LaravelLocalization::getCurrentLocale();
-                $lang = LaravelLocalization::getCurrentLocaleRegional();
-                if($search_keywords != '') {
-                    //take reference in the services
-                    $services = DB::table('apimo_property_service')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+        if($search_keywords != '') {
+            $properties = DB::table('apimo_properties')
+                //->where($conditions_where)
+                ->where('reference', 'like', 'HSTP%')
+                ->where(function ($query) use ($search_keywords) {
+                    $lang_short = LaravelLocalization::getCurrentLocale();
+                    $lang = LaravelLocalization::getCurrentLocaleRegional();
+                    if ($search_keywords != '') {
+                        //take reference in the services
+                        $services = DB::table('apimo_property_service')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the orientations
-                    $orientations = DB::table('apimo_property_orientations')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the orientations
+                        $orientations = DB::table('apimo_property_orientations')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the condition
-                    $conditions = DB::table('apimo_property_condition')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the condition
+                        $conditions = DB::table('apimo_property_condition')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the standing
-                    $standing = DB::table('apimo_property_standing')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the standing
+                        $standing = DB::table('apimo_property_standing')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the subtype
-                    $subtype = DB::table('apimo_property_subtype')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the subtype
+                        $subtype = DB::table('apimo_property_subtype')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the comments
-                    $comments = DB::table('apimo_property_comments')
-                        ->where('comment', 'like', '%' . $search_keywords . '%')
-                        ->where('language', $lang_short)
-                        ->get();
+                        //take reference in the comments
+                        $comments = DB::table('apimo_property_comments')
+                            ->where('comment', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
 
-                    //property heating
-                    $heating_access_reference = DB::table('apimo_property_heating_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //property heating
+                        $heating_access_reference = DB::table('apimo_property_heating_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_device_reference = DB::table('apimo_property_heating_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $heating_device_reference = DB::table('apimo_property_heating_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_type_reference = DB::table('apimo_property_heating_type')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $heating_type_reference = DB::table('apimo_property_heating_type')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
-                    $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
-                    $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
+                        $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
+                        $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
+                        $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
 
-                    $heating_access = DB::table('apimo_heating')
-                        ->where('access', 'like',   $heating_access_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_access = DB::table('apimo_heating')
+                            ->where('access', 'like', $heating_access_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $heating_device = DB::table('apimo_heating')
-                        ->where('device', 'like',   $heating_device_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_device = DB::table('apimo_heating')
+                            ->where('device', 'like', $heating_device_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $heating_type = DB::table('apimo_heating')
-                        ->where('type', 'like',   $heating_type_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_type = DB::table('apimo_heating')
+                            ->where('type', 'like', $heating_type_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    //property water
-                    $water_access_reference = DB::table('apimo_property_water_hot_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //property water
+                        $water_access_reference = DB::table('apimo_property_water_hot_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_device_reference = DB::table('apimo_property_water_hot_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $water_device_reference = DB::table('apimo_property_water_hot_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_waste_reference = DB::table('apimo_property_water_waste')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $water_waste_reference = DB::table('apimo_property_water_waste')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
-                    $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
-                    $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
+                        $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
+                        $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
+                        $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
 
-                    $water_access = DB::table('apimo_water')
-                        ->where('hot_access', 'like',   $water_access_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_access = DB::table('apimo_water')
+                            ->where('hot_access', 'like', $water_access_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $water_device = DB::table('apimo_water')
-                        ->where('hot_device', 'like',    $water_device_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_device = DB::table('apimo_water')
+                            ->where('hot_device', 'like', $water_device_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $water_waste = DB::table('apimo_water')
-                        ->where('waste', 'like',   $water_waste_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_waste = DB::table('apimo_water')
+                            ->where('waste', 'like', $water_waste_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    /**
-                     * @param $services_search (services)
-                     * @param $orientations_search (orientations)
-                     * @param $conditions_search (condition)
-                     * @param $conditions_search (condition)
-                     * @param $subtype_search (subtype)
-                     * @array $commentary (comments)
-                     * @array $heating_access_array (heating access)
-                     * @array $heating_device_array (heating device)
-                     * @array $heating_type_array (heating type)
-                     * @array $water_access_array (hot access water)
-                     * @array $water_device_array (hot device water)
-                     * @array $water_waste_array (waste water)
-                     */
+                        /**
+                         * @param $services_search (services)
+                         * @param $orientations_search (orientations)
+                         * @param $conditions_search (condition)
+                         * @param $conditions_search (condition)
+                         * @param $subtype_search (subtype)
+                         * @array $commentary (comments)
+                         * @array $heating_access_array (heating access)
+                         * @array $heating_device_array (heating device)
+                         * @array $heating_type_array (heating type)
+                         * @array $water_access_array (hot access water)
+                         * @array $water_device_array (hot device water)
+                         * @array $water_waste_array (waste water)
+                         */
 
-                    // arrays
-                    $commentary = [];
-                    $heating_access_array = [];
-                    $heating_device_array = [];
-                    $heating_type_array = [];
-                    $water_access_array = [];
-                    $water_device_array = [];
-                    $water_waste_array = [];
+                        // arrays
+                        $commentary = [];
+                        $heating_access_array = [];
+                        $heating_device_array = [];
+                        $heating_type_array = [];
+                        $water_access_array = [];
+                        $water_device_array = [];
+                        $water_waste_array = [];
 
-                    //check
-                    $services_search = (!empty($services)) ? $services : $search_keywords;
-                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
-                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
-                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
+                        //check
+                        $services_search = (!empty($services)) ? $services : $search_keywords;
+                        $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                        $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                        $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                        $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
 
-                    foreach ($comments as $comment) {
-                        $commentary[] = $comment['property_id'];
+                        foreach ($comments as $comment) {
+                            $commentary[] = $comment['property_id'];
+                        }
+
+                        // heating
+                        foreach ($heating_access as $key => $access) {
+                            $heating_access_array[] = $key;
+                        }
+
+                        foreach ($heating_device as $key => $device) {
+                            $heating_device_array[] = $key;
+                        }
+
+                        foreach ($heating_type as $key => $type) {
+                            $heating_type_array[] = $key;
+                        }
+
+                        // water
+                        foreach ($water_access as $key => $access) {
+                            $water_access_array[] = $key;
+                        }
+
+                        foreach ($water_device as $key => $device) {
+                            $water_device_array[] = $key;
+                        }
+
+                        foreach ($water_waste as $key => $waste) {
+                            $water_waste_array[] = $key;
+                        }
+
+                        $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                            ->orWhere('orientations', 'rlike', '(^|,)' . $orientations_search . '(,|$)')
+                            ->orWhere('standing', 'rlike', '(^|,)' . $standing_search . '(,|$)')
+                            ->orWhere('condition', 'rlike', '(^|,)' . $conditions_search . '(,|$)')
+                            ->orWhere('subtype', 'rlike', '(^|,)' . $subtype_search . '(,|$)')
+                            ->orWhere('property_id', 'like', $search_keywords)
+                            ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('style', 'like', '%' . $search_keywords . '%')
+                            ->orWhereIn('property_id', $heating_access_array)
+                            ->orWhereIn('property_id', $heating_device_array)
+                            ->orWhereIn('property_id', $heating_type_array)
+                            ->orWhereIn('property_id', $water_access_array)
+                            ->orWhereIn('property_id', $water_device_array)
+                            ->orWhereIn('property_id', $water_waste_array)
+                            ->orWhereIn('property_id', $commentary);
                     }
+                })
+               /* ->whereIn('type', $object_type)
+                ->whereIn('category', $sell_type_array)
+                ->whereIn('city', $object_place)
+                ->whereIn('country', $country_array)*/
+                ->limit($items)
+                ->offset($offset)
+                ->orderBy('property_id', 'DESC')
+                ->get();
 
-                    // heating
-                    foreach ($heating_access as $key => $access) {
-                        $heating_access_array[] = $key;
+            /* Count items */
+            $this->property_count = DB::table('apimo_properties')
+               // ->where($conditions_where)
+                ->where('reference', 'like',  'HSTP%' )
+                ->where(function($query) use ($search_keywords) {
+                    $lang_short = LaravelLocalization::getCurrentLocale();
+                    $lang = LaravelLocalization::getCurrentLocaleRegional();
+                    if($search_keywords != '') {
+                        //dump(explode(" ", $search_keywords));
+                        //take reference in the services
+                        $services = DB::table('apimo_property_service')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        //take reference in the orientations
+                        $orientations = DB::table('apimo_property_orientations')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        //take reference in the condition
+                        $conditions = DB::table('apimo_property_condition')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        //take reference in the standing
+                        $standing = DB::table('apimo_property_standing')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        //take reference in the subtype
+                        $subtype = DB::table('apimo_property_subtype')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        //take reference in the comments
+                        $comments = DB::table('apimo_property_comments')
+                            ->where('comment', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
+
+                        //property heating
+                        $heating_access_reference = DB::table('apimo_property_heating_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $heating_device_reference = DB::table('apimo_property_heating_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $heating_type_reference = DB::table('apimo_property_heating_type')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
+                        $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
+                        $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
+
+                        $heating_access = DB::table('apimo_heating')
+                            ->where('access', 'like',   $heating_access_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        $heating_device = DB::table('apimo_heating')
+                            ->where('device', 'like',   $heating_device_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        $heating_type = DB::table('apimo_heating')
+                            ->where('type', 'like',   $heating_type_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        //property water
+                        $water_access_reference = DB::table('apimo_property_water_hot_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $water_device_reference = DB::table('apimo_property_water_hot_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $water_waste_reference = DB::table('apimo_property_water_waste')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
+
+                        $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
+                        $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
+                        $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
+
+                        $water_access = DB::table('apimo_water')
+                            ->where('hot_access', 'like',   $water_access_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        $water_device = DB::table('apimo_water')
+                            ->where('hot_device', 'like',    $water_device_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        $water_waste = DB::table('apimo_water')
+                            ->where('waste', 'like',   $water_waste_check )
+                            ->get()
+                            ->groupBy('property_id');
+
+                        /**
+                         * @param $services_search (services)
+                         * @param $orientations_search (orientations)
+                         * @param $conditions_search (condition)
+                         * @param $conditions_search (condition)
+                         * @param $subtype_search (subtype)
+                         * @array $commentary (comments)
+                         * @array $heating_access_array (heating access)
+                         * @array $heating_device_array (heating device)
+                         * @array $heating_type_array (heating type)
+                         * @array $water_access_array (hot access water)
+                         * @array $water_device_array (hot device water)
+                         * @array $water_waste_array (waste water)
+                         */
+
+                        // arrays
+                        $commentary = [];
+                        $heating_access_array = [];
+                        $heating_device_array = [];
+                        $heating_type_array = [];
+                        $water_access_array = [];
+                        $water_device_array = [];
+                        $water_waste_array = [];
+
+                        //check
+                        $services_search = (!empty($services)) ? $services : $search_keywords;
+                        $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                        $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                        $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                        $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
+
+                        foreach ($comments as $comment) {
+                            $commentary[] = $comment['property_id'];
+                        }
+
+                        // heating
+                        foreach ($heating_access as $key => $access) {
+                            $heating_access_array[] = $key;
+                        }
+
+                        foreach ($heating_device as $key => $device) {
+                            $heating_device_array[] = $key;
+                        }
+
+                        foreach ($heating_type as $key => $type) {
+                            $heating_type_array[] = $key;
+                        }
+
+                        // water
+                        foreach ($water_access as $key => $access) {
+                            $water_access_array[] = $key;
+                        }
+
+                        foreach ($water_device as $key => $device) {
+                            $water_device_array[] = $key;
+                        }
+
+                        foreach ($water_waste as $key => $waste) {
+                            $water_waste_array[] = $key;
+                        }
+
+                        $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                            ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
+                            ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
+                            ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
+                            ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
+                            ->orWhere('property_id', 'like',  $search_keywords )
+                            ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('style', 'like', '%' . $search_keywords . '%')
+                            ->orWhereIn('property_id', $heating_access_array)
+                            ->orWhereIn('property_id', $heating_device_array)
+                            ->orWhereIn('property_id', $heating_type_array)
+                            ->orWhereIn('property_id', $water_access_array)
+                            ->orWhereIn('property_id', $water_device_array)
+                            ->orWhereIn('property_id', $water_waste_array)
+                            ->orWhereIn('property_id', $commentary);
                     }
+                })
+//                ->whereIn('type', $object_type)
+//                ->whereIn('category', $sell_type_array)
+//                ->whereIn('city', $object_place)
+                ->whereIn('country', $country_array)
+                ->get()
+                ->count();
+        } else {
+            $properties = DB::table('apimo_properties')
+                ->where($conditions_where)
+                ->where('reference', 'like', 'HSTP%')
+                ->whereIn('type', $object_type)
+                ->whereIn('category', $sell_type_array)
+                ->whereIn('city', $object_place)
+                ->whereIn('country', $country_array)
+                ->limit($items)
+                ->offset($offset)
+                ->orderBy('property_id', 'DESC')
+                ->get();
 
-                    foreach ($heating_device as $key => $device) {
-                        $heating_device_array[] = $key;
-                    }
-
-                    foreach ($heating_type as $key => $type) {
-                        $heating_type_array[] = $key;
-                    }
-
-                    // water
-                    foreach ($water_access as $key => $access) {
-                        $water_access_array[] = $key;
-                    }
-
-                    foreach ($water_device as $key => $device) {
-                        $water_device_array[] = $key;
-                    }
-
-                    foreach ($water_waste as $key => $waste) {
-                        $water_waste_array[] = $key;
-                    }
-
-                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
-                        ->orWhere('property_id', 'like',  $search_keywords )
-                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $heating_access_array)
-                        ->orWhereIn('property_id', $heating_device_array)
-                        ->orWhereIn('property_id', $heating_type_array)
-                        ->orWhereIn('property_id', $water_access_array)
-                        ->orWhereIn('property_id', $water_device_array)
-                        ->orWhereIn('property_id', $water_waste_array)
-                        ->orWhereIn('property_id', $commentary);
-                }
-            })
-            ->whereIn('type', $object_type)
-            ->whereIn('category', $sell_type_array)
-            ->whereIn('city', $object_place)
-            ->whereIn('country', $country_array)
-            ->limit($items)
-            ->offset($offset)
-            ->orderBy('property_id', 'DESC')
-            ->get();
-
-
-        $this->property_count = DB::table('apimo_properties')
-            ->where($conditions_where)
-            ->where('reference', 'like',  'HSTP%' )
-            ->where(function($query) use ($search_keywords) {
-                $lang_short = LaravelLocalization::getCurrentLocale();
-                $lang = LaravelLocalization::getCurrentLocaleRegional();
-                if($search_keywords != '') {
-                    //dump(explode(" ", $search_keywords));
-                    //take reference in the services
-                    $services = DB::table('apimo_property_service')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    //take reference in the orientations
-                    $orientations = DB::table('apimo_property_orientations')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    //take reference in the condition
-                    $conditions = DB::table('apimo_property_condition')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    //take reference in the standing
-                    $standing = DB::table('apimo_property_standing')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    //take reference in the subtype
-                    $subtype = DB::table('apimo_property_subtype')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    //take reference in the comments
-                    $comments = DB::table('apimo_property_comments')
-                        ->where('comment', 'like', '%' . $search_keywords . '%')
-                        ->where('language', $lang_short)
-                        ->get();
-
-                    //property heating
-                    $heating_access_reference = DB::table('apimo_property_heating_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $heating_device_reference = DB::table('apimo_property_heating_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $heating_type_reference = DB::table('apimo_property_heating_type')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
-                    $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
-                    $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
-
-                    $heating_access = DB::table('apimo_heating')
-                        ->where('access', 'like',   $heating_access_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    $heating_device = DB::table('apimo_heating')
-                        ->where('device', 'like',   $heating_device_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    $heating_type = DB::table('apimo_heating')
-                        ->where('type', 'like',   $heating_type_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    //property water
-                    $water_access_reference = DB::table('apimo_property_water_hot_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $water_device_reference = DB::table('apimo_property_water_hot_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $water_waste_reference = DB::table('apimo_property_water_waste')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
-
-                    $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
-                    $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
-                    $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
-
-                    $water_access = DB::table('apimo_water')
-                        ->where('hot_access', 'like',   $water_access_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    $water_device = DB::table('apimo_water')
-                        ->where('hot_device', 'like',    $water_device_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    $water_waste = DB::table('apimo_water')
-                        ->where('waste', 'like',   $water_waste_check )
-                        ->get()
-                        ->groupBy('property_id');
-
-                    /**
-                     * @param $services_search (services)
-                     * @param $orientations_search (orientations)
-                     * @param $conditions_search (condition)
-                     * @param $conditions_search (condition)
-                     * @param $subtype_search (subtype)
-                     * @array $commentary (comments)
-                     * @array $heating_access_array (heating access)
-                     * @array $heating_device_array (heating device)
-                     * @array $heating_type_array (heating type)
-                     * @array $water_access_array (hot access water)
-                     * @array $water_device_array (hot device water)
-                     * @array $water_waste_array (waste water)
-                     */
-
-                    // arrays
-                    $commentary = [];
-                    $heating_access_array = [];
-                    $heating_device_array = [];
-                    $heating_type_array = [];
-                    $water_access_array = [];
-                    $water_device_array = [];
-                    $water_waste_array = [];
-
-                    //check
-                    $services_search = (!empty($services)) ? $services : $search_keywords;
-                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
-                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
-                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
-
-                    foreach ($comments as $comment) {
-                        $commentary[] = $comment['property_id'];
-                    }
-
-                    // heating
-                    foreach ($heating_access as $key => $access) {
-                        $heating_access_array[] = $key;
-                    }
-
-                    foreach ($heating_device as $key => $device) {
-                        $heating_device_array[] = $key;
-                    }
-
-                    foreach ($heating_type as $key => $type) {
-                        $heating_type_array[] = $key;
-                    }
-
-                    // water
-                    foreach ($water_access as $key => $access) {
-                        $water_access_array[] = $key;
-                    }
-
-                    foreach ($water_device as $key => $device) {
-                        $water_device_array[] = $key;
-                    }
-
-                    foreach ($water_waste as $key => $waste) {
-                        $water_waste_array[] = $key;
-                    }
-
-                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
-                        ->orWhere('property_id', 'like',  $search_keywords )
-                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $heating_access_array)
-                        ->orWhereIn('property_id', $heating_device_array)
-                        ->orWhereIn('property_id', $heating_type_array)
-                        ->orWhereIn('property_id', $water_access_array)
-                        ->orWhereIn('property_id', $water_device_array)
-                        ->orWhereIn('property_id', $water_waste_array)
-                        ->orWhereIn('property_id', $commentary);
-                }
-            })
-            ->whereIn('type', $object_type)
-            ->whereIn('category', $sell_type_array)
-            ->whereIn('city', $object_place)
-            ->whereIn('country', $country_array)
-            ->get()
-            ->count();
-
+            $this->property_count = DB::table('apimo_properties')
+                ->where($conditions_where)
+                ->where('reference', 'like', 'HSTP%')
+                ->whereIn('type', $object_type)
+                ->whereIn('category', $sell_type_array)
+                ->whereIn('city', $object_place)
+                ->whereIn('country', $country_array)
+                ->get()
+                ->count();
+        }
 
         $this->all_property_count = DB::table('apimo_properties')
             ->whereIn('country', $country_array)
@@ -767,204 +790,215 @@ class Properties extends Model
             }
         };
 
-        $properties = DB::table('apimo_properties')
-            ->whereIn('type', $object_type)
-            ->whereIn('category', $sell_type_array)
-            ->whereIn('city', $object_place)
-            ->where($conditions_where)
-            ->where('reference', 'like',  'HSTP%' )
-            ->where(function($query) use ($search_keywords) {
-                $lang_short = LaravelLocalization::getCurrentLocale();
-                $lang = LaravelLocalization::getCurrentLocaleRegional();
-                if($search_keywords != '') {
-                    //take reference in the services
-                    $services = DB::table('apimo_property_service')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+        if($search_keywords != '') {
+            $properties = DB::table('apimo_properties')
+//                ->whereIn('type', $object_type)
+//                ->whereIn('category', $sell_type_array)
+//                ->whereIn('city', $object_place)
+//                ->where($conditions_where)
+                ->where('reference', 'like', 'HSTP%')
+                ->where(function ($query) use ($search_keywords) {
+                    $lang_short = LaravelLocalization::getCurrentLocale();
+                    $lang = LaravelLocalization::getCurrentLocaleRegional();
+                    if ($search_keywords != '') {
+                        //take reference in the services
+                        $services = DB::table('apimo_property_service')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the orientations
-                    $orientations = DB::table('apimo_property_orientations')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the orientations
+                        $orientations = DB::table('apimo_property_orientations')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the condition
-                    $conditions = DB::table('apimo_property_condition')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the condition
+                        $conditions = DB::table('apimo_property_condition')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the standing
-                    $standing = DB::table('apimo_property_standing')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the standing
+                        $standing = DB::table('apimo_property_standing')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the subtype
-                    $subtype = DB::table('apimo_property_subtype')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //take reference in the subtype
+                        $subtype = DB::table('apimo_property_subtype')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    //take reference in the comments
-                    $comments = DB::table('apimo_property_comments')
-                        ->where('comment', 'like', '%' . $search_keywords . '%')
-                        ->where('language', $lang_short)
-                        ->get();
+                        //take reference in the comments
+                        $comments = DB::table('apimo_property_comments')
+                            ->where('comment', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
 
-                    //property heating
-                    $heating_access_reference = DB::table('apimo_property_heating_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //property heating
+                        $heating_access_reference = DB::table('apimo_property_heating_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_device_reference = DB::table('apimo_property_heating_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $heating_device_reference = DB::table('apimo_property_heating_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_type_reference = DB::table('apimo_property_heating_type')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $heating_type_reference = DB::table('apimo_property_heating_type')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
-                    $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
-                    $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
+                        $heating_access_check = (!empty($heating_access_reference)) ? $heating_access_reference : '';
+                        $heating_device_check = (!empty($heating_device_reference)) ? $heating_device_reference : '';
+                        $heating_type_check = (!empty($heating_type_reference)) ? $heating_type_reference : '';
 
-                    $heating_access = DB::table('apimo_heating')
-                        ->where('access', 'like',   $heating_access_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_access = DB::table('apimo_heating')
+                            ->where('access', 'like', $heating_access_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $heating_device = DB::table('apimo_heating')
-                        ->where('device', 'like',   $heating_device_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_device = DB::table('apimo_heating')
+                            ->where('device', 'like', $heating_device_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $heating_type = DB::table('apimo_heating')
-                        ->where('type', 'like',   $heating_type_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $heating_type = DB::table('apimo_heating')
+                            ->where('type', 'like', $heating_type_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    //property water
-                    $water_access_reference = DB::table('apimo_property_water_hot_access')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        //property water
+                        $water_access_reference = DB::table('apimo_property_water_hot_access')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_device_reference = DB::table('apimo_property_water_hot_device')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $water_device_reference = DB::table('apimo_property_water_hot_device')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_waste_reference = DB::table('apimo_property_water_waste')
-                        ->where('value', 'like', '%' . $search_keywords . '%')
-                        ->where('locale', $lang)
-                        ->value('reference');
+                        $water_waste_reference = DB::table('apimo_property_water_waste')
+                            ->where('value', 'like', '%' . $search_keywords . '%')
+                            ->where('locale', $lang)
+                            ->value('reference');
 
-                    $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
-                    $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
-                    $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
+                        $water_access_check = (!empty($water_access_reference)) ? $water_access_reference : '';
+                        $water_device_check = (!empty($water_device_reference)) ? $water_device_reference : '';
+                        $water_waste_check = (!empty($water_waste_reference)) ? $water_waste_reference : '';
 
-                    $water_access = DB::table('apimo_water')
-                        ->where('hot_access', 'like',   $water_access_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_access = DB::table('apimo_water')
+                            ->where('hot_access', 'like', $water_access_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $water_device = DB::table('apimo_water')
-                        ->where('hot_device', 'like',    $water_device_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_device = DB::table('apimo_water')
+                            ->where('hot_device', 'like', $water_device_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    $water_waste = DB::table('apimo_water')
-                        ->where('waste', 'like',   $water_waste_check )
-                        ->get()
-                        ->groupBy('property_id');
+                        $water_waste = DB::table('apimo_water')
+                            ->where('waste', 'like', $water_waste_check)
+                            ->get()
+                            ->groupBy('property_id');
 
-                    /**
-                     * @param $services_search (services)
-                     * @param $orientations_search (orientations)
-                     * @param $conditions_search (condition)
-                     * @param $conditions_search (condition)
-                     * @param $subtype_search (subtype)
-                     * @array $commentary (comments)
-                     * @array $heating_access_array (heating access)
-                     * @array $heating_device_array (heating device)
-                     * @array $heating_type_array (heating type)
-                     * @array $water_access_array (hot access water)
-                     * @array $water_device_array (hot device water)
-                     * @array $water_waste_array (waste water)
-                     */
+                        /**
+                         * @param $services_search (services)
+                         * @param $orientations_search (orientations)
+                         * @param $conditions_search (condition)
+                         * @param $conditions_search (condition)
+                         * @param $subtype_search (subtype)
+                         * @array $commentary (comments)
+                         * @array $heating_access_array (heating access)
+                         * @array $heating_device_array (heating device)
+                         * @array $heating_type_array (heating type)
+                         * @array $water_access_array (hot access water)
+                         * @array $water_device_array (hot device water)
+                         * @array $water_waste_array (waste water)
+                         */
 
-                    // arrays
-                    $commentary = [];
-                    $heating_access_array = [];
-                    $heating_device_array = [];
-                    $heating_type_array = [];
-                    $water_access_array = [];
-                    $water_device_array = [];
-                    $water_waste_array = [];
+                        // arrays
+                        $commentary = [];
+                        $heating_access_array = [];
+                        $heating_device_array = [];
+                        $heating_type_array = [];
+                        $water_access_array = [];
+                        $water_device_array = [];
+                        $water_waste_array = [];
 
-                    //check
-                    $services_search = (!empty($services)) ? $services : $search_keywords;
-                    $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
-                    $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
-                    $standing_search = (!empty($standing)) ? $standing : $search_keywords;
-                    $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
+                        //check
+                        $services_search = (!empty($services)) ? $services : $search_keywords;
+                        $orientations_search = (!empty($orientations)) ? $orientations : $search_keywords;
+                        $conditions_search = (!empty($conditions)) ? $conditions : $search_keywords;
+                        $standing_search = (!empty($standing)) ? $standing : $search_keywords;
+                        $subtype_search = (!empty($subtype)) ? $subtype : $search_keywords;
 
-                    foreach ($comments as $comment) {
-                        $commentary[] = $comment['property_id'];
+                        foreach ($comments as $comment) {
+                            $commentary[] = $comment['property_id'];
+                        }
+
+                        // heating
+                        foreach ($heating_access as $key => $access) {
+                            $heating_access_array[] = $key;
+                        }
+
+                        foreach ($heating_device as $key => $device) {
+                            $heating_device_array[] = $key;
+                        }
+
+                        foreach ($heating_type as $key => $type) {
+                            $heating_type_array[] = $key;
+                        }
+
+                        // water
+                        foreach ($water_access as $key => $access) {
+                            $water_access_array[] = $key;
+                        }
+
+                        foreach ($water_device as $key => $device) {
+                            $water_device_array[] = $key;
+                        }
+
+                        foreach ($water_waste as $key => $waste) {
+                            $water_waste_array[] = $key;
+                        }
+
+                        $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
+                            ->orWhere('orientations', 'rlike', '(^|,)' . $orientations_search . '(,|$)')
+                            ->orWhere('standing', 'rlike', '(^|,)' . $standing_search . '(,|$)')
+                            ->orWhere('condition', 'rlike', '(^|,)' . $conditions_search . '(,|$)')
+                            ->orWhere('subtype', 'rlike', '(^|,)' . $subtype_search . '(,|$)')
+                            ->orWhere('property_id', 'like', $search_keywords)
+                            ->orWhere('reference', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
+                            ->orWhere('style', 'like', '%' . $search_keywords . '%')
+                            ->orWhereIn('property_id', $heating_access_array)
+                            ->orWhereIn('property_id', $heating_device_array)
+                            ->orWhereIn('property_id', $heating_type_array)
+                            ->orWhereIn('property_id', $water_access_array)
+                            ->orWhereIn('property_id', $water_device_array)
+                            ->orWhereIn('property_id', $water_waste_array)
+                            ->orWhereIn('property_id', $commentary);
                     }
-
-                    // heating
-                    foreach ($heating_access as $key => $access) {
-                        $heating_access_array[] = $key;
-                    }
-
-                    foreach ($heating_device as $key => $device) {
-                        $heating_device_array[] = $key;
-                    }
-
-                    foreach ($heating_type as $key => $type) {
-                        $heating_type_array[] = $key;
-                    }
-
-                    // water
-                    foreach ($water_access as $key => $access) {
-                        $water_access_array[] = $key;
-                    }
-
-                    foreach ($water_device as $key => $device) {
-                        $water_device_array[] = $key;
-                    }
-
-                    foreach ($water_waste as $key => $waste) {
-                        $water_waste_array[] = $key;
-                    }
-
-                    $query->where('services', 'rlike', '(^|,)' . $services_search . '(,|$)')
-                        ->orWhere('orientations', 'rlike',  '(^|,)' . $orientations_search . '(,|$)' )
-                        ->orWhere('standing', 'rlike',  '(^|,)' . $standing_search . '(,|$)' )
-                        ->orWhere('condition', 'rlike',  '(^|,)' . $conditions_search . '(,|$)' )
-                        ->orWhere('subtype', 'rlike',  '(^|,)' . $subtype_search . '(,|$)' )
-                        ->orWhere('property_id', 'like',  $search_keywords )
-                        ->orWhere('reference', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('construction_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('renovation_year', 'like', '%' . $search_keywords . '%')
-                        ->orWhere('style', 'like', '%' . $search_keywords . '%')
-                        ->orWhereIn('property_id', $heating_access_array)
-                        ->orWhereIn('property_id', $heating_device_array)
-                        ->orWhereIn('property_id', $heating_type_array)
-                        ->orWhereIn('property_id', $water_access_array)
-                        ->orWhereIn('property_id', $water_device_array)
-                        ->orWhereIn('property_id', $water_waste_array)
-                        ->orWhereIn('property_id', $commentary);
-                }
-            })
-            ->whereIn('country', $country_array)
-            ->get();
+                })
+                ->whereIn('country', $country_array)
+                ->get();
+        } else {
+            $properties = DB::table('apimo_properties')
+                ->whereIn('type', $object_type)
+                ->whereIn('category', $sell_type_array)
+                ->whereIn('city', $object_place)
+                ->where($conditions_where)
+                ->where('reference', 'like', 'HSTP%')
+                ->whereIn('country', $country_array)
+                ->get();
+        }
 
         if (count($properties) > 0) {
             foreach ($properties as $property) {
