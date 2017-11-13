@@ -3,15 +3,16 @@
 {{--{{ dd($property) }}--}}
 
 @section('title', 'Details page')
+@php
+    $lang = LaravelLocalization::getCurrentLocaleRegional();
+@endphp
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">--}}
     {{--<link rel="stylesheet" type="text/css" href="/css/details.min.css">--}}
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
 @stop
-@php
-    $lang = LaravelLocalization::getCurrentLocaleRegional();
-@endphp
+
 @section('content')
 
     @php

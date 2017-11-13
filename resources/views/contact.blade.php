@@ -1,9 +1,12 @@
 @extends('layouts.master')
 @section('title', 'Contact page')
+<?php
+    $lang = LaravelLocalization::getCurrentLocale();
+?>
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/contact.min.css')}}">--}}
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
 @stop
 
 @section('content')

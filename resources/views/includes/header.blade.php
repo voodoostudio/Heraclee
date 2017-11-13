@@ -1,3 +1,5 @@
+{{--@include('includes/last_update_script');--}}
+
 @php
     use App\Gallery;
     use App\Posts;
