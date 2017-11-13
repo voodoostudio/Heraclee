@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Gallery;
 use App\GallerySettings;
-use App\Posts;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -31,18 +29,8 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::get();
         $gallery_settings = GallerySettings::get();
-
-        /* Last update on site */
-        $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
-        $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
-        $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
-        $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
-        $properties_date = date('d.m.Y', strtotime(DB::table('apimo_properties')->select('updated_at')->orderBy('updated_at', 'desc')->value('updated_at')));
-        $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
-
-        $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
-
-        return view('admin.gallery.index', ['gallery' => $gallery, 'gallery_settings' => $gallery_settings, 'last_update' => $last_update]);
+       // dump();
+        return view('admin.gallery.index', ['gallery' => $gallery, 'gallery_settings' => $gallery_settings]);
     }
 
     /**
@@ -205,6 +193,12 @@ class GalleryController extends Controller
                 Gallery::find($id)->delete();
             }
         }
+
+        //redirect
+//        return response()->json([
+//            'id'    => $id,
+//        ]);
+
         return back();
     }
 }
