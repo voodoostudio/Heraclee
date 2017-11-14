@@ -262,7 +262,7 @@
                     activateResetFiltser();
                 },
                 onChange: function() {
-                    activateResetFiltser();
+                    activateResetFiltser(true);
                 }
             });
         </script>

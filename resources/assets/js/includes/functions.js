@@ -1,12 +1,16 @@
-function activateResetFiltser() {
+function activateResetFiltser(selected_event) {
     var empty_flag = 0;
-    var amount_of_selected = $(".search_section select :selected").length;
-    $('.search_section .input_container input').each(function( index ) {
+    var selected_flag = selected_event;
+    var city_selected_option =  $('#cities_select option:selected').attr('value');
+    var property_type_selected_option =  $('#property_type_select option:selected').attr('value');
+    $(this).parent().find('select option:selected');
+    // var amount_of_selected = $(".search_section select :selected").length;
+    $('.search_section .input_container input').each(function() {
         if($(this).val()) {
             empty_flag = 1;
         }
     });
-    if((empty_flag > 0)||(amount_of_selected > 0)) {
+    if((empty_flag > 0)||(selected_flag)||(city_selected_option !== '35970')||(property_type_selected_option !== '1')) {
         $('.reset_filters_btn').addClass('active');
     }
     else {
@@ -521,7 +525,6 @@ function getCookie(cname) {
 
 function disableSearchFields() {
     if( $('.search_input input').val() ) {
-        console.log( "Was empty" );
         $('.search_section .input_container input').not('.search_input input').each(function(){
             $(this).attr('disabled', 'disabled');
         });

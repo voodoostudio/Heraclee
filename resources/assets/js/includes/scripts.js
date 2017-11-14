@@ -105,17 +105,6 @@ $(document).ready(function() {
         $('body').css('overflow','initial');
         $('body').css('position','relative');
     });
-    $( ".search_input input" ).keypress(function() {
-        if( !$(this).val() ) {
-            console.log( "Was empty" );
-            $('.search_section input').not(this).each(function(){
-                $(this).attr('disabled', 'disabled');
-            });
-            // $('.search_section input[name="bedrooms_max"]').attr('disabled', 'disabled');
-        } else {
-            console.log('Not empty')
-        }
-    });
     disableSearchFields();
     $(".search_input input").on("change paste keyup", function() {
         disableSearchFields();

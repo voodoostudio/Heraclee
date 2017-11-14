@@ -36,7 +36,7 @@
                                 <div class="col-xl-4 col-sm-6 margin_bottom_10">
                                     <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.property_type') }}</span></label>
                                     {{--<select id="prop_type_select" multiple="multiple" name="object_type[]" title="">--}}
-                                    <select id="prop_type_select" name="object_type[]" title="">
+                                    <select id="property_type_select" name="object_type[]" title="">
 {{--                                        <option value="" selected disabled="disabled">{{ trans('lang.select_the_object_type') }}</option>--}}
                                         @foreach($type as $item)
                                             <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
