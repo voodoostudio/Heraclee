@@ -57,6 +57,12 @@ button {
   top: 0;
   left: 0;
 }
+
+.btn.dropdown-toggle.disabled,
+.btn.dropdown-toggle:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.3;
+}
 /*Buttons style END*/
 
 
@@ -72,6 +78,10 @@ textarea {
 }
 input {
   height: 42px;
+}
+input[disabled=disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {

@@ -562,7 +562,8 @@
         }
         .lang_currency_container {
           float: none;
-          display: inline-block;
+          display: table;
+          margin: 2px auto 5px;
           li {
             ul.language_select {
               padding: 0;
@@ -571,7 +572,8 @@
         }
         .last_updates {
           width: 100%;
-          bottom: -14px;
+          bottom: 0;
+          position: relative;
         }
       }
     }
@@ -597,13 +599,13 @@
         .navigation_block {
           margin: 0 auto;
           transform: translateY(-50%);
-          h1 {
-
-          }
           .lang_currency_container li {
             ul.language_select {
               padding: 2px 0 0;
             }
+          }
+          .last_updates {
+            display: block;
           }
         }
         nav {
@@ -1108,9 +1110,11 @@
           font-size: 0.75rem;
           line-height: 15px;
         }
+        .lang_currency_container {
+          margin: 2px auto;
+        }
         .last_updates {
           font-size: 0.65rem;
-          bottom: -10px;
         }
       }
       nav {
@@ -1134,9 +1138,8 @@
         height: 56px;
         .navigation_block {
           h1 {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             line-height: 1.1;
-            padding: 4px 5px 4px;
           }
         }
         nav {

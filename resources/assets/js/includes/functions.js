@@ -519,6 +519,27 @@ function getCookie(cname) {
     return "";
 }
 
+function disableSearchFields() {
+    if( $('.search_input input').val() ) {
+        console.log( "Was empty" );
+        $('.search_section .input_container input').not('.search_input input').each(function(){
+            $(this).attr('disabled', 'disabled');
+        });
+        $('.search_section select').each(function(){
+            $(this).multiselect('disable');
+        });
+
+        $('.multiselect.btn_default').attr('disabled', 'disabled');
+    } else {
+        $('.search_section .input_container input').not('.search_input input').each(function(){
+            $(this).prop("disabled", false);
+        });
+        $('.search_section select').each(function(){
+            $(this).multiselect('enable');
+        });
+    }
+}
+
 // Sorting select options in the Alphabetical order
 function orderSelectOptions() {
     var options = $('.search_section select#cities_select option');

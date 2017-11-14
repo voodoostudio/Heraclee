@@ -87,8 +87,8 @@ $(document).ready(function() {
             $(this).parent().find('select option:selected').each(function() {
                 $(this).prop('selected', false);
             });
+            $('#cities_select option[value="35970"]').prop('selected', true);
             $(this).parent().find('select').multiselect('refresh');
-
             $(this).removeClass('active');
         }
     });
@@ -105,4 +105,20 @@ $(document).ready(function() {
         $('body').css('overflow','initial');
         $('body').css('position','relative');
     });
+    $( ".search_input input" ).keypress(function() {
+        if( !$(this).val() ) {
+            console.log( "Was empty" );
+            $('.search_section input').not(this).each(function(){
+                $(this).attr('disabled', 'disabled');
+            });
+            // $('.search_section input[name="bedrooms_max"]').attr('disabled', 'disabled');
+        } else {
+            console.log('Not empty')
+        }
+    });
+    disableSearchFields();
+    $(".search_input input").on("change paste keyup", function() {
+        disableSearchFields();
+    });
+
 });
