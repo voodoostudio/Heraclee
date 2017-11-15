@@ -95,6 +95,14 @@
     }
   }
 
+  #index {
+    section.description_section {
+      h1 {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
   section.team_members_section {
     .outer_block_container {
       .inner_block_container {
@@ -650,6 +658,11 @@
     }
     main {
       padding-top: 196px;
+    }
+    section.description_section {
+      h1 {
+        font-size: 1rem;
+      }
     }
   }
   .outer_block_container {

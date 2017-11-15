@@ -46,7 +46,7 @@ return [
     'contact_the_agent'     => 'Contact the agency',
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
-    'our_last_objects'      => 'Our latest objects',
+    'our_last_objects'      => 'Our latest 10 objects',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',
