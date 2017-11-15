@@ -47,6 +47,8 @@ return [
     'currently_no_results'  => 'Actuellement aucun résultat',
     'search'                => 'Rechercher',
     'our_last_objects'      => 'Nos 10 derniers biens',
+    'new'                   => 'Nouveauté',
+    'updated'               => 'Actualisé',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',

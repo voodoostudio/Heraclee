@@ -68,6 +68,16 @@
                                 <div class="object_status">{{$property['category']['value']}}</div>
                                 <h2>{{$property['type']}}</h2>
                                 <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
+                                @php
+                                    $date = new DateTime($property['created_at']);
+                                    $now = new DateTime();
+                                @endphp
+                                @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                                <div class="new_label">
+                                    <span>{{ trans('lang.new') }}</span>
+                                    {{--<span>{{ trans('lang.updated') }}</span>--}}
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -208,16 +218,16 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
-                    <p class="publication_date">
-                        @php
-                            $date = new DateTime($property['created_at']);
-                            $now = new DateTime();
-                        @endphp
-                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-                            <span>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</span>
-                            <span>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>
-                        @endif
-                    </p>
+                    {{--<p class="publication_date">--}}
+                        {{--@php--}}
+                            {{--$date = new DateTime($property['created_at']);--}}
+                            {{--$now = new DateTime();--}}
+                        {{--@endphp--}}
+                        {{--@if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)--}}
+                            {{--<span>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</span>--}}
+                            {{--<span>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>--}}
+                        {{--@endif--}}
+                    {{--</p>--}}
                     @if(!empty($property['comments']['comment']))
                         <p class="margin_bottom_20 description">
                             {{$property['comments']['comment']}}

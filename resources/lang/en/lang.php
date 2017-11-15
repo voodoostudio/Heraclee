@@ -47,6 +47,8 @@ return [
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
     'our_last_objects'      => 'Our latest 10 objects',
+    'new'                   => 'New',
+    'updated'               => 'Updated',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',

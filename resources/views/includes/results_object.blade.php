@@ -23,10 +23,14 @@
                 $now = new DateTime();
             @endphp
             @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-            <ul class="creation_date">
-                <li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>
-                <li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>
-            </ul>
+            {{--<ul class="creation_date">--}}
+                {{--<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>--}}
+                {{--<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>--}}
+            {{--</ul>--}}
+            <div class="new_label">
+                <span>{{ trans('lang.new') }}</span>
+                {{--<span>{{ trans('lang.updated') }}</span>--}}
+            </div>
             @endif
 
             @php

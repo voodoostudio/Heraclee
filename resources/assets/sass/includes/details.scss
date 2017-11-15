@@ -100,7 +100,8 @@
             text-align: center;
             font-size: 1.375rem;
           }
-          .object_status {
+          .object_status,
+          .new_label {
             margin: 0 auto;
             background: $main_brown_clr;
             color: $main_light_clr;
