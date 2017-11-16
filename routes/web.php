@@ -156,10 +156,10 @@ Route::group(
             'as' => 'details-tour',
         ]);
 
-//        Route::post('/view-type', [
-//            'uses' => 'PagesController@view_type',
-//            'as' => 'view-type',
-//        ]);
+        Route::post('/view-list', [
+            'uses' => 'PagesController@view_list',
+            'as' => 'view-list',
+        ]);
 
 //        Route::post('city_list/{id}/{country}', [
 //            'uses' => 'PagesController@getCityList',

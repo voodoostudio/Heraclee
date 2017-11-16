@@ -31,6 +31,7 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
+        $lang = LaravelLocalization::getCurrentLocale();
 
         $view_type = 'grid_view';
 
@@ -99,7 +100,7 @@ class PagesController extends Controller
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
-        if(empty($country[0]) || $country[0] == 'fr' || $country[0] == 'en') {
+        if(empty($country[0]) || $country[0] == $lang) {
             return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
@@ -120,7 +121,7 @@ class PagesController extends Controller
         }
     }
 
-    public function results(Request $request)
+    public function results()
     {
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
@@ -128,7 +129,7 @@ class PagesController extends Controller
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
         $country = [];
-        $type_view = $request->view_type;
+
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
         $check = isset($matches[0]) ? $matches[0] : false;
@@ -251,12 +252,11 @@ class PagesController extends Controller
                 'type' => $type,
                 'search' => Session::get('search'),
                 'view_type' => $view_type,
-                'type_view' => $type_view
             ]
         );
     }
 
-    public function locations(Request $request)
+    public function locations()
     {
         SyncWithApimo::update();
         $city_list = Properties::getCityList();
@@ -264,7 +264,6 @@ class PagesController extends Controller
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
         $country = [];
-        $type_view = $request->view_type;
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
@@ -318,7 +317,7 @@ class PagesController extends Controller
         if (isset($_POST['search_keywords'])) {
             Session::put('search.search_keywords', $_POST['search_keywords']);
         } elseif (!Session::has('search.search_keywords')) {
-            Session::put('search.search_keywords', '');
+            Session::put('search.search_keywords', $_POST['search_keywords']);
         }
 
         if (isset($_POST['price_min'])) {
@@ -399,7 +398,6 @@ class PagesController extends Controller
                 'type' => $type,
                 'search' => Session::get('search'),
                 'view_type' => $view_type,
-                'type_view' => $type_view
             ]
         );
     }
@@ -500,16 +498,6 @@ class PagesController extends Controller
         }
     }
 
-//    public function news()
-//    {
-//        return view('news');
-//    }
-
-//    public function news_details()
-//    {
-//        return view('news_details');
-//    }
-
     public function news_admin()
     {
         return view('news_admin');
@@ -529,6 +517,12 @@ class PagesController extends Controller
     {
         return view('contact');
     }
+
+    /**
+     * Contact form on page Contacts.
+     *
+     * @param  $request
+     */
 
     public function postContact(Request $request)
     {
@@ -578,6 +572,12 @@ class PagesController extends Controller
         }
 
     }
+
+    /**
+     * Contact form on page details (Agents).
+     *
+     * @param  $request
+     */
 
     public function postContactToAgent(Request $request)
     {
@@ -631,6 +631,12 @@ class PagesController extends Controller
 
     }
 
+    /**
+     * Add user in table "subscribers" Newsletter.
+     *
+     * @param  $request
+     */
+
     public function newsletter(Request $request)
     {
         $subscribers = new Subscribers;
@@ -659,8 +665,10 @@ class PagesController extends Controller
 
     public function team()
     {
-        $users = Team::where('active', 1)->get()->toArray();
-        //dump($users);
+        $users = Team::where('active', 1)
+            ->get()
+            ->toArray();
+
         return view('team');
     }
 
@@ -670,7 +678,9 @@ class PagesController extends Controller
 
     public function news()
     {
-        $news = Posts::where('status', '=', 'on')->orderBy('date', 'desc')->get();
+        $news = Posts::where('status', '=', 'on')
+            ->orderBy('date', 'desc')
+            ->get();
 
         return view('news', ['news' => $news]);
     }
@@ -702,14 +712,13 @@ class PagesController extends Controller
                 ];
             }
         }
-
-
-
         return view('tours', ['properties' => $properties, 'preview_tour' => $preview]);
     }
 
     /**
      * Display virtual tour.
+     *
+     * @param  int  $id
      */
 
     public function details_virtual_tour($id)
@@ -718,7 +727,6 @@ class PagesController extends Controller
             ->where('property_id', $id)->first();
         return view('details_tour', ['tour' => $tour]);
     }
-
 
     /**
      * Display the specified resource.
@@ -733,15 +741,39 @@ class PagesController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display if checked view_list
      *
-     * @param  int  $id
+     * @param  int  $request
      */
-//    public function view_type(Request $request)
-//    {
-//        $view_type = $request->view_type;
-//        return view('view_type', ['type_view' => $view_type]);
-//    }
+    public function view_list(Request $request)
+    {
+        $id = $request->id;
+        $image_arr = [];
+        $lang = LaravelLocalization::getCurrentLocale();
+
+        foreach ($id as $item_id) {
+            $images = DB::table('apimo_properties')
+                ->where('property_id', $item_id)
+                ->get()
+                ->pluck('pictures', 'property_id');
+
+            $sell_type = DB::table('apimo_properties')
+                ->where('property_id', $item_id)
+                ->value('category');
+
+            $url = DB::table('apimo_pictures')
+                ->whereIn('picture_id', explode(',', $images))
+                ->pluck('url');
+
+            $type = ($sell_type == 1) ? 'achat' : 'locations';
+            $url_property =  '/' . $lang . '/' . $type . '/details?id=' . $item_id;
+            $image_arr[$item_id] = [
+                'url' => $url,
+                'link' => $url_property
+            ];
+        }
+        return response()->json($image_arr);
+    }
 
 
 //    public static function getCityList($id, $country)

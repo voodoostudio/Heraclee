@@ -35,7 +35,6 @@ $(document).ready(function () {
                     }
                 }
                 if ($(this).hasClass('list_view_btn')) {
-                    listView_galleryInit();
                     setCookie('typeView', 'list_view');
                 }
             }

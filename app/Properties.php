@@ -115,6 +115,7 @@ class Properties extends Model
         $conditions_where = [];
         $country_array = [];
         $country = [];
+        $lang = LaravelLocalization::getCurrentLocale();
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
@@ -126,7 +127,7 @@ class Properties extends Model
             $country[] = $check;
         }
 
-        if($check == false || in_array('results', $country) || $check == 'fr' || $check == 'en') {
+        if($check == false || in_array('results', $country) || $check == $lang) {
             $country_array = ['FR', 'CH', 'US', 'ZA'];
         }
 
@@ -695,6 +696,7 @@ class Properties extends Model
         $conditions_where = [];
         $country_array = [];
         $country = [];
+        $lang = LaravelLocalization::getCurrentLocale();
 
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);
 
@@ -706,7 +708,7 @@ class Properties extends Model
             $country[] = $check;
         }
 
-        if($check == false || $check == 'results' || $check == 'fr' || $check == 'en') {
+        if($check == false || in_array('results', $country) || $check == $lang) {
             $country_array = ['FR', 'CH', 'US', 'ZA'];
         }
 
@@ -1975,7 +1977,7 @@ class Properties extends Model
      */
     public static function getCityList()
     {
-
+        $lang = LaravelLocalization::getCurrentLocale();
         $country_array =[];
         $country = [];
 
@@ -1989,7 +1991,7 @@ class Properties extends Model
             $country[] = $check;
         }
 
-        if($check == false || in_array('results', $country) || $check == 'fr' || $check == 'en') {
+        if($check == false || in_array('results', $country) || $check == $lang) {
             $country_array[] = ['FR', 'CH', 'US', 'ZA'];
         }
 

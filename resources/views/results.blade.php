@@ -17,9 +17,6 @@
 @stop
 
 @section('content')
-
-    {{--@include('view_type')--}}
-
     @php
 
         $all_property = [];
@@ -45,32 +42,9 @@
                                         'view'          => $property['view'] = [ 'type' => $property['type']],
                                     ];
         }
-        /*foreach($prop_image as $key =>$picture) {
-            dump($picture);
-            dump($key);
-            foreach($picture as $item) {
 
-            }
-        }*/
+   // dump($all_properties);
     @endphp
-
-
-    {{--@foreach($properties as $key => $picture)--}}
-        {{--@php--}}
-            {{--$links[$picture['property_id']] = $picture['pictures']--}}
-        {{--@endphp--}}
-    {{--@endforeach--}}
-
-
-    {{--@foreach($links as $key => $picture)--}}
-        {{--@foreach($picture as $item)--}}
-            {{--@php--}}
-                {{--$url[$key][] = $item['url'];--}}
-            {{--@endphp--}}
-        {{--@endforeach--}}
-    {{--@endforeach--}}
-
-
 
     @include('includes.search_block')
 
@@ -213,7 +187,7 @@
             @endforeach
         ];
     </script>
-    <script type="text/javascript" src="{{asset('/js/custom_scripts/results.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/js/custom_scripts/results.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             @if($view_type == 'list_view')
@@ -234,26 +208,59 @@
             }
             @endif
         });
-        {{--$('.view_type li').on('click', function () {--}}
-                {{--if ($(this).hasClass('list_view_btn')) {--}}
-                   {{--/* var id = $('.gallery_view > ul[data-id]').attr('data-id');--}}
-                    {{--console.log(id); */--}}
-                   {{--var csrf_token = $('input[name="_token"]').val();--}}
-                    {{--$.ajax({--}}
-                        {{--type: 'POST',--}}
-                        {{--url: '{{URL::to('/view-type')}}',--}}
-                        {{--dataType: 'json',--}}
-                        {{--data: {--}}
-                            {{--_token: csrf_token,--}}
-                            {{--view_type: 'list_view'--}}
-                        {{--},--}}
-                        {{--success: function(data){--}}
-                            {{--console.log(view_type);--}}
-                        {{--}--}}
-                    {{--});--}}
-                {{--}--}}
-        {{--});--}}
 
+        @if($view_type != 'list_view')
+            $('.view_type li').on('click', function () {
+                if (!$(this).hasClass('active')) {
+                    if ($(this).hasClass('list_view_btn')) {
+                        var csrf_token = $('input[name="_token"]').val();
+                        var id = [];
+                        $('ul[data-id]').each(function () {
+                            id.push($(this).attr('data-id'));
+                        });
 
+                        $('ul[data-id] li').remove();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: '{{URL::to('/view-list')}}',
+                            dataType: 'json',
+                            data: {
+                                _token: csrf_token,
+                                id: id
+                            },
+                            success: function (data) {
+                                $.each(data, function (key, value) {
+                                    $('ul[data-id]').each(function () {
+                                        if ($(this).attr('data-id') === key) {
+                                            $.each(value.url, function (v, url) {
+                                                $('ul.gallery.result_preview_gallery[data-id="' + key + '"]').append(
+                                                    '<li>' +
+                                                        '<a href="' + value.link + '">' +
+                                                            '<img src="' + url + '" alt="">' +
+                                                        '</a>' +
+                                                    '</li>'
+                                                );
+                                            });
+                                        }
+                                    });
+                                });
+                                listView_galleryInit();
+                            }
+                        });
+                    }
+                }
+            });
+        @endif
+
+        @if($view_type == 'list_view')
+            $('.view_type li').on('click', function () {
+                if ($(this).hasClass('list_view_btn')) {
+                    if($('.list_view_btn').hasClass('active') !== true) {
+                        listView_galleryInit();
+                    }
+                }
+            });
+        @endif
     </script>
 @stop
