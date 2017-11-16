@@ -5,62 +5,110 @@
             <div class="row">
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_1') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1222583">
+                                <h2>{{ trans('lang.footer_keyword_1') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_2') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1568892">
+                                <h2>{{ trans('lang.footer_keyword_2') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_3') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1660917">
+                                <h2>{{ trans('lang.footer_keyword_3') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_4') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1236565">
+                                <h2>{{ trans('lang.footer_keyword_4') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_5') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1534249">
+                                <h2>{{ trans('lang.footer_keyword_5') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_6') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1222557">
+                                <h2>{{ trans('lang.footer_keyword_6') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_7') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/locations/details?id=1602428">
+                                <h2>{{ trans('lang.footer_keyword_7') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_8') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/locations/details?id=1331038">
+                                <h2>{{ trans('lang.footer_keyword_8') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_9') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/locations/details?id=1282330">
+                                <h2>{{ trans('lang.footer_keyword_9') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_10') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1575973">
+                                <h2>{{ trans('lang.footer_keyword_10') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_11') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1250786">
+                                <h2>{{ trans('lang.footer_keyword_11') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
-                        <li><h2>{{ trans('lang.footer_keyword_12') }}</h2></li>
+                        <li>
+                            <a href="http://heraclee.com/fr/achat/details?id=1222567">
+                                <h2>{{ trans('lang.footer_keyword_12') }}</h2>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
