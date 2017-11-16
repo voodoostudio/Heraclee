@@ -24,6 +24,7 @@
             position: absolute;
             top: 0;
             right: 0;
+            z-index: 1;
             border-top: 90px solid $main_brown_clr;
             border-left: 90px solid transparent;
             .virtual_tour_label {

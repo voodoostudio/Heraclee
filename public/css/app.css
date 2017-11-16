@@ -3993,6 +3993,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
   border-top: 90px solid #ccac83;
   border-left: 90px solid transparent;
 }
@@ -4578,6 +4579,7 @@ section.results_section .slick-track {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
   border-top: 90px solid #ccac83;
   border-left: 90px solid transparent;
 }
