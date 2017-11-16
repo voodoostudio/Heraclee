@@ -6,11 +6,11 @@
     use Illuminate\Support\Facades\DB;
 
     /* Last update on site */
-    $gallery_date = date('d.m.Y', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
+    $gallery_date = date('d.m.Y | h:m', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at')));
     $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
-    $posts_date = date('d.m.Y', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
+    $posts_date = date('d.m.Y | h:m', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at')));
     $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
-    $properties_date = date('d.m.Y', strtotime(
+    $properties_date = date('d.m.Y | h:m', strtotime(
         DB::table('apimo_properties')
             ->select('updated_at')
             ->where('reference', 'like', 'HSTP%')
