@@ -22,7 +22,12 @@
                 $date = new DateTime($property['created_at']);
                 $now = new DateTime();
             @endphp
-            @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+            @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0 ||
+               ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                 $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                 $property['property_id'] == '1657855'
+               )
+            )
             {{--<ul class="creation_date">--}}
                 {{--<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>--}}
                 {{--<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>--}}

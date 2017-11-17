@@ -72,7 +72,12 @@
                                     $date = new DateTime($property['created_at']);
                                     $now = new DateTime();
                                 @endphp
-                                @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                                @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0 ||
+                                   ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                                     $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                                     $property['property_id'] == '1657855'
+                                   )
+                                )
                                 <div class="new_label">
                                     <span>{{ trans('lang.new') }}</span>
                                     {{--<span>{{ trans('lang.updated') }}</span>--}}
