@@ -103,12 +103,19 @@
           .object_status,
           .new_label {
             margin: 0 auto;
-            background: $main_brown_clr;
-            color: $main_light_clr;
             font-size: 1.25rem;
             display: table;
             text-align: center;
             padding: 7px 30px 6px;
+          }
+          .object_status {
+            background: $main_brown_clr;
+            color: $main_light_clr;
+          }
+          .new_label {
+            background: $main_dark_clr;
+            color: $main_brown_clr;
+
           }
         }
         .panorama_link_container {

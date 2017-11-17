@@ -57,7 +57,8 @@
             left: 0;
             border-style: solid;
             border-width: 90px 90px 0 0;
-            border-color: $main_brown_clr transparent transparent transparent;
+            color: $main_brown_clr;
+            border-color: $main_dark_clr transparent transparent transparent;
             span {
               display: block;
               transform: rotate(-45deg);
