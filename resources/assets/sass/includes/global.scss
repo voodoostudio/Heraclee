@@ -198,10 +198,19 @@ header {
       .last_updates {
         position: absolute;
         right: 0;
-        bottom: -12px;
+        bottom: -25px;
         font-size: 0.75rem;
         line-height: 1;
-        color: $main_brown_clr;
+        //color: $main_brown_clr;
+        font-family: opensans_semibold;
+
+        color: $main_dark_clr;
+        padding: 5px 15px;
+        border: 1px solid #ccac83;
+        background: rgba(#ccac83, 0.8);
+        i {
+          margin-right: 10px;
+        }
       }
     }
     nav {
@@ -209,7 +218,7 @@ header {
       margin-left: 170px;
       border-top: 1px solid rgba($main_gray_clr, 0.3);
       padding: 20px 0 15px;
-      margin-top: 15px;
+      margin-top: 35px;
       @include my_transition(.2s ease-in-out);
       ul.nav {
         width: 100%;

@@ -1,0 +1,1 @@
+﻿positionForPages[1]={page:1,positions:[{word:"PIERRE",left:0.364773,top:0.409590,width:0.183933,height:0.094496},{word:"DE",left:0.364773,top:0.478939,width:0.079171,height:0.097146},{word:"LUNE",left:0.460223,top:0.478939,width:0.155063,height:0.097146},{word:"MAURITIUS",left:0.366330,top:0.562486,width:0.117134,height:0.038853}]};

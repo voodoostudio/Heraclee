@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="last_updates">
-                    <p>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
+                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
                 </div>
             </div>
 

@@ -1495,10 +1495,18 @@ header .navigation_container .navigation_block .lang_currency_container li .mult
 header .navigation_container .navigation_block .last_updates {
   position: absolute;
   right: 0;
-  bottom: -12px;
+  bottom: -25px;
   font-size: 0.75rem;
   line-height: 1;
-  color: #ccac83;
+  font-family: opensans_semibold;
+  color: #272727;
+  padding: 5px 15px;
+  border: 1px solid #ccac83;
+  background: rgba(204, 172, 131, 0.8);
+}
+
+header .navigation_container .navigation_block .last_updates i {
+  margin-right: 10px;
 }
 
 header .navigation_container nav {
@@ -1506,7 +1514,7 @@ header .navigation_container nav {
   margin-left: 170px;
   border-top: 1px solid rgba(98, 94, 87, 0.3);
   padding: 20px 0 15px;
-  margin-top: 15px;
+  margin-top: 35px;
   transition: 0.2s ease-in-out;
 }
 
@@ -3031,6 +3039,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border: 1px solid #ccac83;
 }
 
+#index section.latest_news_section .latest_news_container .marquee_title.mobile,
+#france section.latest_news_section .latest_news_container .marquee_title.mobile,
+#swiss section.latest_news_section .latest_news_container .marquee_title.mobile,
+#usa section.latest_news_section .latest_news_container .marquee_title.mobile,
+#mauritius section.latest_news_section .latest_news_container .marquee_title.mobile {
+  display: none;
+}
+
 #index section.latest_news_section .latest_news_container .marquee,
 #france section.latest_news_section .latest_news_container .marquee,
 #swiss section.latest_news_section .latest_news_container .marquee,
@@ -3977,6 +3993,8 @@ section.results_section .results_container .container-fluid .object_block_contai
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block {
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .activity_label,
@@ -4027,24 +4045,23 @@ section.results_section .results_container .container-fluid .object_block_contai
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .new_label {
   position: absolute;
-  top: 0;
-  left: 0;
-  border-style: solid;
-  border-width: 90px 90px 0 0;
-  color: #ccac83;
-  border-color: #272727 transparent transparent transparent;
+  top: 27px;
+  left: -68px;
+  color: #272727;
+  display: block;
+  background: #ccac83;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 227px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 0px 30px -5px #272727;
+  font-family: opensans_semibold;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .new_label span {
   display: block;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  position: absolute;
-  top: -68px;
-  left: -6px;
-  width: 75px;
   font-size: 0.875rem;
-  text-align: center;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block img {
@@ -4564,6 +4581,8 @@ section.results_section .slick-track {
 
 .results_container .container-fluid .object_block_container .object_block .img_block {
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block .activity_label,
@@ -4614,24 +4633,23 @@ section.results_section .slick-track {
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label {
   position: absolute;
-  top: 0;
-  left: 0;
-  border-style: solid;
-  border-width: 90px 90px 0 0;
-  color: #ccac83;
-  border-color: #272727 transparent transparent transparent;
+  top: 27px;
+  left: -68px;
+  color: #272727;
+  display: block;
+  background: #ccac83;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 227px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0px 0px 30px -5px #272727;
+  font-family: opensans_semibold;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label span {
   display: block;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  position: absolute;
-  top: -68px;
-  left: -6px;
-  width: 75px;
   font-size: 0.875rem;
-  text-align: center;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block img {
@@ -6756,7 +6774,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .navigation_container {
     padding-right: 70px;
-    padding-top: 0;
+    padding-top: 5px;
     height: 90px;
   }
   header .navigation_container nav {
@@ -6796,7 +6814,8 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 0;
   }
   header .navigation_container .navigation_block .last_updates {
-    width: 100%;
+    display: table;
+    margin: 0 auto;
     bottom: 0;
     position: relative;
   }
@@ -6825,9 +6844,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header.minimized .navigation_container .navigation_block .lang_currency_container li ul.language_select {
     padding: 2px 0 0;
-  }
-  header.minimized .navigation_container .navigation_block .last_updates {
-    display: block;
   }
   header.minimized .navigation_container nav {
     position: absolute;
@@ -7223,24 +7239,28 @@ section.team_members_section .outer_block_container:hover .inner_block_container
 
 @media screen and (max-width: 575px) {
   header .navigation_container {
-    padding-right: 50px;
+    padding-right: 46px;
     height: 72px;
   }
   header .navigation_container .navigation_block h1 {
-    font-size: 0.75rem;
-    line-height: 15px;
+    font-size: 0.6rem;
+    line-height: 1.1;
   }
   header .navigation_container .navigation_block .lang_currency_container {
     margin: 2px auto;
   }
   header .navigation_container .navigation_block .last_updates {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
+    padding: 3px;
+  }
+  header .navigation_container .navigation_block .last_updates p i {
+    margin-right: 5px;
   }
   header .navigation_container nav {
     top: 72px;
   }
   header .logo {
-    padding: 11px 5px 11px 0;
+    padding: 11px 2px 11px 0;
   }
   header .logo img {
     max-width: 50px;
@@ -7328,12 +7348,19 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 15px;
     margin-bottom: 10px;
   }
-  #index section.latest_news_section .marquee_title,
-  #france section.latest_news_section .marquee_title,
-  #swiss section.latest_news_section .marquee_title,
-  #usa section.latest_news_section .marquee_title,
-  #mauritius section.latest_news_section .marquee_title {
+  #index section.latest_news_section .latest_news_container .marquee_title,
+  #france section.latest_news_section .latest_news_container .marquee_title,
+  #swiss section.latest_news_section .latest_news_container .marquee_title,
+  #usa section.latest_news_section .latest_news_container .marquee_title,
+  #mauritius section.latest_news_section .latest_news_container .marquee_title {
     display: none;
+  }
+  #index section.latest_news_section .latest_news_container .marquee_title.mobile,
+  #france section.latest_news_section .latest_news_container .marquee_title.mobile,
+  #swiss section.latest_news_section .latest_news_container .marquee_title.mobile,
+  #usa section.latest_news_section .latest_news_container .marquee_title.mobile,
+  #mauritius section.latest_news_section .latest_news_container .marquee_title.mobile {
+    display: block;
   }
   #index section.description_section,
   #france section.description_section,

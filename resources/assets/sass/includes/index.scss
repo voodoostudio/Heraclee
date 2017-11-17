@@ -71,6 +71,9 @@
         left: -1px;
         background: $main_brown_clr;
         border: 1px solid $main_brown_clr;
+        &.mobile {
+          display: none;
+        }
       }
       .marquee {
         overflow: hidden;
