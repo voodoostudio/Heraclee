@@ -106,9 +106,9 @@
             <div class="gallery_nav">
                 <div class="container-fluid">
                     <ul class="gallery_thumbnails details_gallery_thumbnails">
-                        @foreach($property['pictures'] as $picture)
-                            @if(!empty($picture['url']))
-                                <li><img src="{{$picture['url']}}" alt=""></li>
+                        @foreach($image as $picture)
+                            @if(!empty($picture))
+                                <li><img src="{{$picture}}" alt=""></li>
                             @else
                                 <li><img src="img/details/img_1.png" alt=""></li>
                             @endif
