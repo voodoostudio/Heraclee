@@ -16,6 +16,7 @@ class ApimoProperties extends Migration
         Schema::create('apimo_properties', function (Blueprint $table) {
             $table->integer('property_id')->unique();
             $table->string('reference')->nullable();
+            $table->string('status')->nullable();
             $table->integer('user');
             $table->integer('step');
             $table->integer('parent')->nullable();

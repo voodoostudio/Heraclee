@@ -47,11 +47,12 @@ class SyncWithApimo
                 );
                 if (empty($checkExistence)) {
                     DB::insert(
-                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
-                                VALUES ( :property_id, :reference, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
+                        'INSERT INTO `apimo_properties` ( `property_id`, `reference`, `status`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
+                                VALUES ( :property_id, :reference, :status, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
                         [
                             'property_id' => $property['id'],
                             'reference' => $property['reference'],
+                            'status' => $property['status'],
                             'user' => $property['user']['id'],
                             'step' => $property['step'],
                             'parent' => $property['parent'],
@@ -123,6 +124,7 @@ class SyncWithApimo
                         DB::update(
                             'UPDATE `apimo_properties` SET 
                                 `reference`= :reference, 
+                                `status`= :status, 
                                 `user` = :user, 
                                 `step` = :step, 
                                 `parent` = :parent, 
@@ -176,6 +178,7 @@ class SyncWithApimo
                             [
                                 'property_id' => $property['id'],
                                 'reference' => $property['reference'],
+                                'status' => $property['status'],
                                 'user' => $property['user']['id'],
                                 'step' => $property['step'],
                                 'parent' => $property['parent'],
