@@ -11,11 +11,13 @@
             @endif
 
             @php
+                $image = [];
                 foreach($property['pictures'] as $picture) {
                     $image[$picture['rank']] = $picture['url'];
                 }
                 ksort($image);
             @endphp
+
 
             @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
                 <div class="virtual_tour_label_container">

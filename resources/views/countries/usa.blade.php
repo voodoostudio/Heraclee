@@ -44,6 +44,7 @@
         @else
             @foreach($properties as $property)
                 @php
+                    $image = [];
                     foreach($property['pictures'] as $picture) {
                         $image[$picture['rank']] = $picture['url'];
                     }

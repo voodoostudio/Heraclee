@@ -44,6 +44,7 @@
         @else
             @foreach($properties as $property)
                 @php
+                    $image = [];
                     foreach($property['pictures'] as $picture) {
                         $image[$picture['rank']] = $picture['url'];
                     }
@@ -76,26 +77,33 @@
         @endif
     @endforeach
 
-    @include('includes.search_block_index')
+            <a href="/flipbooks/mauritius/pierre_de_lune/brochure.html" target="_blank" style="display: block; text-align: center; margin: 80px auto 0; padding: 0 15px">
+                <img src="/flipbooks/mauritius/pierre_de_lune/assets/main_img.jpg" alt="Mauritius panorama" style="width: 100%; max-width: 500px">
+            </a>
 
-    <section class="results_section">
-        @if($count_items == 0)
-            <div class="container-fluid">
-                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
-            </div>
-        @endif
-        <div class="results_container map_view">
-            <div class="container-fluid">
-                <div class="results_carousel row">
-                    @foreach($properties as $property)
-                        @if($property['step'] == 1)
-                            @include('includes.results_object')
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
+
+            {{--<a href="https://online.flippingbook.com/view/650405/" class="fbo-embed" data-fbo-lightbox="yes" data-fbo-version="1" data-fbo-width="250px" data-fbo-height="188px" style="max-width: 100%">BROCHURE PIERRE DE LUNE</a><script async defer src="https://d33i2vgywgme2s.cloudfront.net/render/2.18.1-R278/embed.js"></script>--}}
+
+{{--    @include('includes.search_block_index')--}}
+
+    {{--<section class="results_section">--}}
+        {{--@if($count_items == 0)--}}
+            {{--<div class="container-fluid">--}}
+                {{--<h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>--}}
+            {{--</div>--}}
+        {{--@endif--}}
+        {{--<div class="results_container map_view">--}}
+            {{--<div class="container-fluid">--}}
+                {{--<div class="results_carousel row">--}}
+                    {{--@foreach($properties as $property)--}}
+                        {{--@if($property['step'] == 1)--}}
+                            {{--@include('includes.results_object')--}}
+                        {{--@endif--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
 @endsection
 

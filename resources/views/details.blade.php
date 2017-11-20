@@ -21,6 +21,7 @@
     @endphp
 
     @php
+        $image = [];
         foreach($property['pictures'] as $picture) {
             $image[$picture['rank']] = $picture['url'];
         }
