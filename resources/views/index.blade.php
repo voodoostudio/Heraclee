@@ -46,13 +46,19 @@
             </section>
         @else
             @foreach($properties as $property)
+                @php
+                    foreach($property['pictures'] as $picture) {
+                        $image[$picture['rank']] = $picture['url'];
+                    }
+                    ksort($image);
+                @endphp
                 @if($post_counter == 1)
                     @php
                         $image_counter = 1;
                     @endphp
-                    @foreach($property['pictures'] as $picture)
+                    @foreach($image as $picture)
                         @if($image_counter == 1)
-                            <section class="top_offer_section" style="background-image: url('{{$picture['url']}}')">
+                            <section class="top_offer_section" style="background-image: url('{{$picture}}')">
                                 @endif
                                 @php
                                     $image_counter++;

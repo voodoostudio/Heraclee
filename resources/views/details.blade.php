@@ -20,6 +20,13 @@
         $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
     @endphp
 
+    @php
+        foreach($property['pictures'] as $picture) {
+            $image[$picture['rank']] = $picture['url'];
+        }
+        ksort($image);
+    @endphp
+
     <section class="objects_nav_section">
         <div class="container-fluid">
             <div class="row">
@@ -52,9 +59,9 @@
             </ul>
             <div class="gallery_view">
                 <ul class="gallery details_gallery">
-                    @foreach($property['pictures'] as $picture)
-                        @if(!empty($picture['url']))
-                            <li><img src="{{$picture['url']}}" alt=""></li>
+                    @foreach($image as $picture)
+                        @if(!empty($picture))
+                            <li><img src="{{$picture}}" alt=""></li>
                         @else
                             <li><img src="/img/details/img_1.png" alt=""></li>
                         @endif

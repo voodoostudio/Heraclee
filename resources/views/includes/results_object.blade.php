@@ -10,6 +10,13 @@
                 <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
             @endif
 
+            @php
+                foreach($property['pictures'] as $picture) {
+                    $image[$picture['rank']] = $picture['url'];
+                }
+                ksort($image);
+            @endphp
+
             @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
                 <div class="virtual_tour_label_container">
                     <div class="virtual_tour_label">
@@ -51,11 +58,11 @@
                             @php
                                 $counter = 1;
                             @endphp
-                            @foreach($property['pictures'] as $picture)
+                            @foreach($image as $picture)
                                 @if($counter == 1)
                                     <li>
                                         <a href="{{ $link }}">
-                                            <img src="{{ $picture['url'] }}" alt="">
+                                            <img src="{{ $picture }}" alt="">
                                         </a>
                                     </li>
                                 @endif
@@ -64,10 +71,10 @@
                                 @endphp
                             @endforeach
                         @else
-                            @foreach($property['pictures'] as $picture)
+                            @foreach($image as $picture)
                                 <li>
                                     <a href="{{ $link }}">
-                                        <img src="{{ $picture['url'] }}" alt="">
+                                        <img src="{{ $picture }}" alt="">
                                     </a>
                                 </li>
                             @endforeach
