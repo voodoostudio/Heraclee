@@ -21,17 +21,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use LaravelLocalization;
+use Illuminate\Support\Facades\Schema;
+
 
 class PagesController extends Controller
 {
     public function index()
     {
+        //Schema::drop('apimo_properties');
+
+        SyncWithApimo::update();
         Session::forget('search');
 
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
+        $attr_for_slider = '&page=main';
 
         $view_type = 'grid_view';
 
@@ -101,19 +107,19 @@ class PagesController extends Controller
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == $lang) {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {
-           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'mauritius') {
@@ -442,9 +448,21 @@ class PagesController extends Controller
             $next = $current_index + 1;
             $prev = $current_index - 1;
 
+            /* for slider */
+            $mp_property_id = DB::table('apimo_properties')
+                ->where('reference', 'like', 'HSTP%')
+                ->limit('10')
+                ->orderBy('property_id', 'DESC')
+                ->pluck('property_id')
+                ->toArray();
+
+            $mp_current_index = array_search($id , $mp_property_id);
+            $mp_next = $mp_current_index + 1;
+            $mp_prev = $mp_current_index - 1;
+
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'mp_property_id' => $mp_property_id, 'mp_next' => $mp_next, 'mp_prev' => $mp_prev, 'view_type' => $view_type]);
         } else {
             return redirect('results');
         }
@@ -490,9 +508,21 @@ class PagesController extends Controller
             $next = $current_index + 1;
             $prev = $current_index - 1;
 
+            /* for slider */
+            $mp_property_id = DB::table('apimo_properties')
+                ->where('reference', 'like', 'HSTP%')
+                ->limit('10')
+                ->orderBy('property_id', 'DESC')
+                ->pluck('property_id')
+                ->toArray();
+
+            $mp_current_index = array_search($id , $mp_property_id);
+            $mp_next = $mp_current_index + 1;
+            $mp_prev = $mp_current_index - 1;
+
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'view_type' => $view_type]);
+            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'mp_property_id' => $mp_property_id, 'mp_next' => $mp_next, 'mp_prev' => $mp_prev, 'view_type' => $view_type]);
         } else {
             return redirect('results');
         }

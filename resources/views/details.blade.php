@@ -28,28 +28,53 @@
         ksort($image);
     @endphp
 
-    <section class="objects_nav_section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    @if($prev > -1)
-                        <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
-                            <i class="icn icon-arrow_big_left"></i>
-                            <span>{{ trans('lang.previous') }}</span>
-                        </a>
-                    @endif
-                </div>
-                <div class="col-6">
-                    @if($next < count($property_id))
-                        <a href="?id={{ $property_id[$next] }} " class="nav_link next">
-                            <span>{{ trans('lang.next') }}</span>
-                            <i class="icn icon-arrow_big_right"></i>
-                        </a>
-                    @endif
+    @if(!empty($_GET['page']) == 'slider')
+        <section class="objects_nav_section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        @if($mp_prev > -1)
+                            <a href="?id={{ $mp_property_id[$mp_prev] }}&page=main" class="nav_link prev">
+                                <i class="icn icon-arrow_big_left"></i>
+                                <span>{{ trans('lang.previous') }}</span>
+                            </a>
+                        @endif
+                    </div>
+                    <div class="col-6">
+                        @if($mp_next < count($mp_property_id))
+                            <a href="?id={{ $mp_property_id[$mp_next] }}&page=main" class="nav_link next">
+                                <span>{{ trans('lang.next') }}</span>
+                                <i class="icn icon-arrow_big_right"></i>
+                            </a>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @else
+        <section class="objects_nav_section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        @if($prev > -1)
+                            <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
+                                <i class="icn icon-arrow_big_left"></i>
+                                <span>{{ trans('lang.previous') }}</span>
+                            </a>
+                        @endif
+                    </div>
+                    <div class="col-6">
+                        @if($next < count($property_id))
+                            <a href="?id={{ $property_id[$next] }} " class="nav_link next">
+                                <span>{{ trans('lang.next') }}</span>
+                                <i class="icn icon-arrow_big_right"></i>
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <section class="gallery_section">
         <div class="gallery_container">

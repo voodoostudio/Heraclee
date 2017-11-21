@@ -48,7 +48,7 @@
             @endif
 
             @php
-                $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] : route('locationsDetails') . '?id=' . $property['property_id'];
+                $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '') : route('locationsDetails') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '');
                 $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
                 $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
             @endphp
