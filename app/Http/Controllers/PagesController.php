@@ -567,6 +567,13 @@ class PagesController extends Controller
             'bodyMessage' => $request->message,
         ];
 
+        /* ReCaptcha V2 (google) */
+        $response = $_POST["g-recaptcha-response"];
+        $secret_key = '6Ld97zkUAAAAAMvFBfs7nvtbkYWUlYSop9BandJs';
+        $google_reCaptcha_check = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+        $verify = json_decode($google_reCaptcha_check);
+
+
         $success = array(
             'status' => 'success',
             'msg' => trans('lang.email_was_sent'),
@@ -587,10 +594,14 @@ class PagesController extends Controller
             }
         }
 
-        Mail::send('emails.email', $data, function ($message) use ($data) {
-            $message->from($data['email'], 'Heraclee Contact form');
-            $message->to(env('CONTACT_EMAIL'));
-        });
+        if($verify->success == true) {
+            Mail::send('emails.email', $data, function ($message) use ($data) {
+                $message->from($data['email'], 'Heraclee Contact form');
+                $message->to(env('CONTACT_EMAIL'));
+            });
+        } else {
+            return $error;
+        }
 
         if (Mail::failures()) {
             return $error;
@@ -625,6 +636,12 @@ class PagesController extends Controller
             'bodyMessage' => $request->message,
         ];
 
+        /* ReCaptcha V2 (google) */
+        $response = $_POST["g-recaptcha-response"];
+        $secret_key = '6Ld97zkUAAAAAMvFBfs7nvtbkYWUlYSop9BandJs';
+        $google_reCaptcha_check = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
+        $verify = json_decode($google_reCaptcha_check);
+
         $success = array(
             'status' => 'success',
             'msg' => trans('lang.email_was_sent'),
@@ -645,10 +662,14 @@ class PagesController extends Controller
             }
         }
 
-        Mail::send('emails.email_agent', $data, function($message) use ($data){
-            $message->from($data['email'],'Heraclee Contact form');
-            $message->to($data['to']);
-        });
+        if($verify->success == true) {
+            Mail::send('emails.email_agent', $data, function ($message) use ($data) {
+                $message->from($data['email'], 'Heraclee Contact form');
+                $message->to($data['to']);
+            });
+        } else {
+            return $error;
+        }
 
         if (Mail::failures()) {
             return $error;
