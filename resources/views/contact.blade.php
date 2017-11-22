@@ -66,13 +66,13 @@
                                     <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
                                         <label class="form_el_label"><span>{{ trans('lang.telephone') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id="phone" name="phone" pattern="[+]+[0-9]" placeholder="{{ trans('lang.telephone') }}">
+                                            <input type="number" id="phone" name="phone" pattern="[+]+[0-9]" placeholder="{{ trans('lang.telephone') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12 margin_bottom_10">
                                         <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
                                         <div class="input_container">
-                                            <input type="text" id="email" name="email" placeholder="{{ trans('lang.email') }}">
+                                            <input type="email" id="email" name="email" placeholder="{{ trans('lang.email') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -96,7 +96,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="g-recaptcha" data-sitekey="6Ld97zkUAAAAAKQ3ZaPTE-gyQ97Dfqerk1jUYOSf"></div>
+                                <div class="g-recaptcha" data-sitekey="6Ld97zkUAAAAAKQ3ZaPTE-gyQ97Dfqerk1jUYOSf" data-theme="dark" ></div>
                             </div>
                         </div>
                     </form>

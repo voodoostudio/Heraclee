@@ -586,7 +586,7 @@ class PagesController extends Controller
 
         $captcha_error = array(
             'status' => 'error',
-            'msg' => 'Confirm that you are not a robot'
+            'msg' => trans('lang.not_robot_confirm')
         );
 
         $subscribers = new Subscribers;

@@ -1047,14 +1047,23 @@
         p {
           font-size: 0.875rem;
         }
+        #message-box {
+          right: 20px;
+          padding-left: 20px;
+          bottom: 8px;
+        }
         form.contact_form {
           .my_checkbox {
             margin-bottom: 15px;
+          }
+          .g-recaptcha {
+            margin-bottom: 20px;
           }
         }
       }
     }
   }
+
 
   section.team_info_section {
     margin-top: 30px;
@@ -1500,9 +1509,26 @@
           font-size: 1.5rem;
           margin-bottom: 15px;
         }
+        #message-box p {
+          font-size: 0.75rem;
+        }
+        .g-recaptcha {
+          -webkit-transform: scale(0.77);
+          -moz-transform: scale(0.77);
+          -ms-transform: scale(0.77);
+          -o-transform: scale(0.77);
+          transform: scale(0.77);
+          -webkit-transform-origin: 312px 0;
+          -moz-transform-origin: 312px 0;
+          -ms-transform-origin: 312px 0;
+          -o-transform-origin: 312px 0;
+          transform-origin: 312px 0;
+        }
       }
     }
   }
+
+
 
   section.team_info_section {
     h2 {

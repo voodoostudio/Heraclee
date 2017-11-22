@@ -90,6 +90,7 @@ p {
   .inner_block_container {
     border: 1px solid #ccac83;
     padding: 40px;
+    position: relative;
   }
 }
 
@@ -844,3 +845,7 @@ section.virtual_tours_section {
   }
 }
 
+.g-recaptcha {
+  float: right;
+  margin: 20px 0 0;
+}

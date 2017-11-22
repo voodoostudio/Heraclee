@@ -128,6 +128,7 @@ return [
     'contact_us'            => 'Contact us',
     'phone'            => 'Tel',
     'contact_form_description' => 'To request further information, don\'t hesitate to contact us using this form, we will reply as soon as possible:',
+    'not_robot_confirm' => 'Confirm that you are not a robot, please',
 
 //    TEAM PAGE
     'team_page_title'            => 'Our team',

@@ -625,12 +625,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border-bottom-color: #ccac83;
 }
 
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
 #message-box p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 #message-box p.success {
   color: #69bf7f;
+}
+
+#message-box p.error {
+  color: #c54545;
 }
 
 /* BEGIN Light*/
@@ -1260,12 +1271,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border-bottom-color: #ccac83;
 }
 
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
 #message-box p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 #message-box p.success {
   color: #69bf7f;
+}
+
+#message-box p.error {
+  color: #c54545;
 }
 
 html {
@@ -1369,6 +1391,7 @@ p {
 .outer_block_container .inner_block_container {
   border: 1px solid #ccac83;
   padding: 40px;
+  position: relative;
 }
 
 h1.no_results {
@@ -2209,6 +2232,11 @@ section.virtual_tours_section .results_container.grid_view .container-fluid .obj
   padding: 20px 30px 20px !important;
 }
 
+.g-recaptcha {
+  float: right;
+  margin: 20px 0 0;
+}
+
 section.contact_info_section {
   margin-top: 60px;
 }
@@ -2915,12 +2943,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border-bottom-color: #ccac83;
 }
 
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
 #message-box p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 #message-box p.success {
   color: #69bf7f;
+}
+
+#message-box p.error {
+  color: #c54545;
 }
 
 #index section.top_offer_section,
@@ -3910,12 +3949,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border-bottom-color: #ccac83;
 }
 
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
 #message-box p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 #message-box p.success {
   color: #69bf7f;
+}
+
+#message-box p.error {
+  color: #c54545;
 }
 
 section.search_section {
@@ -5660,12 +5710,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   border-bottom-color: #ccac83;
 }
 
+#message-box {
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+}
+
 #message-box p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
+  font-size: 0.875rem;
 }
 
 #message-box p.success {
   color: #69bf7f;
+}
+
+#message-box p.error {
+  color: #c54545;
 }
 
 #details section.objects_nav_section, #locationsDetails section.objects_nav_section {
@@ -7196,8 +7257,16 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.contact_form_section .outer_block_container .inner_block_container p {
     font-size: 0.875rem;
   }
+  section.contact_form_section .outer_block_container .inner_block_container #message-box {
+    right: 20px;
+    padding-left: 20px;
+    bottom: 8px;
+  }
   section.contact_form_section .outer_block_container .inner_block_container form.contact_form .my_checkbox {
     margin-bottom: 15px;
+  }
+  section.contact_form_section .outer_block_container .inner_block_container form.contact_form .g-recaptcha {
+    margin-bottom: 20px;
   }
   section.team_info_section {
     margin-top: 30px;
@@ -7586,6 +7655,15 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.contact_form_section .outer_block_container .inner_block_container h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
+  }
+  section.contact_form_section .outer_block_container .inner_block_container #message-box p {
+    font-size: 0.75rem;
+  }
+  section.contact_form_section .outer_block_container .inner_block_container .g-recaptcha {
+    -webkit-transform: scale(0.77);
+    transform: scale(0.77);
+    -webkit-transform-origin: 312px 0;
+    transform-origin: 312px 0;
   }
   section.team_info_section h2 {
     font-size: 1.5rem;
