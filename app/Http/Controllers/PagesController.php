@@ -584,6 +584,11 @@ class PagesController extends Controller
             'msg' => trans('lang.email_was_not_sent')
         );
 
+        $captcha_error = array(
+            'status' => 'error',
+            'msg' => 'Confirm that you are not a robot'
+        );
+
         $subscribers = new Subscribers;
         $subscribers->email = $request->email;
         $check_subscriber = Subscribers::select('email')->get();
@@ -600,7 +605,7 @@ class PagesController extends Controller
                 $message->to(env('CONTACT_EMAIL'));
             });
         } else {
-            return $error;
+            return $captcha_error;
         }
 
         if (Mail::failures()) {
@@ -652,6 +657,11 @@ class PagesController extends Controller
             'msg' => trans('lang.email_was_not_sent')
         );
 
+        $captcha_error = array(
+            'status' => 'error',
+            'msg' => 'Confirm that you are not a robot'
+        );
+
         $subscribers = new Subscribers;
         $subscribers->email = $request->email;
         $check_subscriber = Subscribers::select('email')->get();
@@ -668,7 +678,7 @@ class PagesController extends Controller
                 $message->to($data['to']);
             });
         } else {
-            return $error;
+            return $captcha_error;
         }
 
         if (Mail::failures()) {
