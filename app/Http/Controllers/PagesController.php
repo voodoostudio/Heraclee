@@ -28,9 +28,6 @@ class PagesController extends Controller
 {
     public function index()
     {
-        //Schema::drop('apimo_properties');
-
-        SyncWithApimo::update();
         Session::forget('search');
 
         $city_list = Properties::getCityList();
@@ -784,8 +781,7 @@ class PagesController extends Controller
         foreach ($id as $item_id) {
             $images = DB::table('apimo_properties')
                 ->where('property_id', $item_id)
-                ->get()
-                ->pluck('pictures', 'property_id');
+                ->value('pictures');
 
             $sell_type = DB::table('apimo_properties')
                 ->where('property_id', $item_id)
@@ -793,6 +789,7 @@ class PagesController extends Controller
 
             $url = DB::table('apimo_pictures')
                 ->whereIn('picture_id', explode(',', $images))
+                ->orderBy('rank', 'asc')
                 ->pluck('url');
 
             $type = ($sell_type == 1) ? 'achat' : 'locations';
