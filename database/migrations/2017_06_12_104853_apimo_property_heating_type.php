@@ -36,7 +36,7 @@ class ApimoPropertyHeatingType extends Migration
                 [
                     'reference' => 3,
                     'locale' => 'fr_FR',
-                    'value' => 'Electrique',
+                    'value' => 'Électrique',
                 ],
                 [
                     'reference' => 4,

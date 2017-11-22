@@ -27,6 +27,7 @@ class SyncWithApimo
     public static function update()
     {
         if (self::checkIfSpecifiedTimePassed()) {
+            DB::table('apimo_properties')->truncate();
             self::addOrEditPropertiesToDB(self::getAllRealEstate('properties'));
         }
     }

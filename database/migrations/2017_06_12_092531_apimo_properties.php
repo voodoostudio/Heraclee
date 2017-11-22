@@ -60,7 +60,7 @@ class ApimoProperties extends Migration
             $table->string('tags')->nullable();
             $table->string('tags_customized')->nullable();
             $table->text('pictures')->nullable();
-            $table->string('areas')->nullable();
+            $table->string('areas', 1024)->nullable();
             $table->string('regulations')->nullable();
             $table->timestamps();
         });

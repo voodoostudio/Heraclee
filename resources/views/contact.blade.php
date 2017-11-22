@@ -7,6 +7,12 @@
     {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/contact.min.css')}}">--}}
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <style>
+        .rc-anchor-light {
+            background: transparent!important;
+        }
+    </style>
 @stop
 
 @section('content')
@@ -86,6 +92,11 @@
                                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                 </div>
                                 <button class="btn" type="submit">{{ trans('lang.send') }}</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="g-recaptcha" data-sitekey="6Ld97zkUAAAAAKQ3ZaPTE-gyQ97Dfqerk1jUYOSf"></div>
                             </div>
                         </div>
                     </form>

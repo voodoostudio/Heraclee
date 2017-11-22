@@ -16,48 +16,48 @@
 
     <section class="news_list_section">
         <div class="container-fluid">
-            <div class="news_carousel">
-                @foreach (array_chunk($news->toArray(), 6) as $content)
-                    <div class = "news_slide">
-                        <div class="row">
-                            @foreach($content as $item)
-                                <div class="col-xs-12 col-xl-6">
-                                    <div class="outer_block_container">
-                                        <div class="inner_block_container">
-                                            <div class="article_info_block">
-                                                <div class="article_img">
-                                                    <a href="{{ route('news_details', ['id' => $item['id']]) }}">
-                                                        @php
-                                                            $image_counter = 1;
-                                                        @endphp
-                                                        @foreach(json_decode($item['front_image']) as $key => $image)
-                                                            @if($image_counter == 1)
-                                                                <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
-                                                            @endif
+            @if($news->isEmpty() == false)
+                <div class="news_carousel">
+                    @foreach (array_chunk($news->toArray(), 6) as $content)
+                        <div class = "news_slide">
+                            <div class="row">
+                                @foreach($content as $item)
+                                    <div class="col-xs-12 col-xl-6">
+                                        <div class="outer_block_container">
+                                            <div class="inner_block_container">
+                                                <div class="article_info_block">
+                                                    <div class="article_img">
+                                                        <a href="{{ route('news_details', ['id' => $item['id']]) }}">
                                                             @php
-                                                                $image_counter++;
+                                                                $image_counter = 1;
                                                             @endphp
-                                                        @endforeach
+                                                            @foreach(json_decode($item['front_image']) as $key => $image)
+                                                                @if($image_counter == 1)
+                                                                    <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
+                                                                @endif
+                                                                @php
+                                                                    $image_counter++;
+                                                                @endphp
+                                                            @endforeach
 
-                                                        @if(empty(json_decode($item['front_image'])))
-                                                            <img src="/img/details/no_agent_photo.svg" alt="">
-                                                        @endif
-                                                    </a>
-                                                </div>
-                                                <div class="article_info">
-                                                    <a href="{{ route('news_details', ['id' => $item['id']]) }}"><h2>@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</h2></a>
-                                                    <h3>{{ (!empty($item['date'])) ? date('d.m.Y', strtotime($item['date'])) : '' }}</h3>
+                                                            @if(empty(json_decode($item['front_image'])))
+                                                                <img src="/img/details/no_agent_photo.svg" alt="">
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                    <div class="article_info">
+                                                        <a href="{{ route('news_details', ['id' => $item['id']]) }}"><h2>@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</h2></a>
+                                                        <h3>{{ (!empty($item['date'])) ? date('d.m.Y', strtotime($item['date'])) : '' }}</h3>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
-            @if($news->isEmpty() == false)
+                    @endforeach
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <nav>
@@ -79,6 +79,8 @@
                         </nav>
                     </div>
                 </div>
+            @else
+                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
             @endif
         </div>
     </section>
