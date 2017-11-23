@@ -1595,6 +1595,10 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu {
   border-color: #625e57;
 }
 
+header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item {
+  color: #fdfdfd;
+}
+
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item.active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:focus, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:hover {
   background-color: transparent;
   color: #ccac83;
@@ -1777,7 +1781,7 @@ section.page_title_section h1 {
 
 section.page_title_section.minimized {
   top: 68px;
-  background: #272727;
+  background-color: #272727 !important;
 }
 
 section.page_title_section.minimized h1 {

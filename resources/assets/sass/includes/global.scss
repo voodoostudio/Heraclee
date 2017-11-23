@@ -265,6 +265,7 @@ header {
             border-radius: 0;
             border-color: $main_gray_clr;
             .dropdown-item {
+              color: $main_light_clr;
               &.active,
               &:active,
               &:focus,
@@ -454,7 +455,7 @@ section.page_title_section {
   }
   &.minimized {
     top: 68px;
-    background: $main_dark_clr;
+    background-color: $main_dark_clr!important;
     h1 {
       padding: 10px 0;
       font-size: 1rem;
