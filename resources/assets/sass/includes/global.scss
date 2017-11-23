@@ -266,6 +266,7 @@ header {
             border-color: $main_gray_clr;
             .dropdown-item {
               color: $main_light_clr;
+              padding: 3px 1rem;
               &.active,
               &:active,
               &:focus,
