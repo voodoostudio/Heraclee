@@ -232,22 +232,63 @@ header {
           &:last-of-type {
             padding-right: 0;
           }
-          a.nav-link {
+          .nav-link {
             text-transform: uppercase;
             padding: 8px 5px;
             font-size: 1.063rem;
             line-height: 1.063rem;
             @include my_transition(.2s ease-in-out);
+            border-bottom: 1px solid transparent;
             &.active {
               color: $main_brown_clr;
               font-family: opensans_regular;
-              border-bottom: 1px solid $main_brown_clr;
+              border-color: $main_brown_clr;
             }
             &:hover {
               color: $main_brown_clr;
-              border-bottom: 1px solid $main_brown_clr;
+              border-color: $main_brown_clr;
             }
           }
+
+          button.btn {
+            border: none;
+            text-transform: uppercase;
+            border-radius: 0;
+            border-bottom: 1px solid transparent;
+            font-family: opensans_light;
+            &:focus {
+              border-color: transparent!important;
+            }
+          }
+          .dropdown-menu {
+            background: $main_dark_clr;
+            border-radius: 0;
+            border-color: $main_gray_clr;
+            .dropdown-item {
+              &.active,
+              &:active,
+              &:focus,
+              &:hover {
+                background-color: transparent;
+                color: $main_brown_clr;
+              }
+            }
+          }
+          //.multiselect-native-select .btn-group .multiselect.dropdown-toggle {
+          //  border: none;
+          //  text-transform: uppercase;
+          //  line-height: 33px;
+          //  &:after {
+          //    top: 14px;
+          //    right: 10px;
+          //  }
+          //}
+          //.multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
+          //  border: 1px solid $main_gray_clr;
+          //  li.disabled {
+          //    display: none;
+          //  }
+          //}
         }
       }
     }
@@ -847,5 +888,5 @@ section.virtual_tours_section {
 
 .g-recaptcha {
   float: right;
-  margin: 20px 0 0;
+  margin: 10px 0 10px;
 }

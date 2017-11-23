@@ -91,12 +91,12 @@
                                 <div class="input_container">
                                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
                                 </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="g-recaptcha" data-sitekey="6Ld97zkUAAAAAKQ3ZaPTE-gyQ97Dfqerk1jUYOSf" data-theme="dark" ></div>
+                                    </div>
+                                </div>
                                 <button class="btn" type="submit">{{ trans('lang.send') }}</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="g-recaptcha" data-sitekey="6Ld97zkUAAAAAKQ3ZaPTE-gyQ97Dfqerk1jUYOSf" data-theme="dark" ></div>
                             </div>
                         </div>
                     </form>

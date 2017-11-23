@@ -69,9 +69,14 @@
       margin-left: 140px;
       ul.nav li.nav-item {
         padding-right: 10px;
-        a.nav-link {
+        .nav-link {
           font-size: 0.875rem;
           line-height: 0.875rem;
+        }
+        .dropdown-menu {
+          a {
+            font-size: 0.875rem;
+          }
         }
       }
     }
@@ -180,9 +185,9 @@
         margin-left: 100px;
         ul.nav li.nav-item {
           padding-right: 0;
-          a.nav-link {
-            font-size: 0.75rem;
-          }
+          //.nav-link {
+          //  font-size: 0.75rem;
+          //}
         }
       }
     }
@@ -626,7 +631,7 @@
           ul.nav li.nav-item {
             display: table;
             margin-bottom: 10px;
-            a.nav-link {
+            .nav-link {
               padding: 8px 5px;
               line-height: 0.875rem;
               font-size: 0.75rem;
@@ -1099,7 +1104,7 @@
   section.admin_gallery_section {
     .nav.nav-tabs {
       li.nav-item {
-        a.nav-link {
+        .nav-link {
           font-size: 0.875rem;
         }
       }

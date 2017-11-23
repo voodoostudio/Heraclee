@@ -78,17 +78,38 @@
                         <a class="nav-link {{ (($cp == 'france')) ? 'active' : '' }}" href="{{ route('france') }}">{{ trans('lang.france') }}{{ (($cp == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Autre pays
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
+                                <a class="dropdown-item {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
+                                <a class="dropdown-item {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (1)'  : '' }}</a>
+                            </div>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                    {{--</li>--}}
+                    {{--<li class="nav-item">--}}
+                        {{--<a class="nav-link {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link {{ ($cp == 'virtual-tours') ? 'active' : '' }}" href="{{ route('virtual-tours') }}">{{ trans('lang.virtual_tours') }}</a>
                     </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<select id="other_countries" name="other_countries[]" title="">--}}
+                            {{--<option value="" selected disabled>Autre pays</option>--}}
+                            {{--<option value="swiss"><a href="#">Suisse</a></option>--}}
+                            {{--<option value="usa"><a href="#">USA</a></option>--}}
+                            {{--<option value="mauritius"><a href="#">Ile Maurice</a></option>--}}
+                        {{--</select>--}}
+                    {{--</li>--}}
+
                     {{--<li class="nav-item">--}}
                         {{--<a class="nav-link {{ ($current_page == 'results' || $current_page == 'details' ) ? 'active' : '' }}" href="{{ route('results') }}">{{ trans('lang.buy') }}</a>--}}
                     {{--</li>--}}

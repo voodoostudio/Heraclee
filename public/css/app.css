@@ -1557,23 +1557,47 @@ header .navigation_container nav ul.nav li.nav-item:last-of-type {
   padding-right: 0;
 }
 
-header .navigation_container nav ul.nav li.nav-item a.nav-link {
+header .navigation_container nav ul.nav li.nav-item .nav-link {
   text-transform: uppercase;
   padding: 8px 5px;
   font-size: 1.063rem;
   line-height: 1.063rem;
   transition: 0.2s ease-in-out;
+  border-bottom: 1px solid transparent;
 }
 
-header .navigation_container nav ul.nav li.nav-item a.nav-link.active {
+header .navigation_container nav ul.nav li.nav-item .nav-link.active {
   color: #ccac83;
   font-family: opensans_regular;
-  border-bottom: 1px solid #ccac83;
+  border-color: #ccac83;
 }
 
-header .navigation_container nav ul.nav li.nav-item a.nav-link:hover {
+header .navigation_container nav ul.nav li.nav-item .nav-link:hover {
   color: #ccac83;
-  border-bottom: 1px solid #ccac83;
+  border-color: #ccac83;
+}
+
+header .navigation_container nav ul.nav li.nav-item button.btn {
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  border-bottom: 1px solid transparent;
+  font-family: opensans_light;
+}
+
+header .navigation_container nav ul.nav li.nav-item button.btn:focus {
+  border-color: transparent !important;
+}
+
+header .navigation_container nav ul.nav li.nav-item .dropdown-menu {
+  background: #272727;
+  border-radius: 0;
+  border-color: #625e57;
+}
+
+header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item.active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:focus, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:hover {
+  background-color: transparent;
+  color: #ccac83;
 }
 
 header .menu-icon {
@@ -2234,7 +2258,7 @@ section.virtual_tours_section .results_container.grid_view .container-fluid .obj
 
 .g-recaptcha {
   float: right;
-  margin: 20px 0 0;
+  margin: 10px 0 10px;
 }
 
 section.contact_info_section {
@@ -6594,9 +6618,12 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 10px;
   }
-  header .navigation_container nav ul.nav li.nav-item a.nav-link {
+  header .navigation_container nav ul.nav li.nav-item .nav-link {
     font-size: 0.875rem;
     line-height: 0.875rem;
+  }
+  header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
+    font-size: 0.875rem;
   }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info {
     margin-top: 15px;
@@ -6642,9 +6669,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 0;
-  }
-  header .navigation_container nav ul.nav li.nav-item a.nav-link {
-    font-size: 0.75rem;
   }
   header.minimized .navigation_container .navigation_block {
     margin-left: 70px;
@@ -6923,7 +6947,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     display: table;
     margin-bottom: 10px;
   }
-  header.minimized .navigation_container nav ul.nav li.nav-item a.nav-link {
+  header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
     padding: 8px 5px;
     line-height: 0.875rem;
     font-size: 0.75rem;
@@ -7293,7 +7317,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.team_members_section .outer_block_container .inner_block_container .info_container ul li {
     font-size: 1.125rem;
   }
-  section.admin_gallery_section .nav.nav-tabs li.nav-item a.nav-link {
+  section.admin_gallery_section .nav.nav-tabs li.nav-item .nav-link {
     font-size: 0.875rem;
   }
   section.virtual_tours_section {
