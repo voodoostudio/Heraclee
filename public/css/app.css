@@ -1713,6 +1713,12 @@ header.minimized .navigation_container nav ul.nav li.nav-item a.nav-link {
   line-height: 0.75rem;
 }
 
+header.minimized .navigation_container nav ul.nav li.nav-item button.btn {
+  padding: 3px 5px;
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+}
+
 main {
   padding-top: 156px;
 }

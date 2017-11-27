@@ -276,21 +276,6 @@ header {
               }
             }
           }
-          //.multiselect-native-select .btn-group .multiselect.dropdown-toggle {
-          //  border: none;
-          //  text-transform: uppercase;
-          //  line-height: 33px;
-          //  &:after {
-          //    top: 14px;
-          //    right: 10px;
-          //  }
-          //}
-          //.multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
-          //  border: 1px solid $main_gray_clr;
-          //  li.disabled {
-          //    display: none;
-          //  }
-          //}
         }
       }
     }
@@ -386,6 +371,11 @@ header {
             margin-bottom: 0;
             padding-right: 15px;
             a.nav-link {
+              padding: 3px 5px;
+              font-size: 0.75rem;
+              line-height: 0.75rem;
+            }
+            button.btn {
               padding: 3px 5px;
               font-size: 0.75rem;
               line-height: 0.75rem;
