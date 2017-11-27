@@ -19,8 +19,9 @@ return [
     'virtual_tours'         => 'Visites virtuelles',
     'luxury_real_estate_agency'  => 'Agence immobilière de prestige -  <span>Saint-Tropez</span>',
     'select_the_city'       => 'Sélectionner une ville :',
-    'select_the_object_type'       => 'Sélectionnez un type de bien :',
-    'last_website_update'       => 'Dernière mise à jour : ',
+    'select_the_object_type'=> 'Sélectionnez un type de bien :',
+    'last_website_update'   => 'Dernière mise à jour : ',
+    'other_countries'       => 'Autre pays',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',

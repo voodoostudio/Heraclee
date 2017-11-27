@@ -669,6 +669,7 @@ $(document).ready(function() {
         $('body').css('overflow','initial');
         $('body').css('position','relative');
     });
+
     disableSearchFields();
     $(".search_input input").on("change paste keyup", function() {
         disableSearchFields();

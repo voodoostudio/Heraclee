@@ -12,13 +12,19 @@
         .img_block {
           width: 100%;
           .activity_label,
-          .exclusive_label {
+          .exclusive_label_container {
             position: absolute;
-            padding: 9px 20px;
-            font-size: 1rem;
-            text-transform: uppercase;
-            z-index: 1;
-            background: rgba($main_dark_clr, 0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            .exclusive_label {
+              padding: 9px 20px;
+              font-size: 1rem;
+              text-transform: uppercase;
+              z-index: 1;
+              background: rgba($main_dark_clr, 0.5);
+            }
           }
           .virtual_tour_label_container {
             position: absolute;

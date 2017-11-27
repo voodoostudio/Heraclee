@@ -120,6 +120,13 @@
                         </div>
                     </div>
                 </div>
+
+                @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
+                    <div class="exclusive_label_container">
+                        <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
+                    </div>
+                @endif
+
                 <div class="gradient_bottom"></div>
                 @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
                     <div class="panorama_link_container">

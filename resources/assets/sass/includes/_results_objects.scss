@@ -14,14 +14,6 @@
           position: relative;
           overflow: hidden;
           .activity_label,
-          .exclusive_label {
-            position: absolute;
-            padding: 9px 20px;
-            font-size: 1rem;
-            text-transform: uppercase;
-            z-index: 1;
-            background: rgba($main_dark_clr, 0.5);
-          }
           .virtual_tour_label_container {
             position: absolute;
             top: 0;

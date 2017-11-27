@@ -21,6 +21,7 @@ return [
     'select_the_city'       => 'Select a city:',
     'select_the_object_type'       => 'Select the property type:',
     'last_website_update'       => 'Last updates: ',
+    'other_countries'       => 'Other countries',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',

@@ -80,7 +80,7 @@
                     <li class="nav-item">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Autre pays
+                                {{ trans('lang.other_countries') }}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
