@@ -165,6 +165,12 @@
       }
     }
   }
+
+  section.flipbook_section {
+    .iframe-m iframe {
+      height: 450px;
+    }
+  }
 }
 
 @media screen and ( max-width: 991px ) {
@@ -240,6 +246,12 @@
   #mauritius {
     section.top_offer_section {
       height: 550px;
+    }
+  }
+
+  section.flipbook_section {
+    .iframe-m iframe {
+      height: 400px;
     }
   }
 
@@ -795,6 +807,12 @@
     }
   }
 
+  section.flipbook_section {
+    .iframe-m iframe {
+      height: 350px;
+    }
+  }
+
   #details, #locationsDetails {
     section.gallery_section {
       .gallery_container {
@@ -1069,7 +1087,6 @@
     }
   }
 
-
   section.team_info_section {
     margin-top: 30px;
     h2 {
@@ -1282,6 +1299,12 @@
       h1 {
         margin-bottom: 45px;
       }
+    }
+  }
+
+  section.flipbook_section {
+    .iframe-m iframe {
+      height: 275px;
     }
   }
 

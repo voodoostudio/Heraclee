@@ -3,19 +3,6 @@
 @section('title', 'Home page')
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="/css/index.min.css">--}}
-    <style>
-        .iframe-m iframe {
-            width: 100%;
-            height: 600px;
-        }
-        #bacgradient div{
-            background: transparent!important;
-            background-image: none!important;
-        }
-        #logoBar {
-            display: none!important;
-        }
-    </style>
 @stop
 
 @section('content')
@@ -94,11 +81,13 @@
                 {{--<img src="/flipbooks/mauritius/pierre_de_lune/assets/main_img.jpg" alt="Mauritius panorama" style="width: 100%; max-width: 500px">--}}
             {{--</a>--}}
 
-            <div class="iframe-m">
-                <p>
-                    <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-                </p>
-            </div>
+            <section class="flipbook_section">
+                <div class="iframe-m">
+                    <p>
+                        <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                    </p>
+                </div>
+            </section>
 
             {{--<a href="https://online.flippingbook.com/view/650405/" class="fbo-embed" data-fbo-lightbox="yes" data-fbo-version="1" data-fbo-width="250px" data-fbo-height="188px" style="max-width: 100%">BROCHURE PIERRE DE LUNE</a><script async defer src="https://d33i2vgywgme2s.cloudfront.net/render/2.18.1-R278/embed.js"></script>--}}
 
