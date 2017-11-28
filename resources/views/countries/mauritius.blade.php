@@ -12,6 +12,9 @@
             background: transparent!important;
             background-image: none!important;
         }
+        #logoBar {
+            display: none!important;
+        }
     </style>
 @stop
 
@@ -87,9 +90,9 @@
         @endif
     @endforeach
 
-            <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" target="_blank" style="display: block; text-align: center; margin: 80px auto 0; padding: 0 15px">
-                <img src="/flipbooks/mauritius/pierre_de_lune/assets/main_img.jpg" alt="Mauritius panorama" style="width: 100%; max-width: 500px">
-            </a>
+            {{--<a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" target="_blank" style="display: block; text-align: center; margin: 80px auto 0; padding: 0 15px">--}}
+                {{--<img src="/flipbooks/mauritius/pierre_de_lune/assets/main_img.jpg" alt="Mauritius panorama" style="width: 100%; max-width: 500px">--}}
+            {{--</a>--}}
 
             <div class="iframe-m">
                 <p>
@@ -101,29 +104,34 @@
 
 {{--    @include('includes.search_block_index')--}}
 
-    <section class="results_section">
-        @if($count_items == 0)
-            <div class="container-fluid">
-                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
-            </div>
-        @endif
-        <div class="results_container map_view">
-            <div class="container-fluid">
-                <div class="results_carousel row">
-                    @foreach($properties as $property)
-                        @if($property['step'] == 1)
-                            @include('includes.results_object')
-                        @endif
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
+    {{--<section class="results_section">--}}
+        {{--@if($count_items == 0)--}}
+            {{--<div class="container-fluid">--}}
+                {{--<h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>--}}
+            {{--</div>--}}
+        {{--@endif--}}
+        {{--<div class="results_container map_view">--}}
+            {{--<div class="container-fluid">--}}
+                {{--<div class="results_carousel row">--}}
+                    {{--@foreach($properties as $property)--}}
+                        {{--@if($property['step'] == 1)--}}
+                            {{--@include('includes.results_object')--}}
+                        {{--@endif--}}
+                    {{--@endforeach--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
 @endsection
 
 @section('javascript')
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     {{--<script src="/js/index.min.js"></script>--}}
+    <script>
+        $( document ).ready(function() {
+            $('#fbToolBar').css('background-color', '#272727!important');
+        });
+    </script>
     {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
 @stop
