@@ -60,7 +60,7 @@ $(document).ready(function() {
         });
     } else {
         $('.marquee').marquee({
-            duration: 5000,
+            duration: 4000,
             //time in milliseconds before the marquee will start animating
             delayBeforeStart: 0,
             //'left' or 'right'
