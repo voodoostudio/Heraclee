@@ -62,7 +62,11 @@
                             @endif
                         @endforeach
                     </div>
-                    @if($lang == 'fr_FR') <p>{{ $item['description_fr'] }}</p> @elseif($lang == 'en_GB') <p>{{ $item['description_en'] }}<p>  @endif
+                    @if($lang == 'fr_FR')
+                        <p>{!! str_replace("\n", '</p><p>', $item['description_fr']) !!}</p>
+                    @elseif($lang == 'en_GB')
+                        <p>{!! str_replace("\n", '</p><p>', $item['description_en']) !!} <p>
+                    @endif
                 </div>
             </div>
         </div>

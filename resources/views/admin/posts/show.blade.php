@@ -56,7 +56,11 @@
                                 @endif
                             @endforeach
                         </div>
-                        @if($lang == 'fr_FR') <p>{{ $posts->description_fr }}</p> @elseif($lang == 'en_GB') <p>{{ $posts->description_en }}<p>  @endif
+                        @if($lang == 'fr_FR')
+                            <p>{!! str_replace("\n", '</p><p>', $posts->description_fr) !!}</p>
+                        @elseif($lang == 'en_GB')
+                            <p>{!! str_replace("\n", '</p><p>', $posts->description_en) !!}</p>
+                        @endif
                     </div>
                 </div>
             </div>

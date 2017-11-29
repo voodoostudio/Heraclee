@@ -305,7 +305,8 @@ section.article_section {
       max-width: 100%; }
   section.article_section .outer_block_container .inner_block_container p {
     text-align: justify;
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+    margin-bottom: 20px; }
 
 section.admin_nav_menu {
   margin-top: 40px; }
