@@ -43,19 +43,33 @@ $(document).ready(function() {
         document.location.href = this_link;
     });
 
-    $('.marquee').marquee({
-        //speed in milliseconds of the marquee
-        duration: 15000,
-        //gap in pixels between the tickers
-        // gap: 50,
-        //time in milliseconds before the marquee will start animating
-        delayBeforeStart: 0,
-        //'left' or 'right'
-        direction: 'left',
-        //true or false - should the marquee be duplicated to show an effect of continues flow
-        // duplicated: true,
-        pauseOnHover: true
-    });
+
+    if ($(window).width() > 768) {
+        $('.marquee').marquee({
+            //speed in milliseconds of the marquee
+            duration: 10000,
+            //gap in pixels between the tickers
+            // gap: 50,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: 'left',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            // duplicated: true,
+            pauseOnHover: true
+        });
+    } else {
+        $('.marquee').marquee({
+            duration: 5000,
+            //time in milliseconds before the marquee will start animating
+            delayBeforeStart: 0,
+            //'left' or 'right'
+            direction: 'left',
+            //true or false - should the marquee be duplicated to show an effect of continues flow
+            // duplicated: true,
+            pauseOnHover: true
+        });
+    }
 
 });
 
