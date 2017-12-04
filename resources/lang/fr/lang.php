@@ -49,7 +49,7 @@ return [
     'search'                => 'Rechercher',
     'our_last_objects'      => 'Nos 10 derniers biens',
     'new'                   => 'Nouveauté',
-    'updated'               => 'Actualisé',
+    'updated'               => 'Mis à jour',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',

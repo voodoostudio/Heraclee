@@ -562,3 +562,11 @@ function orderSelectOptions() {
 
     $('.search_section select#cities_select').multiselect('rebuild');
 }
+
+function minimizeSearchBlock() {
+    if ($(window).width() < 576) {
+        $('section.search_section form').addClass('minimized');
+    } else if($('section.search_section form').hasClass('minimized')) {
+        $('section.search_section form').removeClass('minimized')
+    }
+}

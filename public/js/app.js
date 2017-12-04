@@ -562,11 +562,22 @@ function orderSelectOptions() {
 
     $('.search_section select#cities_select').multiselect('rebuild');
 }
+
+function minimizeSearchBlock() {
+    if ($(window).width() < 576) {
+        $('section.search_section form').addClass('minimized');
+    } else if($('section.search_section form').hasClass('minimized')) {
+        $('section.search_section form').removeClass('minimized')
+    }
+}
 $(document).ready(function() {
 
     setBodyPaddingBottom();
+    minimizeSearchBlock();
+
     $(window).resize(function () {
         setBodyPaddingBottom();
+        minimizeSearchBlock();
     });
     $(window).on("orientationchange", function () {
         setBodyPaddingBottom();
@@ -675,4 +686,8 @@ $(document).ready(function() {
         disableSearchFields();
     });
 
+    $('section.search_section .show_options button').on('click', function () {
+        var this_form = $(this).closest('form');
+       this_form.toggleClass('minimized');
+    });
 });

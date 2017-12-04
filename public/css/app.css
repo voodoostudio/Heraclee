@@ -1768,6 +1768,54 @@ section.search_section .outer_block_container .inner_block_container .input_cont
 
 section.search_section .outer_block_container .inner_block_container button#submit_search_form {
   float: right;
+  margin-top: 20px;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options {
+  text-align: center;
+  padding: 15px;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button {
+  color: #ccac83;
+  margin: 0 auto;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button i.icn {
+  display: block;
+  float: right;
+  line-height: 22px;
+  margin-left: 10px;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button.more {
+  display: none;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button.more i.icn {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button.less {
+  display: block;
+}
+
+section.search_section .outer_block_container .inner_block_container .show_options button.less i.icn {
+  -webkit-transform: rotate(-270deg);
+  transform: rotate(-270deg);
+}
+
+section.search_section form.minimized .outer_block_container .inner_block_container .minimizable {
+  display: none;
+}
+
+section.search_section form.minimized .outer_block_container .inner_block_container .show_options button.more {
+  display: block;
+}
+
+section.search_section form.minimized .outer_block_container .inner_block_container .show_options button.less {
+  display: none;
 }
 
 section.page_title_section {
@@ -7446,7 +7494,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.search_section .outer_block_container .inner_block_container button#submit_search_form {
     float: none;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto 0;
   }
   section.page_title_section {
     top: 72px;

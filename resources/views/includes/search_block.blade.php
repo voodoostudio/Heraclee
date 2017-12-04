@@ -71,7 +71,7 @@
                                         @endif
                                     </select>
                                 </div>
-                                <div class="col-xl-4 col-sm-12 margin_bottom_10">
+                                <div class="col-xl-4 col-sm-12 margin_bottom_10 minimizable">
                                     <div class="input_container search_input">
                                         <input type="text" name="search_keywords" value="@if(isset($search['search_keywords'])){{$search['search_keywords']}}@endif" placeholder="{{ trans('lang.enter_keyword') }}">
                                         <button type="submit"><i class="icn icon-search"></i></button>
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row minimizable">
                         <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-price"></i><span>{{ trans('lang.price') }} min</span></label>
                             <div class="input_container">
@@ -123,7 +123,15 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12 margin_top_20">
+                        <div class="col-sm-12 hidden-sm-up">
+                            <div class="show_options">
+                                <button type="button" class="more">More options <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="less">Less options <i class="icn icon-arrow_big_left"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
                             <button class="btn" id="submit_search_form">{{ trans('lang.search') }}</button>
                         </div>
                     </div>

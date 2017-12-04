@@ -426,6 +426,50 @@ section.search_section {
       }
       button#submit_search_form {
         float: right;
+        margin-top: 20px;
+      }
+      .show_options {
+        text-align: center;
+        padding: 15px;
+        button {
+          color: $main_brown_clr;
+          margin: 0 auto;
+          i.icn {
+            display: block;
+            float: right;
+            line-height: 22px;
+            margin-left: 10px;
+          }
+          &.more {
+            display: none;
+            i.icn {
+              @include my_transform(rotate(-90deg));
+            }
+          }
+          &.less {
+            display: block;
+            i.icn {
+              @include my_transform(rotate(-270deg));
+            }
+          }
+        }
+      }
+    }
+  }
+  form.minimized {
+    .outer_block_container {
+      .inner_block_container {
+        .minimizable {
+          display: none;
+        }
+        .show_options {
+          button.more {
+            display: block;
+          }
+          button.less {
+            display: none;
+          }
+        }
       }
     }
   }
