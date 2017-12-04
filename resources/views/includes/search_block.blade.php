@@ -125,8 +125,8 @@
                     <div class="row">
                         <div class="col-sm-12 hidden-sm-up">
                             <div class="show_options">
-                                <button type="button" class="more">More options <i class="icn icon-arrow_big_left"></i></button>
-                                <button type="button" class="less">Less options <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="more">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="less">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></button>
                             </div>
                         </div>
                     </div>
