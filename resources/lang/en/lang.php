@@ -50,6 +50,8 @@ return [
     'our_last_objects'      => 'Our latest 10 objects',
     'new'                   => 'New',
     'updated'               => 'Updated',
+    'more_options'          => 'More options',
+    'less_options'          => 'Less options',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Virtual tour',
