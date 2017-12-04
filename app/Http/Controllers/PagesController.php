@@ -76,7 +76,7 @@ class PagesController extends Controller
         );
 
         /* Last 10 news on main page */
-        $last_news = Posts::limit(10)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
+        $last_news = Posts::limit(5)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
         /* Gallery (slider) */
         $gallery = Gallery::all();

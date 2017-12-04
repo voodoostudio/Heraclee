@@ -21,7 +21,7 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section" style="display: none">
                 <ul class="index_main_carousel">
                     @foreach($gallery as $image)
                         @if($image['page'] == 'homepage')
@@ -58,7 +58,7 @@
                     @endphp
                     @foreach($image as $picture)
                         @if($image_counter == 1)
-                            <section class="top_offer_section" style="background-image: url('{{$picture}}')">
+                            <section class="top_offer_section" style="background-image: url('{{$picture}}'); display: none">
                                 @endif
                                 @php
                                     $image_counter++;
@@ -78,6 +78,14 @@
                     @endforeach
                 @endif
             @endforeach
+
+            <section class="flipbook_section">
+                <div class="iframe-m">
+                    <p>
+                        <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                    </p>
+                </div>
+            </section>
 
     @include('includes.latest_news')
 

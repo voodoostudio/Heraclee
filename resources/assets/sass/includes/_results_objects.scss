@@ -162,10 +162,10 @@
       .object_block_container {
         padding: 0 20px;
         width: 100%;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 100%;
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
+        -webkit-box-flex: 0 !important;
+        -webkit-flex: 0 0 100% !important;
+        -ms-flex: 0 0 100% !important;
+        flex: 0 0 100% !important;
         max-width: 100%;
         .object_block {
           border: 1px solid $main_gray_clr;

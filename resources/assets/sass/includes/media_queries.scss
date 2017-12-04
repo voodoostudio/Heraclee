@@ -1365,6 +1365,8 @@
             left: initial;
             bottom: 10px;
             margin: 0;
+            padding: 5px 15px 4px;
+            background: rgba($main_dark_clr, 0.5);
           }
         }
         .gallery_nav {
@@ -1736,5 +1738,29 @@
 
   .gj-calendar-md {
     left: 12px !important;
+  }
+}
+
+
+@media screen and ( max-width: 360px ) {
+  header {
+    .navigation_container {
+      padding-top: 9px;
+      height: 60px;
+      padding-right: 35px;
+      .navigation_block {
+        .header_tel {
+          line-height: 1;
+        }
+      }
+    }
+    .logo {
+      img {
+        max-width: 40px;
+      }
+    }
+    div.menu-icon {
+      right: 15px;
+    }
   }
 }
