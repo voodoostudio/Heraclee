@@ -107,6 +107,13 @@
             display: table;
             text-align: center;
             padding: 7px 30px 6px;
+            span {
+              display: block;
+              &.updated {
+                color: $main_light_clr;
+                font-size: 1rem;
+              }
+            }
           }
           .object_status {
             background: $main_brown_clr;

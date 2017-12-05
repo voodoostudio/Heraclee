@@ -5952,6 +5952,19 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   padding: 7px 30px 6px;
 }
 
+#details section.gallery_section .gallery_container .gallery_view .object_title .object_status span,
+#details section.gallery_section .gallery_container .gallery_view .object_title .new_label span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span,
+#locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .new_label span {
+  display: block;
+}
+
+#details section.gallery_section .gallery_container .gallery_view .object_title .object_status span.updated,
+#details section.gallery_section .gallery_container .gallery_view .object_title .new_label span.updated, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span.updated,
+#locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .new_label span.updated {
+  color: #fdfdfd;
+  font-size: 1rem;
+}
+
 #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
   background: #ccac83;
   color: #fdfdfd;
