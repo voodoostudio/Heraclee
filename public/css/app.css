@@ -7058,7 +7058,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details main,
   #locationsDetails main,
   #results_fr main,
-  #locations_fr main {
+  #results main,
+  #locations_fr main,
+  #locations main {
     padding-top: 90px;
   }
   #index header .navigation_container .navigation_block h1 {
@@ -7498,7 +7500,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details main,
   #locationsDetails main,
   #results_fr main,
-  #locations_fr main {
+  #results main,
+  #locations_fr main,
+  #locations main {
     padding-top: 72px;
   }
   #index main {
