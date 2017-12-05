@@ -51,7 +51,7 @@
                 @endif
 
                 @if($date_updated->diff($now)->format("%m") < 3 && $date_updated->diff($now)->format("%y") == 0)
-                    <span>{{ trans('lang.updated') }}</span>
+                    <span class="updated">{{ trans('lang.updated') }}</span>
                 @endif
             </div>
 

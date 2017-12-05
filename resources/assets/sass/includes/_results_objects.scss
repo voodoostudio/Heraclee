@@ -63,6 +63,9 @@
             span {
               display: block;
               font-size: 0.875rem;
+              &.updated {
+                color: $main_light_clr;
+              }
             }
           }
           img {
