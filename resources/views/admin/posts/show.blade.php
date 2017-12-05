@@ -37,7 +37,7 @@
 
                         <div class="img_container" style="display: none">
                             @foreach(json_decode($posts->front_image) as $key => $image)
-                                <img src="{{ URL::to('/') }}/posts/front_image/{{ date('F_Y') }}/{{ $image }}" alt="{{ $key }}">
+                                <img src="{{ URL::to('/') }}/posts/front_image/{{ $posts->created_at->format('F_Y') }}/{{ $image }}" alt="{{ $key }}">
                             @endforeach
                         </div>
 
@@ -48,11 +48,11 @@
                                     $jpg_preview = preg_replace('"\.pdf$"', '.jpg', $file);
                                 @endphp
                                 @if(strtolower($extension->getExtension()) == 'pdf')
-                                    <a href = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $file }}">
-                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ date('F_Y') }}/{{ $jpg_preview }}" alt = "{{ $key }}"/>
+                                    <a href = "{{ URL::to('/') }}/posts/pdf/{{ $posts->created_at->format('F_Y') }}/{{ $file }}">
+                                        <img src = "{{ URL::to('/') }}/posts/pdf/{{ $posts->created_at->format('F_Y') }}/{{ $jpg_preview }}" alt = "{{ $key }}"/>
                                     </a>
                                 @else
-                                    <img src="{{ URL::to('/') }}/posts/body_image/{{ date('F_Y') }}/{{ $file }}" alt="{{ $key }}">
+                                    <img src="{{ URL::to('/') }}/posts/body_image/{{ $posts->created_at->format('F_Y') }}/{{ $file }}" alt="{{ $key }}">
                                 @endif
                             @endforeach
                         </div>
