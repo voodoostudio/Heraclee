@@ -12,7 +12,7 @@
                     <ul class="">
                         @foreach($last_news as $item)
                             <li>
-                                <a href="{{ route('news_details', ['id' => $item['id']]) }}">@if($lang == 'fr_FR') {{ $item['created_at']->format('d.m.Y') . ' ' . $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['created_at']->format('d.m.Y') . ' ' . $item['title_en'] }}  @endif</a>
+                                <a href="{{ route('news_details', ['id' => $item['id']]) }}">@if($lang == 'fr_FR') {{ date('d.m.Y', strtotime($item['date'])) . ' - ' . $item['title_fr'] }} @elseif($lang == 'en_GB') {{ date('d.m.Y', strtotime($item['date'])) . ' - ' . $item['title_en'] }}  @endif</a>
                             </li>
                         @endforeach
                     </ul>
