@@ -102,18 +102,25 @@
                                 <h2>{{$property['type']}}</h2>
                                 <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
                                 @php
-                                    $date = new DateTime($property['created_at']);
+                                    $date_created = new DateTime($property['created_at']);
+                                    $date_updated = new DateTime($property['updated_at']);
                                     $now = new DateTime();
                                 @endphp
-                                @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0 ||
-                                   ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
-                                     $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
-                                     $property['property_id'] == '1657855'
-                                   )
-                                )
+
+                                @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 || $date_updated->diff($now)->format("%m") < 3 && $date_updated->diff($now)->format("%y") == 0)
                                 <div class="new_label">
-                                    <span>{{ trans('lang.new') }}</span>
-                                    {{--<span>{{ trans('lang.updated') }}</span>--}}
+                                    @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
+                                        ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                                          $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                                          $property['property_id'] == '1657855'
+                                        )
+                                   )
+                                        <span>{{ trans('lang.new') }}</span>
+                                    @endif
+
+                                    @if($date_updated->diff($now)->format("%m") < 3 && $date_updated->diff($now)->format("%y") == 0)
+                                        <span>{{ trans('lang.updated') }}</span>
+                                    @endif
                                 </div>
                                 @endif
                             </div>
