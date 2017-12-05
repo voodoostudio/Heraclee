@@ -6,21 +6,21 @@
     use Illuminate\Support\Facades\DB;
 
     /* Last update on site */
-    $gallery_date = date('d.m.Y - H:i', strtotime(Gallery::orderBy('updated_at', 'desc')->value('updated_at') . '+1 hours'));
-    $gallery_last_date = (!empty($gallery_date)) ? $gallery_date : '';
-    $posts_date = date('d.m.Y - H:i', strtotime(Posts::orderBy('updated_at', 'desc')->value('updated_at') . '+1 hours'));
-    $posts_last_date = (!empty($posts_date)) ? $posts_date : '';
-    $properties_date = date('d.m.Y - H:i', strtotime(
+    $gallery_date = Gallery::orderBy('updated_at', 'desc')->value('updated_at');
+    $gallery_last_date = (!empty($gallery_date)) ? date(strtotime($gallery_date . '+1 hours')) : '';
+    $posts_date = Posts::orderBy('updated_at', 'desc')->value('updated_at');
+    $posts_last_date = (!empty($posts_date)) ? date(strtotime($posts_date . '+1 hours')) : '';
+    $properties_date =
         DB::table('apimo_properties')
             ->select('updated_at')
             ->where('reference', 'like', 'HSTP%')
             ->orderBy('updated_at', 'desc')
-            ->value('updated_at')
-            )
-    );
-    $properties_last_date = (!empty($properties_date)) ? $properties_date : '';
+            ->value('updated_at');
+    $properties_last_date = (!empty($properties_date)) ? date(strtotime($properties_date . '+1 hours')) : '';
 
-    $last_update = max($posts_last_date, $gallery_last_date, $properties_last_date);
+    $dates = [$posts_last_date, $gallery_last_date, $properties_last_date];
+
+    $last_update = max($dates);
 @endphp
 
 <header>
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="last_updates">
-                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
+                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ date('d.m.Y - H:i', $last_update) }}</p>
                 </div>
             </div>
 
