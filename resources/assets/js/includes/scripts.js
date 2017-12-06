@@ -120,6 +120,10 @@ $(document).ready(function() {
 
     $('section.search_section .show_options button').on('click', function () {
         var this_form = $(this).closest('form');
-       this_form.toggleClass('minimized');
+        this_form.toggleClass('minimized');
+
+        $('html, body').animate({
+            scrollTop: $(".search_section").offset().top-150
+        }, 300);
     });
 });
