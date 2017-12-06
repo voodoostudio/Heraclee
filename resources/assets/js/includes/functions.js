@@ -565,8 +565,10 @@ function orderSelectOptions() {
 
 function minimizeSearchBlock() {
     if ($(window).width() < 576) {
-        $('section.search_section form').addClass('minimized');
-    } else if($('section.search_section form').hasClass('minimized')) {
-        $('section.search_section form').removeClass('minimized')
+        if ($('section.search_section form').hasClass('minimized')) {
+            $('section.search_section form').removeClass('minimized')
+        } else {
+            $('section.search_section form').addClass('minimized');
+        }
     }
 }

@@ -5,7 +5,11 @@ $(document).ready(function() {
 
     $(window).resize(function () {
         setBodyPaddingBottom();
-        minimizeSearchBlock();
+        if ($(window).width() > 576) {
+            if ($('section.search_section form').hasClass('minimized')) {
+                $('section.search_section form').removeClass('minimized')
+            }
+        }
     });
     $(window).on("orientationchange", function () {
         setBodyPaddingBottom();
