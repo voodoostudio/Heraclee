@@ -21,29 +21,31 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
+
             <section class="index_main_carousel_section" style="display: none">
-                <ul class="index_main_carousel">
-                    @foreach($gallery as $image)
-                        @if($image['page'] == 'homepage')
-                            @php
-                                $slider_image[] = $image;
-                            @endphp
-                        @endif
-                    @endforeach
-                    @php
-                        shuffle($slider_image);
-                        $image_counter = 1;
-                    @endphp
-                    @foreach($slider_image as $item)
-                        @if($image_counter == 1)
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
-                        @endif
+                    <ul class="index_main_carousel">
+                        @foreach($gallery as $image)
+                            @if($image['page'] == 'homepage')
+                                @php
+                                    $slider_image[] = $image;
+                                @endphp
+                            @endif
+                        @endforeach
                         @php
-                            $image_counter++;
+                            shuffle($slider_image);
+                            $image_counter = 1;
                         @endphp
-                    @endforeach
-                </ul>
+                        @foreach($slider_image as $item)
+                            @if($image_counter == 1)
+                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
+                            @endif
+                            @php
+                                $image_counter++;
+                            @endphp
+                        @endforeach
+                    </ul>
             </section>
+
         @else
             @foreach($properties as $property)
                 @php
@@ -80,12 +82,39 @@
             @endforeach
 
             <section class="flipbook_section">
-                <div class="iframe-m">
+                <a href="#" class="hidden-sm-up" data-toggle="modal" data-target="#homepage_flipbook">
+                    <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">
+                </a>
+
+                <div class="iframe-m hidden-xs-down">
                     <p>
                         <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                     </p>
                 </div>
             </section>
+
+
+
+            <div class="modal fade" id="homepage_flipbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="vertical-alignment-helper">
+                    <div class="modal-dialog vertical-align-center" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <section class="flipbook_section">
+                                    <div class="iframe-m">
+                                        <p>
+                                            <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                                        </p>
+                                    </div>
+                                </section>
+                            </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <i class="icn icon-cancel"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     @include('includes.latest_news')
 

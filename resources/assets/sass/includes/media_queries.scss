@@ -716,6 +716,7 @@
       margin-top: 0;
     }
   }
+
   section.results_section {
     .results_container {
       &.grid_view,
@@ -801,6 +802,16 @@
                 li {
                   font-size: 0.75rem;
                 }
+              }
+              .exclusive_label_container {
+                .exclusive_label {
+                  padding: 5px 15px;
+                }
+              }
+              .new_label {
+                top: 17px;
+                left: -75px;
+                padding: 4px 10px;
               }
             }
           }
