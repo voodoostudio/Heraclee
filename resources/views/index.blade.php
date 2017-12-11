@@ -86,16 +86,19 @@
                     {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
                 {{--</a>--}}
 
-                {{--<div class="iframe-m hidden-xs-down">--}}
-                    {{--<p>--}}
-                        {{--<iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-                <div class="iframe-m">
+                <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" class="hidden-sm-up" target="_blank">
+                    <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">
+                </a>
+                <div class="iframe-m hidden-xs-down">
                     <p>
                         <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                     </p>
                 </div>
+                {{--<div class="iframe-m">--}}
+                    {{--<p>--}}
+                        {{--<iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>--}}
+                    {{--</p>--}}
+                {{--</div>--}}
             </section>
 
 
