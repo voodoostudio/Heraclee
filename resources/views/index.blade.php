@@ -82,11 +82,16 @@
             @endforeach
 
             <section class="flipbook_section">
-                <a href="#" class="hidden-sm-up" data-toggle="modal" data-target="#homepage_flipbook">
-                    <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">
-                </a>
+                {{--<a href="#" class="hidden-sm-up" data-toggle="modal" data-target="#homepage_flipbook">--}}
+                    {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
+                {{--</a>--}}
 
-                <div class="iframe-m hidden-xs-down">
+                {{--<div class="iframe-m hidden-xs-down">--}}
+                    {{--<p>--}}
+                        {{--<iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>--}}
+                    {{--</p>--}}
+                {{--</div>--}}
+                <div class="iframe-m">
                     <p>
                         <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                     </p>
