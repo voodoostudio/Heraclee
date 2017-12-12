@@ -41,35 +41,37 @@
             {{--<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>--}}
             {{--<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>--}}
             {{--</ul>--}}
-            @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
-                $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%m") < 3 &&
-                $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%y") == 0 ||
-                ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
-                  $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
-                  $property['property_id'] == '1657855'
+
+            @if(!empty($property['agreement']) && $property['agreement']['reference'] != 3)
+                @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
+                    $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%m") < 3 &&
+                    $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%y") == 0 ||
+                    ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                      $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                      $property['property_id'] == '1657855'
+                    )
                 )
-            )
-                <div class="new_label">
-                    @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
-                        ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
-                          $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
-                          $property['property_id'] == '1657855'
-                        )
-                   )
-                        <span>{{ trans('lang.new') }}</span>
-                    @endif
+                    <div class="new_label">
+                        @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
+                            ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                              $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                              $property['property_id'] == '1657855'
+                            )
+                       )
+                            <span>{{ trans('lang.new') }}</span>
+                        @endif
 
-                    @if($date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%m") < 3 &&
-                        $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%y") == 0 ||
-                        ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
-                          $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
-                          $property['property_id'] == '1657855'
-                        ))
-                        {{--<span class="updated">{{ trans('lang.updated') }}</span>--}}
-                    @endif
-                </div>
+                        @if($date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%m") < 3 &&
+                            $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%y") == 0 ||
+                            ( $property['property_id'] == '1797932' || $property['property_id'] == '1672949' ||
+                              $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
+                              $property['property_id'] == '1657855'
+                            ))
+                            {{--<span class="updated">{{ trans('lang.updated') }}</span>--}}
+                        @endif
+                    </div>
+                @endif
             @endif
-
             @php
                 $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '') : route('locationsDetails') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '');
                 $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
