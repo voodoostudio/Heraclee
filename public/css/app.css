@@ -7224,6 +7224,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     left: -75px;
     padding: 4px 10px;
   }
+  #index section.results_section .results_container.map_view #results_map {
+    margin-top: 20px;
+  }
   section.flipbook_section .iframe-m iframe {
     height: 350px;
   }

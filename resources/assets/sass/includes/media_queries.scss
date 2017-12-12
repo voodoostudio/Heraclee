@@ -820,6 +820,17 @@
     }
   }
 
+  #index {
+    section.results_section {
+      .results_container {
+        &.map_view {
+          #results_map {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
   section.flipbook_section {
     .iframe-m iframe {
       height: 350px;
