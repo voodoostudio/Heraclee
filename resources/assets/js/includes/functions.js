@@ -122,23 +122,29 @@ function resultsMapInit()  {
 
         var markerIcon;
 
-        if (location['counter'] > '1') {
-            markerIcon = {
-                url: '/img/map_pin_multi.svg',
-                labelOrigin: new google.maps.Point(21, 21)
-            };
-        } else {
-            markerIcon = {
-                url: '/img/map_pin.svg',
-                labelOrigin: new google.maps.Point(21, 21)
-            };
-        }
+        // if (location['counter'] > '1') {
+        //     markerIcon = {
+        //         url: '/img/map_pin_multi.svg',
+        //         labelOrigin: new google.maps.Point(21, 21)
+        //     };
+        // } else {
+        //     markerIcon = {
+        //         url: '/img/map_pin.svg',
+        //         labelOrigin: new google.maps.Point(21, 21)
+        //     };
+        // }
+        markerIcon = {
+            url: '/img/map_pin_multi.svg',
+            labelOrigin: new google.maps.Point(21, 21)
+        };
+
 
         var marker = new google.maps.Marker({
             position: location,
             icon: markerIcon,
             label: {
-                text: (location['counter'] > '1') ? '' + location['counter'] + '' : ' ',
+                // text: (location['counter'] > '1') ? '' + location['counter'] + '' : ' ',
+                text: '' + location['counter'] + '',
                 color: 'white',
                 fontSize: '14px',
                 fontWeight: '400'
