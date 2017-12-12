@@ -136,7 +136,7 @@
                                               $property['property_id'] == '1775694' || $property['property_id'] == '1660917' ||
                                               $property['property_id'] == '1657855'
                                             ))
-                                                <span class="updated">{{ trans('lang.updated') }}</span>
+                                                {{--<span class="updated">{{ trans('lang.updated') }}</span>--}}
                                         @endif
                                     </div>
                                 @endif
