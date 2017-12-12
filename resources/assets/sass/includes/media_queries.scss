@@ -826,6 +826,18 @@
     }
   }
 
+  section.guide_section {
+    padding: 20px 0;
+    .guide_carousel {
+      h4 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
   #details, #locationsDetails {
     section.gallery_section {
       .gallery_container {

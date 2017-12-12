@@ -20,6 +20,24 @@ $(document).ready(function() {
         ]
     });
 
+    $('.guide_carousel').slick({
+        infinite: true,
+        lazyLoad: 'progressive',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
     if($('.index_main_carousel_section')[0]) {
         $('.index_main_carousel').slick({
             infinite: true,

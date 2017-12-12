@@ -3401,6 +3401,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-bottom: 70px;
 }
 
+#index section.results_section .results_container.map_view #results_map,
+#france section.results_section .results_container.map_view #results_map,
+#swiss section.results_section .results_container.map_view #results_map,
+#usa section.results_section .results_container.map_view #results_map,
+#mauritius section.results_section .results_container.map_view #results_map {
+  margin-bottom: 0;
+}
+
 section.flipbook_section a img {
   width: 100%;
 }
@@ -3410,6 +3418,68 @@ section.flipbook_section .iframe-m iframe {
   height: 600px;
   padding: 10px 10px 0;
   background: #272727;
+}
+
+section.guide_section {
+  background-color: #272727;
+  margin-bottom: -90px;
+  padding: 30px 0;
+}
+
+section.guide_section .guide_carousel h4 {
+  font-size: 1.5rem;
+  color: #ccac83;
+  text-transform: uppercase;
+}
+
+section.guide_section .guide_carousel ul.slick-dots {
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+section.guide_section .guide_carousel ul.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
+}
+
+section.guide_section .guide_carousel ul.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+section.guide_section .guide_carousel ul.slick-dots li button:before {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: '';
+  text-align: center;
+  opacity: .5;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+section.guide_section .guide_carousel ul.slick-dots li.slick-active button:before {
+  background: #ccac83;
 }
 
 .modal#homepage_flipbook .vertical-alignment-helper {
@@ -7151,6 +7221,15 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.flipbook_section .iframe-m iframe {
     height: 350px;
+  }
+  section.guide_section {
+    padding: 20px 0;
+  }
+  section.guide_section .guide_carousel h4 {
+    font-size: 1.2rem;
+  }
+  section.guide_section .guide_carousel p {
+    font-size: 0.875rem;
   }
   #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 25px;

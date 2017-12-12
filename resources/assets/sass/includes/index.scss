@@ -189,6 +189,11 @@
     h1 {
       margin-bottom: 70px;
     }
+    .results_container.map_view {
+      #results_map {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -206,6 +211,67 @@ section.flipbook_section {
   }
 }
 
+section.guide_section {
+  background-color: $main_dark_clr;
+  margin-bottom: -90px;
+  padding: 30px 0;
+  .guide_carousel {
+    h4 {
+      font-size: 1.5rem;
+      color: $main_brown_clr;
+      text-transform: uppercase;
+    }
+    ul.slick-dots {
+      display: block;
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      li {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+          font-size: 0;
+          line-height: 0;
+          display: block;
+          width: 20px;
+          height: 20px;
+          padding: 5px;
+          cursor: pointer;
+          color: transparent;
+          border: 0;
+          outline: none;
+          background: transparent;
+          &:before {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            content: '';
+            text-align: center;
+            opacity: .5;
+            background-color: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+        }
+        &.slick-active {
+          button {
+            &:before {
+              background: $main_brown_clr;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 .modal#homepage_flipbook {
   .vertical-alignment-helper {
     width: 100%;
