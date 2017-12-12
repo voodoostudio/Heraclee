@@ -426,7 +426,7 @@ section.login_section {
   section.news_list_section {
     margin-top: 0 !important; }
     section.news_list_section .news_carousel.slick-slider .slick-track .slick-slide {
-      padding: 0; }
+      padding: 0 5px; }
     section.news_list_section .outer_block_container {
       margin-bottom: 15px; }
       section.news_list_section .outer_block_container .inner_block_container {
