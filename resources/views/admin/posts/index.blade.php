@@ -87,6 +87,8 @@
         {{--<script type="text/javascript" src="/js/libraries/datepicker.min.js"></script>--}}
 
         <script type="text/javascript">
-            tallestArticleBlock();
+            if ($(window).width() >= 1200) {
+                tallestArticleBlock();
+            }
         </script>
 @stop

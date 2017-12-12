@@ -119,7 +119,10 @@
             }
         });
 
-        tallestArticleBlock();
+        if ($(window).width() >= 1200) {
+            tallestArticleBlock();
+        }
+
     </script>
 @stop
 

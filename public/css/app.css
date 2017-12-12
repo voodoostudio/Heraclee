@@ -3434,6 +3434,7 @@ section.guide_section .guide_carousel h4 {
 
 section.guide_section .guide_carousel img {
   max-width: 100%;
+  max-height: 200px;
 }
 
 section.guide_section .guide_carousel ul.slick-dots {
