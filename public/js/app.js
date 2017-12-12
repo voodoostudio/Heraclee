@@ -74,7 +74,7 @@ function resultsMapInit()  {
 
     console.log(this_page);
     if(this_page === 'index') {
-        var latlang = {lat: 43.269909, lng: 6.563301};
+        var latlang = {lat: 43.281306, lng: 6.565533};
         var map = new google.maps.Map(document.getElementById('results_map'), {
             zoom: 11,
             center: latlang,
