@@ -3432,6 +3432,10 @@ section.guide_section .guide_carousel h4 {
   text-transform: uppercase;
 }
 
+section.guide_section .guide_carousel img {
+  max-width: 100%;
+}
+
 section.guide_section .guide_carousel ul.slick-dots {
   display: block;
   width: 100%;

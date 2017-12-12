@@ -221,6 +221,9 @@ section.guide_section {
       color: $main_brown_clr;
       text-transform: uppercase;
     }
+    img {
+      max-width: 100%;
+    }
     ul.slick-dots {
       display: block;
       width: 100%;

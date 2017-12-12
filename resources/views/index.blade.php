@@ -185,7 +185,7 @@
                             <p>Are you looking for property for sale or rent in your area or internationally? With a few clicks you can find all the properties near you or in the locality of your choice by simple criteria: surface area, price, number of bedrooms, area of land…</p>
                         </div>
                         <div class="hidden-xs-down col-sm-4 col-lg-3">
-                            <img src="/img/guide/visualisation.svg" alt="" style="width: 100%">
+                            <img src="/img/guide/visualisation.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -196,7 +196,7 @@
                             <p>Do you want to work with a professional for the sale, rental or search for your property?</p>
                         </div>
                         <div class="hidden-xs-down col-sm-4 col-lg-3">
-                            <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" style="width: 100%">
+                            <img src="/img/guide/visualisation.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                             <p>Enjoy an immersive experience in your property search. With the help of the Google Maps and Street View features, you can see your property not only via photos but also locate it in its environment. For properties where the address has been provided, you have access to a wide range of useful information: appearance, access roads, means of transport, services, etc.</p>
                         </div>
                         <div class="hidden-xs-down col-sm-4 col-lg-3">
-                            <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" style="width: 100%">
+                            <img src="/img/guide/visualisation.svg" alt="">
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
         nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
-        // autoplay: true,
+        autoplay: true,
         responsive: [
             {
                 breakpoint: 576,
@@ -27,6 +27,8 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         dots: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
         responsive: [
             {
                 breakpoint: 576,
