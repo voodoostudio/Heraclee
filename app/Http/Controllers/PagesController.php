@@ -75,6 +75,19 @@ class PagesController extends Controller
             Session::get("search.object_place")
         );
 
+        $all_properties = $properties_obj->getAllProperties(
+            Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place"),
+            Session::get("search.search_keywords"),
+            Session::get("search.price_min"),
+            Session::get("search.price_max"),
+            Session::get("search.surface_min"),
+            Session::get("search.surface_max"),
+            Session::get("search.bedrooms_min"),
+            Session::get("search.bedrooms_max")
+        );
+
         /* Last 10 news on main page */
         $last_news = Posts::limit(5)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
@@ -104,7 +117,7 @@ class PagesController extends Controller
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == $lang) {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {

@@ -19,6 +19,29 @@
         $lang = LaravelLocalization::getCurrentLocaleRegional();
         $post_counter = 1;
         $slider_image = [];
+        $all_property = [];
+        $prop = [];
+
+        foreach($all_properties as $property) {
+            $prop_image[$property['property_id']] = $property['pictures'];
+
+            $key = $property['latitude']." ".$property['longitude'];
+            if(!isset($all_property[$key])) $all_property[$key] = [];
+            $all_property[$key][] = [
+                                        'property_id'   => $property['property_id'],
+                                        'reference'     => $property['reference'],
+                                        'price'         => $property['price'],
+                                        'pictures'      => $property['pictures'],
+                                        'latitude'      => $property['latitude'],
+                                        'longitude'     => $property['longitude'],
+                                        'type'          => $property['type'],
+                                        'area_surface'  => $property['area_surface'],
+                                        'rooms'         => $property['rooms'],
+                                        'bedrooms'      => $property['bedrooms'],
+                                        'city'          => $property['city'],
+                                        'view'          => $property['view'] = [ 'type' => $property['type']],
+                                    ];
+        }
     @endphp
 
     @foreach($gallery_settings as $settings)
@@ -156,83 +179,83 @@
 
 @section('javascript')
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
-    {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
+    <script src="/js/libraries/jquery.marquee.min.js"></script>
     <script>
-        {{--var locations = [--}}
-                {{--@foreach($all_property as $key => $unique)--}}
-                {{--@php--}}
-                    {{--$property_counter = 1;--}}
-                {{--@endphp--}}
-                {{--@foreach($unique as $k => $value)--}}
-            {{--{--}}
-                {{--lat: {{ $value['latitude'] }},--}}
-                {{--lng: {{ $value['longitude'] }},--}}
-                {{--@if($property_counter == 1)--}}
-                {{--counter: {{ count($unique) }},--}}
-                {{--info: '<div class="infowindow_container">' +--}}
-                {{--@foreach($unique as $k => $v)--}}
-                        {{--@php--}}
-                            {{--$counter = 1;--}}
-                        {{--@endphp--}}
-                    {{--'<div class="infowindow_block">'+--}}
-                {{--'<div class="object_img">'+--}}
-                {{--@foreach($v['pictures'] as $picture)--}}
-                        {{--@if($counter == 1)--}}
-                    {{--'<a href="{{ route('details') }}?id={{$v['property_id']}}">'+--}}
-                {{--'<img src="'+'{{ $picture['url'] }}'+'" alt="">'+--}}
-                {{--'</a>' +--}}
-                {{--@endif--}}
-                        {{--@php--}}
-                            {{--$counter++;--}}
-                        {{--@endphp--}}
-                        {{--@endforeach--}}
-                    {{--'</div>'+--}}
-                {{--'<div class="object_info_container">' +--}}
-                {{--'<div class="object_info">' +--}}
-                {{--'<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +--}}
-                {{--'<div class="subtitle"> ' +--}}
-                {{--'<span class="city">'+'{{$v['city']}}'+'</span> ' +--}}
-                {{--'<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +--}}
-                {{--'<br/><ul class="creation_date">' +--}}
-                {{--@php--}}
-                    {{--$date = new DateTime($property['created_at']);--}}
-                    {{--$now = new DateTime();--}}
-                {{--@endphp--}}
-                        {{--@if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)--}}
-                    {{--'<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +--}}
-                {{--'<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +--}}
-                {{--@endif--}}
-                    {{--'</ul>' +--}}
-                {{--'</div> ' +--}}
-                {{--'<div class="properties_block"> ' +--}}
-                {{--'<ul class="properties"> ' +--}}
-                {{--'@if(!empty($v['area_surface']))'+--}}
-                {{--'<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +--}}
-                {{--'@endif'+--}}
-                {{--'@if(!empty($v['rooms']))'+--}}
-                {{--'<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +--}}
-                {{--'@endif'+--}}
-                {{--'@if(!empty($v['bedrooms']))'+--}}
-                {{--'<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +--}}
-                {{--'@endif'+--}}
-                {{--'@if(!empty($v['view']['type']))'+--}}
-                {{--'<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +--}}
-                {{--'@endif'+--}}
-                {{--'</ul> ' +--}}
-                {{--'</div> ' +--}}
-                {{--'</div> ' +--}}
-                {{--'</div>' +--}}
-                {{--'</div>'+--}}
-                {{--@endforeach--}}
-                    {{--'</div>'--}}
-                {{--@endif--}}
-                {{--@php--}}
-                    {{--$property_counter++;--}}
-                {{--@endphp--}}
-            {{--},--}}
-            {{--@endforeach--}}
-            {{--@endforeach--}}
-        {{--];--}}
+        var locations = [
+                @foreach($all_property as $key => $unique)
+                @php
+                    $property_counter = 1;
+                @endphp
+                @foreach($unique as $k => $value)
+            {
+                lat: {{ $value['latitude'] }},
+                lng: {{ $value['longitude'] }},
+                @if($property_counter == 1)
+                counter: {{ count($unique) }},
+                info: '<div class="infowindow_container">' +
+                @foreach($unique as $k => $v)
+                        @php
+                            $counter = 1;
+                        @endphp
+                    '<div class="infowindow_block">'+
+                '<div class="object_img">'+
+                @foreach($v['pictures'] as $picture)
+                        @if($counter == 1)
+                    '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+
+                '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
+                '</a>' +
+                @endif
+                        @php
+                            $counter++;
+                        @endphp
+                        @endforeach
+                    '</div>'+
+                '<div class="object_info_container">' +
+                '<div class="object_info">' +
+                '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
+                '<div class="subtitle"> ' +
+                '<span class="city">'+'{{$v['city']}}'+'</span> ' +
+                '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                '<br/><ul class="creation_date">' +
+                @php
+                    $date = new DateTime($property['created_at']);
+                    $now = new DateTime();
+                @endphp
+                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                    '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
+                '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
+                @endif
+                    '</ul>' +
+                '</div> ' +
+                '<div class="properties_block"> ' +
+                '<ul class="properties"> ' +
+                '@if(!empty($v['area_surface']))'+
+                '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                '@endif'+
+                '@if(!empty($v['rooms']))'+
+                '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
+                '@endif'+
+                '@if(!empty($v['bedrooms']))'+
+                '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
+                '@endif'+
+                '@if(!empty($v['view']['type']))'+
+                '<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +
+                '@endif'+
+                '</ul> ' +
+                '</div> ' +
+                '</div> ' +
+                '</div>' +
+                '</div>'+
+                @endforeach
+                    '</div>'
+                @endif
+                @php
+                    $property_counter++;
+                @endphp
+            },
+            @endforeach
+            @endforeach
+        ];
 
         resultsMapInit();
     </script>
