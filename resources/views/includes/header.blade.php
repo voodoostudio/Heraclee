@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="last_updates">
-                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ date('d.m.Y - H:i', $last_update) }}</p>
+                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ date('d.m.Y - H:i', (!empty($last_update)) ? $last_update : 0) }}</p>
                 </div>
             </div>
 

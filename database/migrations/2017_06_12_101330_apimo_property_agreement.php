@@ -61,7 +61,7 @@ class ApimoPropertyAgreement extends Migration
                 [
                     'reference' => 3,
                     'locale' => 'en_GB',
-                    'value' => 'Exclusive',
+                    'value' => 'Exclusivity',
                 ],
                 [
                     'reference' => 4,
