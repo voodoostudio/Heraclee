@@ -34,7 +34,7 @@ $(document).ready(function() {
     $('.gallery_view .panorama_link_container button').on('click', function () {
         $('.gallery_container').addClass('display_panorama');
     });
-    $('.gallery_view button.close_panorama').on('click', function () {
+    $('.gallery_container button.close_panorama').on('click', function () {
         $('.gallery_container').removeClass('display_panorama');
     });
 

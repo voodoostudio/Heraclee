@@ -6101,19 +6101,20 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   z-index: 100;
 }
 
-#details section.gallery_section .gallery_container .gallery_view .close_panorama, #locationsDetails section.gallery_section .gallery_container .gallery_view .close_panorama {
+#details section.gallery_section .gallery_container .close_panorama_container, #locationsDetails section.gallery_section .gallery_container .close_panorama_container {
+  text-align: center;
+}
+
+#details section.gallery_section .gallery_container .close_panorama_container .close_panorama, #locationsDetails section.gallery_section .gallery_container .close_panorama_container .close_panorama {
   display: none;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -85px;
+  margin: 15px auto 0;
   font-size: 1rem;
   line-height: 1rem;
   text-transform: uppercase;
   z-index: 101;
 }
 
-#details section.gallery_section .gallery_container .gallery_view .close_panorama .icn, #locationsDetails section.gallery_section .gallery_container .gallery_view .close_panorama .icn {
+#details section.gallery_section .gallery_container .close_panorama_container .close_panorama .icn, #locationsDetails section.gallery_section .gallery_container .close_panorama_container .close_panorama .icn {
   margin-right: 10px;
   display: block;
   float: left;
@@ -6161,11 +6162,15 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
           transform: translateY(-50%);
 }
 
-#details section.gallery_section .gallery_container.display_panorama .gallery_view #object_panorama, #locationsDetails section.gallery_section .gallery_container.display_panorama .gallery_view #object_panorama {
+#details section.gallery_section .gallery_container.display_panorama .close_panorama_container, #locationsDetails section.gallery_section .gallery_container.display_panorama .close_panorama_container {
+  text-align: center;
+}
+
+#details section.gallery_section .gallery_container.display_panorama .close_panorama_container .close_panorama, #locationsDetails section.gallery_section .gallery_container.display_panorama .close_panorama_container .close_panorama {
   display: block;
 }
 
-#details section.gallery_section .gallery_container.display_panorama .gallery_view .close_panorama, #locationsDetails section.gallery_section .gallery_container.display_panorama .gallery_view .close_panorama {
+#details section.gallery_section .gallery_container.display_panorama .gallery_view #object_panorama, #locationsDetails section.gallery_section .gallery_container.display_panorama .gallery_view #object_panorama {
   display: block;
 }
 

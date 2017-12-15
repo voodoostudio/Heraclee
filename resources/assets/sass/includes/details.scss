@@ -163,12 +163,12 @@
           height: 100%;
           z-index: 100;
         }
+      }
+      .close_panorama_container {
+        text-align: center;
         .close_panorama {
           display: none;
-          position: absolute;
-          bottom: 20px;
-          left: 50%;
-          margin-left: -85px;
+          margin: 15px auto 0;
           font-size: 1rem;
           line-height: 1rem;
           text-transform: uppercase;
@@ -223,11 +223,14 @@
         }
       }
       &.display_panorama {
-        .gallery_view {
-          #object_panorama {
+        .close_panorama_container {
+          text-align: center;
+          .close_panorama {
             display: block;
           }
-          .close_panorama {
+        }
+        .gallery_view {
+          #object_panorama {
             display: block;
           }
           button.fullscreen_btn {
