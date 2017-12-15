@@ -79,9 +79,9 @@
                     </li>
                     <li class="nav-item">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="dropdown-toggle nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {{ trans('lang.other_countries') }}
-                            </button>
+                            </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
                                 <a class="dropdown-item {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
