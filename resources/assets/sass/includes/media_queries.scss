@@ -335,10 +335,8 @@
 
   .agent_info_block {
     .agent_img {
-      img {
-        height: 120px;
-        width: 120px;
-      }
+      max-width: 120px;
+      max-height: 120px;
     }
     .agent_info {
       p {
@@ -1733,7 +1731,7 @@
     .agent_img {
       float: none;
       text-align: center;
-      margin: 0 0 20px 0;
+      margin: 0 auto 20px;
     }
     .agent_info {
       float: none;

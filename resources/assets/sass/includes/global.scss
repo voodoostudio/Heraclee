@@ -555,11 +555,11 @@ section.page_title_section {
   .agent_img {
     float: left;
     margin-right: 30px;
+    max-width: 150px;
+    max-height: 150px;
     img {
-      //border: 1px solid $main_brown_clr;
-      //height: 100%;
-      max-width: 150px;
-      max-height: 150px;
+      max-width: 100%;
+      max-height: 100%;
     }
   }
   .agent_info {

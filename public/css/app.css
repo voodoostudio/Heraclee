@@ -1908,11 +1908,13 @@ section.page_title_section.hidden {
 .agent_info_block .agent_img {
   float: left;
   margin-right: 30px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .agent_info_block .agent_img img {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .agent_info_block .agent_info {
@@ -6917,9 +6919,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 1rem;
     padding: 10px 25px 8px;
   }
-  .agent_info_block .agent_img img {
-    height: 120px;
-    width: 120px;
+  .agent_info_block .agent_img {
+    max-width: 120px;
+    max-height: 120px;
   }
   .agent_info_block .agent_info p {
     margin-top: 10px;
@@ -7977,7 +7979,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   .agent_info_block .agent_img {
     float: none;
     text-align: center;
-    margin: 0 0 20px 0;
+    margin: 0 auto 20px;
   }
   .agent_info_block .agent_info {
     float: none;
