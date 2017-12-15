@@ -6,9 +6,11 @@
         <meta charset="utf-8">
         <title>Heraclee - @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Heraclee website">
         <meta name="keywords" content="heraclee, website, responsive">
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71420108-6"></script>
@@ -21,14 +23,6 @@
         </script>
 
         {{ csrf_field() }}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/global.min.css">--}}
         <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
         <style>
@@ -213,7 +207,6 @@
 
         @yield('css')
         @include('js-localization::head')
-        {{--<link rel="stylesheet" type="text/css" href="/css/media_queries.css">--}}
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
         <![endif]-->
@@ -240,13 +233,6 @@
         @include('includes.footer')
         <script type="text/javascript" src="{{mix('js/libraries.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
-
-        {{--<script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/tether.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/functions.min.js"></script>--}}
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
@@ -266,17 +252,10 @@
                 }
             });
         </script>
-        {{--<script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/slick.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>--}}
-
-
 
         @if( LaravelLocalization::getCurrentLocale() == 'fr' )
             <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
         @endif
-
-        {{--<script type="text/javascript" src="/js/scripts.js"></script>--}}
 
         <script>
             window.fbAsyncInit = function() {
