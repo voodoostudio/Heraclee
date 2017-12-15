@@ -39,12 +39,16 @@ function contactMapInit() {
             position: google.maps.ControlPosition.LEFT_CENTER
         }
     });
-    var markerImage = new google.maps.MarkerImage('/img/map_pin.svg');
+    var markerImage = {
+        url: '/img/map_pin.svg',
+        scaledSize: new google.maps.Size(70, 70),
+    };
 
     marker = new google.maps.Marker({
         position: latlong,
         map: map,
-        icon: markerImage
+        icon: markerImage,
+        optimized: false
     });
 }
 
