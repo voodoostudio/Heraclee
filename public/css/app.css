@@ -1422,6 +1422,7 @@ header .logo {
 
 header .logo img {
   max-width: 90px;
+  max-height: 90px;
   transition: 0.2s ease-in-out;
 }
 
@@ -6837,6 +6838,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .logo img {
     max-width: 84px;
+    max-height: 84px;
   }
   header .navigation_container .navigation_block {
     margin-left: 100px;
@@ -7094,6 +7096,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .logo img {
     max-width: 70px;
+    max-height: 70px;
   }
   header div.menu-icon {
     display: block;
@@ -7573,6 +7576,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .logo img {
     max-width: 50px;
+    max-height: 50px;
   }
   header div.menu-icon {
     display: block;
@@ -7595,6 +7599,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header.minimized .logo img {
     max-width: 40px;
+    max-height: 40px;
   }
   header.minimized div.menu-icon {
     top: 20px;
@@ -8014,6 +8019,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .logo img {
     max-width: 40px;
+    max-height: 40px;
   }
   header div.menu-icon {
     right: 15px;
