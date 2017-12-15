@@ -61,7 +61,7 @@ section.news_list_section {
               margin: 0 auto;
               position: relative;
               top: 50%;
-              transform: translateY(-50%);
+              @include my_transform(translateY(-50%));
             }
             &:hover {
               opacity: 0.5;
@@ -314,7 +314,7 @@ section.news_admin_nav_section {
         max-height: 100%;
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        @include my_transform(translateY(-50%));
       }
     }
   }
@@ -347,7 +347,7 @@ section.news_admin_nav_section {
           display: block;
           position: relative;
           top: 50%;
-          transform: translateY(-50%);
+          @include my_transform(translateY(-50%));
         }
       }
       & + label:hover {

@@ -317,12 +317,10 @@ header {
         transition: all 0.3s;
       }
       &:before {
-        -webkit-transform: translateY(-8px);
-        transform: translateY(-8px);
+        @include my_transform(translateY(-8px));
       }
       &:after {
-        -webkit-transform: translateY(8px);
-        transform: translateY(8px);
+        @include my_transform(translateY(8px));
       }
     }
   }
@@ -903,7 +901,7 @@ footer {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    @include my_transform(translate(-50%,-50%));
   }
 }
 
