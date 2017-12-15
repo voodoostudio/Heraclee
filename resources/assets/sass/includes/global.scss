@@ -12,6 +12,7 @@ body {
   color: $main_light_clr;
   background: $main_dark_clr;
   position: relative;
+  width: 100%;
   min-height: 100%;
   &.preloader_active {
     height: 100vh;

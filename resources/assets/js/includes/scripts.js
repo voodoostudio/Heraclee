@@ -104,14 +104,16 @@ $(document).ready(function() {
         $(".search_section form").submit();
     });
 
-    $('#agencyContactModal').on('show.bs.modal', function (e) {
-        $('body').css('overflow','hidden');
-        $('body').css('position','fixed');
-    });
-    $('#agencyContactModal').on('hide.bs.modal', function (e) {
-        $('body').css('overflow','initial');
-        $('body').css('position','relative');
-    });
+    if ($(window).width() < 576) {
+        $('#agencyContactModal').on('show.bs.modal', function (e) {
+            $('body').css('overflow','hidden');
+            $('body').css('position','fixed');
+        });
+        $('#agencyContactModal').on('hide.bs.modal', function (e) {
+            $('body').css('overflow','initial');
+            $('body').css('position','relative');
+        });
+    }
 
     disableSearchFields();
     $(".search_input input").on("change paste keyup", function() {

@@ -1300,6 +1300,7 @@ body {
   color: #fdfdfd;
   background: #272727;
   position: relative;
+  width: 100%;
   min-height: 100%;
 }
 
