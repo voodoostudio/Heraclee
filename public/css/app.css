@@ -1913,8 +1913,8 @@ section.page_title_section.hidden {
 }
 
 .agent_info_block .agent_img img {
-  width: 100%;
-  height: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 .agent_info_block .agent_info {
@@ -6920,6 +6920,10 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 10px 25px 8px;
   }
   .agent_info_block .agent_img {
+    width: 120px;
+    height: 120px;
+  }
+  .agent_info_block .agent_img img {
     width: 120px;
     height: 120px;
   }
