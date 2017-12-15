@@ -41,11 +41,13 @@ h1 {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
     border: 1px solid #ccac83;
     color: #ccac83; }
+    .title_container a.action_link i.icn {
+      line-height: 38px; }
     .title_container a.action_link:hover {
       color: #fdfdfd; }
     .title_container a.action_link.add_new {
@@ -114,7 +116,7 @@ section.news_admin_nav_section {
   margin-top: 40px; }
 
 #news_admin .news_list_section .title_container a.action_link.add_new i {
-  display: table;
+  display: block;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

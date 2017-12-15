@@ -19,11 +19,14 @@ h1 {
     width: 40px;
     height: 40px;
     font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: table;
+    text-align: center;
+    vertical-align: middle;
     border: 1px solid $main_brown_clr;
     color: $main_brown_clr;
+    i.icn {
+      line-height: 38px;
+    }
     &:hover {
       color: $main_light_clr;
     }
@@ -123,7 +126,7 @@ section.news_admin_nav_section {
     .title_container {
       a.action_link.add_new {
         i {
-          display: table;
+          display: block;
           @include my_transform(rotate(45deg));
         }
       }
