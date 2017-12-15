@@ -1648,7 +1648,7 @@
           .object_block_container {
             .object_block {
               margin: 10px 0 70px;
-              height: calc(100% - 80px);
+              max-height: 250px;
               .img_block {
                 .gallery_view {
                   ul.gallery {

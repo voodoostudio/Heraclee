@@ -175,7 +175,7 @@
         </div>
     </section>
 
-    <section class="guide_section">
+    <section class="guide_section" style="display: none">
         <div class="container-fluid">
             <div class="guide_carousel">
                 <div class="guide_slide">

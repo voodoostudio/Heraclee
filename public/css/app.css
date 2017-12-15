@@ -7935,7 +7935,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block {
     margin: 10px 0 70px;
-    height: calc(100% - 80px);
+    max-height: 250px;
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
     max-height: 100%;
