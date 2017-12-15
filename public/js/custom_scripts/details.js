@@ -61,13 +61,19 @@ $(document).ready(function() {
                 position: google.maps.ControlPosition.RIGHT_CENTER
             }
         });
-        var markerImage = new google.maps.MarkerImage('/img/map_pin.svg');
 
-        var marker = new google.maps.Marker({
+        var markerImage = {
+            url: '/img/map_pin.svg',
+            scaledSize: new google.maps.Size(70, 70),
+        };
+
+        marker = new google.maps.Marker({
             position: latlong,
             map: map,
-            icon: markerImage
+            icon: markerImage,
+            optimized: false
         });
+
         google.maps.event.addListener(map, 'zoom_changed', function () {
             checkPlaceMarkers(map.getZoom());
         });
