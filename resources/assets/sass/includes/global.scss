@@ -371,12 +371,7 @@ header {
           li.nav-item {
             margin-bottom: 0;
             padding-right: 15px;
-            a.nav-link {
-              padding: 3px 5px;
-              font-size: 0.75rem;
-              line-height: 0.75rem;
-            }
-            button.btn {
+            .nav-link {
               padding: 3px 5px;
               font-size: 0.75rem;
               line-height: 0.75rem;

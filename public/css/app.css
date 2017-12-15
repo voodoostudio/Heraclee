@@ -1710,13 +1710,7 @@ header.minimized .navigation_container nav ul.nav li.nav-item {
   padding-right: 15px;
 }
 
-header.minimized .navigation_container nav ul.nav li.nav-item a.nav-link {
-  padding: 3px 5px;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
-}
-
-header.minimized .navigation_container nav ul.nav li.nav-item button.btn {
+header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
   padding: 3px 5px;
   font-size: 0.75rem;
   line-height: 0.75rem;
@@ -6798,11 +6792,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding-right: 10px;
   }
   header .navigation_container nav ul.nav li.nav-item .nav-link {
-    font-size: 0.875rem;
-    line-height: 0.875rem;
+    font-size: 0.85rem;
+    line-height: 0.85rem;
   }
   header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info {
     margin-top: 15px;
