@@ -1918,6 +1918,7 @@ section.page_title_section.hidden {
 
 .agent_info_block .agent_img img {
   max-width: 150px;
+  max-height: 150px;
 }
 
 .agent_info_block .agent_info {
@@ -2224,6 +2225,7 @@ footer section.bottom_footer_section .contact_block a.footer_logo_link {
 
 footer section.bottom_footer_section .contact_block a.footer_logo_link img {
   max-width: 100px;
+  max-height: 100px;
 }
 
 footer section.bottom_footer_section .contact_block ul {
@@ -6918,6 +6920,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   .agent_info_block .agent_img img {
     height: 120px;
+    width: 120px;
   }
   .agent_info_block .agent_info p {
     margin-top: 10px;
