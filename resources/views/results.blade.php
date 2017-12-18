@@ -30,6 +30,7 @@
             if(!isset($all_property[$key])) $all_property[$key] = [];
             $all_property[$key][] = [
                                         'property_id'   => $property['property_id'],
+                                        'category'      => $property['category'],
                                         'reference'     => $property['reference'],
                                         'price'         => $property['price'],
                                         'pictures'      => $property['pictures'],
@@ -144,6 +145,7 @@
                                     '<div class="object_info_container">' +
                                         '<div class="object_info">' +
                                             '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
+                                            '<span class="object_offer_type">'+'{{$v['type']}}'+'</span>' +
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                                                 '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +

@@ -104,11 +104,17 @@ section.results_section {
         }
         .object_info_container {
           width: 300px;
+          .object_offer_type {
+            float: right;
+            color: #ccab82;
+            text-transform: uppercase;
+          }
           .object_info {
             padding: 20px 15px 20px 15px;
             a {
               display: table;
               font-size: 1rem;
+              float: left;
             }
             .subtitle {
               span {

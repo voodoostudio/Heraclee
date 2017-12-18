@@ -592,6 +592,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   float: left;
   opacity: 1;
+  line-height: 1;
   position: relative;
   cursor: default;
 }
@@ -1238,6 +1239,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   float: left;
   opacity: 1;
+  line-height: 1;
   position: relative;
   cursor: default;
 }
@@ -3012,6 +3014,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   float: left;
   opacity: 1;
+  line-height: 1;
   position: relative;
   cursor: default;
 }
@@ -4108,6 +4111,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   float: left;
   opacity: 1;
+  line-height: 1;
   position: relative;
   cursor: default;
 }
@@ -4717,6 +4721,12 @@ section.results_section #results_map .gm-style-iw .infowindow_container .object_
   width: 300px;
 }
 
+section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_offer_type {
+  float: right;
+  color: #ccab82;
+  text-transform: uppercase;
+}
+
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info {
   padding: 20px 15px 20px 15px;
 }
@@ -4724,6 +4734,7 @@ section.results_section #results_map .gm-style-iw .infowindow_container .object_
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info a {
   display: table;
   font-size: 1rem;
+  float: left;
 }
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info .subtitle span {
@@ -5863,6 +5874,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   float: left;
   opacity: 1;
+  line-height: 1;
   position: relative;
   cursor: default;
 }
