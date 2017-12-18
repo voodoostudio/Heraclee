@@ -4285,6 +4285,7 @@ section.results_section .results_container .container-fluid .object_block_contai
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .new_label {
   position: absolute;
+  text-transform: uppercase;
   top: 27px;
   left: -68px;
   color: #272727;
@@ -4296,13 +4297,14 @@ section.results_section .results_container .container-fluid .object_block_contai
   text-align: center;
   padding: 10px;
   box-shadow: 0px 0px 30px -5px #272727;
-  font-family: opensans_semibold;
+  font-family: "Times New Roman";
+  font-weight: 600;
   z-index: 1;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .new_label span {
   display: block;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .new_label span.updated {
@@ -4878,6 +4880,7 @@ section.results_section .slick-track {
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label {
   position: absolute;
+  text-transform: uppercase;
   top: 27px;
   left: -68px;
   color: #272727;
@@ -4889,13 +4892,14 @@ section.results_section .slick-track {
   text-align: center;
   padding: 10px;
   box-shadow: 0px 0px 30px -5px #272727;
-  font-family: opensans_semibold;
+  font-family: "Times New Roman";
+  font-weight: 600;
   z-index: 1;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label span {
   display: block;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label span.updated {

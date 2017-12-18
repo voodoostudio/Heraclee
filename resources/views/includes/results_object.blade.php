@@ -7,9 +7,12 @@
             @endif --}}
 
             @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
-                <div class="exclusive_label_container">
-                    <div class="exclusive_label">{{ $property['agreement']['value'] }}</div>
+                <div class="new_label">
+                    <span class="exclusive">{{ $property['agreement']['value'] }}</span>
                 </div>
+                {{--<div class="exclusive_label_container">--}}
+                    {{--<div class="exclusive_label">{{ $property['agreement']['value'] }}</div>--}}
+                {{--</div>--}}
             @endif
 
 
