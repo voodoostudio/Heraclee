@@ -21,14 +21,15 @@
         $slider_image = [];
         $all_property = [];
         $prop = [];
+        $sell_type = [1, 4, 5, 6];
 
         foreach($all_properties as $property) {
             $prop_image[$property['property_id']] = $property['pictures'];
-
             $key = $property['latitude']." ".$property['longitude'];
             if(!isset($all_property[$key])) $all_property[$key] = [];
             $all_property[$key][] = [
                                         'property_id'   => $property['property_id'],
+                                        'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                         'reference'     => $property['reference'],
                                         'price'         => $property['price'],
                                         'pictures'      => $property['pictures'],
@@ -39,7 +40,7 @@
                                         'rooms'         => $property['rooms'],
                                         'bedrooms'      => $property['bedrooms'],
                                         'city'          => $property['city'],
-                                        'view'          => $property['view'] = [ 'type' => $property['type']],
+                                        'view'          => $property['view'],
                                     ];
         }
     @endphp
@@ -251,11 +252,12 @@
                         @endforeach
                     '</div>'+
                 '<div class="object_info_container">' +
-                '<div class="object_info">' +
-                '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
-                '<div class="subtitle"> ' +
-                '<span class="city">'+'{{$v['city']}}'+'</span> ' +
-                '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                    '<div class="object_info">' +
+                        '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
+                        '<span class="object_offer_type">'+'{{$v['category']}}'+'</span>' +
+                        '<div class="subtitle"> ' +
+                            '<span class="city">'+'{{$v['city']}}'+'</span> ' +
+                            '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
                 '<br/><ul class="creation_date">' +
                 @php
                     $date = new DateTime($property['created_at']);
@@ -268,20 +270,20 @@
                     '</ul>' +
                 '</div> ' +
                 '<div class="properties_block"> ' +
-                '<ul class="properties"> ' +
-                '@if(!empty($v['area_surface']))'+
-                '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
-                '@endif'+
-                '@if(!empty($v['rooms']))'+
-                '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
-                '@endif'+
-                '@if(!empty($v['bedrooms']))'+
-                '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
-                '@endif'+
-                '@if(!empty($v['view']['type']))'+
-                '<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +
-                '@endif'+
-                '</ul> ' +
+                    '<ul class="properties"> ' +
+                        '@if(!empty($v['area_surface']))'+
+                            '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                        '@endif'+
+                        '@if(!empty($v['rooms']))'+
+                            '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
+                        '@endif'+
+                        '@if(!empty($v['bedrooms']))'+
+                            '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
+                        '@endif'+
+                        '@if(!empty($v['view']['type']))'+
+                            '<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['type']}}'+'</span> </span> </li> ' +
+                        '@endif'+
+                    '</ul> ' +
                 '</div> ' +
                 '</div> ' +
                 '</div>' +

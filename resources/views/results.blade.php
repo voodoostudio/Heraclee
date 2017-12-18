@@ -22,15 +22,15 @@
 
         $all_property = [];
         $prop = [];
+        $sell_type = [1, 4, 5, 6];
 
         foreach($all_properties as $property) {
             $prop_image[$property['property_id']] = $property['pictures'];
-
             $key = $property['latitude']." ".$property['longitude'];
             if(!isset($all_property[$key])) $all_property[$key] = [];
             $all_property[$key][] = [
                                         'property_id'   => $property['property_id'],
-                                        'category'      => $property['category'],
+                                        'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                         'reference'     => $property['reference'],
                                         'price'         => $property['price'],
                                         'pictures'      => $property['pictures'],
@@ -41,11 +41,9 @@
                                         'rooms'         => $property['rooms'],
                                         'bedrooms'      => $property['bedrooms'],
                                         'city'          => $property['city'],
-                                        'view'          => $property['view'] = [ 'type' => $property['type']],
+                                        'view'          => $property['view'],
                                     ];
         }
-
-   // dump($all_properties);
     @endphp
 
     @include('includes.search_block')
@@ -145,7 +143,7 @@
                                     '<div class="object_info_container">' +
                                         '<div class="object_info">' +
                                             '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
-                                            '<span class="object_offer_type">'+'{{$v['type']}}'+'</span>' +
+                                            '<span class="object_offer_type">'+'{{$v['category']}}'+'</span>' +
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                                                 '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
