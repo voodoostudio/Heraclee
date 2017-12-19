@@ -213,8 +213,10 @@ class Properties extends Model
 
         if($search_keywords != '') {
             $properties = DB::table('apimo_properties')
-                //->where($conditions_where)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
                 ->where(function ($query) use ($search_keywords) {
                     $lang_short = LaravelLocalization::getCurrentLocale();
                     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -405,19 +407,18 @@ class Properties extends Model
                             ->orWhereIn('property_id', $commentary);
                     }
                 })
-               /* ->whereIn('type', $object_type)
-                ->whereIn('category', $sell_type_array)
-                ->whereIn('city', $object_place)
-                ->whereIn('country', $country_array)*/
                 ->limit($items)
                 ->offset($offset)
                 ->orderBy('property_id', 'DESC')
                 ->get();
 
+
             /* Count items */
             $this->property_count = DB::table('apimo_properties')
-               // ->where($conditions_where)
-                ->where('reference', 'like',  'HSTP%' )
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
                 ->where(function($query) use ($search_keywords) {
                     $lang_short = LaravelLocalization::getCurrentLocale();
                     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -609,16 +610,16 @@ class Properties extends Model
                             ->orWhereIn('property_id', $commentary);
                     }
                 })
-//                ->whereIn('type', $object_type)
-//                ->whereIn('category', $sell_type_array)
-//                ->whereIn('city', $object_place)
                 ->whereIn('country', $country_array)
                 ->get()
                 ->count();
         } else {
             $properties = DB::table('apimo_properties')
                 ->where($conditions_where)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->whereIn('type', $object_type)
                 ->whereIn('category', $sell_type_array)
                 ->whereIn('city', $object_place)
@@ -630,7 +631,10 @@ class Properties extends Model
 
             $this->property_count = DB::table('apimo_properties')
                 ->where($conditions_where)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->whereIn('type', $object_type)
                 ->whereIn('category', $sell_type_array)
                 ->whereIn('city', $object_place)
@@ -641,7 +645,10 @@ class Properties extends Model
 
         $this->all_property_count = DB::table('apimo_properties')
             ->whereIn('country', $country_array)
-            ->where('reference', 'like',  'HSTP%' )
+            ->where(function($query) {
+                $query->orWhere('reference', 'like', 'HSTP%')
+                      ->orWhere('reference', 'like', 'HD%');
+            })
             ->get()
             ->count();
 
@@ -671,7 +678,6 @@ class Properties extends Model
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
             }
         }
-      //  dump($array);
         return $array;
     }
 
@@ -794,11 +800,10 @@ class Properties extends Model
 
         if($search_keywords != '') {
             $properties = DB::table('apimo_properties')
-//                ->whereIn('type', $object_type)
-//                ->whereIn('category', $sell_type_array)
-//                ->whereIn('city', $object_place)
-//                ->where($conditions_where)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
                 ->where(function ($query) use ($search_keywords) {
                     $lang_short = LaravelLocalization::getCurrentLocale();
                     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -997,7 +1002,10 @@ class Properties extends Model
                 ->whereIn('category', $sell_type_array)
                 ->whereIn('city', $object_place)
                 ->where($conditions_where)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->whereIn('country', $country_array)
                 ->get();
         }
@@ -1771,6 +1779,10 @@ class Properties extends Model
 
         if($search_keywords != '') {
             $property_id = DB::table('apimo_properties')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
                 ->where(function ($query) use ($search_keywords) {
                     $lang_short = LaravelLocalization::getCurrentLocale();
                     $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -1961,7 +1973,6 @@ class Properties extends Model
                             ->orWhereIn('property_id', $commentary);
                     }
                 })
-                ->where('reference', 'like', 'HSTP%')
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')
                 ->toArray();
@@ -1972,7 +1983,10 @@ class Properties extends Model
                 ->whereIn('type', $object_type)
                 ->whereIn('city', $object_place)
                 ->whereIn('category', $sell_type_array)
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')
                 ->toArray();
@@ -2022,7 +2036,10 @@ class Properties extends Model
         }
 
         $properties = DB::table('apimo_properties')
-            ->where('reference', 'like',  'HSTP%' )
+            ->where(function($query) {
+                $query->orWhere('reference', 'like', 'HSTP%')
+                      ->orWhere('reference', 'like', 'HD%');
+            })
             ->whereIn('country', $country_array)->pluck('city');
 
         $cities = DB::table('apimo_city')->whereIn('city_id', $properties)->get();

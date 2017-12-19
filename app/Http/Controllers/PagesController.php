@@ -460,7 +460,10 @@ class PagesController extends Controller
 
             /* for slider */
             $mp_property_id = DB::table('apimo_properties')
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')
@@ -520,7 +523,10 @@ class PagesController extends Controller
 
             /* for slider */
             $mp_property_id = DB::table('apimo_properties')
-                ->where('reference', 'like', 'HSTP%')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                          ->orWhere('reference', 'like', 'HD%');
+                })
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')

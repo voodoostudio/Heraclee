@@ -49,7 +49,6 @@
                                     }
                                     if($country[0] == 'france' || $country['0'] == 'fr' || $country['0'] == 'en' || $country['0'] == '') {
                                         $city_arr['Cavalaire-sur-Mer'] = ['city_id' => '11111', 'name' => 'Cavalaire-sur-Mer'];
-                                        $city_arr['La Croix-Valmer'] = ['city_id' => '12111', 'name' => 'La Croix-Valmer'];
                                         $city_arr['La Môle'] = ['city_id' => '13111', 'name' => 'La Môle'];
                                         $city_arr['Rayol-Canadel-sur-Mer'] = ['city_id' => '14111', 'name' => 'Rayol-Canadel-sur-Mer'];
                                     }

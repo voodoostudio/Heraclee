@@ -13,7 +13,10 @@
     $properties_date =
         DB::table('apimo_properties')
             ->select('updated_at')
-            ->where('reference', 'like', 'HSTP%')
+            ->where(function($query) {
+                $query->orWhere('reference', 'like', 'HSTP%')
+                      ->orWhere('reference', 'like', 'HD%');
+            })
             ->orderBy('updated_at', 'desc')
             ->value('updated_at');
     $properties_last_date = (!empty($properties_date)) ? date(strtotime($properties_date . '+1 hours')) : '';
