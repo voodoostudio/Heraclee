@@ -113,7 +113,7 @@
                 {{--</a>--}}
 
                 <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" class="hidden-md-up" target="_blank">
-                    <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">
+                    <img src="/flipbooks/mauritius/pierre_de_lune_brochure.jpg" alt="" class="">
                 </a>
                 <div class="iframe-m hidden-sm-down">
                     <p>
