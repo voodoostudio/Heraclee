@@ -48,7 +48,7 @@
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
 
-            <section class="index_main_carousel_section" style="display: none">
+            <section class="index_main_carousel_section">
                     <ul class="index_main_carousel">
                         @foreach($gallery as $image)
                             @if($image['page'] == 'homepage')
@@ -112,10 +112,10 @@
                     {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
                 {{--</a>--}}
 
-                <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" class="hidden-sm-up" target="_blank">
+                <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" class="hidden-md-up" target="_blank">
                     <img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">
                 </a>
-                <div class="iframe-m hidden-xs-down">
+                <div class="iframe-m hidden-sm-down">
                     <p>
                         <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                     </p>
