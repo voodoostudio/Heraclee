@@ -1,48 +1,6 @@
-﻿/* BEGIN Light*/
-@font-face {
-	font-family: 'opensans_light';
-	src: url('/fonts/opensans/light/opensans_light.eot');
-	src: url('/fonts/opensans/light/opensans_light.eot?#iefix') format('embedded-opentype'),
-	url('/fonts/opensans/light/opensans_light.woff') format('woff'),
-	url('/fonts/opensans/light/opensans_light.ttf') format('truetype'),
-	url('/fonts/opensans/light/opensans_light.svg') format('svg');
-	font-weight: 100;
-	font-style: normal;
-}
-/* END Light*/
-
-/* BEGIN Regular*/
-@font-face {
-	font-family: 'opensans_regular';
-	src: url('/fonts/opensans/regular/opensans_regular.eot');
-	src: url('/fonts/opensans/regular/opensans_regular.eot?#iefix') format('embedded-opentype'),
-	url('/fonts/opensans/regular/opensans_regular.woff') format('woff'),
-	url('/fonts/opensans/regular/opensans_regular.ttf') format('truetype'),
-	url('/fonts/opensans/regular/opensans_regular.svg') format('svg');
-	font-weight: 400;
-	font-style: normal;
-}
-/* END Regular*/
-
-/* BEGIN Semibold*/
-@font-face {
-	font-family: 'opensans_semibold';
-	src: url('/fonts/opensans/semibold/opensans_semibold.eot');
-	src: url('/fonts/opensans/semibold/opensans_semibold.eot?#iefix') format('embedded-opentype'),
-	url('/fonts/opensans/semibold/opensans_semibold.woff') format('woff'),
-	url('/fonts/opensans/semibold/opensans_semibold.ttf') format('truetype'),
-	url('/fonts/opensans/semibold/opensans_semibold.svg') format('svg');
-	font-weight: 600;
-	font-style: normal;
-}
-/* END Semibold*/
-
-
-
-
-p{padding:0;margin:0;}
-input{font-family: opensans_regular;}
-textarea{font-family: opensans_regular;}
+﻿p{padding:0;margin:0;}
+input{font-family:Calibri;}
+textarea{font-family:Calibri;}
 .win10_border{border:1px solid rgba(252, 251, 249, 0.5);}
 
 .form_title{font-size:18px;}
@@ -52,7 +10,7 @@ textarea{font-family: opensans_regular;}
 .close:active{opacity:0.5;}
 .close:focus{opacity:0.5;}
 
-.about_form{vertical-align:middle;line-height:20px;text-align:center;width:437px;height:315px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;position:absolute;}
+.about_form{vertical-align:middle;line-height:20px;text-align:center;width:437px;height:315px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;position:absolute;}
 .about_form .form_title{text-align:left;}
 .about_form .content_title{border:1px solid transparent;top:51px;cursor:pointer;width:105px;height:34px;position:absolute;line-height:34px;vertical-align:middle;text-align:center;}
 .about_form .contact_title{left:51%;}
@@ -96,7 +54,7 @@ transform:rotate(360deg);
 
 .colorSelection{width:25px;height:25px;cursor:pointer;border-width:2px;padding:0;}
 
-.bookmark_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;display:block;z-index:1000;left:-350px;top:157px;width:300px;height:425px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;}
+.bookmark_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;display:block;z-index:1000;left:-350px;top:157px;width:300px;height:425px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;}
 .bookmark_form .inputForm{width:100%;margin-top:10px;height:23px;position:relative;}
 .bookmark_form .input_title{width:250px;height:23px;border:none;padding:0 10px;position:absolute;left:0;}
 .bookmark_form .colorSelection{width:24px;height:23px;border:none;position:absolute;right:0;}
@@ -157,7 +115,7 @@ transform:rotate(360deg);
 
 
 
-.help_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;left:0;top:0;z-index:1000;width:380px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;}
+.help_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;left:0;top:0;z-index:1000;width:380px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;}
 .help_form{text-align:center;}
 .help_form .logo{text-align:center;margin:10px;max-width:380px;max-height:200px;}
 .help_form .title{margin:10px;}
@@ -169,7 +127,7 @@ transform:rotate(360deg);
 
 
 
-.print_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;left:0;top:0;z-index:1000;background:#000000;width:310px;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;position:absolute;}
+.print_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;left:0;top:0;z-index:1000;background:#000000;width:310px;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;position:absolute;}
 .print_form .printButton{cursor:pointer;width:100%;height:26px;margin-top:20px;background:rgba(255,255,255,0.25);line-height:26px;vertical-align: middle;text-align:center;}
 .print_form .item{cursor:pointer;margin:10px 0;line-height:26px;vertical-align: middle;position:relative;padding:0 0 0 20px;}
 .print_form .item span{margin-left:10px;}
@@ -200,7 +158,7 @@ transform:rotate(360deg);
 
 
 
-.search_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:-300px;top:0;width:250px;height:548px;background:#000000;padding:20px 10px 20px 10px;color:#ffffff;font-size:15px;font-family: opensans_light;position:absolute;}
+.search_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:-300px;top:0;width:250px;height:548px;background:#000000;padding:20px 10px 20px 10px;color:#ffffff;font-size:15px;font-family:Calibri;position:absolute;}
 .search_form .input_search{width:210px;height:30px;border:none;padding:0 30px 0 10px;margin-top:10px;}
 .search_form .searchButton{position:absolute;top:56px;right:15px;cursor:pointer;z-index:10;}
 .search_form .result{margin-top:10px;}
@@ -231,7 +189,7 @@ transform:rotate(360deg);
 
 
 
-.share_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:0;top:0;width:400px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;position:absolute;}
+.share_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:0;top:0;width:400px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;position:absolute;}
 .share_form .link_title{margin-top:10px;line-height:28px;}
 .share_form .link_input{width:320px;height:30px;padding:0 10px;border:none;}
 .share_form .copy{width:52px;height:30px;cursor:pointer;background:rgba(255,255,255,0.25);position:absolute;right:20px;top:78px;line-height:30px;vertical-align:middle;text-align:center;}
@@ -256,7 +214,9 @@ transform:rotate(360deg);
 
 
 
-.tableofcontent_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:-300px;top:150px;width:250px;height:548px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:opensans_light;}
+.tableofcontent_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:-300px;top:150px;width:250px;height:548px;background:#000000;padding:20px;color:#ffffff;font-size:15px;font-family:Calibri;}
+.tableofcontent_form .input_search{width:225px;height:30px;border:none;padding:0 30px 0 10px;margin-top:10px;margin-left:-10px;}
+.tableofcontent_form .searchButton{position:absolute;top:56px;right:20px;cursor:pointer;z-index:10;}
 
 .tableofcontent_form .stage{overflow:hidden;width:272px;height:515px;position:relative;margin:12px 0 0 -12px;}
 .tableofcontent_form .swiper{width:100%;position:absolute;left:0;top:0;}
@@ -337,6 +297,8 @@ transform:rotate(360deg);
 }
 
 .fbTopBar .button img {
+	width:22px;
+	height:22px;
 	margin-left : 10px;
 	margin-top : 13px;
 }
@@ -361,16 +323,14 @@ transform:rotate(360deg);
 	
 .pageNumber{
 	position : absolute;
-	width: 50px;
 }
 
 .pageNumber input{
 	border:transparent;
 	text-align : center;
 	vertical-align : middle;
-	height : 20px;
-	width: 100%;
-	line-height: 20px;
+	height : 17px;
+	font-family:Arial;
 }
 
 .pageNumber input:focus{
@@ -388,23 +348,22 @@ transform:rotate(360deg);
 .searchBar{
 	position:absolute;
 	right : 42px;
-	background-color: #272727!important;
+	background-color:gray;
 	margin-top:8px;
 	padding-left:10px;
 	padding-right:5px;
-	border: 1px solid #625e57;
 }
 
 .preSearch{
-	background-color: #272727!important;
+	background-color:gray;
 	display:inline;
 	float:left;
 }
 
 .preSearch input{
-	background-color: #272727!important;
-	color:#fdfdfd!important;
-	font-family: opensans_regular;
+	background-color:gray;
+	color:#AAAAAA;
+	font-family : Arial;
 	display:inline;
 	float:left;
 	border:0px solid transparent;
@@ -424,6 +383,8 @@ transform:rotate(360deg);
 }
 
 .searchBar .button img{
+	width:22px;
+	height:22px;
 	margin-left : 5px;
 	margin-top : 5px;
 }
@@ -467,6 +428,8 @@ transform:rotate(360deg);
 }
 
 .buttonBar .button img {
+	width:22px;
+	height:22px;
 	margin-left : 10px;
 	margin-top : 13px;
 }
@@ -487,6 +450,8 @@ transform:rotate(360deg);
 }
 
 .pageBar .button img {
+	width:22px;
+	height:22px;
 	margin-left : 10px;
 	margin-top : 13px;
 }
@@ -509,6 +474,8 @@ transform:rotate(360deg);
 }
 
 .extendedBar .button img{
+	width:22px;
+	height:22px;
 	margin-left : 5px;
 	margin-top : 13px;
 }
@@ -522,6 +489,8 @@ transform:rotate(360deg);
 }
 
 .extendedBar.rtl .button img{
+	width:22px;
+	height:22px;
 	float : right;
 	margin-right : 5px;
 	margin-top : 13px;
@@ -545,6 +514,8 @@ transform:rotate(360deg);
 }
 
 .floatPageButton img{
+	width:22px;
+	height:22px;
 	margin-left:19px;
 	margin-top:56px;
 }
@@ -554,7 +525,7 @@ transform:rotate(360deg);
 }
 
 
-.thumbnail_win10{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:0;top:0;padding:10px 0;width:100%;height:254px;background:#000000;color:#ffffff;font-size:12px;font-family:opensans_light;}
+.thumbnail_win10{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;left:0;top:0;padding:10px 0;width:100%;height:254px;background:#000000;color:#ffffff;font-size:12px;font-family:Calibri;}
 .thumbnail_win10 .close{right:20px;top:-24px;position:absolute;cursor:pointer;width:32px;height:24px;background-color:#000000;}
 .thumbnail_win10 .close img{position:absolute;left:10px;top:6px;}
 
@@ -585,7 +556,7 @@ transform:rotate(360deg);
 
 
 
-.videogallery_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;color:#ffffff;margin:auto;width:700px;background:#000000;padding:20px;font-size:15px;font-family:opensans_light;position:absolute;overflow:hidden;}
+.videogallery_form{text-align:left;vertical-align:middle;line-height:20px;position:absolute;z-index:1000;color:#ffffff;margin:auto;width:700px;background:#000000;padding:20px;font-size:15px;font-family:Calibri;position:absolute;overflow:hidden;}
 .videogallery_form .form_title{font-size:18px;line-height:20px;}
 .videogallery_form .title{font-size:18px;line-height:20px;}
 .videogallery_form .video{width:344px;height:223px;background:rgba(255,255,255,0.25);margin-top:15px;}
@@ -627,28 +598,30 @@ transform:rotate(360deg);
 .phoneTopBar{position : absolute;width : 100%;height : 40px;left : 0;top : 0;z-index : 99;-webkit-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);-moz-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);-o-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);}
 .phoneTopBar .button{width : 40px;height : 40px;position : absolute;cursor:pointer;}
 .phoneTopBar .button img{max-height : 40px;position : absolute;top:0;bottom:0;margin:auto;}
-.phoneTopBar .button .icon{position : absolute;left : 8px;top : 8px;}
-.phoneTopBar .button div{width : 25px;height : 25px;}
+.phoneTopBar .button .icon{position : absolute;left : 10px;top : 10px;}
+.phoneTopBar .button div{width : 20px;height : 20px;}
 .phoneTopBar .button span{display:none;}
 
-.phoneBottomBar{position : absolute;width : 100%;height : 40px;bottom : 0;left : 0;z-index : 99;-webkit-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);-moz-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);-o-box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);box-shadow : 0 0 5px rgba(40, 0, 0, 0.5);}
+.phoneBottomBar{position : absolute;width : 100%;height : 40px;bottom : 0;left : 0;z-index : 99;}
 .phoneBottomBar .button{width : 40px;height : 40px;position : absolute;cursor:pointer;}
-.phoneBottomBar .button img{height : 25px;width:25px;position : absolute;top:0;bottom:0;margin:auto; margin-left: 7px;}
-.phoneBottomBar .button .icon{position : absolute;left : 8px;top : 8px;}
-.phoneBottomBar .button div{width : 25px;height : 25px;}
+.phoneBottomBar .button img{height : 20px;width:20px;position : absolute;top:0;bottom:0;margin:auto;}
+.phoneBottomBar .button .icon{position : absolute;left:10px;top:10px;width:20px;height:20px;}
 .phoneBottomBar .button span{display:none;}
 
-.phone.extendedBar .arrow{position:absolute;width:0;height:0;border-width:7px;border-style:solid;left:50%;margin-left:-7px;bottom:-14px;}
+.phone.extendedBar .arrow{position:absolute;width:50px;height:20px;left:50%;cursor:pointer;margin-left:-25px;border-radius:5px 5px 0 0;top:-20px;background-color:rgba(0,0,0,0.8);}
+.phone.extendedBar .arrow img{width:10px;margin:5px 20px;}
 
-.extendedBar.phone{overflow : hidden;position : absolute;z-index: 100;border-radius:0;}
-.extendedBar.phone .button{position : absolute;width : 150px;height : 40px;overflow : hidden;border-radius: 0;}
-.extendedBar.phone .button:hover {background: rgba(255,255,255, 0.2);}
-.extendedBar.phone .button img{position : absolute;left : 7px;top : 7px;width:25px;height:25px;margin:0;}
+.extendedBar.phone{border-bottom:1px solid rgba(255,255,255,0.1);overflow : hidden;position : absolute;bottom:-180px;z-index: 98;border-radius:0;background:#000000;width:100%;height:72px;}
+.extendedBar.phone .button{width : 40px;height : 52px;border-radius: 0;float:left;margin:10px 0 0 30px;position:relative;text-align:center;}
+.extendedBar.phone .button .icon{position:relative;display:block;width:32px;height:32px;border-radius:16px;background-color:rgba(255,255,255,0.1);margin:0 0 0 4px;}
+.extendedBar.phone .button img{display:block;width:18px;height:18px;position:absolute;left:7px;top:7px;margin:0;}
+.extendedBar.phone .button span{color : white;line-height:20px;display:block;position:relative;margin:0 0 0 -15px;width:70px;}
 
-.extendedBar.phone .button span{position:absolute;color : white;margin-left:40px;margin-top : 0;line-height:40px;display:block;}
-
-.extendedBar.phone.rtl .button img {left:auto;right:7px;}
-.extendedBar.phone.rtl .button span{position:absolute;color : white;right : 0px;left:auto;margin-right:40px;}
+.extendedBar.phone .stage{height:100%;}
+.extendedBar.phone .stage .swiper{height:100%;}
+.extendedBar.phone .stage .swiper .item{height:100%;}
+.extendedBar.phone .stage .swiper .dots{height:20px;position:absolute;left:0;bottom:0;}
+.extendedBar.phone .stage .swiper .dots .dot{width:10px;height:10px;border-radius:5px;background:#ffffff;}
 
 .phoneGotoPageContent img{
 	width : 22px;
