@@ -112,22 +112,15 @@
                     {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
                 {{--</a>--}}
 
-                <a href="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" class="hidden-md-up" target="_blank">
-                    <img src="/flipbooks/mauritius/pierre_de_lune_brochure.jpg" alt="" class="">
+                <a href="/flipbooks/heraclee_book/heraclee_book.html" class="hidden-md-up" target="_blank">
+                    <img src="/img/flipbooks/heraclee_book.jpg" alt="" class="">
                 </a>
                 <div class="iframe-m hidden-sm-down">
                     <p>
-                        <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                        <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                     </p>
                 </div>
-                {{--<div class="iframe-m">--}}
-                    {{--<p>--}}
-                        {{--<iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>--}}
-                    {{--</p>--}}
-                {{--</div>--}}
             </section>
-
-
 
             <div class="modal fade" id="homepage_flipbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="vertical-alignment-helper">
@@ -137,7 +130,7 @@
                                 <section class="flipbook_section">
                                     <div class="iframe-m">
                                         <p>
-                                            <iframe src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                                            <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                                         </p>
                                     </div>
                                 </section>
