@@ -13,7 +13,7 @@ return [
     'previous'              => 'Previous',
     'next'                  => 'Next',
     'france'                => 'France',
-    'swiss'                 => 'Swiss',
+    'swiss'                 => 'Switzerland',
     'usa'                   => 'USA',
     'mauritius'             => 'Mauritius',
     'virtual_tours'         => 'Virtual tours',
