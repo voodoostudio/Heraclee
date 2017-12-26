@@ -19,9 +19,10 @@ return [
     'virtual_tours'         => 'Virtual tours',
     'luxury_real_estate_agency'  => 'Luxury real estate agency - <span>Saint-Tropez</span>',
     'select_the_city'       => 'Select a city:',
-    'select_the_object_type'       => 'Select the property type:',
+    'select_the_object_type'    => 'Select the property type:',
     'last_website_update'       => 'Last updates: ',
-    'other_countries'       => 'Other countries',
+    'other_countries'           => 'Other countries',
+    'outdated_browser_message'  => 'Your browser is outdated. Please update it. You can download the fresh version of the browser <a href="http://outdatedbrowser.com">here</a>.',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',

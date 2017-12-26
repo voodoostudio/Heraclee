@@ -466,6 +466,7 @@
       &.map_view {
         #results_map {
           height: 500px;
+          min-height: 500px;
         }
         .container-fluid {
           .results_carousel {
@@ -1680,6 +1681,7 @@
       &.map_view {
         #results_map {
           height: 400px;
+          min-height: 400px;
           .gm-style-iw .infowindow_container {
             .object_img {
               height: 150px;

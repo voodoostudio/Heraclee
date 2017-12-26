@@ -131,6 +131,16 @@ Route::group(
             'as' => 'newsletter',
         ]);
 
+        Route::get('/newsletters/heraclee_newsletter', [
+            'uses' => 'PagesController@newsletter_view',
+            'as' => 'newsletter_view',
+        ]);
+
+        Route::get('/newsletter_details', [
+            'uses' => 'PagesController@newsletter_details',
+            'as' => 'newsletter_details',
+        ]);
+
         Route::post('/contact-agent', [
             'uses' => 'PagesController@postContactToAgent',
             'as' => 'contact.post.agent',

@@ -559,6 +559,16 @@ class PagesController extends Controller
         return view('newsletters');
     }
 
+    public function newsletter_view()
+    {
+        return view('newsletters.heraclee_newsletter');
+    }
+
+    public function newsletter_details()
+    {
+        return view('newsletter_details');
+    }
+
     public function contact()
     {
         return view('contact');

@@ -22,6 +22,7 @@ return [
     'select_the_object_type'=> 'Sélectionnez un type de bien :',
     'last_website_update'   => 'Dernière mise à jour : ',
     'other_countries'       => 'Autre pays',
+    'outdated_browser_message'  => 'Votre navigateur est obsolète. Veuillez le mettre à jour, Vous pouvez télécharger la nouvelle version du navigateur <a href="http://outdatedbrowser.com">ici</a>.',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',

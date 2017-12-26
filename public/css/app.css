@@ -1672,6 +1672,7 @@ header.minimized .logo {
 
 header.minimized .logo img {
   max-width: 52px;
+  max-height: 52px;
 }
 
 header.minimized .navigation_container {
@@ -1716,6 +1717,19 @@ header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
   padding: 3px 5px;
   font-size: 0.75rem;
   line-height: 0.75rem;
+}
+
+header #outdatedBrowser {
+  display: none;
+  padding: 15px;
+  text-align: center;
+  color: #ccac83;
+  text-transform: uppercase;
+}
+
+header #outdatedBrowser a {
+  color: #ccac83;
+  text-decoration: underline;
 }
 
 main {
@@ -3405,6 +3419,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-bottom: 70px;
 }
 
+#index section.results_section .results_container.map_view,
+#france section.results_section .results_container.map_view,
+#swiss section.results_section .results_container.map_view,
+#usa section.results_section .results_container.map_view,
+#mauritius section.results_section .results_container.map_view {
+  display: table;
+}
+
 #index section.results_section .results_container.map_view #results_map,
 #france section.results_section .results_container.map_view #results_map,
 #swiss section.results_section .results_container.map_view #results_map,
@@ -4636,11 +4658,13 @@ section.results_section .results_container.map_view .container-fluid .object_blo
 
 section.results_section .results_container.map_view {
   height: 640px;
+  min-height: 640px;
 }
 
 section.results_section .results_container.map_view #results_map {
   visibility: visible;
   height: 640px;
+  min-height: 640px;
   margin: 30px 0 40px;
 }
 
@@ -5231,11 +5255,13 @@ section.results_section .slick-track {
 
 .results_container.map_view {
   height: 640px;
+  min-height: 640px;
 }
 
 .results_container.map_view #results_map {
   visibility: visible;
   height: 640px;
+  min-height: 640px;
   margin: 30px 0 40px;
 }
 
@@ -7023,6 +7049,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.results_section .results_container.map_view #results_map {
     height: 500px;
+    min-height: 500px;
   }
   section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
     height: 300px;
@@ -7976,6 +8003,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.results_section .results_container.map_view #results_map {
     height: 400px;
+    min-height: 400px;
   }
   section.results_section .results_container.map_view #results_map .gm-style-iw .infowindow_container .object_img {
     height: 150px;

@@ -296,7 +296,8 @@
             @endforeach
             @endforeach
         ];
-
-        resultsMapInit();
+        $(document).ready(function() {
+            resultsMapInit();
+        });
     </script>
 @stop

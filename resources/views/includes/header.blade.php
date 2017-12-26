@@ -144,6 +144,9 @@
         <div class="menu-icon">
             <span></span>
         </div>
+    </div>
+    <div id="outdatedBrowser">
+        {!! trans('lang.outdated_browser_message') !!}
 
     </div>
 </header>
