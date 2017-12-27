@@ -111,11 +111,6 @@ Route::group(
                 'as' => 'news_details',
         ]);
 
-        Route::get('/newsletters', [
-                'uses' => 'PagesController@newsletters',
-                'as' => 'newsletters',
-        ]);
-
         Route::get('/contact', [
                 'uses' => 'PagesController@contact',
                 'as' => 'contact',
@@ -131,12 +126,12 @@ Route::group(
             'as' => 'newsletter',
         ]);
 
-        Route::get('/newsletters/heraclee_newsletter', [
-            'uses' => 'PagesController@newsletter_view',
-            'as' => 'newsletter_view',
+        Route::get('/newsletters', [
+            'uses' => 'PagesController@newsletter_list',
+            'as' => 'newsletter_list',
         ]);
 
-        Route::get('/newsletter_details', [
+        Route::get('/newsletter_details/{id}', [
             'uses' => 'PagesController@newsletter_details',
             'as' => 'newsletter_details',
         ]);
@@ -180,6 +175,9 @@ Route::group(
 
         /* CRUD POSTS */
         Route::resource('/admin/posts', 'PostsController');
+
+        /* CRUD NEWSLETTERS */
+        Route::resource('/admin/newsletter', 'NewsletterController');
 
         /* CRUD GALLERY */
         Route::get('/admin/gallery', 'GalleryController@index');

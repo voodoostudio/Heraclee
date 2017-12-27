@@ -132,7 +132,7 @@
                         <a class="nav-link {{ ($cp == 'news' || $cp == 'news_details') ? 'active' : '' }}" href="{{ route('news') }}">{{ trans('lang.news') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ ($cp == 'newsletters') ? 'active' : '' }}" href="{{ route('newsletters') }}">{{ trans('lang.newsletters') }}</a>
+                        <a class="nav-link {{ ($cp == 'newsletters' || $cp == 'newsletter_details') ? 'active' : '' }}" href="{{ URL::to('/newsletters') }}">{{ trans('lang.newsletters') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ ($cp == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">{{ trans('lang.contact') }}</a>

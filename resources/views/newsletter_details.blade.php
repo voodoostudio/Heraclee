@@ -19,15 +19,15 @@
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
-
                     <div class="title_container">
                         <a class="action_link" href="{{ URL::to('newsletters/') }}"><i class="icn icon-arrow_left"></i></a>
                         <h1>Heraclee</h1>
                     </div>
-
-                    <h2>12.2017</h2>
-
-                    <iframe onload="resizeIframe('newsetter_content')" frameborder="0" marginheight="0" scrolling="no" marginwidth="0" id="newsetter_content" src="/newsletters/heraclee_newsletter" width="100%" style="border: none"></iframe>
+                    <h2>{{ date('d.m.Y', strtotime((!empty($item->date)) ? $item->date : '')) }}</h2>
+                    @foreach(json_decode($item['newsletter_html_path']) as $key => $html)
+                        {{--<iframe onload="resizeIframe('newsletter_content')" frameborder="0" marginheight="0" scrolling="no" marginwidth="0" id="newsetter_content" src="/newsletter/html/{{ $html }}" width="100%" style="border: none"></iframe>--}}
+                        <iframe src="/newsletter/html/{{ $html }}" height="5800" width="100%" style="border: none"></iframe>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <script>
 
         $(window).resize(function () {
-            resizeIframe('newsetter_content');
+            resizeIframe('newsletter_content');
         });
 
         function resizeIframe(iframeID) {
@@ -48,5 +48,9 @@
         }
     </script>
 @stop
+
+
+
+
 
 

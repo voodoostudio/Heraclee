@@ -14,61 +14,76 @@
         </div>
     </section>
 
-    {{--<section class="newsletters_section">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-
     <section class="news_list_section">
         <div class="container-fluid">
-            <div class="news_carousel">
-                <div class = "news_slide">
-                    <div class="row">
-                        <div class="col-xs-12 col-xl-6">
-                            <div class="outer_block_container">
-                                <div class="inner_block_container">
-                                    <div class="article_info_block">
-                                        <div class="article_img">
-                                            <a href="/newsletter_details">
-                                                <img src="/img/newsletters/news_heraclee/thumbnail.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="article_info">
-                                            <a href="/newsletter_details"><h2>Heraclee</h2></a>
-                                            <h3>12.2017</h3>
+            @if($newsletters->isEmpty() == false)
+                <div class="news_carousel">
+                    @foreach (array_chunk($newsletters->toArray(), 6) as $content)
+                        <div class = "news_slide">
+                            <div class="row">
+                                @foreach($content as $item)
+                                    <div class="col-xs-12 col-xl-6">
+                                        <div class="outer_block_container">
+                                            <div class="inner_block_container">
+                                                <div class="article_info_block">
+                                                    <div class="article_img">
+                                                        <a href="{{ route('newsletter_details', ['id' => $item['id']]) }}">
+                                                            @php
+                                                                $image_counter = 1;
+                                                            @endphp
+                                                            @foreach(json_decode($item['front_image_path']) as $key => $image)
+                                                                @if($image_counter == 1)
+                                                                    <img src="{{ URL::to('/') }}/newsletter/images/{{ $image }}" alt="{{ $key }}">
+                                                                @endif
+                                                                @php
+                                                                    $image_counter++;
+                                                                @endphp
+                                                            @endforeach
+
+                                                            @if(empty(json_decode($item['front_image_path'])))
+                                                                <img src="/img/details/no_agent_photo.svg" alt="">
+                                                            @endif
+                                                        </a>
+                                                    </div>
+                                                    <div class="article_info">
+                                                        <a href="{{ route('newsletter_details', ['id' => $item['id']]) }}"><h2>@if($lang == 'fr_FR') {{ $item['title_fr'] }} @elseif($lang == 'en_GB') {{ $item['title_en'] }}  @endif</h2></a>
+                                                        <h3>{{ (!empty($item['date'])) ? date('d.m.Y', strtotime($item['date'])) : '' }}</h3>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
+                    @endforeach
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="javascript:void(0);" class="page-link" aria-label="Previous">
+                                        <i class="icn icon-arrow_dropdown_left"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <ul class="pages"></ul>
+                                </li>
+                                <li class="page-item">
+                                    <a href="javascript:void(0);" class="page-link" aria-label="Next">
+                                        <i class="icn icon-arrow_dropdown_right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <nav>
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="javascript:void(0);" class="page-link" aria-label="Previous">
-                                    <i class="icn icon-arrow_dropdown_left"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <ul class="pages"></ul>
-                            </li>
-                            <li class="page-item">
-                                <a href="javascript:void(0);" class="page-link" aria-label="Next">
-                                    <i class="icn icon-arrow_dropdown_right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+            @else
+                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
+            @endif
         </div>
     </section>
-
 @endsection
 
 @section('javascript')
@@ -110,3 +125,5 @@
 
     </script>
 @stop
+
+

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\GallerySettings;
 use App\Libraries\SyncWithApimo;
+use App\Newsletter;
 use App\Properties;
 use App\Team;
 use App\Services;
@@ -564,14 +565,48 @@ class PagesController extends Controller
         return view('newsletters.heraclee_newsletter');
     }
 
-    public function newsletter_details()
-    {
-        return view('newsletter_details');
-    }
+//    public function newsletter_details()
+//    {
+//        return view('newsletter_details');
+//    }
 
     public function contact()
     {
         return view('contact');
+    }
+
+
+    public function team()
+    {
+        $users = Team::where('active', 1)
+            ->get()
+            ->toArray();
+
+        return view('team');
+    }
+
+    /**
+     * Display a listing of news.
+     */
+
+    public function news()
+    {
+        $news = Posts::where('status', '=', 'on')
+            ->orderBy('date', 'desc')
+            ->get();
+
+        return view('news', ['news' => $news]);
+    }
+
+    /**
+     * Display a listing of newsletters.
+     */
+
+    public function newsletter_list()
+    {
+        $newsletters = Newsletter::orderBy('date', 'desc')->get();
+
+        return view('newsletters', ['newsletters' => $newsletters]);
     }
 
     /**
@@ -750,27 +785,6 @@ class PagesController extends Controller
         }
     }
 
-    public function team()
-    {
-        $users = Team::where('active', 1)
-            ->get()
-            ->toArray();
-
-        return view('team');
-    }
-
-    /**
-     * Display a listing of news.
-     */
-
-    public function news()
-    {
-        $news = Posts::where('status', '=', 'on')
-            ->orderBy('date', 'desc')
-            ->get();
-
-        return view('news', ['news' => $news]);
-    }
 
     /**
      * Display a listing of virtual tours.
@@ -825,6 +839,18 @@ class PagesController extends Controller
         $news = Posts::find($id);
 
         return view('news_details', ['item' => $news]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     */
+    public function newsletter_details($id)
+    {
+        $newsletters = Newsletter::find($id);
+
+        return view('newsletter_details', ['item' => $newsletters]);
     }
 
     /**
