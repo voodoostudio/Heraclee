@@ -14,7 +14,8 @@ class ApimoProperties extends Migration
     public function up()
     {
         Schema::create('apimo_properties', function (Blueprint $table) {
-            $table->integer('property_id')->unique();
+            $table->increments('id');
+            $table->integer('property_id');
             $table->string('reference')->nullable();
             $table->string('status')->nullable();
             $table->integer('user');
