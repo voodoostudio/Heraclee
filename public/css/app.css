@@ -28,6 +28,26 @@
 }
 
 /* END Semibold*/
+/* BEGIN Eutemia*/
+@font-face {
+  font-family: 'eutemia';
+  src: url("/fonts/eutemia/eutemia.eot");
+  src: url("/fonts/eutemia/eutemia.eot?#iefix") format("embedded-opentype"), url("/fonts/eutemia/eutemia.woff") format("woff"), url("/fonts/eutemia/eutemia.ttf") format("truetype"), url("/fonts/eutemia/eutemia.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
+/* BEGIN carolina_bigfoot*/
+@font-face {
+  font-family: 'carolina_bigfoot';
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot");
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot?#iefix") format("embedded-opentype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.woff") format("woff"), url("/fonts/carolina_bigfoot/carolina_bigfoot.ttf") format("truetype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -675,6 +695,26 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 /* END Semibold*/
+/* BEGIN Eutemia*/
+@font-face {
+  font-family: 'eutemia';
+  src: url("/fonts/eutemia/eutemia.eot");
+  src: url("/fonts/eutemia/eutemia.eot?#iefix") format("embedded-opentype"), url("/fonts/eutemia/eutemia.woff") format("woff"), url("/fonts/eutemia/eutemia.ttf") format("truetype"), url("/fonts/eutemia/eutemia.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
+/* BEGIN carolina_bigfoot*/
+@font-face {
+  font-family: 'carolina_bigfoot';
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot");
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot?#iefix") format("embedded-opentype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.woff") format("woff"), url("/fonts/carolina_bigfoot/carolina_bigfoot.ttf") format("truetype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -2464,6 +2504,26 @@ section.contact_form_section .outer_block_container .inner_block_container form.
 }
 
 /* END Semibold*/
+/* BEGIN Eutemia*/
+@font-face {
+  font-family: 'eutemia';
+  src: url("/fonts/eutemia/eutemia.eot");
+  src: url("/fonts/eutemia/eutemia.eot?#iefix") format("embedded-opentype"), url("/fonts/eutemia/eutemia.woff") format("woff"), url("/fonts/eutemia/eutemia.ttf") format("truetype"), url("/fonts/eutemia/eutemia.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
+/* BEGIN carolina_bigfoot*/
+@font-face {
+  font-family: 'carolina_bigfoot';
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot");
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot?#iefix") format("embedded-opentype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.woff") format("woff"), url("/fonts/carolina_bigfoot/carolina_bigfoot.ttf") format("truetype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -3569,6 +3629,26 @@ section.guide_section .guide_carousel ul.slick-dots li.slick-active button:befor
 }
 
 /* END Semibold*/
+/* BEGIN Eutemia*/
+@font-face {
+  font-family: 'eutemia';
+  src: url("/fonts/eutemia/eutemia.eot");
+  src: url("/fonts/eutemia/eutemia.eot?#iefix") format("embedded-opentype"), url("/fonts/eutemia/eutemia.woff") format("woff"), url("/fonts/eutemia/eutemia.ttf") format("truetype"), url("/fonts/eutemia/eutemia.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
+/* BEGIN carolina_bigfoot*/
+@font-face {
+  font-family: 'carolina_bigfoot';
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot");
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot?#iefix") format("embedded-opentype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.woff") format("woff"), url("/fonts/carolina_bigfoot/carolina_bigfoot.ttf") format("truetype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -4319,7 +4399,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   text-align: center;
   padding: 10px;
   box-shadow: 0px 0px 30px -5px #272727;
-  font-family: "Times New Roman";
+  font-family: carolina_bigfoot;
   font-weight: 500;
   z-index: 1;
 }
@@ -4916,7 +4996,7 @@ section.results_section .slick-track {
   text-align: center;
   padding: 10px;
   box-shadow: 0px 0px 30px -5px #272727;
-  font-family: "Times New Roman";
+  font-family: carolina_bigfoot;
   font-weight: 500;
   z-index: 1;
 }
@@ -5340,6 +5420,26 @@ section.results_section .slick-track {
 }
 
 /* END Semibold*/
+/* BEGIN Eutemia*/
+@font-face {
+  font-family: 'eutemia';
+  src: url("/fonts/eutemia/eutemia.eot");
+  src: url("/fonts/eutemia/eutemia.eot?#iefix") format("embedded-opentype"), url("/fonts/eutemia/eutemia.woff") format("woff"), url("/fonts/eutemia/eutemia.ttf") format("truetype"), url("/fonts/eutemia/eutemia.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
+/* BEGIN carolina_bigfoot*/
+@font-face {
+  font-family: 'carolina_bigfoot';
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot");
+  src: url("/fonts/carolina_bigfoot/carolina_bigfoot.eot?#iefix") format("embedded-opentype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.woff") format("woff"), url("/fonts/carolina_bigfoot/carolina_bigfoot.ttf") format("truetype"), url("/fonts/carolina_bigfoot/carolina_bigfoot.svg") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* END Eutemia*/
 /*Buttons style START*/
 button {
   cursor: pointer;
