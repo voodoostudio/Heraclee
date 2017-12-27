@@ -8172,4 +8172,10 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header div.menu-icon {
     right: 15px;
   }
+  section.article_section.newsletter .outer_block_container {
+    padding: 5px;
+  }
+  section.article_section.newsletter .outer_block_container .inner_block_container {
+    padding: 20px 5px 5px;
+  }
 }

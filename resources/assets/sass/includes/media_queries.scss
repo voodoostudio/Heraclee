@@ -1810,4 +1810,12 @@
       right: 15px;
     }
   }
+  section.article_section.newsletter {
+    .outer_block_container {
+      padding: 5px;
+      .inner_block_container {
+        padding: 20px 5px 5px;
+      }
+    }
+  }
 }

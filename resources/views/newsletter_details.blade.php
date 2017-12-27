@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="article_section">
+    <section class="article_section newsletter">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
@@ -27,7 +27,7 @@
 
                     <h2>12.2017</h2>
 
-                    <iframe id="newsetter_content" src="/newsletters/heraclee_newsletter" height="1000" width="100%" style="border: none"></iframe>
+                    <iframe onload="resizeIframe('newsetter_content')" frameborder="0" marginheight="0" scrolling="no" marginwidth="0" id="newsetter_content" src="/newsletters/heraclee_newsletter" width="100%" style="border: none"></iframe>
                 </div>
             </div>
         </div>
@@ -36,10 +36,16 @@
 
 @section('javascript')
     <script>
-        //        $(window).load(function () {
-        console.log('test');
-        var filteredContents = $('#newsetter_content').contents().find('table.templateContainer').height();
-        //        });
+
+        $(window).resize(function () {
+            resizeIframe('newsetter_content');
+        });
+
+        function resizeIframe(iframeID) {
+            console.log('test');
+            var iframe = window.parent.document.getElementById(iframeID);
+            iframe.style.height = iframe.contentWindow.document.body.offsetHeight+ 'px';
+        }
     </script>
 @stop
 
