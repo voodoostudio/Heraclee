@@ -31,7 +31,7 @@
                                     <div class="article_info_block">
                                         <div class="article_img">
                                             <a href="/newsletter_details">
-                                                <img src="/img/newsletters/1.jpg" alt="">
+                                                <img src="/img/newsletters/news_heraclee/thumbnail.jpg" alt="">
                                             </a>
                                         </div>
                                         <div class="article_info">

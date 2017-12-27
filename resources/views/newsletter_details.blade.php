@@ -27,7 +27,7 @@
 
                     <h2>12.2017</h2>
 
-                    <iframe src="/newsletters/heraclee_newsletter" height="5800" width="100%" style="border: none"></iframe>
+                    <iframe id="newsetter_content" src="/newsletters/heraclee_newsletter" height="1000" width="100%" style="border: none"></iframe>
                 </div>
             </div>
         </div>
@@ -35,6 +35,12 @@
 @endsection
 
 @section('javascript')
+    <script>
+        //        $(window).load(function () {
+        console.log('test');
+        var filteredContents = $('#newsetter_content').contents().find('table.templateContainer').height();
+        //        });
+    </script>
 @stop
 
 

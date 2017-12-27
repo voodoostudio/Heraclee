@@ -596,7 +596,8 @@
                                                         <tbody><tr>
                                                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                                                 <a href="http://heraclee.com/fr" title="" class="" target="_blank">
-                                                                    <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/ae3c748e-775d-420a-80d0-ae9ed9964288.jpg" width="600" style="max-width:779px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                                                    {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/ae3c748e-775d-420a-80d0-ae9ed9964288.jpg" width="600" style="max-width:779px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                                                    <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_0.jpg" width="600" style="max-width:779px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -617,63 +618,64 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>
-            </td>
-        </tr>
-    </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
-        <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
-              	<!--[if mso]>
-				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-				<tr>
-				<![endif]-->
-			    
-				<!--[if mso]>
-				<td valign="top" width="600" style="width:600px;">
-				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #CBAC85;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 30px;font-style: normal;font-weight: normal;line-height: 100%;text-align: center;">
-                        
-                            <div style="text-align: center;"><span style="font-size:29px">NOS BIENS EN VENTE</span><br>
-<span style="font-size:23px"><em>OUR SALES</em></span></div>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
+                            <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+                                        <!--[if mso]>
+                                        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                        <tr>
+                                        <![endif]-->
 
-                        </td>
-                    </tr>
-                </tbody></table>
-				<!--[if mso]>
-				</td>
-				<![endif]-->
-                
-				<!--[if mso]>
-				</tr>
-				</table>
-				<![endif]-->
-            </td>
-        </tr>
-    </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-    <tbody class="mcnDividerBlockOuter">
-        <tr>
-            <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 15px 18px;">
-                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 1px solid #CBAC85;">
-                    <tbody><tr>
-                        <td>
-                            <span></span>
-                        </td>
-                    </tr>
-                </tbody></table>
-<!--            
-                <td class="mcnDividerBlockInner" style="padding: 18px;">
-                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
--->
-            </td>
-        </tr>
-    </tbody>
-</table></td>
+                                        <!--[if mso]>
+                                        <td valign="top" width="600" style="width:600px;">
+                                        <![endif]-->
+                                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                                            <tbody><tr>
+
+                                                <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #CBAC85;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 30px;font-style: normal;font-weight: normal;line-height: 100%;text-align: center;">
+
+                                                    <div style="text-align: center;"><span style="font-size:29px">NOS BIENS EN VENTE</span><br>
+                        <span style="font-size:23px"><em>OUR SALES</em></span></div>
+
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+
+                                        <!--[if mso]>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
+                            <tbody class="mcnDividerBlockOuter">
+                                <tr>
+                                    <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 15px 18px;">
+                                        <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 1px solid #CBAC85;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            </td>
                             </tr>
                             <tr>
                                 <td valign="top" id="templateBody"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
@@ -685,7 +687,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1534249" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/76dd81bc-07a3-4e55-9fd4-827d5fdd21b5.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/76dd81bc-07a3-4e55-9fd4-827d5fdd21b5.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_1.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -703,7 +706,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1672949" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/bb85b157-92cb-4b6f-be73-ef583b0a8353.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/bb85b157-92cb-4b6f-be73-ef583b0a8353.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_2.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -721,7 +725,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1691570" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/a9a18e1c-d6ff-41f6-8d5a-d3b9dd3c4c17.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/a9a18e1c-d6ff-41f6-8d5a-d3b9dd3c4c17.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_3.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -739,7 +744,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1534345" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/208dc618-aa8b-4c6e-b611-f90aade02a9e.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/208dc618-aa8b-4c6e-b611-f90aade02a9e.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_4.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -757,7 +763,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1568892" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/e41b866d-acc8-4820-ba5f-af2cc4b0aa86.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/e41b866d-acc8-4820-ba5f-af2cc4b0aa86.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_5.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -775,7 +782,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1675600" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/22ba8a94-65f9-4490-8588-e968791a5e76.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/22ba8a94-65f9-4490-8588-e968791a5e76.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_6.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -793,7 +801,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=52121" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/d2b6d06d-7921-45d3-bd2b-58251aae4e72.jpg" width="600" style="max-width:726px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/d2b6d06d-7921-45d3-bd2b-58251aae4e72.jpg" width="600" style="max-width:726px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_7.jpg" width="600" style="max-width:726px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -811,7 +820,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1575973" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/d80860f3-8174-4b7b-a94f-0e84395566ae.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/d80860f3-8174-4b7b-a94f-0e84395566ae.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_8.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -829,7 +839,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1224696" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/323799d3-e0d6-4100-b9b6-49533c42c2df.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/_compresseds/323799d3-e0d6-4100-b9b6-49533c42c2df.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_9.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -847,7 +858,8 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                 
                                     <a href="http://heraclee.com/fr/achat/details?id=1927191" title="" class="" target="_blank">
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/42c87328-b00e-4d29-97b6-321a1265c045.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        {{--<img align="center" alt="" src="https://gallery.mailchimp.com/09344a9c16649b0da5dc09c38/images/42c87328-b00e-4d29-97b6-321a1265c045.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">--}}
+                                        <img align="center" alt="" src="/img/newsletters/news_heraclee/news_heraclee_10.jpg" width="600" style="max-width:750px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
                                     </a>
                                 
                             </td>
@@ -1108,12 +1120,6 @@
                             <strong>Notre adresse de diffusion est :</strong><br>
 info@heraclee.com<br>
 <br>
-Voulez-vous changer la façon dont vous recevez ces courriels ?<br>
-Vous pouvez <a href="*|UPDATE_PROFILE|*" target="_blank">mettre à jour vos préférences</a>&nbsp;ou&nbsp;<a href="*|UNSUB|*" target="_blank">vous désinscrire de cette liste</a>.<br>
-<br>
-<br>
-<br>
-&nbsp;
                         </td>
                     </tr>
                 </tbody></table>
