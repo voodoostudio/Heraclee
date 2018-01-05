@@ -75,12 +75,10 @@ function resultsCarouselInit() {
 
 function resultsMapInit()  {
     var this_page = $('body').attr('id');
-
-    console.log(this_page);
     if(this_page === 'index') {
         var latlang = {lat: 43.281306, lng: 6.565533};
         var map = new google.maps.Map(document.getElementById('results_map'), {
-            zoom: 11,
+            zoom: 12,
             center: latlang,
             scrollwheel: false,
             mapTypeControlOptions: {

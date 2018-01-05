@@ -50,6 +50,9 @@ mix.options({
     processCssUrls: false
 });
 
+
+// mix.version();
+
 if (mix.inProduction()) {
     mix.version();
 }

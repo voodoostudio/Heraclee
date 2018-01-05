@@ -190,7 +190,13 @@
       margin-bottom: 70px;
     }
     .results_container.map_view {
-      display: table;
+      .homepage_map_container {
+        display: table;
+        width: 100%;
+        #results_map {
+          margin-top: 0;
+        }
+      }
       #results_map {
         margin-bottom: 0;
       }

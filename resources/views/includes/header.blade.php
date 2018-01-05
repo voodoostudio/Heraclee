@@ -3,6 +3,7 @@
 @php
     use App\Gallery;
     use App\Posts;
+    use App\Newsletter;
     use Illuminate\Support\Facades\DB;
 
     /* Last update on site */
@@ -10,6 +11,8 @@
     $gallery_last_date = (!empty($gallery_date)) ? date(strtotime($gallery_date . '+1 hours')) : '';
     $posts_date = Posts::orderBy('updated_at', 'desc')->value('updated_at');
     $posts_last_date = (!empty($posts_date)) ? date(strtotime($posts_date . '+1 hours')) : '';
+    $newsletter_date = Newsletter::orderBy('updated_at', 'desc')->value('updated_at');
+    $newsletter_last_date = (!empty($newsletter_date)) ? date(strtotime($newsletter_date . '+1 hours')) : '';
     $properties_date =
         DB::table('apimo_properties')
             ->select('updated_at')
@@ -21,7 +24,7 @@
             ->value('updated_at');
     $properties_last_date = (!empty($properties_date)) ? date(strtotime($properties_date . '+1 hours')) : '';
 
-    $dates = [$posts_last_date, $gallery_last_date, $properties_last_date];
+    $dates = [$posts_last_date, $gallery_last_date, $properties_last_date, $newsletter_last_date];
 
     $last_update = max($dates);
 @endphp

@@ -60,6 +60,10 @@
 }
 
 @media screen and ( max-width: 1199px ) {
+
+  main {
+    padding-top: 153px;
+  }
   header .navigation_container {
     .navigation_block {
       margin-left: 140px;
@@ -815,9 +819,12 @@
                 }
               }
               .new_label {
-                top: 17px;
-                left: -75px;
+                top: 20px;
+                left: -85px;
                 padding: 4px 10px;
+                span {
+                  font-size: 1rem;
+                }
               }
             }
           }
