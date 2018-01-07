@@ -800,12 +800,29 @@ class SyncWithApimo
         $curl = new Curl();
         $curl->setBasicAuthentication(env('APIMO_PROVIDER'), env('APIMO_TOKEN'));
         $curl->setHeader('Content-Type', 'application/json');
-        $curl->get(
-            'https://api.apimo.pro/agencies/' . env('APIMO_AGENCY') . '/' . $type_real_estate,
+        $agency_heraclee = $curl->get(
+            'https://api.apimo.pro/agencies/' . env('APIMO_AGENCY_HERACLEE') . '/' . $type_real_estate,
             ['limit' => self::$limit, 'offset' => $offset]
         );
-        $response = json_encode($curl->response);
+
+        $agency_heraclee_croix_valmer = $curl->get(
+            'https://api.apimo.pro/agencies/' . env('APIMO_AGENCY_CROIX_VALMER') . '/' . $type_real_estate,
+            ['limit' => self::$limit, 'offset' => $offset]
+        );
+
+        $allProperties = array_merge($agency_heraclee->properties, $agency_heraclee_croix_valmer->properties);
+        $allPropertiesCounter = $agency_heraclee->total_items + $agency_heraclee_croix_valmer->total_items;
+        $timestamp = $agency_heraclee->timestamp;
+
+        $properties = [
+            'properties' => $allProperties,
+            'total_items' => $allPropertiesCounter,
+            'timestamp' => $timestamp
+        ];
+
+        $response = json_encode($properties);
         $properties_array = json_decode($response, true);
+
         return $properties_array;
     }
 }
