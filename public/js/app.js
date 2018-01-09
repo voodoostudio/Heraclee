@@ -824,6 +824,13 @@ $(document).ready(function() {
             $('#cities_select option[value="35970"]').prop('selected', true);
             $(this).parent().find('select').multiselect('refresh');
             $(this).removeClass('active');
+
+            $('.search_section .input_container input').not('.search_input input').each(function(){
+                $(this).prop("disabled", false);
+            });
+            $('.search_section select').each(function(){
+                $(this).multiselect('enable');
+            });
         }
     });
 
