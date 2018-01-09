@@ -68,7 +68,7 @@ class PagesController extends Controller
         }
 
         $properties_obj = new Properties();
-        $properties = $properties_obj->getProperties(
+        $properties = $properties_obj->getPropertiesForSlider(
             Session::get("search.items"),
             $cur_page,
             Session::get("search.sell_type"),

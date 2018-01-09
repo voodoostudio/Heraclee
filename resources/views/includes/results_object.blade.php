@@ -2,16 +2,16 @@
     <div class="object_block">
         <div class="img_block">
             {{--<div class="activity_label">Loué</div>--}}
-           {{-- @if(!empty($property['agreement']) && $property['agreement'] == 3)
-            <div class="exclusive_label">Exclusif</div>
-            @endif --}}
+            {{-- @if(!empty($property['agreement']) && $property['agreement'] == 3)
+             <div class="exclusive_label">Exclusif</div>
+             @endif --}}
 
             @if(!empty($property['agreement']) && $property['agreement']['reference'] == 3)
                 <div class="new_label">
                     <span class="exclusive">{{ $property['agreement']['value'] }}</span>
                 </div>
                 {{--<div class="exclusive_label_container">--}}
-                    {{--<div class="exclusive_label">{{ $property['agreement']['value'] }}</div>--}}
+                {{--<div class="exclusive_label">{{ $property['agreement']['value'] }}</div>--}}
                 {{--</div>--}}
             @endif
 
@@ -179,4 +179,3 @@
         </div>
     </div>
 </div>
-

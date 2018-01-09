@@ -16,6 +16,7 @@ class ApimoUsers extends Migration
         Schema::create('apimo_users', function (Blueprint $table) {
             $table->integer('user_id')->unique();
             $table->string('active')->nullable();
+            $table->string('agency', 256)->nullable();
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('language')->nullable();
