@@ -731,7 +731,7 @@ $(document).ready(function() {
 
     $(document).on("scroll", function(){
         if
-        ($(document).scrollTop() > 100){
+        ($(document).scrollTop() > 10){
             $("header").addClass("minimized");
             $("section.page_title_section").addClass("minimized");
         }
