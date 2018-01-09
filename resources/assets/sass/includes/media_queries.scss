@@ -691,9 +691,6 @@
         }
       }
     }
-    main {
-      padding-top: 196px;
-    }
     section.description_section {
       h1 {
         font-size: 1rem;
@@ -1264,7 +1261,7 @@
   }
 
   main {
-    padding-top: 129px;
+    padding-top: 107px;
   }
   #details,
   #locationsDetails,
@@ -1274,11 +1271,6 @@
   #locations {
     main {
       padding-top: 72px;
-    }
-  }
-  #index {
-    main {
-      padding-top: 163px;
     }
   }
 
@@ -1301,12 +1293,13 @@
   section.page_title_section {
     top: 72px;
     h1 {
-      font-size: 1rem;
+      font-size: 11px;
+      padding: 12px 0;
     }
     &.minimized {
       top: 60px;
       h1 {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
       }
     }
   }
@@ -1806,6 +1799,9 @@
           line-height: 1;
         }
       }
+      nav {
+        top: 62px;
+      }
     }
     .logo {
       img {
@@ -1815,6 +1811,33 @@
     }
     div.menu-icon {
       right: 15px;
+    }
+  }
+  main {
+    padding-top: 94px;
+  }
+  #details,
+  #locationsDetails,
+  #results_fr,
+  #results,
+  #locations_fr,
+  #locations {
+    main {
+      padding-top: 62px;
+    }
+  }
+
+  section.page_title_section {
+    top: 62px;
+    h1 {
+      font-size: 10px;
+      padding: 10px 0;
+    }
+    &.minimized {
+      top: 60px;
+      h1 {
+        font-size: 10px;
+      }
     }
   }
   section.article_section.newsletter {

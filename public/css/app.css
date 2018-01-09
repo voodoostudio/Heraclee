@@ -1879,7 +1879,7 @@ section.page_title_section {
 }
 
 section.page_title_section h1 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   margin: 0;
   padding: 20px 0;
@@ -7316,9 +7316,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #index header .navigation_container .navigation_block .header_tel {
     display: block;
   }
-  #index main {
-    padding-top: 196px;
-  }
   #index section.description_section h1 {
     font-size: 1rem;
   }
@@ -7767,7 +7764,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     top: 20px;
   }
   main {
-    padding-top: 129px;
+    padding-top: 107px;
   }
   #details main,
   #locationsDetails main,
@@ -7776,9 +7773,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #locations_fr main,
   #locations main {
     padding-top: 72px;
-  }
-  #index main {
-    padding-top: 163px;
   }
   section.search_section .outer_block_container .inner_block_container {
     padding: 40px 15px 20px;
@@ -7795,13 +7789,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     top: 72px;
   }
   section.page_title_section h1 {
-    font-size: 1rem;
+    font-size: 11px;
+    padding: 12px 0;
   }
   section.page_title_section.minimized {
     top: 60px;
   }
   section.page_title_section.minimized h1 {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
   #index section.top_offer_section,
   #france section.top_offer_section,
@@ -8180,12 +8175,39 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container .navigation_block .header_tel {
     line-height: 1;
   }
+  header .navigation_container nav {
+    top: 62px;
+  }
   header .logo img {
     max-width: 40px;
     max-height: 40px;
   }
   header div.menu-icon {
     right: 15px;
+  }
+  main {
+    padding-top: 94px;
+  }
+  #details main,
+  #locationsDetails main,
+  #results_fr main,
+  #results main,
+  #locations_fr main,
+  #locations main {
+    padding-top: 62px;
+  }
+  section.page_title_section {
+    top: 62px;
+  }
+  section.page_title_section h1 {
+    font-size: 10px;
+    padding: 10px 0;
+  }
+  section.page_title_section.minimized {
+    top: 60px;
+  }
+  section.page_title_section.minimized h1 {
+    font-size: 10px;
   }
   section.article_section.newsletter .outer_block_container {
     padding: 5px;
