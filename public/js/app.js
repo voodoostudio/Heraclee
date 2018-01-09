@@ -77,21 +77,39 @@ function resultsMapInit()  {
     var this_page = $('body').attr('id');
     if(this_page === 'index') {
         var latlang = {lat: 43.281306, lng: 6.565533};
-        var map = new google.maps.Map(document.getElementById('results_map'), {
-            zoom: 12,
-            center: latlang,
-            scrollwheel: false,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-                position: google.maps.ControlPosition.TOP_RIGHT
-            },
-            zoomControlOptions: {
-                position: google.maps.ControlPosition.LEFT_TOP
-            },
-            streetViewControlOptions: {
-                position: google.maps.ControlPosition.LEFT_TOP
-            }
-        });
+        if ($(window).width() < 576) {
+            var map = new google.maps.Map(document.getElementById('results_map'), {
+                zoom: 10,
+                center: latlang,
+                scrollwheel: false,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.TOP_RIGHT
+                },
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                }
+            });
+        } else {
+            var map = new google.maps.Map(document.getElementById('results_map'), {
+                zoom: 12,
+                center: latlang,
+                scrollwheel: false,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+                    position: google.maps.ControlPosition.TOP_RIGHT
+                },
+                zoomControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                },
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_TOP
+                }
+            });
+        }
     } else {
         var latlang = {lat: 46.207389, lng: 6.155903};
         var map = new google.maps.Map(document.getElementById('results_map'), {

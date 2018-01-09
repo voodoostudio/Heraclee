@@ -307,7 +307,10 @@
             @endforeach
         ];
         $(document).ready(function() {
-            resultsMapInit();
+            setTimeout(function(){
+                resultsMapInit();
+            }, 500);
+
         });
     </script>
 @stop
