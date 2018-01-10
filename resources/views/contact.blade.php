@@ -7,7 +7,12 @@ $lang = LaravelLocalization::getCurrentLocale();
     {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/contact.min.css')}}">--}}
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
-    <script src="https://www.google.com/recaptcha/api.js?hl={{$lang}}"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl={{$lang}}'></script>
+    <style>
+        .rc-anchor-light {
+            background: transparent!important;
+        }
+    </style>
 @stop
 
 @section('content')
@@ -17,9 +22,9 @@ $lang = LaravelLocalization::getCurrentLocale();
         </div>
     </section>
     {{--<section class="contact_info_section">--}}
-    {{--<div class="container-fluid">--}}
-    {{--<p>{{ trans('lang.contact_page_description') }}</p>--}}
-    {{--</div>--}}
+        {{--<div class="container-fluid">--}}
+            {{--<p>{{ trans('lang.contact_page_description') }}</p>--}}
+        {{--</div>--}}
     {{--</section>--}}
     <section class="contact_map_section">
         <div id="contact_map"></div>
@@ -47,7 +52,7 @@ $lang = LaravelLocalization::getCurrentLocale();
                     <h2>{{ trans('lang.contact_us') }}</h2>
                     <p>{{ trans('lang.contact_form_description') }}</p>
                     <div id="message-box"></div>
-                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST">
+                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST" novalidate>
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="col-12 col-md-4">

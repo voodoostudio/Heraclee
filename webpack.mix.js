@@ -51,9 +51,9 @@ mix.options({
 });
 
 
-// mix.version();
+mix.version();
 
-if (mix.inProduction()) {
-    mix.version();
-}
+// if (mix.inProduction()) {
+//     mix.version();
+// }
 
