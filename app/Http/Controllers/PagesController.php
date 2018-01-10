@@ -10,7 +10,6 @@ namespace App\Http\Controllers;
 
 use App\GallerySettings;
 use App\Libraries\SyncWithApimo;
-use App\Newsletter;
 use App\Properties;
 use App\Team;
 use App\Services;
@@ -122,7 +121,7 @@ class PagesController extends Controller
         }
 
         if($country[0] == 'france') {
-           return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
@@ -307,11 +306,11 @@ class PagesController extends Controller
 
         Session::put('search.sell_type', 3);
 
-       /* if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
-            Session::put('search.sell_type', $_POST['sell_type']);
-        } elseif (!Session::has('search.sell_type')) {
-            Session::put('search.sell_type', 1);
-        }*/
+        /* if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
+             Session::put('search.sell_type', $_POST['sell_type']);
+         } elseif (!Session::has('search.sell_type')) {
+             Session::put('search.sell_type', 1);
+         }*/
 
         if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
             Session::put('search.object_type', $_POST['object_type']);
@@ -463,7 +462,7 @@ class PagesController extends Controller
             $mp_property_id = DB::table('apimo_properties')
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
                 })
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
@@ -526,7 +525,7 @@ class PagesController extends Controller
             $mp_property_id = DB::table('apimo_properties')
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
                 })
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
@@ -565,48 +564,14 @@ class PagesController extends Controller
         return view('newsletters.heraclee_newsletter');
     }
 
-//    public function newsletter_details()
-//    {
-//        return view('newsletter_details');
-//    }
+    public function newsletter_details()
+    {
+        return view('newsletter_details');
+    }
 
     public function contact()
     {
         return view('contact');
-    }
-
-
-    public function team()
-    {
-        $users = Team::where('active', 1)
-            ->get()
-            ->toArray();
-
-        return view('team');
-    }
-
-    /**
-     * Display a listing of news.
-     */
-
-    public function news()
-    {
-        $news = Posts::where('status', '=', 'on')
-            ->orderBy('date', 'desc')
-            ->get();
-
-        return view('news', ['news' => $news]);
-    }
-
-    /**
-     * Display a listing of newsletters.
-     */
-
-    public function newsletter_list()
-    {
-        $newsletters = Newsletter::orderBy('date', 'desc')->get();
-
-        return view('newsletters', ['newsletters' => $newsletters]);
     }
 
     /**
@@ -633,10 +598,18 @@ class PagesController extends Controller
 
         /* ReCaptcha V2 (google) */
         $response = $_POST["g-recaptcha-response"];
-        $secret_key = '6Ld97zkUAAAAAMvFBfs7nvtbkYWUlYSop9BandJs';
-        $google_reCaptcha_check = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-        $verify = json_decode($google_reCaptcha_check);
+        $secret_key = env('GOOGLE_RECAPTCHA_SECRET');
+        $url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR'];
+        $ch = curl_init();
 
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        $recaptcha = curl_exec($ch);
+        curl_close($ch);
+
+        $verify = json_decode($recaptcha);
 
         $success = array(
             'status' => 'success',
@@ -697,7 +670,7 @@ class PagesController extends Controller
 
         $data = [
 //            'to' => $request->to,
-            'to' => 'info@heraclee.com',
+            //'to' => 'info@heraclee.com',
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -707,9 +680,18 @@ class PagesController extends Controller
 
         /* ReCaptcha V2 (google) */
         $response = $_POST["g-recaptcha-response"];
-        $secret_key = '6Ld97zkUAAAAAMvFBfs7nvtbkYWUlYSop9BandJs';
-        $google_reCaptcha_check = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR']);
-        $verify = json_decode($google_reCaptcha_check);
+        $secret_key = env('GOOGLE_RECAPTCHA_SECRET');
+        $url = "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret_key . "&response=" . $response . "&remoteip=" . $_SERVER['REMOTE_ADDR'];
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url);
+
+        $recaptcha = curl_exec($ch);
+        curl_close($ch);
+
+        $verify = json_decode($recaptcha);
 
         $success = array(
             'status' => 'success',
@@ -739,7 +721,7 @@ class PagesController extends Controller
         if($verify->success == true) {
             Mail::send('emails.email_agent', $data, function ($message) use ($data) {
                 $message->from($data['email'], 'Heraclee Contact form');
-                $message->to($data['to']);
+                $message->to(env('CONTACT_EMAIL'));
             });
         } else {
             return $captcha_error;
@@ -785,6 +767,27 @@ class PagesController extends Controller
         }
     }
 
+    public function team()
+    {
+        $users = Team::where('active', 1)
+            ->get()
+            ->toArray();
+
+        return view('team');
+    }
+
+    /**
+     * Display a listing of news.
+     */
+
+    public function news()
+    {
+        $news = Posts::where('status', '=', 'on')
+            ->orderBy('date', 'desc')
+            ->get();
+
+        return view('news', ['news' => $news]);
+    }
 
     /**
      * Display a listing of virtual tours.
@@ -839,18 +842,6 @@ class PagesController extends Controller
         $news = Posts::find($id);
 
         return view('news_details', ['item' => $news]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     */
-    public function newsletter_details($id)
-    {
-        $newsletters = Newsletter::find($id);
-
-        return view('newsletter_details', ['item' => $newsletters]);
     }
 
     /**

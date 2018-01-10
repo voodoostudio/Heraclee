@@ -40,7 +40,7 @@
                     </div>
                     <form id="contactForm" action="{{ route('contact.post.agent') }}"  method="POST" novalidate>
                         {{ csrf_field() }}
-{{--                        <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">--}}
+                        {{--                        <input type = "hidden" name = "to" value="{{ $property['user']['email'] }}">--}}
                         <div class="row">
                             <div class="col-md-6 margin_bottom_20">
                                 <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
@@ -68,15 +68,20 @@
                                 </div>
                             </div>
                             {{--<div class="col-md-6 margin_bottom_20">--}}
-                                {{--<label class="form_el_label"><span>{{ trans('lang.postal_code') }}</span></label>--}}
-                                {{--<div class="input_container">--}}
-                                    {{--<input type="text" name = "post_code" id = "post_code" placeholder="{{ trans('lang.postal_code') }}">--}}
-                                {{--</div>--}}
+                            {{--<label class="form_el_label"><span>{{ trans('lang.postal_code') }}</span></label>--}}
+                            {{--<div class="input_container">--}}
+                            {{--<input type="text" name = "post_code" id = "post_code" placeholder="{{ trans('lang.postal_code') }}">--}}
+                            {{--</div>--}}
                             {{--</div>--}}
                             <div class="col-12">
                                 <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
                                 <div class="input_container">
                                     <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}" data-theme="dark" ></div>
+                                    </div>
                                 </div>
                                 <button class="btn" type="submit">{{ trans('lang.send') }}</button>
                             </div>
