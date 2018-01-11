@@ -38,9 +38,15 @@
                                     {{--<select id="prop_type_select" multiple="multiple" name="object_type[]" title="">--}}
                                     <select id="property_type_select" name="object_type[]" title="">
 {{--                                        <option value="" selected disabled="disabled">{{ trans('lang.select_the_object_type') }}</option>--}}
-                                        @foreach($type as $item)
-                                            <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
-                                        @endforeach
+                                        @if(empty($_POST['search_keywords']))
+                                            @foreach($type as $item)
+                                                <option value="{{$item['reference']}}" @if(isset($search['object_type']) && array_search($item['reference'],$search['object_type']) !== false) selected @endif>{{$item['value']}}</option>
+                                            @endforeach
+                                        @else
+                                            @foreach($type as $item)
+                                                <option value="{{$item['reference']}}" {{ ($item['reference'] == '2') ? 'selected' : '' }} >{{$item['value']}}</option>
+                                            @endforeach
+                                        @endif
                                     </select>
                                 </div>
                                 @php
@@ -61,12 +67,18 @@
                                     {{--<select multiple="multiple" name="object_place[]" title="">--}}
                                     <select id="cities_select" name="object_place[]" title="">
 {{--                                        <option value="" selected disabled="disabled">{{ trans('lang.select_the_city') }}</option>--}}
-                                        @if(!empty($city_arr))
-                                            @foreach($city_arr as $city)
-                                                <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
-                                            @endforeach
+                                        @if(empty($_POST['search_keywords']))
+                                            @if(!empty($city_arr))
+                                                @foreach($city_arr as $city)
+                                                    <option value="{{$city['city_id']}}" @if(isset($search['object_place']) && array_search($city['city_id'],$search['object_place']) !== false) selected @endif>{{$city['name']}}</option>
+                                                @endforeach
+                                            @else
+                                                <option value="0" disabled="disabled"></option>
+                                            @endif
                                         @else
-                                            <option value="0" disabled="disabled"></option>
+                                            @foreach($city_arr as $city)
+                                                <option value="{{$city['city_id']}}" {{ ($city['city_id'] == '35970') ? 'selected' : '' }} >{{$city['name']}}</option>
+                                            @endforeach
                                         @endif
                                     </select>
                                 </div>
