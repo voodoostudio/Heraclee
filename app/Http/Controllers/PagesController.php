@@ -67,10 +67,17 @@ class PagesController extends Controller
         }
 
         $properties_obj = new Properties();
-        $properties = $properties_obj->getPropertiesForSlider(
+        $properties = $properties_obj->getProperties(
             Session::get("search.items"),
             $cur_page,
             Session::get("search.sell_type"),
+            Session::get("search.object_type"),
+            Session::get("search.object_place")
+        );
+
+        $slider_properties = $properties_obj->getPropertiesForSlider(
+            Session::get("search.items"),
+            $cur_page,
             Session::get("search.object_type"),
             Session::get("search.object_place")
         );
@@ -117,11 +124,11 @@ class PagesController extends Controller
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == $lang) {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {
-            return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
@@ -460,10 +467,7 @@ class PagesController extends Controller
 
             /* for slider */
             $mp_property_id = DB::table('apimo_properties')
-                ->where(function($query) {
-                    $query->orWhere('reference', 'like', 'HSTP%')
-                        ->orWhere('reference', 'like', 'HD%');
-                })
+                ->where('reference', 'like', 'HSTP%')
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')
@@ -523,10 +527,7 @@ class PagesController extends Controller
 
             /* for slider */
             $mp_property_id = DB::table('apimo_properties')
-                ->where(function($query) {
-                    $query->orWhere('reference', 'like', 'HSTP%')
-                        ->orWhere('reference', 'like', 'HD%');
-                })
+                ->where('reference', 'like', 'HSTP%')
                 ->limit('10')
                 ->orderBy('property_id', 'DESC')
                 ->pluck('property_id')
