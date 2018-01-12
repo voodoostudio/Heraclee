@@ -72,7 +72,7 @@ return [
     'condition'             => 'Condition',
     'style'                 => 'Style',
     'floor'                 => 'Floor',
-    'landscape_view'        => 'Landscape view',
+    'landscape_view'        => 'View',
     'construction_year'     => 'Construction year',
     'renovation_year'       => 'Renovation year',
     'orientation'           => 'Orientation',
