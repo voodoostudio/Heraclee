@@ -566,10 +566,10 @@ class PagesController extends Controller
         return view('newsletters.heraclee_newsletter');
     }
 
-    public function newsletter_details()
+    /*public function newsletter_details()
     {
         return view('newsletter_details');
-    }
+    }*/
 
     public function contact()
     {
@@ -855,6 +855,18 @@ class PagesController extends Controller
         $news = Posts::find($id);
 
         return view('news_details', ['item' => $news]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     */
+    public function newsletter_details($id)
+    {
+        $newsletters = Newsletter::find($id);
+
+        return view('newsletter_details', ['item' => $newsletters]);
     }
 
     /**
