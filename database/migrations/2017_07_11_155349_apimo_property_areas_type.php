@@ -325,7 +325,7 @@ class ApimoPropertyAreasType extends Migration
                 [
                     'reference' => 51,
                     'locale' => 'fr_FR',
-                    'value' => 'Terrain',
+                    'value' => 'Superficie terrain',
                     'value_plurial' => 'Terrains',
                 ],
                 [

@@ -310,6 +310,12 @@
                             @if(!empty($property['type']))
                                 <li class="tooltip" title="{{ trans('lang.type') }} : {{ $property['type'] }}"><span class="detail_name">{{ trans('lang.type') }}</span><span class="detail_value">{{ $property['type'] }}</span></li>
                             @endif
+                            @if(!empty($property['rooms']))
+                                <li class="tooltip" title="{{ trans('lang.number_of_pieces') }} : {{ $property['rooms'] }}"><span class="detail_name">{{ trans('lang.number_of_pieces') }}</span><span class="detail_value">{{ $property['rooms'] }}</span></li>
+                            @endif
+                            @if(!empty($property['bedrooms']))
+                                <li class="tooltip" title="{{ trans('lang.number_of_rooms') }} : {{ $property['bedrooms'] }}"><span class="detail_name">{{ trans('lang.number_of_rooms') }}</span><span class="detail_value">{{ $property['bedrooms'] }}</span></li>
+                            @endif
                             @if(!empty($property['subtype']))
                                 <li class="tooltip" title="{{ trans('lang.sub_type') }} : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
                             @endif
@@ -328,12 +334,12 @@
                             @if(!empty($property['heating']['device']))
                                 <li class="tooltip" title="{{ trans('lang.heating_type') }} : {{ $property['heating']['device'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
                             @endif
-                            @if(!empty($property['construction_year']))
+                            {{--@if(!empty($property['construction_year']))
                                 <li class="tooltip" title="{{ trans('lang.construction_year') }} : {{ $property['construction_year'] }}"><span class="detail_name">{{ trans('lang.construction_year') }}</span><span class="detail_value">{{ $property['construction_year'] }}</span></li>
                             @endif
                             @if(!empty($property['renovation_year']))
                                 <li class="tooltip" title="{{ trans('lang.renovation_year') }} : {{ $property['renovation_year'] }}"><span class="detail_name">{{ trans('lang.renovation_year') }}</span><span class="detail_value">{{ $property['renovation_year'] }}</span></li>
-                            @endif
+                            @endif--}}
                             @if(!empty($property['orientations']))
                                 <li class="tooltip" title="{{ trans('lang.orientation') }} : {{ implode(" | ", $property['orientations']) }}"><span class="detail_name">{{ trans('lang.orientation') }}</span><span class="detail_value">{{ implode(" | ", $property['orientations']) }}</span></li>
                             @endif
@@ -368,8 +374,21 @@
                                 <li class="tooltip" title="{{ trans('lang.standing') }} : {{ $property['standing'] }}"><span class="detail_name">{{ trans('lang.standing') }}</span><span class="detail_value">{{ $property['standing'] }}</span></li>
                             @endif
                         </ul>
+                        <h4>{{ trans('lang.surfaces') }}</h4>
+                        <ul class="object_info_list">
+                            @if(!empty($property['area_surface']))
+                                <li class="tooltip" title="{{ trans('lang.living_space') }} : {{ $property['area_surface'] }} m2"><span class="detail_name">{{ trans('lang.living_space') }}</span><span class="detail_value">{{$property['area_surface']}} m<sup>2</sup></span></li>
+                            @endif
+                            @if(!empty($property['areas']))
+                                @foreach($property['areas'] as $area)
+                                    @if((!empty($area['type'])) && (!empty($area['area'])) && $area['type'] == 'Superficie terrain')
+                                        <li class="tooltip" title="{{ $area['type'] }} : {{ $area['number'] }}"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </ul>
 
-                        @if(!empty($property['areas']))
+                        {{--@if(!empty($property['areas']))
                             <h4>{{ trans('lang.surfaces') }}</h4>
                             @if($area['area'] != null)
                                 <ul class="object_info_list main_info">
@@ -387,7 +406,7 @@
                                     @endif
                                 @endforeach
                             </ul>
-                        @endif
+                        @endif--}}
                         <h4>{{ trans('lang.features') }}</h4>
                         <h5>{{ trans('lang.equipments') }}</h5>
                         <ul class="object_add_info_list">
@@ -863,7 +882,7 @@
                                 -
                             @endif
                         </ul>
-                        <h5>{{ trans('lang.sports_equipment') }}</h5>
+                        {{--<h5>{{ trans('lang.sports_equipment') }}</h5>
                         <ul class="object_add_info_list">
                             @if((!empty($property['services']['13'])) || (!empty($property['services']['71'])))
                                 @foreach($services as $service)
@@ -882,7 +901,7 @@
                             @else
                                 -
                             @endif
-                        </ul>
+                        </ul>--}}
 
                         @if($property['regulations'] != null && intval($property['regulations']['0']['value']) > 0 && intval($property['regulations']['1']['value']) > 0)
                             <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
