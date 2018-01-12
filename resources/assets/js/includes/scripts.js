@@ -32,6 +32,7 @@ $(document).ready(function() {
             }
         };
 
+
         function getBrowserKeys() {
             return Object.getOwnPropertyNames(browsers)
         }
@@ -45,6 +46,9 @@ $(document).ready(function() {
 
             for(var i=0; i< keys.length ; i++) {
                 var browser = browsers[keys[i]];
+
+                console.log(curBrowserName);
+                console.log(browser_version);
 
                 if(curBrowserName === browser.name) {
                     return curBrowser.version <= browser.version;
