@@ -316,9 +316,9 @@
                             @if(!empty($property['bedrooms']))
                                 <li class="tooltip" title="{{ trans('lang.number_of_rooms') }} : {{ $property['bedrooms'] }}"><span class="detail_name">{{ trans('lang.number_of_rooms') }}</span><span class="detail_value">{{ $property['bedrooms'] }}</span></li>
                             @endif
-                            @if(!empty($property['subtype']))
+                            {{--@if(!empty($property['subtype']))
                                 <li class="tooltip" title="{{ trans('lang.sub_type') }} : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
-                            @endif
+                            @endif--}}
                             @if(!empty($property['condition']))
                                 <li class="tooltip" title="{{ trans('lang.condition') }} : {{ $property['condition'] }}"><span class="detail_name">{{ trans('lang.condition') }}</span><span class="detail_value">{{ $property['condition'] }}</span></li>
                             @endif
