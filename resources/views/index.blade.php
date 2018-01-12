@@ -3,7 +3,7 @@
 @section('title', 'Home page')
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/index.min.css')}}">--}}
-    <script async defer
+    <script defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
 @stop
 
@@ -48,7 +48,7 @@
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
 
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section" style="display: none;">
                     <ul class="index_main_carousel">
                         @foreach($gallery as $image)
                             @if($image['page'] == 'homepage')
