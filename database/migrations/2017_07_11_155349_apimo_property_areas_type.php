@@ -829,7 +829,7 @@ class ApimoPropertyAreasType extends Migration
                 [
                     'reference' => 51,
                     'locale' => 'en_GB',
-                    'value' => 'Land',
+                    'value' => 'Land surface',
                     'value_plurial' => 'Lands',
                 ],
                 [
