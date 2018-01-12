@@ -11,7 +11,7 @@
 
     <section class="page_title_section hidden-md-up">
         <div class="container-fluid">
-            <h1>{!! trans('lang.homepage_title') !!}</h1>
+            <h1>{!! trans('lang.homepage_title') !!}dfhjdfh</h1>
         </div>
     </section>
 
@@ -265,7 +265,11 @@
                         '<span class="object_offer_type">'+'{{$v['category']}}'+'</span>' +
                         '<div class="subtitle"> ' +
                             '<span class="city">'+'{{$v['city']}}'+'</span> ' +
+                        @if($v['price'] != 0)
                             '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                        @else
+                            '<span class="price">'+'{{ trans('lang.zero_price')  }}'+ '</span> ' +
+                        @endif
                 '<br/><ul class="creation_date">' +
                 @php
                     $date = new DateTime($property['created_at']);

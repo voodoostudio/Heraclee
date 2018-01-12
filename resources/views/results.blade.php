@@ -146,7 +146,11 @@
                                             '<span class="object_offer_type">'+'{{$v['category']}}'+'</span>' +
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
+                                            @if($v['price'] != 0)
                                                 '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                                            @else
+                                                '<span class="price">'+'{{ trans('lang.zero_price') }}'+ '</span> ' +
+                                            @endif
                                                     '<br/><ul class="creation_date">' +
                                                         @php
                                                             $date = new DateTime($property['created_at']);
