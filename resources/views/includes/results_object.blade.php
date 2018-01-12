@@ -45,7 +45,7 @@
             {{--<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>--}}
             {{--</ul>--}}
 
-            @if(!empty($property['agreement']) && $property['agreement']['reference'] != 3)
+            @if($property['agreement']['reference'] != 3)
                 @if($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0 ||
                     $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%m") < 3 &&
                     $date_updated->diff(($date_created->diff($now)->format("%m") < 3 && $date_created->diff($now)->format("%y") == 0) ? $date_created : $past)->format("%y") == 0 ||

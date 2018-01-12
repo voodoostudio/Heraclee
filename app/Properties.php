@@ -410,7 +410,7 @@ class Properties extends Model
                 })
                 ->limit($items)
                 ->offset($offset)
-                ->orderBy('property_id', 'DESC')
+                ->orderBy('created_at', 'DESC')
                 ->get();
 
 
@@ -627,7 +627,7 @@ class Properties extends Model
                 ->whereIn('country', $country_array)
                 ->limit($items)
                 ->offset($offset)
-                ->orderBy('property_id', 'DESC')
+                ->orderBy('created_at', 'DESC')
                 ->get();
 
             $this->property_count = DB::table('apimo_properties')
@@ -735,7 +735,7 @@ class Properties extends Model
             ->where('agency', '10338')
             ->limit($items)
             ->offset($offset)
-            ->orderBy('property_id', 'DESC')
+            ->orderBy('created_at', 'DESC')
             ->get();
 
         $this->all_property_count = DB::table('apimo_properties')
@@ -2069,7 +2069,7 @@ class Properties extends Model
                             ->orWhereIn('property_id', $commentary);
                     }
                 })
-                ->orderBy('property_id', 'DESC')
+                ->orderBy('created_at', 'DESC')
                 ->pluck('property_id')
                 ->toArray();
             return $property_id;
@@ -2083,7 +2083,7 @@ class Properties extends Model
                     $query->orWhere('reference', 'like', 'HSTP%')
                           ->orWhere('reference', 'like', 'HD%');
                 })
-                ->orderBy('property_id', 'DESC')
+                ->orderBy('created_at', 'DESC')
                 ->pluck('property_id')
                 ->toArray();
             return $property_id;
