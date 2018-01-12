@@ -51,8 +51,8 @@ $(document).ready(function() {
                 console.log(browser_version);
                 console.log(browser.version);
 
-                if(curBrowserName === browser.name) {
-                    return curBrowser.version === browser.version;
+                if(curBrowserName == browser.name) {
+                    return curBrowser.version <= browser.version;
                 } else {
                     //continue
                 }
@@ -64,7 +64,7 @@ $(document).ready(function() {
             var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|ie|trident(?=\/))\/?\s*(\d+)/i) || [];
             if (/trident/i.test(M[1])) {
                 tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-                return {name: 'IE ', version: (tem[1] || '')};
+                return {name: 'IE', version: (tem[1] || '')};
             }
             if (M[1] === 'Chrome') {
                 tem = ua.match(/\bOPR\/(\d+)/);

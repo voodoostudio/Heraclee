@@ -159,6 +159,13 @@
                 @endif
                 <div id="object_panorama"></div>
             </div>
+
+
+
+            {{--<a href="http://old.heraclee.com/vv2/Vanades.html" target="_blank">Open virtual tour in new tab</a>--}}
+
+
+
             <div class="close_panorama_container">
                 <button class="close_panorama"><i class="icn icon-arrow_right"></i>{{ trans('lang.back_to_gallery') }}</button>
             </div>
@@ -207,7 +214,7 @@
                                 <li class="no_text {{ (!empty($property['services']['4'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-conditioner"></i></span><span class="prop_val"></span></li>
                             @endif
                             @if($service->reference == '5' && $service->locale == $lang)
-                                <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-security"></i></span><span class="prop_val"></span></li>
+                                <li class="no_text {{ (!empty($property['services']['5'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-alarm"></i></span><span class="prop_val"></span></li>
                             @endif
                             @if($service->reference == '6' && $service->locale == $lang)
                                 <li class="no_text {{ (!empty($property['services']['6'])) ? '' : 'inactive' }}"><span class="icn_container tooltip" title="{{ $service->value }}"><i class="icn icon-elevator"></i></span><span class="prop_val"></span></li>
@@ -320,9 +327,9 @@
                             @if(!empty($property['bedrooms']))
                                 <li class="tooltip" title="{{ trans('lang.number_of_rooms') }} : {{ $property['bedrooms'] }}"><span class="detail_name">{{ trans('lang.number_of_rooms') }}</span><span class="detail_value">{{ $property['bedrooms'] }}</span></li>
                             @endif
-                            @if(!empty($property['subtype']))
+                            {{--@if(!empty($property['subtype']))
                                 <li class="tooltip" title="{{ trans('lang.sub_type') }} : {{ $property['subtype'] }}"><span class="detail_name">{{ trans('lang.sub_type') }}</span><span class="detail_value">{{ $property['subtype'] }}</span></li>
-                            @endif
+                            @endif--}}
                             @if(!empty($property['condition']))
                                 <li class="tooltip" title="{{ trans('lang.condition') }} : {{ $property['condition'] }}"><span class="detail_name">{{ trans('lang.condition') }}</span><span class="detail_value">{{ $property['condition'] }}</span></li>
                             @endif

@@ -298,8 +298,10 @@ function infowindow_objectsInit() {
         speed: 100,
         dots: true,
         swipe: true,
-        prevArrow: '<button type="button" class="slick-prev tooltip" title="' + trans('lang.previous') + '"><i class="icn icon-arrow_big_left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next tooltip" title="' + trans('lang.next') + '"><i class="icn icon-arrow_big_right"></i></button>'
+        // prevArrow: '<button type="button" class="slick-prev tooltip" title="' + trans('lang.previous') + '"><i class="icn icon-arrow_big_left"></i></button>',
+        // nextArrow: '<button type="button" class="slick-next tooltip" title="' + trans('lang.next') + '"><i class="icn icon-arrow_big_right"></i></button>'
+        prevArrow: '<button type="button" class="slick-prev tooltip" title="Précédent"><i class="icn icon-arrow_big_left"></i></button>',
+        nextArrow: '<button type="button" class="slick-next tooltip" title="Suivant"><i class="icn icon-arrow_big_right"></i></button>'
     });
     $('.infowindow_container button.tooltip').tooltipster({
         animation: 'fade',

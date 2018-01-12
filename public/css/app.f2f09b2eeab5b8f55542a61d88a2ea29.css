@@ -298,7 +298,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-  content: "\e913";
+  content: "\e914";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -310,7 +310,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-  content: "\e912";
+  content: "\e913";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -413,7 +413,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   top: 0;
   display: block;
   font-family: 'icomoon' !important;
-  content: "\e913";
+  content: "\e914";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -430,7 +430,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
@@ -600,11 +600,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-  content: "\e913";
+  content: "\e914";
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 /*Bootstrap select END*/
@@ -965,7 +965,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-  content: "\e913";
+  content: "\e914";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -977,7 +977,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-  content: "\e912";
+  content: "\e913";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -1080,7 +1080,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   top: 0;
   display: block;
   font-family: 'icomoon' !important;
-  content: "\e913";
+  content: "\e914";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -1097,7 +1097,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
@@ -1267,11 +1267,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-  content: "\e913";
+  content: "\e914";
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 /*Bootstrap select END*/
@@ -2774,7 +2774,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-  content: "\e913";
+  content: "\e914";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -2786,7 +2786,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-  content: "\e912";
+  content: "\e913";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -2889,7 +2889,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   top: 0;
   display: block;
   font-family: 'icomoon' !important;
-  content: "\e913";
+  content: "\e914";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -2906,7 +2906,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
@@ -3076,11 +3076,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-  content: "\e913";
+  content: "\e914";
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 /*Bootstrap select END*/
@@ -3908,7 +3908,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-  content: "\e913";
+  content: "\e914";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -3920,7 +3920,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-  content: "\e912";
+  content: "\e913";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -4023,7 +4023,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   top: 0;
   display: block;
   font-family: 'icomoon' !important;
-  content: "\e913";
+  content: "\e914";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -4040,7 +4040,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
@@ -4210,11 +4210,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-  content: "\e913";
+  content: "\e914";
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 /*Bootstrap select END*/
@@ -5695,7 +5695,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"] + span.fake_checkbox:before {
-  content: "\e913";
+  content: "\e914";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -5707,7 +5707,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .my_checkbox label input[type="checkbox"]:checked + span.fake_checkbox:before {
-  content: "\e912";
+  content: "\e913";
   font-family: icomoon;
   color: #625e57;
   font-size: 20px;
@@ -5810,7 +5810,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   top: 0;
   display: block;
   font-family: 'icomoon' !important;
-  content: "\e913";
+  content: "\e914";
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -5827,7 +5827,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.multiselect-item {
@@ -5997,11 +5997,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li a span.check-mark:before {
-  content: "\e913";
+  content: "\e914";
 }
 
 .btn-group.bootstrap-select.show-tick .dropdown-menu.open ul.dropdown-menu.inner li.selected a span.check-mark:before {
-  content: "\e912";
+  content: "\e913";
 }
 
 /*Bootstrap select END*/
