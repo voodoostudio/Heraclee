@@ -943,7 +943,7 @@
                             @endif
 
                             @if(!empty($property['regulations']['1']['value']) && intval($property['regulations']['1']['value']) > 0)
-                                <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5" data-id="1">
+                                <div class="col-xs-12 col-md-6 offset-lg-2 col-lg-5">
                                     <div class="energy_block ges">
                                         <div class="energy_block_title">
                                             <h5>{{ trans('lang.emission_of_greenhouse_gases') }}</h5>
