@@ -672,9 +672,10 @@ $(document).ready(function() {
 
                 console.log(curBrowserName);
                 console.log(browser_version);
+                console.log(browser.version);
 
                 if(curBrowserName === browser.name) {
-                    return curBrowser.version <= browser.version;
+                    return curBrowser.version === browser.version;
                 } else {
                     //continue
                 }
