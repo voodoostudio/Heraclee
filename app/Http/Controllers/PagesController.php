@@ -16,6 +16,7 @@ use App\Services;
 use App\Subscribers;
 use App\Posts;
 use App\Gallery;
+use App\Newsletter;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -788,6 +789,17 @@ class PagesController extends Controller
             ->get();
 
         return view('news', ['news' => $news]);
+    }
+
+    /**
+     * Display a listing of newsletters.
+     */
+
+    public function newsletter_list()
+    {
+        $newsletters = Newsletter::orderBy('date', 'desc')->get();
+
+        return view('newsletters', ['newsletters' => $newsletters]);
     }
 
     /**
