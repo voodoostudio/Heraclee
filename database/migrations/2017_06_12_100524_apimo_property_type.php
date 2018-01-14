@@ -31,7 +31,7 @@ class ApimoPropertyType extends Migration
                 [
                     'reference' => 2,
                     'locale' => 'fr_FR',
-                    'value' => 'Maison',
+                    'value' => 'Propriété',
                 ],
                 [
                     'reference' => 3,
@@ -81,7 +81,7 @@ class ApimoPropertyType extends Migration
                 [
                     'reference' => 2,
                     'locale' => 'en_GB',
-                    'value' => 'House',
+                    'value' => 'Property',
                 ],
                 [
                     'reference' => 3,

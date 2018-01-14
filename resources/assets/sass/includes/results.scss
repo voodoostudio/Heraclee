@@ -84,6 +84,7 @@ section.results_section {
       left: -145px !important;
       .infowindow_container {
         width: 300px;
+        overflow: hidden;
         .object_img {
           position: relative;
           width: 300px;

@@ -4808,6 +4808,7 @@ section.results_section #results_map .gm-style-iw {
 
 section.results_section #results_map .gm-style-iw .infowindow_container {
   width: 300px;
+  overflow: hidden;
 }
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_img {
