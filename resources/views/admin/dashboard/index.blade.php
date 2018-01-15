@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-4 margin_bottom_20">
+                    <div class="col-12 col-sm-6 col-lg-3 margin_bottom_20">
                         <a href="{{ URL::to($lang . '/admin/gallery') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
@@ -42,7 +42,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-4 margin_bottom_20">
+                    <div class="col-12 col-sm-6 col-lg-3 margin_bottom_20">
                         <a href="{{ URL::to($lang . '/admin/posts') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
@@ -51,11 +51,20 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-4 margin_bottom_20">
+                    <div class="col-12 col-sm-6 col-lg-3 margin_bottom_20">
                         <a href="{{ URL::to($lang . '/admin/newsletter') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
                                     <h2>Newsletters</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3 margin_bottom_20">
+                        <a href="{{ URL::to($lang . '/admin/subscribers') }}">
+                            <div class="outer_block_container">
+                                <div class="inner_block_container">
+                                    <h2>Subscribers</h2>
                                 </div>
                             </div>
                         </a>
