@@ -198,17 +198,17 @@ class Properties extends Model
 
         if ($bedrooms_min != '') {
             if(is_numeric($bedrooms_min) == true) {
-                $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+                $conditions_where[] = ['bedrooms', '>=', $bedrooms_min];
             } else {
-                $conditions_where[] = ['rooms', '>=', '9999999999'];
+                $conditions_where[] = ['bedrooms', '>=', '9999999999'];
             }
         };
 
         if ($bedrooms_max != '') {
             if(is_numeric($bedrooms_max) == true) {
-                $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+                $conditions_where[] = ['bedrooms', '<=', $bedrooms_max];
             } else {
-                $conditions_where[] = ['rooms', '<=', '-1'];
+                $conditions_where[] = ['bedrooms', '<=', '-1'];
             }
         };
 
@@ -880,17 +880,17 @@ class Properties extends Model
 
         if ($bedrooms_min != '') {
             if(is_numeric($bedrooms_min) == true) {
-                $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+                $conditions_where[] = ['bedrooms', '>=', $bedrooms_min];
             } else {
-                $conditions_where[] = ['rooms', '>=', '9999999999'];
+                $conditions_where[] = ['bedrooms', '>=', '9999999999'];
             }
         };
 
         if ($bedrooms_max != '') {
             if(is_numeric($bedrooms_max) == true) {
-                $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+                $conditions_where[] = ['bedrooms', '<=', $bedrooms_max];
             } else {
-                $conditions_where[] = ['rooms', '<=', '-1'];
+                $conditions_where[] = ['bedrooms', '<=', '-1'];
             }
         };
 
@@ -1859,17 +1859,17 @@ class Properties extends Model
 
         if ($bedrooms_min != '') {
             if(is_numeric($bedrooms_min) == true) {
-                $conditions_where[] = ['rooms', '>=', $bedrooms_min];
+                $conditions_where[] = ['bedrooms', '>=', $bedrooms_min];
             } else {
-                $conditions_where[] = ['rooms', '>=', '9999999999'];
+                $conditions_where[] = ['bedrooms', '>=', '9999999999'];
             }
         };
 
         if ($bedrooms_max != '') {
             if(is_numeric($bedrooms_max) == true) {
-                $conditions_where[] = ['rooms', '<=', $bedrooms_max];
+                $conditions_where[] = ['bedrooms', '<=', $bedrooms_max];
             } else {
-                $conditions_where[] = ['rooms', '<=', '-1'];
+                $conditions_where[] = ['bedrooms', '<=', '-1'];
             }
         };
 
