@@ -746,11 +746,16 @@ nav {
     margin: 20px 0 0;
     background: $main_dark_clr;
     li {
+      width: 37px;
+      &:first-child .page-link {
+        margin: 0 auto;
+      }
       a.page-link {
         background-color: transparent;
         padding: 0;
         height: 40px;
-        width: 37px;
+        width: 19px;
+        margin: 0 auto;
         line-height: 40px;
         text-align: center;
         border: none;
@@ -780,6 +785,9 @@ nav {
           background-color: transparent;
           font-size: 22px;
           color: $main_brown_clr;
+          pointer-events: none;
+          touch-action: none;
+          cursor: default;
         }
       }
     }

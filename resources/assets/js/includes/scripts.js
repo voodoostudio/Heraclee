@@ -47,9 +47,9 @@ $(document).ready(function() {
             for(var i=0; i< keys.length ; i++) {
                 var browser = browsers[keys[i]];
 
-                console.log(curBrowserName);
-                console.log(browser_version);
-                console.log(browser.version);
+                // console.log(curBrowserName);
+                // console.log(browser_version);
+                // console.log(browser.version);
 
                 if(curBrowserName == browser.name) {
                     return curBrowser.version <= browser.version;
@@ -149,6 +149,17 @@ $(document).ready(function() {
             $("footer .scroll_to_top").fadeOut();
         }
     });
+
+
+    ///multiselect on ios START
+    document.addEventListener('touchstart', function(e) {
+        if($(e.target).attr('class').indexOf("dropdown-toggle") >= 0) {
+        } else {
+            $('.dropdown-toggle.btn[aria-expanded="true"]').trigger('click');
+        }
+    }, false);
+    ///multiselect on ios END
+
 
     $('.tooltip').tooltipster({
         animation: 'fade',

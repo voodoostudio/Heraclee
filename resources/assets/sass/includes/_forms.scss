@@ -344,6 +344,10 @@ ul.nav.nav-tabs {
         &.active {
           a {
             color: $main_brown_clr;
+            pointer-events: none;
+            touch-action: none;
+            cursor: default;
+            display: block;
             label.checkbox:before {
               content: "\e913";
             }

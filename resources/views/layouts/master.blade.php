@@ -249,6 +249,12 @@
                 },
                 onChange: function() {
                     activateResetFiltser(true);
+                },
+                onDropdownShow: function() {
+                    $('.multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a').attr('touch-action', 'none');
+                },
+                onDropdownHide: function() {
+                    $('.multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a').removeAttr('touch-action');
                 }
             });
         </script>
