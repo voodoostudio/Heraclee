@@ -1,4 +1,19 @@
-﻿/* CSS Document */
+﻿/* BEGIN Light*/
+@font-face {
+	font-family: 'opensans_light';
+	src: url('/fonts/opensans/light/opensans_light.eot');
+	src: url('/fonts/opensans/light/opensans_light.eot?#iefix') format('embedded-opentype'),
+	url('/fonts/opensans/light/opensans_light.woff') format('woff'),
+	url('/fonts/opensans/light/opensans_light.ttf') format('truetype'),
+	url('/fonts/opensans/light/opensans_light.svg') format('svg');
+	font-weight: 100;
+	font-style: normal;
+}
+/* END Light*/
+
+
+
+/* CSS Document */
 .version{version:2017032001;}
 html{width:100%;height:100%;position:fixed;left:0;top:0;margin:0;padding:0;}
 body{width:100%;height:100%;margin:0;padding:0;border:0;left:0;top:0;position:fixed;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden;}
@@ -778,7 +793,7 @@ i,u{font-style:normal;text-decoration:none;}
 	vertical-align : middle;
 	text-align : center;
 	cursor : pointer;
-	font-family : "Tahoma","sans-serif","Arial";
+	font-family : 'opensans_light';
 	font-size:12px;
 	padding : 3px 7px;
 	opacity : 0.5;
@@ -906,7 +921,7 @@ i,u{font-style:normal;text-decoration:none;}
 }
 .catalog_simple_bar .button{position:absolute;cursor:pointer;top:0;width:38px;height:38px;}
 .catalog_simple_bar .button div {margin-left: 1px;margin-top:1px;width:35px;height:35px;}
-.catalog_simple_bar .page_num{position:absolute;font-size:16px;color:#bababa;height:38px;line-height:38px;vertical-align:middle;text-align:center;font-family:arial,tahoma,sans-serif;}
+.catalog_simple_bar .page_num{position:absolute;font-size:16px;color:#bababa;height:38px;line-height:38px;vertical-align:middle;text-align:center;font-family:'opensans_light',sans-serif;}
 .catalog_logo{position:absolute;cursor:pointer;z-index:95;}
 /*catalog guid toolbar css end*/
 
@@ -1577,7 +1592,7 @@ i,u{font-style:normal;text-decoration:none;}
   display: inline-block;
   /*background-color:#ddd000;*/
   /*padding:4px 11px;*/
-  font-family: Arial;
+  font-family: 'opensans_light';
   font-size: 10px;
 }
 
@@ -1602,7 +1617,7 @@ a {
   
   cursor : default;
 
-  font-family: Arial;
+  font-family: 'opensans_light';
   font-size: 12px;
 
   color: #EDAA1D;
@@ -1848,7 +1863,7 @@ a {
   background-color: #ffffff;
   color: #474747;
   font-weight: bold;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 24px;
   text-align: center;
   line-height: 30px;
@@ -1880,7 +1895,7 @@ a {
 .flipHTML5PhotoGallery-thumbTitle {
   position: absolute;
   background-color: #000000;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #ffffff;
   height: 24px;
   line-height: 24px;
@@ -1969,7 +1984,7 @@ a {
   width: 224px;
   height: 5em; /*56px;*/
   overflow: hidden;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   color: #1a1a1a;
   font-weight: bold;
@@ -1981,7 +1996,7 @@ a {
   bottom: 0px;
   width: 500px;
   height: 30px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   color: #ffffff;
   vertical-align: middle;
@@ -1995,7 +2010,7 @@ a {
   color: #ffffff;
   font-weight: bold;
   font-size: 13px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   z-index: 8;
   height: 15px;
   line-height: 15px;
@@ -2040,7 +2055,7 @@ a {
   font-size: 16px;
   font-weight: bold;
   text-shadow: 0 -1px 1px rgba(19, 28, 0, 0.35);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 34px;
   vertical-align: middle;
   text-indent: 8px;
@@ -2079,7 +2094,7 @@ a {
   font-size: 19px;
   text-indent: 2px;
   color: #1a1a1a;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .flipHTML5BookMark-addLeftMark, .flipHTML5BookMark-addRightMark, .flipHTML5BookMark-removeBookMark {
@@ -2093,7 +2108,7 @@ a {
   font-size: 12px;
   font-weight: bold;
   white-space: nowrap;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e5e6), color-stop(100%, #d1d0d1));
   background: -webkit-linear-gradient(top, #e6e5e6, #d1d0d1);
@@ -2151,7 +2166,7 @@ a {
   line-height: 28px;
   vertical-align: middle;
   color: #ffffff;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   font-weight: bold;
 }
@@ -2186,7 +2201,7 @@ a {
   line-height: 28px;
   vertical-align: middle;
   overflow: hidden;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
 }
 
@@ -2204,7 +2219,7 @@ a {
   text-indent: 8px;
   color: #1a1a1a;
   cursor: pointer;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
 }
 
@@ -2257,7 +2272,7 @@ a {
   resize: none;
   color: #000000;
   text-shadow: 0 -1px 1px rgba(19, 28, 0, 0.35);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   z-index: 2;
 }
@@ -2271,7 +2286,7 @@ a {
   height: 27px;
   top: 100px;
   cursor: pointer;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 12px;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e5e6), color-stop(100%, #d1d0d1));
   background: -webkit-linear-gradient(top, #e6e5e6, #d1d0d1);
@@ -2349,7 +2364,7 @@ a {
   vertical-align: middle;
   text-indent: 5px;
   color: #1a1a1a;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 12px;
   z-index: 2;
   border-top: 1px solid #9c9c9c;
@@ -2381,7 +2396,7 @@ a {
   background-color: #FFF4A1;
   color: #000000;
   text-shadow: 0 -1px 1px rgba(19, 28, 0, 0.35);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   z-index: 2;
 }
@@ -2799,7 +2814,7 @@ a {
   line-height: 70px;
   color: #1a1a1a;
   font-size: 16px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   text-indent: 10px;
 }
@@ -2816,7 +2831,7 @@ a {
   word-spacing: 4px;
   color: #1a1a1a;
   font-size: 15px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-indent: 8px;
   box-shadow: 0px 0px 2px #000000;
 }
@@ -2832,7 +2847,7 @@ a {
   vertical-align: middle;
   text-align: center;
   color: #ffffff;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 15px;
   font-weight: bold;
 }
@@ -2875,7 +2890,7 @@ a {
   text-indent: 17px;
   position: absolute;
   cursor: pointer;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e5e6), color-stop(100%, #d1d0d1));
   background: -webkit-linear-gradient(top, #e6e5e6, #d1d0d1);
   background: -moz-linear-gradient(top, #e6e5e6, #d1d0d1);
@@ -2913,7 +2928,7 @@ a {
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .flipHTML5Signature-nuderClose {
@@ -2930,7 +2945,7 @@ a {
   cursor: pointer;
   vertical-align: middle;
   font-weight: bold;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e6e5e6), color-stop(100%, #d1d0d1));
   background: -webkit-linear-gradient(top, #e6e5e6, #d1d0d1);
   background: -moz-linear-gradient(top, #e6e5e6, #d1d0d1);
@@ -2950,7 +2965,7 @@ a {
   top: 15px;
   left: auto;
   right: 17px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 11px;
   color: #A29696;
   font-weight: bold;
@@ -2968,7 +2983,7 @@ a {
   top: 54px;
   text-align: center;
   line-height: 22px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'opensans_light', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
   font-size: 13px;
   color: #5F5E5E;
@@ -3202,12 +3217,12 @@ a {
   font-size: 14px;
   text-decoration: none;
   color: white;
-  font-family: serif;
+  font-family: 'opensans_light';
 }
 
 .flipHtml5RemarkColorSelectorMessage {
   font-size: 14px;
-  font-family: serif;
+  font-family: 'opensans_light';
   text-align: left;
   line-height: 22px;
   border: 1px solid black;
@@ -3513,7 +3528,7 @@ a {
 	overflow : hidden;
 	width : 100%;
 	height : 50px;
-	font-family : Arial,Tahoma;
+	font-family : 'opensans_light';
 }
 
 .menuTitleIcon{
@@ -3762,7 +3777,7 @@ a {
 	line-height:50px;
 	vertical-align:middle;
 	text-align:center;
-	font-family:"Arial Black";
+	font-family:'opensans_light';
 	font-size:20px;
 }
 .passwardPannel .icon div{width:100%;height:100%;}
@@ -3817,7 +3832,7 @@ a {
 	vertical-align : middle;
 	text-align : center;
 	cursor : pointer;
-	font-family : "Tahoma","sans-serif","Arial";
+	font-family : 'opensans_light';
 	font-size:12px;
 	padding : 3px 7px;
 	margin : auto;
@@ -3920,7 +3935,7 @@ a {
 }
 
 .text_bubble_text{
-	font-family : "Tahoma","sans-serif","Arial";
+	font-family : 'opensans_light';
 	font-size : 12px;
 	font-weight : 100;
 }
@@ -4048,7 +4063,7 @@ a {
 }
 
 .bookmark_caption{
-	font-family : "Tahoma","sans-serif","Arial";
+	font-family : 'opensans_light';
 	font-size : 12px;
 	text-align : center;
 	color : #EEEEEE;
@@ -4173,7 +4188,7 @@ a {
 @media (max-width: 720px){
     .bookInstructions .helpTitle{
         margin:0;padding:0;
-        font-family: "HelveticaNeue-CondensedBold, sans-serif";
+        font-family: 'opensans_light', "HelveticaNeue-CondensedBold, sans-serif";
         font-weight: normal;
         position: relative;
         left:0;
@@ -4184,7 +4199,7 @@ a {
         color:#58A3EB;
     }
     .bookInstructions .helpBottomText{
-        font-family: "HelveticaNeue-CondensedBold, sans-serif";
+        font-family: 'opensans_light', "HelveticaNeue-CondensedBold, sans-serif";
         margin:0;padding:0;
         font-size: 20px;
         line-height: 20px;
@@ -4241,7 +4256,7 @@ a {
     .bookInstructions .helpTitle{
         margin:0;padding:0;
         font-weight: normal;
-        font-family: "HelveticaNeue-CondensedBold, sans-serif";
+        font-family: 'opensans_light', "HelveticaNeue-CondensedBold, sans-serif";
         position: relative;
         left:0;
         width:100%;
@@ -4252,7 +4267,7 @@ a {
     }
 
     .bookInstructions .helpBottomText{
-        font-family: "HelveticaNeue-CondensedBold, sans-serif";
+        font-family: 'opensans_light', "HelveticaNeue-CondensedBold, sans-serif";
         font-size: 40px;
         line-height: 40px;
         position:absolute;
@@ -4420,7 +4435,7 @@ a {
 .photogallery .thumbBox:hover .thumbBG{z-index: 0;}
 .photogallery .thumbBox.focus .thumbBG{z-index: 0;}
 
-.language_form{width:100%;height:100%;left:0;vertical-align:middle;font-family:Arial,Tahoma;background:transparent;}
+.language_form{width:100%;height:100%;left:0;vertical-align:middle;font-family:'opensans_light';background:transparent;}
 .language_form .stage{margin:0;width:100%;height:100%;}
 .language_form .form_title{display:none;}
 .language_form .close{display:none;}
@@ -4431,9 +4446,9 @@ a {
 .language_form .scrollBox .item .title{width:180px;line-height:50px;font-size:25px;color:#ffffff;padding:0 3px;position:absolute;margin-left:-90px;left:50%;}
 .language_form .scrollBox .item.focus .title{border:2px solid #F2947C;}
 
-.language_form.phone{width:100%;height:100%;left:0;vertical-align:middle;font-family:Arial,Tahoma;background:transparent;}
+.language_form.phone{width:100%;height:100%;left:0;vertical-align:middle;font-family:'opensans_light';background:transparent;}
 .language_form.phone .stage{margin:0;width:100%;height:100%;}
-.language_form.phone .form_title{font-family:"Arial";margin:0;padding:0 15px;line-height: 36px;display:block;}
+.language_form.phone .form_title{font-family:'opensans_light';margin:0;padding:0 15px;line-height: 36px;display:block;}
 .language_form.phone .close{position: absolute;right:10px;left:auto;top:6px;cursor: pointer;display:block;}
 .language_form.phone.rightToLeft .close{position: absolute;left:10px;right:auto;top:6px;cursor: pointer;}
 .language_form.phone .scrollBox{position:relative;width:100%;top:0;transform:none;-webkit-transform:none;-o-transform:none;-ms-transform:none;-moz-transform:none;}
@@ -4443,9 +4458,9 @@ a {
 .language_form.phone .scrollBox .item.focus .title{border:none;}
 .language_form.phone .scrollBox .item.focus img{display:block;}
 
-.setting_form.phone{width:100%;height:100%;left:0;vertical-align:middle;font-family:Arial,Tahoma;background:transparent;}
+.setting_form.phone{width:100%;height:100%;left:0;vertical-align:middle;font-family:'opensans_light';background:transparent;}
 .setting_form.phone .stage{margin:0;width:100%;height:100%;}
-.setting_form.phone .form_title{font-family:"Arial";margin:0;padding:0 15px;line-height: 36px;}
+.setting_form.phone .form_title{font-family:'opensans_light';margin:0;padding:0 15px;line-height: 36px;}
 .setting_form.phone .close{position: absolute;right:10px;left:auto;top:6px;cursor: pointer;}
 .setting_form.phone.rightToLeft .close{position: absolute;left:10px;right:auto;top:6px;cursor: pointer;}
 .setting_form.phone .scrollBox{position:absolute;width:100%;}
@@ -5261,7 +5276,7 @@ a {
 	display : none;
 }
 
-.tel_form{font-family:Arial;border-radius:5px;overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;width:85%;margin:auto;vertical-align: middle;color:#ffffff;}
+.tel_form{font-family:'opensans_light';border-radius:5px;overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;width:85%;margin:auto;vertical-align: middle;color:#ffffff;}
 .tel_form .form_title{height:40px;width:100%;background:#000000;line-height:40px;}
 .tel_form .stage{overflow:hidden;width:100%;position:relative;background:rgba(0,0,0,0.8);}
 .tel_form .swiper{width:100%;position:relative;left:0;top:0;max-height:50%;}
@@ -5293,7 +5308,7 @@ a {
     vertical-align: middle;
 }
 
-.copy_form{font-family:Arial;border-radius:5px;overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;width:80%;height:170px;padding:10px;margin:auto;vertical-align: middle;color:#ffffff;}
+.copy_form{font-family:'opensans_light';border-radius:5px;overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;width:80%;height:170px;padding:10px;margin:auto;vertical-align: middle;color:#ffffff;}
 .copy_form textarea{vertical-align:top;top:0;left:0;border-radius:5px;height:130px;width:100%;background:#ffffff;font-size:15px;color:#000000;padding:0;margin:0;border:none;}
 .copy_form p{position:absolute;top:152px;margin-right:100px;line-height:15px;font-size:15px;text-align:left;}
 .copy_form .cancel{cursor:pointer;border-radius:2px;position:absolute;right:10px;top:150px;height:27px;line-height:27px;background-color:rgba(255,255,255,0.2);font-size:15px;vertical-align:middle;padding:0 15px;}
