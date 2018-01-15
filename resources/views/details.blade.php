@@ -155,6 +155,8 @@
                 @if(file_exists($_SERVER['DOCUMENT_ROOT'] . '/virtual_tours/' . $property['property_id'] . '/property_' . $property['property_id'] . '.js'))
                     <div class="panorama_link_container">
                         <button>{{ trans('lang.virtual_tour') }}<i class="icn icon-arrow_right"></i></button>
+
+                        <a href="/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.html" >{{ trans('lang.virtual_tour') }}<i class="icn icon-arrow_right"></i></a>
                     </div>
                 @endif
                 <div id="object_panorama"></div>
@@ -162,7 +164,7 @@
 
 
 
-            {{--<a href="http://old.heraclee.com/vv2/Vanades.html" target="_blank">Open virtual tour in new tab</a>--}}
+
 
 
 

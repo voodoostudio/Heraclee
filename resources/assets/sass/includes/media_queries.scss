@@ -905,10 +905,14 @@
           }
           .panorama_link_container {
             width: 250px;
-            button {
+            a {
+              display: block;
               right: 15px;
               bottom: 15px;
               font-size: 0.875rem;
+            }
+            button {
+              display: none;
             }
           }
         }
@@ -1400,7 +1404,7 @@
             &:before {
               display: none;
             }
-            button {
+            a {
               right: 10px;
               bottom: 10px;
               font-size: 0.75rem;

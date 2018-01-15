@@ -6228,7 +6228,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   transform: rotate(13deg);
 }
 
-#details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+#details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #details section.gallery_section .gallery_container .gallery_view .panorama_link_container a, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container a {
   font-size: 1.25rem;
   text-transform: uppercase;
   z-index: 2;
@@ -6237,8 +6237,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   right: 35px;
 }
 
-#details section.gallery_section .gallery_container .gallery_view .panorama_link_container button i, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button i {
+#details section.gallery_section .gallery_container .gallery_view .panorama_link_container button i, #details section.gallery_section .gallery_container .gallery_view .panorama_link_container a i, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button i, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container a i {
   margin-left: 20px;
+}
+
+#details section.gallery_section .gallery_container .gallery_view .panorama_link_container a, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container a {
+  display: none;
 }
 
 #details section.gallery_section .gallery_container .gallery_view #object_panorama, #locationsDetails section.gallery_section .gallery_container .gallery_view #object_panorama {
@@ -7441,10 +7445,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.gallery_section .gallery_container .gallery_view .panorama_link_container, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container {
     width: 250px;
   }
-  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container a, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container a {
+    display: block;
     right: 15px;
     bottom: 15px;
     font-size: 0.875rem;
+  }
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+    display: none;
   }
   #details section.gallery_section .gallery_container .gallery_nav .container-fluid, #locationsDetails section.gallery_section .gallery_container .gallery_nav .container-fluid {
     margin: 0 -5px;
@@ -7907,7 +7915,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.gallery_section .gallery_container .gallery_view .panorama_link_container:before, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container:before {
     display: none;
   }
-  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container button, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container button {
+  #details section.gallery_section .gallery_container .gallery_view .panorama_link_container a, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container a {
     right: 10px;
     bottom: 10px;
     font-size: 0.75rem;

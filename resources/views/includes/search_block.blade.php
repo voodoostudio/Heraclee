@@ -132,7 +132,7 @@
                                 <input type="number" name="bedrooms_max" value="{{ $search['bedrooms_max'] }}" placeholder="Max">
                             </div>
                         </div>
-                    </div>\
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 hidden-sm-up">
                             <div class="show_options">

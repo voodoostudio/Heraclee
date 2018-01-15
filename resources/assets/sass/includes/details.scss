@@ -142,7 +142,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             @include my_transform(rotate(13deg));
           }
-          button {
+          button, a {
             font-size: 1.25rem;
             text-transform: uppercase;
             z-index: 2;
@@ -152,6 +152,9 @@
             i {
               margin-left: 20px;
             }
+          }
+          a {
+            display: none;
           }
         }
         #object_panorama {
