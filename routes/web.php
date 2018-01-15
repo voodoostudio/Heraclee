@@ -179,6 +179,11 @@ Route::group(
         /* CRUD NEWSLETTERS */
         Route::resource('/admin/newsletter', 'NewsletterController');
 
+        /* Subscribers */
+        Route::get('/admin/subscribers', 'SubscribersController@index');
+        /* Get CSV */
+        Route::get('/admin/subscribers/get-csv', 'SubscribersController@getCSV');
+
         /* CRUD GALLERY */
         Route::get('/admin/gallery', 'GalleryController@index');
         Route::post('/admin/gallery', 'GalleryController@upload');
