@@ -207,4 +207,9 @@ return [
     'upload'                => 'Upload',
     'delete'                => 'Delete',
     'check_all_images'      => 'Check all images',
+
+// SUBSCRIBERS PAGE
+    'subscrbers'      => 'Subscribers',
+    'list_of_subscrbers'      => 'List of subscribers',
+    'date_of_creation'      => 'Date of creation',
 ];

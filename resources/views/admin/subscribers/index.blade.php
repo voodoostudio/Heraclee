@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="title_container">
-                            <h1>List of subscribers</h1>
+                            <h1>{{ trans('lang.list_of_subscrbers') }}</h1>
                             <a class="action_link" href="{{ URL::to($lang . '/admin') }}"><i class="icn icon-arrow_left"></i></a>
                             <a class="action_link add_new download" href="{{ URL::to($lang . '/admin/subscribers/get-csv') }}"><i class="icn icon-download"></i></a>
                         </div>
@@ -41,8 +41,8 @@
                                 <table>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Email</th>
-                                        <th align="right">Created date</th>
+                                        <th>{{ trans('lang.email') }}</th>
+                                        <th align="right">{{ trans('lang.date_of_creation') }}</th>
                                     </tr>
                                     @foreach($subscribers as $subscriber)
                                         <tr>

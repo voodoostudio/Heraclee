@@ -37,7 +37,7 @@
                         <a href="{{ URL::to($lang . '/admin/gallery') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>Gallery</h2>
+                                    <h2>{{ trans('gallery') }}</h2>
                                 </div>
                             </div>
                         </a>
@@ -64,7 +64,7 @@
                         <a href="{{ URL::to($lang . '/admin/subscribers') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>Subscribers</h2>
+                                    <h2>{{ trans('subscrbers') }}</h2>
                                 </div>
                             </div>
                         </a>

@@ -7,6 +7,10 @@ section.admin_nav_menu {
   .title_container h1 {
     padding-left: 0;
   }
+  .outer_block_container .inner_block_container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   a {
     h2 {
       text-transform: uppercase;
@@ -147,6 +151,29 @@ section.login_section {
   }
 }
 
+section.subscribers_list_section {
+  margin-top: 40px;
+  .title_container {
+    .download i.icn {
+      font-size: 24px;
+      font-weight: 900;
+    }
+  }
+  .outer_block_container {
+    .inner_block_container {
+      table {
+        width: 100%;
+        tr {
+          th:last-of-type,
+          td:last-of-type {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and ( max-width: 767px ) {
   section.news_list_section,
   section.article_section {
@@ -218,6 +245,17 @@ section.login_section {
             bottom: initial;
             top: -25px;
           }
+        }
+      }
+    }
+  }
+  section.subscribers_list_section {
+    margin-top: 40px;
+    .outer_block_container {
+      .inner_block_container {
+        table {
+          width: 100%;
+          font-size: 12px;
         }
       }
     }

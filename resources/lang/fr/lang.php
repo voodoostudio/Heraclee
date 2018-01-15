@@ -208,4 +208,9 @@ return [
     'delete'                => 'Effacer',
     'check_all_images'      => 'Sélectionner toutes les images',
 
+// SUBSCRIBERS PAGE
+    'subscrbers'      => 'Les abonnés',
+    'list_of_subscrbers'      => 'Liste des abonnés',
+    'date_of_creation'      => 'Date de création',
+
 ];

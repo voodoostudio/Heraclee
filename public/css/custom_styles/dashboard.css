@@ -326,6 +326,9 @@ section.admin_nav_menu {
   margin-top: 40px; }
   section.admin_nav_menu .title_container h1 {
     padding-left: 0; }
+  section.admin_nav_menu .outer_block_container .inner_block_container {
+    padding-left: 10px;
+    padding-right: 10px; }
   section.admin_nav_menu a h2 {
     text-transform: uppercase;
     color: #ccac83;
@@ -426,6 +429,17 @@ section.login_section {
     section.login_section .outer_block_container .inner_block_container a i.icn {
       margin-right: 10px; }
 
+section.subscribers_list_section {
+  margin-top: 40px; }
+  section.subscribers_list_section .title_container .download i.icn {
+    font-size: 24px;
+    font-weight: 900; }
+  section.subscribers_list_section .outer_block_container .inner_block_container table {
+    width: 100%; }
+    section.subscribers_list_section .outer_block_container .inner_block_container table tr th:last-of-type,
+    section.subscribers_list_section .outer_block_container .inner_block_container table tr td:last-of-type {
+      text-align: right; }
+
 @media screen and (max-width: 767px) {
   section.news_list_section,
   section.article_section {
@@ -469,6 +483,12 @@ section.login_section {
     section.article_section .outer_block_container .inner_block_container .title_container .social_networks_share {
       bottom: initial;
       top: -25px; }
+
+  section.subscribers_list_section {
+    margin-top: 40px; }
+    section.subscribers_list_section .outer_block_container .inner_block_container table {
+      width: 100%;
+      font-size: 12px; }
 
   #news_admin section.news_list_section .outer_block_container .inner_block_container {
     padding-top: 40px;
