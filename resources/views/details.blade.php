@@ -162,12 +162,6 @@
                 <div id="object_panorama"></div>
             </div>
 
-
-
-
-
-
-
             <div class="close_panorama_container">
                 <button class="close_panorama"><i class="icn icon-arrow_right"></i>{{ trans('lang.back_to_gallery') }}</button>
             </div>

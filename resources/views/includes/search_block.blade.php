@@ -133,6 +133,151 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="row margin_top_30">
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.view') }}</span></label>
+                            <select id="property_type_select" name="object_type[]" title="">
+                                <option value="1">Sea</option>
+                                <option value="2">Forrest</option>
+                                <option value="3">Land</option>
+                                <option value="4">Country</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.standing') }}</span></label>
+                            <select id="property_type_select" name="object_type[]" title="">
+                                <option value="1">Luxe</option>
+                                <option value="2">Normal</option>
+                                <option value="3">Saray</option>
+                                <option value="4">Jopa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 margin_top_10">
+                            <label class="form_el_label"><span>{{ trans('lang.equipments') }}</span></label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 margin_top_10">
+                            <label class="form_el_label"><span>{{ trans('lang.outdoor_spaces') }}</span></label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 margin_top_10">
+                            <label class="form_el_label"><span>{{ trans('lang.security') }}</span></label>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                            <div class="my_checkbox">
+                                <label>
+                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                    <span class="fake_checkbox"></span>
+                                    <span class="my_checkbox_text">Lorem ipsum dolor sit amet</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-sm-12 hidden-sm-up">
                             <div class="show_options">
