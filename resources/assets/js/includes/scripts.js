@@ -153,6 +153,12 @@ $(document).ready(function() {
 
     ///multiselect on ios START
     document.addEventListener('touchstart', function(e) {
+        console.log(e.target);
+        if($(e.target).attr('class').indexOf("active") >= 0) {
+            e.preventDefault();
+            $('.dropdown-toggle.btn[aria-expanded="true"]').trigger('click');
+        }
+
         if($(e.target).attr('class').indexOf("dropdown-toggle") >= 0) {
         } else {
             $('.dropdown-toggle.btn[aria-expanded="true"]').trigger('click');

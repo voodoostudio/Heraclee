@@ -206,6 +206,11 @@
                 resultsCarouselInit();
             }
             @endif
+
+            var pagination_buttons = $('nav ul.pagination li.page_number');
+            if(pagination_buttons.length === 1) {
+                $('nav ul.pagination li a.page-link').css({"pointer-events": "none", "touch-action": "none", "cursor": "default"});
+            }
         });
         $(window).on('load', function () {
                 @if($view_type == 'map_view') {

@@ -427,6 +427,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
+  display: block;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
@@ -1094,6 +1099,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
+  display: block;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
@@ -2172,11 +2182,20 @@ nav ul.pagination {
   background: #272727;
 }
 
+nav ul.pagination li {
+  width: 37px;
+}
+
+nav ul.pagination li:first-child .page-link {
+  margin: 0 auto;
+}
+
 nav ul.pagination li a.page-link {
   background-color: transparent;
   padding: 0;
   height: 40px;
-  width: 37px;
+  width: 19px;
+  margin: 0 auto;
   line-height: 40px;
   text-align: center;
   border: none;
@@ -2207,6 +2226,10 @@ nav ul.pagination li.active .page-link {
   background-color: transparent;
   font-size: 22px;
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
 }
 
 footer {
@@ -2903,6 +2926,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
+  display: block;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
@@ -4037,6 +4065,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
+  display: block;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
@@ -5825,6 +5858,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a {
   color: #ccac83;
+  pointer-events: none;
+  -ms-touch-action: none;
+      touch-action: none;
+  cursor: default;
+  display: block;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li.active a label.checkbox:before {
