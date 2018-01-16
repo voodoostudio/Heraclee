@@ -2182,15 +2182,15 @@ nav ul.pagination {
   background: #272727;
 }
 
-nav ul.pagination li {
+nav ul.pagination li.page-item {
   width: 37px;
 }
 
-nav ul.pagination li:first-child .page-link {
+nav ul.pagination li.page-item:first-child .page-link {
   margin: 0 auto;
 }
 
-nav ul.pagination li a.page-link {
+nav ul.pagination li.page-item a.page-link {
   background-color: transparent;
   padding: 0;
   height: 40px;
@@ -2204,7 +2204,7 @@ nav ul.pagination li a.page-link {
   font-size: 18px;
 }
 
-nav ul.pagination li a.page-link:focus, nav ul.pagination li a.page-link:hover {
+nav ul.pagination li.page-item a.page-link:focus, nav ul.pagination li.page-item a.page-link:hover {
   color: #ccac83;
   background-color: transparent;
   border: none;
@@ -2212,17 +2212,17 @@ nav ul.pagination li a.page-link:focus, nav ul.pagination li a.page-link:hover {
   text-decoration: none;
 }
 
-nav ul.pagination li a.page-link[aria-label="Previous"], nav ul.pagination li a.page-link[aria-label="Next"] {
+nav ul.pagination li.page-item a.page-link[aria-label="Previous"], nav ul.pagination li.page-item a.page-link[aria-label="Next"] {
   font-size: 8px;
   line-height: 42px;
   color: #aaa296;
 }
 
-nav ul.pagination li a.page-link[aria-label="Previous"]:hover, nav ul.pagination li a.page-link[aria-label="Next"]:hover {
+nav ul.pagination li.page-item a.page-link[aria-label="Previous"]:hover, nav ul.pagination li.page-item a.page-link[aria-label="Next"]:hover {
   font-size: 10px;
 }
 
-nav ul.pagination li.active .page-link {
+nav ul.pagination li.page-item.active .page-link {
   background-color: transparent;
   font-size: 22px;
   color: #ccac83;

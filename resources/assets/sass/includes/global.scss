@@ -745,7 +745,7 @@ nav {
     border-radius: 0;
     margin: 20px 0 0;
     background: $main_dark_clr;
-    li {
+    li.page-item {
       width: 37px;
       &:first-child .page-link {
         margin: 0 auto;

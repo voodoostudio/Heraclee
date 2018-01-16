@@ -155,13 +155,15 @@ function resultsMapInit()  {
         // }
         markerIcon = {
             url: '/img/map_pin_multi.svg',
-            labelOrigin: new google.maps.Point(21, 21)
+            labelOrigin: new google.maps.Point(21, 21),
+            scaledSize: new google.maps.Size(42, 60),
         };
 
 
         var marker = new google.maps.Marker({
             position: location,
             icon: markerIcon,
+            optimized: false,
             label: {
                 // text: (location['counter'] > '1') ? '' + location['counter'] + '' : ' ',
                 text: '' + location['counter'] + '',
