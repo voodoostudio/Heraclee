@@ -12,10 +12,7 @@ class SubscribersController extends Controller
     {
         $subscribers = Subscribers::all();
 
-        return view('admin.subscribers.index',
-            [
-                'subscribers' => $subscribers
-            ]);
+        return view('admin.subscribers.index', ['subscribers' => $subscribers]);
     }
 
     public function getCSV() {

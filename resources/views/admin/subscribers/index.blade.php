@@ -44,9 +44,14 @@
                                         <th>{{ trans('lang.email') }}</th>
                                         <th align="right">{{ trans('lang.date_of_creation') }}</th>
                                     </tr>
+
+                                    @php
+                                    $counter = 1;
+                                    @endphp
+
                                     @foreach($subscribers as $subscriber)
                                         <tr>
-                                            <td>{{ $subscriber->id }}</td>
+                                            <td>{{ $counter++ }}</td>
                                             <td>{{ $subscriber->email }}</td>
                                             <td>{{ date('d.m.Y', strtotime($subscriber->created_at)) }}</td>
                                         </tr>
