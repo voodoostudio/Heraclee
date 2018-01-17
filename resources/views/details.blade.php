@@ -1112,7 +1112,7 @@
     </script>
 
     {{--<script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>--}}
-    <script type="text/javascript" src="{{asset('/js/custom_scripts/details.min.js')}}"></script>
+    <script type="text/javascript" src="{{mix('/js/details.js')}}"></script>
 @stop
 
 
