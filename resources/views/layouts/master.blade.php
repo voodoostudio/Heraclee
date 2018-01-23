@@ -394,6 +394,7 @@
 
         @yield('js-localization.head')
         @yield('javascript')
+        @yield('javascript_search')
         <script>
             $(window).on('load', function() {
                 $('body').removeClass('preloader_active');

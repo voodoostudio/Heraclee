@@ -90,14 +90,14 @@ section.news_list_section {
               transform: translateY(-50%); }
             section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_img a:hover {
               opacity: 0.5; }
+        section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h2 {
+          margin: 15px 0 15px;
+          font-size: 1.1rem;
+          line-height: 1.5rem;
+          text-transform: uppercase;
+          color: #fdfdfd; }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a {
           display: table; }
-          section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a h2 {
-            margin: 15px 0 15px;
-            font-size: 1.1rem;
-            line-height: 1.5rem;
-            text-transform: uppercase;
-            color: #fdfdfd; }
           section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a:hover h2 {
             color: #ccac83; }
         section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h3 {

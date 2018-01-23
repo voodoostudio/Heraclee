@@ -37,7 +37,7 @@
                         <a href="{{ URL::to($lang . '/admin/gallery') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>{{ trans('gallery') }}</h2>
+                                    <h2>{{ trans('lang.gallery') }}</h2>
                                 </div>
                             </div>
                         </a>
@@ -46,7 +46,7 @@
                         <a href="{{ URL::to($lang . '/admin/posts') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>News</h2>
+                                    <h2>{{ trans('lang.news') }}</h2>
                                 </div>
                             </div>
                         </a>
@@ -55,7 +55,7 @@
                         <a href="{{ URL::to($lang . '/admin/newsletter') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>Newsletters</h2>
+                                    <h2>{{ trans('lang.newsletters') }}</h2>
                                 </div>
                             </div>
                         </a>
@@ -64,7 +64,7 @@
                         <a href="{{ URL::to($lang . '/admin/subscribers') }}">
                             <div class="outer_block_container">
                                 <div class="inner_block_container">
-                                    <h2>{{ trans('subscrbers') }}</h2>
+                                    <h2>{{ trans('lang.subscribers') }}</h2>
                                 </div>
                             </div>
                         </a>

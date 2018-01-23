@@ -53,6 +53,7 @@ return [
     'updated'               => 'Mis à jour',
     'more_options'          => 'Plus d\'options',
     'less_options'          => 'Moins d\'options',
+    'extra_options'         => 'Options supplémentaires',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',
@@ -209,7 +210,7 @@ return [
     'check_all_images'      => 'Sélectionner toutes les images',
 
 // SUBSCRIBERS PAGE
-    'subscrbers'      => 'Les abonnés',
+    'subscribers'      => 'Les abonnés',
     'list_of_subscrbers'      => 'Liste des abonnés',
     'date_of_creation'      => 'Date de création',
 

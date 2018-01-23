@@ -72,15 +72,15 @@ section.news_list_section {
           }
         }
         .article_info {
+          h2 {
+            margin: 15px 0 15px;
+            font-size: 1.1rem;
+            line-height: 1.5rem;
+            text-transform: uppercase;
+            color: $main_light_clr;
+          }
           a {
             display: table;
-            h2 {
-              margin: 15px 0 15px;
-              font-size: 1.1rem;
-              line-height: 1.5rem;
-              text-transform: uppercase;
-              color: $main_light_clr;
-            }
             &:hover {
               h2 {
                 color: $main_brown_clr;

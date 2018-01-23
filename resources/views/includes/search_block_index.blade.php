@@ -10,7 +10,7 @@
             $country[] = $check;
         }
     @endphp
-    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }} @endif" method="post">
+    <form id="search" action="/{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }}" method="post">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
@@ -22,13 +22,13 @@
                         <div class="col-12 col-lg-4">
                             <ul class="nav nav-tabs margin_bottom_10">
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '3') active @endif" href="#" onclick="setSellType(3)" >{{ trans('lang.rent') }}</a>
+                                    <a data-toggle="tab" class="nav-link active" href="#" onclick="setSellType(3)" >{{ trans('lang.rent') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a data-toggle="tab" class="nav-link @if(isset($search['sell_type']) && $search['sell_type'] == '1') active @endif" href="#" onclick="setSellType(1)" >{{ trans('lang.sale') }}</a>
+                                    <a data-toggle="tab" class="nav-link" href="#" onclick="setSellType(1)" >{{ trans('lang.sale') }}</a>
                                 </li>
                             </ul>
-                            <input type="hidden" id="sell_type_val" name="sell_type" value="{{$search['sell_type']}}">
+                            <input type="hidden" id="sell_type_val" name="sell_type" value="3">
                         </div>
 
                         <div class="col-12 col-lg-8">
@@ -109,13 +109,13 @@
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
-                            <label class="form_el_label"><i class="icn icon-bedroom"></i><span>{{ trans('lang.bedrooms') }} min</span></label>
+                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} min</span></label>
                             <div class="input_container">
                                 <input type="number" name="bedrooms_min" value="" placeholder="Min">
                             </div>
                         </div>
                         <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
-                            <label class="form_el_label"><i class="icn icon-bedroom"></i><span>{{ trans('lang.bedrooms') }} max</span></label>
+                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} max</span></label>
                             <div class="input_container">
                                 <input type="number" name="bedrooms_max" value="" placeholder="Max" >
                             </div>
@@ -139,3 +139,16 @@
         </div>
     </form>
 </section>
+        
+@section('javascript_search')
+    <script>
+        $(document).ready(function () {
+            $('a[onclick="setSellType(1)"]').click(function () {
+                $('#search').attr('action', '/{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }}')
+            });
+            $('a[onclick="setSellType(3)"]').click(function () {
+                $('#search').attr('action', '/{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }}')
+            });
+        });
+    </script>
+@stop
