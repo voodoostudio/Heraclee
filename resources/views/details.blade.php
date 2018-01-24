@@ -193,8 +193,8 @@
                         @if(!empty($property['bathrooms']))
                             <li><span class="icn_container tooltip" title="{{ trans('lang.number_of_bathrooms') }}"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
                         @endif
-                        @if(!empty($property['view']['type']))
-                            <li><span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['landscape']}}</span></li>
+                        @if(!empty($property['landscape']))
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span><span class="prop_val">{{ implode(", ", $property['landscape']) }}</span></li>
                         @endif
                         @if(!empty($property['floor']['type']))
                             <li><span class="icn_container tooltip" title="{{ trans('lang.floor') }}"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
@@ -338,8 +338,8 @@
                             @if(!empty($property['floor']['floors']))
                                 <li class="tooltip" title="{{ trans('lang.number_of_floors') }} : {{ $property['floor']['floors'] }}"><span class="detail_name">{{ trans('lang.number_of_floors') }}</span><span class="detail_value">{{ $property['floor']['floors'] }}</span></li>
                             @endif
-                            @if(!empty($property['view']['landscape']))
-                                <li class="tooltip" title="{{ trans('lang.landscape_view') }} : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
+                            @if(!empty($property['landscape']))
+                                <li class="tooltip" title="{{ trans('lang.landscape_view') }} : {{ implode(" | ", $property['landscape']) }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ implode(" | ", $property['landscape']) }}</span></li>
                             @endif
                             @if(!empty($property['heating']['device']))
                                 <li class="tooltip" title="{{ trans('lang.heating_type') }} : {{ $property['heating']['device'] }}"><span class="detail_name">{{ trans('lang.heating_type') }}</span><span class="detail_value">{{ $property['heating']['device'] }}</span></li>
@@ -420,8 +420,9 @@
                         <h4>{{ trans('lang.features') }}</h4>
                         <h5>{{ trans('lang.equipments') }}</h5>
                         <ul class="object_add_info_list">
-                            @if((!empty($property['services']['1'])) || (!empty($property['services']['2'])) || (!empty($property['services']['4'])) ||
-                                (!empty($property['services']['6'])) || (!empty($property['services']['10'])) || (!empty($property['services']['17'])) ||
+                            @if((!empty($property['services']['1'])) || (!empty($property['services']['2'])) || (!empty($property['services']['3'])) ||
+                                (!empty($property['services']['4'])) || (!empty($property['services']['6'])) || (!empty($property['services']['8'])) ||
+                                (!empty($property['services']['10'])) || (!empty($property['services']['17'])) || (!empty($property['services']['19'])) ||
                                 (!empty($property['services']['20'])) || (!empty($property['services']['21'])) || (!empty($property['services']['22'])) ||
                                 (!empty($property['services']['23'])) || (!empty($property['services']['24'])) || (!empty($property['services']['25'])) ||
                                 (!empty($property['services']['26'])) || (!empty($property['services']['27'])) || (!empty($property['services']['28'])) ||
@@ -450,6 +451,12 @@
                                         @endif
                                     @endif
 
+                                    @if($service->reference == '3' && $service->locale == $lang )
+                                        @if(!empty($property['services']['3']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
                                     @if($service->reference == '4' && $service->locale == $lang )
                                         @if(!empty($property['services']['4']))
                                             <li><span class="detail_name">{{ $service->value }}</span></li>
@@ -462,6 +469,12 @@
                                         @endif
                                     @endif
 
+                                    @if($service->reference == '8' && $service->locale == $lang )
+                                        @if(!empty($property['services']['8']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
                                     @if($service->reference == '10' && $service->locale == $lang )
                                         @if(!empty($property['services']['10']))
                                             <li><span class="detail_name">{{ $service->value }}</span></li>
@@ -470,6 +483,12 @@
 
                                     @if($service->reference == '17' && $service->locale == $lang )
                                         @if(!empty($property['services']['17']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
+                                    @if($service->reference == '19' && $service->locale == $lang )
+                                        @if(!empty($property['services']['19']))
                                             <li><span class="detail_name">{{ $service->value }}</span></li>
                                         @endif
                                     @endif
@@ -892,12 +911,32 @@
                                 -
                             @endif
                         </ul>
-                        {{--<h5>{{ trans('lang.sports_equipment') }}</h5>
+                        <h5>{{ trans('lang.sports_equipment') }}</h5>
                         <ul class="object_add_info_list">
-                            @if((!empty($property['services']['13'])) || (!empty($property['services']['71'])))
+                            @if((!empty($property['services']['11'])) || (!empty($property['services']['13'])) || (!empty($property['services']['27'])) ||
+                                (!empty($property['services']['45'])) || (!empty($property['services']['71']))
+                            )
                                 @foreach($services as $service)
+                                    @if($service->reference == '11' && $service->locale == $lang )
+                                        @if(!empty($property['services']['11']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
                                     @if($service->reference == '13' && $service->locale == $lang )
                                         @if(!empty($property['services']['13']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
+                                    @if($service->reference == '27' && $service->locale == $lang )
+                                        @if(!empty($property['services']['27']))
+                                            <li><span class="detail_name">{{ $service->value }}</span></li>
+                                        @endif
+                                    @endif
+
+                                    @if($service->reference == '45' && $service->locale == $lang )
+                                        @if(!empty($property['services']['45']))
                                             <li><span class="detail_name">{{ $service->value }}</span></li>
                                         @endif
                                     @endif
@@ -911,7 +950,7 @@
                             @else
                                 -
                             @endif
-                        </ul>--}}
+                        </ul>
                         @if(!empty($property['regulations']['0']['value']) || !empty($property['regulations']['1']['value']))
                             <h4>{{ trans('lang.energy_consumption_and_emission') }}</h4>
                         @endif

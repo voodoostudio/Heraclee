@@ -69,6 +69,7 @@ class Properties extends Model
             $array['standing'] = self::getStandingById($property[0]['standing']);
             $array['services'] = self::getServicesByIds($property[0]['services']);
             $array['orientations'] = self::getOrientationsByIds($property[0]['orientations']);
+            $array['landscape'] = self::getViewByIds($property[0]['landscape']);
             $array['district'] = self::getDistrictByIds($property[0]['district']);
             $array['proximities'] = self::getProximitiesByIds($property[0]['proximities']);
             $array['agreement'] = self::getAgreementsByIds($property[0]['agreement']);
@@ -708,6 +709,7 @@ class Properties extends Model
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
                 $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
+                $array[$property['property_id']]['landscape'] = self::getViewByIds($property['landscape']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
@@ -796,6 +798,7 @@ class Properties extends Model
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
                 $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
+                $array[$property['property_id']]['landscape'] = self::getViewByIds($property['landscape']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
@@ -1181,6 +1184,7 @@ class Properties extends Model
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
                 $array[$property['property_id']]['services'] = self::getServicesByIds($property['services']);
                 $array[$property['property_id']]['orientations'] = self::getOrientationsByIds($property['orientations']);
+                $array[$property['property_id']]['landscape'] = self::getViewByIds($property['landscape']);
                 $array[$property['property_id']]['district'] = self::getDistrictByIds($property['district']);
                 $array[$property['property_id']]['proximities'] = self::getProximitiesByIds($property['proximities']);
                 $array[$property['property_id']]['agreement'] = self::getAgreementsByIds($property['agreement']);
@@ -1274,6 +1278,29 @@ class Properties extends Model
         }
 
         return $orientations_array;
+    }
+
+    /**
+     * @param $ids
+     *
+     * @return mixed
+     */
+    protected static function getViewByIds($ids)
+    {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+        $landscapes = DB::table('apimo_property_view_landscape')
+            ->wherein("reference", explode(',', $ids))
+            ->where('locale', $lang)
+            ->get();
+
+        $landscapes_array = [];
+        if (!empty($landscapes)) {
+            foreach ($landscapes as $landscape) {
+                $landscapes_array[$landscape['reference']] = $landscape['value'];
+            }
+        }
+
+        return $landscapes_array;
     }
 
     /**
