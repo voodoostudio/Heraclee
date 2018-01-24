@@ -477,8 +477,22 @@ section.search_section {
           }
         }
       }
+      &.minimized_extra_options {
+        .extra_search_options {
+          display: none;
+        }
+        .show_extra_options {
+          button.more {
+            display: block;
+          }
+          button.less {
+            display: none;
+          }
+        }
 
+      }
     }
+
   }
   form {
     &.minimized {
@@ -498,23 +512,7 @@ section.search_section {
         }
       }
     }
-    &.minimized_extra_options {
-      .outer_block_container {
-        .inner_block_container {
-          .extra_search_options {
-            display: none;
-          }
-          .show_extra_options {
-            button.more {
-              display: block;
-            }
-            button.less {
-              display: none;
-            }
-          }
-        }
-      }
-    }
+
   }
 }
 
