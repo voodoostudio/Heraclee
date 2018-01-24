@@ -148,7 +148,7 @@
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
                                 <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.view') }}</span></label>
                                 <select id="view_select" name="object_view" title="">
-                                    <option value="" {{ (!empty($_POST['object_view'])) ? 'selected disabled' : '' }}>Choose view</option>
+                                    <option value="" {{ (!empty($_POST['object_view'])) ? 'selected' : '' }}>Choose view</option>
                                     @foreach($view_list as $view)
                                         <option value="{{ $view['reference'] }}" {{ (!empty($_POST['object_view']) && $view['reference'] == $_POST['object_view']) ? 'selected' : '' }}>{{ $view['value'] }}</option>
                                     @endforeach
@@ -157,7 +157,7 @@
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
                                 <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.standing') }}</span></label>
                                 <select id="standing_select" name="object_standing" title="">
-                                    <option value="" {{ (!empty($_POST['object_standing'])) ? 'selected disabled' : '' }}>Standing view</option>
+                                    <option value="" {{ (!empty($_POST['object_standing'])) ? 'selected' : '' }}>Standing view</option>
                                     @foreach($standing_list as $standing)
                                         <option value="{{ $standing['reference'] }}" {{ (!empty($_POST['object_standing']) && $standing['reference'] == $_POST['object_standing']) ? 'selected' : '' }}>{{ $standing['value'] }}</option>
                                     @endforeach

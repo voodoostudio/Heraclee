@@ -169,11 +169,11 @@
                                 </span>
                             </li>
                         @endif
-                        @if(!empty($property['view']['type']))
+                        @if(!empty($property['view']['landscape']))
                             <li>
                                 <span class="property_container">
                                     <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span>
-                                    <span class="prop_val">{{$property['view']['type']}}</span>
+                                    <span class="prop_val">{{$property['view']['landscape']}}</span>
                                 </span>
                             </li>
                         @endif

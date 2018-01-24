@@ -194,7 +194,7 @@
                             <li><span class="icn_container tooltip" title="{{ trans('lang.number_of_bathrooms') }}"><i class="icn icon-bathroom"></i></span><span class="prop_val"><span>{{$property['bathrooms']}}</span></span></li>
                         @endif
                         @if(!empty($property['view']['type']))
-                            <li><span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['type']}}</span></li>
+                            <li><span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span><span class="prop_val">{{$property['view']['landscape']}}</span></li>
                         @endif
                         @if(!empty($property['floor']['type']))
                             <li><span class="icn_container tooltip" title="{{ trans('lang.floor') }}"><i class="icn icon-floor"></i></span><span class="prop_val"><span> {{$property['floor']['type']}}</span></span></li>
@@ -334,6 +334,9 @@
                             @endif
                             @if(!empty($property['floor']['type']))
                                 <li class="tooltip" title="{{ trans('lang.floor') }} : {{ $property['floor']['type'] }}"><span class="detail_name">{{ trans('lang.floor') }}</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
+                            @endif
+                            @if(!empty($property['floor']['floors']))
+                                <li class="tooltip" title="{{ trans('lang.floors_amount') }} : {{ $property['floor']['floors'] }}"><span class="detail_name">{{ trans('lang.floors_amount') }}</span><span class="detail_value">{{ $property['floor']['floors'] }}</span></li>
                             @endif
                             @if(!empty($property['view']['landscape']))
                                 <li class="tooltip" title="{{ trans('lang.landscape_view') }} : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>
