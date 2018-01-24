@@ -65,7 +65,7 @@
                                             @foreach($city_arr as $city)
                                                 <option {{ ($city['city_id'] == '35970') ? 'selected' : '' }} value="{{$city['city_id']}}">{{$city['name']}}</option>
                                             @endforeach
-                                            @else
+                                        @else
                                             <option value="0" disabled="disabled"></option>
                                         @endif
                                     </select>
@@ -121,16 +121,52 @@
                             {{--</div>--}}
                         {{--</div>--}}
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 hidden-sm-up">
-                            <div class="show_options">
-                                <button type="button" class="more">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></button>
-                                <button type="button" class="less">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                    <div class="extra_search_options">
+                        <div class="row margin_top_30">
+                            <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                                <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.view') }}</span></label>
+                                <select id="view_select" name="object_view" title="">
+                                    <option value="" {{ (!empty($_POST['object_view'])) ? 'selected disabled' : '' }}>Choose view</option>
+                                    @foreach($view_list as $view)
+                                        <option value="{{ $view['reference'] }}" {{ (!empty($_POST['object_view']) && $view['reference'] == $_POST['object_view']) ? 'selected' : '' }}>{{ $view['value'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                                <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.standing') }}</span></label>
+                                <select id="standing_select" name="object_standing" title="">
+                                    <option value="" {{ (!empty($_POST['object_standing'])) ? 'selected disabled' : '' }}>Standing view</option>
+                                    @foreach($standing_list as $standing)
+                                        <option value="{{ $standing['reference'] }}" {{ (!empty($_POST['object_standing']) && $standing['reference'] == $_POST['object_standing']) ? 'selected' : '' }}>{{ $standing['value'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 margin_top_10">
+                                <label class="form_el_label"><span>{{ trans('lang.equipments') }}</span></label>
+                            </div>
+                            @foreach($equipments_list as $equipments)
+                                <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
+                                    <div class="my_checkbox">
+                                        <label>
+                                            <input type="checkbox" name="object_equipments[]" value="{{ $equipments['reference'] }}" {{ (isset($_POST['object_equipments']) && array_search($equipments['reference'], $_POST['object_equipments']) !== false) ? 'checked' : '' }}>
+                                            <span class="fake_checkbox"></span>
+                                            <span class="my_checkbox_text">{{ $equipments['value'] }}</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 col-sm-6">
+                            <div class="show_extra_options">
+                                <button type="button" class="more">{{ trans('lang.extra_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="less">{{ trans('lang.extra_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
                             <button class="btn" id="submit_search_form">{{ trans('lang.search') }}</button>
                         </div>
                     </div>
@@ -139,7 +175,7 @@
         </div>
     </form>
 </section>
-        
+
 @section('javascript_search')
     <script>
         $(document).ready(function () {

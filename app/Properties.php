@@ -103,6 +103,9 @@ class Properties extends Model
         $sell_type = 1,
         $object_type = '',
         $object_place = '',
+        $object_equipments = '',
+        $object_standing = '',
+        $object_view = '',
         $search_keywords = '',
         $price_min = '',
         $price_max = '',
@@ -617,9 +620,26 @@ class Properties extends Model
         } else {
             $properties = DB::table('apimo_properties')
                 ->where($conditions_where)
+                ->where(function($query) use ($object_standing) {
+                    if($object_standing != '') {
+                        $query->where('standing', $object_standing);
+                    }
+                })
+                ->where(function($query) use ($object_view) {
+                    if($object_view != '') {
+                        $query->where('landscape', 'rlike', '(^|,)' . $object_view . '(,|$)');
+                    }
+                })
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
+                })
+                ->where(function($query) use ($object_equipments) {
+                    if($object_equipments != '') {
+                        foreach ($object_equipments as $equipments) {
+                            $query->where('services', 'rlike', '(^|,)' . $equipments . '(,|$)');
+                        }
+                    }
                 })
                 ->whereIn('type', $object_type)
                 ->whereIn('category', $sell_type_array)
@@ -632,9 +652,26 @@ class Properties extends Model
 
             $this->property_count = DB::table('apimo_properties')
                 ->where($conditions_where)
+                ->where(function($query) use ($object_standing) {
+                    if($object_standing != '') {
+                        $query->where('standing', $object_standing);
+                    }
+                })
+                ->where(function($query) use ($object_view) {
+                    if($object_view != '') {
+                        $query->where('landscape', 'rlike', '(^|,)' . $object_view . '(,|$)');
+                    }
+                })
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
+                })
+                ->where(function($query) use ($object_equipments) {
+                    if($object_equipments != '') {
+                        foreach ($object_equipments as $equipments) {
+                            $query->where('services', 'rlike', '(^|,)' . $equipments . '(,|$)');
+                        }
+                    }
                 })
                 ->whereIn('type', $object_type)
                 ->whereIn('category', $sell_type_array)
@@ -649,7 +686,7 @@ class Properties extends Model
             ->whereIn('country', $country_array)
             ->where(function($query) {
                 $query->orWhere('reference', 'like', 'HSTP%')
-                      ->orWhere('reference', 'like', 'HD%');
+                    ->orWhere('reference', 'like', 'HD%');
             })
             ->get()
             ->count();
@@ -683,13 +720,10 @@ class Properties extends Model
         return $array;
     }
 
-    public function getPropertiesForSlider(
-        $items = 10,
-        $page = 1,
-        $object_type = '',
-        $object_place = ''
-    )
+    public function getPropertiesForSlider()
     {
+        $items = 10;
+        $page = 1;
         $offset = ($page - 1) * $items;
         $array = [];
         $conditions_where = [];
@@ -729,8 +763,6 @@ class Properties extends Model
 
         $properties = DB::table('apimo_properties')
             ->where('reference', 'like', 'HSTP%')
-            ->whereIn('type', $object_type)
-            ->whereIn('city', $object_place)
             ->whereIn('country', $country_array)
             ->where('agency', '10338')
             ->limit($items)
@@ -785,6 +817,9 @@ class Properties extends Model
         $sell_type = 1,
         $object_type = '',
         $object_place = '',
+        $object_equipments = '',
+        $object_standing = '',
+        $object_view = '',
         $search_keywords = '',
         $price_min = '',
         $price_max = '',
@@ -1094,17 +1129,40 @@ class Properties extends Model
                 ->get();
         } else {
             $properties = DB::table('apimo_properties')
+                ->where(function($query) use ($object_standing){
+                    if($object_standing != '' && ($_SERVER['REQUEST_URI'] !== '/') && ($_SERVER['REQUEST_URI'] !== '/fr') && ($_SERVER['REQUEST_URI'] !== '/en')) {
+                        $query->where('standing', $object_standing);
+                    }
+                })
+                ->where(function($query) use ($object_view) {
+                    if ($object_view != '' && ($_SERVER['REQUEST_URI'] !== '/') && ($_SERVER['REQUEST_URI'] !== '/fr') && ($_SERVER['REQUEST_URI'] !== '/en')) {
+                        $query->where('landscape', 'rlike', '(^|,)' . $object_view . '(,|$)');
+                    }
+                })
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
+                ->where(function($query) use ($object_equipments) {
+                    if($object_equipments != '' && ($_SERVER['REQUEST_URI'] !== '/') && ($_SERVER['REQUEST_URI'] !== '/fr') && ($_SERVER['REQUEST_URI'] !== '/en')) {
+                        foreach ($object_equipments as $equipments) {
+                            $query->where('services', 'rlike', '(^|,)' . $equipments . '(,|$)');
+                        }
+                    }
+                })
                 ->whereIn('type', $object_type)
                 ->whereIn('category', $sell_type_array)
                 ->whereIn('city', $object_place)
                 ->where($conditions_where)
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
                 })
                 ->whereIn('country', $country_array)
                 ->get();
         }
+
+        //dd($_SERVER['REQUEST_URI'] === '/fr');
 
         if (count($properties) > 0) {
             foreach ($properties as $property) {
@@ -1250,7 +1308,7 @@ class Properties extends Model
                 'apfg.value as flooring',
                 'apf.value as floor_type',
                 'apimo_areas.floor_value as floor_value'
-                //'apimo_property_orientations.value as orientations'
+            //'apimo_property_orientations.value as orientations'
             )
             ->leftJoin('apimo_property_areas_type as apat', 'apimo_areas.type', '=', 'apat.reference')
             ->leftJoin('apimo_property_flooring as apfg', 'apimo_areas.flooring', '=', 'apfg.reference')
@@ -1303,7 +1361,7 @@ class Properties extends Model
                 $areas_array[$area['id']]['flooring'] = $area['flooring'];
                 $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
                 $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
-               // $areas_array[$area['id']]['orientations'] = $area['orientations'];
+                // $areas_array[$area['id']]['orientations'] = $area['orientations'];
 
             }
         }
@@ -1378,7 +1436,7 @@ class Properties extends Model
                 $heating_array[$value['id']]['type'] = $value['type'];
             }
         }
-       // dump($heating_array);
+        // dump($heating_array);
         return $heating_array;
 
 
@@ -1449,7 +1507,7 @@ class Properties extends Model
                 $water_array[$value['id']]['waste'] = $value['waste'];
             }
         }
-       // dump($water_array);
+        // dump($water_array);
         return $water_array;
     }
 
@@ -2081,13 +2139,65 @@ class Properties extends Model
                 ->whereIn('category', $sell_type_array)
                 ->where(function($query) {
                     $query->orWhere('reference', 'like', 'HSTP%')
-                          ->orWhere('reference', 'like', 'HD%');
+                        ->orWhere('reference', 'like', 'HD%');
                 })
                 ->orderBy('created_at', 'DESC')
                 ->pluck('property_id')
                 ->toArray();
             return $property_id;
         }
+    }
+
+    /**
+     * Returns a list of equipments with real estate
+     *
+     * @return array
+     */
+
+    public static function getEquipmentsList()
+    {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+        $equipments_list = DB::table('apimo_property_service')
+            ->whereIn('reference', [1, 2, 4, 5, 9, 11, 12, 13, 15, 16, 18, 19, 23, 24, 26, 27, 34, 35, 36, 37, 44, 45, 46, 47, 60, 71, 75])
+            ->where('locale', $lang)
+            ->orderBy('value', 'ASC')
+            ->get();
+
+        return $equipments_list;
+    }
+
+    /**
+     * Returns a list of standing with real estate
+     *
+     * @return array
+     */
+
+    public static function getStandingList()
+    {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+        $standing_list = DB::table('apimo_property_standing')
+            ->where('locale', $lang)
+            ->orderBy('value', 'ASC')
+            ->get();
+
+        return $standing_list;
+    }
+
+    /**
+     * Returns a list of view with real estate
+     *
+     * @return array
+     */
+
+    public static function getViewList()
+    {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+        $standing_list = DB::table('apimo_property_view_landscape')
+            ->where('locale', $lang)
+            ->orderBy('value', 'ASC')
+            ->get();
+
+        return $standing_list;
     }
 
     /**
@@ -2134,7 +2244,7 @@ class Properties extends Model
         $properties = DB::table('apimo_properties')
             ->where(function($query) {
                 $query->orWhere('reference', 'like', 'HSTP%')
-                      ->orWhere('reference', 'like', 'HD%');
+                    ->orWhere('reference', 'like', 'HD%');
             })
             ->whereIn('country', $country_array)->pluck('city');
 
@@ -2155,7 +2265,6 @@ class Properties extends Model
         foreach ($cities as $city) {
             $cities_ids[] = (string)$city['city_id'];
         }
-
         return $cities_ids;
     }
 

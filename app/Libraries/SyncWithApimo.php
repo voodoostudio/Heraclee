@@ -48,8 +48,8 @@ class SyncWithApimo
                 );
                 if (empty($checkExistence)) {
                     DB::insert(
-                        'INSERT INTO `apimo_properties` ( `property_id`, `agency`, `reference`, `status`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
-                                VALUES ( :property_id, :agency, :reference, :status, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
+                        'INSERT INTO `apimo_properties` ( `property_id`, `agency`, `reference`, `status`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `landscape`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
+                                VALUES ( :property_id, :agency, :reference, :status, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :landscape, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
                         [
                             'property_id' => $property['id'],
                             'agency' => $property['user']['agency'],
@@ -83,6 +83,7 @@ class SyncWithApimo
                             'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                             'residence' => self::addOrUpdateResidence($property['residence']),
                             'view' => self::addOrUpdateView($property['view'], $property['id']),
+                            'landscape' => (!empty($property['view']['landscape']) ? implode(',', $property['view']['landscape']) : ''),
                             'floor' => self::addOrUpdateFloor($property['floor'], $property['id']),
                             'heating' => self::addOrUpdateHeating($property['heating'], $property['id']),
                             'water' => self::addOrUpdateWater($property['water'], $property['id']),
@@ -156,6 +157,7 @@ class SyncWithApimo
                                  `price_currency` = :price_currency, 
                                  `residence` = :residence, 
                                  `view` = :view, 
+                                 `landscape = :landscape, 
                                  `floor` = :floor, 
                                  `heating` = :heating, 
                                  `water` = :water, 
@@ -211,6 +213,7 @@ class SyncWithApimo
                                 'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                                 'residence' => self::addOrUpdateResidence($property['residence']),
                                 'view' => self::addOrUpdateView($property['view'], $property['id']),
+                                'landscape' => (!empty($property['view']['landscape']) ? implode(',', $property['view']['landscape']) : ''),
                                 'floor' => self::addOrUpdateFloor($property['floor'], $property['id']),
                                 'heating' => self::addOrUpdateHeating($property['heating'], $property['id']),
                                 'water' => self::addOrUpdateWater($property['water'], $property['id']),

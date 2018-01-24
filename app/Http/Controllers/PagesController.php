@@ -30,10 +30,11 @@ class PagesController extends Controller
     public function index()
     {
         Session::forget('search');
-
+        $equipments_list = Properties::getEquipmentsList();
+        $standing_list = Properties::getStandingList();
+        $view_list = Properties::getViewList();
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
-        $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
         $lang = LaravelLocalization::getCurrentLocale();
         $attr_for_slider = '&page=main';
 
@@ -68,21 +69,11 @@ class PagesController extends Controller
         }
 
         $properties_obj = new Properties();
-        $properties = $properties_obj->getProperties(
-            Session::get("search.items"),
-            $cur_page,
-            Session::get("search.sell_type"),
-            Session::get("search.object_type"),
-            Session::get("search.object_place")
-        );
 
-        $slider_properties = $properties_obj->getPropertiesForSlider(
-            Session::get("search.items"),
-            $cur_page,
-            Session::get("search.object_type"),
-            Session::get("search.object_place")
-        );
+        /* Last 10 objects on Saint Tropes (main page) */
+        $slider_properties = $properties_obj->getPropertiesForSlider();
 
+        /* Show all properties on map (on main page) */
         $all_properties = $properties_obj->getAllProperties(
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
@@ -96,7 +87,7 @@ class PagesController extends Controller
             Session::get("search.bedrooms_max")
         );
 
-        /* Last 10 news on main page */
+        /* Last 5 news on main page */
         $last_news = Posts::limit(5)->orderBy('id', 'desc')->where('status', '=', 'on')->get();
 
         /* Gallery (slider) */
@@ -125,29 +116,32 @@ class PagesController extends Controller
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == $lang) {
-            return view('index', ['city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'france') {
-            return view('countries.france', ['city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.france', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.swiss', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.usa', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
 
         if($country[0] == 'mauritius') {
-            return view('countries.mauritius', ['city_list' => $city_list, 'type' => $type, 'properties' => $properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.mauritius', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
         }
     }
 
     public function results()
     {
         SyncWithApimo::update();
+        $equipments_list = Properties::getEquipmentsList();
+        $standing_list = Properties::getStandingList();
+        $view_list = Properties::getViewList();
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
@@ -184,6 +178,18 @@ class PagesController extends Controller
         } elseif (!Session::has('search.object_type')) {
             Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
         }
+
+       /* if (isset($_POST['object_standing']) && !empty($_POST['object_standing'])) {
+            Session::put('search.object_standing', $_POST['object_standing']);
+        } elseif (!Session::has('search.object_standing')) {
+            Session::put('search.object_standing', '');
+        }*/
+
+        /*if (isset($_POST['object_view']) && !empty($_POST['object_view'])) {
+            Session::put('search.object_view', $_POST['object_view']);
+        } elseif (!Session::has('search.object_view')) {
+            Session::put('search.object_view', '');
+        }*/
 
         if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
             Session::put('search.object_place', $_POST['object_place']);
@@ -240,6 +246,9 @@ class PagesController extends Controller
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
             Session::get("search.object_place"),
+            (!empty($_POST['object_equipments'])) ? $_POST['object_equipments'] : '',
+            (!empty($_POST['object_standing'])) ? $_POST['object_standing'] : '',
+            (!empty($_POST['object_view'])) ? $_POST['object_view'] : '',
             Session::get("search.search_keywords"),
             Session::get("search.price_min"),
             Session::get("search.price_max"),
@@ -253,6 +262,9 @@ class PagesController extends Controller
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
             Session::get("search.object_place"),
+            (!empty($_POST['object_equipments'])) ? $_POST['object_equipments'] : '',
+            (!empty($_POST['object_standing'])) ? $_POST['object_standing'] : '',
+            (!empty($_POST['object_view'])) ? $_POST['object_view'] : '',
             Session::get("search.search_keywords"),
             Session::get("search.price_min"),
             Session::get("search.price_max"),
@@ -272,6 +284,9 @@ class PagesController extends Controller
                 'all_properties' => $all_properties,
                 'pagination' => $pagination,
                 'count_items' => $count_items,
+                'equipments_list' => $equipments_list,
+                'standing_list' => $standing_list,
+                'view_list' => $view_list,
                 'city_list' => $city_list,
                 'type' => $type,
                 'search' => Session::get('search'),
@@ -283,6 +298,9 @@ class PagesController extends Controller
     public function locations()
     {
         SyncWithApimo::update();
+        $equipments_list = Properties::getEquipmentsList();
+        $standing_list = Properties::getStandingList();
+        $view_list = Properties::getViewList();
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $cur_page = (empty($_GET['page']) ? 1 : $_GET['page']);
@@ -326,6 +344,18 @@ class PagesController extends Controller
             Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
         }
 
+        /*if (isset($_POST['object_standing']) && !empty($_POST['object_standing'])) {
+            Session::put('search.object_standing', $_POST['object_standing']);
+        } elseif (!Session::has('search.object_standing')) {
+            Session::put('search.object_standing', '');
+        }*/
+
+        /*if (isset($_POST['object_view']) && !empty($_POST['object_view'])) {
+            Session::put('search.object_view', $_POST['object_view']);
+        } elseif (!Session::has('search.object_view')) {
+            Session::put('search.object_view', '');
+        }*/
+
         if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
             Session::put('search.object_place', $_POST['object_place']);
         } elseif (!Session::has('search.object_place')) {
@@ -387,6 +417,9 @@ class PagesController extends Controller
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
             Session::get("search.object_place"),
+            (!empty($_POST['object_equipments'])) ? $_POST['object_equipments'] : '',
+            (!empty($_POST['object_standing'])) ? $_POST['object_standing'] : '',
+            (!empty($_POST['object_view'])) ? $_POST['object_view'] : '',
             Session::get("search.search_keywords"),
             Session::get("search.price_min"),
             Session::get("search.price_max"),
@@ -400,6 +433,9 @@ class PagesController extends Controller
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
             Session::get("search.object_place"),
+            (!empty($_POST['object_equipments'])) ? $_POST['object_equipments'] : '',
+            (!empty($_POST['object_standing'])) ? $_POST['object_standing'] : '',
+            (!empty($_POST['object_view'])) ? $_POST['object_view'] : '',
             Session::get("search.search_keywords"),
             Session::get("search.price_min"),
             Session::get("search.price_max"),
@@ -411,6 +447,7 @@ class PagesController extends Controller
 
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
+
         return view(
             'results',
             [
@@ -418,6 +455,9 @@ class PagesController extends Controller
                 'all_properties' => $all_properties,
                 'pagination' => $pagination,
                 'count_items' => $count_items,
+                'equipments_list' => $equipments_list,
+                'standing_list' => $standing_list,
+                'view_list' => $view_list,
                 'city_list' => $city_list,
                 'type' => $type,
                 'search' => Session::get('search'),
