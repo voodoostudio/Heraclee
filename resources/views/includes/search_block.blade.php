@@ -144,7 +144,7 @@
                         {{--</div>--}}
                     {{--</div>--}}
                     <div class="extra_search_options">
-                        <div class="row margin_top_30">
+                        <div class="row">
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
                                 <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.view') }}</span></label>
                                 <select id="view_select" name="object_view" title="">

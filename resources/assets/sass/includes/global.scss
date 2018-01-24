@@ -477,6 +477,11 @@ section.search_section {
           }
         }
       }
+      .extra_search_options {
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid $main_brown_clr;
+      }
       &.minimized_extra_options {
         .extra_search_options {
           display: none;
