@@ -12,11 +12,11 @@
     @endphp
 
 
-    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @endif" method="post" class="minimized_extra_options">
+    <form action="@if($search['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @elseif($search['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/achat/results{{ (!empty($country[0]) && $country['0'] != 'results') ? '/' . $country['0'] : '' }} @endif" method="post" class="">
         {{ csrf_field() }}
         <div class="container-fluid">
             <div class="outer_block_container">
-                <div class="inner_block_container">
+                <div class="inner_block_container minimized_extra_options">
                     <div class="reset_filters_btn">
                         <i class="fa fa-refresh" aria-hidden="true"></i>
                     </div>
@@ -135,14 +135,14 @@
                             {{--</div>--}}
                         {{--</div>--}}
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12 hidden-sm-up">
-                            <div class="show_options">
-                                <button type="button" class="more">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></button>
-                                <button type="button" class="less">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></button>
-                            </div>
-                        </div>
-                    </div>
+                    {{--<div class="row">--}}
+                        {{--<div class="col-sm-12 hidden-sm-up">--}}
+                            {{--<div class="show_options">--}}
+                                {{--<button type="button" class="more">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></button>--}}
+                                {{--<button type="button" class="less">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     <div class="extra_search_options">
                         <div class="row margin_top_30">
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
@@ -184,8 +184,8 @@
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="show_extra_options">
-                                <button type="button" class="more">{{ trans('lang.extra_options') }} <i class="icn icon-arrow_big_left"></i></button>
-                                <button type="button" class="less">{{ trans('lang.extra_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="more">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></button>
+                                <button type="button" class="less">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></button>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
