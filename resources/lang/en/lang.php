@@ -23,6 +23,8 @@ return [
     'last_website_update'       => 'Last updates: ',
     'other_countries'           => 'Other countries',
     'outdated_browser_message'  => 'Your browser is outdated. Please update it. You can download the fresh version of the browser <a href="http://outdatedbrowser.com">here</a>.',
+    'choose_view'           => 'Choose the view',
+    'choose_standing'       => 'Choose the standing',
 
 //    HOMEPAGE
     'see_property'          => 'See the property',
@@ -73,6 +75,7 @@ return [
     'condition'             => 'Condition',
     'style'                 => 'Style',
     'floor'                 => 'Floor',
+    'number_of_floors'      => 'Number of floors',
     'landscape_view'        => 'View',
     'construction_year'     => 'Construction year',
     'renovation_year'       => 'Renovation year',

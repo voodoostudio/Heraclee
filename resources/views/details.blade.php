@@ -336,7 +336,7 @@
                                 <li class="tooltip" title="{{ trans('lang.floor') }} : {{ $property['floor']['type'] }}"><span class="detail_name">{{ trans('lang.floor') }}</span><span class="detail_value">{{ $property['floor']['type'] }}</span></li>
                             @endif
                             @if(!empty($property['floor']['floors']))
-                                <li class="tooltip" title="{{ trans('lang.floors_amount') }} : {{ $property['floor']['floors'] }}"><span class="detail_name">{{ trans('lang.floors_amount') }}</span><span class="detail_value">{{ $property['floor']['floors'] }}</span></li>
+                                <li class="tooltip" title="{{ trans('lang.number_of_floors') }} : {{ $property['floor']['floors'] }}"><span class="detail_name">{{ trans('lang.number_of_floors') }}</span><span class="detail_value">{{ $property['floor']['floors'] }}</span></li>
                             @endif
                             @if(!empty($property['view']['landscape']))
                                 <li class="tooltip" title="{{ trans('lang.landscape_view') }} : {{ $property['view']['landscape'] }}"><span class="detail_name">{{ trans('lang.landscape_view') }}</span><span class="detail_value">{{ $property['view']['landscape'] }}</span></li>

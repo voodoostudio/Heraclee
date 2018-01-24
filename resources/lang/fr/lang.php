@@ -23,6 +23,8 @@ return [
     'last_website_update'   => 'Dernière mise à jour : ',
     'other_countries'       => 'Autre pays',
     'outdated_browser_message'  => 'Votre navigateur est obsolète. Veuillez le mettre à jour, Vous pouvez télécharger la nouvelle version du navigateur <a href="http://outdatedbrowser.com">ici</a>.',
+    'choose_view'           => 'Choisir la vue',
+    'choose_standing'       => 'Choisir le standing',
 
 //    HOMEPAGE
     'see_property'          => 'Voir le bien',
@@ -73,6 +75,7 @@ return [
     'condition'                 => 'État',
     'style'                 => 'Style',
     'floor'                 => 'Étage',
+    'number_of_floors'      => 'Nombre d\'étages',
     'landscape_view'        => 'Vue',
     'construction_year'     => 'Année de construction',
     'renovation_year'       => 'Année de rénovation',
