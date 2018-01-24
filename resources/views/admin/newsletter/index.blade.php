@@ -48,24 +48,26 @@
                                     </div>
                                     <div class="article_info_block">
                                         <div class="article_img">
-                                            @php
-                                                $image_counter = 1;
-                                            @endphp
-                                            @foreach(json_decode($items['front_image_path']) as $key => $image)
-                                                @if($image_counter == 1)
-                                                    <img src="{{ URL::to('/') }}/newsletter/images/{{ $image }}" alt="{{ $key }}">
-                                                @endif
+                                            <a href="javascript:void(0)" style="cursor:default;">
                                                 @php
-                                                    $image_counter++;
+                                                    $image_counter = 1;
                                                 @endphp
-                                            @endforeach
+                                                @foreach(json_decode($items['front_image_path']) as $key => $image)
+                                                    @if($image_counter == 1)
+                                                        <img src="{{ URL::to('/') }}/newsletter/images/{{ $image }}" alt="{{ $key }}">
+                                                    @endif
+                                                    @php
+                                                        $image_counter++;
+                                                    @endphp
+                                                @endforeach
 
-                                            @if(empty(json_decode($items['front_image_path'])))
-                                                <img src="/img/details/no_agent_photo.svg" alt="">
-                                            @endif
+                                                @if(empty(json_decode($items['front_image_path'])))
+                                                    <img src="/img/details/no_agent_photo.svg" alt="">
+                                                @endif
+                                            </a>
                                         </div>
                                         <div class="article_info">
-                                            <h2>@if($lang == 'fr') {{ $items['title_fr'] }} @elseif($lang == 'en') {{ $items['title_en'] }}  @endif</h2>
+                                            <a href="javascript:void(0)" style="cursor:default;"><h2>@if($lang == 'fr') {{ $items['title_fr'] }} @elseif($lang == 'en') {{ $items['title_en'] }}  @endif</h2></a>
                                             <h3>{{ (!empty($items->date)) ? date('d.m.Y', strtotime($items->date)) : '' }}</h3>
                                             <span class="published_label">{{ ($items['status'] == 'on') ? trans('lang.published') : ''}}</span>
                                         </div>

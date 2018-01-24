@@ -28,6 +28,10 @@ mix.styles([
     ], 'public/css/libraries.css');
 
 mix.scripts([
+    'public/js/custom_scripts/details.js'
+], 'public/js/details.js');
+
+mix.scripts([
     'resources/assets/js/includes/functions.js',
     'resources/assets/js/includes/scripts.js'
 ], 'public/js/app.js');
