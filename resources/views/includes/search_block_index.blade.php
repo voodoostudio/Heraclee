@@ -80,46 +80,46 @@
                         </div>
                     </div>
                     <div class="row minimizable">
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-lg-3 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-price"></i><span>{{ trans('lang.price') }} min</span></label>
                             <div class="input_container">
                                 <input type="number" name="price_min" value="" placeholder="Min">
                                 <div class="input_label">&euro;</div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-lg-3 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-price"></i><span>{{ trans('lang.price') }} max</span></label>
                             <div class="input_container">
                                 <input type="number" name="price_max" value="" placeholder="Max">
                                 <div class="input_label">&euro;</div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                        <div class="col-12 col-sm-6 col-lg-3 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-area"></i><span>{{ trans('lang.surface') }} min</span></label>
                             <div class="input_container">
                                 <input type="number" name="surface_min" value="" placeholder="Min">
                                 <div class="input_label"><span>m<sup>2</sup></span></div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
-                            <label class="form_el_label"><i class="icn icon-area"></i><span>{{ trans('lang.surface') }} max</span></label>
-                            <div class="input_container">
-                                <input type="number" name="surface_max" value="" placeholder="Max">
-                                <div class="input_label"><span>m<sup>2</sup></span></div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
+                        {{--<div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">--}}
+                            {{--<label class="form_el_label"><i class="icn icon-area"></i><span>{{ trans('lang.surface') }} max</span></label>--}}
+                            {{--<div class="input_container">--}}
+                                {{--<input type="number" name="surface_max" value="" placeholder="Max">--}}
+                                {{--<div class="input_label"><span>m<sup>2</sup></span></div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        <div class="col-12 col-sm-6 col-lg-3 margin_bottom_10">
                             <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} min</span></label>
                             <div class="input_container">
                                 <input type="number" name="bedrooms_min" value="" placeholder="Min">
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">
-                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} max</span></label>
-                            <div class="input_container">
-                                <input type="number" name="bedrooms_max" value="" placeholder="Max" >
-                            </div>
-                        </div>
+                        {{--<div class="col-12 col-sm-6 col-md-4 col-xl-2 margin_bottom_10">--}}
+                            {{--<label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} max</span></label>--}}
+                            {{--<div class="input_container">--}}
+                                {{--<input type="number" name="bedrooms_max" value="" placeholder="Max" >--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                     </div>
                     <div class="row">
                         <div class="col-sm-12 hidden-sm-up">

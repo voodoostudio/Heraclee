@@ -265,4 +265,10 @@ $(document).ready(function() {
             scrollTop: $(".search_section").offset().top-100
         }, 300);
     });
+
+    var body_id = $('body').attr('id');
+    var active_country = $('header .dropdown .dropdown-menu a.active').html();
+    if(body_id == 'swiss' || body_id == 'usa' || body_id == 'mauritius') {
+        $('header .dropdown .dropdown-toggle').text(active_country);
+    }
 });
