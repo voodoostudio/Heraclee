@@ -147,7 +147,8 @@
                         <div class="row margin_top_30">
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
                                 <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.view') }}</span></label>
-                                <select id="property_type_select" name="" title="">
+                                <select id="view_select" name="" title="">
+                                    <option value="" disabled selected>Choose view</option>
                                     <option value="1">Campagne</option>
                                     <option value="2">Collines</option>
                                     <option value="3">Cour</option>
@@ -159,7 +160,8 @@
                             </div>
                             <div class="col-12 col-sm-6 col-md-4 col-xl-3 margin_bottom_10">
                                 <label class="form_el_label"><i class="icn icon-building"></i><span>{{ trans('lang.standing') }}</span></label>
-                                <select id="property_type_select" name="" title="">
+                                <select id="standing_select" name="" title="">
+                                    <option value="" disabled selected>Standing view</option>
                                     <option value="1">Grand esemble</option>
                                     <option value="2">Grand luxe</option>
                                     <option value="3">Luxe</option>

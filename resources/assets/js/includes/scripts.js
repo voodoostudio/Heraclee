@@ -208,6 +208,9 @@ $(document).ready(function() {
     $('.search_section .input_container input').keyup(function() {
         activateResetFiltser();
     });
+    $(".my_checkbox input[type=checkbox]").change(function() {
+        activateResetFiltser();
+    });
 
     $('.reset_filters_btn').on('click', function () {
         if ($(this).hasClass('active')) {
@@ -216,7 +219,11 @@ $(document).ready(function() {
                 $(this).prop('selected', false);
             });
             $('#cities_select option[value="35970"]').prop('selected', true);
+            $('#view_select option[value=""]').prop('selected', true);
+            $('#standing_select option[value=""]').prop('selected', true);
             $(this).parent().find('select').multiselect('refresh');
+            $('.extra_search_options .my_checkbox input[type="checkbox"]').prop('checked', false);
+
             $(this).removeClass('active');
 
             $('.search_section .input_container input').not('.search_input input').each(function(){

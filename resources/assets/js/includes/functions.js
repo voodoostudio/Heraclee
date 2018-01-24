@@ -3,6 +3,7 @@ function activateResetFiltser(selected_event) {
     var selected_flag = selected_event;
     var city_selected_option =  $('#cities_select option:selected').attr('value');
     var property_type_selected_option =  $('#property_type_select option:selected').attr('value');
+    var checked_checkboxes = $('input[type="checkbox"]:checked').length;
     $(this).parent().find('select option:selected');
     // var amount_of_selected = $(".search_section select :selected").length;
     $('.search_section .input_container input').each(function() {
@@ -10,7 +11,7 @@ function activateResetFiltser(selected_event) {
             empty_flag = 1;
         }
     });
-    if((empty_flag > 0)||(selected_flag)||(city_selected_option !== '35970')||(property_type_selected_option !== '1')) {
+    if((empty_flag > 0)||(selected_flag)||(city_selected_option !== '35970')||(property_type_selected_option !== '1') || (checked_checkboxes !== 0)) {
         $('.reset_filters_btn').addClass('active');
     }
     else {

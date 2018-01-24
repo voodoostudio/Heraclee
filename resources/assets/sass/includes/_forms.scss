@@ -361,6 +361,19 @@ ul.nav.nav-tabs {
             }
           }
         }
+        &.disabled {
+          opacity: 0.5;
+          cursor: default;
+          a {
+            cursor: default;
+            label {
+              &:hover {
+                cursor: default;
+                color: $main_light_clr;
+              }
+            }
+          }
+        }
       }
     }
     &.open {
