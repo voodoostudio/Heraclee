@@ -270,34 +270,34 @@
                         @else
                             '<span class="price">'+'{{ trans('lang.zero_price')  }}'+ '</span> ' +
                         @endif
-                '<br/><ul class="creation_date">' +
-                @php
-                    $date = new DateTime($property['created_at']);
-                    $now = new DateTime();
-                @endphp
-                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-                    '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
-                '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
-                @endif
-                    '</ul>' +
-                '</div> ' +
-                '<div class="properties_block"> ' +
-                    '<ul class="properties"> ' +
-                        '@if(!empty($v['area_surface']))'+
-                            '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
-                        '@endif'+
-                        '@if(!empty($v['rooms']))'+
-                            '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
-                        '@endif'+
-                        '@if(!empty($v['bedrooms']))'+
-                            '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
-                        '@endif'+
-                        {{--'@if(!empty($v['view']['landscape']))'+--}}
-                            {{--'<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['landscape']}}'+'</span> </span> </li> ' +--}}
-                        {{--'@endif'+--}}
-                    '</ul> ' +
-                '</div> ' +
-                '</div> ' +
+                        '</div> ' +
+                        '<ul class="creation_date">' +
+                            @php
+                                $date = new DateTime($property['created_at']);
+                                $now = new DateTime();
+                            @endphp
+                            @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                            '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
+                            '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
+                            @endif
+                        '</ul>' +
+                        '<div class="properties_block"> ' +
+                            '<ul class="properties"> ' +
+                                '@if(!empty($v['area_surface']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-area"></i></span> <span class="prop_title">'+'{{$v['area_surface']}}'+' m</span><sup>2</sup> </li> ' +
+                                '@endif'+
+                                '@if(!empty($v['rooms']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-rooms"></i></span> <span class="prop_title">'+'{{$v['rooms']}}'+'</span> </li> ' +
+                                '@endif'+
+                                '@if(!empty($v['bedrooms']))'+
+                                    '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
+                                '@endif'+
+                                {{--'@if(!empty($v['view']['landscape']))'+--}}
+                                    {{--'<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['landscape']}}'+'</span> </span> </li> ' +--}}
+                                {{--'@endif'+--}}
+                            '</ul> ' +
+                        '</div> ' +
+                    '</div> ' +
                 '</div>' +
                 '</div>'+
                 @endforeach

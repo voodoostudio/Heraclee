@@ -151,17 +151,17 @@
                                             @else
                                                 '<span class="price">'+'{{ trans('lang.zero_price') }}'+ '</span> ' +
                                             @endif
-                                                    '<br/><ul class="creation_date">' +
-                                                        @php
-                                                            $date = new DateTime($property['created_at']);
-                                                            $now = new DateTime();
-                                                        @endphp
-                                                        @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-                                                            '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
-                                                            '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
-                                                        @endif
-                                                '</ul>' +
                                             '</div> ' +
+                                            '<ul class="creation_date">' +
+                                                @php
+                                                    $date = new DateTime($property['created_at']);
+                                                    $now = new DateTime();
+                                                @endphp
+                                                @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
+                                                    '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
+                                                    '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
+                                                @endif
+                                            '</ul>' +
                                             '<div class="properties_block"> ' +
                                                 '<ul class="properties"> ' +
                                                     '@if(!empty($v['area_surface']))'+

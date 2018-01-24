@@ -122,6 +122,16 @@ section.results_section {
                 font-size: 0.75rem;
               }
             }
+            .creation_date {
+              li {
+                display: inline-block;
+                font-size: 11px;
+                color: $main_gray_clr;
+                &:last-of-type {
+                  float: right;
+                }
+              }
+            }
             .properties_block {
               margin-top: 5px;
               .properties {
