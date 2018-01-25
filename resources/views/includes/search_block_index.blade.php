@@ -109,7 +109,7 @@
                             {{--</div>--}}
                         {{--</div>--}}
                         <div class="col-12 col-sm-6 col-lg-3 margin_bottom_10">
-                            <label class="form_el_label"><i class="icn icon-rooms"></i><span>{{ trans('lang.bedrooms') }} min</span></label>
+                            <label class="form_el_label"><i class="icn icon-bedroom"></i><span>{{ trans('lang.bedrooms') }} min</span></label>
                             <div class="input_container">
                                 <input type="number" name="bedrooms_min" value="" placeholder="Min">
                             </div>
