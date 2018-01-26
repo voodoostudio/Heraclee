@@ -999,3 +999,22 @@ section.virtual_tours_section {
   float: right;
   margin: 10px 0 10px;
 }
+
+.cookies_alert {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  color: black;
+  padding: 10px 10px;
+  .close_cookies_warning {
+    position: absolute;
+    left: -15px;
+    top: 1px;
+    i.icn {
+      color: black;
+    }
+  }
+}

@@ -216,4 +216,6 @@ return [
     'subscribers'      => 'Subscribers',
     'list_of_subscrbers'      => 'List of subscribers',
     'date_of_creation'      => 'Date of creation',
+
+    'cookies_warning_text'      => 'Dear users, our website uses cookies to make your visit experience even better and more comfortable. Please, make sure that cookies are not blocked in your browser. Otherwise some functionality of the website will be limited. Thank you for understanding.',
 ];

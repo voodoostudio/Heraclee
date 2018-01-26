@@ -265,6 +265,13 @@
     </div>
 </div>
 
+<div class="cookies_alert">
+    <div class="container-fluid">
+        <p>{{trans('lang.cookies_warning_text')}}</p>
+        <button class="close_cookies_warning"><i class="icn icon-cancel"></i></button>
+    </div>
+</div>
+
 <main>
     @yield('content')
 </main>

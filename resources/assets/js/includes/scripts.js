@@ -110,7 +110,7 @@ $(document).ready(function() {
 
     $(window).resize(function () {
         setBodyPaddingBottom();
-        if ($(window).width() > 576) {
+        if ($(window).width() > 575) {
             if ($('section.search_section form').hasClass('minimized')) {
                 $('section.search_section form').removeClass('minimized')
             }
@@ -287,4 +287,24 @@ $(document).ready(function() {
     if(body_id == 'swiss' || body_id == 'usa' || body_id == 'mauritius') {
         $('header .dropdown .dropdown-toggle').text(active_country);
     }
+
+
+
+    $('.cookies_alert button.close_cookies_warning').on('click', function () {
+        $('.cookies_alert').hide();
+    });
+
+    function checkCookie(){
+        var cookieEnabled = navigator.cookieEnabled;
+        if (!cookieEnabled){
+            document.cookie = "testcookie";
+            cookieEnabled = document.cookie.indexOf("testcookie")!=-1;
+        }
+        return cookieEnabled || showCookieFail();
+    }
+    function showCookieFail(){
+        $('.cookies_alert').show();
+        // alert('Cookies are disabled!');
+    }
+    checkCookie();
 });
