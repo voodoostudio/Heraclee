@@ -41,6 +41,8 @@
                                         'bedrooms'      => $property['bedrooms'],
                                         'city'          => $property['city'],
                                         'view'          => $property['view'],
+                                        'created_at'    => $property['created_at'],
+                                        'updated_at'    => $property['updated_at'],
                                     ];
         }
     @endphp
@@ -244,7 +246,7 @@
                 info: '<div class="infowindow_container">' +
                 @foreach($unique as $k => $v)
                         @php
-                            $counter = 1;
+                               $counter = 1;
                         @endphp
                     '<div class="infowindow_block">'+
                 '<div class="object_img">'+
@@ -273,12 +275,12 @@
                         '</div> ' +
                         '<ul class="creation_date">' +
                             @php
-                                $date = new DateTime($property['created_at']);
+                                $date = new DateTime($v['created_at']);
                                 $now = new DateTime();
                             @endphp
                             @if($date->diff($now)->format("%m") < 3 && $date->diff($now)->format("%y") == 0)
-                            '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($property['created_at'])) }}</li>' +
-                            '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</li>' +
+                            '<li><b>{{ trans('lang.created_at') }}</b>  {{ date('d.m.Y', strtotime($v['created_at'])) }}</li>' +
+                            '<li><b>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($v['updated_at'])) }}</li>' +
                             @endif
                         '</ul>' +
                         '<div class="properties_block"> ' +
