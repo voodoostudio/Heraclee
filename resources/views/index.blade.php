@@ -22,8 +22,10 @@
         $all_property = [];
         $prop = [];
         $sell_type = [1, 4, 5, 6];
-        $latitude = '43.261320';
-        $longitude = '6.629523';
+        $latitude_agency_st_tropes = '43.261320';
+        $longitude_agency_st_tropes = '6.629523';
+        $latitude_agency_croixvalmer = '43.192049';
+        $longitude_agency_croixvalmer = '6.555777';
 
         /* Show properties wit unique lat & lng */
         /*foreach($all_properties as $property) {
@@ -54,30 +56,49 @@
 
         /* Show properties where is address, if address is empty show agency (lat & lng) */
         foreach($all_properties as $property) {
-            $key = ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude']." ".$property['longitude'] : $latitude." ".$longitude;
-            $all_property[$key][] = [
-                                        'property_id'   => $property['property_id'],
-                                        'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
-                                        'reference'     => $property['reference'],
-                                        'price'         => $property['price'],
-                                        'pictures'      => $property['pictures'],
-                                        'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude,
-                                        'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude,
-                                        'type'          => $property['type'],
-                                        'area_surface'  => $property['area_surface'],
-                                        'rooms'         => $property['rooms'],
-                                        'bedrooms'      => $property['bedrooms'],
-                                        'city'          => $property['city'],
-                                        'view'          => $property['view'],
-                                        'created_at'    => $property['created_at'],
-                                        'updated_at'    => $property['updated_at'],
-                                        'address'    => $property['updated_at'],
-                                        'address_more'    => $property['updated_at'],
-                                        'publish_address'    => $property['updated_at'],
-                                    ];
+            if($property['agency'] == '10338') {
+                $key = ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude']." ".$property['longitude'] : $latitude_agency_st_tropes." ".$longitude_agency_st_tropes;
+                $all_property[$key][] = [
+                                            'property_id'   => $property['property_id'],
+                                            'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
+                                            'reference'     => $property['reference'],
+                                            'price'         => $property['price'],
+                                            'pictures'      => $property['pictures'],
+                                            'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_st_tropes,
+                                            'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude_agency_st_tropes,
+                                            'type'          => $property['type'],
+                                            'area_surface'  => $property['area_surface'],
+                                            'rooms'         => $property['rooms'],
+                                            'bedrooms'      => $property['bedrooms'],
+                                            'city'          => $property['city'],
+                                            'view'          => $property['view'],
+                                            'created_at'    => $property['created_at'],
+                                            'updated_at'    => $property['updated_at'],
+                                        ];
 
+            } elseif($property['agency'] == '10715') {
+                $key = ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude']." ".$property['longitude'] : $latitude_agency_croixvalmer." ".$longitude_agency_croixvalmer;
+                $all_property[$key][] = [
+                                            'property_id'   => $property['property_id'],
+                                            'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
+                                            'reference'     => $property['reference'],
+                                            'price'         => $property['price'],
+                                            'pictures'      => $property['pictures'],
+                                            'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_croixvalmer,
+                                            'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude_agency_croixvalmer,
+                                            'type'          => $property['type'],
+                                            'area_surface'  => $property['area_surface'],
+                                            'rooms'         => $property['rooms'],
+                                            'bedrooms'      => $property['bedrooms'],
+                                            'city'          => $property['city'],
+                                            'view'          => $property['view'],
+                                            'created_at'    => $property['created_at'],
+                                            'updated_at'    => $property['updated_at'],
+                                        ];
+            }
         }
 
+dump($key);
     @endphp
 
     @foreach($gallery_settings as $settings)
