@@ -100,7 +100,6 @@ section.results_section {
             transform: translate(-50%,-50%);
             display: block;
             margin: 0 auto;
-
           }
         }
         .object_info_container {
@@ -123,6 +122,7 @@ section.results_section {
               }
             }
             .creation_date {
+              height: 17px;
               li {
                 display: inline-block;
                 font-size: 11px;

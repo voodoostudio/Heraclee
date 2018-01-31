@@ -97,8 +97,6 @@
                                         ];
             }
         }
-
-dump($key);
     @endphp
 
     @foreach($gallery_settings as $settings)
