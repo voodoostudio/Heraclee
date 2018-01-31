@@ -24,8 +24,8 @@
         $sell_type = [1, 4, 5, 6];
         $latitude_agency_st_tropes = '43.261320';
         $longitude_agency_st_tropes = '6.629523';
-        $latitude_agency_croixvalmer = '43.192049';
-        $longitude_agency_croixvalmer = '6.555777';
+        $latitude_agency_croixvalmer = '43.192034';
+        $longitude_agency_croixvalmer = '6.556010';
 
         /* Show properties wit unique lat & lng */
         /*foreach($all_properties as $property) {
