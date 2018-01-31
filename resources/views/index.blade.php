@@ -22,8 +22,11 @@
         $all_property = [];
         $prop = [];
         $sell_type = [1, 4, 5, 6];
+        $latitude = '43.261320';
+        $longitude = '6.629523';
 
-        foreach($all_properties as $property) {
+        /* Show properties wit unique lat & lng */
+        /*foreach($all_properties as $property) {
             $prop_image[$property['property_id']] = $property['pictures'];
             $key = $property['latitude']." ".$property['longitude'];
             if(!isset($all_property[$key])) $all_property[$key] = [];
@@ -43,8 +46,38 @@
                                         'view'          => $property['view'],
                                         'created_at'    => $property['created_at'],
                                         'updated_at'    => $property['updated_at'],
+                                        'address'    => $property['updated_at'],
+                                        'address_more'    => $property['updated_at'],
+                                        'publish_address'    => $property['updated_at'],
                                     ];
+        }*/
+
+        /* Show properties where is address, if address is empty show agency (lat & lng) */
+        foreach($all_properties as $property) {
+            $key = ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude']." ".$property['longitude'] : $latitude." ".$longitude;
+            $all_property[$key][] = [
+                                        'property_id'   => $property['property_id'],
+                                        'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
+                                        'reference'     => $property['reference'],
+                                        'price'         => $property['price'],
+                                        'pictures'      => $property['pictures'],
+                                        'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude,
+                                        'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude,
+                                        'type'          => $property['type'],
+                                        'area_surface'  => $property['area_surface'],
+                                        'rooms'         => $property['rooms'],
+                                        'bedrooms'      => $property['bedrooms'],
+                                        'city'          => $property['city'],
+                                        'view'          => $property['view'],
+                                        'created_at'    => $property['created_at'],
+                                        'updated_at'    => $property['updated_at'],
+                                        'address'    => $property['updated_at'],
+                                        'address_more'    => $property['updated_at'],
+                                        'publish_address'    => $property['updated_at'],
+                                    ];
+
         }
+
     @endphp
 
     @foreach($gallery_settings as $settings)
@@ -231,6 +264,7 @@
 @section('javascript')
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     <script src="/js/libraries/jquery.marquee.min.js"></script>
+    {{--$property_with_address--}}
     <script>
         var locations = [
                 @foreach($all_property as $key => $unique)
@@ -294,9 +328,9 @@
                                 '@if(!empty($v['bedrooms']))'+
                                     '<li> <span class="icn_container"><i class="icn icon-bedroom"></i></span> <span class="prop_title">'+'{{$v['bedrooms']}}'+'</span> </li> ' +
                                 '@endif'+
-                                {{--'@if(!empty($v['view']['landscape']))'+--}}
-                                    {{--'<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['landscape']}}'+'</span> </span> </li> ' +--}}
-                                {{--'@endif'+--}}
+                                '@if(!empty($v['view']['landscape']))'+
+                                    '<li> <span class="property_container"> <span class="icn_container tooltip" title="{{ trans('lang.view') }}"><i class="icn icon-window_view"></i></span> <span class="prop_val">'+'{{$v['view']['landscape']}}'+'</span> </span> </li> ' +
+                                '@endif'+
                             '</ul> ' +
                         '</div> ' +
                     '</div> ' +
@@ -319,4 +353,7 @@
 
         });
     </script>
+
+
+
 @stop
