@@ -6,7 +6,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1222583">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_1') }}</h2>
                             </a>
                         </li>
@@ -15,7 +15,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1568892">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_2') }}</h2>
                             </a>
                         </li>
@@ -24,7 +24,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1660917">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_3') }}</h2>
                             </a>
                         </li>
@@ -33,7 +33,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1236565">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_4') }}</h2>
                             </a>
                         </li>
@@ -42,7 +42,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1534249">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_5') }}</h2>
                             </a>
                         </li>
@@ -51,7 +51,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1222557">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_6') }}</h2>
                             </a>
                         </li>
@@ -60,7 +60,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/locations/details?id=1602428">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_7') }}</h2>
                             </a>
                         </li>
@@ -69,7 +69,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/locations/details?id=1331038">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_8') }}</h2>
                             </a>
                         </li>
@@ -78,7 +78,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/locations/details?id=1282330">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_9') }}</h2>
                             </a>
                         </li>
@@ -87,7 +87,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1575973">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_10') }}</h2>
                             </a>
                         </li>
@@ -96,7 +96,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1250786">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_11') }}</h2>
                             </a>
                         </li>
@@ -105,7 +105,7 @@
                 <div class="col-6 col-sm-4 col-md-3">
                     <ul>
                         <li>
-                            <a href="http://heraclee.com/fr/achat/details?id=1222567">
+                            <a href="javascript:void(0)">
                                 <h2>{{ trans('lang.footer_keyword_12') }}</h2>
                             </a>
                         </li>
