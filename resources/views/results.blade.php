@@ -73,6 +73,17 @@
                                             'bedrooms'      => $property['bedrooms'],
                                             'city'          => $property['city'],
                                             'view'          => $property['view'],
+                                            'url'           => (in_array($property['category']['reference'], $sell_type) == true) ?
+                                                               route('details', [
+                                                                   'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                                                                   'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
+                                                                   'id' => $property['property_id']
+                                                               ]) :
+                                                               route('locationsDetails', [
+                                                                   'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                                                                   'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
+                                                                   'id' => $property['property_id']
+                                                               ]),
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -93,6 +104,17 @@
                                             'bedrooms'      => $property['bedrooms'],
                                             'city'          => $property['city'],
                                             'view'          => $property['view'],
+                                            'url'           => (in_array($property['category']['reference'], $sell_type) == true) ?
+                                                               route('details', [
+                                                                   'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                                                                   'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
+                                                                   'id' => $property['property_id']
+                                                               ]) :
+                                                               route('locationsDetails', [
+                                                                   'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                                                                   'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
+                                                                   'id' => $property['property_id']
+                                                               ]),
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -185,7 +207,7 @@
                                     '<div class="object_img">'+
                                         @foreach($v['pictures'] as $picture)
                                             @if($counter == 1)
-                                                '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+
+                                                '<a href="{{ $v['url'] }}">'+
                                                     '<img src="'+'{{ $picture['url'] }}'+'" alt="">'+
                                                 '</a>' +
                                             @endif
@@ -196,7 +218,7 @@
                                     '</div>'+
                                     '<div class="object_info_container">' +
                                         '<div class="object_info">' +
-                                            '<a href="{{ route('details') }}?id={{$v['property_id']}}">'+'{{$v["type"]}}'+'</a>' +
+                                            '<a href="{{ $v['url'] }}">'+'{{$v["type"]}}'+'</a>' +
                                             '<span class="object_offer_type">'+'{{$v['category']}}'+'</span>' +
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +

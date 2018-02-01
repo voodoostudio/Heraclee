@@ -91,12 +91,12 @@ Route::group(
             'as' => 'locations_za',
         ]);
 
-        Route::get('/achat/details', [
+        Route::get('/immobilier-vente-{subtype}-{city}/{id}', [
                 'uses' => 'PagesController@details',
                 'as' => 'details',
         ]);
 
-        Route::get('/locations/details', [
+        Route::get('/immobilier-location-{subtype}-{city}/{id}', [
             'uses' => 'PagesController@locationsDetails',
             'as' => 'locationsDetails',
         ]);

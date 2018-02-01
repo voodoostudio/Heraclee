@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-6">
                         @if($mp_prev > -1)
-                            <a href="?id={{ $mp_property_id[$mp_prev] }}&page=main" class="nav_link prev">
+                            <a href="{{ ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ? route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $mp_property_id[$mp_prev]]) : route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $mp_property_id[$mp_prev]]) }}?page=main" class="nav_link prev">
                                 <i class="icn icon-arrow_big_left"></i>
                                 <span>{{ trans('lang.previous') }}</span>
                             </a>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-6">
                         @if($mp_next < count($mp_property_id))
-                            <a href="?id={{ $mp_property_id[$mp_next] }}&page=main" class="nav_link next">
+                            <a href="{{ ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ? route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $mp_property_id[$mp_next]]) : route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $mp_property_id[$mp_next]]) }}?page=main" class="nav_link next">
                                 <span>{{ trans('lang.next') }}</span>
                                 <i class="icn icon-arrow_big_right"></i>
                             </a>
@@ -57,7 +57,7 @@
                 <div class="row">
                     <div class="col-6">
                         @if($prev > -1)
-                            <a href="?id={{ $property_id[$prev] }}" class="nav_link prev">
+                            <a href="{{ ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ? route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property_id[$prev]]) : route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property_id[$prev]]) }}" class="nav_link prev">
                                 <i class="icn icon-arrow_big_left"></i>
                                 <span>{{ trans('lang.previous') }}</span>
                             </a>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-6">
                         @if($next < count($property_id))
-                            <a href="?id={{ $property_id[$next] }} " class="nav_link next">
+                            <a href="{{ ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ? route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property_id[$next]]) : route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property_id[$next]]) }}" class="nav_link next">
                                 <span>{{ trans('lang.next') }}</span>
                                 <i class="icn icon-arrow_big_right"></i>
                             </a>

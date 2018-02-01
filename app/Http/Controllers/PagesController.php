@@ -36,7 +36,7 @@ class PagesController extends Controller
         $city_list = Properties::getCityList();
         $type = Properties::getAvailablePropertyType();
         $lang = LaravelLocalization::getCurrentLocale();
-        $attr_for_slider = '&page=main';
+        $attr_for_slider = '?page=main';
 
         $view_type = 'grid_view';
 
@@ -116,23 +116,98 @@ class PagesController extends Controller
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $country);
 
         if(empty($country[0]) || $country[0] == $lang) {
-            return view('index', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'all_properties' => $all_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $homepage_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('index', [
+                'view_list' => $view_list,
+                'standing_list' => $standing_list,
+                'equipments_list' => $equipments_list,
+                'city_list' => $city_list,
+                'type' => $type,
+                'properties' => $slider_properties,
+                'all_properties' => $all_properties,
+                'slider' => $attr_for_slider,
+                'view_type' => $view_type,
+                'last_update' => $last_update,
+                'gallery_settings' => $homepage_gallery_settings,
+                'gallery' => $gallery,
+                'count_items' => $count_items,
+                'last_news' => $last_news,
+                'search' => Session::get('search')
+            ]);
         }
 
         if($country[0] == 'france') {
-            return view('countries.france', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $france_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.france', [
+                'view_list' => $view_list,
+                'standing_list' => $standing_list,
+                'equipments_list' => $equipments_list,
+                'city_list' => $city_list,
+                'type' => $type,
+                'properties' => $slider_properties,
+                'slider' => $attr_for_slider,
+                'view_type' => $view_type,
+                'last_update' => $last_update,
+                'gallery_settings' => $france_gallery_settings,
+                'gallery' => $gallery,
+                'count_items' => $count_items,
+                'last_news' => $last_news,
+                'search' => Session::get('search')
+            ]);
         }
 
         if($country[0] == 'swiss') {
-            return view('countries.swiss', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $swiss_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.swiss', [
+                'view_list' => $view_list,
+                'standing_list' => $standing_list,
+                'equipments_list' => $equipments_list,
+                'city_list' => $city_list,
+                'type' => $type,
+                'properties' => $slider_properties,
+                'slider' => $attr_for_slider,
+                'view_type' => $view_type,
+                'last_update' => $last_update,
+                'gallery_settings' => $swiss_gallery_settings,
+                'gallery' => $gallery,
+                'count_items' => $count_items,
+                'last_news' => $last_news,
+                'search' => Session::get('search')
+            ]);
         }
 
         if($country[0] == 'usa') {
-            return view('countries.usa', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'slider' => $attr_for_slider, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $usa_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.usa', [
+                'view_list' => $view_list,
+                'standing_list' => $standing_list,
+                'equipments_list' => $equipments_list,
+                'city_list' => $city_list,
+                'type' => $type,
+                'properties' => $slider_properties,
+                'slider' => $attr_for_slider,
+                'view_type' => $view_type,
+                'last_update' => $last_update,
+                'gallery_settings' => $usa_gallery_settings,
+                'gallery' => $gallery,
+                'count_items' => $count_items,
+                'last_news' => $last_news,
+                'search' => Session::get('search')
+            ]);
         }
 
         if($country[0] == 'mauritius') {
-            return view('countries.mauritius', ['view_list' => $view_list, 'standing_list' => $standing_list, 'equipments_list' => $equipments_list, 'city_list' => $city_list, 'type' => $type, 'properties' => $slider_properties, 'view_type' => $view_type, 'last_update' => $last_update, 'gallery_settings' => $mauritius_gallery_settings, 'gallery' => $gallery, 'count_items' => $count_items, 'last_news' => $last_news, 'search' => Session::get('search')]);
+            return view('countries.mauritius', [
+                'view_list' => $view_list,
+                'standing_list' => $standing_list,
+                'equipments_list' => $equipments_list,
+                'city_list' => $city_list,
+                'type' => $type,
+                'properties' => $slider_properties,
+                'view_type' => $view_type,
+                'last_update' => $last_update,
+                'gallery_settings' => $mauritius_gallery_settings,
+                'gallery' => $gallery,
+                'count_items' => $count_items,
+                'last_news' => $last_news,
+                'search' => Session::get('search')
+            ]);
         }
     }
 
@@ -277,9 +352,7 @@ class PagesController extends Controller
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
 
-        return view(
-            'results',
-            [
+        return view('results', [
                 'properties' => $properties,
                 'all_properties' => $all_properties,
                 'pagination' => $pagination,
@@ -412,7 +485,7 @@ class PagesController extends Controller
 
         $properties_obj = new Properties();
         $properties = $properties_obj->getProperties(
-            Session::get("search.items"),
+            (!empty($_GET['items'])) ? $_GET['items'] : '10',
             $cur_page,
             Session::get("search.sell_type"),
             Session::get("search.object_type"),
@@ -448,9 +521,7 @@ class PagesController extends Controller
         $pagination = $properties_obj->paginations(Session::get("search.items"), $cur_page, $url_page);
         $count_items = $properties_obj->property_count;
 
-        return view(
-            'results',
-            [
+        return view('results', [
                 'properties' => $properties,
                 'all_properties' => $all_properties,
                 'pagination' => $pagination,
@@ -466,7 +537,7 @@ class PagesController extends Controller
         );
     }
 
-    public function details()
+    public function details($subtype, $city, $id)
     {
         $view_type = 'grid_view';
 
@@ -486,8 +557,7 @@ class PagesController extends Controller
             Session::put('search.object_place', Properties::getCityListIds());
         }
 
-        $id = $_GET['id'];
-        if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
+        if (isset($id) && !empty($id) && is_numeric($id)) {
             $property = Properties::getProperty($id);
             $property_id = Properties::getPropertyId(
                 Session::get("search.sell_type"),
@@ -520,13 +590,23 @@ class PagesController extends Controller
 
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'mp_property_id' => $mp_property_id, 'mp_next' => $mp_next, 'mp_prev' => $mp_prev, 'view_type' => $view_type]);
+            return view('details', [
+                'property' => $property,
+                'services' => $services,
+                'property_id' => $property_id,
+                'next' => $next,
+                'prev' => $prev,
+                'mp_property_id' => $mp_property_id,
+                'mp_next' => $mp_next,
+                'mp_prev' => $mp_prev,
+                'view_type' => $view_type
+            ]);
         } else {
             return redirect('results');
         }
     }
 
-    public function locationsDetails()
+    public function locationsDetails($subtype, $city, $id)
     {
         $view_type = 'grid_view';
 
@@ -546,8 +626,7 @@ class PagesController extends Controller
             Session::put('search.object_place', Properties::getCityListIds());
         }
 
-        $id = $_GET['id'];
-        if (isset($_GET['id']) && !empty($_GET['id']) && is_numeric($_GET['id'])) {
+        if (isset($id) && !empty($id) && is_numeric($id)) {
             $property = Properties::getProperty($id);
             $property_id = Properties::getPropertyId(
                 Session::get("search.sell_type"),
@@ -580,7 +659,17 @@ class PagesController extends Controller
 
             /* services */
             $services = Services::select('reference', 'value', 'locale')->get();
-            return view('details', ['property' => $property, 'services' => $services, 'property_id' => $property_id, 'next' => $next, 'prev' => $prev, 'mp_property_id' => $mp_property_id, 'mp_next' => $mp_next, 'mp_prev' => $mp_prev, 'view_type' => $view_type]);
+            return view('details', [
+                'property' => $property,
+                'services' => $services,
+                'property_id' => $property_id,
+                'next' => $next,
+                'prev' => $prev,
+                'mp_property_id' => $mp_property_id,
+                'mp_next' => $mp_next,
+                'mp_prev' => $mp_prev,
+                'view_type' => $view_type
+            ]);
         } else {
             return redirect('results');
         }
@@ -858,12 +947,16 @@ class PagesController extends Controller
                 $filename = basename($path[0],'.xml');
                 $title = str_replace(array('_', '2', 'core'), ' ', $filename);
 
+                /*subtype*/
+                $subtype = DB::table('apimo_property_subtype')->where('reference', $property['subtype'])->value('value');
+
                 /*city*/
                 $city = DB::table('apimo_city')->where('city_id', $property['city'])->value('name');
 
                 $preview[$property['property_id']] = [
                     'image'     => $property['pictures'],
                     'sell_type' => $property['category'],
+                    'subtype'   => $subtype,
                     'title'     => ucfirst($title),
                     'city'      => $city
                 ];
@@ -919,11 +1012,20 @@ class PagesController extends Controller
         $id = $request->id;
         $image_arr = [];
         $lang = LaravelLocalization::getCurrentLocale();
+        $lang_full = LaravelLocalization::getCurrentLocaleRegional();
 
         foreach ($id as $item_id) {
             $images = DB::table('apimo_properties')
                 ->where('property_id', $item_id)
                 ->value('pictures');
+
+            $city_id = DB::table('apimo_properties')
+                ->where('property_id', $item_id)
+                ->value('city');
+
+            $subtype_id = DB::table('apimo_properties')
+                ->where('property_id', $item_id)
+                ->value('subtype');
 
             $sell_type = DB::table('apimo_properties')
                 ->where('property_id', $item_id)
@@ -934,8 +1036,17 @@ class PagesController extends Controller
                 ->orderBy('rank', 'asc')
                 ->pluck('url');
 
-            $type = ($sell_type == 1) ? 'achat' : 'locations';
-            $url_property =  '/' . $lang . '/' . $type . '/details?id=' . $item_id;
+            $city = DB::table('apimo_city')
+                ->where('city_id', $city_id)
+                ->value('name');
+
+            $subtype = DB::table('apimo_property_subtype')
+                ->where('reference', $subtype_id)
+                ->where('locale', $lang_full)
+                ->value('value');
+
+            $type = ($sell_type == 1) ? 'vente' : 'location';
+            $url_property =  '/' . $lang . '/immobilier-' . $type . '-' . mb_strtolower(str_replace(" ", "-", $subtype)) . '-' . mb_strtolower(str_replace(" ", "-", $city)) . '/' . $item_id;
             $image_arr[$item_id] = [
                 'url' => $url,
                 'link' => $url_property

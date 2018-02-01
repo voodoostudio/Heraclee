@@ -76,7 +76,19 @@
                 @endif
             @endif
             @php
-                $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?  route('details') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '') : route('locationsDetails') . '?id=' . $property['property_id'] . ((!empty($slider)) ? $slider : '');
+                $link = ($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) ||
+                        ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6) ?
+                        route('details', [
+                            'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                            'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
+                            'id' => $property['property_id']
+                        ]) . ((!empty($slider)) ? $slider : '') :
+                        route('locationsDetails', [
+                            'subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])),
+                            'city' => mb_strtolower(str_replace(" ", "-",$property['city'])),
+                            'id' => $property['property_id']
+                        ]) . ((!empty($slider)) ? $slider : '');
+
                 $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
                 $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
             @endphp

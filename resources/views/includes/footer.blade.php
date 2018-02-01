@@ -1,3 +1,7 @@
+@php
+    $lang = LaravelLocalization::getCurrentLocale();
+@endphp
+
 <footer>
     <section class="top_footer_section">
         <div class="container-fluid">
