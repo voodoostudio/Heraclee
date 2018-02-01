@@ -121,9 +121,9 @@ Route::group(
                 'as' => 'contact.post'
         ]);
 
-        Route::post('/newsletter', [
-            'uses' => 'PagesController@newsletter',
-            'as' => 'newsletter',
+        Route::post('/footer_newsletter', [
+            'uses' => 'PagesController@footer_newsletter',
+            'as' => 'footer_newsletter',
         ]);
 
         Route::get('/newsletters', [

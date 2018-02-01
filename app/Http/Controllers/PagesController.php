@@ -872,7 +872,7 @@ class PagesController extends Controller
      * @param  $request
      */
 
-    public function newsletter(Request $request)
+    public function footer_newsletter(Request $request)
     {
         $subscribers = new Subscribers;
         $subscribers->email = $request->email;

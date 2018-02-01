@@ -130,7 +130,7 @@
                             <li>44, Route des Plages<br>83990 Saint-Tropez</li>
                         </ul>
                     </div>
-                    <form id = "newsletter" action="{{ route('newsletter') }}" method="POST">
+                    <form id = "newsletter" action="{{ route('footer_newsletter') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="input_container light">
                             <input type="text" name = "email" id = "email" placeholder="{{ trans('lang.subscribe_to_newsletter') }}">
