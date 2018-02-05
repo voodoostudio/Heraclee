@@ -2,7 +2,7 @@
 
 {{--{{ dd($property) }}--}}
 
-@section('title', 'Details page')
+@section('title', substr($property['comments']['comment'],0,70))
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
 @endphp
