@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Home page')
+@section('title', 'Maisons et appartements de standing, locations très haut de gamme. Les plus belles propriétés de la Côte d\'Azur.')
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/index.min.css')}}">--}}
     <script defer
