@@ -51,13 +51,13 @@
             }
             #door-right {
                 box-shadow: 0 0 0 2px #cdae6d;
-                -webkit-transform: skewX(-31deg) translate(-49%);
-                transform: skewX(-31deg) translate(-49%)
+                -webkit-transform: skewX(-31deg) translate(-50%);
+                transform: skewX(-31deg) translate(-50%)
             }
 
             #door-left {
-                -webkit-transform: skewX(-31deg) translate(49%);
-                transform: skewX(-31deg) translate(49%)
+                -webkit-transform: skewX(-31deg) translate(50%);
+                transform: skewX(-31deg) translate(50%)
             }
             #door-wrapper.loaded #door-left {
                 -webkit-transform: skewX(-31deg) translate(200%);
@@ -75,8 +75,8 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                width: 200px;
-                height: 200px;
+                width: 130px;
+                height: 130px;
                 border-radius: 50%;
                 margin: auto;
                 overflow: hidden;
@@ -95,21 +95,14 @@
                 right: 0;
                 margin: auto;
                 overflow: hidden;
-                width: 120px;
-                height: 120px;
-                padding: 10px;
+                width: 130px;
+                height: 130px;
+                padding: 5px;
                 border-radius: 50%;
                 border: 2px solid #cdae6d;
             }
             .square-animated img {
                 width: 100%;
-            }
-
-            @media (min-width:768px) {
-                .square {
-                    width: 202px;
-                    height: 202px
-                }
             }
 
             #loader {
@@ -132,16 +125,9 @@
                 transform: scale(1.1)
             }
 
-            @media (min-width:768px) {
-                .square-animated {
-                    width: 202px;
-                    height: 202px;
-                }
-            }
-
             .sk-cube-grid {
-                width: 200px;
-                height: 200px;
+                width: 130px;
+                height: 130px;
                 margin: auto;
                 position: absolute;
                 top: 0;
@@ -619,7 +605,10 @@
                 $('body').removeClass('preloader_active');
                 $('.preloader_container').fadeOut();
 
-                $('#door-wrapper').addClass('loaded');
+                $('#door-wrapper').addClass('loaded1');
+//                setTimeout(function(){
+//                    $('#door-wrapper').fadeOut();
+//                }, 1000);
             });
         </script>
     </body>
