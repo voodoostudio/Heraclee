@@ -605,10 +605,10 @@
                 $('body').removeClass('preloader_active');
                 $('.preloader_container').fadeOut();
 
-                $('#door-wrapper').addClass('loaded1');
-//                setTimeout(function(){
-//                    $('#door-wrapper').fadeOut();
-//                }, 1000);
+                $('#door-wrapper').addClass('loaded');
+                setTimeout(function(){
+                    $('#door-wrapper').fadeOut();
+                }, 1000);
             });
         </script>
     </body>
