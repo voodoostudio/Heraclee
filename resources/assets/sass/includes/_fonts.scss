@@ -62,3 +62,16 @@
   font-style: normal;
 }
 /* END snell_round_hand bold*/
+
+/* BEGIN Light*/
+@font-face {
+  font-family: 'montserrat_light';
+  src: url('/fonts/montserrat/light/montserrat_light.eot');
+  src: url('/fonts/montserrat/light/montserrat_light.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/montserrat/light/montserrat_light.woff') format('woff'),
+  url('/fonts/montserrat/light/montserrat_light.ttf') format('truetype'),
+  url('/fonts/montserrat/light/montserrat_light.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+/* END Light*/
