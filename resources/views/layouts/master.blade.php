@@ -22,10 +22,8 @@
             gtag('config', 'UA-71420108-6');
         </script>
 
-
+        <!-- Preloader styling -->
         <style>
-
-
             #door-wrapper {
                 position: fixed;
                 top: 0;
@@ -34,7 +32,6 @@
                 right: 0;
                 z-index: 99999;
             }
-
             #door-left,
             #door-right{
                 width: 100%;
@@ -54,7 +51,6 @@
                 -webkit-transform: skewX(-31deg) translate(-50%);
                 transform: skewX(-31deg) translate(-50%)
             }
-
             #door-left {
                 -webkit-transform: skewX(-31deg) translate(50%);
                 transform: skewX(-31deg) translate(50%)
@@ -67,7 +63,6 @@
                 -webkit-transform: skewX(-31deg) translate(-200%);
                 transform: skewX(-31deg) translate(-200%)
             }
-
             .square {
                 display: block;
                 position: absolute;
@@ -104,7 +99,6 @@
             .square-animated img {
                 width: 100%;
             }
-
             #loader {
                 position: absolute;
                 top: 0;
@@ -114,17 +108,14 @@
                 overflow: hidden;
                 transition: opacity .9s 0s, visibility 1332ms 1332ms
             }
-
             #door-wrapper.loaded #loader {
                 visibility: hidden;
                 opacity: 0
             }
-
             #loader.loaded #loader-inner {
                 -webkit-transform: scale(1.1);
                 transform: scale(1.1)
             }
-
             .sk-cube-grid {
                 width: 130px;
                 height: 130px;
@@ -168,25 +159,23 @@
             .sk-cube-grid .sk-cube9 {
                 -webkit-animation-delay: 0.2s;
                 animation-delay: 0.2s; }
-
             @-webkit-keyframes sk-cubeGridScaleDelay {
                 0%, 70%, 100% {
                     -webkit-transform: scale3D(1, 1, 1);
                     transform: scale3D(1, 1, 1);
                 } 35% {
-                      -webkit-transform: scale3D(0, 0, 1);
-                      transform: scale3D(0, 0, 1);
-                  }
+                    -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1);
+                }
             }
-
             @keyframes sk-cubeGridScaleDelay {
                 0%, 70%, 100% {
                     -webkit-transform: scale3D(1, 1, 1);
                     transform: scale3D(1, 1, 1);
                 } 35% {
-                      -webkit-transform: scale3D(0, 0, 1);
-                      transform: scale3D(0, 0, 1);
-                  }
+                    -webkit-transform: scale3D(0, 0, 1);
+                    transform: scale3D(0, 0, 1);
+                }
             }
         </style>
 
@@ -398,11 +387,8 @@
         {{--</div>--}}
 
         <div id="door-wrapper">
-            <!-- <div id="door-cover"></div> -->
-            <div id="door-left" style="/* transform: translate(100%, 0%) matrix(1, 0, 0, 1.16663, 622.79, 0); */"></div>
-            <div id="door-right" style="/* box-shadow: rgb(27, 27, 27) 0px 0px 0px 2px; *//* transform: translate(-100%, 0%) matrix(1, 0, 0, 1.16663, -622.79, 0); */"></div>
-            <!-- <div id="preloader" style="opacity: 0";></div> -->
-
+            <div id="door-left"></div>
+            <div id="door-right"></div>
             <div id="loader" class="active">
                 <div id="loader-inner">
                     <div class="square"></div>
