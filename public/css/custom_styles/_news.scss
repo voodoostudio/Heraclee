@@ -221,7 +221,7 @@ section.news_admin_nav_section {
     background-color: transparent;
     color: $main_light_clr;
     font-size: 0.875rem;
-    font-family: 'opensans_light';
+    font-family: modelica_thin;
     &:focus {
       border: 1px solid $main_gray_clr;
     }
@@ -239,7 +239,7 @@ section.news_admin_nav_section {
   background: $main_dark_clr;
   color: $main_light_clr;
   border-color: $main_gray_clr;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
   table {
     thead {
       tr:last-of-type {
@@ -335,7 +335,7 @@ section.news_admin_nav_section {
         margin: 0;
         background-color: rgba($main_dark_clr, 0.7);
         font-size: .875rem;
-        font-family: 'opensans_light';
+        font-family: modelica_thin;
         color: $main_gray_clr;
         display: inline-block;
         cursor: pointer;

@@ -48,16 +48,46 @@
 }
 
 /* END snell_round_hand bold*/
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url("/fonts/modelica/thin/modelica_thin.eot");
+  src: url("/fonts/modelica/thin/modelica_thin.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/thin/modelica_thin.woff") format("woff"), url("/fonts/modelica/thin/modelica_thin.ttf") format("truetype"), url("/fonts/modelica/thin/modelica_thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Thin*/
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url("/fonts/montserrat/light/montserrat_light.eot");
-  src: url("/fonts/montserrat/light/montserrat_light.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/light/montserrat_light.woff") format("woff"), url("/fonts/montserrat/light/montserrat_light.ttf") format("truetype"), url("/fonts/montserrat/light/montserrat_light.svg") format("svg");
+  font-family: 'modelica_light';
+  src: url("/fonts/modelica/light/modelica_light.eot");
+  src: url("/fonts/modelica/light/modelica_light.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/light/modelica_light.woff") format("woff"), url("/fonts/modelica/light/modelica_light.ttf") format("truetype"), url("/fonts/modelica/light/modelica_light.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
 
 /* END Light*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url("/fonts/modelica/regular/modelica_regular.eot");
+  src: url("/fonts/modelica/regular/modelica_regular.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/regular/modelica_regular.woff") format("woff"), url("/fonts/modelica/regular/modelica_regular.ttf") format("truetype"), url("/fonts/modelica/regular/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url("/fonts/modelica/medium/modelica_medium.eot");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -65,14 +95,14 @@ button {
   background: transparent;
   color: #fdfdfd;
   padding: 0;
-  font: 1rem opensans_regular;
+  font: 1rem modelica_light;
   border-radius: 0;
 }
 
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem montserrat_light;
+  font: 1.25rem modelica_light;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -136,7 +166,7 @@ textarea {
   background-color: transparent;
   color: #fdfdfd;
   font-size: 0.875rem;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
 }
 
 input {
@@ -237,6 +267,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
+  font-family: modelica_regular;
 }
 
 label.form_el_label i.icn {
@@ -268,7 +299,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   text-transform: uppercase;
   border: none;
   color: #fdfdfd;
-  font-family: opensans_light, Raleway, sans-serif;
+  font-family: modelica_regular;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -350,8 +381,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
+  font-family: modelica_thin;
   font-size: 1rem;
-  font-family: inherit;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -744,16 +775,46 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 /* END snell_round_hand bold*/
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url("/fonts/modelica/thin/modelica_thin.eot");
+  src: url("/fonts/modelica/thin/modelica_thin.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/thin/modelica_thin.woff") format("woff"), url("/fonts/modelica/thin/modelica_thin.ttf") format("truetype"), url("/fonts/modelica/thin/modelica_thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Thin*/
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url("/fonts/montserrat/light/montserrat_light.eot");
-  src: url("/fonts/montserrat/light/montserrat_light.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/light/montserrat_light.woff") format("woff"), url("/fonts/montserrat/light/montserrat_light.ttf") format("truetype"), url("/fonts/montserrat/light/montserrat_light.svg") format("svg");
+  font-family: 'modelica_light';
+  src: url("/fonts/modelica/light/modelica_light.eot");
+  src: url("/fonts/modelica/light/modelica_light.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/light/modelica_light.woff") format("woff"), url("/fonts/modelica/light/modelica_light.ttf") format("truetype"), url("/fonts/modelica/light/modelica_light.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
 
 /* END Light*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url("/fonts/modelica/regular/modelica_regular.eot");
+  src: url("/fonts/modelica/regular/modelica_regular.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/regular/modelica_regular.woff") format("woff"), url("/fonts/modelica/regular/modelica_regular.ttf") format("truetype"), url("/fonts/modelica/regular/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url("/fonts/modelica/medium/modelica_medium.eot");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -761,14 +822,14 @@ button {
   background: transparent;
   color: #fdfdfd;
   padding: 0;
-  font: 1rem opensans_regular;
+  font: 1rem modelica_light;
   border-radius: 0;
 }
 
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem montserrat_light;
+  font: 1.25rem modelica_light;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -832,7 +893,7 @@ textarea {
   background-color: transparent;
   color: #fdfdfd;
   font-size: 0.875rem;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
 }
 
 input {
@@ -933,6 +994,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
+  font-family: modelica_regular;
 }
 
 label.form_el_label i.icn {
@@ -964,7 +1026,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   text-transform: uppercase;
   border: none;
   color: #fdfdfd;
-  font-family: opensans_light, Raleway, sans-serif;
+  font-family: modelica_regular;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -1046,8 +1108,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
+  font-family: modelica_thin;
   font-size: 1rem;
-  font-family: inherit;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -1396,7 +1458,7 @@ html {
 }
 
 body {
-  font: 16px 'opensans_light';
+  font: 16px 'modelica_thin';
   color: #fdfdfd;
   background: #272727;
   position: relative;
@@ -1540,11 +1602,12 @@ header .navigation_container .navigation_block {
 header .navigation_container .navigation_block .header_tel {
   transition: 0.2s ease-in-out;
   font-size: 0.813rem;
-  line-height: 27px;
-  display: none;
+  line-height: 1;
+  font-family: modelica_regular;
 }
 
 header .navigation_container .navigation_block h1 {
+  display: none;
   font-size: 1.25rem;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -1569,7 +1632,7 @@ header .navigation_container .navigation_block .lang_currency_container li {
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select {
   display: table;
   float: left;
-  padding: 6px 0 0;
+  padding: 6px 0 6px;
   transition: 0.2s ease-in-out;
 }
 
@@ -1623,11 +1686,11 @@ header .navigation_container .navigation_block .last_updates {
   bottom: -25px;
   font-size: 0.75rem;
   line-height: 1;
-  font-family: opensans_semibold;
+  font-family: modelica_light;
   color: #272727;
   padding: 5px 15px;
-  border: 1px solid #ccac83;
-  background: rgba(204, 172, 131, 0.8);
+  border: 1px solid #a0998e;
+  background: #a0998e;
 }
 
 header .navigation_container .navigation_block .last_updates i {
@@ -1671,7 +1734,7 @@ header .navigation_container nav ul.nav li.nav-item .nav-link {
 
 header .navigation_container nav ul.nav li.nav-item .nav-link.active {
   color: #ccac83;
-  font-family: opensans_regular;
+  font-family: modelica_light;
   border-color: #ccac83;
 }
 
@@ -1685,7 +1748,7 @@ header .navigation_container nav ul.nav li.nav-item button.btn {
   text-transform: uppercase;
   border-radius: 0;
   border-bottom: 1px solid transparent;
-  font-family: opensans_light;
+  font-family: modelica_thin;
 }
 
 header .navigation_container nav ul.nav li.nav-item button.btn:focus {
@@ -2660,16 +2723,46 @@ section.contact_form_section .outer_block_container .inner_block_container form.
 }
 
 /* END snell_round_hand bold*/
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url("/fonts/modelica/thin/modelica_thin.eot");
+  src: url("/fonts/modelica/thin/modelica_thin.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/thin/modelica_thin.woff") format("woff"), url("/fonts/modelica/thin/modelica_thin.ttf") format("truetype"), url("/fonts/modelica/thin/modelica_thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Thin*/
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url("/fonts/montserrat/light/montserrat_light.eot");
-  src: url("/fonts/montserrat/light/montserrat_light.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/light/montserrat_light.woff") format("woff"), url("/fonts/montserrat/light/montserrat_light.ttf") format("truetype"), url("/fonts/montserrat/light/montserrat_light.svg") format("svg");
+  font-family: 'modelica_light';
+  src: url("/fonts/modelica/light/modelica_light.eot");
+  src: url("/fonts/modelica/light/modelica_light.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/light/modelica_light.woff") format("woff"), url("/fonts/modelica/light/modelica_light.ttf") format("truetype"), url("/fonts/modelica/light/modelica_light.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
 
 /* END Light*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url("/fonts/modelica/regular/modelica_regular.eot");
+  src: url("/fonts/modelica/regular/modelica_regular.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/regular/modelica_regular.woff") format("woff"), url("/fonts/modelica/regular/modelica_regular.ttf") format("truetype"), url("/fonts/modelica/regular/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url("/fonts/modelica/medium/modelica_medium.eot");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -2677,14 +2770,14 @@ button {
   background: transparent;
   color: #fdfdfd;
   padding: 0;
-  font: 1rem opensans_regular;
+  font: 1rem modelica_light;
   border-radius: 0;
 }
 
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem montserrat_light;
+  font: 1.25rem modelica_light;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -2748,7 +2841,7 @@ textarea {
   background-color: transparent;
   color: #fdfdfd;
   font-size: 0.875rem;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
 }
 
 input {
@@ -2849,6 +2942,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
+  font-family: modelica_regular;
 }
 
 label.form_el_label i.icn {
@@ -2880,7 +2974,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   text-transform: uppercase;
   border: none;
   color: #fdfdfd;
-  font-family: opensans_light, Raleway, sans-serif;
+  font-family: modelica_regular;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -2962,8 +3056,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
+  font-family: modelica_thin;
   font-size: 1rem;
-  font-family: inherit;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -3336,7 +3430,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.top_offer_section .info_block h1,
 #usa section.top_offer_section .info_block h1,
 #mauritius section.top_offer_section .info_block h1 {
-  font-family: opensans_regular;
+  font-family: modelica_light;
   font-size: 3.125rem;
   margin-bottom: 10px;
 }
@@ -3823,16 +3917,46 @@ section.guide_section .guide_carousel ul.slick-dots li.slick-active button:befor
 }
 
 /* END snell_round_hand bold*/
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url("/fonts/modelica/thin/modelica_thin.eot");
+  src: url("/fonts/modelica/thin/modelica_thin.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/thin/modelica_thin.woff") format("woff"), url("/fonts/modelica/thin/modelica_thin.ttf") format("truetype"), url("/fonts/modelica/thin/modelica_thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Thin*/
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url("/fonts/montserrat/light/montserrat_light.eot");
-  src: url("/fonts/montserrat/light/montserrat_light.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/light/montserrat_light.woff") format("woff"), url("/fonts/montserrat/light/montserrat_light.ttf") format("truetype"), url("/fonts/montserrat/light/montserrat_light.svg") format("svg");
+  font-family: 'modelica_light';
+  src: url("/fonts/modelica/light/modelica_light.eot");
+  src: url("/fonts/modelica/light/modelica_light.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/light/modelica_light.woff") format("woff"), url("/fonts/modelica/light/modelica_light.ttf") format("truetype"), url("/fonts/modelica/light/modelica_light.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
 
 /* END Light*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url("/fonts/modelica/regular/modelica_regular.eot");
+  src: url("/fonts/modelica/regular/modelica_regular.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/regular/modelica_regular.woff") format("woff"), url("/fonts/modelica/regular/modelica_regular.ttf") format("truetype"), url("/fonts/modelica/regular/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url("/fonts/modelica/medium/modelica_medium.eot");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -3840,14 +3964,14 @@ button {
   background: transparent;
   color: #fdfdfd;
   padding: 0;
-  font: 1rem opensans_regular;
+  font: 1rem modelica_light;
   border-radius: 0;
 }
 
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem montserrat_light;
+  font: 1.25rem modelica_light;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -3911,7 +4035,7 @@ textarea {
   background-color: transparent;
   color: #fdfdfd;
   font-size: 0.875rem;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
 }
 
 input {
@@ -4012,6 +4136,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
+  font-family: modelica_regular;
 }
 
 label.form_el_label i.icn {
@@ -4043,7 +4168,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   text-transform: uppercase;
   border: none;
   color: #fdfdfd;
-  font-family: opensans_light, Raleway, sans-serif;
+  font-family: modelica_regular;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -4125,8 +4250,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
+  font-family: modelica_thin;
   font-size: 1rem;
-  font-family: inherit;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -4998,6 +5123,7 @@ section.results_section #results_map .gm-style-iw {
   width: 300px !important;
   top: 20px !important;
   left: -145px !important;
+  font-family: modelica_thin;
 }
 
 section.results_section #results_map .gm-style-iw .infowindow_container {
@@ -5654,16 +5780,46 @@ section.results_section .slick-track {
 }
 
 /* END snell_round_hand bold*/
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url("/fonts/modelica/thin/modelica_thin.eot");
+  src: url("/fonts/modelica/thin/modelica_thin.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/thin/modelica_thin.woff") format("woff"), url("/fonts/modelica/thin/modelica_thin.ttf") format("truetype"), url("/fonts/modelica/thin/modelica_thin.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Thin*/
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url("/fonts/montserrat/light/montserrat_light.eot");
-  src: url("/fonts/montserrat/light/montserrat_light.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/light/montserrat_light.woff") format("woff"), url("/fonts/montserrat/light/montserrat_light.ttf") format("truetype"), url("/fonts/montserrat/light/montserrat_light.svg") format("svg");
+  font-family: 'modelica_light';
+  src: url("/fonts/modelica/light/modelica_light.eot");
+  src: url("/fonts/modelica/light/modelica_light.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/light/modelica_light.woff") format("woff"), url("/fonts/modelica/light/modelica_light.ttf") format("truetype"), url("/fonts/modelica/light/modelica_light.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
 
 /* END Light*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url("/fonts/modelica/regular/modelica_regular.eot");
+  src: url("/fonts/modelica/regular/modelica_regular.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/regular/modelica_regular.woff") format("woff"), url("/fonts/modelica/regular/modelica_regular.ttf") format("truetype"), url("/fonts/modelica/regular/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url("/fonts/modelica/medium/modelica_medium.eot");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -5671,14 +5827,14 @@ button {
   background: transparent;
   color: #fdfdfd;
   padding: 0;
-  font: 1rem opensans_regular;
+  font: 1rem modelica_light;
   border-radius: 0;
 }
 
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem montserrat_light;
+  font: 1.25rem modelica_light;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -5742,7 +5898,7 @@ textarea {
   background-color: transparent;
   color: #fdfdfd;
   font-size: 0.875rem;
-  font-family: 'opensans_light';
+  font-family: modelica_thin;
 }
 
 input {
@@ -5843,6 +5999,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
+  font-family: modelica_regular;
 }
 
 label.form_el_label i.icn {
@@ -5874,7 +6031,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   text-transform: uppercase;
   border: none;
   color: #fdfdfd;
-  font-family: opensans_light, Raleway, sans-serif;
+  font-family: modelica_regular;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -5956,8 +6113,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
+  font-family: modelica_thin;
   font-size: 1rem;
-  font-family: inherit;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -6403,7 +6560,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
   text-align: center;
   font-size: 3.125rem;
-  font-family: opensans_semibold;
+  font-family: modelica_regular;
 }
 
 #details section.gallery_section .gallery_container .gallery_view .object_title h3, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h3 {
@@ -6686,7 +6843,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 #details section.object_info_section .outer_block_container .inner_block_container p.description, #locationsDetails section.object_info_section .outer_block_container .inner_block_container p.description {
-  font-family: opensans_light;
+  font-family: modelica_thin;
 }
 
 #details section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
@@ -6713,7 +6870,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-bottom: 30px;
   position: relative;
   padding-right: 20px;
-  font-family: opensans_light;
+  font-family: modelica_thin;
   font-size: 1rem;
   opacity: 1;
 }
@@ -6912,7 +7069,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 #details section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container .energy_block .energy_block_diagram .energy_block_diagram_right .energy_block_diagram_pointer .energy_block_diagram_arrow span {
-  font-family: opensans_semibold;
+  font-family: modelica_regular;
   font-size: 0.85rem;
   color: #272727;
   width: 50px;
@@ -7358,7 +7515,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .btn {
     margin: 10px 0 0 15px;
     padding: 0 15px;
-    font: 14px opensans_light;
+    font: 14px modelica_thin;
     height: 30px;
     line-height: 30px;
   }

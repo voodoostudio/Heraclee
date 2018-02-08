@@ -175,7 +175,7 @@ section.news_admin_nav_section {
     background-color: transparent;
     color: #fdfdfd;
     font-size: 0.875rem;
-    font-family: 'opensans_light'; }
+    font-family: modelica_thin; }
     .gj-datepicker .gj-textbox-md:focus {
       border: 1px solid #625e57; }
   .gj-datepicker .datepicker_btn {
@@ -190,7 +190,7 @@ section.news_admin_nav_section {
   background: #272727;
   color: #fdfdfd;
   border-color: #625e57;
-  font-family: 'opensans_light'; }
+  font-family: modelica_thin; }
   .gj-calendar-md table thead tr:last-of-type th div {
     color: #ccac83;
     opacity: 0.7; }
@@ -256,7 +256,7 @@ section.news_admin_nav_section {
       margin: 0;
       background-color: rgba(39, 39, 39, 0.7);
       font-size: .875rem;
-      font-family: 'opensans_light';
+      font-family: modelica_thin;
       color: #625e57;
       display: inline-block;
       cursor: pointer;
