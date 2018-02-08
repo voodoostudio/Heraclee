@@ -63,15 +63,54 @@
 }
 /* END snell_round_hand bold*/
 
+/* BEGIN Thin*/
+@font-face {
+  font-family: 'modelica_thin';
+  src: url('/fonts/modelica/thin/modelica_thin.eot');
+  src: url('/fonts/modelica/thin/modelica_thin.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/modelica/thin/modelica_thin.woff') format('woff'),
+  url('/fonts/modelica/thin/modelica_thin.ttf') format('truetype'),
+  url('/fonts/modelica/thin/modelica_thin.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+/* END Thin*/
+
 /* BEGIN Light*/
 @font-face {
-  font-family: 'montserrat_light';
-  src: url('/fonts/montserrat/light/montserrat_light.eot');
-  src: url('/fonts/montserrat/light/montserrat_light.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/montserrat/light/montserrat_light.woff') format('woff'),
-  url('/fonts/montserrat/light/montserrat_light.ttf') format('truetype'),
-  url('/fonts/montserrat/light/montserrat_light.svg') format('svg');
+  font-family: 'modelica_light';
+  src: url('/fonts/modelica/light/modelica_light.eot');
+  src: url('/fonts/modelica/light/modelica_light.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/modelica/light/modelica_light.woff') format('woff'),
+  url('/fonts/modelica/light/modelica_light.ttf') format('truetype'),
+  url('/fonts/modelica/light/modelica_light.svg') format('svg');
   font-weight: 100;
   font-style: normal;
 }
 /* END Light*/
+
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_regular';
+  src: url('/fonts/modelica/regular/modelica_regular.eot');
+  src: url('/fonts/modelica/regular/modelica_regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/modelica/regular/modelica_regular.woff') format('woff'),
+  url('/fonts/modelica/regular/modelica_regular.ttf') format('truetype'),
+  url('/fonts/modelica/regular/modelica_regular.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+/* END Regular*/
+
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'modelica_medium';
+  src: url('/fonts/modelica/medium/modelica_medium.eot');
+  src: url('/fonts/modelica/medium/modelica_medium.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/modelica/medium/modelica_medium.woff') format('woff'),
+  url('/fonts/modelica/medium/modelica_medium.ttf') format('truetype'),
+  url('/fonts/modelica/medium/modelica_regular.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+/* END Regular*/

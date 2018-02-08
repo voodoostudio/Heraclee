@@ -8,7 +8,8 @@ html {
 }
 
 body {
-  font: 16px 'opensans_light';
+  font: 16px 'modelica_thin';
+  //font: 16px 'modelica_light';
   color: $main_light_clr;
   background: $main_dark_clr;
   position: relative;
@@ -133,10 +134,11 @@ header {
       .header_tel {
         @include my_transition(.2s ease-in-out);
         font-size: 0.813rem;
-        line-height: 27px;
-        display: none;
+        line-height: 1;
+        font-family: modelica_regular;
       }
       h1 {
+        display: none;
         font-size: 1.25rem;
         text-transform: uppercase;
         margin-bottom: 0;
@@ -155,7 +157,7 @@ header {
           ul.language_select {
             display: table;
             float: left;
-            padding: 6px 0 0;
+            padding: 6px 0 6px;
             @include my_transition(.2s ease-in-out);
             li {
               float: left;
@@ -205,12 +207,13 @@ header {
         font-size: 0.75rem;
         line-height: 1;
         //color: $main_brown_clr;
-        font-family: opensans_semibold;
+        //font-family: opensans_semibold;
+        font-family: modelica_light;
 
         color: $main_dark_clr;
         padding: 5px 15px;
-        border: 1px solid #ccac83;
-        background: rgba(#ccac83, 0.8);
+        border: 1px solid #a0998e;
+        background: #a0998e;
         i {
           margin-right: 10px;
         }
@@ -244,7 +247,7 @@ header {
             border-bottom: 1px solid transparent;
             &.active {
               color: $main_brown_clr;
-              font-family: opensans_regular;
+              font-family: modelica_light;
               border-color: $main_brown_clr;
             }
             &:hover {
@@ -258,7 +261,7 @@ header {
             text-transform: uppercase;
             border-radius: 0;
             border-bottom: 1px solid transparent;
-            font-family: opensans_light;
+            font-family: modelica_thin;
             &:focus {
               border-color: transparent!important;
             }
