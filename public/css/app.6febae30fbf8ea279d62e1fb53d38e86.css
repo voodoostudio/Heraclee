@@ -111,7 +111,6 @@ button {
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
@@ -267,7 +266,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 label.form_el_label i.icn {
@@ -296,7 +295,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
   font-size: 1.125rem;
-  text-transform: uppercase;
   border: none;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -382,7 +380,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
   font-family: modelica_thin;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -420,6 +418,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-color: #272727;
   width: 100%;
   min-width: 100%;
+  font-size: 0.9375rem;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
@@ -838,7 +837,6 @@ button {
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
@@ -994,7 +992,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 label.form_el_label i.icn {
@@ -1023,7 +1021,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
   font-size: 1.125rem;
-  text-transform: uppercase;
   border: none;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -1109,7 +1106,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
   font-family: modelica_thin;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -1147,6 +1144,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-color: #272727;
   width: 100%;
   min-width: 100%;
+  font-size: 0.9375rem;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
@@ -2786,7 +2784,6 @@ button {
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
@@ -2942,7 +2939,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 label.form_el_label i.icn {
@@ -2971,7 +2968,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
   font-size: 1.125rem;
-  text-transform: uppercase;
   border: none;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -3057,7 +3053,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
   font-family: modelica_thin;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -3095,6 +3091,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-color: #272727;
   width: 100%;
   min-width: 100%;
+  font-size: 0.9375rem;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
@@ -3980,7 +3977,6 @@ button {
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
@@ -4136,7 +4132,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 label.form_el_label i.icn {
@@ -4165,7 +4161,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
   font-size: 1.125rem;
-  text-transform: uppercase;
   border: none;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -4251,7 +4246,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
   font-family: modelica_thin;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -4289,6 +4284,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-color: #272727;
   width: 100%;
   min-width: 100%;
+  font-size: 0.9375rem;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
@@ -5843,7 +5839,6 @@ button {
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
-  text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
@@ -5999,7 +5994,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 label.form_el_label i.icn {
@@ -6028,7 +6023,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
   font-size: 1.125rem;
-  text-transform: uppercase;
   border: none;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -6114,7 +6108,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
   font-family: modelica_thin;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   text-transform: initial;
   color: #fdfdfd;
   border: 1px solid #625e57;
@@ -6152,6 +6146,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-color: #272727;
   width: 100%;
   min-width: 100%;
+  font-size: 0.9375rem;
 }
 
 .multiselect-native-select .btn-group .multiselect-container.dropdown-menu li {
