@@ -34,9 +34,8 @@
   }
 
   section.index_main_carousel_section {
-    //max-height: 700px;
     position: relative;
-    //overflow: hidden;
+    overflow: hidden;
     .slick-slider {
       .slick-arrow {
         z-index: 99;
@@ -51,6 +50,9 @@
         .slick-track {
           .slick-slide {
             position: relative;
+            height: 700px;
+            background-position: center;
+            background-size: cover;
             &:before {
               content: '';
               position: absolute;
@@ -66,12 +68,13 @@
         }
       }
       .slick-dots {
-
+        position: absolute;
+        bottom: 40px;
       }
     }
     .info_block {
       position: absolute;
-      bottom: 40px;
+      bottom: 80px;
       width: 100%;
       text-align: center;
       text-transform: uppercase;

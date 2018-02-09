@@ -3445,6 +3445,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section,
 #mauritius section.index_main_carousel_section {
   position: relative;
+  overflow: hidden;
 }
 
 #index section.index_main_carousel_section .slick-slider .slick-arrow,
@@ -3477,6 +3478,9 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
 #mauritius section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide {
   position: relative;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
 }
 
 #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide:before,
@@ -3500,13 +3504,22 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   width: 100%;
 }
 
+#index section.index_main_carousel_section .slick-slider .slick-dots,
+#france section.index_main_carousel_section .slick-slider .slick-dots,
+#swiss section.index_main_carousel_section .slick-slider .slick-dots,
+#usa section.index_main_carousel_section .slick-slider .slick-dots,
+#mauritius section.index_main_carousel_section .slick-slider .slick-dots {
+  position: absolute;
+  bottom: 40px;
+}
+
 #index section.index_main_carousel_section .info_block,
 #france section.index_main_carousel_section .info_block,
 #swiss section.index_main_carousel_section .info_block,
 #usa section.index_main_carousel_section .info_block,
 #mauritius section.index_main_carousel_section .info_block {
   position: absolute;
-  bottom: 40px;
+  bottom: 80px;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
