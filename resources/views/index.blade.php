@@ -326,7 +326,7 @@
 
     <script>
         window.sr = ScrollReveal();
-        sr.reveal('.description_container',{
+        sr.reveal('.description_container h1',{
             reset: true,
             duration: 1000,
             viewFactor: 0.75

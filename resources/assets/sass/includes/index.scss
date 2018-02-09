@@ -178,6 +178,7 @@
       border-bottom: 1px solid $main_brown_clr;
       padding: 40px 60px;
       display: flex;
+      flex-direction: row;
       align-items: center;
       h1 {
         font-size: 0.9375rem;
@@ -194,15 +195,18 @@
           color: white;
           margin-right: 30px;
           span {
-            background-image: url('/img/texture-bg.jpg');
-            background-position: 0 0;
-            -webkit-background-clip: text;
-            background-size: 100% auto;
-            background-repeat: repeat;
-            -webkit-text-fill-color: transparent;
-            color: #cdae6d;
             white-space: nowrap;
-            display: block;
+            &:first-child,
+            &:last-child {
+              background-image: url('/img/texture-bg.jpg');
+              background-position: 0 0;
+              -webkit-background-clip: text;
+              background-size: 100% auto;
+              background-repeat: repeat;
+              -webkit-text-fill-color: transparent;
+              color: #cdae6d;
+              display: block;
+            }
           }
         }
       }

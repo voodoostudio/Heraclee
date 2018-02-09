@@ -38,7 +38,7 @@ return [
     'surface'               => 'Surface',
     'bedrooms'              => 'Chambres',
     'homepage_description'  => 'Notre agence Heraclee, spécialiste de l\'immobilier de luxe au niveau de la Riviera Française, est basée depuis 7 ans dans l\'emblématique ville de Saint-Tropez. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez.',
-    'homepage_title'        => '<span>Heraclee</span> Agence immobilière de prestige <span>Saint-Tropez</span>',
+    'homepage_title'        => '<span>Heraclee</span> <span>Agence immobilière</span> <span>de prestige</span> <span>Saint-Tropez</span>',
 
 //    RESULTS PAGE
     'results_per_page'      => 'résultats par page',
