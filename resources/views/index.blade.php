@@ -326,10 +326,10 @@
 
     <script>
         window.sr = ScrollReveal();
-        sr.reveal('.description_container h1',{
+        sr.reveal('section',{
             reset: true,
-            duration: 1000,
-            viewFactor: 0.75
+            duration: 500,
+            viewFactor: 0.1
         });
 
         var locations = [
