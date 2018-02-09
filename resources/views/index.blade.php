@@ -133,10 +133,16 @@
                             @endif
                         @endforeach
                         @foreach($slider_image as $item)
-                            {{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}
-                            {{ (!empty($item->subtype)) ? $item->subtype : ''  }}
-                            {{ (!empty($item->city)) ? $item->city : ''  }}
-                            <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
+
+                            <li>
+                                <div class="info_block">
+                                    <div class="object_status">{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</div>
+                                    <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
+                                    <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
+                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn">{{ trans('lang.see_property') }}</a>
+                                </div>
+                                <img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}">
+                            </li>
                         @endforeach
                     </ul>
             </section>
@@ -161,9 +167,9 @@
                                 @endphp
                                 @endforeach
                                 <div class="info_block">
-                                    <h1>{{$property['type']}}</h1>
-                                    <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
-                                    <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @endif" class="btn">{{ trans('lang.see_property') }}</a>
+                                    <h1 class="animated">{{$property['type']}}</h1>
+                                    <h3 class="animated">{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
+                                    <a class="btn animated" href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @endif">{{ trans('lang.see_property') }}</a>
                                 </div>
                                 <div class="gradient_bottom"></div>
                             </section>
@@ -174,66 +180,9 @@
                     @endforeach
                 @endif
             @endforeach
-
-            <section class="flipbook_section" style="display: none">
-                {{--<a href="#" class="hidden-sm-up" data-toggle="modal" data-target="#homepage_flipbook">--}}
-                    {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
-                {{--</a>--}}
-
-                {{--<a href="/flipbooks/heraclee_book/heraclee_book.html" class="hidden-md-up" target="_blank">--}}
-                    {{--<img src="/img/flipbooks/heraclee_book.jpg" alt="" class="">--}}
-                {{--</a>--}}
-                {{--<div class="iframe-m hidden-sm-down">--}}
-                    {{--<p>--}}
-                        {{--<iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>--}}
-                    {{--</p>--}}
-                {{--</div>--}}
-                <div class="iframe-m">
-                    <p>
-                        <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-                    </p>
-                </div>
-            </section>
-
-            <div class="modal fade" id="homepage_flipbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="vertical-alignment-helper">
-                    <div class="modal-dialog vertical-align-center" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <section class="flipbook_section">
-                                    <div class="iframe-m">
-                                        <p>
-                                            <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-                                        </p>
-                                    </div>
-                                </section>
-                            </div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <i class="icn icon-cancel"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
     @include('includes.latest_news')
 
     @include('includes.search_block_index')
-
-    {{--<section class="description_section">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<div class="description_container">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-lg-5 offset-lg-1">--}}
-                        {{--<h1 class="title">{!! trans('lang.homepage_title') !!}</h1>--}}
-                    {{--</div>--}}
-                    {{--<div class="col-lg-5">--}}
-                        {{--<h1>{!! trans('lang.homepage_description') !!}</h1>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
 
     <section class="description_section">
         <div class="container-fluid">

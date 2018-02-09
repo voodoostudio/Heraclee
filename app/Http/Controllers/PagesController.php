@@ -94,7 +94,7 @@ class PagesController extends Controller
         $gallery = Gallery::all();
 
         /* Gallery (slider) homepage */
-        $gallery_homepage = Gallery::limit(4)->orderBy('id', 'desc')->get();
+        $gallery_homepage = Gallery::limit(5)->orderBy('id', 'desc')->get();
 
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();

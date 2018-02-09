@@ -99,6 +99,37 @@
         </div>
     </section>
 
+
+    <section class="flipbook_section" style="display: none">
+        <div class="iframe-m">
+            <p>
+                <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+            </p>
+        </div>
+    </section>
+
+    <div class="modal fade" id="homepage_flipbook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <section class="flipbook_section">
+                            <div class="iframe-m">
+                                <p>
+                                    <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="icn icon-cancel"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 @endsection
 
 @section('javascript')

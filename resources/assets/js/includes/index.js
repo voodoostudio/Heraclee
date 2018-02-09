@@ -47,6 +47,7 @@ $(document).ready(function() {
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
+            dots: true,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
             autoplay: true
@@ -90,7 +91,6 @@ $(document).ready(function() {
             pauseOnHover: true
         });
     }
-
 });
 
 function setSellType(id) {
