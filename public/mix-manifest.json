@@ -1,10 +1,13 @@
 {
-  "/js/app.js": "/js/app.4dac9398ad1f12812ce2efa0bab9d6fb.js",
-  "/css/app.css": "/css/app.dfedef5cb4d65f53e91477263d242f2c.css",
-  "/css/libraries.css": "/css/libraries.68353c9fefce001b35ac5a6d6bc8d354.css",
+  "/js/app.js": "/js/app.js",
+  "/css/app.css": "/css/app.css",
+  "/css/libraries.css": "/css/libraries.css",
   "/js/all.js": "/js/all.e3c5834e1e2ecc40d256978cbac6c5ac.js",
-  "/js/libraries.js": "/js/libraries.047db7ad8bd5b1295c662aeaad86befb.js",
-  "/mix.js": "/mix.f6ea224f380a64e12309.js",
+  "/js/libraries.js": "/js/libraries.js",
+  "/mix.js": "/mix.js",
   "/css/test.css": "/css/test.2cdb7ef7709e10ff47db15d69d7d8d77.css",
-  "/js/details.js": "/js/details.c2c6260d4bfb264ccb2273099678a4dd.js"
+  "/js/details.js": "/js/details.js",
+  "/js/index.js": "/js/index.js",
+  "/js/results.js": "/js/results.js",
+  "/js/messages_fr.js": "/js/messages_fr.js"
 }

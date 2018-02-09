@@ -268,7 +268,7 @@
             @endforeach
         ];
     </script>
-    <script type="text/javascript" src="{{asset('/js/custom_scripts/results.js')}}"></script>
+    <script type="text/javascript" src="{{mix('js/results.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             @if($view_type == 'list_view')

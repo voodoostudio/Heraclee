@@ -10,197 +10,170 @@
         <meta name="keywords" content="heraclee, website, responsive">
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 
-        {{ csrf_field() }}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/normalize.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/bootstrap/bootstrap-multiselect.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/tooltipster.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/fontawesome/css/font-awesome.min.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/libraries/slick.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/custom_icons/style.css">--}}
-        {{--<link rel="stylesheet" type="text/css" href="/css/global.min.css">--}}
-
-        <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
+        <!-- Preloader styling -->
         <style>
-            .cssload-loader {
-                position: relative;
-                left: calc(50% - 68px);
-                width: 136px;
-                height: 136px;
-                border-radius: 50%;
-                -o-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                perspective: 1700px;
+            #door-wrapper {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 99999;
+                background: #151414;
             }
-            .cssload-inner {
-                position: absolute;
+            #door-left,
+            #door-right{
                 width: 100%;
                 height: 100%;
-                box-sizing: border-box;
-                -o-box-sizing: border-box;
-                -ms-box-sizing: border-box;
-                -webkit-box-sizing: border-box;
-                -moz-box-sizing: border-box;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: 0;
+                background-color: #151414;
+                -webkit-transition: 3s;
+                -moz-transition: 3s;
+                -o-transition: 3s;
+                transition: 3s;
+            }
+            #door-right {
+                box-shadow: 2px 0 0 0 #ccac83;
+                -webkit-transform: skewX(-31deg) translate(-50%);
+                transform: skewX(-31deg) translate(-50%)
+            }
+            #door-left {
+                -webkit-transform: skewX(-31deg) translate(50%);
+                transform: skewX(-31deg) translate(50%)
+            }
+            #door-wrapper.loaded {
+                background: transparent;
+            }
+            #door-wrapper.loaded #door-left {
+                -webkit-transform: skewX(-31deg) translate(200%);
+                transform: skewX(-31deg) translate(200%)
+            }
+            #door-wrapper.loaded #door-right {
+                -webkit-transform: skewX(-31deg) translate(-200%);
+                transform: skewX(-31deg) translate(-200%)
+            }
+            .square {
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 130px;
+                height: 130px;
                 border-radius: 50%;
-                -o-border-radius: 50%;
-                -ms-border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
+                margin: auto;
+                overflow: hidden;
+                border: 2px solid #1b1b1b;
+                background: #151414
             }
-            .cssload-inner.cssload-one {
-                left: 0%;
-                top: 0%;
-                animation: cssload-rotate-one 1s linear infinite;
-                -o-animation: cssload-rotate-one 1s linear infinite;
-                -ms-animation: cssload-rotate-one 1s linear infinite;
-                -webkit-animation: cssload-rotate-one 1s linear infinite;
-                -moz-animation: cssload-rotate-one 1s linear infinite;
-                border-bottom: 6px solid rgb(204,172,131);
+            .square-animated {
+                height: 200px;
+                display: block;
+                position: absolute
             }
-            .cssload-inner.cssload-two {
-                right: 0%;
-                top: 0%;
-                animation: cssload-rotate-two 1s linear infinite;
-                -o-animation: cssload-rotate-two 1s linear infinite;
-                -ms-animation: cssload-rotate-two 1s linear infinite;
-                -webkit-animation: cssload-rotate-two 1s linear infinite;
-                -moz-animation: cssload-rotate-two 1s linear infinite;
-                border-right: 6px solid rgb(204,172,131);
+            .square-animated {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                overflow: hidden;
+                width: 130px;
+                height: 130px;
+                padding: 5px;
+                border-radius: 50%;
+                border: 2px solid #ccac83;
             }
-            .cssload-inner.cssload-three {
-                right: 0%;
-                bottom: 0%;
-                animation: cssload-rotate-three 1s linear infinite;
-                -o-animation: cssload-rotate-three 1s linear infinite;
-                -ms-animation: cssload-rotate-three 1s linear infinite;
-                -webkit-animation: cssload-rotate-three 1s linear infinite;
-                -moz-animation: cssload-rotate-three 1s linear infinite;
-                border-top: 6px solid rgb(204,172,131);
+            .square-animated img {
+                width: 100%;
             }
-            @keyframes cssload-rotate-one {
-                0% {
-                    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-                }
-                100% {
-                    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-                }
+            #loader {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                transition: opacity .9s 0s, visibility 1332ms 1332ms
             }
-            @-o-keyframes cssload-rotate-one {
-                0% {
-                    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-                }
-                100% {
-                    -o-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-                }
+            #door-wrapper.loaded #loader {
+                visibility: hidden;
+                opacity: 0
             }
-            @-ms-keyframes cssload-rotate-one {
-                0% {
-                    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-                }
-                100% {
-                    -ms-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-                }
+            #loader.loaded #loader-inner {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1)
             }
-            @-webkit-keyframes cssload-rotate-one {
-                0% {
-                    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-                }
-                100% {
-                    -webkit-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-                }
+            .sk-cube-grid {
+                width: 130px;
+                height: 130px;
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
             }
-            @-moz-keyframes cssload-rotate-one {
-                0% {
-                    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
-                }
-                100% {
-                    -moz-transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
-                }
+            .sk-cube-grid .sk-cube {
+                width: 33%;
+                height: 33%;
+                background-color: rgba(0, 0, 0, 0.9);
+                float: left;
+                -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+                animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
             }
-            @keyframes cssload-rotate-two {
-                0% {
-                    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-                }
-                100% {
-                    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-                }
+            .sk-cube-grid .sk-cube1 {
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s; }
+            .sk-cube-grid .sk-cube2 {
+                -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s; }
+            .sk-cube-grid .sk-cube3 {
+                -webkit-animation-delay: 0.4s;
+                animation-delay: 0.4s; }
+            .sk-cube-grid .sk-cube4 {
+                -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s; }
+            .sk-cube-grid .sk-cube5 {
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s; }
+            .sk-cube-grid .sk-cube6 {
+                -webkit-animation-delay: 0.3s;
+                animation-delay: 0.3s; }
+            .sk-cube-grid .sk-cube7 {
+                -webkit-animation-delay: 0s;
+                animation-delay: 0s; }
+            .sk-cube-grid .sk-cube8 {
+                -webkit-animation-delay: 0.1s;
+                animation-delay: 0.1s; }
+            .sk-cube-grid .sk-cube9 {
+                -webkit-animation-delay: 0.2s;
+                animation-delay: 0.2s; }
+            @-webkit-keyframes sk-cubeGridScaleDelay {
+                0%, 70%, 100% {
+                    -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+                } 35% {
+                      -webkit-transform: scale3D(0, 0, 1);
+                      transform: scale3D(0, 0, 1);
+                  }
             }
-            @-o-keyframes cssload-rotate-two {
-                0% {
-                    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-                }
-                100% {
-                    -o-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-                }
-            }
-            @-ms-keyframes cssload-rotate-two {
-                0% {
-                    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-                }
-                100% {
-                    -ms-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-                }
-            }
-            @-webkit-keyframes cssload-rotate-two {
-                0% {
-                    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-                }
-                100% {
-                    -webkit-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-                }
-            }
-            @-moz-keyframes cssload-rotate-two {
-                0% {
-                    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
-                }
-                100% {
-                    -moz-transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
-                }
-            }
-            @keyframes cssload-rotate-three {
-                0% {
-                    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-                }
-                100% {
-                    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-                }
-            }
-            @-o-keyframes cssload-rotate-three {
-                0% {
-                    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-                }
-                100% {
-                    -o-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-                }
-            }
-            @-ms-keyframes cssload-rotate-three {
-            0% {
-                    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-                }
-                100% {
-                    -ms-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-                }
-            }
-            @-webkit-keyframes cssload-rotate-three {
-                0% {
-                    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-                }
-                100% {
-                    -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-                }
-            }
-            @-moz-keyframes cssload-rotate-three {
-                0% {
-                    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
-                }
-                100% {
-                    -moz-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
-                }
+            @keyframes sk-cubeGridScaleDelay {
+                0%, 70%, 100% {
+                    -webkit-transform: scale3D(1, 1, 1);
+                    transform: scale3D(1, 1, 1);
+                } 35% {
+                      -webkit-transform: scale3D(0, 0, 1);
+                      transform: scale3D(0, 0, 1);
+                  }
             }
         </style>
+        {{ csrf_field() }}
+        <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
+
         @yield('css')
         <link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/dashboard.min.css')}}">
         @include('js-localization::head')
@@ -210,6 +183,30 @@
         <![endif]-->
     </head>
 
+        <div id="door-wrapper">
+            <div id="door-left"></div>
+            <div id="door-right"></div>
+            <div id="loader" class="active">
+                <div id="loader-inner">
+                    <div class="square"></div>
+                    <div class="square-animated">
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                        <img src="/img/logo.svg" alt="Heraclee logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         @yield('content')
 
         @include('includes.footer')
@@ -217,12 +214,6 @@
         <script type="text/javascript" src="{{mix('js/libraries.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
 
-        {{--<script type="text/javascript" src="/js/libraries/jquery-3.2.1.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/jquery-ui.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/tether.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/bootstrap/bootstrap-multiselect.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/functions.js"></script>--}}
         <script>
             $('select').multiselect({
                 includeSelectAllOption: true,
@@ -242,15 +233,9 @@
                 }
             });
         </script>
-        {{--<script type="text/javascript" src="/js/libraries/tooltipster.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/slick.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/libraries/jquery.validate.min.js"></script>--}}
         @if( LaravelLocalization::getCurrentLocale() == 'fr' )
-            <script type="text/javascript" src="/js/libraries/messages_fr.js"></script>
+            <script type="text/javascript" src="{{mix('js/messages_fr.js')}}"></script>
         @endif
-
-        {{--<script type="text/javascript" src="/js/scripts.min.js"></script>--}}
-        {{--<script type="text/javascript" src="/js/scripts.js"></script>--}}
 
         <script>
             window.fbAsyncInit = function() {
@@ -381,8 +366,10 @@
         @yield('javascript')
         <script>
             $(window).on('load', function() {
-                $('body').removeClass('preloader_active');
-                $('.preloader_container').fadeOut();
+                $('#door-wrapper').addClass('loaded');
+                setTimeout(function(){
+                    $('#door-wrapper').fadeOut();
+                }, 500);
             });
         </script>
     </body>

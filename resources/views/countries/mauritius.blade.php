@@ -102,12 +102,5 @@
 @endsection
 
 @section('javascript')
-    <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
-    {{--<script src="/js/index.min.js"></script>--}}
-    <script>
-        $( document ).ready(function() {
-            $('#fbToolBar').css('background-color', '#272727!important');
-        });
-    </script>
-    {{--<script src="/js/libraries/jquery.marquee.min.js"></script>--}}
+    <script src="{{mix('js/index.js')}}"></script>
 @stop

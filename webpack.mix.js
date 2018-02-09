@@ -16,20 +16,28 @@ const { mix } = require('laravel-mix');
 mix.sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([
-        'public/css/libraries/normalize.css',
-        'public/css/libraries/bootstrap/bootstrap.min.css',
-        'public/css/libraries/bootstrap/bootstrap-multiselect.min.css',
+        'resources/assets/sass/libraries/normalize.css',
+        'resources/assets/sass/libraries/bootstrap/bootstrap.min.css',
+        'resources/assets/sass/libraries/bootstrap/bootstrap-multiselect.min.css',
         'public/css/libraries/fontawesome/css/font-awesome.min.css',
-        'public/css/libraries/jquery.fancybox.min.css',
-        'public/css/libraries/tooltipster.min.css',
-        'public/css/libraries/slick.css',
-        'public/css/libraries/datepicker.css',
+        'resources/assets/sass/libraries/jquery.fancybox.min.css',
+        'resources/assets/sass/libraries/tooltipster.min.css',
+        'resources/assets/sass/libraries/slick.css',
+        'resources/assets/sass/libraries/datepicker.css',
         'public/css/custom_icons/style.css',
     ], 'public/css/libraries.css');
 
 mix.scripts([
-    'public/js/custom_scripts/details.js'
+    'resources/assets/js/includes/details.js'
 ], 'public/js/details.js');
+
+mix.scripts([
+    'resources/assets/js/includes/results.js'
+], 'public/js/results.js');
+
+mix.scripts([
+    'resources/assets/js/includes/index.js'
+], 'public/js/index.js');
 
 mix.scripts([
     'resources/assets/js/includes/functions.js',
@@ -37,18 +45,22 @@ mix.scripts([
 ], 'public/js/app.js');
 
 mix.scripts([
-    'public/js/libraries/jquery-3.2.1.min.js',
-    'public/js/libraries/jquery.fancybox.min.js',
-    'public/js/libraries/jquery.marquee.min.js',
-    'public/js/libraries/jquery.validate.min.js',
-    'public/js/libraries/tether.min.js',
-    'public/js/libraries/bootstrap/bootstrap.min.js',
-    'public/js/libraries/bootstrap/bootstrap-multiselect.js',
-    'public/js/libraries/datepicker.js',
-    'public/js/libraries/markerclusterer.js',
-    'public/js/libraries/slick.min.js',
-    'public/js/libraries/tooltipster.min.js',
-    'public/js/libraries/scrollreveal.min.js',
+    'resources/assets/js/libraries/messages_fr.js',
+], 'public/js/messages_fr.js');
+
+mix.scripts([
+    'resources/assets/js/libraries/jquery-3.2.1.min.js',
+    'resources/assets/js/libraries/jquery.fancybox.min.js',
+    'resources/assets/js/libraries/jquery.marquee.min.js',
+    'resources/assets/js/libraries/jquery.validate.min.js',
+    'resources/assets/js/libraries/tether.min.js',
+    'resources/assets/js/libraries/bootstrap/bootstrap.min.js',
+    'resources/assets/js/libraries/bootstrap/bootstrap-multiselect.js',
+    'resources/assets/js/libraries/datepicker.js',
+    'resources/assets/js/libraries/markerclusterer.js',
+    'resources/assets/js/libraries/slick.min.js',
+    'resources/assets/js/libraries/tooltipster.min.js',
+    'resources/assets/js/libraries/scrollreveal.min.js',
 ], 'public/js/libraries.js');
 
 mix.options({
@@ -56,7 +68,7 @@ mix.options({
 });
 
 
-mix.version();
+// mix.version();
 
 // if (mix.inProduction()) {
 //     mix.version();

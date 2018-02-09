@@ -108,5 +108,9 @@ $lang = LaravelLocalization::getCurrentLocale();
 @endsection
 
 @section('javascript')
-    <script type="text/javascript" src="{{asset('/js/custom_scripts/contact.min.js')}}"></script>
+    <script>
+        $(window).on('load', function () {
+            contactMapInit();
+        });
+    </script>
 @stop

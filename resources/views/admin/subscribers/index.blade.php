@@ -10,17 +10,8 @@
 
 
 @section('content')
-    <body id="news_admin" class="preloader_active">
+    <body id="news_admin">
     @include('includes.header')
-    <div class="preloader_container">
-        <div class="preloader">
-            <div class="cssload-loader">
-                <div class="cssload-inner cssload-one"></div>
-                <div class="cssload-inner cssload-two"></div>
-                <div class="cssload-inner cssload-three"></div>
-            </div>
-        </div>
-    </div>
 
     <main>
         <section class="subscribers_list_section">

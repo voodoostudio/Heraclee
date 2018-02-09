@@ -15,10 +15,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 100%;
-  &.preloader_active {
-    height: 100vh;
-    overflow: hidden;
-  }
   &:after {
     content: '';
     width: 100%;

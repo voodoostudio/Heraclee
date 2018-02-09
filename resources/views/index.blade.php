@@ -124,7 +124,7 @@
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
 
-            <section class="index_main_carousel_section" style="display: none;">
+            <section class="index_main_carousel_section">
                     <ul class="index_main_carousel">
                         @foreach($gallery as $image)
                             @if($image['page'] == 'homepage')
@@ -139,6 +139,9 @@
                         @endphp
                         @foreach($slider_image as $item)
                             @if($image_counter == 1)
+                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
+                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
+                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
                                 <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
                             @endif
                             @php
@@ -162,7 +165,7 @@
                     @endphp
                     @foreach($image as $picture)
                         @if($image_counter == 1)
-                            <section class="top_offer_section" style="background-image: url('{{$picture}}'); display: none">
+                            <section class="top_offer_section" style="background-image: url('{{$picture}}');">
                                 @endif
                                 @php
                                     $image_counter++;
@@ -183,7 +186,7 @@
                 @endif
             @endforeach
 
-            <section class="flipbook_section">
+            <section class="flipbook_section" style="display: none">
                 {{--<a href="#" class="hidden-sm-up" data-toggle="modal" data-target="#homepage_flipbook">--}}
                     {{--<img src="/flipbooks/mauritius/pierre_de_lune/pierre_de_lune_brochure.jpg" alt="" class="">--}}
                 {{--</a>--}}
@@ -321,8 +324,7 @@
 @endsection
 
 @section('javascript')
-    <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
-    <script src="/js/libraries/jquery.marquee.min.js"></script>
+    <script src="{{mix('js/index.js')}}"></script>
 
     <script>
         var locations = [
