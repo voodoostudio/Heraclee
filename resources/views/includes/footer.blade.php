@@ -3,7 +3,7 @@
 @endphp
 
 <footer>
-    <section class="top_footer_section">
+    <section style="display: none" class="top_footer_section">
         <div class="container-fluid">
             <h3>{{ trans('lang.footer_title') }}</h3>
             <div class="row">

@@ -325,13 +325,6 @@
     <script src="/js/libraries/jquery.marquee.min.js"></script>
 
     <script>
-        window.sr = ScrollReveal();
-        sr.reveal('section',{
-            reset: true,
-            duration: 500,
-            viewFactor: 0.1
-        });
-
         var locations = [
                 @foreach($all_property as $key => $unique)
                 @php

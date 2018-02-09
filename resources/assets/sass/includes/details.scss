@@ -345,6 +345,8 @@
         }
         p.description {
           font-family: modelica_thin;
+          font-size: 0.9375rem;
+          line-height: 1.8rem;
           &:last-of-type {
             margin-bottom: 60px;
           }

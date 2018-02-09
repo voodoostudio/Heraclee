@@ -2419,18 +2419,17 @@ footer section.bottom_footer_section {
 }
 
 footer section.bottom_footer_section h1 {
+  line-height: 1.5rem;
   font-size: 0.8125rem;
   margin-right: 50px;
   margin-bottom: 15px;
   text-align: justify;
-  line-height: inherit;
   text-transform: none;
   border: none;
 }
 
 footer section.bottom_footer_section .copyright {
   margin-top: 30px;
-  text-transform: uppercase;
   font-size: 0.9375rem;
   margin-right: 0;
 }
@@ -3423,6 +3422,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   text-align: center;
   text-transform: uppercase;
   z-index: 2;
+  color: #fdfdfd;
 }
 
 #index section.top_offer_section .info_block h1,
@@ -3919,6 +3919,10 @@ section.guide_section .guide_carousel ul.slick-dots li.slick-active button:befor
     -webkit-transform: translate(-100%, 0);
             transform: translate(-100%, 0);
   }
+}
+
+footer {
+  margin-top: 0;
 }
 
 /* BEGIN Light*/
@@ -4661,6 +4665,7 @@ section.results_section h1 {
   text-align: center;
   font-size: 2.5rem;
   text-transform: uppercase;
+  color: #fdfdfd;
 }
 
 section.results_section .view_type_container .view_type {
@@ -6898,6 +6903,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 #details section.object_info_section .outer_block_container .inner_block_container p.description, #locationsDetails section.object_info_section .outer_block_container .inner_block_container p.description {
   font-family: modelica_thin;
+  font-size: 0.9375rem;
+  line-height: 1.8rem;
 }
 
 #details section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type, #locationsDetails section.object_info_section .outer_block_container .inner_block_container p.description:last-of-type {
@@ -8207,6 +8214,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .navigation_container .navigation_block .last_updates {
     font-size: 0.55rem;
+    font-family: modelica_regular;
     padding: 3px;
   }
   header .navigation_container .navigation_block .last_updates p i {
