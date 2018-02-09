@@ -48,7 +48,7 @@
             position: absolute;
             top: 50%;
             margin-top: -27px;
-            color: white;
+            color: $main_light_clr;
             font-size: 55px;
             line-height: 50px;
             background: transparent;
@@ -117,7 +117,7 @@
           }
           .object_status {
             background: $main_brown_clr;
-            color: $main_light_clr;
+            color: $main_xlight_clr;
           }
           .new_label {
             background: $main_dark_clr;
@@ -314,7 +314,7 @@
           }
           .object_price {
             background: $main_brown_clr;
-            color: $main_light_clr;
+            color: $main_xlight_clr;
             font-size: 1.25rem;
             text-align: center;
             padding: 12px 35px 11px;

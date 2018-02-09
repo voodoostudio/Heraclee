@@ -228,9 +228,27 @@
 
     @include('includes.search_block_index')
 
+    {{--<section class="description_section">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<div class="description_container">--}}
+                {{--<div class="row">--}}
+                    {{--<div class="col-lg-5 offset-lg-1">--}}
+                        {{--<h1 class="title">{!! trans('lang.homepage_title') !!}</h1>--}}
+                    {{--</div>--}}
+                    {{--<div class="col-lg-5">--}}
+                        {{--<h1>{!! trans('lang.homepage_description') !!}</h1>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</section>--}}
+
     <section class="description_section">
         <div class="container-fluid">
-            <h1>{!! trans('lang.homepage_description') !!}</h1>
+            <div class="description_container">
+                <h1 class="title">{!! trans('lang.homepage_title') !!}</h1>
+                <h1>{!! trans('lang.homepage_description') !!}</h1>
+            </div>
         </div>
     </section>
 
@@ -305,8 +323,15 @@
 @section('javascript')
     <script src="{{asset('/js/custom_scripts/index.min.js')}}"></script>
     <script src="/js/libraries/jquery.marquee.min.js"></script>
-    {{--$property_with_address--}}
+
     <script>
+        window.sr = ScrollReveal();
+        sr.reveal('.description_container',{
+            reset: true,
+            duration: 1000,
+            viewFactor: 0.75
+        });
+
         var locations = [
                 @foreach($all_property as $key => $unique)
                 @php
@@ -394,7 +419,4 @@
 
         });
     </script>
-
-
-
 @stop

@@ -48,6 +48,7 @@ mix.scripts([
     'public/js/libraries/markerclusterer.js',
     'public/js/libraries/slick.min.js',
     'public/js/libraries/tooltipster.min.js',
+    'public/js/libraries/scrollreveal.min.js',
 ], 'public/js/libraries.js');
 
 mix.options({
