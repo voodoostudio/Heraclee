@@ -177,7 +177,7 @@
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
 
         @yield('css')
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/dashboard.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{mix('css/dashboard.css')}}">
         @include('js-localization::head')
         <!--[if lt IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>

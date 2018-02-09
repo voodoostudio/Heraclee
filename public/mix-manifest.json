@@ -9,5 +9,6 @@
   "/js/details.js": "/js/details.js",
   "/js/index.js": "/js/index.js",
   "/js/results.js": "/js/results.js",
-  "/js/messages_fr.js": "/js/messages_fr.js"
+  "/js/messages_fr.js": "/js/messages_fr.js",
+  "/css/dashboard.css": "/css/dashboard.css"
 }

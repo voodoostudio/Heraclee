@@ -175,7 +175,7 @@
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
 
         @yield('css')
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/dashboard.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{mix('css/dashboard.css')}}">
         @include('js-localization::head')
         {{--<link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">--}}
         <!--[if lt IE 9]>

@@ -27,6 +27,8 @@ mix.styles([
         'public/css/custom_icons/style.css',
     ], 'public/css/libraries.css');
 
+mix.sass('resources/assets/sass/includes/dashboard.scss', 'public/css/dashboard.css');
+
 mix.scripts([
     'resources/assets/js/includes/details.js'
 ], 'public/js/details.js');
