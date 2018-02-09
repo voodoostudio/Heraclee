@@ -3712,6 +3712,10 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3750,6 +3754,18 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.description_section .description_container h1.title span,
 #usa section.description_section .description_container h1.title span,
 #mauritius section.description_section .description_container h1.title span {
+  white-space: nowrap;
+}
+
+#index section.description_section .description_container h1.title span:first-child, #index section.description_section .description_container h1.title span:last-child,
+#france section.description_section .description_container h1.title span:first-child,
+#france section.description_section .description_container h1.title span:last-child,
+#swiss section.description_section .description_container h1.title span:first-child,
+#swiss section.description_section .description_container h1.title span:last-child,
+#usa section.description_section .description_container h1.title span:first-child,
+#usa section.description_section .description_container h1.title span:last-child,
+#mauritius section.description_section .description_container h1.title span:first-child,
+#mauritius section.description_section .description_container h1.title span:last-child {
   background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
   -webkit-background-clip: text;
@@ -3757,7 +3773,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-repeat: repeat;
   -webkit-text-fill-color: transparent;
   color: #cdae6d;
-  white-space: nowrap;
   display: block;
 }
 
@@ -7402,8 +7417,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     margin: 0 30px;
   }
-  #index section.description_section h1 {
-    font-size: 1.1rem;
+  #index section.description_section .description_container {
+    padding: 40px 15px;
+  }
+  #index section.description_section .description_container h1.title {
+    font-size: 2rem;
   }
   section.team_members_section .outer_block_container .inner_block_container .info_container h4 {
     font-size: 1.25rem;
@@ -7478,6 +7496,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.flipbook_section .iframe-m iframe {
     height: 400px;
+  }
+  #index section.description_section .description_container h1 {
+    font-size: 0.75rem;
+  }
+  #index section.description_section .description_container h1.title {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
   }
   #details section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide, #locationsDetails section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 500px;
@@ -7828,6 +7853,24 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   #index section.results_section .results_container.map_view #results_map {
     margin-top: 20px;
+  }
+  #index section.description_section .description_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #index section.description_section .description_container h1 {
+    text-align: center;
+  }
+  #index section.description_section .description_container h1.title {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
   section.flipbook_section .iframe-m iframe {
     height: 350px;
@@ -8289,19 +8332,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #mauritius section.latest_news_section .latest_news_container .marquee_title.mobile {
     display: block;
   }
-  #index section.description_section,
-  #france section.description_section,
-  #swiss section.description_section,
-  #usa section.description_section,
-  #mauritius section.description_section {
-    margin-top: 30px;
-  }
-  #index section.description_section h1,
-  #france section.description_section h1,
-  #swiss section.description_section h1,
-  #usa section.description_section h1,
-  #mauritius section.description_section h1 {
-    font-size: 0.8rem;
+  #index section.description_section .description_container h1.title,
+  #france section.description_section .description_container h1.title,
+  #swiss section.description_section .description_container h1.title,
+  #usa section.description_section .description_container h1.title,
+  #mauritius section.description_section .description_container h1.title {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
   }
   #index section.results_section,
   #france section.results_section,
