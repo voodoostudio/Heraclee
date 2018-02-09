@@ -93,6 +93,9 @@ class PagesController extends Controller
         /* Gallery (slider) */
         $gallery = Gallery::all();
 
+        /* Gallery (slider) homepage */
+        $gallery_homepage = Gallery::limit(4)->orderBy('id', 'desc')->get();
+
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();
         $france_gallery_settings = GallerySettings::where('page', '=', 'france')->get();
@@ -128,7 +131,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $homepage_gallery_settings,
-                'gallery' => $gallery,
+                'gallery_homepage' => $gallery_homepage,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
                 'search' => Session::get('search')

@@ -16,6 +16,9 @@ class CreateAdminGalleryTable extends Migration
         Schema::create('admin_gallery', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 255)->nullable();
+            $table->string('sell_type', 255)->nullable();
+            $table->string('subtype', 255)->nullable();
+            $table->string('city', 255)->nullable();
             $table->string('image', 1024)->nullable();
             $table->string('page', 100)->nullable();
             $table->string('link', 1024)->nullable();

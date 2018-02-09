@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Properties;
 use Illuminate\Http\Request;
 use App\Gallery;
 use App\GallerySettings;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 use LaravelLocalization;
-
+use Illuminate\Support\Facades\DB;
 
 class GalleryController extends Controller
 {
@@ -27,10 +28,25 @@ class GalleryController extends Controller
      */
     public function index()
     {
+
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+
         $gallery = Gallery::get();
         $gallery_settings = GallerySettings::get();
-       // dump();
-        return view('admin.gallery.index', ['gallery' => $gallery, 'gallery_settings' => $gallery_settings]);
+        $sell_type = [
+            'sell_type' => ($lang == 'fr_FR') ? 'Vente' : 'Sell',
+            'rent_type' =>($lang == 'fr_FR') ? 'Location' : 'Rent'
+        ];
+        $subtype = DB::table('apimo_property_subtype')->where('locale', $lang)->get();
+        $cities = DB::table('apimo_city')->get();
+
+        return view('admin.gallery.index', [
+            'gallery' => $gallery,
+            'gallery_settings' => $gallery_settings,
+            'sell_type' => $sell_type,
+            'subtype' => $subtype,
+            'cities' => $cities,
+        ]);
     }
 
     /**
@@ -45,7 +61,6 @@ class GalleryController extends Controller
             'image'      => 'required|dimensions:min_width=640'
         );
 
-        $lang = LaravelLocalization::getCurrentLocale();
         $gallery = new Gallery;
         $validator = Validator::make(Input::all(), $rules);
 
@@ -96,6 +111,9 @@ class GalleryController extends Controller
 
                 $gallery->image = $file_name;
                 $gallery->title = Input::get('title');
+                $gallery->sell_type = Input::get('sell_type');
+                $gallery->subtype = Input::get('subtype');
+                $gallery->city = Input::get('city');
                 $gallery->page = Input::get('page');
                 $gallery->link = Input::get('link');
 

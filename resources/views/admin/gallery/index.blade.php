@@ -89,6 +89,35 @@
                                                         </div>
                                                     </div>
 
+                                                    @if($settings['page'] == 'homepage')
+                                                        <div class="col-md-6 col-lg-12 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Sell type</span></label>
+                                                            <select name="sell_type" title="">
+                                                                @foreach($sell_type as $type)
+                                                                    <option value="{{ $type }}">{{ $type }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-12 margin_bottom_20">
+                                                            <label class="form_el_label"><span>Subtype</span></label>
+                                                            <select name="subtype" title="">
+                                                                @foreach($subtype as $type)
+                                                                    <option value="{{ $type['value'] }}">{{ $type['value'] }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-md-6 col-lg-12 margin_bottom_20">
+                                                            <label class="form_el_label"><span>City</span></label>
+                                                            <select name="city" title="">
+                                                                @foreach($cities as $city)
+                                                                    <option value="{{ $city['name'] }}">{{ $city['name'] }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    @endif
+
                                                     <div class="col-md-6 col-lg-12 margin_bottom_20">
                                                         <label class="form_el_label"><span>{{ trans('lang.image') }} *</span></label>
                                                         <div class="img_upload_container">

@@ -123,34 +123,23 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
-
             <section class="index_main_carousel_section">
                     <ul class="index_main_carousel">
-                        @foreach($gallery as $image)
+                        @foreach($gallery_homepage as $image)
                             @if($image['page'] == 'homepage')
                                 @php
                                     $slider_image[] = $image;
                                 @endphp
                             @endif
                         @endforeach
-                        @php
-                            shuffle($slider_image);
-                            $image_counter = 1;
-                        @endphp
                         @foreach($slider_image as $item)
-                            @if($image_counter == 1)
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
-                            @endif
-                            @php
-                                $image_counter++;
-                            @endphp
+                            {{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}
+                            {{ (!empty($item->subtype)) ? $item->subtype : ''  }}
+                            {{ (!empty($item->city)) ? $item->city : ''  }}
+                            <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}"></a></li>
                         @endforeach
                     </ul>
             </section>
-
         @else
             @foreach($properties as $property)
                 @php
