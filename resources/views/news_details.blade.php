@@ -23,7 +23,7 @@
         </div>
     </section>
 
-    <section class="article_section">
+    <section class="article_section reveal">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">

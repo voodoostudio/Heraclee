@@ -18,7 +18,7 @@
     </section>
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'france' && $settings['show'] == 1)
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section reveal">
                 <ul class="index_main_carousel">
                     @foreach($gallery as $image)
                         @if($image['page'] == 'france')
@@ -88,7 +88,7 @@
         <div class="results_container map_view">
             <div class="container-fluid">
                 <h1>{{ trans('lang.our_last_objects') }}</h1>
-                <div class="results_carousel row">
+                <div class="results_carousel reveal row">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')

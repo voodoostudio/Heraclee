@@ -14,7 +14,7 @@
         </div>
     </section>
 
-    <section class="news_list_section">
+    <section class="news_list_section reveal">
         <div class="container-fluid">
             @if($news->isEmpty() == false)
                 <div class="news_carousel">

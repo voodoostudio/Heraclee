@@ -15,7 +15,7 @@
         </div>
     </section>
 
-    <section class="article_section newsletter">
+    <section class="article_section newsletter reveal">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">

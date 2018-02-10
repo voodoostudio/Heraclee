@@ -9,11 +9,11 @@
 
 @section('content')
 
-    <section class="page_title_section hidden-md-up">
-        <div class="container-fluid">
-            <h1>{!! trans('lang.homepage_title') !!}</h1>
-        </div>
-    </section>
+    {{--<section class="page_title_section hidden-md-up">--}}
+        {{--<div class="container-fluid">--}}
+            {{--<h1>{!! trans('lang.homepage_title') !!}</h1>--}}
+        {{--</div>--}}
+    {{--</section>--}}
 
     @php
         $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -123,7 +123,7 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section reveal">
                     <ul class="index_main_carousel">
                         @foreach($gallery_homepage as $image)
                             @if($image['page'] == 'homepage')
@@ -184,7 +184,7 @@
 
     @include('includes.search_block_index')
 
-    <section class="description_section">
+    <section class="description_section reveal">
         <div class="container-fluid">
             <div class="description_container">
                 <h1 class="title">{!! trans('lang.homepage_title') !!}</h1>
@@ -197,7 +197,7 @@
         <div class="results_container map_view">
             <div class="container-fluid">
                 <h1>{{ trans('lang.our_last_objects') }}</h1>
-                <div class="results_carousel row">
+                <div class="results_carousel row reveal">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')
@@ -211,7 +211,7 @@
         </div>
     </section>
 
-    <section class="results_section">
+    <section class="results_section reveal">
         <div class="results_container map_view">
             <div class="homepage_map_container">
                 <div id="results_map"></div>
@@ -219,7 +219,7 @@
         </div>
     </section>
 
-    <section class="guide_section" style="display: none">
+    <section class="guide_section reveal" style="display: none">
         <div class="container-fluid">
             <div class="guide_carousel">
                 <div class="guide_slide">

@@ -16,17 +16,12 @@ $lang = LaravelLocalization::getCurrentLocale();
 @stop
 
 @section('content')
-    <section class="page_title_section hidden-md-up">
+    <section class="page_title_section hidden-md-up reveal">
         <div class="container-fluid">
             <h1>{{ trans('lang.contact') }}</h1>
         </div>
     </section>
-    {{--<section class="contact_info_section">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<p>{{ trans('lang.contact_page_description') }}</p>--}}
-        {{--</div>--}}
-    {{--</section>--}}
-    <section class="contact_map_section">
+    <section class="contact_map_section reveal">
         <div id="contact_map"></div>
         <div class="address_block">
             <div class="outer_block_container">
@@ -45,7 +40,7 @@ $lang = LaravelLocalization::getCurrentLocale();
             </div>
         </div>
     </section>
-    <section class="contact_form_section">
+    <section class="contact_form_section reveal">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">

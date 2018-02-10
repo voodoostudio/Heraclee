@@ -80,7 +80,7 @@
 
     @include('includes.search_block_index')
 
-    <section class="results_section">
+    <section class="results_section reveal">
         @if($count_items == 0)
             <div class="container-fluid">
                 <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>

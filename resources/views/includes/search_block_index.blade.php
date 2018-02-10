@@ -1,4 +1,4 @@
-<section class="search_section">
+<section class="search_section reveal">
     @php
         $country = [];
         preg_match("/[^\/]+$/", $_SERVER["REQUEST_URI"], $matches);

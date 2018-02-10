@@ -5129,6 +5129,25 @@ section.results_section .results_container.map_view .container-fluid .object_blo
   display: none;
 }
 
+section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
+section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  top: 0;
+  background: #ccac83;
+  height: 100%;
+  width: 150%;
+  transition: 2s;
+  -webkit-transform: skew(-31deg);
+  transform: skew(-31deg);
+}
+
+section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
+section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+  left: 150%;
+}
+
 section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container,
 section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container {
   position: absolute;
@@ -5738,6 +5757,25 @@ section.results_section .slick-track {
 .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
 .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child) {
   display: none;
+}
+
+.results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
+.results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+  content: '';
+  position: absolute;
+  left: -25%;
+  top: 0;
+  background: #ccac83;
+  height: 100%;
+  width: 150%;
+  transition: 2s;
+  -webkit-transform: skew(-31deg);
+  transform: skew(-31deg);
+}
+
+.results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
+.results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+  left: 150%;
 }
 
 .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container,

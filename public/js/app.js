@@ -634,12 +634,6 @@ $(document).ready(function() {
     setBodyPaddingBottom();
     minimizeSearchBlock();
     MyOutdatedBrowser();
-    window.sr = ScrollReveal();
-    sr.reveal('section',{
-        reset: true,
-        duration: 500,
-        viewFactor: 0.1
-    });
 
     function MyOutdatedBrowser() {
         //TODO create a public api to have these set from the cloud rather than having them hardcoded in typescript
@@ -945,4 +939,11 @@ $(document).ready(function() {
         // alert('Cookies are disabled!');
     }
     checkCookie();
+
+    window.sr = ScrollReveal();
+    sr.reveal('.reveal',{
+        reset: true,
+        duration: 500,
+        viewFactor: 0.1
+    });
 });

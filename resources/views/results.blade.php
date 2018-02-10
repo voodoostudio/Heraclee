@@ -125,7 +125,7 @@
     @include('includes.search_block')
 
     @if($count_items == 0)
-    <section class="results_section">
+    <section class="results_section reveal">
         <div class="container-fluid">
             <div class="container-fluid">
                 <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
@@ -133,7 +133,7 @@
         </div>
     </section>
     @else
-    <section class="results_section">
+    <section class="results_section reveal">
         <div class="container-fluid">
             <h1>{{ trans('lang.your_real_estate_search') }}</h1>
             <div class="row">

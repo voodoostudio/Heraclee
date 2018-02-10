@@ -2,7 +2,7 @@
     $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
-<footer>
+<footer class="reveal">
     <section style="display: none" class="top_footer_section">
         <div class="container-fluid">
             <h3>{{ trans('lang.footer_title') }}</h3>

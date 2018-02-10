@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <section class="team_members_section">
+    <section class="team_members_section reveal">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-6">

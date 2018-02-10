@@ -21,13 +21,8 @@
                             ->get();
                         @endphp
 
-                        {{--  ************************************  --}}
-                        {{--  *           ДЛЯ ВАНИ               *  --}}
-                        {{--  *   PROPERTY_ID - это у нас $key   *  --}}
-                        {{--  ************************************  --}}
-
                         @foreach($image as $item)
-                            <div class="col-sm-6 object_block_container">
+                            <div class="col-sm-6 object_block_container reveal">
                                 <div class="object_block">
                                     <div class="img_block">
                                         <a href="@if($preview['sell_type'] == '3') /{{LaravelLocalization::getCurrentLocale()}}/immobilier-location-{{ mb_strtolower(str_replace(" ", "-", $preview['subtype'])) }}-{{ mb_strtolower(str_replace(" ", "-", $preview['city'])) }}/{{$key}}?page=virtual @elseif($preview['sell_type'] == '1') /{{LaravelLocalization::getCurrentLocale()}}/immobilier-vente-{{ mb_strtolower(str_replace(" ", "-", $preview['subtype'])) }}-{{ mb_strtolower(str_replace(" ", "-", $preview['city'])) }}/{{$key}}?page=virtual @endif">

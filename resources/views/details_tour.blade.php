@@ -27,7 +27,4 @@
             });
         </script>
     @endif
-
-    {{--<script type="text/javascript" src="/js/libraries/jquery.fancybox.min.js"></script>--}}
-    {{--<script type="text/javascript" src="/js/details.min.js"></script>--}}
 @stop

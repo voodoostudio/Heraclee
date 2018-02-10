@@ -611,6 +611,7 @@ section.admin_gallery_section form.image_upload_form button[type='submit'] {
 
 .switch_field input:checked + label {
   background-color: #ccac83;
+  color: #fdfdfd;
   box-shadow: none;
 }
 

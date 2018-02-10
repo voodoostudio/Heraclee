@@ -110,6 +110,7 @@ section.admin_gallery_section {
     overflow: hidden;
     &:checked + label {
       background-color: $main_brown_clr;
+      color: $main_xlight_clr;
       -webkit-box-shadow: none;
       box-shadow: none;
     }
