@@ -400,6 +400,8 @@ main {
 
 section.search_section {
   margin-top: 70px;
+  position: relative;
+  z-index: 1;
   .outer_block_container {
     .inner_block_container {
       position: relative;
