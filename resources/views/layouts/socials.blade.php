@@ -216,7 +216,12 @@
               }
         }
     </style>
-
+    <!-- Scroll Reveal style -->
+    <style>
+        .sr .reveal {
+            visibility: hidden;
+        }
+    </style>
     @yield('css')
 
     {{--<link rel="stylesheet" type="text/css" href="/css/media_queries.min.css">--}}
@@ -396,6 +401,13 @@
         setTimeout(function(){
             $('#door-wrapper').fadeOut();
         }, 500);
+    });
+
+    window.sr = ScrollReveal();
+    sr.reveal('.reveal',{
+        reset: true,
+        duration: 500,
+        viewFactor: 0.1
     });
 </script>
 

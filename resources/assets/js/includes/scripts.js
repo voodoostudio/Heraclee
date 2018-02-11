@@ -308,11 +308,4 @@ $(document).ready(function() {
         // alert('Cookies are disabled!');
     }
     checkCookie();
-
-    window.sr = ScrollReveal();
-    sr.reveal('.reveal',{
-        reset: true,
-        duration: 500,
-        viewFactor: 0.1
-    });
 });

@@ -182,7 +182,7 @@
                 }
             }
         </style>
-       <!-- Scroll Reveal style -->
+        <!-- Scroll Reveal style -->
         <style>
             .sr .reveal {
                 visibility: hidden;
@@ -409,6 +409,13 @@
                 setTimeout(function(){
                     $('#door-wrapper').fadeOut();
                 }, 500);
+            });
+
+            window.sr = ScrollReveal();
+            sr.reveal('.reveal',{
+                reset: true,
+                duration: 500,
+                viewFactor: 0.1
             });
         </script>
     </body>
