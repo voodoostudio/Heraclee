@@ -86,6 +86,25 @@
     }
   }
 
+  #index,
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
+    section.index_main_carousel_section {
+      .slick-slider {
+        .slick-list {
+          .slick-track {
+            .slick-slide {
+              height: 600px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
   #details, #locationsDetails {
     section.agent_info_section {
       .outer_block_container {
@@ -254,6 +273,37 @@
   #mauritius {
     section.top_offer_section {
       height: 550px;
+    }
+    section.index_main_carousel_section {
+      .slick-slider {
+        .slick-list {
+          .slick-track {
+            .slick-slide {
+              height: 500px;
+            }
+          }
+        }
+        .slick-dots {
+          bottom: 15px;
+        }
+      }
+      .info_block {
+        bottom: 50px;
+        .object_status {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 20px;
+        }
+        a.btn {
+          font-size: 1rem;
+          padding: 0 30px;
+        }
+      }
     }
   }
 
@@ -711,6 +761,9 @@
       h1 {
         font-size: 1rem;
       }
+    }
+    main {
+      padding-top: 90px;
     }
   }
   .outer_block_container {
@@ -1299,6 +1352,12 @@
   main {
     padding-top: 107px;
   }
+
+  #index {
+    main {
+      padding-top: 62px;
+    }
+  }
   #details,
   #locationsDetails,
   #results_fr,
@@ -1361,6 +1420,43 @@
         h3 {
           font-size: 15px;
           margin-bottom: 10px;
+        }
+      }
+    }
+
+    section.index_main_carousel_section {
+      .slick-slider {
+        .slick-list {
+          .slick-track {
+            .slick-slide {
+              height: 400px;
+            }
+          }
+        }
+        .slick-arrow {
+          font-size: 30px;
+          margin-top: -15px;
+          &.slick-prev {
+            left: 15px;
+          }
+          &.slick-next {
+            right: 15px;
+          }
+        }
+        .slick-dots {
+          bottom: 5px;
+        }
+        .info_block {
+          bottom: 30px;
+          .object_status {
+            font-size: 1rem;
+          }
+          h2 {
+            font-size: 1.5rem;
+          }
+          h3 {
+            margin-bottom: 10px;
+          }
         }
       }
     }

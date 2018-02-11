@@ -211,6 +211,7 @@ return [
     'upload'                => 'Upload',
     'delete'                => 'Delete',
     'check_all_images'      => 'Check all images',
+    'status'                => 'Status',
 
 // SUBSCRIBERS PAGE
     'subscribers'      => 'Subscribers',

@@ -139,7 +139,7 @@
                                     <div class="object_status">{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</div>
                                     <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
                                     <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
-                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn">{{ trans('lang.see_property') }}</a>
+                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn reveal_info_block">{{ trans('lang.see_property') }}</a>
                                 </div>
                                 {{--<img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}">--}}
                             </li>
@@ -167,9 +167,9 @@
                                 @endphp
                                 @endforeach
                                 <div class="info_block">
-                                    <h1 class="animated">{{$property['type']}}</h1>
-                                    <h3 class="animated">{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
-                                    <a class="btn animated" href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @endif">{{ trans('lang.see_property') }}</a>
+                                    <h1>{{$property['type']}}</h1>
+                                    <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
+                                    <a class="btn" href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @endif">{{ trans('lang.see_property') }}</a>
                                 </div>
                                 <div class="gradient_bottom"></div>
                             </section>

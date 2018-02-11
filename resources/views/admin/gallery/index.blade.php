@@ -91,7 +91,7 @@
 
                                                     @if($settings['page'] == 'homepage')
                                                         <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Sell type</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.status') }}</span></label>
                                                             <select name="sell_type" title="">
                                                                 @foreach($sell_type as $type)
                                                                     <option value="{{ $type }}">{{ $type }}</option>
@@ -99,8 +99,8 @@
                                                             </select>
                                                         </div>
 
-                                                        <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                            <label class="form_el_label"><span>Subtype</span></label>
+                                                        <div class="col-md-6 col-lg-12 margin_bottom_20 limited_select">
+                                                            <label class="form_el_label"><span>{{ trans('lang.property_type') }}</span></label>
                                                             <select name="subtype" title="">
                                                                 @foreach($subtype as $type)
                                                                     <option value="{{ $type['value'] }}">{{ $type['value'] }}</option>
@@ -109,7 +109,7 @@
                                                         </div>
 
                                                         <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                            <label class="form_el_label"><span>City</span></label>
+                                                            <label class="form_el_label"><span>{{ trans('lang.town') }}</span></label>
                                                             <select name="city" title="">
                                                                 @foreach($cities as $city)
                                                                     <option value="{{ $city['name'] }}">{{ $city['name'] }}</option>

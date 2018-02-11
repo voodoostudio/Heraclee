@@ -85,6 +85,16 @@ section.admin_gallery_section {
       float: right;
     }
   }
+  .tab-content {
+    form {
+      .limited_select {
+        .multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
+          max-height: 300px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
 }
 
 .fancybox-container {

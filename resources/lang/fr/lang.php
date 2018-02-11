@@ -211,6 +211,7 @@ return [
     'upload'                => 'Téléverser',
     'delete'                => 'Effacer',
     'check_all_images'      => 'Sélectionner toutes les images',
+    'status'                => 'Statut',
 
 // SUBSCRIBERS PAGE
     'subscribers'           => 'Les abonnés',

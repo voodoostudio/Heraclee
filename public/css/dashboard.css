@@ -585,6 +585,11 @@ section.admin_gallery_section form.image_upload_form button[type='submit'] {
   float: right;
 }
 
+section.admin_gallery_section .tab-content form .limited_select .multiselect-native-select .btn-group .multiselect-container.dropdown-menu {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 .fancybox-container {
   z-index: 999999;
 }

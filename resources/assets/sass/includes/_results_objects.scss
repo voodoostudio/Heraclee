@@ -311,13 +311,14 @@
             &:before {
               content: '';
               position: absolute;
-              left: -25%;
+              left: -200%;
               top: 0;
               background: $main_brown_clr;
               height: 100%;
-              width: 150%;
-              @include my_transition(2s);
-              @include my_transform(skew(-31deg))
+              width: 300%;
+              z-index: 2;
+              @include my_transition(1s);
+              @include my_transform(skew(-31deg));
             }
             &.image_mask:before {
               left: 150%;

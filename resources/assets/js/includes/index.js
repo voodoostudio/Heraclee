@@ -49,12 +49,21 @@ $(document).ready(function() {
             slidesToScroll: 1,
             fade: true,
             dots: true,
+            autoplaySpeed: 5000,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
-            autoplay: true
+            // autoplay: true
             // adaptiveHeight: true
         });
     }
+
+    $('.slick-current .info_block').addClass('show');
+    $('.index_main_carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('.index_main_carousel .slick-current .info_block').removeClass('show');
+    });
+    $('.index_main_carousel').on('afterChange', function(event, slick, currentSlide, nextSlide){
+        $('.index_main_carousel .slick-current .info_block').addClass('show');
+    });
 
     function setSellType(id) {
         $('#sell_type_val').val(id);

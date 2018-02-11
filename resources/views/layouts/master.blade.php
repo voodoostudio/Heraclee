@@ -182,7 +182,12 @@
                 }
             }
         </style>
-
+       <!-- Scroll Reveal style -->
+        <style>
+            .sr .reveal {
+                visibility: hidden;
+            }
+        </style>
         {{ csrf_field() }}
         <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">

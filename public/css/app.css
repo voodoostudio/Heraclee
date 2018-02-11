@@ -3535,6 +3535,8 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #mauritius section.index_main_carousel_section .info_block .object_status {
   color: #ccac83;
   font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 
 #index section.index_main_carousel_section .info_block h2,
@@ -3543,6 +3545,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section .info_block h2,
 #mauritius section.index_main_carousel_section .info_block h2 {
   font-size: 3.125rem;
+  line-height: 1;
   margin-bottom: 10px;
 }
 
@@ -3552,8 +3555,84 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section .info_block h3,
 #mauritius section.index_main_carousel_section .info_block h3 {
   font-size: 1.563rem;
+  line-height: 1;
   margin-bottom: 25px;
   font-family: modelica_light;
+}
+
+#index section.index_main_carousel_section .info_block .object_status,
+#index section.index_main_carousel_section .info_block h2,
+#index section.index_main_carousel_section .info_block h3, #index section.index_main_carousel_section .info_block a.btn,
+#france section.index_main_carousel_section .info_block .object_status,
+#france section.index_main_carousel_section .info_block h2,
+#france section.index_main_carousel_section .info_block h3,
+#france section.index_main_carousel_section .info_block a.btn,
+#swiss section.index_main_carousel_section .info_block .object_status,
+#swiss section.index_main_carousel_section .info_block h2,
+#swiss section.index_main_carousel_section .info_block h3,
+#swiss section.index_main_carousel_section .info_block a.btn,
+#usa section.index_main_carousel_section .info_block .object_status,
+#usa section.index_main_carousel_section .info_block h2,
+#usa section.index_main_carousel_section .info_block h3,
+#usa section.index_main_carousel_section .info_block a.btn,
+#mauritius section.index_main_carousel_section .info_block .object_status,
+#mauritius section.index_main_carousel_section .info_block h2,
+#mauritius section.index_main_carousel_section .info_block h3,
+#mauritius section.index_main_carousel_section .info_block a.btn {
+  opacity: 0;
+  position: relative;
+  bottom: -20px;
+}
+
+#index section.index_main_carousel_section .info_block.show .object_status,
+#index section.index_main_carousel_section .info_block.show h2,
+#index section.index_main_carousel_section .info_block.show h3, #index section.index_main_carousel_section .info_block.show a.btn,
+#france section.index_main_carousel_section .info_block.show .object_status,
+#france section.index_main_carousel_section .info_block.show h2,
+#france section.index_main_carousel_section .info_block.show h3,
+#france section.index_main_carousel_section .info_block.show a.btn,
+#swiss section.index_main_carousel_section .info_block.show .object_status,
+#swiss section.index_main_carousel_section .info_block.show h2,
+#swiss section.index_main_carousel_section .info_block.show h3,
+#swiss section.index_main_carousel_section .info_block.show a.btn,
+#usa section.index_main_carousel_section .info_block.show .object_status,
+#usa section.index_main_carousel_section .info_block.show h2,
+#usa section.index_main_carousel_section .info_block.show h3,
+#usa section.index_main_carousel_section .info_block.show a.btn,
+#mauritius section.index_main_carousel_section .info_block.show .object_status,
+#mauritius section.index_main_carousel_section .info_block.show h2,
+#mauritius section.index_main_carousel_section .info_block.show h3,
+#mauritius section.index_main_carousel_section .info_block.show a.btn {
+  opacity: 1;
+  bottom: 0;
+  transition: 300ms;
+}
+
+#index section.index_main_carousel_section .info_block.show h2,
+#france section.index_main_carousel_section .info_block.show h2,
+#swiss section.index_main_carousel_section .info_block.show h2,
+#usa section.index_main_carousel_section .info_block.show h2,
+#mauritius section.index_main_carousel_section .info_block.show h2 {
+  transition-delay: 150ms;
+  transition-property: opacity, bottom;
+}
+
+#index section.index_main_carousel_section .info_block.show h3,
+#france section.index_main_carousel_section .info_block.show h3,
+#swiss section.index_main_carousel_section .info_block.show h3,
+#usa section.index_main_carousel_section .info_block.show h3,
+#mauritius section.index_main_carousel_section .info_block.show h3 {
+  transition-delay: 300ms;
+  transition-property: opacity, bottom;
+}
+
+#index section.index_main_carousel_section .info_block.show a.btn,
+#france section.index_main_carousel_section .info_block.show a.btn,
+#swiss section.index_main_carousel_section .info_block.show a.btn,
+#usa section.index_main_carousel_section .info_block.show a.btn,
+#mauritius section.index_main_carousel_section .info_block.show a.btn {
+  transition-delay: 450ms;
+  transition-property: opacity, bottom;
 }
 
 #index section.latest_news_section,
@@ -5133,12 +5212,13 @@ section.results_section .results_container.grid_view .container-fluid .object_bl
 section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
   content: '';
   position: absolute;
-  left: -25%;
+  left: -200%;
   top: 0;
   background: #ccac83;
   height: 100%;
-  width: 150%;
-  transition: 2s;
+  width: 300%;
+  z-index: 2;
+  transition: 1s;
   -webkit-transform: skew(-31deg);
   transform: skew(-31deg);
 }
@@ -5763,12 +5843,13 @@ section.results_section .slick-track {
 .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
   content: '';
   position: absolute;
-  left: -25%;
+  left: -200%;
   top: 0;
   background: #ccac83;
   height: 100%;
-  width: 150%;
-  transition: 2s;
+  width: 300%;
+  z-index: 2;
+  transition: 1s;
   -webkit-transform: skew(-31deg);
   transform: skew(-31deg);
 }
@@ -7526,6 +7607,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
     font-size: 0.8rem;
   }
+  #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #france section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #swiss section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #usa section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide {
+    height: 600px;
+  }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info {
     margin-top: 15px;
   }
@@ -7611,6 +7699,57 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.top_offer_section,
   #mauritius section.top_offer_section {
     height: 550px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #france section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #swiss section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #usa section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide {
+    height: 500px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-dots,
+  #france section.index_main_carousel_section .slick-slider .slick-dots,
+  #swiss section.index_main_carousel_section .slick-slider .slick-dots,
+  #usa section.index_main_carousel_section .slick-slider .slick-dots,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-dots {
+    bottom: 15px;
+  }
+  #index section.index_main_carousel_section .info_block,
+  #france section.index_main_carousel_section .info_block,
+  #swiss section.index_main_carousel_section .info_block,
+  #usa section.index_main_carousel_section .info_block,
+  #mauritius section.index_main_carousel_section .info_block {
+    bottom: 50px;
+  }
+  #index section.index_main_carousel_section .info_block .object_status,
+  #france section.index_main_carousel_section .info_block .object_status,
+  #swiss section.index_main_carousel_section .info_block .object_status,
+  #usa section.index_main_carousel_section .info_block .object_status,
+  #mauritius section.index_main_carousel_section .info_block .object_status {
+    font-size: 1.5rem;
+  }
+  #index section.index_main_carousel_section .info_block h2,
+  #france section.index_main_carousel_section .info_block h2,
+  #swiss section.index_main_carousel_section .info_block h2,
+  #usa section.index_main_carousel_section .info_block h2,
+  #mauritius section.index_main_carousel_section .info_block h2 {
+    font-size: 2.5rem;
+  }
+  #index section.index_main_carousel_section .info_block h3,
+  #france section.index_main_carousel_section .info_block h3,
+  #swiss section.index_main_carousel_section .info_block h3,
+  #usa section.index_main_carousel_section .info_block h3,
+  #mauritius section.index_main_carousel_section .info_block h3 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  #index section.index_main_carousel_section .info_block a.btn,
+  #france section.index_main_carousel_section .info_block a.btn,
+  #swiss section.index_main_carousel_section .info_block a.btn,
+  #usa section.index_main_carousel_section .info_block a.btn,
+  #mauritius section.index_main_carousel_section .info_block a.btn {
+    font-size: 1rem;
+    padding: 0 30px;
   }
   section.flipbook_section .iframe-m iframe {
     height: 400px;
@@ -7899,6 +8038,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   #index section.description_section h1 {
     font-size: 1rem;
+  }
+  #index main {
+    padding-top: 90px;
   }
   .outer_block_container .inner_block_container {
     padding: 20px;
@@ -8370,6 +8512,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   main {
     padding-top: 107px;
   }
+  #index main {
+    padding-top: 62px;
+  }
   #details main,
   #locationsDetails main,
   #results_fr main,
@@ -8435,6 +8580,70 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.top_offer_section .info_block h3,
   #mauritius section.top_offer_section .info_block h3 {
     font-size: 15px;
+    margin-bottom: 10px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #france section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #swiss section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #usa section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide {
+    height: 400px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-arrow,
+  #france section.index_main_carousel_section .slick-slider .slick-arrow,
+  #swiss section.index_main_carousel_section .slick-slider .slick-arrow,
+  #usa section.index_main_carousel_section .slick-slider .slick-arrow,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-arrow {
+    font-size: 30px;
+    margin-top: -15px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+  #france section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+  #swiss section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+  #usa section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-arrow.slick-prev {
+    left: 15px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+  #france section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+  #swiss section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+  #usa section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-arrow.slick-next {
+    right: 15px;
+  }
+  #index section.index_main_carousel_section .slick-slider .slick-dots,
+  #france section.index_main_carousel_section .slick-slider .slick-dots,
+  #swiss section.index_main_carousel_section .slick-slider .slick-dots,
+  #usa section.index_main_carousel_section .slick-slider .slick-dots,
+  #mauritius section.index_main_carousel_section .slick-slider .slick-dots {
+    bottom: 5px;
+  }
+  #index section.index_main_carousel_section .slick-slider .info_block,
+  #france section.index_main_carousel_section .slick-slider .info_block,
+  #swiss section.index_main_carousel_section .slick-slider .info_block,
+  #usa section.index_main_carousel_section .slick-slider .info_block,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block {
+    bottom: 30px;
+  }
+  #index section.index_main_carousel_section .slick-slider .info_block .object_status,
+  #france section.index_main_carousel_section .slick-slider .info_block .object_status,
+  #swiss section.index_main_carousel_section .slick-slider .info_block .object_status,
+  #usa section.index_main_carousel_section .slick-slider .info_block .object_status,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block .object_status {
+    font-size: 1rem;
+  }
+  #index section.index_main_carousel_section .slick-slider .info_block h2,
+  #france section.index_main_carousel_section .slick-slider .info_block h2,
+  #swiss section.index_main_carousel_section .slick-slider .info_block h2,
+  #usa section.index_main_carousel_section .slick-slider .info_block h2,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block h2 {
+    font-size: 1.5rem;
+  }
+  #index section.index_main_carousel_section .slick-slider .info_block h3,
+  #france section.index_main_carousel_section .slick-slider .info_block h3,
+  #swiss section.index_main_carousel_section .slick-slider .info_block h3,
+  #usa section.index_main_carousel_section .slick-slider .info_block h3,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block h3 {
     margin-bottom: 10px;
   }
   #index section.latest_news_section .latest_news_container .marquee_title,
