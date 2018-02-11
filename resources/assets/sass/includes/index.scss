@@ -114,15 +114,15 @@
           @include my_transition(300ms);
         }
         h2 {
-          transition-delay: 150ms;
+          @include my_transition_delay(150ms);
           transition-property: opacity, bottom;
         }
         h3 {
-          transition-delay: 300ms;
+          @include my_transition_delay(300ms);
           transition-property: opacity, bottom;
         }
         a.btn {
-          transition-delay: 450ms;
+          @include my_transition_delay(450ms);
           transition-property: opacity, bottom;
         }
       }

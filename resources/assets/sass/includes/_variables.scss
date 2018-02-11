@@ -27,6 +27,14 @@ $success_clr: #69bf7f;
   -o-transition: $transition;
   transition: $transition;
 }
+
+@mixin my_transition_delay($transition) {
+  -webkit-transition-delay: $transition;
+  -moz-transition-delay: $transition;
+  -o-transition-delay: $transition;
+  transition-delay: $transition;
+}
+
 @mixin my_box_shadow($shadow_parameters) {
   -webkit-box-shadow: $shadow_parameters;
   -moz-box-shadow: $shadow_parameters;
