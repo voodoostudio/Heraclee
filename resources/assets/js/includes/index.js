@@ -52,7 +52,7 @@ $(document).ready(function() {
             autoplaySpeed: 5000,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
-            // autoplay: true
+            autoplay: true
             // adaptiveHeight: true
         });
     }
