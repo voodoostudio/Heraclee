@@ -133,7 +133,7 @@
         </div>
     </section>
     @else
-    <section class="results_section reveal">
+    <section class="results_section">
         <div class="container-fluid">
             <h1>{{ trans('lang.your_real_estate_search') }}</h1>
             <div class="row">
@@ -169,7 +169,7 @@
         <div class="results_container {{ $view_type }} @if($view_type == 'list_view') hidden-sm-down  @endif">
             <div id="results_map"></div>
             <div class="container-fluid">
-                <div class="results_carousel row">
+                <div class="results_carousel reveal row">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')

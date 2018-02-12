@@ -3495,7 +3495,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide img,
@@ -3536,9 +3536,20 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section .info_block .object_status,
 #mauritius section.index_main_carousel_section .info_block .object_status {
   color: #ccac83;
-  font-size: 2rem;
-  line-height: 1;
+  font-size: 2.6rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1rem;
   margin-bottom: 10px;
+  font-family: modelica_medium;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
 }
 
 #index section.index_main_carousel_section .info_block h2,
@@ -3546,9 +3557,13 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.index_main_carousel_section .info_block h2,
 #usa section.index_main_carousel_section .info_block h2,
 #mauritius section.index_main_carousel_section .info_block h2 {
-  font-size: 3.125rem;
-  line-height: 1;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1rem;
   margin-bottom: 10px;
+  font-family: modelica_medium;
 }
 
 #index section.index_main_carousel_section .info_block h3,
@@ -4972,6 +4987,24 @@ section.results_section .results_container .container-fluid .object_block_contai
   color: #dcdcdc;
 }
 
+section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+  content: '';
+  position: absolute;
+  left: -200%;
+  top: 0;
+  background: #ccac83;
+  height: 100%;
+  width: 300%;
+  z-index: 2;
+  transition: 1s;
+  -webkit-transform: skew(-31deg);
+  transform: skew(-31deg);
+}
+
+section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+  left: 150%;
+}
+
 section.results_section .results_container .container-fluid .object_block_container .object_block .img_block img {
   display: block;
 }
@@ -5352,69 +5385,6 @@ section.results_section .results_container.map_view nav {
   display: none;
 }
 
-section.results_section #index .results_container.grid_view .container-fluid .object_block_container .object_block,
-section.results_section #index .results_container.map_view .container-fluid .object_block_container .object_block,
-section.results_section #france .results_container.grid_view .container-fluid .object_block_container .object_block,
-section.results_section #france .results_container.map_view .container-fluid .object_block_container .object_block,
-section.results_section #swiss .results_container.grid_view .container-fluid .object_block_container .object_block,
-section.results_section #swiss .results_container.map_view .container-fluid .object_block_container .object_block,
-section.results_section #usa .results_container.grid_view .container-fluid .object_block_container .object_block,
-section.results_section #usa .results_container.map_view .container-fluid .object_block_container .object_block,
-section.results_section #mauritius .results_container.grid_view .container-fluid .object_block_container .object_block,
-section.results_section #mauritius .results_container.map_view .container-fluid .object_block_container .object_block {
-  margin: 30px 0 85px;
-  height: calc(100% - 115px);
-}
-
-section.results_section #index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-section.results_section #mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child) {
-  display: none;
-}
-
-section.results_section #index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-section.results_section #mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
-  content: '';
-  position: absolute;
-  left: -200%;
-  top: 0;
-  background: #ccac83;
-  height: 100%;
-  width: 300%;
-  z-index: 2;
-  transition: 1s;
-  -webkit-transform: skew(-31deg);
-  transform: skew(-31deg);
-}
-
-section.results_section #index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-section.results_section #mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
-  left: 150%;
-}
-
 section.results_section #results_map .gm-style-iw {
   width: 300px !important;
   top: 20px !important;
@@ -5644,6 +5614,24 @@ section.results_section .slick-track {
 
 .results_container .container-fluid .object_block_container .object_block .img_block .new_label span.updated {
   color: #dcdcdc;
+}
+
+.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+  content: '';
+  position: absolute;
+  left: -200%;
+  top: 0;
+  background: #ccac83;
+  height: 100%;
+  width: 300%;
+  z-index: 2;
+  transition: 1s;
+  -webkit-transform: skew(-31deg);
+  transform: skew(-31deg);
+}
+
+.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+  left: 150%;
 }
 
 .results_container .container-fluid .object_block_container .object_block .img_block img {
@@ -6024,69 +6012,6 @@ section.results_section .slick-track {
 
 .results_container.map_view nav {
   display: none;
-}
-
-#index .results_container.grid_view .container-fluid .object_block_container .object_block,
-#index .results_container.map_view .container-fluid .object_block_container .object_block,
-#france .results_container.grid_view .container-fluid .object_block_container .object_block,
-#france .results_container.map_view .container-fluid .object_block_container .object_block,
-#swiss .results_container.grid_view .container-fluid .object_block_container .object_block,
-#swiss .results_container.map_view .container-fluid .object_block_container .object_block,
-#usa .results_container.grid_view .container-fluid .object_block_container .object_block,
-#usa .results_container.map_view .container-fluid .object_block_container .object_block,
-#mauritius .results_container.grid_view .container-fluid .object_block_container .object_block,
-#mauritius .results_container.map_view .container-fluid .object_block_container .object_block {
-  margin: 30px 0 85px;
-  height: calc(100% - 115px);
-}
-
-#index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child),
-#mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view .result_preview_gallery li:not(:first-child) {
-  display: none;
-}
-
-#index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before,
-#mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
-  content: '';
-  position: absolute;
-  left: -200%;
-  top: 0;
-  background: #ccac83;
-  height: 100%;
-  width: 300%;
-  z-index: 2;
-  transition: 1s;
-  -webkit-transform: skew(-31deg);
-  transform: skew(-31deg);
-}
-
-#index .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#index .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#france .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#france .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#swiss .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#swiss .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#usa .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#usa .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#mauritius .results_container.grid_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before,
-#mauritius .results_container.map_view .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
-  left: 150%;
 }
 
 /* BEGIN Light*/
@@ -7834,7 +7759,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #swiss section.index_main_carousel_section .info_block .object_status,
   #usa section.index_main_carousel_section .info_block .object_status,
   #mauritius section.index_main_carousel_section .info_block .object_status {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   #index section.index_main_carousel_section .info_block h2,
   #france section.index_main_carousel_section .info_block h2,
@@ -8741,7 +8666,8 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #swiss section.index_main_carousel_section .slick-slider .info_block .object_status,
   #usa section.index_main_carousel_section .slick-slider .info_block .object_status,
   #mauritius section.index_main_carousel_section .slick-slider .info_block .object_status {
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
   #index section.index_main_carousel_section .slick-slider .info_block h2,
   #france section.index_main_carousel_section .slick-slider .info_block h2,
@@ -8749,6 +8675,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.index_main_carousel_section .slick-slider .info_block h2,
   #mauritius section.index_main_carousel_section .slick-slider .info_block h2 {
     font-size: 1.5rem;
+    line-height: 2rem;
   }
   #index section.index_main_carousel_section .slick-slider .info_block h3,
   #france section.index_main_carousel_section .slick-slider .info_block h3,
@@ -8756,6 +8683,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.index_main_carousel_section .slick-slider .info_block h3,
   #mauritius section.index_main_carousel_section .slick-slider .info_block h3 {
     margin-bottom: 10px;
+    line-height: 2rem;
   }
   #index section.latest_news_section .latest_news_container .marquee_title,
   #france section.latest_news_section .latest_news_container .marquee_title,

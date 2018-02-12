@@ -102,14 +102,7 @@ $(document).ready(function() {
         });
     }
 
-    sr.reveal('.results_carousel',{
-        beforeReveal: function (domEl) {
-            $('section.results_section .gallery_view').addClass('image_mask');
-        },
-        beforeReset: function (domEl) {
-            $('section.results_section .gallery_view').removeClass('image_mask');
-        },
-    });
+
 });
 
 function setSellType(id) {

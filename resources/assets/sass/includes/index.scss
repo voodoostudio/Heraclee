@@ -59,7 +59,7 @@
               width: 100%;
               height: 100%;
               z-index: 1;
-              background: rgba(0,0,0,0.2);
+              background: rgba(0,0,0,0.4);
             }
             img {
               width: 100%;
@@ -83,14 +83,29 @@
       font-family: modelica_regular;
       .object_status {
         color: $main_brown_clr;
-        font-size: 2rem;
-        line-height: 1;
+        font-size: 2.6rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .1rem;
         margin-bottom: 10px;
+        font-family: modelica_medium;
+        background-image: url(/img/texture-bg.jpg);
+        background-position: 0 0;
+        -webkit-background-clip: text;
+        background-size: 100% auto;
+        background-repeat: repeat;
+        -webkit-text-fill-color: transparent;
+        display: block;
       }
       h2 {
-        font-size: 3.125rem;
-        line-height: 1;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .1rem;
         margin-bottom: 10px;
+        font-family: modelica_medium;
       }
       h3 {
         font-size: 1.563rem;

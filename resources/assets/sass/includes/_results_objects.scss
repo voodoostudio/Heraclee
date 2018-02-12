@@ -69,6 +69,23 @@
               }
             }
           }
+          .gallery_view {
+            &:before {
+              content: '';
+              position: absolute;
+              left: -200%;
+              top: 0;
+              background: $main_brown_clr;
+              height: 100%;
+              width: 300%;
+              z-index: 2;
+              @include my_transition(1s);
+              @include my_transform(skew(-31deg));
+            }
+            &.image_mask:before {
+              left: 150%;
+            }
+          }
           img {
             display: block;
           }
@@ -427,44 +444,44 @@
   }
 }
 
-#index,
-#france,
-#swiss,
-#usa,
-#mauritius {
-  .results_container.grid_view,
-  .results_container.map_view {
-    .container-fluid {
-      .object_block_container {
-        .object_block {
-          margin: 30px 0 85px;
-          height: calc(100% - 115px);
-          .img_block {
-            .gallery_view {
-              .result_preview_gallery {
-                li:not(:first-child) {
-                  display: none;
-                }
-              }
-              &:before {
-                content: '';
-                position: absolute;
-                left: -200%;
-                top: 0;
-                background: $main_brown_clr;
-                height: 100%;
-                width: 300%;
-                z-index: 2;
-                @include my_transition(1s);
-                @include my_transform(skew(-31deg));
-              }
-              &.image_mask:before {
-                left: 150%;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
+//#index,
+//#france,
+//#swiss,
+//#usa,
+//#mauritius {
+//  .results_container.grid_view,
+//  .results_container.map_view {
+//    .container-fluid {
+//      .object_block_container {
+//        .object_block {
+//          margin: 30px 0 85px;
+//          height: calc(100% - 115px);
+//          .img_block {
+//            .gallery_view {
+//              .result_preview_gallery {
+//                li:not(:first-child) {
+//                  display: none;
+//                }
+//              }
+//              &:before {
+//                content: '';
+//                position: absolute;
+//                left: -200%;
+//                top: 0;
+//                background: $main_brown_clr;
+//                height: 100%;
+//                width: 300%;
+//                z-index: 2;
+//                @include my_transition(1s);
+//                @include my_transform(skew(-31deg));
+//              }
+//              &.image_mask:before {
+//                left: 150%;
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
