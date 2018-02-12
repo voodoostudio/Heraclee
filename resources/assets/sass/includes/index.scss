@@ -312,13 +312,17 @@
       font-family: modelica_medium;
       margin-right: 30px;
       margin-bottom: 70px;
-      background-image: url('/img/texture-bg.jpg');
+      //background-image: url('/img/texture-bg.jpg');
       background-position: 0 0;
       -webkit-background-clip: text;
       background-size: 100% auto;
-      background-repeat: repeat;
+      //background-repeat: repeat;
       -webkit-text-fill-color: transparent;
-      color: #cdae6d;
+      //color: #cdae6d;
+
+      color: transparent;
+      background: -webkit-linear-gradient(transparent, transparent), url('/img/texture-bg.jpg') repeat;
+      -webkit-background-clip: text;
     }
     .results_container.map_view {
       .homepage_map_container {
