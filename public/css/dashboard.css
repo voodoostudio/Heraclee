@@ -124,7 +124,7 @@ h1 {
 }
 
 .title_container a.action_link:hover {
-  color: #dcdcdc;
+  color: #f7f7f7;
 }
 
 .title_container a.action_link.add_new {
@@ -187,7 +187,7 @@ section.news_list_section .outer_block_container .inner_block_container .article
   font-size: 1.1rem;
   line-height: 1.5rem;
   text-transform: uppercase;
-  color: #dcdcdc;
+  color: #f7f7f7;
 }
 
 section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info a:hover h2 {
@@ -196,7 +196,7 @@ section.news_list_section .outer_block_container .inner_block_container .article
 
 section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info h3 {
   font-size: 0.875rem;
-  color: rgba(220, 220, 220, 0.4);
+  color: rgba(247, 247, 247, 0.4);
 }
 
 section.news_list_section .outer_block_container .inner_block_container .article_info_block .article_info p {
@@ -240,7 +240,7 @@ section.news_admin_nav_section {
 }
 
 #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements button:hover, #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements a:hover {
-  color: #dcdcdc;
+  color: #f7f7f7;
 }
 
 #news_admin .news_list_section .outer_block_container .inner_block_container .edit_elements .edit_btn {
@@ -306,7 +306,7 @@ section.news_admin_nav_section {
   padding: 0 12px;
   width: 100%;
   background-color: transparent;
-  color: #dcdcdc;
+  color: #f7f7f7;
   font-size: 0.875rem;
   font-family: modelica_thin;
 }
@@ -326,7 +326,7 @@ section.news_admin_nav_section {
 
 .gj-calendar-md {
   background: #272727;
-  color: #dcdcdc;
+  color: #f7f7f7;
   border-color: #625e57;
   font-family: modelica_thin;
 }
@@ -359,7 +359,7 @@ section.news_admin_nav_section {
 
 .gj-calendar-md table tr td[type="other-month"] div {
   opacity: 0.4;
-  color: #dcdcdc;
+  color: #f7f7f7;
 }
 
 .gj-calendar-md table tr td.gj-cursor-pointer div:hover {
@@ -368,7 +368,7 @@ section.news_admin_nav_section {
 }
 
 .gj-calendar-md table tr td.gj-cursor-pointer[type="today"] div:hover {
-  color: #dcdcdc;
+  color: #f7f7f7;
 }
 
 .img_upload_container {
@@ -481,7 +481,7 @@ section.article_section .outer_block_container .inner_block_container .title_con
 section.article_section .outer_block_container .inner_block_container h2 {
   font-size: 0.875rem;
   margin-top: 10px;
-  color: rgba(220, 220, 220, 0.4);
+  color: rgba(247, 247, 247, 0.4);
 }
 
 section.article_section .outer_block_container .inner_block_container .img_container {
@@ -623,7 +623,7 @@ section.admin_gallery_section .tab-content form .limited_select .multiselect-nat
 .switch_field label {
   float: left;
   background-color: #272727;
-  color: #dcdcdc;
+  color: #f7f7f7;
   width: 50%;
   margin: 0;
   font-size: 14px;

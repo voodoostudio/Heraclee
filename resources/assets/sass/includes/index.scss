@@ -88,7 +88,7 @@
         text-transform: uppercase;
         font-weight: 700;
         letter-spacing: .1rem;
-        margin-bottom: 10px;
+        margin: 0 auto 10px;
         font-family: modelica_medium;
         background-image: url(/img/texture-bg.jpg);
         background-position: 0 0;
@@ -96,7 +96,7 @@
         background-size: 100% auto;
         background-repeat: repeat;
         -webkit-text-fill-color: transparent;
-        display: block;
+        display: table;
       }
       h2 {
         font-size: 3rem;
@@ -268,7 +268,7 @@
       flex-direction: row;
       align-items: center;
       h1 {
-        font-size: 0.9375rem;
+        font-size: 1.25rem;
         margin: 0;
         line-height: 1.8rem;
         flex: 1 1 0;
