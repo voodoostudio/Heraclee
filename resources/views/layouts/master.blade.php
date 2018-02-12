@@ -127,6 +127,8 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                border-radius: 50%;
+                overflow: hidden;
             }
             .sk-cube-grid .sk-cube {
                 width: 33%;

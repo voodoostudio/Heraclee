@@ -196,6 +196,13 @@
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">
+                <section class="description_section reveal">
+                    <div class="container-fluid">
+                        <div class="description_container">
+                            <h1 class="title">{!! trans('lang.homepage_title') !!}</h1>
+                        </div>
+                    </div>
+                </section>
                 <h1>{!! trans('lang.our_last_objects') !!}</h1>
                 <div class="results_carousel row reveal">
                     @foreach($properties as $property)
