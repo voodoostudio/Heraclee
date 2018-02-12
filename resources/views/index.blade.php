@@ -196,7 +196,7 @@
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">
-                <h1>{{ trans('lang.our_last_objects') }}</h1>
+                <h1>{!! trans('lang.our_last_objects') !!}</h1>
                 <div class="results_carousel row reveal">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)

@@ -286,6 +286,14 @@
             if(pagination_buttons.length === 1) {
                 $('nav ul.pagination li a.page-link').css({"pointer-events": "none", "touch-action": "none", "cursor": "default"});
             }
+            sr.reveal('.results_carousel',{
+                beforeReveal: function (domEl) {
+                    $('section.results_section .gallery_view').addClass('image_mask active');
+                },
+                beforeReset: function (domEl) {
+                    $('section.results_section .gallery_view').removeClass('active');
+                },
+            });
         });
         $(window).on('load', function () {
                 @if($view_type == 'map_view') {
@@ -348,13 +356,6 @@
             });
         @endif
 
-        sr.reveal('.results_carousel',{
-            beforeReveal: function (domEl) {
-                $('section.results_section .gallery_view').addClass('image_mask active');
-            },
-            beforeReset: function (domEl) {
-                $('section.results_section .gallery_view').removeClass('active');
-            },
-        });
+
     </script>
 @stop

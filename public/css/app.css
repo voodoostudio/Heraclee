@@ -2417,7 +2417,7 @@ footer section.bottom_footer_section {
 
 footer section.bottom_footer_section h1 {
   line-height: 1.5rem;
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   margin-right: 50px;
   margin-bottom: 15px;
   text-align: justify;
@@ -3978,6 +3978,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.results_section h1,
 #mauritius section.results_section h1 {
   margin-bottom: 70px;
+  font-size: 2rem;
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
 }
 
 #index section.results_section .results_container.map_view .homepage_map_container,
@@ -8521,7 +8529,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   footer section.bottom_footer_section h1 {
     margin: 30px 15px 0;
-    font-size: 0.75rem;
     line-height: 1.8rem;
     text-align: center;
   }
@@ -8768,6 +8775,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.results_section h1,
   #mauritius section.results_section h1 {
     margin-bottom: 45px;
+    font-size: 1.5rem;
+  }
+  #index section.results_section h1 span,
+  #france section.results_section h1 span,
+  #swiss section.results_section h1 span,
+  #usa section.results_section h1 span,
+  #mauritius section.results_section h1 span {
+    display: block;
   }
   section.flipbook_section .iframe-m iframe {
     height: 200px;
@@ -9055,6 +9070,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   .agent_info_block .agent_info ul li {
     font-size: 0.85rem;
+  }
+  footer section.bottom_footer_section h4 {
+    font-size: 1.3rem;
+  }
+  footer section.bottom_footer_section h4 span:first-child,
+  footer section.bottom_footer_section h4 span:last-child {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
   }
   /* Bootstrap modal popup START*/
   .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {

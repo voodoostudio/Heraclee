@@ -305,6 +305,14 @@
     margin-top: 45px;
     h1 {
       margin-bottom: 70px;
+      font-size: 2rem;
+      background-image: url('/img/texture-bg.jpg');
+      background-position: 0 0;
+      -webkit-background-clip: text;
+      background-size: 100% auto;
+      background-repeat: repeat;
+      -webkit-text-fill-color: transparent;
+      color: #cdae6d;
     }
     .results_container.map_view {
       .homepage_map_container {

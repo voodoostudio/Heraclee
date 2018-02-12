@@ -1275,7 +1275,6 @@
     section.bottom_footer_section {
       h1 {
         margin: 30px 15px 0;
-        font-size: 0.75rem;
         line-height: 1.8rem;
         text-align: center;
       }
@@ -1497,6 +1496,10 @@
       margin-top: 40px;
       h1 {
         margin-bottom: 45px;
+        font-size: 1.5rem;
+        span {
+          display: block;
+        }
       }
     }
   }
@@ -1916,6 +1919,18 @@
     }
   }
 
+  footer {
+    section.bottom_footer_section {
+      h4 {
+        font-size: 1.3rem;
+        span:first-child,
+        span:last-child {
+          font-size: 1.8rem;
+          line-height: 2.2rem;
+        }
+      }
+    }
+  }
 
   /* Bootstrap modal popup START*/
   .modal {
