@@ -939,16 +939,14 @@ $(document).ready(function() {
     }
     checkCookie();
 
-
-
-    sr.reveal('.results_carousel',{
-        beforeReveal: function (domEl) {
-            $('section.results_section .gallery_view').addClass('image_mask active');
-        },
-        beforeReset: function (domEl) {
-            $('section.results_section .gallery_view').removeClass('image_mask');
-        },
-    });
+    // sr.reveal('.results_carousel',{
+    //     beforeReveal: function (domEl) {
+    //         $('section.results_section .gallery_view').addClass('image_mask active');
+    //     },
+    //     beforeReset: function (domEl) {
+    //         $('section.results_section .gallery_view').removeClass('active');
+    //     },
+    // });
 });
 
 

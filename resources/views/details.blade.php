@@ -76,7 +76,7 @@
         </section>
     @endif
 
-    <section class="gallery_section reveal">
+    <section class="gallery_section">
         <div class="gallery_container">
             <ul class="social_networks_share">
                 <li><a class="twitter-share-button" onclick="window.open($(this).attr('href'), 'Twitter', config='height=216, width=400, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no'); return false;" href="http://twitter.com/home?status={{ $comment_title }}+{{ Request::fullUrl() }}"><i class="icn icon-twitter"></i></a></li>

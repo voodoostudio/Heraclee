@@ -122,7 +122,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-12 col-md-6 push-md-6 col-lg-4 push-lg-8">
-                    <h4>{{ trans('lang.footer_title') }}</h4>
+                    <h4>{!! trans('lang.footer_title') !!}</h4>
                     <div class="contact_block">
                         <a class="footer_logo_link" href="{{ route('index') }}"><img src="/img/logo.svg"></a>
                         <ul>

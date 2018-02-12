@@ -26,6 +26,8 @@ $(document).ready(function() {
         focusOnSelect: true
     });
 
+    $('.details_gallery.slick-slider .slick-current').addClass('first_slide');
+
     $('.details_gallery').on('afterChange', function(event, slick, currentSlide, nextSlide){
         if(currentSlide == 0) {
             $('.gallery_view .object_title').fadeIn("fast");

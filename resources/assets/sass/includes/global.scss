@@ -873,10 +873,29 @@ footer {
       margin-right: 0;
     }
     h4 {
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
       text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 0;
+      font-weight: 700;
+      letter-spacing: .1rem;
+      font-family: modelica_medium;
+      color: white;
+      span {
+        white-space: nowrap;
+        text-align: center;
+        display: block;
+        &:first-child,
+        &:last-child {
+          font-size: 2rem;
+          background-image: url('/img/texture-bg.jpg');
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+          color: #cdae6d;
+        }
+      }
     }
     .contact_block {
       margin: 34px auto;

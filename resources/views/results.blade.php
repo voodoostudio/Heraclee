@@ -185,7 +185,6 @@
 @stop
 
 @section('javascript')
-    {{--<script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>--}}
     <script>
         var locations = [
             @foreach($all_property as $key => $unique)
@@ -348,5 +347,14 @@
                 }
             });
         @endif
+
+        sr.reveal('.results_carousel',{
+            beforeReveal: function (domEl) {
+                $('section.results_section .gallery_view').addClass('image_mask active');
+            },
+            beforeReset: function (domEl) {
+                $('section.results_section .gallery_view').removeClass('active');
+            },
+        });
     </script>
 @stop
