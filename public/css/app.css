@@ -88,6 +88,36 @@
 }
 
 /* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url("/fonts/madras/madras_bold_italic.eot");
+  src: url("/fonts/madras/madras_bold_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/madras/madras_bold_italic.woff") format("woff"), url("/fonts/madras/madras_bold_italic.ttf") format("truetype"), url("/fonts/madras/madras_bold_italic.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url("/fonts/aileron/bold/aileron_bold.eot");
+  src: url("/fonts/aileron/bold/aileron_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/bold/aileron_bold.woff") format("woff"), url("/fonts/aileron/bold/aileron_bold.ttf") format("truetype"), url("/fonts/aileron/bold/aileron_bold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot");
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/semibold/aileron_semibold.woff") format("woff"), url("/fonts/aileron/semibold/aileron_semibold.ttf") format("truetype"), url("/fonts/aileron/semibold/aileron_semibold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -102,7 +132,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -267,7 +298,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
 }
 
 label.form_el_label i.icn {
@@ -295,10 +326,11 @@ ul.nav.nav-tabs li.nav-item {
 ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   border: none;
   color: #f7f7f7;
-  font-family: modelica_regular;
+  font-family: aileron_semibold;
+  letter-spacing: 1px;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -380,7 +412,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
-  font-family: modelica_thin;
+  font-family: modelica_light;
   font-size: 0.9375rem;
   text-transform: initial;
   color: #f7f7f7;
@@ -815,6 +847,36 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 /* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url("/fonts/madras/madras_bold_italic.eot");
+  src: url("/fonts/madras/madras_bold_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/madras/madras_bold_italic.woff") format("woff"), url("/fonts/madras/madras_bold_italic.ttf") format("truetype"), url("/fonts/madras/madras_bold_italic.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url("/fonts/aileron/bold/aileron_bold.eot");
+  src: url("/fonts/aileron/bold/aileron_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/bold/aileron_bold.woff") format("woff"), url("/fonts/aileron/bold/aileron_bold.ttf") format("truetype"), url("/fonts/aileron/bold/aileron_bold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot");
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/semibold/aileron_semibold.woff") format("woff"), url("/fonts/aileron/semibold/aileron_semibold.ttf") format("truetype"), url("/fonts/aileron/semibold/aileron_semibold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -829,7 +891,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -994,7 +1057,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
 }
 
 label.form_el_label i.icn {
@@ -1022,10 +1085,11 @@ ul.nav.nav-tabs li.nav-item {
 ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   border: none;
   color: #f7f7f7;
-  font-family: modelica_regular;
+  font-family: aileron_semibold;
+  letter-spacing: 1px;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -1107,7 +1171,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
-  font-family: modelica_thin;
+  font-family: modelica_light;
   font-size: 0.9375rem;
   text-transform: initial;
   color: #f7f7f7;
@@ -1951,6 +2015,7 @@ section.search_section .outer_block_container .inner_block_container .show_extra
 section.search_section .outer_block_container .inner_block_container .show_options button,
 section.search_section .outer_block_container .inner_block_container .show_extra_options button {
   color: #ccac83;
+  font-family: aileron_semibold;
 }
 
 section.search_section .outer_block_container .inner_block_container .show_options button i.icn,
@@ -2145,11 +2210,21 @@ section.page_title_section.hidden {
 }
 
 .agent_info_block .agent_info .agent_name {
-  margin: 30px 0 15px;
-  font-size: 1.563rem;
-  line-height: 1.563rem;
+  margin: 20px 0 15px;
+  color: #cdae6d;
+  font-size: 2rem;
+  line-height: 2.5rem;
   text-transform: uppercase;
-  color: #f7f7f7;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  font-family: modelica_medium;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: table;
 }
 
 .agent_info_block .agent_info ul {
@@ -2779,6 +2854,36 @@ section.contact_form_section .outer_block_container .inner_block_container form.
 }
 
 /* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url("/fonts/madras/madras_bold_italic.eot");
+  src: url("/fonts/madras/madras_bold_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/madras/madras_bold_italic.woff") format("woff"), url("/fonts/madras/madras_bold_italic.ttf") format("truetype"), url("/fonts/madras/madras_bold_italic.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url("/fonts/aileron/bold/aileron_bold.eot");
+  src: url("/fonts/aileron/bold/aileron_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/bold/aileron_bold.woff") format("woff"), url("/fonts/aileron/bold/aileron_bold.ttf") format("truetype"), url("/fonts/aileron/bold/aileron_bold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot");
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/semibold/aileron_semibold.woff") format("woff"), url("/fonts/aileron/semibold/aileron_semibold.ttf") format("truetype"), url("/fonts/aileron/semibold/aileron_semibold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -2793,7 +2898,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -2958,7 +3064,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
 }
 
 label.form_el_label i.icn {
@@ -2986,10 +3092,11 @@ ul.nav.nav-tabs li.nav-item {
 ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   border: none;
   color: #f7f7f7;
-  font-family: modelica_regular;
+  font-family: aileron_semibold;
+  letter-spacing: 1px;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -3071,7 +3178,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
-  font-family: modelica_thin;
+  font-family: modelica_light;
   font-size: 0.9375rem;
   text-transform: initial;
   color: #f7f7f7;
@@ -4231,6 +4338,36 @@ footer {
 }
 
 /* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url("/fonts/madras/madras_bold_italic.eot");
+  src: url("/fonts/madras/madras_bold_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/madras/madras_bold_italic.woff") format("woff"), url("/fonts/madras/madras_bold_italic.ttf") format("truetype"), url("/fonts/madras/madras_bold_italic.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url("/fonts/aileron/bold/aileron_bold.eot");
+  src: url("/fonts/aileron/bold/aileron_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/bold/aileron_bold.woff") format("woff"), url("/fonts/aileron/bold/aileron_bold.ttf") format("truetype"), url("/fonts/aileron/bold/aileron_bold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot");
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/semibold/aileron_semibold.woff") format("woff"), url("/fonts/aileron/semibold/aileron_semibold.ttf") format("truetype"), url("/fonts/aileron/semibold/aileron_semibold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -4245,7 +4382,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -4410,7 +4548,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
 }
 
 label.form_el_label i.icn {
@@ -4438,10 +4576,11 @@ ul.nav.nav-tabs li.nav-item {
 ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   border: none;
   color: #f7f7f7;
-  font-family: modelica_regular;
+  font-family: aileron_semibold;
+  letter-spacing: 1px;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -4523,7 +4662,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
-  font-family: modelica_thin;
+  font-family: modelica_light;
   font-size: 0.9375rem;
   text-transform: initial;
   color: #f7f7f7;
@@ -6133,6 +6272,36 @@ section.results_section .slick-track {
 }
 
 /* END Regular*/
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url("/fonts/madras/madras_bold_italic.eot");
+  src: url("/fonts/madras/madras_bold_italic.eot?#iefix") format("embedded-opentype"), url("/fonts/madras/madras_bold_italic.woff") format("woff"), url("/fonts/madras/madras_bold_italic.ttf") format("truetype"), url("/fonts/madras/madras_bold_italic.svg") format("svg");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* END Regular*/
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url("/fonts/aileron/bold/aileron_bold.eot");
+  src: url("/fonts/aileron/bold/aileron_bold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/bold/aileron_bold.woff") format("woff"), url("/fonts/aileron/bold/aileron_bold.ttf") format("truetype"), url("/fonts/aileron/bold/aileron_bold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot");
+  src: url("/fonts/aileron/semibold/aileron_semibold.eot?#iefix") format("embedded-opentype"), url("/fonts/aileron/semibold/aileron_semibold.woff") format("woff"), url("/fonts/aileron/semibold/aileron_semibold.ttf") format("truetype"), url("/fonts/aileron/semibold/aileron_semibold.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -6147,7 +6316,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: #272727;
@@ -6312,7 +6482,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: #ccac83;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
 }
 
 label.form_el_label i.icn {
@@ -6340,10 +6510,11 @@ ul.nav.nav-tabs li.nav-item {
 ul.nav.nav-tabs li.nav-item a.nav-link {
   line-height: 40px;
   padding: 0;
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   border: none;
   color: #f7f7f7;
-  font-family: modelica_regular;
+  font-family: aileron_semibold;
+  letter-spacing: 1px;
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
@@ -6425,7 +6596,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
   padding: 0 30px 0 10px;
-  font-family: modelica_thin;
+  font-family: modelica_light;
   font-size: 0.9375rem;
   text-transform: initial;
   color: #f7f7f7;
@@ -7153,6 +7324,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
   margin-bottom: 10px;
   float: right;
+  font-family: aileron_semibold;
 }
 
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {

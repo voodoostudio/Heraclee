@@ -114,3 +114,45 @@
   font-style: normal;
 }
 /* END Regular*/
+
+/* BEGIN Regular*/
+@font-face {
+  font-family: 'madras_bold_italic';
+  src: url('/fonts/madras/madras_bold_italic.eot');
+  src: url('/fonts/madras/madras_bold_italic.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/madras/madras_bold_italic.woff') format('woff'),
+  url('/fonts/madras/madras_bold_italic.ttf') format('truetype'),
+  url('/fonts/madras/madras_bold_italic.svg') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+/* END Regular*/
+
+
+/* BEGIN aileron_bold*/
+@font-face {
+  font-family: 'aileron_bold';
+  src: url('/fonts/aileron/bold/aileron_bold.eot');
+  src: url('/fonts/aileron/bold/aileron_bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/aileron/bold/aileron_bold.woff') format('woff'),
+  url('/fonts/aileron/bold/aileron_bold.ttf') format('truetype'),
+  url('/fonts/aileron/bold/aileron_bold.svg') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+/* END aileron_bold*/
+
+
+/* BEGIN aileron_semibold*/
+@font-face {
+  font-family: 'aileron_semibold';
+  src: url('/fonts/aileron/semibold/aileron_semibold.eot');
+  src: url('/fonts/aileron/semibold/aileron_semibold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/aileron/semibold/aileron_semibold.woff') format('woff'),
+  url('/fonts/aileron/semibold/aileron_semibold.ttf') format('truetype'),
+  url('/fonts/aileron/semibold/aileron_semibold.svg') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+/* END aileron_bold*/
+

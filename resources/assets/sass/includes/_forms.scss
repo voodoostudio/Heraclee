@@ -12,7 +12,8 @@ button {
 .btn:not(.dropdown-toggle) {
   height: 50px;
   padding: 0 65px;
-  font: 1.25rem modelica_light;
+  font: 1.25rem aileron_semibold;
+  letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
   background: $main_dark_clr;
@@ -166,7 +167,7 @@ label.form_el_label {
   margin-bottom: 10px;
   color: $main_brown_clr;
   line-height: 12px;
-  font-family: modelica_medium;
+  font-family: aileron_semibold;
   i.icn {
     font-size: 12px;
     margin-right: 5px;
@@ -188,11 +189,12 @@ ul.nav.nav-tabs {
     a.nav-link {
       line-height: 40px;
       padding: 0;
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       //text-transform: uppercase;
       border: none;
       color: $main_light_clr;
-      font-family: modelica_regular;
+      font-family: aileron_semibold;
+      letter-spacing: 1px;
       &.active {
         color: $main_xlight_clr;
         border-radius: 0;
@@ -265,7 +267,7 @@ ul.nav.nav-tabs {
     width: 100%;
     .multiselect.dropdown-toggle {
       padding: 0 30px 0 10px;
-      font-family: modelica_thin;
+      font-family: modelica_light;
       font-size: 0.9375rem;
       text-transform: initial;
       color: $main_light_clr;
