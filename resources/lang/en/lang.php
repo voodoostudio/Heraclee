@@ -50,7 +50,7 @@ return [
     'contact_the_agent'     => 'Contact the agency',
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
-    'our_last_objects'      => '<span>Our latest</span> 10 objects',
+    'our_last_objects'      => '<span>Our latest</span> <span>10 objects</span>',
     'new'                   => 'New',
     'updated'               => 'Updated',
     'more_options'          => 'More options',

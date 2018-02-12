@@ -304,8 +304,14 @@
   section.results_section {
     margin-top: 45px;
     h1 {
-      margin-bottom: 70px;
       font-size: 2rem;
+      line-height: 3.2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: .1rem;
+      font-family: modelica_medium;
+      margin-right: 30px;
+      margin-bottom: 70px;
       background-image: url('/img/texture-bg.jpg');
       background-position: 0 0;
       -webkit-background-clip: text;
