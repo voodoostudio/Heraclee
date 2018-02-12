@@ -3535,7 +3535,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.index_main_carousel_section .info_block .object_status,
 #usa section.index_main_carousel_section .info_block .object_status,
 #mauritius section.index_main_carousel_section .info_block .object_status {
-  color: #ccac83;
+  color: #cdae6d;
   font-size: 2.6rem;
   line-height: 2.5rem;
   text-transform: uppercase;
@@ -4854,7 +4854,7 @@ section.results_section h1 {
   text-transform: uppercase;
   color: #fdfdfd;
   letter-spacing: .1rem;
-  font-family: modelica_regular;
+  font-family: modelica_medium;
 }
 
 section.results_section .view_type_container .view_type {
@@ -4987,7 +4987,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   color: #dcdcdc;
 }
 
-section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
   content: '';
   position: absolute;
   left: -200%;
@@ -5001,7 +5001,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   transform: skew(-31deg);
 }
 
-section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+section.results_section .results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask.active:before {
   left: 150%;
 }
 
@@ -5616,7 +5616,7 @@ section.results_section .slick-track {
   color: #dcdcdc;
 }
 
-.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view:before {
+.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
   content: '';
   position: absolute;
   left: -200%;
@@ -5630,7 +5630,7 @@ section.results_section .slick-track {
   transform: skew(-31deg);
 }
 
-.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask:before {
+.results_container .container-fluid .object_block_container .object_block .img_block .gallery_view.image_mask.active:before {
   left: 150%;
 }
 
@@ -8165,6 +8165,10 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-right: 0;
     margin-bottom: 20px;
   }
+  #index section.description_section .description_container h1.title span:first-child,
+  #index section.description_section .description_container h1.title span:last-child {
+    font-size: 1.8rem;
+  }
   section.flipbook_section .iframe-m iframe {
     height: 350px;
   }
@@ -8667,7 +8671,8 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.index_main_carousel_section .slick-slider .info_block .object_status,
   #mauritius section.index_main_carousel_section .slick-slider .info_block .object_status {
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
+    margin-bottom: 5px;
   }
   #index section.index_main_carousel_section .slick-slider .info_block h2,
   #france section.index_main_carousel_section .slick-slider .info_block h2,
@@ -8675,15 +8680,16 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.index_main_carousel_section .slick-slider .info_block h2,
   #mauritius section.index_main_carousel_section .slick-slider .info_block h2 {
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
+    margin-bottom: 5px;
   }
   #index section.index_main_carousel_section .slick-slider .info_block h3,
   #france section.index_main_carousel_section .slick-slider .info_block h3,
   #swiss section.index_main_carousel_section .slick-slider .info_block h3,
   #usa section.index_main_carousel_section .slick-slider .info_block h3,
   #mauritius section.index_main_carousel_section .slick-slider .info_block h3 {
-    margin-bottom: 10px;
-    line-height: 2rem;
+    margin-bottom: 5px;
+    line-height: 1.5rem;
   }
   #index section.latest_news_section .latest_news_container .marquee_title,
   #france section.latest_news_section .latest_news_container .marquee_title,

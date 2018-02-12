@@ -50,6 +50,7 @@ $(document).ready(function() {
             fade: true,
             dots: true,
             autoplaySpeed: 5000,
+            arrows: false,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
             autoplay: true

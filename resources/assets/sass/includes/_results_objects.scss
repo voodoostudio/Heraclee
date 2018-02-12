@@ -70,7 +70,7 @@
             }
           }
           .gallery_view {
-            &:before {
+            &.image_mask:before {
               content: '';
               position: absolute;
               left: -200%;
@@ -82,7 +82,7 @@
               @include my_transition(1s);
               @include my_transform(skew(-31deg));
             }
-            &.image_mask:before {
+            &.image_mask.active:before {
               left: 150%;
             }
           }

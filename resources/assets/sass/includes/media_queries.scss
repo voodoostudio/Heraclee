@@ -920,6 +920,10 @@
             line-height: 2.5rem;
             margin-right: 0;
             margin-bottom: 20px;
+            span:first-child,
+            span:last-child {
+              font-size: 1.8rem;
+            }
           }
         }
       }
@@ -1453,15 +1457,17 @@
           bottom: 30px;
           .object_status {
             font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 1.5rem;
+            margin-bottom: 5px;
           }
           h2 {
             font-size: 1.5rem;
-            line-height: 2rem;
+            line-height: 1.5rem;
+            margin-bottom: 5px;
           }
           h3 {
-            margin-bottom: 10px;
-            line-height: 2rem;
+            margin-bottom: 5px;
+            line-height: 1.5rem;
           }
         }
       }
