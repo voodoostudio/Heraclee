@@ -136,7 +136,7 @@
 
                             <li style="background-image: url('{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}')">
                                 <div class="info_block">
-                                    <div class="object_status">{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</div>
+                                    <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
                                     <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
                                     <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
                                     <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn reveal_info_block">{{ trans('lang.see_property') }}</a>

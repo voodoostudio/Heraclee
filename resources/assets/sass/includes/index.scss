@@ -89,14 +89,17 @@
         font-weight: 700;
         letter-spacing: .1rem;
         margin: 0 auto 10px;
-        font-family: modelica_medium;
-        background-image: url(/img/texture-bg.jpg);
-        background-position: 0 0;
-        -webkit-background-clip: text;
-        background-size: 100% auto;
-        background-repeat: repeat;
-        -webkit-text-fill-color: transparent;
         display: table;
+        span {
+          font-family: modelica_medium;
+          background-image: url(/img/texture-bg.jpg);
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+          display: block;
+        }
       }
       h2 {
         font-size: 3rem;

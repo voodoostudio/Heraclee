@@ -3669,6 +3669,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   font-weight: 700;
   letter-spacing: .1rem;
   margin: 0 auto 10px;
+  display: table;
+}
+
+#index section.index_main_carousel_section .info_block .object_status span,
+#france section.index_main_carousel_section .info_block .object_status span,
+#swiss section.index_main_carousel_section .info_block .object_status span,
+#usa section.index_main_carousel_section .info_block .object_status span,
+#mauritius section.index_main_carousel_section .info_block .object_status span {
   font-family: modelica_medium;
   background-image: url(/img/texture-bg.jpg);
   background-position: 0 0;
@@ -3676,7 +3684,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-size: 100% auto;
   background-repeat: repeat;
   -webkit-text-fill-color: transparent;
-  display: table;
+  display: block;
 }
 
 #index section.index_main_carousel_section .info_block h2,
