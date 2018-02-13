@@ -4094,11 +4094,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-right: 30px;
 }
 
-#index section.results_section h1 span,
-#france section.results_section h1 span,
-#swiss section.results_section h1 span,
-#usa section.results_section h1 span,
-#mauritius section.results_section h1 span {
+#index section.results_section h1 > span,
+#france section.results_section h1 > span,
+#swiss section.results_section h1 > span,
+#usa section.results_section h1 > span,
+#mauritius section.results_section h1 > span {
   font-size: 2.8rem;
   background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
@@ -4107,6 +4107,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-repeat: repeat;
   -webkit-text-fill-color: transparent;
   color: #cdae6d;
+  display: block;
 }
 
 #index section.results_section .results_container.map_view .homepage_map_container,
@@ -8963,11 +8964,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-bottom: 45px;
     font-size: 1.5rem;
   }
-  #index section.results_section h1 span,
-  #france section.results_section h1 span,
-  #swiss section.results_section h1 span,
-  #usa section.results_section h1 span,
-  #mauritius section.results_section h1 span {
+  #index section.results_section h1 span span,
+  #france section.results_section h1 span span,
+  #swiss section.results_section h1 span span,
+  #usa section.results_section h1 span span,
+  #mauritius section.results_section h1 span span {
     display: block;
   }
   section.flipbook_section .iframe-m iframe {

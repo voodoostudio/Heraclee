@@ -50,7 +50,7 @@ return [
     'contact_the_agent'     => 'Contacter l’agence',
     'currently_no_results'  => 'Actuellement aucun résultat',
     'search'                => 'Rechercher',
-    'our_last_objects'      => '<span><span>Nos 10</span> derniers biens</span>',
+    'our_last_objects'      => '<span><span>Nos 10</span> <span>derniers biens</span></span>',
     'new'                   => 'Nouveauté',
     'updated'               => 'Mis à jour',
     'more_options'          => 'Plus d\'options',
