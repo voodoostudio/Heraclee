@@ -304,16 +304,13 @@
   section.results_section {
     margin-top: 45px;
     h1 {
-      font-size: 2rem;
-      line-height: 3.2rem;
+      font-size: 2.4rem;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: .1rem;
       font-family: modelica_medium;
       color: white;
-      margin-right: 30px;
       span {
-        font-size: 2.8rem;
         background-image: url('/img/texture-bg.jpg');
         background-position: 0 0;
         -webkit-background-clip: text;
@@ -321,7 +318,7 @@
         background-repeat: repeat;
         -webkit-text-fill-color: transparent;
         color: #cdae6d;
-        display: block;
+        display: inline-block;
       }
     }
     .results_container.map_view {

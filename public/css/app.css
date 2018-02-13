@@ -4084,14 +4084,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.results_section h1,
 #usa section.results_section h1,
 #mauritius section.results_section h1 {
-  font-size: 2rem;
-  line-height: 3.2rem;
+  font-size: 2.4rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: .1rem;
   font-family: modelica_medium;
   color: white;
-  margin-right: 30px;
 }
 
 #index section.results_section h1 span,
@@ -4099,7 +4097,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #swiss section.results_section h1 span,
 #usa section.results_section h1 span,
 #mauritius section.results_section h1 span {
-  font-size: 2.8rem;
   background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
   -webkit-background-clip: text;
@@ -4107,7 +4104,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-repeat: repeat;
   -webkit-text-fill-color: transparent;
   color: #cdae6d;
-  display: block;
+  display: inline-block;
 }
 
 #index section.results_section .results_container.map_view .homepage_map_container,

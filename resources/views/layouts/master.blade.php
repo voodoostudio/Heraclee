@@ -79,8 +79,9 @@
                 border-radius: 50%;
                 margin: auto;
                 overflow: hidden;
+                border-radius: 50%;
                 border: 2px solid #1b1b1b;
-                background: #151414
+                background: #151414;
             }
             .square-animated {
                 height: 200px;
@@ -98,6 +99,7 @@
                 height: 130px;
                 padding: 5px;
                 border-radius: 50%;
+                z-index: 10;
                 border: 2px solid #ccac83;
             }
             .square-animated img {
@@ -129,6 +131,7 @@
                 left: 0;
                 border-radius: 50%;
                 overflow: hidden;
+                z-index: 9;
             }
             .sk-cube-grid .sk-cube {
                 width: 33%;
