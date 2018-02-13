@@ -93,8 +93,31 @@ class PagesController extends Controller
         /* Gallery (slider) */
         $gallery = Gallery::all();
 
-        /* Gallery (slider) homepage */
-        $gallery_slider = Gallery::limit(5)->orderBy('id', 'desc')->get();
+        /* Gallery slider ( 5 items for any country ) */
+        $homepage_slider = Gallery::where('page','homepage')
+            ->limit(5)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $france_slider = Gallery::where('page','france')
+            ->limit(5)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $swiss_slider = Gallery::where('page','swiss')
+            ->limit(5)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $usa_slider = Gallery::where('page','usa')
+            ->limit(5)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $mauritius_slider = Gallery::where('page','mauritius')
+            ->limit(5)
+            ->orderBy('id', 'desc')
+            ->get();
 
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();
@@ -131,7 +154,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $homepage_gallery_settings,
-                'gallery_slider' => $gallery_slider,
+                'gallery_slider' => $homepage_slider,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
                 'search' => Session::get('search')
@@ -150,7 +173,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $france_gallery_settings,
-                'gallery_slider' => $gallery_slider,
+                'gallery_slider' => $france_slider,
                 'gallery' => $gallery,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
@@ -170,7 +193,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $swiss_gallery_settings,
-                'gallery_slider' => $gallery_slider,
+                'gallery_slider' => $swiss_slider,
                 'gallery' => $gallery,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
@@ -190,7 +213,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $usa_gallery_settings,
-                'gallery_slider' => $gallery_slider,
+                'gallery_slider' => $usa_slider,
                 'gallery' => $gallery,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
@@ -209,7 +232,7 @@ class PagesController extends Controller
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $mauritius_gallery_settings,
-                'gallery_slider' => $gallery_slider,
+                'gallery_slider' => $mauritius_slider,
                 'gallery' => $gallery,
                 'count_items' => $count_items,
                 'last_news' => $last_news,
