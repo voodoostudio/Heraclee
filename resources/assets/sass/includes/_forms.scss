@@ -28,7 +28,7 @@ button {
   @include my_box_shadow(0px 0px 20px -5px black);
   &:hover {
     border-color: $main_brown_clr;
-    color: $main_xlight_clr;
+    color: $main_dark_clr;
   }
   &.disabled,
   &:disabled {
@@ -46,7 +46,13 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: $main_brown_clr;
+  //background-color: $main_brown_clr;
+
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+
   height: 100%;
   width: 100%;
   left: -100%;
@@ -196,9 +202,14 @@ ul.nav.nav-tabs {
       font-family: aileron_semibold;
       letter-spacing: 1px;
       &.active {
-        color: $main_xlight_clr;
+        color: $main_dark_clr;
         border-radius: 0;
-        background-color: $main_brown_clr;
+        //background-color: $main_brown_clr;
+
+        background-image: url(/img/texture-bg.jpg);
+        background-position: 0 0;
+        background-size: 100% auto;
+        background-repeat: repeat;
       }
     }
   }

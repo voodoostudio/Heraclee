@@ -149,7 +149,7 @@ button {
 
 .btn:not(.dropdown-toggle):hover {
   border-color: #ccac83;
-  color: #fdfdfd;
+  color: #272727;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -168,7 +168,10 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -334,9 +337,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
-  color: #fdfdfd;
+  color: #272727;
   border-radius: 0;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
 }
 
 /*Nav tabs styles END*/
@@ -908,7 +914,7 @@ button {
 
 .btn:not(.dropdown-toggle):hover {
   border-color: #ccac83;
-  color: #fdfdfd;
+  color: #272727;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -927,7 +933,10 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -1093,9 +1102,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
-  color: #fdfdfd;
+  color: #272727;
   border-radius: 0;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
 }
 
 /*Nav tabs styles END*/
@@ -2915,7 +2927,7 @@ button {
 
 .btn:not(.dropdown-toggle):hover {
   border-color: #ccac83;
-  color: #fdfdfd;
+  color: #272727;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -2934,7 +2946,10 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -3100,9 +3115,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
-  color: #fdfdfd;
+  color: #272727;
   border-radius: 0;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
 }
 
 /*Nav tabs styles END*/
@@ -4419,7 +4437,7 @@ button {
 
 .btn:not(.dropdown-toggle):hover {
   border-color: #ccac83;
-  color: #fdfdfd;
+  color: #272727;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -4438,7 +4456,10 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -4604,9 +4625,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
-  color: #fdfdfd;
+  color: #272727;
   border-radius: 0;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
 }
 
 /*Nav tabs styles END*/
@@ -6353,7 +6377,7 @@ button {
 
 .btn:not(.dropdown-toggle):hover {
   border-color: #ccac83;
-  color: #fdfdfd;
+  color: #272727;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -6372,7 +6396,10 @@ button {
 .btn:not(.dropdown-toggle):before {
   content: '';
   position: absolute;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
   height: 100%;
   width: 100%;
   left: -100%;
@@ -6538,9 +6565,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link {
 }
 
 ul.nav.nav-tabs li.nav-item a.nav-link.active {
-  color: #fdfdfd;
+  color: #272727;
   border-radius: 0;
-  background-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
 }
 
 /*Nav tabs styles END*/
