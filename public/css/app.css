@@ -4094,11 +4094,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-right: 30px;
 }
 
-#index section.results_section h1 > span,
-#france section.results_section h1 > span,
-#swiss section.results_section h1 > span,
-#usa section.results_section h1 > span,
-#mauritius section.results_section h1 > span {
+#index section.results_section h1 span,
+#france section.results_section h1 span,
+#swiss section.results_section h1 span,
+#usa section.results_section h1 span,
+#mauritius section.results_section h1 span {
   font-size: 2.8rem;
   background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
