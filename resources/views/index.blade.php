@@ -125,7 +125,7 @@
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
             <section class="index_main_carousel_section reveal">
                     <ul class="index_main_carousel">
-                        @foreach($gallery_homepage as $image)
+                        @foreach($gallery_slider as $image)
                             @if($image['page'] == 'homepage')
                                 @php
                                     $slider_image[] = $image;
@@ -133,7 +133,6 @@
                             @endif
                         @endforeach
                         @foreach($slider_image as $item)
-
                             <li style="background-image: url('{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}')">
                                 <div class="info_block">
                                     <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>

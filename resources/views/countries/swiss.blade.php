@@ -18,26 +18,25 @@
     </section>
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'swiss' && $settings['show'] == 1)
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section reveal">
                 <ul class="index_main_carousel">
-                    @foreach($gallery as $image)
+                    @foreach($gallery_slider as $image)
                         @if($image['page'] == 'swiss')
                             @php
                                 $slider_image[] = $image;
                             @endphp
                         @endif
                     @endforeach
-                    @php
-                        shuffle($slider_image);
-                        $image_counter = 1;
-                    @endphp
                     @foreach($slider_image as $item)
-                        @if($image_counter == 1)
-                                <li><a href="{{ (!empty($item->link)) ? $item->link : '' }}"><img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt=""></a></li>
-                        @endif
-                        @php
-                            $image_counter++;
-                        @endphp
+                        <li style="background-image: url('{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}')">
+                            <div class="info_block">
+                                <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
+                                <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
+                                <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
+                                <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn reveal_info_block">{{ trans('lang.see_property') }}</a>
+                            </div>
+                            {{--<img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}">--}}
+                        </li>
                     @endforeach
                 </ul>
             </section>
