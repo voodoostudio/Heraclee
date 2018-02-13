@@ -5182,7 +5182,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   top: 0;
   background: #ccac83;
   height: 100%;
-  width: 300%;
+  width: 350%;
   z-index: 2;
   transition: 1s;
   -webkit-transform: skew(-31deg);
@@ -5811,7 +5811,7 @@ section.results_section .slick-track {
   top: 0;
   background: #ccac83;
   height: 100%;
-  width: 300%;
+  width: 350%;
   z-index: 2;
   transition: 1s;
   -webkit-transform: skew(-31deg);

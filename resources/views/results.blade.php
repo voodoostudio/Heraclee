@@ -169,7 +169,7 @@
         <div class="results_container {{ $view_type }} @if($view_type == 'list_view') hidden-sm-down  @endif">
             <div id="results_map"></div>
             <div class="container-fluid">
-                <div class="results_carousel reveal row">
+                <div class="results_carousel row reveal">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')
@@ -185,6 +185,7 @@
 @stop
 
 @section('javascript')
+    {{--<script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>--}}
     <script>
         var locations = [
             @foreach($all_property as $key => $unique)
@@ -286,14 +287,6 @@
             if(pagination_buttons.length === 1) {
                 $('nav ul.pagination li a.page-link').css({"pointer-events": "none", "touch-action": "none", "cursor": "default"});
             }
-            sr.reveal('.results_carousel',{
-                beforeReveal: function (domEl) {
-                    $('section.results_section .gallery_view').addClass('image_mask active');
-                },
-                beforeReset: function (domEl) {
-                    $('section.results_section .gallery_view').removeClass('active');
-                },
-            });
         });
         $(window).on('load', function () {
                 @if($view_type == 'map_view') {
@@ -355,7 +348,5 @@
                 }
             });
         @endif
-
-
     </script>
 @stop

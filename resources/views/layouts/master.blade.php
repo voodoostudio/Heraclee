@@ -420,7 +420,20 @@
             sr.reveal('.reveal',{
                 reset: true,
                 duration: 500,
-                viewFactor: 0.1
+                viewFactor: 0.1,
+                beforeReveal: function (domEl) {
+                    if($(domEl).hasClass('results_carousel')) {
+                        $('section.results_section .gallery_view').addClass('image_mask');
+                        setTimeout(function(){
+                            $('section.results_section .gallery_view').addClass('active');
+                        }, 50);
+                    }
+                },
+                beforeReset: function (domEl) {
+                    if($(domEl).hasClass('results_carousel')) {
+                        $('section.results_section .gallery_view').removeClass('active');
+                    }
+                },
             });
         </script>
     </body>
