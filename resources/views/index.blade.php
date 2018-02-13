@@ -205,9 +205,6 @@
                     @endforeach
                 </div>
             </div>
-            {{--<div class="homepage_map_container">--}}
-                {{--<div id="results_map"></div>--}}
-            {{--</div>--}}
         </div>
     </section>
 
