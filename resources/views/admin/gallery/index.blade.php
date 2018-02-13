@@ -228,6 +228,7 @@
                         }).done(function (formData) {
                             if($.isEmptyObject(formData.errors)) {
                                 $(".error_list").html('');
+
                                 $('#multiple_destroy_{{$settings['page']}} #display_image').append('' +
                                     '<div class="col-6 col-sm-4 col-md-3 col-lg-3 margin_bottom_30" id="gallery_image" data-id="' + formData.id + '">' +
                                     '<div class="thumbnail_container">' +
@@ -309,8 +310,8 @@
                                     }
                                 });
 
-                                console.log(formData.id);
-                                console.log($('#multiple_destroy_{{$settings['page']}} #gallery_image').length);
+                                $('form.image_upload_form select').multiselect('refresh');
+                                $('form.image_upload_form select').multiselect('enable');
                             } else {
                                 error_message(formData.errors);
                             }
@@ -355,7 +356,6 @@
 
         <script>
             $(document).ready(function(){
-
                 @foreach($gallery_settings as $settings)
                     $('#switch_form_{{$settings['page']}}').submit(function(e){
                     e.preventDefault();
@@ -417,10 +417,8 @@
                 setCookie("currentTab", currentTab, 365);
 
                 currentSwitch = $('#' + currentTab + ' .switch_field input[checked]').attr('id');
-                console.log('Tab click switch: '+currentSwitch);
                 setCookie("currentSwitch", currentSwitch, 365);
 
-                console.log('Tab click tab: '+currentTab);
 
                 currentSwitch = currentSwitch.substr(0, currentSwitch.indexOf('_'));
                 if(currentSwitch == 'gallery') {
@@ -440,11 +438,13 @@
                 currentTab = $(this).closest('div.tab-pane').attr('id');
                 currentSwitch = $(this).attr('id');
 
-                console.log('Switch click tab: '+currentTab);
-                console.log('Switch click switch: '+currentSwitch);
-
                 setCookie("currentTab", currentTab, 365);
                 setCookie("currentSwitch", currentSwitch, 365);
+            });
+
+            $('.image_upload_form button#button_upload').on('click', function () {
+
+                console.log('test');
             });
 
             function checkCookie() {
