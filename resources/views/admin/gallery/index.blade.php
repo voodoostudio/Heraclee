@@ -82,12 +82,12 @@
                                                 @endif
 
                                                 <div class="row">
-                                                    <div class="col-md-6 col-lg-12 margin_bottom_20">
-                                                        <label class="form_el_label"><span>{{ trans('lang.title') }} *</span></label>
-                                                        <div class="input_container">
-                                                            <input type="text" name="title" id="title" class="" placeholder="Title">
-                                                        </div>
-                                                    </div>
+                                                    {{--<div class="col-md-6 col-lg-12 margin_bottom_20">--}}
+                                                        {{--<label class="form_el_label"><span>{{ trans('lang.title') }} *</span></label>--}}
+                                                        {{--<div class="input_container">--}}
+                                                            {{--<input type="text" name="title" id="title" class="" placeholder="Title">--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
 
                                                     <div class="col-md-6 col-lg-12 margin_bottom_20">
                                                         <label class="form_el_label"><span>{{ trans('lang.status') }}</span></label>
