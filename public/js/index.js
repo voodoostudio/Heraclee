@@ -53,7 +53,7 @@ $(document).ready(function() {
             arrows: false,
             prevArrow: '<button type="button" class="slick-prev"><i class="icn icon-arrow_big_left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="icn icon-arrow_big_right"></i></button>',
-            // autoplay: true
+            autoplay: true
             // adaptiveHeight: true
         });
     }
@@ -103,7 +103,14 @@ $(document).ready(function() {
         });
     }
 
-
+    sr.reveal('.results_carousel',{
+        beforeReveal: function (domEl) {
+            $('section.results_section .gallery_view').addClass('image_mask active');
+        },
+        beforeReset: function (domEl) {
+            $('section.results_section .gallery_view').removeClass('active');
+        },
+    });
 });
 
 function setSellType(id) {
