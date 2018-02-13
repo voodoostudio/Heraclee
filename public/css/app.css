@@ -4090,15 +4090,23 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   font-weight: 700;
   letter-spacing: .1rem;
   font-family: modelica_medium;
+  color: white;
   margin-right: 30px;
-  margin-bottom: 70px;
+}
+
+#index section.results_section h1 span,
+#france section.results_section h1 span,
+#swiss section.results_section h1 span,
+#usa section.results_section h1 span,
+#mauritius section.results_section h1 span {
+  font-size: 2.8rem;
+  background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
   -webkit-background-clip: text;
   background-size: 100% auto;
+  background-repeat: repeat;
   -webkit-text-fill-color: transparent;
-  color: transparent;
-  background: -webkit-linear-gradient(transparent, transparent), url("/img/texture-bg.jpg") repeat;
-  -webkit-background-clip: text;
+  color: #cdae6d;
 }
 
 #index section.results_section .results_container.map_view .homepage_map_container,
