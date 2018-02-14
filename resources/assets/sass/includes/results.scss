@@ -93,6 +93,7 @@ section.results_section {
           }
           .object_info {
             padding: 20px 15px 20px 15px;
+            @include my_box_shadow(none);
             a {
               display: table;
               font-size: 1rem;

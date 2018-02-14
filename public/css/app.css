@@ -5704,6 +5704,7 @@ section.results_section #results_map .gm-style-iw .infowindow_container .object_
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info {
   padding: 20px 15px 20px 15px;
+  box-shadow: none;
 }
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info a {

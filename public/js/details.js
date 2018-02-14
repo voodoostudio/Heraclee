@@ -69,7 +69,8 @@ $(document).ready(function() {
             },
             streetViewControlOptions: {
                 position: google.maps.ControlPosition.RIGHT_CENTER
-            }
+            },
+            styles: MAP_STYLES
         });
 
         var markerImage = {

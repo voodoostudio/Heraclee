@@ -19,6 +19,172 @@ function activateResetFiltser(selected_event) {
     }
 }
 
+const MAP_STYLES = [{
+    "featureType": "all",
+    "elementType": "labels.text.fill",
+    "stylers": [
+        {
+            "saturation": 36
+        },
+        {
+            "color": "#000000"
+        },
+        {
+            "lightness": 40
+        }
+    ]
+},
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }]
+
 function contactMapInit() {
     var map;
     var latlong;
@@ -38,7 +204,8 @@ function contactMapInit() {
         },
         streetViewControlOptions: {
             position: google.maps.ControlPosition.LEFT_CENTER
-        }
+        },
+        styles: MAP_STYLES
     });
     var markerImage = {
         url: '/img/map_pin.svg',
@@ -92,7 +259,8 @@ function resultsMapInit()  {
                 },
                 streetViewControlOptions: {
                     position: google.maps.ControlPosition.LEFT_TOP
-                }
+                },
+                styles: MAP_STYLES
             });
         } else {
             var map = new google.maps.Map(document.getElementById('results_map'), {
@@ -108,7 +276,8 @@ function resultsMapInit()  {
                 },
                 streetViewControlOptions: {
                     position: google.maps.ControlPosition.LEFT_TOP
-                }
+                },
+                styles: MAP_STYLES
             });
         }
     } else {
