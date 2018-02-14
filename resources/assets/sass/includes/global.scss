@@ -86,7 +86,7 @@ p {
   background: $main_dark_clr;
   @include my_box_shadow(0px 0px 20px -5px black);
   .inner_block_container {
-    border: 1px solid #ccac83;
+    border: 2px solid black;
     padding: 40px;
     position: relative;
   }
@@ -450,9 +450,19 @@ section.search_section {
       .show_extra_options {
         text-align: center;
         button {
-          color: $main_brown_clr;
+          background-image: url(/img/texture-bg.jpg);
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+          display: block;
+
+          //color: $main_brown_clr;
           font-family: aileron_semibold;
           i.icn {
+            color: $main_brown_clr;
+            -webkit-text-fill-color: $main_brown_clr;
             display: block;
             float: right;
             line-height: 22px;

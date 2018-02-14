@@ -299,7 +299,13 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -1064,7 +1070,13 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -1623,7 +1635,7 @@ p {
 }
 
 .outer_block_container .inner_block_container {
-  border: 1px solid #ccac83;
+  border: 2px solid black;
   padding: 40px;
   position: relative;
 }
@@ -2036,12 +2048,20 @@ section.search_section .outer_block_container .inner_block_container .show_extra
 
 section.search_section .outer_block_container .inner_block_container .show_options button,
 section.search_section .outer_block_container .inner_block_container .show_extra_options button {
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   font-family: aileron_semibold;
 }
 
 section.search_section .outer_block_container .inner_block_container .show_options button i.icn,
 section.search_section .outer_block_container .inner_block_container .show_extra_options button i.icn {
+  color: #ccac83;
+  -webkit-text-fill-color: #ccac83;
   display: block;
   float: right;
   line-height: 22px;
@@ -3087,7 +3107,13 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -4617,7 +4643,13 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -6559,7 +6591,13 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
   line-height: 12px;
   font-family: aileron_semibold;
 }
