@@ -169,7 +169,7 @@
         <div class="results_container {{ $view_type }} @if($view_type == 'list_view') hidden-sm-down  @endif">
             <div id="results_map"></div>
             <div class="container-fluid">
-                <div class="results_carousel row reveal">
+                <div class="results_carousel row">
                     @foreach($properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')
@@ -348,5 +348,30 @@
                 }
             });
         @endif
+
+
+        sr.reveal('.results_container.grid_view .reveal_block, .results_container.list_view .reveal_block',{
+            reset: true,
+            duration: 500,
+            viewFactor: 0.5,
+            scale: 1,
+            opacity: 0,
+            useDelay: 'once',
+            easing: 'linear',
+            distance: '35px',
+            beforeReveal: function (domEl) {
+                if($(domEl).hasClass('results_carousel')) {
+                    $('section.results_section .gallery_view').addClass('image_mask');
+                    setTimeout(function(){
+                        $('section.results_section .gallery_view').addClass('active');
+                    }, 50);
+                }
+            },
+            beforeReset: function (domEl) {
+                if($(domEl).hasClass('results_carousel')) {
+                    $('section.results_section .gallery_view').removeClass('active');
+                }
+            },
+        });
     </script>
 @stop

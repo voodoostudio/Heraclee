@@ -22,6 +22,7 @@
             gtag('config', 'UA-71420108-6');
         </script>
 
+
         <!-- Preloader styling -->
         <style>
             #door-wrapper {
@@ -187,12 +188,7 @@
                 }
             }
         </style>
-        <!-- Scroll Reveal style -->
-        <style>
-            .sr .reveal {
-                visibility: hidden;
-            }
-        </style>
+
         {{ csrf_field() }}
         <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
         <link rel="stylesheet" type="text/css" href="{{mix('css/app.css')}}">
@@ -270,6 +266,11 @@
                     $('.multiselect-native-select .btn-group .multiselect-container.dropdown-menu li a').removeAttr('touch-action');
                 }
             });
+
+            window.sr = ScrollReveal();
+            if (sr.isSupported()) {
+                document.documentElement.classList.add('sr');
+            }
         </script>
 
         @if( LaravelLocalization::getCurrentLocale() == 'fr' )
@@ -416,11 +417,15 @@
                 }, 500);
             });
 
-            window.sr = ScrollReveal();
             sr.reveal('.reveal',{
                 reset: true,
-                duration: 500,
-                viewFactor: 0.1,
+                duration: 1000,
+                viewFactor: 0.5,
+                scale: 1,
+                opacity: 0,
+                useDelay: 'once',
+                easing: 'linear',
+                distance: '35px',
                 beforeReveal: function (domEl) {
                     if($(domEl).hasClass('results_carousel')) {
                         $('section.results_section .gallery_view').addClass('image_mask');

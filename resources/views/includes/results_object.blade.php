@@ -1,5 +1,5 @@
 <div class="col-12 col-sm-6 object_block_container">
-    <div class="object_block">
+    <div class="object_block reveal_block">
         <div class="img_block">
             {{--<div class="activity_label">Loué</div>--}}
             {{-- @if(!empty($property['agreement']) && $property['agreement'] == 3)

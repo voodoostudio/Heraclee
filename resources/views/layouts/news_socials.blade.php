@@ -279,6 +279,11 @@
         nSelectedText: '{{ trans('lang.selected') }}',
         allSelectedText: '{{ trans('lang.all_selected') }}'
     });
+
+    window.sr = ScrollReveal();
+    if (sr.isSupported()) {
+        document.documentElement.classList.add('sr');
+    }
 </script>
 
 @if( LaravelLocalization::getCurrentLocale() == 'fr' )
@@ -400,11 +405,16 @@
             $('#door-wrapper').fadeOut();
         }, 500);
     });
-    window.sr = ScrollReveal();
+
     sr.reveal('.reveal',{
         reset: true,
-        duration: 500,
-        viewFactor: 0.1,
+        duration: 1000,
+        viewFactor: 0.5,
+        scale: 1,
+        opacity: 0,
+        useDelay: 'once',
+        easing: 'linear',
+        distance: '35px',
         beforeReveal: function (domEl) {
             if($(domEl).hasClass('results_carousel')) {
                 $('section.results_section .gallery_view').addClass('image_mask');

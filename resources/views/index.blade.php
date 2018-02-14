@@ -123,7 +123,7 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
-            <section class="index_main_carousel_section reveal">
+            <section class="index_main_carousel_section">
                     <ul class="index_main_carousel">
                         @foreach($gallery_slider as $image)
                             @if($image['page'] == 'homepage')
@@ -183,11 +183,11 @@
 
     @include('includes.search_block_index')
 
-    <section class="description_section reveal">
+    <section class="description_section">
         <div class="container-fluid">
             <div class="description_container">
-                <h1 class="title">{!! trans('lang.homepage_title') !!}</h1>
-                <h1>{!! trans('lang.homepage_description') !!}</h1>
+                <h1 class="title reveal">{!! trans('lang.homepage_title') !!}</h1>
+                <h1 class="reveal">{!! trans('lang.homepage_description') !!}</h1>
             </div>
         </div>
     </section>
@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <section class="results_section reveal">
+    <section class="results_section">
         <div class="results_container map_view">
             <div class="homepage_map_container">
                 <div id="results_map"></div>
@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <section class="guide_section reveal" style="display: none">
+    <section class="guide_section" style="display: none">
         <div class="container-fluid">
             <div class="guide_carousel">
                 <div class="guide_slide">

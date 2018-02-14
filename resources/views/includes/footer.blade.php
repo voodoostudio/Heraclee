@@ -2,7 +2,7 @@
     $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
-<footer class="reveal">
+<footer class="reveal_container">
     <section style="display: none" class="top_footer_section">
         <div class="container-fluid">
             <h3>{{ trans('lang.footer_title') }}</h3>
@@ -120,7 +120,7 @@
     </section>
     <section class="bottom_footer_section">
         <div class="container-fluid">
-            <div class="row">
+            <div class="row reveal">
                 <div class="col-sm-12 col-md-6 push-md-6 col-lg-4 push-lg-8">
                     <h4>{!! trans('lang.footer_title') !!}</h4>
                     <div class="contact_block">
@@ -144,7 +144,7 @@
 
                 </div>
             </div>
-            <div class="row">
+            <div class="row reveal">
                 <div class="col-12">
                     <p class="copyright">© {{ date("Y") }} - {{ trans('lang.copyright_text') }}</p>
                 </div>
@@ -153,8 +153,5 @@
     </section>
     <ul class="social_networks">
         <li class="scroll_to_top"><a href="#"><i class="icn icon-up_page"></i></a></li>
-        {{--<li class="twitter"><a href="javascript: void(0)"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>--}}
-        {{--<li class="linkedin"><a href="javascript: void(0)"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>--}}
-        {{--<li class="facebook"><a href="javascript: void(0)"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>--}}
     </ul>
 </footer>

@@ -5554,6 +5554,7 @@ section.results_section .results_container.map_view #results_map {
 
 section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block {
   margin-top: 0;
+  opacity: 1 !important;
 }
 
 section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li {
@@ -6183,6 +6184,7 @@ section.results_section .slick-track {
 
 .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block {
   margin-top: 0;
+  opacity: 1 !important;
 }
 
 .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li {
