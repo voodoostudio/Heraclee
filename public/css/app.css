@@ -1857,11 +1857,18 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-ite
   letter-spacing: 0.05rem;
   color: #b8b8b8;
   padding: 3px 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item.active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:focus, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:hover {
-  background-color: transparent;
-  color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
 }
 
 header .menu-icon {

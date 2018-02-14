@@ -290,12 +290,22 @@ header {
               letter-spacing: 0.05rem;
               color: #b8b8b8;
               padding: 3px 1rem;
+              font-size: 0.8rem;
+              text-transform: uppercase;
               &.active,
               &:active,
               &:focus,
               &:hover {
-                background-color: transparent;
-                color: $main_brown_clr;
+                //background-color: transparent;
+                //color: $main_brown_clr;
+
+                background-image: url(/img/texture-bg.jpg);
+                background-position: 0 0;
+                -webkit-background-clip: text;
+                background-size: 100% auto;
+                background-repeat: repeat;
+                -webkit-text-fill-color: transparent;
+                display: block;
               }
             }
           }
