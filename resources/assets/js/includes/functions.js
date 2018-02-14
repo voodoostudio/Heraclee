@@ -522,7 +522,7 @@ function tallestArticleBlock() {
 
 function setBodyPaddingBottom() {
     //this function sets body padding-bottom according to the footer size
-    if($('body#index').length || $('body#details').length){
+    if($('body#index').length || $('body#details').length || $('body#locationsDetails').length){
         var footer_height = $('footer').height();
     }
      else {

@@ -1013,7 +1013,7 @@
         </div>
     </section>
 
-    <section class="location_section reveal">
+    <section class="location_section">
         <div class="map_container">
             <div id="object_map"></div>
             <div class="map_sidebar">
