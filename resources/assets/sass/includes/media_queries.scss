@@ -243,6 +243,9 @@
           ul.nav {
             li.nav-item {
               padding-right: 0;
+              .nav-link {
+                font-size: 0.65rem;
+              }
             }
           }
         }
@@ -738,7 +741,6 @@
             .nav-link {
               padding: 8px 5px;
               line-height: 0.875rem;
-              font-size: 0.75rem;
             }
           }
         }

@@ -8022,6 +8022,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header.minimized .navigation_container nav ul.nav li.nav-item {
     padding-right: 0;
   }
+  header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
+    font-size: 0.65rem;
+  }
   main {
     padding-top: 138px;
   }
@@ -8370,7 +8373,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
     padding: 8px 5px;
     line-height: 0.875rem;
-    font-size: 0.75rem;
   }
   header.minimized div.menu-icon {
     top: 24px;
