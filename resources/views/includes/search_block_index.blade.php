@@ -12,7 +12,7 @@
     @endphp
     <form id="search" action="/{{LaravelLocalization::getCurrentLocale()}}/locations/results{{ ((!empty($country[0]) && $country['0'] != 'fr') && (!empty($country[0]) && $country['0'] != 'en')) ? '/' . $country['0'] : '' }}" method="post" class="">
         {{ csrf_field() }}
-        <div class="container-fluid">
+        <div class="container-fluid reveal">
             <div class="outer_block_container">
                 <div class="inner_block_container minimized_extra_options">
                     <div class="reset_filters_btn">

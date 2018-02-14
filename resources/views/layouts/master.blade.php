@@ -418,12 +418,11 @@
             });
 
             sr.reveal('.reveal',{
-                reset: false,
+                reset: true,
                 duration: 1000,
                 viewFactor: 0.2,
                 scale: 1,
                 opacity: 0,
-                useDelay: 'once',
                 easing: 'linear',
                 distance: '35px',
                 beforeReveal: function (domEl) {

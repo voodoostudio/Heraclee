@@ -2,18 +2,11 @@
 
 @section('title', 'Maisons et appartements de standing, locations très haut de gamme. Les plus belles propriétés de la Côte d\'Azur.')
 @section('css')
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/custom_styles/index.min.css')}}">--}}
     <script defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
 @stop
 
 @section('content')
-
-    {{--<section class="page_title_section hidden-md-up">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<h1>{!! trans('lang.homepage_title') !!}</h1>--}}
-        {{--</div>--}}
-    {{--</section>--}}
 
     @php
         $lang = LaravelLocalization::getCurrentLocaleRegional();
@@ -179,6 +172,7 @@
                     @endforeach
                 @endif
             @endforeach
+
     @include('includes.latest_news')
 
     @include('includes.search_block_index')
@@ -346,7 +340,5 @@
                 resultsMapInit();
             }, 500);
         });
-
-
     </script>
 @stop

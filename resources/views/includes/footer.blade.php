@@ -2,7 +2,7 @@
     $lang = LaravelLocalization::getCurrentLocale();
 @endphp
 
-<footer class="reveal_container">
+<footer>
     <section style="display: none" class="top_footer_section">
         <div class="container-fluid">
             <h3>{{ trans('lang.footer_title') }}</h3>
@@ -118,8 +118,8 @@
             </div>
         </div>
     </section>
-    <section class="bottom_footer_section reveal">
-        <div class="container-fluid">
+    <section class="bottom_footer_section">
+        <div class="container-fluid reveal">
             <div class="row ">
                 <div class="col-sm-12 col-md-6 push-md-6 col-lg-4 push-lg-8">
                     <h4>{!! trans('lang.footer_title') !!}</h4>

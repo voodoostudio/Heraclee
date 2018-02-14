@@ -409,7 +409,7 @@
     });
 
     sr.reveal('.reveal',{
-        reset: false,
+        reset: true,
         duration: 1000,
         viewFactor: 0.2,
         scale: 1,
