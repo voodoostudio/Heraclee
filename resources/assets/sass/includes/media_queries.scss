@@ -74,12 +74,12 @@
       ul.nav li.nav-item {
         padding-right: 10px;
         .nav-link {
-          font-size: 0.8rem;
+          font-size: 0.75rem;
           line-height: 0.85rem;
         }
         .dropdown-menu {
           a {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
           }
         }
       }
@@ -222,7 +222,8 @@
         ul.nav li.nav-item {
           padding-right: 0;
           .nav-link {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
+            letter-spacing: 0.1rem;
           }
         }
       }
@@ -1300,8 +1301,15 @@
           font-size: 0.6rem;
           line-height: 1.1;
         }
+        .header_tel {
+          font-size: 0.75rem;
+          letter-spacing: 0.05rem;
+        }
         .lang_currency_container {
           margin: 2px auto;
+          li ul.language_select li {
+            font-size: 0.75rem;
+          }
         }
         .last_updates {
           font-size: 0.55rem;

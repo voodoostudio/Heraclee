@@ -129,9 +129,11 @@ header {
       @include my_transition(.2s ease-in-out);
       .header_tel {
         @include my_transition(.2s ease-in-out);
-        font-size: 0.813rem;
         line-height: 1;
-        font-family: modelica_regular;
+        font-size: 0.8rem;
+        letter-spacing: 0.15rem;
+        font-family: modelica_thin;
+        color: #b8b8b8;
       }
       h1 {
         display: none;
@@ -158,7 +160,7 @@ header {
             li {
               float: left;
               text-transform: uppercase;
-              font-size: 0.813rem;
+              font-size: 0.8rem;
               padding: 1px 5px;
               border-right: 1px solid $main_light_clr;
               line-height: 0.813rem;
@@ -170,8 +172,11 @@ header {
                 padding-right: 0;
               }
               a {
+                color: #b8b8b8;
+                font-family: modelica_thin;
                 &.active {
-                  color: $main_brown_clr;
+                  //color: $main_brown_clr;
+                  font-family: modelica_medium;
                 }
               }
             }
@@ -236,9 +241,11 @@ header {
           .nav-link {
             text-transform: uppercase;
             padding: 8px 5px;
-            font-family: modelica_medium;
-            font-size: 1rem;
+            font-family: modelica_thin;
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
             line-height: 1.063rem;
+            color: #b8b8b8;
             cursor: pointer;
             @include my_transition(.2s ease-in-out);
             border-bottom: 1px solid transparent;
@@ -267,8 +274,8 @@ header {
             border-radius: 0;
             border-color: $main_gray_clr;
             .dropdown-item {
-              font-family: modelica_medium;
-              color: $main_light_clr;
+              font-family: modelica_thin;
+              color: #b8b8b8;
               padding: 3px 1rem;
               &.active,
               &:active,

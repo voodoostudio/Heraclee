@@ -1672,9 +1672,11 @@ header .navigation_container .navigation_block {
 
 header .navigation_container .navigation_block .header_tel {
   transition: 0.2s ease-in-out;
-  font-size: 0.813rem;
   line-height: 1;
-  font-family: modelica_regular;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  font-family: modelica_thin;
+  color: #b8b8b8;
 }
 
 header .navigation_container .navigation_block h1 {
@@ -1710,7 +1712,7 @@ header .navigation_container .navigation_block .lang_currency_container li ul.la
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select li {
   float: left;
   text-transform: uppercase;
-  font-size: 0.813rem;
+  font-size: 0.8rem;
   padding: 1px 5px;
   border-right: 1px solid #f7f7f7;
   line-height: 0.813rem;
@@ -1725,8 +1727,13 @@ header .navigation_container .navigation_block .lang_currency_container li ul.la
   padding-right: 0;
 }
 
+header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a {
+  color: #b8b8b8;
+  font-family: modelica_thin;
+}
+
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a.active {
-  color: #ccac83;
+  font-family: modelica_medium;
 }
 
 header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
@@ -1796,9 +1803,11 @@ header .navigation_container nav ul.nav li.nav-item:last-of-type {
 header .navigation_container nav ul.nav li.nav-item .nav-link {
   text-transform: uppercase;
   padding: 8px 5px;
-  font-family: modelica_medium;
-  font-size: 1rem;
+  font-family: modelica_thin;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
   line-height: 1.063rem;
+  color: #b8b8b8;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   border-bottom: 1px solid transparent;
@@ -1833,8 +1842,8 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu {
 }
 
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item {
-  font-family: modelica_medium;
-  color: #f7f7f7;
+  font-family: modelica_thin;
+  color: #b8b8b8;
   padding: 3px 1rem;
 }
 
@@ -7927,11 +7936,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding-right: 10px;
   }
   header .navigation_container nav ul.nav li.nav-item .nav-link {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     line-height: 0.85rem;
   }
   header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   #index section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
   #france section.index_main_carousel_section .slick-slider .slick-list .slick-track .slick-slide,
@@ -7996,7 +8005,8 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding-right: 0;
   }
   header .navigation_container nav ul.nav li.nav-item .nav-link {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.1rem;
   }
   header.minimized .navigation_container .navigation_block {
     margin-left: 70px;
@@ -8799,8 +8809,15 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.6rem;
     line-height: 1.1;
   }
+  header .navigation_container .navigation_block .header_tel {
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+  }
   header .navigation_container .navigation_block .lang_currency_container {
     margin: 2px auto;
+  }
+  header .navigation_container .navigation_block .lang_currency_container li ul.language_select li {
+    font-size: 0.75rem;
   }
   header .navigation_container .navigation_block .last_updates {
     font-size: 0.55rem;
