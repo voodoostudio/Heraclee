@@ -203,7 +203,7 @@
 
     <section class="results_section">
         <div class="results_container map_view">
-            <div class="homepage_map_container reveal">
+            <div class="homepage_map_container">
                 <div id="results_map"></div>
             </div>
         </div>
