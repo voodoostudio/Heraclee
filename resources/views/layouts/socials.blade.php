@@ -411,7 +411,7 @@
     sr.reveal('.reveal',{
         reset: false,
         duration: 1000,
-        viewFactor: 0.5,
+        viewFactor: 0.2,
         scale: 1,
         opacity: 0,
         useDelay: 'once',

@@ -1797,7 +1797,7 @@ header .navigation_container nav ul.nav li.nav-item .nav-link {
   text-transform: uppercase;
   padding: 8px 5px;
   font-family: modelica_medium;
-  font-size: 1.063rem;
+  font-size: 1rem;
   line-height: 1.063rem;
   cursor: pointer;
   transition: 0.2s ease-in-out;
