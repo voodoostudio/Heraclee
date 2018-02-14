@@ -666,6 +666,14 @@
         background: $main_dark_clr;
         ul.nav li.nav-item {
           display: table;
+          .nav-link {
+            font-size: 0.8rem;
+          }
+          .dropdown-menu {
+            a {
+              font-size: 0.8rem;
+            }
+          }
         }
       }
       .navigation_block {
@@ -1479,8 +1487,11 @@
             margin-bottom: 8px;
             line-height: 1.5rem;
           }
-          a {
-            font-size: 1rem;
+          a.btn {
+            padding: 0 20px;
+            line-height: 30px;
+            height: 30px;
+            font-size: 0.875rem
           }
         }
       }
@@ -2000,6 +2011,7 @@
     }
     div.menu-icon {
       right: 15px;
+      top: 20px;
     }
   }
   main {

@@ -2156,6 +2156,18 @@ section.page_title_section h1 {
   border: none;
 }
 
+section.page_title_section h1 span {
+  font-family: modelica_medium;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: table;
+  margin: 0 auto;
+}
+
 section.page_title_section.minimized {
   top: 68px;
   background-color: #272727 !important;
@@ -3744,7 +3756,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   bottom: 80px;
   width: 100%;
   text-align: center;
-  text-transform: uppercase;
   z-index: 2;
   color: #fdfdfd;
   font-family: modelica_regular;
@@ -3803,6 +3814,17 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   line-height: 1;
   margin-bottom: 25px;
   font-family: modelica_light;
+}
+
+#index section.index_main_carousel_section .info_block a.btn,
+#france section.index_main_carousel_section .info_block a.btn,
+#swiss section.index_main_carousel_section .info_block a.btn,
+#usa section.index_main_carousel_section .info_block a.btn,
+#mauritius section.index_main_carousel_section .info_block a.btn {
+  padding: 0 30px;
+  line-height: 40px;
+  height: 40px;
+  font-size: 1.125rem;
 }
 
 #index section.index_main_carousel_section .info_block .object_status,
@@ -8354,6 +8376,12 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container nav ul.nav li.nav-item {
     display: table;
   }
+  header .navigation_container nav ul.nav li.nav-item .nav-link {
+    font-size: 0.8rem;
+  }
+  header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
+    font-size: 0.8rem;
+  }
   header .navigation_container .navigation_block {
     position: relative;
     top: 50%;
@@ -9046,12 +9074,15 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-bottom: 8px;
     line-height: 1.5rem;
   }
-  #index section.index_main_carousel_section .slick-slider .info_block a,
-  #france section.index_main_carousel_section .slick-slider .info_block a,
-  #swiss section.index_main_carousel_section .slick-slider .info_block a,
-  #usa section.index_main_carousel_section .slick-slider .info_block a,
-  #mauritius section.index_main_carousel_section .slick-slider .info_block a {
-    font-size: 1rem;
+  #index section.index_main_carousel_section .slick-slider .info_block a.btn,
+  #france section.index_main_carousel_section .slick-slider .info_block a.btn,
+  #swiss section.index_main_carousel_section .slick-slider .info_block a.btn,
+  #usa section.index_main_carousel_section .slick-slider .info_block a.btn,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block a.btn {
+    padding: 0 20px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 0.875rem;
   }
   #index section.latest_news_section .latest_news_container .marquee_title,
   #france section.latest_news_section .latest_news_container .marquee_title,
@@ -9426,6 +9457,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header div.menu-icon {
     right: 15px;
+    top: 20px;
   }
   main {
     padding-top: 94px;

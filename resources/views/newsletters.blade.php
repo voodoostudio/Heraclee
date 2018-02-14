@@ -10,7 +10,7 @@
 @section('content')
     <section class="page_title_section hidden-md-up">
         <div class="container-fluid">
-            <h1>{{ trans('lang.newsletters') }}</h1>
+            <h1><span>{{ trans('lang.newsletters') }}</span></h1>
         </div>
     </section>
 

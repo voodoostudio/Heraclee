@@ -566,6 +566,17 @@ section.page_title_section {
     padding: 20px 0;
     text-align: center;
     border: none;
+    span {
+      font-family: modelica_medium;
+      background-image: url(/img/texture-bg.jpg);
+      background-position: 0 0;
+      -webkit-background-clip: text;
+      background-size: 100% auto;
+      background-repeat: repeat;
+      -webkit-text-fill-color: transparent;
+      display: table;
+      margin: 0 auto;
+    }
   }
   &.minimized {
     top: 68px;

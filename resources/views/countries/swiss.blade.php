@@ -13,7 +13,7 @@
     @endphp
     <section class="page_title_section hidden-md-up">
         <div class="container-fluid">
-            <h1>{!! trans('lang.swiss') !!}</h1>
+            <h1><span>{!! trans('lang.swiss') !!}</span></h1>
         </div>
     </section>
     @foreach($gallery_settings as $settings)
