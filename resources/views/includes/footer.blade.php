@@ -118,9 +118,9 @@
             </div>
         </div>
     </section>
-    <section class="bottom_footer_section">
+    <section class="bottom_footer_section reveal">
         <div class="container-fluid">
-            <div class="row reveal">
+            <div class="row ">
                 <div class="col-sm-12 col-md-6 push-md-6 col-lg-4 push-lg-8">
                     <h4>{!! trans('lang.footer_title') !!}</h4>
                     <div class="contact_block">
@@ -144,7 +144,7 @@
 
                 </div>
             </div>
-            <div class="row reveal">
+            <div class="row">
                 <div class="col-12">
                     <p class="copyright">© {{ date("Y") }} - {{ trans('lang.copyright_text') }}</p>
                 </div>

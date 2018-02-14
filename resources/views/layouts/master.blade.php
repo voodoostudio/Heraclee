@@ -418,7 +418,7 @@
             });
 
             sr.reveal('.reveal',{
-                reset: true,
+                reset: false,
                 duration: 1000,
                 viewFactor: 0.5,
                 scale: 1,
