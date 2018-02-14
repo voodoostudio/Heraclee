@@ -7990,6 +7990,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   header .navigation_container nav ul.nav li.nav-item .nav-link {
     font-size: 0.75rem;
     line-height: 0.85rem;
+    letter-spacing: 0.1rem;
   }
   header .navigation_container nav ul.nav li.nav-item .dropdown-menu a {
     font-size: 0.75rem;
@@ -8058,7 +8059,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .navigation_container nav ul.nav li.nav-item .nav-link {
     font-size: 0.65rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
   }
   header.minimized .navigation_container .navigation_block {
     margin-left: 70px;
