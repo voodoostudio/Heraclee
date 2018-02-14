@@ -236,6 +236,7 @@ header {
           .nav-link {
             text-transform: uppercase;
             padding: 8px 5px;
+            font-family: modelica_medium;
             font-size: 1.063rem;
             line-height: 1.063rem;
             cursor: pointer;
@@ -243,7 +244,6 @@ header {
             border-bottom: 1px solid transparent;
             &.active {
               color: $main_brown_clr;
-              font-family: modelica_light;
               border-color: $main_brown_clr;
             }
             &:hover {
@@ -267,6 +267,7 @@ header {
             border-radius: 0;
             border-color: $main_gray_clr;
             .dropdown-item {
+              font-family: modelica_medium;
               color: $main_light_clr;
               padding: 3px 1rem;
               &.active,

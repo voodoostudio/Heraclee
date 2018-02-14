@@ -138,7 +138,7 @@
                                     <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
                                     <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
                                     <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
-                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}" class="btn reveal_info_block">{{ trans('lang.see_property') }}</a>
+                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}">{{ trans('lang.see_property') }}</a>
                                 </div>
                                 {{--<img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}">--}}
                             </li>
@@ -209,7 +209,7 @@
 
     <section class="results_section">
         <div class="results_container map_view">
-            <div class="homepage_map_container">
+            <div class="homepage_map_container reveal">
                 <div id="results_map"></div>
             </div>
         </div>

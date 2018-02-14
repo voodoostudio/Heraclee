@@ -1796,6 +1796,7 @@ header .navigation_container nav ul.nav li.nav-item:last-of-type {
 header .navigation_container nav ul.nav li.nav-item .nav-link {
   text-transform: uppercase;
   padding: 8px 5px;
+  font-family: modelica_medium;
   font-size: 1.063rem;
   line-height: 1.063rem;
   cursor: pointer;
@@ -1805,7 +1806,6 @@ header .navigation_container nav ul.nav li.nav-item .nav-link {
 
 header .navigation_container nav ul.nav li.nav-item .nav-link.active {
   color: #ccac83;
-  font-family: modelica_light;
   border-color: #ccac83;
 }
 
@@ -1833,6 +1833,7 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu {
 }
 
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item {
+  font-family: modelica_medium;
   color: #f7f7f7;
   padding: 3px 1rem;
 }
@@ -3730,25 +3731,44 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   font-family: modelica_light;
 }
 
+#index section.index_main_carousel_section .info_block a,
+#france section.index_main_carousel_section .info_block a,
+#swiss section.index_main_carousel_section .info_block a,
+#usa section.index_main_carousel_section .info_block a,
+#mauritius section.index_main_carousel_section .info_block a {
+  font-size: 1.3rem;
+  color: #ccac83;
+  text-decoration: underline;
+}
+
+#index section.index_main_carousel_section .info_block a:hover,
+#france section.index_main_carousel_section .info_block a:hover,
+#swiss section.index_main_carousel_section .info_block a:hover,
+#usa section.index_main_carousel_section .info_block a:hover,
+#mauritius section.index_main_carousel_section .info_block a:hover {
+  color: white;
+}
+
 #index section.index_main_carousel_section .info_block .object_status,
 #index section.index_main_carousel_section .info_block h2,
-#index section.index_main_carousel_section .info_block h3, #index section.index_main_carousel_section .info_block a.btn,
+#index section.index_main_carousel_section .info_block h3,
+#index section.index_main_carousel_section .info_block a,
 #france section.index_main_carousel_section .info_block .object_status,
 #france section.index_main_carousel_section .info_block h2,
 #france section.index_main_carousel_section .info_block h3,
-#france section.index_main_carousel_section .info_block a.btn,
+#france section.index_main_carousel_section .info_block a,
 #swiss section.index_main_carousel_section .info_block .object_status,
 #swiss section.index_main_carousel_section .info_block h2,
 #swiss section.index_main_carousel_section .info_block h3,
-#swiss section.index_main_carousel_section .info_block a.btn,
+#swiss section.index_main_carousel_section .info_block a,
 #usa section.index_main_carousel_section .info_block .object_status,
 #usa section.index_main_carousel_section .info_block h2,
 #usa section.index_main_carousel_section .info_block h3,
-#usa section.index_main_carousel_section .info_block a.btn,
+#usa section.index_main_carousel_section .info_block a,
 #mauritius section.index_main_carousel_section .info_block .object_status,
 #mauritius section.index_main_carousel_section .info_block h2,
 #mauritius section.index_main_carousel_section .info_block h3,
-#mauritius section.index_main_carousel_section .info_block a.btn {
+#mauritius section.index_main_carousel_section .info_block a {
   opacity: 0;
   position: relative;
   bottom: -20px;
@@ -3756,23 +3776,24 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 #index section.index_main_carousel_section .info_block.show .object_status,
 #index section.index_main_carousel_section .info_block.show h2,
-#index section.index_main_carousel_section .info_block.show h3, #index section.index_main_carousel_section .info_block.show a.btn,
+#index section.index_main_carousel_section .info_block.show h3,
+#index section.index_main_carousel_section .info_block.show a,
 #france section.index_main_carousel_section .info_block.show .object_status,
 #france section.index_main_carousel_section .info_block.show h2,
 #france section.index_main_carousel_section .info_block.show h3,
-#france section.index_main_carousel_section .info_block.show a.btn,
+#france section.index_main_carousel_section .info_block.show a,
 #swiss section.index_main_carousel_section .info_block.show .object_status,
 #swiss section.index_main_carousel_section .info_block.show h2,
 #swiss section.index_main_carousel_section .info_block.show h3,
-#swiss section.index_main_carousel_section .info_block.show a.btn,
+#swiss section.index_main_carousel_section .info_block.show a,
 #usa section.index_main_carousel_section .info_block.show .object_status,
 #usa section.index_main_carousel_section .info_block.show h2,
 #usa section.index_main_carousel_section .info_block.show h3,
-#usa section.index_main_carousel_section .info_block.show a.btn,
+#usa section.index_main_carousel_section .info_block.show a,
 #mauritius section.index_main_carousel_section .info_block.show .object_status,
 #mauritius section.index_main_carousel_section .info_block.show h2,
 #mauritius section.index_main_carousel_section .info_block.show h3,
-#mauritius section.index_main_carousel_section .info_block.show a.btn {
+#mauritius section.index_main_carousel_section .info_block.show a {
   opacity: 1;
   bottom: 0;
   transition: 300ms;
@@ -3796,11 +3817,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   transition-property: opacity, bottom;
 }
 
-#index section.index_main_carousel_section .info_block.show a.btn,
-#france section.index_main_carousel_section .info_block.show a.btn,
-#swiss section.index_main_carousel_section .info_block.show a.btn,
-#usa section.index_main_carousel_section .info_block.show a.btn,
-#mauritius section.index_main_carousel_section .info_block.show a.btn {
+#index section.index_main_carousel_section .info_block.show a,
+#france section.index_main_carousel_section .info_block.show a,
+#swiss section.index_main_carousel_section .info_block.show a,
+#usa section.index_main_carousel_section .info_block.show a,
+#mauritius section.index_main_carousel_section .info_block.show a {
   transition-delay: 450ms;
   transition-property: opacity, bottom;
 }
@@ -7973,6 +7994,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   header .navigation_container nav ul.nav li.nav-item {
     padding-right: 0;
+  }
+  header .navigation_container nav ul.nav li.nav-item .nav-link {
+    font-size: 0.75rem;
   }
   header.minimized .navigation_container .navigation_block {
     margin-left: 70px;

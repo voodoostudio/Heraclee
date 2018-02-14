@@ -116,9 +116,19 @@
         margin-bottom: 25px;
         font-family: modelica_light;
       }
+
+      a {
+        font-size: 1.3rem;
+        color: $main_brown_clr;
+        text-decoration: underline;
+        &:hover {
+          color: white;
+        }
+      }
       .object_status,
       h2,
-      h3, a.btn {
+      h3,
+      a {
         opacity: 0;
         position: relative;
         bottom: -20px;
@@ -126,7 +136,8 @@
       &.show {
         .object_status,
         h2,
-        h3, a.btn {
+        h3,
+        a {
          opacity: 1;
           bottom: 0;
           @include my_transition(300ms);
@@ -139,7 +150,7 @@
           @include my_transition_delay(300ms);
           transition-property: opacity, bottom;
         }
-        a.btn {
+        a {
           @include my_transition_delay(450ms);
           transition-property: opacity, bottom;
         }
