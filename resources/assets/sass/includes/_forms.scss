@@ -16,19 +16,28 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: $main_dark_clr;
-  color: $main_light_clr;
+  //background: $main_dark_clr;
+
+
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+
+
+  color: $main_dark_clr;
   position: relative;
   overflow: hidden;
   border: 1px solid $main_gray_clr;
   z-index: 1;
   //text-transform: uppercase;
   cursor: pointer;
-  @include my_transition(0.3s);
+  //@include my_transition(0.3s);
   @include my_box_shadow(0px 0px 20px -5px black);
   &:hover {
-    border-color: $main_brown_clr;
-    color: $main_dark_clr;
+    //border-color: $main_brown_clr;
+    //color: $main_dark_clr;
+    @include my_box_shadow(0px 0px 15px 0px rgba(black,1))
   }
   &.disabled,
   &:disabled {
@@ -43,23 +52,17 @@ button {
   }
 }
 
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  //background-color: $main_brown_clr;
-
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  @include my_transition(0.3s);
-}
+//.btn:not(.dropdown-toggle):before {
+//  content: '';
+//  position: absolute;
+//  //background-color: $main_brown_clr;
+//  height: 100%;
+//  width: 100%;
+//  left: -100%;
+//  top: -100%;
+//  z-index: -1;
+//  @include my_transition(0.3s);
+//}
 
 .btn:not(.dropdown-toggle):hover:before {
   top: 0;

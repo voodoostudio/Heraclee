@@ -21,7 +21,7 @@ $lang = LaravelLocalization::getCurrentLocale();
             <h1>{{ trans('lang.contact') }}</h1>
         </div>
     </section>
-    <section class="contact_map_section reveal">
+    <section class="contact_map_section">
         <div id="contact_map"></div>
         <div class="address_block">
             <div class="outer_block_container">
@@ -40,61 +40,63 @@ $lang = LaravelLocalization::getCurrentLocale();
             </div>
         </div>
     </section>
-    <section class="contact_form_section reveal">
+    <section class="contact_form_section ">
         <div class="container-fluid">
             <div class="outer_block_container">
                 <div class="inner_block_container">
-                    <h2>{{ trans('lang.contact_us') }}</h2>
-                    <p>{{ trans('lang.contact_form_description') }}</p>
-                    <div id="message-box"></div>
-                    <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST" novalidate>
-                        {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
-                                        <div class="input_container">
-                                            <input type="text" id="name" name="name" placeholder="{{ trans('lang.name') }}">
+                    <div class="reveal">
+                        <h2>{{ trans('lang.contact_us') }}</h2>
+                        <p>{{ trans('lang.contact_form_description') }}</p>
+                        <div id="message-box"></div>
+                        <form id = "contactForm" action="{{ route('contact.post') }}" class="contact_form" method="POST" novalidate>
+                            {{ csrf_field() }}
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="row">
+                                        <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
+                                            <label class="form_el_label"><span>{{ trans('lang.name') }} *</span></label>
+                                            <div class="input_container">
+                                                <input type="text" id="name" name="name" placeholder="{{ trans('lang.name') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
+                                            <label class="form_el_label"><span>{{ trans('lang.telephone') }} *</span></label>
+                                            <div class="input_container">
+                                                <input type="text" id="phone" name="phone" pattern="[+]+[0-9]" placeholder="{{ trans('lang.telephone') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 margin_bottom_10">
+                                            <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
+                                            <div class="input_container">
+                                                <input type="text" id="email" name="email" placeholder="{{ trans('lang.email') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="my_checkbox">
+                                                <label>
+                                                    <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
+                                                    <span class="fake_checkbox"></span>
+                                                    <span class="my_checkbox_text">{{ trans('lang.sign_up_to_newsletter') }}</span>
+                                                </label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-6 col-md-12 margin_bottom_20">
-                                        <label class="form_el_label"><span>{{ trans('lang.telephone') }} *</span></label>
-                                        <div class="input_container">
-                                            <input type="text" id="phone" name="phone" pattern="[+]+[0-9]" placeholder="{{ trans('lang.telephone') }}">
+                                </div>
+                                <div class="col-md-8">
+                                    <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
+                                    <div class="input_container">
+                                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}" data-theme="dark" ></div>
                                         </div>
                                     </div>
-                                    <div class="col-md-12 margin_bottom_10">
-                                        <label class="form_el_label"><span>{{ trans('lang.email') }} *</span></label>
-                                        <div class="input_container">
-                                            <input type="text" id="email" name="email" placeholder="{{ trans('lang.email') }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="my_checkbox">
-                                            <label>
-                                                <input required="" type="checkbox" name="subscribe" id = "subscribe" value="true">
-                                                <span class="fake_checkbox"></span>
-                                                <span class="my_checkbox_text">{{ trans('lang.sign_up_to_newsletter') }}</span>
-                                            </label>
-                                        </div>
-                                    </div>
+                                    <button class="btn" type="submit">{{ trans('lang.send') }}</button>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <label class="form_el_label"><span>{{ trans('lang.message') }} *</span></label>
-                                <div class="input_container">
-                                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}" data-theme="dark" ></div>
-                                    </div>
-                                </div>
-                                <button class="btn" type="submit">{{ trans('lang.send') }}</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

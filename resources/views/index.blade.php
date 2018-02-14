@@ -131,7 +131,7 @@
                                     <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
                                     <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
                                     <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
-                                    <a href="{{ (!empty($item->link)) ? $item->link : '' }}">{{ trans('lang.see_property') }}</a>
+                                    <a class="btn" href="{{ (!empty($item->link)) ? $item->link : '' }}">{{ trans('lang.see_property') }}</a>
                                 </div>
                                 {{--<img src="{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}" alt="{{ $item->title }}">--}}
                             </li>

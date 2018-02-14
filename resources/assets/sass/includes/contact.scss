@@ -20,13 +20,33 @@ section.contact_map_section {
         text-transform: uppercase;
         h3 {
           font-size: 1.875rem;
+          letter-spacing: .1rem;
+          font-family: modelica_medium;
           margin-bottom: 30px;
+          background-image: url('/img/texture-bg.jpg');
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+          color: #cdae6d;
+          display: block;
         }
         p {
           font-size: 1.25rem;
           margin-bottom: 25px;
           span {
-            color: $main_brown_clr;
+            //color: $main_brown_clr;
+            letter-spacing: .1rem;
+            font-family: modelica_medium;
+            background-image: url('/img/texture-bg.jpg');
+            background-position: 0 0;
+            -webkit-background-clip: text;
+            background-size: 100% auto;
+            background-repeat: repeat;
+            -webkit-text-fill-color: transparent;
+            color: #cdae6d;
+            display: block;
           }
         }
         ul {
@@ -53,6 +73,18 @@ section.contact_form_section {
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 25px;
+
+
+        letter-spacing: .1rem;
+        font-family: modelica_medium;
+        background-image: url('/img/texture-bg.jpg');
+        background-position: 0 0;
+        -webkit-background-clip: text;
+        background-size: 100% auto;
+        background-repeat: repeat;
+        -webkit-text-fill-color: transparent;
+        color: #cdae6d;
+        display: block;
       }
       p {
         margin-bottom: 25px;

@@ -118,6 +118,16 @@
 }
 
 /* END aileron_bold*/
+/* BEGIN montserrat_medium*/
+@font-face {
+  font-family: 'montserrat_medium';
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot");
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/medium/montserrat_medium.woff") format("woff"), url("/fonts/montserrat/medium/montserrat_medium.ttf") format("truetype"), url("/fonts/montserrat/medium/montserrat_medium.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -136,20 +146,21 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: #272727;
-  color: #f7f7f7;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  color: #272727;
   position: relative;
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
 }
 
 .btn:not(.dropdown-toggle):hover {
-  border-color: #ccac83;
-  color: #272727;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -163,21 +174,6 @@ button {
 
 .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
   display: none;
-}
-
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  transition: 0.3s;
 }
 
 .btn:not(.dropdown-toggle):hover:before {
@@ -889,6 +885,16 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 }
 
 /* END aileron_bold*/
+/* BEGIN montserrat_medium*/
+@font-face {
+  font-family: 'montserrat_medium';
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot");
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/medium/montserrat_medium.woff") format("woff"), url("/fonts/montserrat/medium/montserrat_medium.ttf") format("truetype"), url("/fonts/montserrat/medium/montserrat_medium.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -907,20 +913,21 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: #272727;
-  color: #f7f7f7;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  color: #272727;
   position: relative;
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
 }
 
 .btn:not(.dropdown-toggle):hover {
-  border-color: #ccac83;
-  color: #272727;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -934,21 +941,6 @@ button {
 
 .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
   display: none;
-}
-
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  transition: 0.3s;
 }
 
 .btn:not(.dropdown-toggle):hover:before {
@@ -1687,7 +1679,7 @@ header .navigation_container .navigation_block .header_tel {
   line-height: 1;
   font-size: 0.8rem;
   letter-spacing: 0.15rem;
-  font-family: modelica_thin;
+  font-family: montserrat_medium;
   color: #b8b8b8;
 }
 
@@ -1741,11 +1733,17 @@ header .navigation_container .navigation_block .lang_currency_container li ul.la
 
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a {
   color: #b8b8b8;
-  font-family: modelica_thin;
+  font-family: montserrat_medium;
 }
 
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a.active {
-  font-family: modelica_medium;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
 }
 
 header .navigation_container .navigation_block .lang_currency_container li .multiselect-native-select .btn-group .multiselect.dropdown-toggle {
@@ -1815,7 +1813,7 @@ header .navigation_container nav ul.nav li.nav-item:last-of-type {
 header .navigation_container nav ul.nav li.nav-item .nav-link {
   text-transform: uppercase;
   padding: 8px 5px;
-  font-family: modelica_thin;
+  font-family: montserrat_medium;
   font-size: 0.8rem;
   letter-spacing: 0.15rem;
   line-height: 1.063rem;
@@ -1825,14 +1823,15 @@ header .navigation_container nav ul.nav li.nav-item .nav-link {
   border-bottom: 1px solid transparent;
 }
 
-header .navigation_container nav ul.nav li.nav-item .nav-link.active {
-  color: #ccac83;
+header .navigation_container nav ul.nav li.nav-item .nav-link.active, header .navigation_container nav ul.nav li.nav-item .nav-link:hover {
   border-color: #ccac83;
-}
-
-header .navigation_container nav ul.nav li.nav-item .nav-link:hover {
-  color: #ccac83;
-  border-color: #ccac83;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  display: block;
 }
 
 header .navigation_container nav ul.nav li.nav-item button.btn {
@@ -1854,7 +1853,8 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu {
 }
 
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item {
-  font-family: modelica_thin;
+  font-family: montserrat_medium;
+  letter-spacing: 0.05rem;
   color: #b8b8b8;
   padding: 3px 1rem;
 }
@@ -2753,7 +2753,17 @@ section.contact_map_section .address_block .outer_block_container .inner_block_c
 
 section.contact_map_section .address_block .outer_block_container .inner_block_container h3 {
   font-size: 1.875rem;
+  letter-spacing: .1rem;
+  font-family: modelica_medium;
   margin-bottom: 30px;
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
+  display: block;
 }
 
 section.contact_map_section .address_block .outer_block_container .inner_block_container p {
@@ -2762,7 +2772,16 @@ section.contact_map_section .address_block .outer_block_container .inner_block_c
 }
 
 section.contact_map_section .address_block .outer_block_container .inner_block_container p span {
-  color: #ccac83;
+  letter-spacing: .1rem;
+  font-family: modelica_medium;
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
+  display: block;
 }
 
 section.contact_map_section .address_block .outer_block_container .inner_block_container ul li {
@@ -2787,6 +2806,16 @@ section.contact_form_section .outer_block_container .inner_block_container h2 {
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 25px;
+  letter-spacing: .1rem;
+  font-family: modelica_medium;
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
+  display: block;
 }
 
 section.contact_form_section .outer_block_container .inner_block_container p {
@@ -2926,6 +2955,16 @@ section.contact_form_section .outer_block_container .inner_block_container form.
 }
 
 /* END aileron_bold*/
+/* BEGIN montserrat_medium*/
+@font-face {
+  font-family: 'montserrat_medium';
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot");
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/medium/montserrat_medium.woff") format("woff"), url("/fonts/montserrat/medium/montserrat_medium.ttf") format("truetype"), url("/fonts/montserrat/medium/montserrat_medium.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -2944,20 +2983,21 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: #272727;
-  color: #f7f7f7;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  color: #272727;
   position: relative;
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
 }
 
 .btn:not(.dropdown-toggle):hover {
-  border-color: #ccac83;
-  color: #272727;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -2971,21 +3011,6 @@ button {
 
 .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
   display: none;
-}
-
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  transition: 0.3s;
 }
 
 .btn:not(.dropdown-toggle):hover:before {
@@ -3631,6 +3656,20 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   overflow: hidden;
 }
 
+#index section.index_main_carousel_section:before,
+#france section.index_main_carousel_section:before,
+#swiss section.index_main_carousel_section:before,
+#usa section.index_main_carousel_section:before,
+#mauritius section.index_main_carousel_section:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+  background: linear-gradient(transparent, #383838);
+}
+
 #index section.index_main_carousel_section .slick-slider .slick-arrow,
 #france section.index_main_carousel_section .slick-slider .slick-arrow,
 #swiss section.index_main_carousel_section .slick-slider .slick-arrow,
@@ -3764,24 +3803,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   line-height: 1;
   margin-bottom: 25px;
   font-family: modelica_light;
-}
-
-#index section.index_main_carousel_section .info_block a,
-#france section.index_main_carousel_section .info_block a,
-#swiss section.index_main_carousel_section .info_block a,
-#usa section.index_main_carousel_section .info_block a,
-#mauritius section.index_main_carousel_section .info_block a {
-  font-size: 1.3rem;
-  color: #ccac83;
-  text-decoration: underline;
-}
-
-#index section.index_main_carousel_section .info_block a:hover,
-#france section.index_main_carousel_section .info_block a:hover,
-#swiss section.index_main_carousel_section .info_block a:hover,
-#usa section.index_main_carousel_section .info_block a:hover,
-#mauritius section.index_main_carousel_section .info_block a:hover {
-  color: white;
 }
 
 #index section.index_main_carousel_section .info_block .object_status,
@@ -4462,6 +4483,16 @@ footer {
 }
 
 /* END aileron_bold*/
+/* BEGIN montserrat_medium*/
+@font-face {
+  font-family: 'montserrat_medium';
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot");
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/medium/montserrat_medium.woff") format("woff"), url("/fonts/montserrat/medium/montserrat_medium.ttf") format("truetype"), url("/fonts/montserrat/medium/montserrat_medium.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -4480,20 +4511,21 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: #272727;
-  color: #f7f7f7;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  color: #272727;
   position: relative;
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
 }
 
 .btn:not(.dropdown-toggle):hover {
-  border-color: #ccac83;
-  color: #272727;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -4507,21 +4539,6 @@ button {
 
 .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
   display: none;
-}
-
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  transition: 0.3s;
 }
 
 .btn:not(.dropdown-toggle):hover:before {
@@ -6411,6 +6428,16 @@ section.results_section .slick-track {
 }
 
 /* END aileron_bold*/
+/* BEGIN montserrat_medium*/
+@font-face {
+  font-family: 'montserrat_medium';
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot");
+  src: url("/fonts/montserrat/medium/montserrat_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/montserrat/medium/montserrat_medium.woff") format("woff"), url("/fonts/montserrat/medium/montserrat_medium.ttf") format("truetype"), url("/fonts/montserrat/medium/montserrat_medium.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* END aileron_bold*/
 /*Buttons style START*/
 button {
   cursor: pointer;
@@ -6429,20 +6456,21 @@ button {
   letter-spacing: 1px;
   line-height: 50px;
   border-radius: 0;
-  background: #272727;
-  color: #f7f7f7;
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  color: #272727;
   position: relative;
   overflow: hidden;
   border: 1px solid #625e57;
   z-index: 1;
   cursor: pointer;
-  transition: 0.3s;
   box-shadow: 0px 0px 20px -5px black;
 }
 
 .btn:not(.dropdown-toggle):hover {
-  border-color: #ccac83;
-  color: #272727;
+  box-shadow: 0px 0px 15px 0px black;
 }
 
 .btn:not(.dropdown-toggle).disabled, .btn:not(.dropdown-toggle):disabled {
@@ -6456,21 +6484,6 @@ button {
 
 .btn:not(.dropdown-toggle).disabled:before, .btn:not(.dropdown-toggle):disabled:before {
   display: none;
-}
-
-.btn:not(.dropdown-toggle):before {
-  content: '';
-  position: absolute;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  height: 100%;
-  width: 100%;
-  left: -100%;
-  top: -100%;
-  z-index: -1;
-  transition: 0.3s;
 }
 
 .btn:not(.dropdown-toggle):hover:before {
@@ -8096,14 +8109,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #swiss section.index_main_carousel_section .slick-slider .slick-dots,
   #usa section.index_main_carousel_section .slick-slider .slick-dots,
   #mauritius section.index_main_carousel_section .slick-slider .slick-dots {
-    bottom: 15px;
+    bottom: 30px;
   }
   #index section.index_main_carousel_section .info_block,
   #france section.index_main_carousel_section .info_block,
   #swiss section.index_main_carousel_section .info_block,
   #usa section.index_main_carousel_section .info_block,
   #mauritius section.index_main_carousel_section .info_block {
-    bottom: 50px;
+    bottom: 60px;
   }
   #index section.index_main_carousel_section .info_block .object_status,
   #france section.index_main_carousel_section .info_block .object_status,
@@ -9005,20 +9018,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.index_main_carousel_section .slick-slider .slick-arrow.slick-next,
   #mauritius section.index_main_carousel_section .slick-slider .slick-arrow.slick-next {
     right: 15px;
-  }
-  #index section.index_main_carousel_section .slick-slider .slick-dots,
-  #france section.index_main_carousel_section .slick-slider .slick-dots,
-  #swiss section.index_main_carousel_section .slick-slider .slick-dots,
-  #usa section.index_main_carousel_section .slick-slider .slick-dots,
-  #mauritius section.index_main_carousel_section .slick-slider .slick-dots {
-    bottom: 5px;
-  }
-  #index section.index_main_carousel_section .slick-slider .info_block,
-  #france section.index_main_carousel_section .slick-slider .info_block,
-  #swiss section.index_main_carousel_section .slick-slider .info_block,
-  #usa section.index_main_carousel_section .slick-slider .info_block,
-  #mauritius section.index_main_carousel_section .slick-slider .info_block {
-    bottom: 30px;
   }
   #index section.index_main_carousel_section .slick-slider .info_block .object_status,
   #france section.index_main_carousel_section .slick-slider .info_block .object_status,

@@ -132,7 +132,7 @@ header {
         line-height: 1;
         font-size: 0.8rem;
         letter-spacing: 0.15rem;
-        font-family: modelica_thin;
+        font-family: montserrat_medium;
         color: #b8b8b8;
       }
       h1 {
@@ -173,10 +173,17 @@ header {
               }
               a {
                 color: #b8b8b8;
-                font-family: modelica_thin;
+                font-family: montserrat_medium;
                 &.active {
                   //color: $main_brown_clr;
-                  font-family: modelica_medium;
+
+                  background-image: url(/img/texture-bg.jpg);
+                  background-position: 0 0;
+                  -webkit-background-clip: text;
+                  background-size: 100% auto;
+                  background-repeat: repeat;
+                  -webkit-text-fill-color: transparent;
+                  display: block;
                 }
               }
             }
@@ -241,7 +248,7 @@ header {
           .nav-link {
             text-transform: uppercase;
             padding: 8px 5px;
-            font-family: modelica_thin;
+            font-family: montserrat_medium;
             font-size: 0.8rem;
             letter-spacing: 0.15rem;
             line-height: 1.063rem;
@@ -249,13 +256,18 @@ header {
             cursor: pointer;
             @include my_transition(.2s ease-in-out);
             border-bottom: 1px solid transparent;
-            &.active {
-              color: $main_brown_clr;
-              border-color: $main_brown_clr;
-            }
+            &.active,
             &:hover {
-              color: $main_brown_clr;
+              //color: $main_brown_clr;
               border-color: $main_brown_clr;
+
+              background-image: url(/img/texture-bg.jpg);
+              background-position: 0 0;
+              -webkit-background-clip: text;
+              background-size: 100% auto;
+              background-repeat: repeat;
+              -webkit-text-fill-color: transparent;
+              display: block;
             }
           }
 
@@ -274,7 +286,8 @@ header {
             border-radius: 0;
             border-color: $main_gray_clr;
             .dropdown-item {
-              font-family: modelica_thin;
+              font-family: montserrat_medium;
+              letter-spacing: 0.05rem;
               color: #b8b8b8;
               padding: 3px 1rem;
               &.active,
