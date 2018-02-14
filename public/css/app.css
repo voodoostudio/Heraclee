@@ -8988,6 +8988,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-bottom: 8px;
     line-height: 1.5rem;
   }
+  #index section.index_main_carousel_section .slick-slider .info_block a,
+  #france section.index_main_carousel_section .slick-slider .info_block a,
+  #swiss section.index_main_carousel_section .slick-slider .info_block a,
+  #usa section.index_main_carousel_section .slick-slider .info_block a,
+  #mauritius section.index_main_carousel_section .slick-slider .info_block a {
+    font-size: 1rem;
+  }
   #index section.latest_news_section .latest_news_container .marquee_title,
   #france section.latest_news_section .latest_news_container .marquee_title,
   #swiss section.latest_news_section .latest_news_container .marquee_title,
