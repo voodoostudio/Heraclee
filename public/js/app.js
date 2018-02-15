@@ -800,8 +800,17 @@ function minimizeSearchBlock() {
 }
 
 function flipbookHeightSetup() {
-    var flipbook_height = $(window).width() / 1.24031007751938;
+    var flipbook_height = $(window).width() / 1.403508771929825;
     $('section.flipbook_section .iframe-m iframe').css('height', flipbook_height);
+
+    if ($(window).width() > 768 && $(window).width() <= 992) {
+        $('section.flipbook_section .iframe-m iframe').css('height', '550px');
+    } else if ($(window).width() > 992 && $(window).width() <= 1200) {
+        $('section.flipbook_section .iframe-m iframe').css('height', '650px');
+    } else if ($(window).width() > 1200) {
+        $('section.flipbook_section .iframe-m iframe').css('height', '730px');
+    }
+
 }
 $(document).ready(function() {
 
@@ -925,12 +934,6 @@ $(document).ready(function() {
                 $('section.search_section form').addClass('minimized')
             }
         }
-
-
-        if ($(window).width() < 768) {
-            flipbookHeightSetup();
-        }
-
     });
     $(window).on("orientationchange", function () {
         setBodyPaddingBottom();
@@ -1064,8 +1067,6 @@ $(document).ready(function() {
             $('body').css('overflow','initial');
             $('body').css('position','relative');
         });
-
-        flipbookHeightSetup();
     }
 
     disableSearchFields();

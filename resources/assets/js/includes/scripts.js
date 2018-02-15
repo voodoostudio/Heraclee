@@ -120,12 +120,6 @@ $(document).ready(function() {
                 $('section.search_section form').addClass('minimized')
             }
         }
-
-
-        if ($(window).width() < 768) {
-            flipbookHeightSetup();
-        }
-
     });
     $(window).on("orientationchange", function () {
         setBodyPaddingBottom();
@@ -259,8 +253,6 @@ $(document).ready(function() {
             $('body').css('overflow','initial');
             $('body').css('position','relative');
         });
-
-        flipbookHeightSetup();
     }
 
     disableSearchFields();

@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
     activateResetFiltser();
+    flipbookHeightSetup();
+
+    $(window).resize(function () {
+        flipbookHeightSetup();
+    });
 
     $('.results_carousel').slick({
         infinite: true,

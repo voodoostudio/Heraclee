@@ -8585,6 +8585,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.flipbook_section .container-fluid {
     padding: 0;
   }
+  section.flipbook_section .container-fluid .iframe-m iframe {
+    padding: 0;
+  }
   section.guide_section {
     padding: 20px 0;
   }
@@ -8957,7 +8960,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding-top: 107px;
   }
   #index main {
-    padding-top: 62px;
+    padding-top: 72px;
   }
   #details main,
   #locationsDetails main,

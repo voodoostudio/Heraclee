@@ -739,8 +739,21 @@ transform:rotate(360deg);
 
 
 .fbTopBar,
-.fbToolBar {
+.fbToolBar,
+.phoneTopBar,
+.phoneBottomBar{
 	display: none !important;
-	height: 0;
-	opacity: 0;
+	height: 0 !important;
+	opacity: 0 !important;
+}
+
+#menu #background {
+	background: transparent !important;
+	height: 0 !important;
+}
+
+.miniTitle {
+	display: none !important;
+	height: 0 !important;
+	opacity: 0 !important;
 }

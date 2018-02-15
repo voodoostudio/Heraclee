@@ -960,6 +960,9 @@
   section.flipbook_section {
     .container-fluid {
       padding: 0;
+      .iframe-m iframe {
+        padding: 0;
+      }
     }
   }
 
@@ -1381,7 +1384,7 @@
 
   #index {
     main {
-      padding-top: 62px;
+      padding-top: 72px;
     }
   }
   #details,

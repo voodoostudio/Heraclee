@@ -152,7 +152,7 @@
                     @endphp
                     @foreach($image as $picture)
                         @if($image_counter == 1)
-                            <section class="top_offer_section" style="background-image: url('{{$picture}}');">
+                            <section class="top_offer_section" style="display: none; background-image: url('{{$picture}}');">
                                 @endif
                                 @php
                                     $image_counter++;
