@@ -4264,6 +4264,15 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-bottom: 0;
 }
 
+section.flipbook_section .finger_icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 10;
+  width: 23px;
+  display: none;
+}
+
 section.flipbook_section a img {
   width: 100%;
 }

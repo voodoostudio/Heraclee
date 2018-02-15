@@ -356,6 +356,14 @@
 }
 
 section.flipbook_section {
+  .finger_icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 10;
+    width: 23px;
+    display: none;
+  }
   a {
     img {
       width: 100%;

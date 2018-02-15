@@ -958,6 +958,9 @@
   }
 
   section.flipbook_section {
+    .finger_icon {
+      //display: block;
+    }
     .container-fluid {
       padding: 0;
       .iframe-m iframe {

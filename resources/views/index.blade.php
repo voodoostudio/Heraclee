@@ -175,7 +175,7 @@
 
 
     <section class="flipbook_section" style="position: relative">
-        {{--<img src="/img/finger_scroll.png" style="position: absolute; left: 10px; top: 10px; width:30px; z-index: 10;" alt="">--}}
+        <img class="finger_icon" src="/img/finger_scroll.svg" style="position: absolute; left: 10px; top: 10px; width:30px; z-index: 10;" alt="">
         <div class="container-fluid">
             <div class="iframe-m">
                 <p>
