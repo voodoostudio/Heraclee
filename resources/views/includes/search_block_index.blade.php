@@ -18,7 +18,7 @@
                     <div class="reset_filters_btn">
                         <i class="fa fa-refresh" aria-hidden="true"></i>
                     </div>
-                    <div class="reveal">
+                    <div class="">
                         <div class="row">
                             <div class="col-12 col-lg-4">
                                 <ul class="nav nav-tabs margin_bottom_10">
