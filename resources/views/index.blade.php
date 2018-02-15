@@ -116,7 +116,7 @@
 
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'homepage' && $settings['show'] == 1)
-            <section class="index_main_carousel_section">
+            <section class="index_main_carousel_section" style="display: none">
                     <ul class="index_main_carousel">
                         @foreach($gallery_slider as $image)
                             @if($image['page'] == 'homepage')
@@ -172,6 +172,18 @@
                     @endforeach
                 @endif
             @endforeach
+
+
+    <section class="flipbook_section">
+        <div class="container-fluid">
+            <div class="iframe-m">
+                <p>
+                    <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </p>
+            </div>
+
+        </div>
+    </section>
 
     @include('includes.latest_news')
 

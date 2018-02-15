@@ -198,7 +198,7 @@
 
   section.flipbook_section {
     .iframe-m iframe {
-      height: 450px;
+      height: 650px;
     }
   }
 }
@@ -317,7 +317,7 @@
 
   section.flipbook_section {
     .iframe-m iframe {
-      height: 400px;
+      height: 550px;
     }
   }
   #index {
@@ -956,9 +956,10 @@
       }
     }
   }
+
   section.flipbook_section {
-    .iframe-m iframe {
-      height: 350px;
+    .container-fluid {
+      padding: 0;
     }
   }
 
@@ -1528,12 +1529,6 @@
           }
         }
       }
-    }
-  }
-
-  section.flipbook_section {
-    .iframe-m iframe {
-      height: 200px;
     }
   }
 

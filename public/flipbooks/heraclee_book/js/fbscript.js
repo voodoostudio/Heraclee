@@ -140,21 +140,21 @@ var hasBasicHtmlVersion=false;
 var callback = function (e){ 
     //Only execute if SWFObject embed was successful
   if(!e.success || !e.ref){ //	alert("No Flash Supported");
-    if(hasMobileVersion && !isBelowIE8()){
-    	var pageIndex=getURLParam('pageIndex');
-		  if(!pageIndex){
-		      window.location = "mobile/index.html"+(window.location.hash?window.location.hash:'');
-		   }else{
-		   		window.location = "mobile/index.html#p="+pageIndex;
-		  	}
+  //   if(hasMobileVersion && !isBelowIE8()){
+  //   	var pageIndex=getURLParam('pageIndex');
+		//   if(!pageIndex){
+		//       window.location = "mobile/index.html"+(window.location.hash?window.location.hash:'');
+		//    }else{
+		//    		window.location = "mobile/index.html#p="+pageIndex;
+		//   	}
 	 		
-		}else if(hasBasicHtmlVersion){
-			 window.setTimeout(function(){
-			 	window.location ='files/basic-html/index.html';
-			 }, 1000);
-		}else{
+		// }else if(hasBasicHtmlVersion){
+		// 	 window.setTimeout(function(){
+		// 	 	window.location ='files/basic-html/index.html';
+		// 	 }, 1000);
+		// }else{
 			document.write("Sorry,need flash player. <a href='http://www.adobe.com/go/getflashplayer'>Get Adobe Flash Player<\/a> it's possible to <a id='linkSEO' href='files/basic-html/index.html'>view a simplified version of the book on any device</a>, or you can view the mobile version <a href='mobile/index.html'> here </a>" ); 
-		} 
+		// } 
     return false; 
   }  
 };

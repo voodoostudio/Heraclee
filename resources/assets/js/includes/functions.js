@@ -798,3 +798,8 @@ function minimizeSearchBlock() {
         }
     }
 }
+
+function flipbookHeightSetup() {
+    var flipbook_height = $(window).width() / 1.24031007751938;
+    $('section.flipbook_section .iframe-m iframe').css('height', flipbook_height);
+}

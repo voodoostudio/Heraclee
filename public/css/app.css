@@ -4270,9 +4270,9 @@ section.flipbook_section a img {
 
 section.flipbook_section .iframe-m iframe {
   width: 100%;
-  height: 600px;
-  padding: 10px 10px 0;
-  background: #272727;
+  height: 730px;
+  padding: 30px 0 0;
+  background: transparent;
 }
 
 #index ul.slick-dots,
@@ -8063,7 +8063,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     height: 600px;
   }
   section.flipbook_section .iframe-m iframe {
-    height: 450px;
+    height: 650px;
   }
 }
 
@@ -8179,7 +8179,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     padding: 0 30px;
   }
   section.flipbook_section .iframe-m iframe {
-    height: 400px;
+    height: 550px;
   }
   #index section.description_section .description_container h1 {
     font-size: 0.85rem;
@@ -8582,8 +8582,8 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #index section.description_section .description_container h1.title span:last-child {
     font-size: 1.8rem;
   }
-  section.flipbook_section .iframe-m iframe {
-    height: 350px;
+  section.flipbook_section .container-fluid {
+    padding: 0;
   }
   section.guide_section {
     padding: 20px 0;
@@ -9134,9 +9134,6 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #usa section.results_section h1 span span,
   #mauritius section.results_section h1 span span {
     display: block;
-  }
-  section.flipbook_section .iframe-m iframe {
-    height: 200px;
   }
   #details section.gallery_section .gallery_container .gallery_view .fullscreen_btn, #locationsDetails section.gallery_section .gallery_container .gallery_view .fullscreen_btn {
     left: 10px;

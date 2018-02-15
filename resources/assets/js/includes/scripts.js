@@ -120,6 +120,12 @@ $(document).ready(function() {
                 $('section.search_section form').addClass('minimized')
             }
         }
+
+
+        if ($(window).width() < 768) {
+            flipbookHeightSetup();
+        }
+
     });
     $(window).on("orientationchange", function () {
         setBodyPaddingBottom();
@@ -253,21 +259,14 @@ $(document).ready(function() {
             $('body').css('overflow','initial');
             $('body').css('position','relative');
         });
+
+        flipbookHeightSetup();
     }
 
     disableSearchFields();
     $(".search_input input").on("change paste keyup", function() {
         disableSearchFields();
     });
-
-    // $('section.search_section .show_options button').on('click', function () {
-    //     var this_form = $(this).closest('form');
-    //     this_form.toggleClass('minimized');
-    //
-    //     $('html, body').animate({
-    //         scrollTop: $(".search_section").offset().top-100
-    //     }, 300);
-    // });
 
     $('section.search_section .show_extra_options button').on('click', function () {
         var this_container = $(this).closest('.inner_block_container');
