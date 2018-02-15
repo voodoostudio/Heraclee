@@ -738,21 +738,21 @@ transform:rotate(360deg);
 
 
 
-/*.fbTopBar,*/
-/*.fbToolBar,*/
-/*.phoneTopBar,*/
-/*.phoneBottomBar{*/
-	/*display: none !important;*/
-	/*height: 0 !important;*/
-	/*opacity: 0 !important;*/
-/*}*/
-
 .fbTopBar,
-.fbToolBar{
+.fbToolBar,
+.phoneTopBar,
+.phoneBottomBar{
 	display: none !important;
 	height: 0 !important;
 	opacity: 0 !important;
 }
+
+/*.fbTopBar,*/
+/*.fbToolBar{*/
+	/*display: none !important;*/
+	/*height: 0 !important;*/
+	/*opacity: 0 !important;*/
+/*}*/
 
 #menu #background {
 	background: transparent !important;

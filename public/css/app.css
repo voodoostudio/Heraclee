@@ -8591,6 +8591,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #index section.description_section .description_container h1.title span:last-child {
     font-size: 1.8rem;
   }
+  section.flipbook_section .finger_icon {
+    display: block;
+  }
   section.flipbook_section .container-fluid {
     padding: 0;
   }
