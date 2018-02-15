@@ -3675,20 +3675,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   overflow: hidden;
 }
 
-#index section.index_main_carousel_section:before,
-#france section.index_main_carousel_section:before,
-#swiss section.index_main_carousel_section:before,
-#usa section.index_main_carousel_section:before,
-#mauritius section.index_main_carousel_section:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  z-index: 1;
-  background: linear-gradient(transparent, #383838);
-}
-
 #index section.index_main_carousel_section .slick-slider .slick-arrow,
 #france section.index_main_carousel_section .slick-slider .slick-arrow,
 #swiss section.index_main_carousel_section .slick-slider .slick-arrow,

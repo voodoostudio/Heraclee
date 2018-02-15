@@ -18,7 +18,7 @@
     </section>
     @foreach($gallery_settings as $settings)
         @if($settings['page'] == 'mauritius' && $settings['show'] == 1)
-            <section class="index_main_carousel_section reveal">
+            <section class="index_main_carousel_section">
                 <ul class="index_main_carousel">
                     @foreach($gallery_slider as $image)
                         @if($image['page'] == 'mauritius')
