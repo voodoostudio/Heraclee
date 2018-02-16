@@ -8454,6 +8454,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-bottom: 10px;
   }
   header.minimized .navigation_container nav ul.nav li.nav-item .nav-link {
+    font-size: 0.8rem;
     padding: 8px 5px;
     line-height: 0.875rem;
   }
