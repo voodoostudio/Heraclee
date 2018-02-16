@@ -5392,6 +5392,7 @@ section.results_section .results_container .container-fluid .object_block_contai
   text-align: center;
   float: right;
   padding: 9px 15px 8px;
+  font-family: aileron_semibold;
 }
 
 section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container {
@@ -6025,6 +6026,7 @@ section.results_section .slick-track {
   text-align: center;
   float: right;
   padding: 9px 15px 8px;
+  font-family: aileron_semibold;
 }
 
 .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container {
@@ -7487,6 +7489,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   margin-bottom: 10px;
   float: right;
   font-family: aileron_semibold;
+}
+
+#details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span {
+  font-family: modelica_light;
+  font-size: 10px;
 }
 
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {

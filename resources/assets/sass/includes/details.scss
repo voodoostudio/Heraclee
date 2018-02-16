@@ -347,6 +347,10 @@
             margin-bottom: 10px;
             float: right;
             font-family: aileron_semibold;
+            span {
+              font-family: modelica_light;
+              font-size: 10px;
+            }
           }
           .btn {
             height: 50px;
