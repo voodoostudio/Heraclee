@@ -7248,7 +7248,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   font-size: 1rem;
 }
 
-#details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+#details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
   color: #cdae6d;
   font-size: 2.6rem;
   line-height: 2.5rem;
