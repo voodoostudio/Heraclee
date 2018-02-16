@@ -48,8 +48,8 @@ class SyncWithApimo
                 );
                 if (empty($checkExistence)) {
                     DB::insert(
-                        'INSERT INTO `apimo_properties` ( `property_id`, `agency`, `reference`, `status`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_currency`, `residence`, `view`, `landscape`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
-                                VALUES ( :property_id, :agency, :reference, :status, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_currency, :residence, :view, :landscape, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
+                        'INSERT INTO `apimo_properties` ( `property_id`, `agency`, `reference`, `status`, `user`, `step`, `parent`, `category`, `subcategory`, `name`, `type`, `subtype`, `agreement`, `block_name`, `address`, `address_more`, `publish_address`, `country`, `city`, `district`, `longitude`, `latitude`, `radius`, `area_unit`, `area_surface`, `rooms`, `bedrooms`, `sleeps`, `price`, `price_period`, `price_currency`, `residence`, `view`, `landscape`, `floor`, `heating`, `water`, `condition`, `standing`, `style`, `construction_year`, `renovation_year`, `available_at`, `delivered_at`, `activities`, `orientations`, `services`, `proximities`, `tags`, `tags_customized`, `pictures`, `areas`, `regulations`, `created_at`, `updated_at`)
+                                VALUES ( :property_id, :agency, :reference, :status, :user, :step, :parent, :category, :subcategory, :name, :type, :subtype, :agreement, :block_name, :address, :address_more, :publish_address, :country, :city, :district, :longitude, :latitude, :radius, :area_unit, :area_surface, :rooms, :bedrooms, :sleeps, :price, :price_period, :price_currency, :residence, :view, :landscape, :floor, :heating, :water, :condition, :standing, :style, :construction_year, :renovation_year, :available_at, :delivered_at, :activities, :orientations, :services, :proximities, :tags, :tags_customized, :pictures, :areas, :regulations, :created_at, :updated_at)',
                         [
                             'property_id' => $property['id'],
                             'agency' => $property['user']['agency'],
@@ -80,6 +80,7 @@ class SyncWithApimo
                             'bedrooms' => $property['bedrooms'],
                             'sleeps' => $property['sleeps'],
                             'price' => ((isset($property['price']['value']) && !empty($property['price']['value'])) ? $property['price']['value'] : 0),
+                            'price_period' => ((isset($property['price']['period']) && !empty($property['price']['period'])) ? $property['price']['period'] : ''),
                             'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                             'residence' => self::addOrUpdateResidence($property['residence']),
                             'view' => self::addOrUpdateView($property['view'], $property['id']),
@@ -154,6 +155,7 @@ class SyncWithApimo
                                  `bedrooms` = :bedrooms, 
                                  `sleeps` =  :sleeps, 
                                  `price` = :price, 
+                                 `price_period` = :price_period, 
                                  `price_currency` = :price_currency, 
                                  `residence` = :residence, 
                                  `view` = :view, 
@@ -210,6 +212,7 @@ class SyncWithApimo
                                 'bedrooms' => $property['bedrooms'],
                                 'sleeps' => $property['sleeps'],
                                 'price' => ((isset($property['price']['value']) && !empty($property['price']['value'])) ? $property['price']['value'] : 0),
+                                'price_period' => ((isset($property['price']['period']) && !empty($property['price']['period'])) ? $property['price']['period'] : ''),
                                 'price_currency' => ((isset($property['price']['currency'])) ? $property['price']['currency'] : ''),
                                 'residence' => self::addOrUpdateResidence($property['residence']),
                                 'view' => self::addOrUpdateView($property['view'], $property['id']),
@@ -471,7 +474,8 @@ class SyncWithApimo
                                               commission_owner=?,
                                               commission_customer=?,
                                               sold=?,
-                                              sold_at=?',
+                                              sold_at=?,
+                                              period=?',
                 [
                     $property_id,
                     $price['value'],
@@ -486,6 +490,7 @@ class SyncWithApimo
                     $price['commission_customer'],
                     $price['sold'],
                     $price['sold_at'],
+                    $price['period'],
                 ]
             );
             $price_id = DB::connection()->getPdo()->lastInsertId();

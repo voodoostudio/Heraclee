@@ -43,6 +43,7 @@ class ApimoProperties extends Migration
             $table->integer('bedrooms')->nullable();
             $table->integer('sleeps')->nullable();
             $table->integer('price');
+            $table->string('price_period', 50);
             $table->string('residence')->nullable();
             $table->string('view')->nullable();
             $table->string('landscape')->nullable();

@@ -28,6 +28,7 @@ class ApimoPrice extends Migration
             $table->integer('commission_customer')->default(0);
             $table->integer('sold')->nullable();
             $table->integer('sold_at')->nullable();
+            $table->integer('period')->nullable();
         });
     }
 

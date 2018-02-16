@@ -267,7 +267,7 @@
                             <div class="object_info">
                                 <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
                                 @if($property['price'] != 0)
-                                    <div class="object_price">{{ $property['price_currency'] }} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
+                                    <div class="object_price">{{ $property['price_currency'] }} {{ number_format($property['price'], 0, ' ', ' ') }} / {{ (!empty($property['price_period'])) ? $property['price_period'] : '' }}</div>
                                 @else
                                     <div class="object_price">{{ trans('lang.zero_price') }}</div>
                                 @endif

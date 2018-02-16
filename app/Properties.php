@@ -63,6 +63,7 @@ class Properties extends Model
             $array['type'] = self::getTypeById($property[0]['type']);
             $array['subtype'] = self::getSubTypeById($property[0]['subtype']);
             $array['city'] = self::getCityById($property[0]['city']);
+            $array['price_period'] = self::getPricePeriodById($property[0]['price_period']);
             $array['floor'] = self::getFloorByPropertyId($property[0]['property_id']);
             $array['view'] = self::getViewById($property[0]['view']);
             $array['condition'] = self::getConditionById($property[0]['condition']);
@@ -703,6 +704,7 @@ class Properties extends Model
                 $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
                 $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
                 $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['price_period'] = self::getPricePeriodById($property['price_period']);
                 $array[$property['property_id']]['floor'] = self::getFloorByPropertyId($property['property_id']);
                 $array[$property['property_id']]['view'] = self::getViewById($property['view']);
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
@@ -792,6 +794,7 @@ class Properties extends Model
                 $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
                 $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
                 $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['price_period'] = self::getPricePeriodById($property['price_period']);
                 $array[$property['property_id']]['floor'] = self::getFloorByPropertyId($property['property_id']);
                 $array[$property['property_id']]['view'] = self::getViewById($property['view']);
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
@@ -1179,6 +1182,7 @@ class Properties extends Model
                 $array[$property['property_id']]['type'] = self::getTypeById($property['type']);
                 $array[$property['property_id']]['subtype'] = self::getSubTypeById($property['subtype']);
                 $array[$property['property_id']]['city'] = self::getCityById($property['city']);
+                $array[$property['property_id']]['price_period'] = self::getPricePeriodById($property['price_period']);
                 $array[$property['property_id']]['view'] = self::getViewById($property['view']);
                 $array[$property['property_id']]['condition'] = self::getConditionById($property['condition']);
                 $array[$property['property_id']]['standing'] = self::getStandingById($property['standing']);
@@ -1735,6 +1739,28 @@ class Properties extends Model
         }
 
         return $city_id;
+    }
+
+    /**
+     * @param $city_id
+     *
+     * @return mixed
+     */
+    protected static function getPricePeriodById($id)
+    {
+        $lang = LaravelLocalization::getCurrentLocaleRegional();
+        if ($id != 0) {
+            $r = DB::table('apimo_property_period')
+                ->where("reference", $id)
+                ->where("locale", $lang)
+                ->get();
+
+            if (!empty($r)) {
+                $id = $r[0]['value'];
+            }
+        }
+
+        return $id;
     }
 
     /**
