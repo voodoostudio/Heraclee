@@ -1,8 +1,7 @@
 @extends('layouts.socials')
 
-{{--{{ dd($property) }}--}}
+@section('title', (isset($property['comments']['comment'])) ? substr($property['comments']['comment'],0,70) : '')
 
-@section('title', substr($property['comments']['comment'],0,70))
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
 @endphp
