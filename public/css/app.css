@@ -2035,7 +2035,7 @@ section.search_section .outer_block_container .inner_block_container .reset_filt
 }
 
 section.search_section .outer_block_container .inner_block_container ul.nav.nav-tabs {
-  margin-top: 29px;
+  margin-top: 24px;
 }
 
 section.search_section .outer_block_container .inner_block_container .input_container.search_input {
@@ -5658,6 +5658,8 @@ section.results_section .results_container.map_view #results_map {
 section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block {
   margin-top: 0;
   opacity: 1 !important;
+  -webkit-transform: translateY(0px) scale(1) !important;
+          transform: translateY(0px) scale(1) !important;
 }
 
 section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li {
@@ -6289,6 +6291,8 @@ section.results_section .slick-track {
 .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block {
   margin-top: 0;
   opacity: 1 !important;
+  -webkit-transform: translateY(0px) scale(1) !important;
+          transform: translateY(0px) scale(1) !important;
 }
 
 .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li {

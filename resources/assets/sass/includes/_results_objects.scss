@@ -397,6 +397,7 @@
         .object_block {
           margin-top: 0;
           opacity: 1 !important;
+          transform: translateY(0px) scale(1) !important;
           .img_block {
             .gallery_view {
               ul.gallery {
