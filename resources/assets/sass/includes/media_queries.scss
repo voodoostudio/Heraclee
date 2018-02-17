@@ -354,7 +354,9 @@
           .object_title {
             bottom: 50px;
             .object_status {
-              font-size: 2rem;
+              span {
+                font-size: 2rem;
+              }
             }
             h2 {
               font-size: 2.5rem;
@@ -1550,9 +1552,11 @@
           .object_title {
             bottom: 30px;
             .object_status {
-              font-size: 1.2rem;
-              line-height: 1.5rem;
               margin-bottom: 8px;
+              span {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+              }
             }
             h2 {
               font-size: 1.5rem;

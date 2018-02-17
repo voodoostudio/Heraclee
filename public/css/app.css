@@ -7250,6 +7250,10 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   font-size: 1rem;
 }
 
+#details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+  margin-bottom: 10px;
+}
+
 #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
   color: #cdae6d;
   font-size: 2.6rem;
@@ -7257,7 +7261,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: .1rem;
-  margin: 0 auto 10px;
+  margin: 0 auto;
   font-family: modelica_medium;
   background-image: url(/img/texture-bg.jpg);
   background-position: 0 0;
@@ -8204,7 +8208,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.gallery_section .gallery_container .gallery_view .object_title, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title {
     bottom: 50px;
   }
-  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
     font-size: 2rem;
   }
   #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
@@ -9156,9 +9160,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     bottom: 30px;
   }
   #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
+    margin-bottom: 8px;
+  }
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
     font-size: 1.2rem;
     line-height: 1.5rem;
-    margin-bottom: 8px;
   }
   #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
     font-size: 1.5rem;
