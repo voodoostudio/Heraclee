@@ -7269,7 +7269,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   background-size: 100% auto;
   background-repeat: repeat;
   -webkit-text-fill-color: transparent;
-  display: table;
 }
 
 #details section.gallery_section .gallery_container .gallery_view .panorama_link_container, #locationsDetails section.gallery_section .gallery_container .gallery_view .panorama_link_container {
