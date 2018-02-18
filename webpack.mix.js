@@ -58,6 +58,7 @@ mix.scripts([
     'resources/assets/js/libraries/tether.min.js',
     'resources/assets/js/libraries/bootstrap/bootstrap.min.js',
     'resources/assets/js/libraries/bootstrap/bootstrap-multiselect.js',
+    'resources/assets/js/libraries/modernizr.js',
     'resources/assets/js/libraries/datepicker.js',
     'resources/assets/js/libraries/markerclusterer.js',
     'resources/assets/js/libraries/slick.min.js',

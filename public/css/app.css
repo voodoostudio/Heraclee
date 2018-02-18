@@ -2583,14 +2583,8 @@ footer section.bottom_footer_section h4 span {
   display: block;
 }
 
-footer section.bottom_footer_section h4 span:first-child, footer section.bottom_footer_section h4 span:last-child {
+footer section.bottom_footer_section h4 span.img_bg_text {
   font-size: 2rem;
-  background-image: url("/img/texture-bg.jpg");
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   color: #cdae6d;
 }
 
@@ -2670,6 +2664,16 @@ footer ul.social_networks li.facebook {
 
 footer ul.social_networks li.linkedin {
   background-color: #037cb6;
+}
+
+.backgroundcliptext footer section.bottom_footer_section h4 span.img_bg_text {
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
 }
 
 .preloader_container {
@@ -3769,11 +3773,11 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: table;
 }
 
-#index section.index_main_carousel_section .info_block .object_status span,
-#france section.index_main_carousel_section .info_block .object_status span,
-#swiss section.index_main_carousel_section .info_block .object_status span,
-#usa section.index_main_carousel_section .info_block .object_status span,
-#mauritius section.index_main_carousel_section .info_block .object_status span {
+#index section.index_main_carousel_section .info_block .object_status span.img_bg_text,
+#france section.index_main_carousel_section .info_block .object_status span.img_bg_text,
+#swiss section.index_main_carousel_section .info_block .object_status span.img_bg_text,
+#usa section.index_main_carousel_section .info_block .object_status span.img_bg_text,
+#mauritius section.index_main_carousel_section .info_block .object_status span.img_bg_text {
   font-family: modelica_medium;
   background-image: url(/img/texture-bg.jpg);
   background-position: 0 0;

@@ -128,7 +128,7 @@
                         @foreach($slider_image as $item)
                             <li style="background-image: url('{{ URL::to('/') }}/gallery/{{ $settings['page'] }}/{{ $item->created_at->format('F_Y') }}/{{ $item['image'] }}')">
                                 <div class="info_block">
-                                    <div class="object_status"><span>{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
+                                    <div class="object_status"><span class="img_bg_text">{{ (!empty($item->sell_type)) ? $item->sell_type : ''  }}</span></div>
                                     <h2>{{ (!empty($item->subtype)) ? $item->subtype : ''  }}</h2>
                                     <h3>{{ (!empty($item->city)) ? $item->city : ''  }}</h3>
                                     <a class="btn" href="{{ (!empty($item->link)) ? $item->link : '' }}">{{ trans('lang.see_property') }}</a>
