@@ -62,6 +62,7 @@
                                 @endphp
                                 @endforeach
                                 <div class="info_block">
+                                    <div class="object_status"><span class="img_bg_text">{{ (!empty($property['category']['value'])) ? $property['category']['value'] : ''  }}</span></div>
                                     <h1>{{$property['type']}}</h1>
                                     <h3>{{$property['city']}} {{ (!empty($property['district'])) ? ' / ' : '' }} {{ $property['district'] }}</h3>
                                     <a href="@if(($property['category']['reference'] == 1) || ($property['category']['reference'] == 4) || ($property['category']['reference'] == 5) || ($property['category']['reference'] == 6)){{ route('details', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @elseif(($property['category']['reference'] == 2) || ($property['category']['reference'] == 3)) {{ route('locationsDetails', ['subtype' => mb_strtolower(str_replace(" ", "-", $property['subtype'])), 'city' => mb_strtolower(str_replace(" ", "-", $property['city'])), 'id' => $property['property_id']]) }} @endif" class="btn">{{ trans('lang.see_property') }}</a>

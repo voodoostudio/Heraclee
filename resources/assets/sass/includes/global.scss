@@ -78,7 +78,7 @@ p {
   height: 70%;
   width: 100%;
   z-index: 1;
-  @include my_gradient_bg(rgba(black, 0.5))
+  @include my_gradient_bg(rgba(black, 0.8))
 }
 
 .outer_block_container {
@@ -1191,6 +1191,27 @@ section.virtual_tours_section {
               background-repeat: repeat;
               -webkit-text-fill-color: transparent;
             }
+          }
+        }
+      }
+    }
+  }
+
+  #index,
+  #france,
+  #swiss,
+  #usa,
+  #mauritius {
+    section.top_offer_section {
+      .info_block {
+        .object_status {
+          span.img_bg_text {
+            background-image: url('/img/texture-bg.jpg');
+            background-position: 0 0;
+            -webkit-background-clip: text;
+            background-size: 100% auto;
+            background-repeat: repeat;
+            -webkit-text-fill-color: transparent;
           }
         }
       }

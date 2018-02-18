@@ -21,6 +21,20 @@
       text-transform: uppercase;
       z-index: 2;
       color: $main_xlight_clr;
+      .object_status {
+        color: #cdae6d;
+        font-size: 2.6rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        margin: 0 auto 10px;
+        display: table;
+        span.img_bg_text {
+          font-family: modelica_medium;
+          display: block;
+        }
+      }
       h1 {
         font-family: modelica_light;
         font-size: 3.125rem;

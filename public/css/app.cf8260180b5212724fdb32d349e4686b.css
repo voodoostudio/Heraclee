@@ -1607,7 +1607,7 @@ p {
   height: 70%;
   width: 100%;
   z-index: 1;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
 }
 
 .outer_block_container {
@@ -2779,6 +2779,19 @@ section.virtual_tours_section .results_container.grid_view .container-fluid .obj
   -webkit-text-fill-color: transparent;
 }
 
+.backgroundcliptext #index section.top_offer_section .info_block .object_status span.img_bg_text,
+.backgroundcliptext #france section.top_offer_section .info_block .object_status span.img_bg_text,
+.backgroundcliptext #swiss section.top_offer_section .info_block .object_status span.img_bg_text,
+.backgroundcliptext #usa section.top_offer_section .info_block .object_status span.img_bg_text,
+.backgroundcliptext #mauritius section.top_offer_section .info_block .object_status span.img_bg_text {
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
 .backgroundcliptext section.results_section h1 span.img_bg_text {
   background-image: url("/img/texture-bg.jpg");
   background-position: 0 0;
@@ -3709,6 +3722,30 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   text-transform: uppercase;
   z-index: 2;
   color: #fdfdfd;
+}
+
+#index section.top_offer_section .info_block .object_status,
+#france section.top_offer_section .info_block .object_status,
+#swiss section.top_offer_section .info_block .object_status,
+#usa section.top_offer_section .info_block .object_status,
+#mauritius section.top_offer_section .info_block .object_status {
+  color: #cdae6d;
+  font-size: 2.6rem;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  margin: 0 auto 10px;
+  display: table;
+}
+
+#index section.top_offer_section .info_block .object_status span.img_bg_text,
+#france section.top_offer_section .info_block .object_status span.img_bg_text,
+#swiss section.top_offer_section .info_block .object_status span.img_bg_text,
+#usa section.top_offer_section .info_block .object_status span.img_bg_text,
+#mauritius section.top_offer_section .info_block .object_status span.img_bg_text {
+  font-family: modelica_medium;
+  display: block;
 }
 
 #index section.top_offer_section .info_block h1,
@@ -8223,6 +8260,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 1rem;
     padding: 0 30px;
   }
+  #index section.top_offer_section .info_block .object_status span.img_bg_text,
+  #france section.top_offer_section .info_block .object_status span.img_bg_text,
+  #swiss section.top_offer_section .info_block .object_status span.img_bg_text,
+  #usa section.top_offer_section .info_block .object_status span.img_bg_text,
+  #mauritius section.top_offer_section .info_block .object_status span.img_bg_text {
+    font-size: 2rem;
+  }
   section.flipbook_section .iframe-m iframe {
     height: 550px;
   }
@@ -9148,6 +9192,14 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     line-height: 30px;
     height: 30px;
     font-size: 0.875rem;
+  }
+  #index section.top_offer_section .info_block .object_status span.img_bg_text,
+  #france section.top_offer_section .info_block .object_status span.img_bg_text,
+  #swiss section.top_offer_section .info_block .object_status span.img_bg_text,
+  #usa section.top_offer_section .info_block .object_status span.img_bg_text,
+  #mauritius section.top_offer_section .info_block .object_status span.img_bg_text {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
   }
   #index section.latest_news_section .latest_news_container .marquee_title,
   #france section.latest_news_section .latest_news_container .marquee_title,

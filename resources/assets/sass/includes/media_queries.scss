@@ -313,6 +313,16 @@
         }
       }
     }
+
+    section.top_offer_section {
+      .info_block {
+        .object_status {
+          span.img_bg_text {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
   }
 
   section.flipbook_section {
@@ -1510,6 +1520,16 @@
             line-height: 30px;
             height: 30px;
             font-size: 0.875rem
+          }
+        }
+      }
+    }
+    section.top_offer_section {
+      .info_block {
+        .object_status {
+          span.img_bg_text {
+            font-size: 1.2rem;
+            line-height: 1.5rem;
           }
         }
       }
