@@ -174,16 +174,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
-
-  //color: $main_brown_clr;
+  color: $main_brown_clr;
   line-height: 12px;
   font-family: aileron_semibold;
   i.icn {

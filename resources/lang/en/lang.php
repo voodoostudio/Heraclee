@@ -38,7 +38,7 @@ return [
     'surface'               => 'Surface area',
     'bedrooms'              => 'Bedrooms',
     'homepage_description'  => 'Our agency, Heraclee, specializing in luxury real estate in the French Riviera, has been based for 7 years in the emblematic city of Saint-Tropez. The luxury real estate market in the Cote d\'Azur being one of the most attractive in the country, we offer the best of the St. Tropez real estate.',
-    'homepage_title'        => '<span>Heraclee</span> Luxury real estate agency <span>Saint-Tropez</span>',
+    'homepage_title'        => '<span class="img_bg_text">Heraclee</span> Luxury real estate agency <span class="img_bg_text">Saint-Tropez</span>',
 
 //    RESULTS PAGE
     'results_per_page'      => 'results per page',
@@ -50,7 +50,7 @@ return [
     'contact_the_agent'     => 'Contact the agency',
     'currently_no_results'  => 'Currently no results found',
     'search'                => 'Search',
-    'our_last_objects'      => '<span><span>Our latest</span> <span>10 objects</span></span>',
+    'our_last_objects'      => '<span><span class="img_bg_text">Our latest</span> <span class="img_bg_text">10 objects</span></span>',
     'new'                   => 'New',
     'updated'               => 'Updated',
     'more_options'          => 'More options',
@@ -145,7 +145,7 @@ return [
     'send_me_message'            => 'Send me a message',
 
 //    FOOTER
-    'footer_title'          => '<span>Heraclee</span> <span>Real Estate Agency</span> <span>Saint-Tropez</span>',
+    'footer_title'          => '<span class="img_bg_text">Heraclee</span> <span>Real Estate Agency</span> <span class="img_bg_text">Saint-Tropez</span>',
     'footer_description'    => '"Indeed, in visiting the services of our real estate agency, customers have the opportunity to be able to access exceptional property via the many rentals or sales located for the most part in the towns of St Tropez and Ramatuelle. Furthermore, the luxury real estate being in constant evolution as are the requirements and expectations of our future potential buyers, we strive to find the property corresponding to the most sophisticated selection criteria.  </br></br>
                                 It is with the goal of ensuring total satisfaction for our clients that our real estate agency is composed of a team of experts, all with a wide range of expertise, notably in matters of tax and legal aspects. The proven professionalism of our St. Tropez real estate agency, has, among other things, allowed us to develop a network leading to retaining a portfolio with a strong potential."',
     'subscribe_to_newsletter' => 'Subscribe to our newsletter',

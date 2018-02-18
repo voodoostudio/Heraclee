@@ -91,12 +91,6 @@
         display: table;
         span.img_bg_text {
           font-family: modelica_medium;
-          background-image: url(/img/texture-bg.jpg);
-          background-position: 0 0;
-          -webkit-background-clip: text;
-          background-size: 100% auto;
-          background-repeat: repeat;
-          -webkit-text-fill-color: transparent;
           display: block;
         }
       }
@@ -293,16 +287,9 @@
           margin-right: 30px;
           span {
             white-space: nowrap;
-            &:first-child,
-            &:last-child {
+            &.img_bg_text {
               font-size: 2.8rem;
-              background-image: url('/img/texture-bg.jpg');
-              background-position: 0 0;
-              -webkit-background-clip: text;
-              background-size: 100% auto;
-              background-repeat: repeat;
-              -webkit-text-fill-color: transparent;
-              color: #cdae6d;
+              color: $main_brown_clr;
               display: block;
             }
           }
@@ -320,14 +307,8 @@
       letter-spacing: .1rem;
       font-family: modelica_medium;
       color: white;
-      span {
-        background-image: url('/img/texture-bg.jpg');
-        background-position: 0 0;
-        -webkit-background-clip: text;
-        background-size: 100% auto;
-        background-repeat: repeat;
-        -webkit-text-fill-color: transparent;
-        color: #cdae6d;
+      span.img_bg_text {
+        color: $main_brown_clr;
         display: inline-block;
       }
     }

@@ -295,13 +295,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
+  color: #ccac83;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -1062,13 +1057,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
+  color: #ccac83;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -2767,7 +2757,47 @@ section.virtual_tours_section .results_container.grid_view .container-fluid .obj
   -webkit-text-fill-color: transparent;
 }
 
+.backgroundcliptext section.index_main_carousel_section .info_block .object_status span.img_bg_text {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext section.description_section .description_container h1.title span {
+  white-space: nowrap;
+}
+
+.backgroundcliptext section.description_section .description_container h1.title span.img_bg_text {
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext section.results_section h1 span.img_bg_text {
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
 .backgroundcliptext .agent_info_block .agent_info .agent_name span.img_bg_text {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext label.form_el_label {
   background-image: url(/img/texture-bg.jpg);
   background-position: 0 0;
   -webkit-background-clip: text;
@@ -3181,13 +3211,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
+  color: #ccac83;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -3805,12 +3830,6 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #usa section.index_main_carousel_section .info_block .object_status span.img_bg_text,
 #mauritius section.index_main_carousel_section .info_block .object_status span.img_bg_text {
   font-family: modelica_medium;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
 }
 
@@ -4199,23 +4218,13 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   white-space: nowrap;
 }
 
-#index section.description_section .description_container h1.title span:first-child, #index section.description_section .description_container h1.title span:last-child,
-#france section.description_section .description_container h1.title span:first-child,
-#france section.description_section .description_container h1.title span:last-child,
-#swiss section.description_section .description_container h1.title span:first-child,
-#swiss section.description_section .description_container h1.title span:last-child,
-#usa section.description_section .description_container h1.title span:first-child,
-#usa section.description_section .description_container h1.title span:last-child,
-#mauritius section.description_section .description_container h1.title span:first-child,
-#mauritius section.description_section .description_container h1.title span:last-child {
+#index section.description_section .description_container h1.title span.img_bg_text,
+#france section.description_section .description_container h1.title span.img_bg_text,
+#swiss section.description_section .description_container h1.title span.img_bg_text,
+#usa section.description_section .description_container h1.title span.img_bg_text,
+#mauritius section.description_section .description_container h1.title span.img_bg_text {
   font-size: 2.8rem;
-  background-image: url("/img/texture-bg.jpg");
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
-  color: #cdae6d;
+  color: #ccac83;
   display: block;
 }
 
@@ -4240,18 +4249,12 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   color: white;
 }
 
-#index section.results_section h1 span,
-#france section.results_section h1 span,
-#swiss section.results_section h1 span,
-#usa section.results_section h1 span,
-#mauritius section.results_section h1 span {
-  background-image: url("/img/texture-bg.jpg");
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
-  color: #cdae6d;
+#index section.results_section h1 span.img_bg_text,
+#france section.results_section h1 span.img_bg_text,
+#swiss section.results_section h1 span.img_bg_text,
+#usa section.results_section h1 span.img_bg_text,
+#mauritius section.results_section h1 span.img_bg_text {
+  color: #ccac83;
   display: inline-block;
 }
 
@@ -4714,13 +4717,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
+  color: #ccac83;
   line-height: 12px;
   font-family: aileron_semibold;
 }
@@ -6675,13 +6673,8 @@ sup {
 label.form_el_label {
   text-transform: uppercase;
   margin-bottom: 10px;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
+  color: #ccac83;
   line-height: 12px;
   font-family: aileron_semibold;
 }
