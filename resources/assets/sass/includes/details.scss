@@ -132,8 +132,8 @@
           }
           .object_status {
             margin-bottom: 10px;
-            span {
-              color: #cdae6d;
+            span.img_bg_text {
+              color: $main_brown_clr;
               font-size: 2.6rem;
               line-height: 2.5rem;
               text-transform: uppercase;
@@ -141,12 +141,6 @@
               letter-spacing: .1rem;
               margin: 0 auto;
               font-family: modelica_medium;
-              background-image: url(/img/texture-bg.jpg);
-              background-position: 0 0;
-              -webkit-background-clip: text;
-              background-size: 100% auto;
-              background-repeat: repeat;
-              -webkit-text-fill-color: transparent;
             }
           }
         }
