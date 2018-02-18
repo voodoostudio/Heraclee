@@ -5395,6 +5395,11 @@ section.results_section .results_container .container-fluid .object_block_contai
   font-family: aileron_semibold;
 }
 
+section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .description_container .object_price span {
+  font-size: 12px;
+  font-family: modelica_thin;
+}
+
 section.results_section .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container {
   border-top: 1px solid #aaa296;
   margin-top: 20px;
@@ -6027,6 +6032,11 @@ section.results_section .slick-track {
   float: right;
   padding: 9px 15px 8px;
   font-family: aileron_semibold;
+}
+
+.results_container .container-fluid .object_block_container .object_block .info_block .description_container .object_price span {
+  font-size: 12px;
+  font-family: modelica_thin;
 }
 
 .results_container .container-fluid .object_block_container .object_block .info_block .parameters_container {
@@ -8283,10 +8293,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 14px;
     margin-top: 10px;
   }
+  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_price span {
+    font-size: 10px;
+  }
   section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .btn {
     margin: 10px 0 0 15px;
     padding: 0 15px;
-    font: 14px modelica_thin;
+    font-size: 14px;
     height: 30px;
     line-height: 30px;
   }
@@ -8305,6 +8318,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
     font-size: 0.85rem;
+  }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .object_price span, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .object_price span {
+    font-size: 10px;
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .parameters_container {
     margin-top: 0;

@@ -136,7 +136,7 @@
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     @if($property['price'] != 0)
-                        <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }}</div>
+                        <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }} {!! (!empty($property['price_period'])) ? '<span>/ '.$property['price_period'].'</span>' : '' !!}</div>
                     @else
                         <div class="object_price">{{ trans('lang.zero_price') }}</div>
                     @endif

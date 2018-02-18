@@ -480,11 +480,14 @@
                   padding: 6px 30px 5px;
                   font-size: 14px;
                   margin-top: 10px;
+                  span {
+                    font-size: 10px;
+                  }
                 }
                 .btn {
                   margin: 10px 0 0 15px;
                   padding: 0 15px;
-                  font: 14px modelica_thin;
+                  font-size: 14px;
                   height: 30px;
                   line-height: 30px;
                 }
@@ -528,6 +531,11 @@
                   .description_container {
                     h3, div.object_price {
                       font-size: 0.85rem;
+                    }
+                  }
+                  .object_price {
+                    span {
+                      font-size: 10px;
                     }
                   }
                   .parameters_container {

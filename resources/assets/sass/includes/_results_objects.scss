@@ -151,6 +151,10 @@
               float: right;
               padding: 9px 15px 8px;
               font-family: aileron_semibold;
+              span {
+                font-size: 12px;
+                font-family: modelica_thin;
+              }
             }
           }
           .parameters_container {
