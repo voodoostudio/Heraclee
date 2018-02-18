@@ -354,7 +354,7 @@
           .object_title {
             bottom: 50px;
             .object_status {
-              span {
+              span.img_bg_text {
                 font-size: 2rem;
               }
             }
@@ -1561,7 +1561,7 @@
             bottom: 30px;
             .object_status {
               margin-bottom: 8px;
-              span {
+              span.img_bg_text {
                 font-size: 1.2rem;
                 line-height: 1.5rem;
               }

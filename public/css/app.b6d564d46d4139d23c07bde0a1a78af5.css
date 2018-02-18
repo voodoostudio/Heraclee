@@ -8243,7 +8243,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.gallery_section .gallery_container .gallery_view .object_title, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title {
     bottom: 50px;
   }
-  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span.img_bg_text, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span.img_bg_text {
     font-size: 2rem;
   }
   #details section.gallery_section .gallery_container .gallery_view .object_title h2, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title h2 {
@@ -9203,7 +9203,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.gallery_section .gallery_container .gallery_view .object_title .object_status, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status {
     margin-bottom: 8px;
   }
-  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span {
+  #details section.gallery_section .gallery_container .gallery_view .object_title .object_status span.img_bg_text, #locationsDetails section.gallery_section .gallery_container .gallery_view .object_title .object_status span.img_bg_text {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
