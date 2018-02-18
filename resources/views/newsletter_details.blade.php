@@ -11,7 +11,7 @@
 
     <section class="page_title_section hidden-md-up">
         <div class="container-fluid">
-            <h1><span>{{ trans('lang.newsletters') }}</span></h1>
+            <h1><span class="img_bg_text">{{ trans('lang.newsletters') }}</span></h1>
         </div>
     </section>
 

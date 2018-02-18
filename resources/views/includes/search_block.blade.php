@@ -184,8 +184,8 @@
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="show_extra_options">
-                                <button type="button" class="more"><span>{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></span></button>
-                                <button type="button" class="less"><span>{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></span></button>
+                                <button type="button" class="more"><span class="img_bg_text">{{ trans('lang.more_options') }} <i class="icn icon-arrow_big_left"></i></span></button>
+                                <button type="button" class="less"><span class="img_bg_text">{{ trans('lang.less_options') }} <i class="icn icon-arrow_big_left"></i></span></button>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">

@@ -1737,12 +1737,7 @@ header .navigation_container .navigation_block .lang_currency_container li ul.la
 }
 
 header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a.active {
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
+  color: #ccac83;
   display: block;
 }
 
@@ -1824,13 +1819,8 @@ header .navigation_container nav ul.nav li.nav-item .nav-link {
 }
 
 header .navigation_container nav ul.nav li.nav-item .nav-link.active, header .navigation_container nav ul.nav li.nav-item .nav-link:hover {
+  color: #ccac83;
   border-color: #ccac83;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: block;
 }
 
@@ -1862,12 +1852,7 @@ header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-ite
 }
 
 header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item.active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:active, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:focus, header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:hover {
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
+  color: #ccac83;
   display: block;
 }
 
@@ -2053,20 +2038,15 @@ section.search_section .outer_block_container .inner_block_container .show_extra
   text-align: center;
 }
 
-section.search_section .outer_block_container .inner_block_container .show_options button span,
-section.search_section .outer_block_container .inner_block_container .show_extra_options button span {
+section.search_section .outer_block_container .inner_block_container .show_options button span.img_bg_text,
+section.search_section .outer_block_container .inner_block_container .show_extra_options button span.img_bg_text {
   font-family: aileron_semibold;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
+  color: #ccac83;
   display: block;
 }
 
-section.search_section .outer_block_container .inner_block_container .show_options button span i.icn,
-section.search_section .outer_block_container .inner_block_container .show_extra_options button span i.icn {
+section.search_section .outer_block_container .inner_block_container .show_options button span.img_bg_text i.icn,
+section.search_section .outer_block_container .inner_block_container .show_extra_options button span.img_bg_text i.icn {
   color: #ccac83;
   -webkit-text-fill-color: #ccac83;
   display: block;
@@ -2157,22 +2137,16 @@ section.page_title_section {
 section.page_title_section h1 {
   font-size: 1.1rem;
   text-transform: uppercase;
-  margin: 0;
   padding: 20px 0;
   text-align: center;
   border: none;
-}
-
-section.page_title_section h1 span {
-  font-family: modelica_medium;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
   display: table;
   margin: 0 auto;
+}
+
+section.page_title_section h1 span.img_bg_text {
+  font-family: modelica_medium;
+  color: #ccac83;
 }
 
 section.page_title_section.minimized {
@@ -2272,6 +2246,10 @@ section.page_title_section.hidden {
 
 .agent_info_block .agent_info .agent_name {
   margin: 20px 0 15px;
+  display: table;
+}
+
+.agent_info_block .agent_info .agent_name span.img_bg_text {
   color: #cdae6d;
   font-size: 2rem;
   line-height: 2.5rem;
@@ -2279,13 +2257,6 @@ section.page_title_section.hidden {
   font-weight: 700;
   letter-spacing: .1rem;
   font-family: modelica_medium;
-  background-image: url(/img/texture-bg.jpg);
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
-  display: table;
 }
 
 .agent_info_block .agent_info ul {
@@ -2666,16 +2637,6 @@ footer ul.social_networks li.linkedin {
   background-color: #037cb6;
 }
 
-.backgroundcliptext footer section.bottom_footer_section h4 span.img_bg_text {
-  background-image: url("/img/texture-bg.jpg");
-  background-position: 0 0;
-  -webkit-background-clip: text;
-  background-size: 100% auto;
-  background-repeat: repeat;
-  -webkit-text-fill-color: transparent;
-  color: #cdae6d;
-}
-
 .preloader_container {
   top: 0;
   position: fixed;
@@ -2748,6 +2709,71 @@ section.virtual_tours_section .results_container.grid_view .container-fluid .obj
 
 .cookies_alert .close_cookies_warning i.icn {
   color: black;
+}
+
+.backgroundcliptext header .navigation_container nav ul.nav li.nav-item .nav-link.active,
+.backgroundcliptext header .navigation_container nav ul.nav li.nav-item .nav-link:hover {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item.active, .backgroundcliptext header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:active, .backgroundcliptext header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:focus, .backgroundcliptext header .navigation_container nav ul.nav li.nav-item .dropdown-menu .dropdown-item:hover {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext header .navigation_container .navigation_block .lang_currency_container li ul.language_select li a.active {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext footer section.bottom_footer_section h4 span.img_bg_text {
+  background-image: url("/img/texture-bg.jpg");
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+  color: #cdae6d;
+}
+
+.backgroundcliptext section.page_title_section h1 span.img_bg_text {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext section.search_section .outer_block_container .inner_block_container .show_options button span.img_bg_text, .backgroundcliptext section.search_section .outer_block_container .inner_block_container .show_extra_options button span.img_bg_text {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
+}
+
+.backgroundcliptext .agent_info_block .agent_info .agent_name span.img_bg_text {
+  background-image: url(/img/texture-bg.jpg);
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% auto;
+  background-repeat: repeat;
+  -webkit-text-fill-color: transparent;
 }
 
 section.contact_info_section {

@@ -246,8 +246,10 @@
                                 <div class="agent_info">
                                     <p>{{ trans('lang.contact_agent_to_visit') }}</p>
                                     <p class="agent_name">
+                                        <span class="img_bg_text">
+                                            SAINT-TROPEZ
+                                        </span>
                                         {{-- {{$property['user']['firstname']}} {{$property['user']['lastname']}}--}}
-                                        SAINT-TROPEZ
                                     </p>
                                     <ul>
                                         {{--@if(!empty($property['user']['phone']))--}}

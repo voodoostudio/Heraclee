@@ -175,14 +175,7 @@ header {
                 color: #b8b8b8;
                 font-family: montserrat_medium;
                 &.active {
-                  //color: $main_brown_clr;
-
-                  background-image: url(/img/texture-bg.jpg);
-                  background-position: 0 0;
-                  -webkit-background-clip: text;
-                  background-size: 100% auto;
-                  background-repeat: repeat;
-                  -webkit-text-fill-color: transparent;
+                  color: $main_brown_clr;
                   display: block;
                 }
               }
@@ -258,15 +251,8 @@ header {
             border-bottom: 1px solid transparent;
             &.active,
             &:hover {
-              //color: $main_brown_clr;
+              color: $main_brown_clr;
               border-color: $main_brown_clr;
-
-              background-image: url(/img/texture-bg.jpg);
-              background-position: 0 0;
-              -webkit-background-clip: text;
-              background-size: 100% auto;
-              background-repeat: repeat;
-              -webkit-text-fill-color: transparent;
               display: block;
             }
           }
@@ -296,15 +282,7 @@ header {
               &:active,
               &:focus,
               &:hover {
-                //background-color: transparent;
-                //color: $main_brown_clr;
-
-                background-image: url(/img/texture-bg.jpg);
-                background-position: 0 0;
-                -webkit-background-clip: text;
-                background-size: 100% auto;
-                background-repeat: repeat;
-                -webkit-text-fill-color: transparent;
+                color: $main_brown_clr;
                 display: block;
               }
             }
@@ -473,14 +451,9 @@ section.search_section {
       .show_extra_options {
         text-align: center;
         button {
-          span {
+          span.img_bg_text {
             font-family: aileron_semibold;
-            background-image: url(/img/texture-bg.jpg);
-            background-position: 0 0;
-            -webkit-background-clip: text;
-            background-size: 100% auto;
-            background-repeat: repeat;
-            -webkit-text-fill-color: transparent;
+            color: $main_brown_clr;
             display: block;
             i.icn {
               color: $main_brown_clr;
@@ -573,20 +546,14 @@ section.page_title_section {
   h1 {
     font-size: 1.1rem;
     text-transform: uppercase;
-    margin: 0;
     padding: 20px 0;
     text-align: center;
     border: none;
-    span {
+    display: table;
+    margin: 0 auto;
+    span.img_bg_text {
       font-family: modelica_medium;
-      background-image: url(/img/texture-bg.jpg);
-      background-position: 0 0;
-      -webkit-background-clip: text;
-      background-size: 100% auto;
-      background-repeat: repeat;
-      -webkit-text-fill-color: transparent;
-      display: table;
-      margin: 0 auto;
+      color: $main_brown_clr;
     }
   }
   &.minimized {
@@ -675,20 +642,16 @@ section.page_title_section {
     }
     .agent_name {
       margin: 20px 0 15px;
-      color: #cdae6d;
-      font-size: 2rem;
-      line-height: 2.5rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: .1rem;
-      font-family: modelica_medium;
-      background-image: url(/img/texture-bg.jpg);
-      background-position: 0 0;
-      -webkit-background-clip: text;
-      background-size: 100% auto;
-      background-repeat: repeat;
-      -webkit-text-fill-color: transparent;
       display: table;
+      span.img_bg_text {
+        color: #cdae6d;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        font-family: modelica_medium;
+      }
     }
     ul {
       display: table;
@@ -1022,23 +985,6 @@ footer {
   }
 }
 
-.backgroundcliptext {
-  footer {
-    section.bottom_footer_section {
-      h4 {
-        span.img_bg_text {
-          background-image: url('/img/texture-bg.jpg');
-          background-position: 0 0;
-          -webkit-background-clip: text;
-          background-size: 100% auto;
-          background-repeat: repeat;
-          -webkit-text-fill-color: transparent;
-          color: #cdae6d;
-        }
-      }
-    }
-  }
-}
 
 .preloader_container {
   top: 0;
@@ -1109,6 +1055,126 @@ section.virtual_tours_section {
     top: 1px;
     i.icn {
       color: black;
+    }
+  }
+}
+
+
+.backgroundcliptext {
+  header {
+    .navigation_container {
+      nav {
+        ul.nav {
+          li.nav-item {
+            .nav-link.active,
+            .nav-link:hover {
+              background-image: url(/img/texture-bg.jpg);
+              background-position: 0 0;
+              -webkit-background-clip: text;
+              background-size: 100% auto;
+              background-repeat: repeat;
+              -webkit-text-fill-color: transparent;
+            }
+            .dropdown-menu {
+              .dropdown-item {
+                &.active,
+                &:active,
+                &:focus,
+                &:hover {
+                  background-image: url(/img/texture-bg.jpg);
+                  background-position: 0 0;
+                  -webkit-background-clip: text;
+                  background-size: 100% auto;
+                  background-repeat: repeat;
+                  -webkit-text-fill-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+      .navigation_block {
+        .lang_currency_container {
+          li {
+            ul.language_select {
+              li {
+                a.active {
+                  background-image: url(/img/texture-bg.jpg);
+                  background-position: 0 0;
+                  -webkit-background-clip: text;
+                  background-size: 100% auto;
+                  background-repeat: repeat;
+                  -webkit-text-fill-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  footer {
+    section.bottom_footer_section {
+      h4 {
+        span.img_bg_text {
+          background-image: url('/img/texture-bg.jpg');
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+          color: #cdae6d;
+        }
+      }
+    }
+  }
+
+  section.page_title_section {
+    h1 {
+      span.img_bg_text {
+        background-image: url(/img/texture-bg.jpg);
+        background-position: 0 0;
+        -webkit-background-clip: text;
+        background-size: 100% auto;
+        background-repeat: repeat;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+
+  section.search_section {
+    .outer_block_container {
+      .inner_block_container {
+        .show_options, .show_extra_options {
+          button {
+            span.img_bg_text {
+              background-image: url(/img/texture-bg.jpg);
+              background-position: 0 0;
+              -webkit-background-clip: text;
+              background-size: 100% auto;
+              background-repeat: repeat;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .agent_info_block {
+    .agent_info {
+      .agent_name {
+        span.img_bg_text {
+          background-image: url(/img/texture-bg.jpg);
+          background-position: 0 0;
+          -webkit-background-clip: text;
+          background-size: 100% auto;
+          background-repeat: repeat;
+          -webkit-text-fill-color: transparent;
+        }
+      }
     }
   }
 }
