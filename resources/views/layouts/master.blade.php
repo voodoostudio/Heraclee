@@ -104,7 +104,8 @@
                 border: 2px solid #ccac83;
             }
             .square-animated img {
-                width: 100%;
+                width: 116px;
+                height: 116px;
             }
             #loader {
                 position: absolute;

@@ -179,7 +179,7 @@
         <div class="container-fluid">
             <div class="iframe-m">
                 <p>
-                    <iframe src="/flipbooks/heraclee_book/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                    <iframe src="/flipbooks/heraclee_book_fullwidth/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                 </p>
             </div>
 
