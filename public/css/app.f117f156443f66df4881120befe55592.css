@@ -2392,6 +2392,11 @@ section.page_title_section.hidden {
   font-size: 0.875rem;
 }
 
+.modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body #message-box {
+  bottom: 10px;
+  right: 30px;
+}
+
 /* Bootstrap modal popup END*/
 ul.social_networks_share {
   display: table;
@@ -5852,6 +5857,18 @@ section.results_section #results_map .gm-style-iw .infowindow_container .object_
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info .subtitle span {
   font-size: 0.75rem;
+}
+
+section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info .subtitle span.price span.tooltip {
+  position: relative;
+  opacity: 1;
+  display: initial;
+  font-family: modelica_thin;
+  font-size: 10px;
+}
+
+section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info .subtitle span.price span.price_period {
+  font-size: 10px;
 }
 
 section.results_section #results_map .gm-style-iw .infowindow_container .object_info_container .object_info .creation_date {
