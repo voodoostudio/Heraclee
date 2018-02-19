@@ -358,6 +358,12 @@
                 background: transparent;
                 padding: 0;
                 line-height: 20px;
+                span.tooltip {
+                  position: relative;
+                  display: initial;
+                  opacity: 1;
+                  cursor: default;
+                }
               }
               p.object_description,
               a.btn {

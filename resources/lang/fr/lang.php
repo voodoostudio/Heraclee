@@ -57,6 +57,8 @@ return [
     'more_options'          => 'Plus d\'options',
     'less_options'          => 'Moins d\'options',
     'extra_options'         => 'Options supplémentaires',
+    'afi'                   => 'FAI',
+    'agency_fee_included'   => 'Frais d\'agence inclus',
 
 //    DETAILS PAGE
     'virtual_tour'          => 'Visite virtuelle',

@@ -1,3 +1,7 @@
+@php
+    $lang = LaravelLocalization::getCurrentLocaleRegional();
+@endphp
+
 <div class="col-12 col-sm-6 object_block_container">
     <div class="object_block">
         <div class="img_block">
@@ -136,7 +140,7 @@
                     <p class="object_description">{{$comments}}</p>
                     <a href="#" class="btn dark_inverse" data-toggle="modal" data-target="#agencyContactModal">{{ trans('lang.contact_the_agent') }}</a>
                     @if($property['price'] != 0)
-                        <div class="object_price">{{$property['price_currency']}} {{ number_format($property['price'], 0, ' ', ' ') }} {!! (!empty($property['price_period'])) ? '<span>/ '.$property['price_period'].'</span>' : '' !!}</div>
+                        <div class="object_price">{!! ($property['price_currency'] == 'EUR') ? '€ <span class="tooltip" title="' . trans("lang.agency_fee_included") . '">' . trans("lang.afi") . '</span>' : '' !!} {{ number_format($property['price'], 0, ' ', ' ') }} {!! (!empty($property['price_period'])) ? '<span>/ '.$property['price_period'].'</span>' : '' !!}</div>
                     @else
                         <div class="object_price">{{ trans('lang.zero_price') }}</div>
                     @endif

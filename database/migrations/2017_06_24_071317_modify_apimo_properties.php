@@ -16,7 +16,7 @@ class ModifyApimoProperties extends Migration
         Schema::table('apimo_properties', function (Blueprint $table) {
             $table->integer('area_surface');
             $table->renameColumn('area', 'area_unit')->nullable()->change();
-            $table->string('price_currency', 10)->nullable();
+            $table->string('price_currency', 256)->nullable();
         });
     }
 

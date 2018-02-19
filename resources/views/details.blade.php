@@ -274,7 +274,7 @@
                             <div class="object_info">
                                 <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
                                 @if($property['price'] != 0)
-                                    <div class="object_price">{{ $property['price_currency'] }} {{ number_format($property['price'], 0, ' ', ' ') }} {!! (!empty($property['price_period'])) ? '<span>/ '.$property['price_period'].'</span>' : '' !!}</div>
+                                    <div class="object_price">{!! ($property['price_currency'] == 'EUR') ? '€ <span class="tooltip" title="' . trans("lang.agency_fee_included") . '">' . trans("lang.afi") . '</span>' : '' !!} {{ number_format($property['price'], 0, ' ', ' ') }} {!! (!empty($property['price_period'])) ? '<span>/ '.$property['price_period'].'</span>' : '' !!}</div>
                                 @else
                                     <div class="object_price">{{ trans('lang.zero_price') }}</div>
                                 @endif
@@ -1104,12 +1104,12 @@
                             <label for="map_gas_stations" class="checkbox_label"><i class="icn icon-petrol"></i><span>{{ trans('lang.gas_stations') }}</span></label>
                         </div>
                     </li>
-                    <li class="map_universities">
-                        <div class="checkbox_container">
-                            <input type="checkbox" id="map_universities" value="university" name="map_universities">
-                            <label for="map_universities" class="checkbox_label"><i class="icn icon-university"></i><span>{{ trans('lang.universities') }}</span></label>
-                        </div>
-                    </li>
+                    {{--<li class="map_universities">--}}
+                        {{--<div class="checkbox_container">--}}
+                            {{--<input type="checkbox" id="map_universities" value="university" name="map_universities">--}}
+                            {{--<label for="map_universities" class="checkbox_label"><i class="icn icon-university"></i><span>{{ trans('lang.universities') }}</span></label>--}}
+                        {{--</div>--}}
+                    {{--</li>--}}
                 </ul>
             </div>
         </div>
