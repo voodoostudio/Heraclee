@@ -56,7 +56,7 @@ class ApimoPropertyService extends Migration
                 [
                     'reference' => 7,
                     'locale' => 'fr_FR',
-                    'value' => 'AlarmGardiene',
+                    'value' => 'Gardien',
                 ],
                 [
                     'reference' => 8,
