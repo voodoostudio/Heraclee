@@ -183,7 +183,6 @@
                     <iframe src="/flipbooks/heraclee_book_fullwidth/heraclee_book.html" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
                 </p>
             </div>
-
         </div>
     </section>
 

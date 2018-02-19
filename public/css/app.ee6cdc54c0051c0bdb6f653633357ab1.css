@@ -82,7 +82,7 @@
 @font-face {
   font-family: 'modelica_medium';
   src: url("/fonts/modelica/medium/modelica_medium.eot");
-  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_medium.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
@@ -844,7 +844,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 @font-face {
   font-family: 'modelica_medium';
   src: url("/fonts/modelica/medium/modelica_medium.eot");
-  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_medium.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
@@ -3019,7 +3019,7 @@ section.contact_form_section .outer_block_container .inner_block_container form.
 @font-face {
   font-family: 'modelica_medium';
   src: url("/fonts/modelica/medium/modelica_medium.eot");
-  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_medium.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
@@ -4557,7 +4557,7 @@ footer {
 @font-face {
   font-family: 'modelica_medium';
   src: url("/fonts/modelica/medium/modelica_medium.eot");
-  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_medium.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
@@ -5699,6 +5699,14 @@ section.results_section .results_container.map_view .container-fluid .object_blo
   line-height: 20px;
 }
 
+section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price span.tooltip,
+section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price span.tooltip {
+  position: relative;
+  display: initial;
+  opacity: 1;
+  cursor: default;
+}
+
 section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
 section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container a.btn,
 section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
@@ -6338,6 +6346,14 @@ section.results_section .slick-track {
   line-height: 20px;
 }
 
+.results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price span.tooltip,
+.results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price span.tooltip {
+  position: relative;
+  display: initial;
+  opacity: 1;
+  cursor: default;
+}
+
 .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
 .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container a.btn,
 .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
@@ -6513,7 +6529,7 @@ section.results_section .slick-track {
 @font-face {
   font-family: 'modelica_medium';
   src: url("/fonts/modelica/medium/modelica_medium.eot");
-  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_regular.svg") format("svg");
+  src: url("/fonts/modelica/medium/modelica_medium.eot?#iefix") format("embedded-opentype"), url("/fonts/modelica/medium/modelica_medium.woff") format("woff"), url("/fonts/modelica/medium/modelica_medium.ttf") format("truetype"), url("/fonts/modelica/medium/modelica_medium.svg") format("svg");
   font-weight: 100;
   font-style: normal;
 }
@@ -7577,6 +7593,13 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span {
   font-family: modelica_light;
   font-size: 10px;
+}
+
+#details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span.tooltip, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span.tooltip {
+  position: relative;
+  display: initial;
+  opacity: 1;
+  cursor: default;
 }
 
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {
