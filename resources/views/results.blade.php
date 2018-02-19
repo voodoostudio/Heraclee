@@ -92,6 +92,7 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
+                                            'price_period'    => (!empty($property['price_period'])) ? $property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -123,6 +124,7 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
+                                            'price_period'    => (!empty($property['price_period'])) ? $property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
