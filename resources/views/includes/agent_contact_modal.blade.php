@@ -21,7 +21,9 @@
                                     <p>{{ trans('lang.contact_agent_to_visit') }}</p>
                                     <p class="agent_name">
                                         {{-- {{$property['user']['firstname']}} {{$property['user']['lastname']}}--}}
-                                        SAINT-TROPEZ
+                                        <span class="img_bg_text">
+                                            SAINT-TROPEZ
+                                        </span>
                                     </p>
                                     <ul>
                                         {{--@if(!empty($property['user']['phone']))--}}

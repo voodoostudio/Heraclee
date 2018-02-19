@@ -349,29 +349,32 @@
             });
         @endif
 
-
-        sr.reveal('.results_container.grid_view .reveal_block, .results_container.list_view .reveal_block',{
-            reset: true,
-            duration: 500,
-            viewFactor: 0.5,
-            scale: 1,
-            opacity: 0,
-            useDelay: 'once',
-            easing: 'linear',
-            distance: '35px',
-            beforeReveal: function (domEl) {
-                if($(domEl).hasClass('results_carousel')) {
-                    $('section.results_section .gallery_view').addClass('image_mask');
-                    setTimeout(function(){
-                        $('section.results_section .gallery_view').addClass('active');
-                    }, 50);
-                }
-            },
-            beforeReset: function (domEl) {
-                if($(domEl).hasClass('results_carousel')) {
-                    $('section.results_section .gallery_view').removeClass('active');
-                }
-            },
-        });
+        $('section.results_section .gallery_view').addClass('image_mask');
+        setTimeout(function(){
+            $('section.results_section .gallery_view').addClass('active');
+        }, 1000);
+//        sr.reveal('.results_container.grid_view .reveal_block, .results_container.list_view .reveal_block',{
+//            reset: true,
+//            duration: 500,
+//            viewFactor: 0.5,
+//            scale: 1,
+//            opacity: 0,
+//            useDelay: 'once',
+//            easing: 'linear',
+//            distance: '35px',
+//            beforeReveal: function (domEl) {
+//                if($(domEl).hasClass('results_carousel')) {
+//                    $('section.results_section .gallery_view').addClass('image_mask');
+//                    setTimeout(function(){
+//                        $('section.results_section .gallery_view').addClass('active');
+//                    }, 50);
+//                }
+//            },
+//            beforeReset: function (domEl) {
+//                if($(domEl).hasClass('results_carousel')) {
+//                    $('section.results_section .gallery_view').removeClass('active');
+//                }
+//            },
+//        });
     </script>
 @stop

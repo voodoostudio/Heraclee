@@ -2236,7 +2236,6 @@ section.page_title_section.hidden {
 
 .agent_info_block .agent_info .agent_name {
   margin: 20px 0 15px;
-  display: table;
 }
 
 .agent_info_block .agent_info .agent_name span.img_bg_text {
@@ -8306,6 +8305,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   #details section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li, #locationsDetails section.object_info_section .outer_block_container .inner_block_container .object_details_container ul.object_info_list li {
     width: 50%;
   }
+  #details section.agent_info_section .outer_block_container .inner_block_container, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container {
+    padding: 40px;
+  }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_id {
     font-size: 1rem;
     line-height: 1rem;
@@ -8319,6 +8321,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 1rem;
     padding: 10px 25px 8px;
   }
+  #details section.agent_info_section .outer_block_container .inner_block_container, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container {
+    padding: 40px;
+  }
   .agent_info_block .agent_img {
     width: 120px;
     height: 120px;
@@ -8331,8 +8336,10 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     margin-top: 10px;
   }
   .agent_info_block .agent_info p.agent_name {
-    font-size: 1.25rem;
     margin: 15px 0 10px;
+  }
+  .agent_info_block .agent_info p.agent_name span.img_bg_text {
+    font-size: 1.5rem;
   }
   section.results_section h1 {
     font-size: 1.5rem;
@@ -8366,7 +8373,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_price span {
     font-size: 10px;
   }
-  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .btn {
+  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .btn.dark_inverse {
     margin: 10px 0 0 15px;
     padding: 0 15px;
     font-size: 14px;
@@ -8990,6 +8997,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     width: 40px;
     line-height: 40px;
   }
+  .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body {
+    padding: 90px 40px 45px;
+  }
 }
 
 @media screen and (max-width: 575px) {
@@ -9524,9 +9534,11 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 0.875rem;
   }
   .agent_info_block .agent_info p.agent_name {
+    margin-top: 15px;
+  }
+  .agent_info_block .agent_info p.agent_name span.img_bg_text {
     font-size: 1.125rem;
     line-height: 1.125rem;
-    margin-top: 15px;
   }
   .agent_info_block .agent_info ul li {
     font-size: 0.85rem;

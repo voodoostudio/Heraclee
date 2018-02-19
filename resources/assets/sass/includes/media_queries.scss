@@ -415,6 +415,7 @@
     section.agent_info_section {
       .outer_block_container {
         .inner_block_container {
+          padding: 40px;
           .object_info {
             .object_id {
               font-size: 1rem;
@@ -435,6 +436,16 @@
     }
   }
 
+  #details, #locationsDetails {
+    section.agent_info_section {
+      .outer_block_container {
+        .inner_block_container {
+          padding: 40px;
+        }
+      }
+    }
+  }
+
   .agent_info_block {
     .agent_img {
       width: 120px;
@@ -449,8 +460,10 @@
         margin-top: 10px;
       }
       p.agent_name {
-        font-size: 1.25rem;
         margin: 15px 0 10px;
+        span.img_bg_text {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -484,8 +497,7 @@
                 .object_description {
                   width: 100%;
                   font-size: 12px;
-                  margin-top: 2px;
-                }
+                  margin-top: 2px;                }
                 .object_price {
                   padding: 6px 30px 5px;
                   font-size: 14px;
@@ -494,7 +506,7 @@
                     font-size: 10px;
                   }
                 }
-                .btn {
+                .btn.dark_inverse {
                   margin: 10px 0 0 15px;
                   padding: 0 15px;
                   font-size: 14px;
@@ -1328,6 +1340,10 @@
       line-height: 40px;
     }
   }
+
+  .modal .vertical-alignment-helper .modal-dialog .modal-content .modal-body{
+    padding: 90px 40px 45px;
+  }
 }
 
 @media screen and ( max-width: 575px ) {
@@ -1968,9 +1984,11 @@
         font-size: 0.875rem;
       }
       p.agent_name {
-        font-size: 1.125rem;
-        line-height: 1.125rem;
         margin-top: 15px;
+        span.img_bg_text {
+          font-size: 1.125rem;
+          line-height: 1.125rem;
+        }
       }
       ul {
         li {
