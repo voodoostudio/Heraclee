@@ -92,7 +92,7 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
-                                            'price_period'    => (!empty($property['price_period'])) ? $property['price_period'] : '',
+                                            'price_period'    => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -124,7 +124,7 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
-                                            'price_period'    => (!empty($property['price_period'])) ? $property['price_period'] : '',
+                                            'price_period'    => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -233,7 +233,7 @@
                                             '<div class="subtitle"> ' +
                                                 '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                                             @if($v['price'] != 0)
-                                                '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}'+ '€</span> ' +
+                                                '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }} € <span class="tooltip" title="{{ trans("lang.agency_fee_included") }}">{{ trans("lang.afi") }}</span><span class="price_period"> {{$v['price_period']}}</span></span> ' +
                                             @else
                                                 '<span class="price">'+'{{ trans('lang.zero_price') }}'+ '</span> ' +
                                             @endif

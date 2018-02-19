@@ -295,7 +295,8 @@ function resultsMapInit()  {
             },
             streetViewControlOptions: {
                 position: google.maps.ControlPosition.LEFT_TOP
-            }
+            },
+            styles: MAP_STYLES
         });
     }
 

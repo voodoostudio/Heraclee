@@ -102,6 +102,18 @@ section.results_section {
             .subtitle {
               span {
                 font-size: 0.75rem;
+                &.price {
+                  span.tooltip {
+                    position: relative;
+                    opacity: 1;
+                    display: initial;
+                    font-family: modelica_thin;
+                    font-size: 10px;
+                  }
+                  span.price_period {
+                    font-size: 10px;
+                  }
+                }
               }
             }
             .creation_date {
