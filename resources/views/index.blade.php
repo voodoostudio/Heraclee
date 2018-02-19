@@ -203,7 +203,7 @@
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">
-                <h1>{!! trans('lang.our_last_objects') !!}</h1>
+                <h1>{!! trans('lang.our_last_objects_for_sell') !!}</h1>
                 <div class="results_carousel row reveal">
                     @foreach($sale_properties as $property)
                         @if($property['step'] == 1)
@@ -218,7 +218,7 @@
     <section class="results_section">
         <div class="results_container map_view">
             <div class="container-fluid">
-                <h1>{!! trans('lang.our_last_objects') !!}</h1>
+                <h1>{!! trans('lang.our_last_objects_for_rent') !!}</h1>
                 <div class="results_carousel row reveal">
                     @foreach($rent_properties as $property)
                         @if($property['step'] == 1)

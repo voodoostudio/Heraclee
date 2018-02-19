@@ -4303,6 +4303,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: inline-block;
 }
 
+#index section.results_section h1 span.img_bg_text:last-child,
+#france section.results_section h1 span.img_bg_text:last-child,
+#swiss section.results_section h1 span.img_bg_text:last-child,
+#usa section.results_section h1 span.img_bg_text:last-child,
+#mauritius section.results_section h1 span.img_bg_text:last-child {
+  display: block !important;
+}
+
 #index section.results_section .results_container.map_view .homepage_map_container,
 #france section.results_section .results_container.map_view .homepage_map_container,
 #swiss section.results_section .results_container.map_view .homepage_map_container,

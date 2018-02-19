@@ -324,6 +324,9 @@
       span.img_bg_text {
         color: $main_brown_clr;
         display: inline-block;
+        &:last-child {
+          display: block !important;
+        }
       }
     }
     .results_container.map_view {
