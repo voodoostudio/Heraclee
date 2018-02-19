@@ -5,17 +5,17 @@
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
 @endphp
+
 @section('css')
     {{--<link rel="stylesheet" type="text/css" href="/css/libraries/jquery.fancybox.min.css">--}}
     {{--<link rel="stylesheet" type="text/css" href="/css/details.min.css">--}}
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl={{$lang}}'></script>
     <style>
-        #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span,
-        #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span {
-            font-size: 12px;
+        .rc-anchor-light {
+            background: transparent!important;
         }
     </style>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language={{$lang}}"></script>
 @stop
 
 @section('content')

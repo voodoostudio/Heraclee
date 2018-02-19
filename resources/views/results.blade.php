@@ -7,7 +7,9 @@
 @endphp--}}
 
 
-{{--{{ dd($all_properties) }}--}}
+@php
+    $lang = LaravelLocalization::getCurrentLocaleRegional();
+@endphp
 
 @section('title', 'Results page')
 @section('css')
@@ -15,6 +17,12 @@
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl={{$lang}}'></script>
+    <style>
+        .rc-anchor-light {
+            background: transparent!important;
+        }
+    </style>
 @stop
 
 @section('content')
