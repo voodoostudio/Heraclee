@@ -70,8 +70,18 @@ class PagesController extends Controller
 
         $properties_obj = new Properties();
 
-        /* Last 10 objects on Saint Tropes (main page) */
-        $slider_properties = $properties_obj->getPropertiesForSlider();
+        $sale = [1, 4, 5, 6];
+        $rent = [2, 3];
+        $all_categories = [1, 2, 3, 4, 5, 6];
+
+        /* Last 10 sale objects on Saint Tropes (main page) */
+        $sale_slider_properties = $properties_obj->getPropertiesForSlider($sale);
+
+        /* Last 10 rent objects on Saint Tropes (main page) */
+        $rent_slider_properties = $properties_obj->getPropertiesForSlider($rent);
+
+        /* Show all categories */
+        $properties = $properties_obj->getPropertiesForSlider($all_categories);
 
         /* Show all properties on map (on main page) */
         $all_properties = $properties_obj->getAllProperties(
@@ -147,7 +157,9 @@ class PagesController extends Controller
                 'equipments_list' => $equipments_list,
                 'city_list' => $city_list,
                 'type' => $type,
-                'properties' => $slider_properties,
+                'properties' => $properties,
+                'sale_properties' => $sale_slider_properties,
+                'rent_properties' => $rent_slider_properties,
                 'all_properties' => $all_properties,
                 'slider' => $attr_for_slider,
                 'view_type' => $view_type,
@@ -167,7 +179,9 @@ class PagesController extends Controller
                 'equipments_list' => $equipments_list,
                 'city_list' => $city_list,
                 'type' => $type,
-                'properties' => $slider_properties,
+                'properties' => $properties,
+                'sale_properties' => $sale_slider_properties,
+                'rent_properties' => $rent_slider_properties,
                 'slider' => $attr_for_slider,
                 'view_type' => $view_type,
                 'last_update' => $last_update,
@@ -187,7 +201,9 @@ class PagesController extends Controller
                 'equipments_list' => $equipments_list,
                 'city_list' => $city_list,
                 'type' => $type,
-                'properties' => $slider_properties,
+                'properties' => $properties,
+                'sale_properties' => $sale_slider_properties,
+                'rent_properties' => $rent_slider_properties,
                 'slider' => $attr_for_slider,
                 'view_type' => $view_type,
                 'last_update' => $last_update,
@@ -207,7 +223,9 @@ class PagesController extends Controller
                 'equipments_list' => $equipments_list,
                 'city_list' => $city_list,
                 'type' => $type,
-                'properties' => $slider_properties,
+                'properties' => $properties,
+                'sale_properties' => $sale_slider_properties,
+                'rent_properties' => $rent_slider_properties,
                 'slider' => $attr_for_slider,
                 'view_type' => $view_type,
                 'last_update' => $last_update,
@@ -227,7 +245,9 @@ class PagesController extends Controller
                 'equipments_list' => $equipments_list,
                 'city_list' => $city_list,
                 'type' => $type,
-                'properties' => $slider_properties,
+                'properties' => $properties,
+                'sale_properties' => $sale_slider_properties,
+                'rent_properties' => $rent_slider_properties,
                 'view_type' => $view_type,
                 'last_update' => $last_update,
                 'gallery_settings' => $mauritius_gallery_settings,

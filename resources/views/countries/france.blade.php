@@ -89,7 +89,7 @@
             <div class="container-fluid">
                 <h1>{!! trans('lang.our_last_objects') !!}</h1>
                 <div class="results_carousel reveal row">
-                    @foreach($properties as $property)
+                    @foreach($sale_properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')
                         @endif
@@ -109,7 +109,7 @@
             <div class="container-fluid">
                 <h1>{!! trans('lang.our_last_objects') !!}</h1>
                 <div class="results_carousel reveal row">
-                    @foreach($properties as $property)
+                    @foreach($rent_properties as $property)
                         @if($property['step'] == 1)
                             @include('includes.results_object')
                         @endif

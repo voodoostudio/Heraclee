@@ -724,13 +724,12 @@ class Properties extends Model
         return $array;
     }
 
-    public function getPropertiesForSlider()
+    public function getPropertiesForSlider($sell_type)
     {
         $items = 10;
         $page = 1;
         $offset = ($page - 1) * $items;
         $array = [];
-        $conditions_where = [];
         $country_array = [];
         $country = [];
         $lang = LaravelLocalization::getCurrentLocale();
@@ -769,6 +768,7 @@ class Properties extends Model
             ->where('reference', 'like', 'HSTP%')
             ->whereIn('country', $country_array)
             ->where('agency', '10338')
+            ->whereIn('category', $sell_type)
             ->limit($items)
             ->offset($offset)
             ->orderBy('created_at', 'DESC')
