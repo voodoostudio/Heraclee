@@ -768,6 +768,7 @@ class Properties extends Model
             ->where('reference', 'like', 'HSTP%')
             ->whereIn('country', $country_array)
             ->where('agency', '10338')
+            ->whereIn('type', [1,2])
             ->whereIn('category', $sell_type)
             ->limit($items)
             ->offset($offset)
