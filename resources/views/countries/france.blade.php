@@ -99,6 +99,26 @@
         </div>
     </section>
 
+    <section class="results_section">
+        @if($count_items == 0)
+            <div class="container-fluid">
+                <h1 class="no_results">{{ trans('lang.currently_no_results') }}</h1>
+            </div>
+        @endif
+        <div class="results_container map_view">
+            <div class="container-fluid">
+                <h1>{!! trans('lang.our_last_objects') !!}</h1>
+                <div class="results_carousel reveal row">
+                    @foreach($properties as $property)
+                        @if($property['step'] == 1)
+                            @include('includes.results_object')
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection
 
 @section('javascript')

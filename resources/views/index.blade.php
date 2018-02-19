@@ -217,6 +217,21 @@
 
     <section class="results_section">
         <div class="results_container map_view">
+            <div class="container-fluid">
+                <h1>{!! trans('lang.our_last_objects') !!}</h1>
+                <div class="results_carousel row reveal">
+                    @foreach($properties as $property)
+                        @if($property['step'] == 1)
+                            @include('includes.results_object')
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results_section">
+        <div class="results_container map_view">
             <div class="homepage_map_container">
                 <div id="results_map"></div>
             </div>

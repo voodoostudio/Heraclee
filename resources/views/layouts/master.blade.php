@@ -428,15 +428,15 @@
                 distance: '35px',
                 beforeReveal: function (domEl) {
                     if($(domEl).hasClass('results_carousel')) {
-                        $('section.results_section .gallery_view').addClass('image_mask');
+                        $(domEl).find('.gallery_view').addClass('image_mask');
                         setTimeout(function(){
-                            $('section.results_section .gallery_view').addClass('active');
+                            $(domEl).find('.gallery_view').addClass('active');
                         }, 50);
                     }
                 },
                 beforeReset: function (domEl) {
                     if($(domEl).hasClass('results_carousel')) {
-                        $('section.results_section .gallery_view').removeClass('active');
+                        $(domEl).find('.gallery_view').removeClass('active');
                     }
                 },
             });
