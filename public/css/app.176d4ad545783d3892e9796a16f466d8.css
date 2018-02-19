@@ -7590,7 +7590,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
 
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span {
   font-family: modelica_light;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span.tooltip, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price span.tooltip {
