@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Subscribers;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\DB;
+use App\User;
 
 class SubscribersController extends Controller
 {
@@ -28,5 +30,21 @@ class SubscribersController extends Controller
             fputcsv($file, array($row->email));
         }
         exit();
+    }
+
+    public function subscribersData(Request $request)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $password = $request->password;
+
+        $subscribers = new User;
+        $subscribers->name     = $name;
+        $subscribers->email    = $email;
+        $subscribers->password = bcrypt($password);
+
+        $subscribers->save();
+
+        return redirect('/');
     }
 }

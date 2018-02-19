@@ -181,6 +181,8 @@ Route::group(
 
         /* Subscribers */
         Route::get('/admin/subscribers', 'SubscribersController@index');
+        /* Get all subscribers */
+        Route::get('/admin/subscribers_list', 'SubscribersController@subscribersData');
         /* Get CSV */
         Route::get('/admin/subscribers/get-csv', 'SubscribersController@getCSV');
 
