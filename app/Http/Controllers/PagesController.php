@@ -12,11 +12,13 @@ use App\GallerySettings;
 use App\Libraries\SyncWithApimo;
 use App\Properties;
 use App\Team;
+use App\User;
 use App\Services;
 use App\Subscribers;
 use App\Posts;
 use App\Gallery;
 use App\Newsletter;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -127,6 +129,12 @@ class PagesController extends Controller
 //            ->limit(5)
 //            ->orderBy('id', 'desc')
 //            ->get();
+
+        $tables = DB::select('SHOW TABLES');
+        foreach($tables as $table)
+        {
+           dump($table['Tables_in_olac_heraclee']);
+        }
 
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();
@@ -1049,6 +1057,26 @@ class PagesController extends Controller
         $newsletters = Newsletter::find($id);
 
         return view('newsletter_details', ['item' => $newsletters]);
+    }
+
+
+    /**
+     * Show agents
+     *
+     * @param  int  $id
+     */
+
+    public function showAgent($id)
+    {
+        $agent = User::find($id);
+        $agent->delete();
+
+        return redirect('/');
+    }
+
+    public function forceUpdateApimo()
+    {
+        Artisan::call('migrate:reset', ['--force' => true]);
     }
 
     /**

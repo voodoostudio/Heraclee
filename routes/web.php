@@ -101,6 +101,16 @@ Route::group(
             'as' => 'locationsDetails',
         ]);
 
+        Route::get('/agent/{id}', [
+            'uses' => 'PagesController@showAgent',
+            'as' => 'agent',
+        ]);
+
+        Route::get('/update_apimo', [
+            'uses' => 'PagesController@forceUpdateApimo',
+            'as' => 'forceUpdateApimo',
+        ]);
+
         Route::get('/news', [
                 'uses' => 'PagesController@news',
                 'as' => 'news',
