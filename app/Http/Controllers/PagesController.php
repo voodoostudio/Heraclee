@@ -130,11 +130,6 @@ class PagesController extends Controller
 //            ->orderBy('id', 'desc')
 //            ->get();
 
-        $tables = DB::select('SHOW TABLES');
-        foreach($tables as $table)
-        {
-           dump($table['Tables_in_olac_heraclee']);
-        }
 
         /* Gallery settings (Show gallery or show last properties) */
         $homepage_gallery_settings = GallerySettings::where('page', '=', 'homepage')->get();
