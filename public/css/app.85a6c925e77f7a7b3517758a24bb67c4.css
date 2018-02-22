@@ -4027,6 +4027,7 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   color: #fdfdfd;
   background: #ccac83;
   border: 1px solid #ccac83;
+  font-family: modelica_light;
 }
 
 #index section.latest_news_section .latest_news_container .marquee_title.mobile,
@@ -4088,6 +4089,14 @@ ul.nav.nav-tabs li.nav-item a.nav-link.active {
   display: inline-block;
   margin-right: 40px;
   line-height: 42px;
+}
+
+#index section.latest_news_section .latest_news_container .marquee ul li a,
+#france section.latest_news_section .latest_news_container .marquee ul li a,
+#swiss section.latest_news_section .latest_news_container .marquee ul li a,
+#usa section.latest_news_section .latest_news_container .marquee ul li a,
+#mauritius section.latest_news_section .latest_news_container .marquee ul li a {
+  font-family: modelica_light;
 }
 
 #index section.latest_news_section .latest_news_container .marquee .js-marquee,
@@ -8455,6 +8464,9 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .title_container a h2 {
     font-size: 1rem;
+  }
+  section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container {
+    margin-bottom: 5px;
   }
   section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container h3, section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container div.object_price {
     font-size: 0.85rem;

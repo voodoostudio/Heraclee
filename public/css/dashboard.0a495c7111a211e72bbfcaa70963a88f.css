@@ -709,6 +709,16 @@ section.subscribers_list_section .outer_block_container .inner_block_container t
   text-align: right;
 }
 
+.label_container {
+  display: table;
+  width: 100%;
+}
+
+.label_container label.form_el_label {
+  display: table;
+  float: left;
+}
+
 @media screen and (max-width: 767px) {
   section.news_list_section,
   section.article_section {
