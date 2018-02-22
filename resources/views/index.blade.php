@@ -323,7 +323,7 @@
                         '<div class="subtitle"> ' +
                             '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                         @if($v['price'] != 0)
-                            '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }} {{ ($v['price_max'] != 0) ?  '- ' . number_format($v['price_max'], 0, ' ', ' ') : '' }} '+' € <span class="tooltip" title="{{ trans("lang.agency_fee_included") }}">{{ trans("lang.afi") }}</span><span class="price_period"> {{$v['price_period']}}</span></span> ' +
+                            '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }}{{ ($v['price_max'] != 0) ?  ' - ' . number_format($v['price_max'], 0, ' ', ' ') : '' }}'+' € <span class="tooltip" title="{{ trans("lang.agency_fee_included") }}">{{ trans("lang.afi") }}</span><span class="price_period"> {{$v['price_period']}}</span></span> ' +
                         @else
                             '<span class="price">'+'{{ trans('lang.zero_price')  }}'+ '</span> ' +
                         @endif
