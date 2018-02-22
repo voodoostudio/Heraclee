@@ -72,6 +72,8 @@
                                             'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                             'reference'     => $property['reference'],
                                             'price'         => $property['price'],
+                                            'price_max'     => ($property['price_max'] != 0) ? ' / '.$property['price_max'] : '',
+                                            'price_period'  => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'pictures'      => $property['pictures'],
                                             'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_st_tropes,
                                             'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude_agency_st_tropes,
@@ -92,7 +94,6 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
-                                            'price_period'    => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
@@ -104,6 +105,8 @@
                                             'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                             'reference'     => $property['reference'],
                                             'price'         => $property['price'],
+                                            'price_max'     => ($property['price_max'] != 0) ? ' / '.$property['price_max'] : '',
+                                            'price_period'  => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'pictures'      => $property['pictures'],
                                             'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_croixvalmer,
                                             'longitude'     => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['longitude'] : $longitude_agency_croixvalmer,
@@ -124,7 +127,6 @@
                                                                    'city' => mb_strtolower(str_replace(" ", "-", $property['city'])),
                                                                    'id' => $property['property_id']
                                                                ]),
-                                            'price_period'    => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'created_at'    => $property['created_at'],
                                             'updated_at'    => $property['updated_at'],
                                         ];
