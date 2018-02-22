@@ -185,6 +185,15 @@ section.subscribers_list_section {
   }
 }
 
+.label_container {
+  display: table;
+  width: 100%;
+  label.form_el_label {
+    display: table;
+    float: left;
+  }
+}
+
 @media screen and ( max-width: 767px ) {
   section.news_list_section,
   section.article_section {

@@ -83,18 +83,18 @@
                     <li class="nav-item">
                         <a class="nav-link {{ (($cp == 'france')) ? 'active' : '' }}" href="{{ route('france') }}">{{ trans('lang.france') }}{{ (($cp == 'france')) ? ' (' . $count_items . ')'  : '' }}</a>
                     </li>
-                    <li class="nav-item">
-                        <div class="dropdown">
-                            <div class="dropdown-toggle nav-link {{ ($cp == 'swiss') || ($cp == 'usa') || ($cp == 'mauritius') ? 'active' : '' }}" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ trans('lang.other_countries') }}
-                            </div>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>
-                                <a class="dropdown-item {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>
-                                <a class="dropdown-item {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>
-                            </div>
-                        </div>
-                    </li>
+                    {{--<li class="nav-item">--}}
+                        {{--<div class="dropdown">--}}
+                            {{--<div class="dropdown-toggle nav-link {{ ($cp == 'swiss') || ($cp == 'usa') || ($cp == 'mauritius') ? 'active' : '' }}" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+                                {{--{{ trans('lang.other_countries') }}--}}
+                            {{--</div>--}}
+                            {{--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">--}}
+                                {{--<a class="dropdown-item {{ ($cp == 'swiss') ? 'active' : '' }}" href="{{ route('swiss') }}">{{ trans('lang.swiss') }}{{ (($cp == 'swiss')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                                {{--<a class="dropdown-item {{ ($cp == 'usa') ? 'active' : '' }}" href="{{ route('usa') }}">{{ trans('lang.usa') }}{{ (($cp == 'usa')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                                {{--<a class="dropdown-item {{ ($cp == 'mauritius') ? 'active' : '' }}" href="{{ route('mauritius') }}">{{ trans('lang.mauritius') }}{{ (($cp == 'mauritius')) ? ' (' . $count_items . ')'  : '' }}</a>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</li>--}}
                     <li class="nav-item">
                         <a class="nav-link {{ ($cp == 'virtual-tours') ? 'active' : '' }}" href="{{ route('virtual-tours') }}">{{ trans('lang.virtual_tours') }}</a>
                     </li>

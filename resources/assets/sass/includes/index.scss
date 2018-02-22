@@ -177,6 +177,7 @@
         color: $main_xlight_clr;
         background: $main_brown_clr;
         border: 1px solid $main_brown_clr;
+        font-family: modelica_light;
         &.mobile {
           display: none;
         }
@@ -205,6 +206,9 @@
             display: inline-block;
             margin-right: 40px;
             line-height: 42px;
+            a {
+              font-family: modelica_light;
+            }
           }
         }
         .js-marquee {
