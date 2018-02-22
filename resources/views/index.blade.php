@@ -56,7 +56,7 @@
                                             'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                             'reference'     => $property['reference'],
                                             'price'         => $property['price'],
-                                            'price_max'     => ($property['price_max'] != 0) ? ' / '.$property['price_max'] : '',
+                                            'price_max'     => ($property['price_max'] != 0) ? $property['price_max'] : 0,
                                             'price_period'  => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'pictures'      => $property['pictures'],
                                             'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_st_tropes,
@@ -89,7 +89,7 @@
                                             'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
                                             'reference'     => $property['reference'],
                                             'price'         => $property['price'],
-                                            'price_max'     => ($property['price_max'] != 0) ? ' / '.$property['price_max'] : '',
+                                            'price_max'     => ($property['price_max'] != 0) ? $property['price_max'] : 0,
                                             'price_period'  => (!empty($property['price_period'])) ? ' / '.$property['price_period'] : '',
                                             'pictures'      => $property['pictures'],
                                             'latitude'      => ($property['publish_address'] == 1 && (!empty($property['address']) || !empty($property['address_more']))) ? $property['latitude'] : $latitude_agency_croixvalmer,
@@ -323,7 +323,7 @@
                         '<div class="subtitle"> ' +
                             '<span class="city">'+'{{$v['city']}}'+'</span> ' +
                         @if($v['price'] != 0)
-                            '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }} @if($v['price_max'] != 0){{ number_format($v['price_max'], 0, ' ', ' ')}}@endif'+' € <span class="tooltip" title="{{ trans("lang.agency_fee_included") }}">{{ trans("lang.afi") }}</span><span class="price_period"> {{$v['price_period']}}</span></span> ' +
+                            '<span class="price">'+'{{ number_format($v['price'], 0, ' ', ' ') }} {{ ($v['price_max'] != 0) ?  '- ' . number_format($v['price_max'], 0, ' ', ' ') : '' }} '+' € <span class="tooltip" title="{{ trans("lang.agency_fee_included") }}">{{ trans("lang.afi") }}</span><span class="price_period"> {{$v['price_period']}}</span></span> ' +
                         @else
                             '<span class="price">'+'{{ trans('lang.zero_price')  }}'+ '</span> ' +
                         @endif
