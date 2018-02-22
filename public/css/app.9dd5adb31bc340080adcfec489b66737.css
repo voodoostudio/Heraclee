@@ -5708,7 +5708,9 @@ section.results_section .results_container.grid_view .container-fluid .object_bl
 section.results_section .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price {
   background: transparent;
   padding: 0;
-  line-height: 20px;
+  line-height: 1;
+  text-align: right;
+  width: 50%;
 }
 
 section.results_section .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
@@ -6366,7 +6368,9 @@ section.results_section .slick-track {
 .results_container.map_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container .object_price {
   background: transparent;
   padding: 0;
-  line-height: 20px;
+  line-height: 1;
+  text-align: right;
+  width: 50%;
 }
 
 .results_container.grid_view .container-fluid .object_block_container .object_block .info_block_container .info_block .description_container p.object_description,
@@ -8186,6 +8190,13 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.results_section .results_container.map_view .container-fluid .results_carousel .object_block_container .object_block .img_block .gallery_view ul.gallery li img {
     height: 350px;
   }
+  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container button.btn {
+    padding: 0 20px;
+  }
+  section.results_section .results_container.list_view .container-fluid > .row .object_block_container .object_block .info_block .description_container .object_price {
+    padding: 9px 15px 8px;
+    font-size: 1.125rem;
+  }
   section.gallery_section .gallery_container .gallery_view .gallery.slick-slider .slick-list .slick-track .slick-slide {
     height: 600px;
   }
@@ -8365,17 +8376,16 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     font-size: 1rem;
     line-height: 1rem;
   }
-  #details section.agent_info_section .outer_block_container .inner_block_container .object_info .btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .btn {
+  #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
     height: 40px;
     line-height: 40px;
     font-size: 1rem;
+    margin: 0 15px;
+    padding: 0 15px;
   }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info .object_price {
     font-size: 1rem;
-    padding: 10px 25px 8px;
-  }
-  #details section.agent_info_section .outer_block_container .inner_block_container, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container {
-    padding: 40px;
+    padding: 10px 15px 8px;
   }
   .agent_info_block .agent_img {
     width: 120px;
@@ -8840,7 +8850,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
     display: block;
   }
   #details section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn, #locationsDetails section.agent_info_section .outer_block_container .inner_block_container .object_info button.btn {
-    margin: 0 30px 0 0;
+    margin: 0 15px 0 0;
   }
   .agent_info_block .agent_info p {
     margin-top: 0;

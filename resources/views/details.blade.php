@@ -274,7 +274,7 @@
                             <div class="object_info">
                                 <p class="object_id">{{ trans('lang.id') }} : {{$property['reference']}}</p>
                                 @if($property['price'] != 0)
-                                    <div class="object_price">{{ number_format($property['price'], 0, ' ', ' ') }} {{ (($property['price_max']) != 0) ? '/ ' . number_format($property['price_max'], 0, ' ', ' ') : '' }} {!! ($property['price_currency'] == 'EUR') ? '€ <span class="tooltip" title="' . trans("lang.agency_fee_included") . '">' . trans("lang.afi") . '</span>' : '' !!} {!! (!empty($property['price_period'])) ? '<span> / '.$property['price_period'].'</span>' : '' !!}</div>
+                                    <div class="object_price">{{ number_format($property['price'], 0, ' ', ' ') }} {{ (($property['price_max']) != 0) ? ' - ' . number_format($property['price_max'], 0, ' ', ' ') : '' }} {!! ($property['price_currency'] == 'EUR') ? '€ <span class="tooltip" title="' . trans("lang.agency_fee_included") . '">' . trans("lang.afi") . '</span>' : '' !!} {!! (!empty($property['price_period'])) ? '<span> / '.$property['price_period'].'</span>' : '' !!}</div>
                                 @else
                                     <div class="object_price">{{ trans('lang.zero_price') }}</div>
                                 @endif

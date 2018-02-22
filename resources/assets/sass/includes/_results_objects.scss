@@ -363,7 +363,9 @@
               .object_price {
                 background: transparent;
                 padding: 0;
-                line-height: 20px;
+                line-height: 1;
+                text-align: right;
+                width: 50%;
               }
               p.object_description,
               a.btn {

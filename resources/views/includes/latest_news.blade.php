@@ -3,11 +3,14 @@
         <div class="container-fluid">
             <div class="latest_news_container">
                 <div class="marquee_title">
-                    <span>{{ trans('lang.latest_news') }}</span>
-                </div>
-                <div class="marquee_title mobile">
                     <span>News</span>
                 </div>
+                {{--<div class="marquee_title">--}}
+                    {{--<span>{{ trans('lang.latest_news') }}</span>--}}
+                {{--</div>--}}
+                {{--<div class="marquee_title mobile">--}}
+                    {{--<span>News</span>--}}
+                {{--</div>--}}
                 <div class="marquee">
                     <ul class="">
                         @foreach($last_news as $item)

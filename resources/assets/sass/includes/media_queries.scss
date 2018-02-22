@@ -178,7 +178,30 @@
         }
       }
     }
+    .results_container.list_view {
+      .container-fluid > {
+        .row {
+          .object_block_container {
+            .object_block {
+              .info_block {
+                .description_container {
+                  button.btn {
+                    padding: 0 20px;
+                  }
+                  .object_price {
+                    padding: 9px 15px 8px;
+                    font-size: 1.125rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+
+
 
   section.gallery_section {
     .gallery_container {
@@ -427,26 +450,18 @@
               font-size: 1rem;
               line-height: 1rem;
             }
-            .btn {
+            button.btn {
               height: 40px;
               line-height: 40px;
               font-size: 1rem;
+              margin: 0 15px;
+              padding: 0 15px;
             }
             .object_price {
               font-size: 1rem;
-              padding: 10px 25px 8px;
+              padding: 10px 15px 8px;
             }
           }
-        }
-      }
-    }
-  }
-
-  #details, #locationsDetails {
-    section.agent_info_section {
-      .outer_block_container {
-        .inner_block_container {
-          padding: 40px;
         }
       }
     }
@@ -1143,7 +1158,7 @@
               display: block;
             }
             button.btn {
-              margin: 0 30px 0 0;
+              margin: 0 15px 0 0;
             }
           }
         }
