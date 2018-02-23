@@ -196,6 +196,7 @@
     @endif
 @stop
 
+
 @section('javascript')
     {{--<script type="text/javascript" src="/js/libraries/markerclusterer.js"></script>--}}
     <script>
