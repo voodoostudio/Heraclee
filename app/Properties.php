@@ -263,6 +263,12 @@ class Properties extends Model
                             ->where('language', $lang_short)
                             ->get();
 
+                        //take reference in the comments
+                        $titles = DB::table('apimo_property_comments')
+                            ->where('title', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
+
                         //property heating
                         $heating_access_reference = DB::table('apimo_property_heating_access')
                             ->where('value', 'like', '%' . $search_keywords . '%')
@@ -350,6 +356,7 @@ class Properties extends Model
 
                         // arrays
                         $commentary = [];
+                        $commentary_title = [];
                         $heating_access_array = [];
                         $heating_device_array = [];
                         $heating_type_array = [];
@@ -366,6 +373,10 @@ class Properties extends Model
 
                         foreach ($comments as $comment) {
                             $commentary[] = $comment['property_id'];
+                        }
+
+                        foreach ($titles as $title) {
+                            $commentary_title[] = $title['property_id'];
                         }
 
                         // heating
@@ -410,7 +421,8 @@ class Properties extends Model
                             ->orWhereIn('property_id', $water_access_array)
                             ->orWhereIn('property_id', $water_device_array)
                             ->orWhereIn('property_id', $water_waste_array)
-                            ->orWhereIn('property_id', $commentary);
+                            ->orWhereIn('property_id', $commentary)
+                            ->orWhereIn('property_id', $commentary_title);
                     }
                 })
                 ->limit($items)
@@ -463,6 +475,12 @@ class Properties extends Model
                         //take reference in the comments
                         $comments = DB::table('apimo_property_comments')
                             ->where('comment', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
+
+                        //take reference in the comments
+                        $titles = DB::table('apimo_property_comments')
+                            ->where('title', 'like', '%' . $search_keywords . '%')
                             ->where('language', $lang_short)
                             ->get();
 
@@ -553,6 +571,7 @@ class Properties extends Model
 
                         // arrays
                         $commentary = [];
+                        $commentary_title = [];
                         $heating_access_array = [];
                         $heating_device_array = [];
                         $heating_type_array = [];
@@ -569,6 +588,10 @@ class Properties extends Model
 
                         foreach ($comments as $comment) {
                             $commentary[] = $comment['property_id'];
+                        }
+
+                        foreach ($titles as $title) {
+                            $commentary_title[] = $title['property_id'];
                         }
 
                         // heating
@@ -613,7 +636,8 @@ class Properties extends Model
                             ->orWhereIn('property_id', $water_access_array)
                             ->orWhereIn('property_id', $water_device_array)
                             ->orWhereIn('property_id', $water_waste_array)
-                            ->orWhereIn('property_id', $commentary);
+                            ->orWhereIn('property_id', $commentary)
+                            ->orWhereIn('property_id', $commentary_title);
                     }
                 })
                 ->whereIn('country', $country_array)
@@ -982,6 +1006,12 @@ class Properties extends Model
                             ->where('language', $lang_short)
                             ->get();
 
+                        //take reference in the comments
+                        $titles = DB::table('apimo_property_comments')
+                            ->where('title', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
+
                         //property heating
                         $heating_access_reference = DB::table('apimo_property_heating_access')
                             ->where('value', 'like', '%' . $search_keywords . '%')
@@ -1069,6 +1099,7 @@ class Properties extends Model
 
                         // arrays
                         $commentary = [];
+                        $commentary_title = [];
                         $heating_access_array = [];
                         $heating_device_array = [];
                         $heating_type_array = [];
@@ -1085,6 +1116,10 @@ class Properties extends Model
 
                         foreach ($comments as $comment) {
                             $commentary[] = $comment['property_id'];
+                        }
+
+                        foreach ($titles as $title) {
+                            $commentary_title[] = $title['property_id'];
                         }
 
                         // heating
@@ -1129,7 +1164,8 @@ class Properties extends Model
                             ->orWhereIn('property_id', $water_access_array)
                             ->orWhereIn('property_id', $water_device_array)
                             ->orWhereIn('property_id', $water_waste_array)
-                            ->orWhereIn('property_id', $commentary);
+                            ->orWhereIn('property_id', $commentary)
+                            ->orWhereIn('property_id', $commentary_title);
                     }
                 })
                 ->whereIn('country', $country_array)
@@ -2031,6 +2067,12 @@ class Properties extends Model
                             ->where('language', $lang_short)
                             ->get();
 
+                        //take reference in the comments
+                        $titles = DB::table('apimo_property_comments')
+                            ->where('title', 'like', '%' . $search_keywords . '%')
+                            ->where('language', $lang_short)
+                            ->get();
+
                         //property heating
                         $heating_access_reference = DB::table('apimo_property_heating_access')
                             ->where('value', 'like', '%' . $search_keywords . '%')
@@ -2118,6 +2160,7 @@ class Properties extends Model
 
                         // arrays
                         $commentary = [];
+                        $commentary_title = [];
                         $heating_access_array = [];
                         $heating_device_array = [];
                         $heating_type_array = [];
@@ -2134,6 +2177,10 @@ class Properties extends Model
 
                         foreach ($comments as $comment) {
                             $commentary[] = $comment['property_id'];
+                        }
+
+                        foreach ($titles as $title) {
+                            $commentary_title[] = $title['property_id'];
                         }
 
                         // heating
@@ -2178,7 +2225,8 @@ class Properties extends Model
                             ->orWhereIn('property_id', $water_access_array)
                             ->orWhereIn('property_id', $water_device_array)
                             ->orWhereIn('property_id', $water_waste_array)
-                            ->orWhereIn('property_id', $commentary);
+                            ->orWhereIn('property_id', $commentary)
+                            ->orWhereIn('property_id', $commentary_title);
                     }
                 })
                 ->orderBy('created_at', 'DESC')
