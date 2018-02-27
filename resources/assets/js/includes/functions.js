@@ -281,9 +281,9 @@ function resultsMapInit()  {
             });
         }
     } else {
-        var latlang = {lat: 46.207389, lng: 6.155903};
+        var latlang = {lat: 43.228355, lng: 6.585578};
         var map = new google.maps.Map(document.getElementById('results_map'), {
-            zoom: 5,
+            zoom: 12,
             center: latlang,
             scrollwheel: false,
             mapTypeControlOptions: {

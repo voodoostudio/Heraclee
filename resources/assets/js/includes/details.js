@@ -31,8 +31,10 @@ $(document).ready(function() {
     $('.details_gallery').on('afterChange', function(event, slick, currentSlide, nextSlide){
         if(currentSlide == 0) {
             $('.gallery_view .object_title').fadeIn("fast");
+            $('.gallery_view .gradient_bottom').fadeIn("fast");
         } else {
             $('.gallery_view .object_title').fadeOut("fast");
+            $('.gallery_view .gradient_bottom').fadeOut("fast");
         }
     });
 

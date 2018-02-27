@@ -1137,6 +1137,7 @@
             });
         </script>
     @endif
+
     {{--var dpe_pointer = {{$property['regulations']['0']['value']}};--}}
     {{--var ges_pointer = {{$property['regulations']['1']['value']}};--}}
     <script>

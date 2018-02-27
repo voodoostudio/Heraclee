@@ -229,6 +229,7 @@ section.subscribers_list_section {
             float: none;
             margin-right: 0;
             text-align: center;
+            height: 90px;
             a {
               img {
                 max-width: 100%;
@@ -241,11 +242,16 @@ section.subscribers_list_section {
               margin-top: 10px;
               text-align: justify;
             }
-            h2 {
-              margin: 20px 0 10px;
-              font-size: 1.25rem;
-              line-height: 1.25rem;
-              text-align: center;
+            a {
+              h2 {
+                margin: 10px 0 10px;
+                font-size: 0.825rem;
+                line-height: 1.25rem;
+                text-align: center;
+              }
+            }
+            h3 {
+              font-size: 0.75rem;
             }
           }
         }
