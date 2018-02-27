@@ -301,7 +301,7 @@
                             {{--<span>{{ trans('lang.updated_at') }}</b>  {{ date('d.m.Y', strtotime($property['updated_at'])) }}</span>--}}
                         {{--@endif--}}
                     {{--</p>--}}
-                    <h4> {{ $comment_title }}</h4>
+                    <h3> {{ $comment_title }}</h3>
                     @if(!empty($property['comments']['comment']))
                         <p class="margin_bottom_20 description">
                             {{$property['comments']['comment']}}
