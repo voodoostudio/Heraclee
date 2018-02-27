@@ -387,7 +387,7 @@
                             @endif
                             @if(!empty($property['areas']))
                                 @foreach($property['areas'] as $area)
-                                    @if((!empty($area['type'])) && (!empty($area['area'])) && $area['type'] == 'Superficie terrain')
+                                    @if((!empty($area['type'])) && (!empty($area['area'])) && $area['type'] == 'Superficie terrain' || $area['type'] == 'Land surface'))
                                         <li class="tooltip" title="{{ $area['type'] }} : {{ $area['number'] }}"><span class="detail_name">{{ $area['type'] }}</span><span class="detail_value">{{ $area['area'] }} m<sup>2</sup></span></li>
                                     @endif
                                 @endforeach
