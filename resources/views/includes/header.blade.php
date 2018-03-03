@@ -49,9 +49,12 @@
                                 <ul class="language_select">
                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $langItem)
                                         <li>
+                                            {{--<a class="ravis-btn btn-type-2 {{ ($localeCode == App::getLocale()) ? 'active' : '' }}" rel="alternate" hreflang="{{$localeCode}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode) }}">--}}
+                                                {{--<span>{{ $langItem['native'] }}</span>--}}
+                                            {{--</a>--}}
                                             <a class="ravis-btn btn-type-2 {{ ($localeCode == App::getLocale()) ? 'active' : '' }}" rel="alternate" hreflang="{{$localeCode}}" href="{{ LaravelLocalization::getLocalizedURL($localeCode) }}">
-                                                <span>{{ $langItem['native'] }}</span>
-                                           </a>
+                                                <img src="/img/{{ strtolower($langItem['native']) }}.svg" alt="">
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>

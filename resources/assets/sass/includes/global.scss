@@ -174,9 +174,17 @@ header {
               a {
                 color: #b8b8b8;
                 font-family: montserrat_medium;
+                img {
+                  width: 25px;
+                  height: 15px;
+                  opacity: .5;
+                }
                 &.active {
                   color: $main_brown_clr;
                   display: block;
+                  img {
+                    opacity: 1;
+                  }
                 }
               }
             }
