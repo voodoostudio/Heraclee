@@ -157,7 +157,9 @@
 
             <div class="close_panorama_container">
                 <button class="close_panorama"><i class="icn icon-arrow_right"></i>{{ trans('lang.back_to_gallery') }}</button>
+                <a id="fullscreen_panorama_btn" href="/virtual_tours/{{ $property['property_id'] }}/property_{{ $property['property_id'] }}.html" ><i class="icn icon-fullscreen"></i></a>
             </div>
+
             <div class="gallery_nav">
                 <div class="container-fluid">
                     <ul class="gallery_thumbnails details_gallery_thumbnails">

@@ -188,8 +188,8 @@
       }
       .close_panorama_container {
         text-align: center;
+        display: none;
         .close_panorama {
-          display: none;
           margin: 15px auto 0;
           font-size: 1rem;
           line-height: 1rem;
@@ -201,6 +201,10 @@
             float: left;
             @include my_transform(rotate(180deg));
           }
+        }
+        #fullscreen_panorama_btn {
+          display: none;
+          margin-left: 30px;
         }
       }
       .gallery_nav {
@@ -246,10 +250,7 @@
       }
       &.display_panorama {
         .close_panorama_container {
-          text-align: center;
-          .close_panorama {
-            display: block;
-          }
+          display: block;
         }
         .gallery_view {
           #object_panorama {
