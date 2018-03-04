@@ -130,10 +130,10 @@ header {
       .header_tel {
         @include my_transition(.2s ease-in-out);
         line-height: 1;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         letter-spacing: 0.15rem;
-        font-family: montserrat_medium;
-        color: #b8b8b8;
+        font-family: aileron_semibold;
+        color: #ffffff;
       }
       h1 {
         display: none;
@@ -215,9 +215,7 @@ header {
         bottom: -25px;
         font-size: 0.75rem;
         line-height: 1;
-        //color: $main_brown_clr;
-        //font-family: opensans_semibold;
-        font-family: modelica_light;
+        font-family: aileron_semibold;
 
         color: $main_dark_clr;
         padding: 5px 15px;
