@@ -796,7 +796,8 @@ class Properties extends Model
             ->whereIn('category', $sell_type)
             ->limit($items)
             ->offset($offset)
-            ->orderBy('created_at', 'DESC')
+            //->orderBy('created_at', 'DESC')
+            ->orderBy('updated_at', 'DESC')
             ->get();
 
         $this->all_property_count = DB::table('apimo_properties')
