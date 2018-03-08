@@ -33,6 +33,16 @@ class SyncWithApimo
     }
 
     /**
+     * Force update apimo
+     */
+
+    public static function force_update()
+    {
+        DB::table('apimo_properties')->truncate();
+        self::addOrEditPropertiesToDB(self::getAllRealEstate('properties'));
+    }
+
+    /**
      * Adds a new object or updates an existing object (only if the object has changed)
      *
      * @param array $properties

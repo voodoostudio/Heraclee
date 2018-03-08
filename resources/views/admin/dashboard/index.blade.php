@@ -61,6 +61,9 @@
                         </a>
                     </div>
                 </div>
+                <div style="margin-top: 20px;">
+                    <a class="outer_block_container" style="text-transform: uppercase; color: white; background: #ccac83;" href="{{ route('force_update') }}">Force Update</a>
+                </div>
             </div>
         </section>
     </main>

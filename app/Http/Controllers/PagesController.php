@@ -31,7 +31,6 @@ class PagesController extends Controller
 {
     public function index()
     {
-        SyncWithApimo::update();
         Session::forget('search');
         $equipments_list = Properties::getEquipmentsList();
         $standing_list = Properties::getStandingList();

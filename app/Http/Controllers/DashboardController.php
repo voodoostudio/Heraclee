@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Libraries\SyncWithApimo;
 
 class DashboardController extends Controller
 {
@@ -20,6 +21,13 @@ class DashboardController extends Controller
     public function index()
     {
         return view('admin.dashboard.index');
+    }
+
+    public function force_update()
+    {
+        SyncWithApimo::force_update();
+
+        return redirect('/admin');
     }
 
 }

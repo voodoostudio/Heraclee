@@ -176,6 +176,12 @@ Route::group(
             'as' => 'view-list',
         ]);
 
+        Route::get('/admin/force_update', [
+            'uses' => 'DashboardController@force_update',
+            'as' => 'force_update',
+        ]);
+
+
 //        Route::post('city_list/{id}/{country}', [
 //            'uses' => 'PagesController@getCityList',
 //            'as' => 'city_list',
