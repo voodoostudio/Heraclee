@@ -282,7 +282,7 @@ ul.nav.nav-tabs {
     width: 100%;
     .multiselect.dropdown-toggle {
       padding: 0 30px 0 10px;
-      font-family: modelica_light;
+      font-family: modelica_regular;
       font-size: 0.9375rem;
       text-transform: initial;
       color: $main_light_clr;
@@ -327,7 +327,7 @@ ul.nav.nav-tabs {
           width: 100%;
           outline: none;
           color: $main_light_clr;
-
+          font-family: modelica_regular;
           label {
             width: 100%;
             position: relative;

@@ -177,7 +177,7 @@
         color: $main_xlight_clr;
         background: $main_brown_clr;
         border: 1px solid $main_brown_clr;
-        font-family: modelica_light;
+        font-family: modelica_regular;
         &.mobile {
           display: none;
         }
@@ -207,7 +207,7 @@
             margin-right: 40px;
             line-height: 42px;
             a {
-              font-family: modelica_light;
+              font-family: modelica_regular;
             }
           }
         }

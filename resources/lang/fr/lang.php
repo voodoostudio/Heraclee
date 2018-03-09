@@ -221,4 +221,7 @@ return [
     'list_of_subscrbers'    => 'Liste des abonnés',
     'date_of_creation'      => 'Date de création',
     'cookies_warning_text'  => 'Chers utilisateurs, notre site utilise des cookies pour rendre votre visite encore meilleure et plus confortable. S\'il vous plaît, assurez-vous que les cookies ne sont pas bloqués dans votre navigateur. Sinon, certaines fonctionnalités du site web seront limitées. Merci de votre compréhension.',
+
+// ADMIN
+    'force_update'          => 'Mettre à jour',
 ];
