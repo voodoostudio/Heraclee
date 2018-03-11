@@ -23,7 +23,7 @@
                 </div>
             </div>
             <a href="http://www.croixvalmer.com/" class="darnis_link">
-                <img src="/img/logo_darnis_{{$lang}}.svg" alt="">
+                <img src="/img/logo_darnis_{{$lang}}.svg" alt="Darnis website link button">
             </a>
         </div>
     </section>
