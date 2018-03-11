@@ -167,6 +167,8 @@
     .latest_news_container {
       border: 1px solid $main_gray_clr;
       background: $main_dark_clr;
+      margin-right: 100px;
+      position: relative;
       .marquee_title {
         float: left;
         padding: 11px 10px;
@@ -214,6 +216,14 @@
         .js-marquee {
           margin-right: 0!important;
         }
+      }
+    }
+    .darnis_link {
+      position: absolute;
+      right: 15px;
+      top: -25px;
+      img {
+        width: 90px;
       }
     }
   }

@@ -1,5 +1,32 @@
+{{--@include('includes/last_update_script');--}}
+
 @php
-    $last_update =  \App\Http\Controllers\PagesController::last_update();
+    use App\Gallery;
+    use App\Posts;
+    use App\Newsletter;
+    use Illuminate\Support\Facades\DB;
+
+    /* Last update on site */
+    $gallery_date = Gallery::orderBy('updated_at', 'desc')->value('updated_at');
+    $gallery_last_date = (!empty($gallery_date)) ? date(strtotime($gallery_date . '+1 hours')) : '';
+    $posts_date = Posts::orderBy('updated_at', 'desc')->value('updated_at');
+    $posts_last_date = (!empty($posts_date)) ? date(strtotime($posts_date . '+1 hours')) : '';
+    $newsletter_date = Newsletter::orderBy('updated_at', 'desc')->value('updated_at');
+    $newsletter_last_date = (!empty($newsletter_date)) ? date(strtotime($newsletter_date . '+1 hours')) : '';
+    $properties_date =
+        DB::table('apimo_properties')
+            ->select('updated_at')
+            ->where(function($query) {
+                $query->orWhere('reference', 'like', 'HSTP%')
+                      ->orWhere('reference', 'like', 'HD%');
+            })
+            ->orderBy('updated_at', 'desc')
+            ->value('updated_at');
+    $properties_last_date = (!empty($properties_date)) ? date(strtotime($properties_date . '+1 hours')) : '';
+
+    $dates = [$posts_last_date, $gallery_last_date, $properties_last_date, $newsletter_last_date];
+
+    $last_update = max($dates);
 @endphp
 
 <header>
@@ -42,7 +69,9 @@
                     </div>
                 </div>
                 <div class="last_updates">
-                    <p><i class="fa fa-refresh" aria-hidden="true"></i>{{ trans('lang.last_website_update') }} {{ $last_update }}</p>
+                    <p>
+                        {{--<i class="fa fa-refresh" aria-hidden="true"></i>--}}
+                        {{ trans('lang.last_website_update') }} {{ date('d.m.Y - H:i', (!empty($last_update)) ? $last_update : 0) }}</p>
                 </div>
             </div>
 

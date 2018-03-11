@@ -1023,6 +1023,20 @@
     }
   }
 
+  #index, #france, #swiss, #usa, #mauritius {
+    section.latest_news_section {
+      .latest_news_container {
+        margin-right: 85px;
+      }
+      .darnis_link {
+        top: -16px;
+        img {
+          width: 70px;
+        }
+      }
+    }
+  }
+
   section.flipbook_section {
     .finger_icon {
       display: block;
@@ -1468,6 +1482,20 @@
   #locations {
     main {
       padding-top: 72px;
+    }
+  }
+
+  #index, #france, #swiss, #usa, #mauritius {
+    section.latest_news_section {
+      .latest_news_container {
+        margin-right: 70px;
+      }
+      .darnis_link {
+        top: -10px;
+        img {
+          width: 65px;
+        }
+      }
     }
   }
 
@@ -2133,5 +2161,9 @@
         padding: 20px 5px 5px;
       }
     }
+  }
+
+  header .navigation_container .navigation_block .last_updates {
+    font-size: 0.7rem;
   }
 }

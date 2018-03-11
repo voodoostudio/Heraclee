@@ -1,3 +1,4 @@
+
 @if(!$last_news->isEmpty())
     <section class="latest_news_section">
         <div class="container-fluid">
@@ -21,6 +22,9 @@
                     </ul>
                 </div>
             </div>
+            <a href="http://www.croixvalmer.com/" class="darnis_link">
+                <img src="/img/logo_darnis_{{$lang}}.svg" alt="">
+            </a>
         </div>
     </section>
 @endif
