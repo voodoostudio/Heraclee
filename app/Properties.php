@@ -840,7 +840,6 @@ class Properties extends Model
         return $array;
     }
 
-
     /**
      * @param int $sell_type
      * @return mixed
@@ -1206,8 +1205,6 @@ class Properties extends Model
                 ->get();
         }
 
-        //dd($_SERVER['REQUEST_URI'] === '/fr');
-
         if (count($properties) > 0) {
             foreach ($properties as $property) {
                 //if($property['latitude'] == '43.22836')
@@ -1234,7 +1231,6 @@ class Properties extends Model
                 $array[$property['property_id']]['water'] = self::getWaterByIds($property['water']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
                 $array[$property['property_id']]['comments'] = self::getCommentsByIds($property['property_id']);
-                ///dump();
             }
         }
         return $array;
@@ -1377,12 +1373,10 @@ class Properties extends Model
                 'apfg.value as flooring',
                 'apf.value as floor_type',
                 'apimo_areas.floor_value as floor_value'
-            //'apimo_property_orientations.value as orientations'
             )
             ->leftJoin('apimo_property_areas_type as apat', 'apimo_areas.type', '=', 'apat.reference')
             ->leftJoin('apimo_property_flooring as apfg', 'apimo_areas.flooring', '=', 'apfg.reference')
             ->leftJoin('apimo_property_floor as apf', 'apimo_areas.floor_type', '=', 'apf.reference')
-            //->leftJoin('apimo_property_orientations', 'apimo_areas.orientations', '=', 'apimo_property_orientations.reference')
 
             ->whereIn('id', explode(',', $ids))
             ->where('apat.locale', '=', $lang)
@@ -1430,8 +1424,6 @@ class Properties extends Model
                 $areas_array[$area['id']]['flooring'] = $area['flooring'];
                 $areas_array[$area['id']]['floor_type'] = $area['floor_type'];
                 $areas_array[$area['id']]['floor_value'] = $area['floor_value'];
-                // $areas_array[$area['id']]['orientations'] = $area['orientations'];
-
             }
         }
 
@@ -1576,7 +1568,6 @@ class Properties extends Model
                 $water_array[$value['id']]['waste'] = $value['waste'];
             }
         }
-        // dump($water_array);
         return $water_array;
     }
 
@@ -1598,7 +1589,6 @@ class Properties extends Model
             $floor = $floor[0];
         }
 
-        //dump($floor);
         return $floor;
     }
 
@@ -2421,7 +2411,6 @@ class Properties extends Model
         foreach ($property_types as $property_type) {
             $res[] = (string)$property_type['type'];
         }
-
 
         return $res;
     }

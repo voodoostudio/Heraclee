@@ -1,19 +1,11 @@
 @extends('layouts.master')
 
-{{--
-@php
-    header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
-    header("Cache-Control: no-store, no-cache, must-revalidate");
-@endphp--}}
-
-
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
 @endphp
 
 @section('title', 'Results page')
 @section('css')
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('/css/results.min.css')}}">--}}
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBy3z5ZYvr8P0eXpKg8QhcqZU6yYg4Nl6k&libraries=drawing,places&language=en"></script>
@@ -35,33 +27,6 @@
         $longitude_agency_st_tropes = '6.629523';
         $latitude_agency_croixvalmer = '43.192034';
         $longitude_agency_croixvalmer = '6.556010';
-
-        /* Show properties wit unique lat & lng */
-        /*foreach($all_properties as $property) {
-            $prop_image[$property['property_id']] = $property['pictures'];
-            $key = $property['latitude']." ".$property['longitude'];
-            if(!isset($all_property[$key])) $all_property[$key] = [];
-            $all_property[$key][] = [
-                                        'property_id'   => $property['property_id'],
-                                        'category'      => (in_array($property['category']['reference'], $sell_type) == true) ? trans('lang.sale') : trans('lang.rent'),
-                                        'reference'     => $property['reference'],
-                                        'price'         => $property['price'],
-                                        'pictures'      => $property['pictures'],
-                                        'latitude'      => $property['latitude'],
-                                        'longitude'     => $property['longitude'],
-                                        'type'          => $property['type'],
-                                        'area_surface'  => $property['area_surface'],
-                                        'rooms'         => $property['rooms'],
-                                        'bedrooms'      => $property['bedrooms'],
-                                        'city'          => $property['city'],
-                                        'view'          => $property['view'],
-                                        'created_at'    => $property['created_at'],
-                                        'updated_at'    => $property['updated_at'],
-                                        'address'    => $property['updated_at'],
-                                        'address_more'    => $property['updated_at'],
-                                        'publish_address'    => $property['updated_at'],
-                                    ];
-        }*/
 
         /* Show properties where is address, if address is empty show agency (lat & lng) */
         foreach($all_properties as $property) {

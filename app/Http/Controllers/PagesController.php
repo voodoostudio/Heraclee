@@ -306,18 +306,6 @@ class PagesController extends Controller
             Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
         }
 
-       /* if (isset($_POST['object_standing']) && !empty($_POST['object_standing'])) {
-            Session::put('search.object_standing', $_POST['object_standing']);
-        } elseif (!Session::has('search.object_standing')) {
-            Session::put('search.object_standing', '');
-        }*/
-
-        /*if (isset($_POST['object_view']) && !empty($_POST['object_view'])) {
-            Session::put('search.object_view', $_POST['object_view']);
-        } elseif (!Session::has('search.object_view')) {
-            Session::put('search.object_view', '');
-        }*/
-
         if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
             Session::put('search.object_place', $_POST['object_place']);
         } elseif (!Session::has('search.object_place')) {
@@ -457,29 +445,11 @@ class PagesController extends Controller
 
         Session::put('search.sell_type', 3);
 
-        /* if (isset($_POST['sell_type']) && !empty($_POST['sell_type'])) {
-             Session::put('search.sell_type', $_POST['sell_type']);
-         } elseif (!Session::has('search.sell_type')) {
-             Session::put('search.sell_type', 1);
-         }*/
-
         if (isset($_POST['object_type']) && !empty($_POST['object_type'])) {
             Session::put('search.object_type', $_POST['object_type']);
         } elseif (!Session::has('search.object_type')) {
             Session::put('search.object_type', Properties::getAvailablePropertyTypeIds());
         }
-
-        /*if (isset($_POST['object_standing']) && !empty($_POST['object_standing'])) {
-            Session::put('search.object_standing', $_POST['object_standing']);
-        } elseif (!Session::has('search.object_standing')) {
-            Session::put('search.object_standing', '');
-        }*/
-
-        /*if (isset($_POST['object_view']) && !empty($_POST['object_view'])) {
-            Session::put('search.object_view', $_POST['object_view']);
-        } elseif (!Session::has('search.object_view')) {
-            Session::put('search.object_view', '');
-        }*/
 
         if (isset($_POST['object_place']) && !empty($_POST['object_place'])) {
             Session::put('search.object_place', $_POST['object_place']);
@@ -747,11 +717,6 @@ class PagesController extends Controller
         return view('newsletters.heraclee_newsletter');
     }
 
-    /*public function newsletter_details()
-    {
-        return view('newsletter_details');
-    }*/
-
     public function contact()
     {
         return view('contact');
@@ -852,8 +817,6 @@ class PagesController extends Controller
         ]);
 
         $data = [
-//            'to' => $request->to,
-            //'to' => 'info@heraclee.com',
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -1127,81 +1090,30 @@ class PagesController extends Controller
         return response()->json($image_arr);
     }
 
-
-//    public static function getCityList($id, $country)
-//    {
-//        $country_array =[];
-//
-//        if($country == false || $country == 'results' || $country == 'fr' || $country == 'en') {
-//            $country_array = ['FR', 'CH', 'US', 'ZA'];
-//        }
-//
-//        if($country == 'france') {
-//            $country_array = ['FR'];
-//        }
-//
-//        if($country == 'swiss') {
-//            $country_array = ['CH'];
-//        }
-//
-//        if($country == 'usa') {
-//            $country_array = ['US'];
-//        }
-//
-//        if($country == 'mauritius') {
-//            $country_array = ['ZA'];
-//        }
-//
-//        if(
-//            ($_SERVER['REQUEST_URI'] === '/') || ($_SERVER['REQUEST_URI'] === '/fr') || ($_SERVER['REQUEST_URI'] === '/en') ||
-//            ($_SERVER['REQUEST_URI'] === '/france') || ($_SERVER['REQUEST_URI'] === '/fr/france') || ($_SERVER['REQUEST_URI'] === '/en/france') ||
-//            ($_SERVER['REQUEST_URI'] === '/swiss') || ($_SERVER['REQUEST_URI'] === '/fr/swiss') || ($_SERVER['REQUEST_URI'] === '/en/swiss') ||
-//            ($_SERVER['REQUEST_URI'] === '/usa') || ($_SERVER['REQUEST_URI'] === '/fr/usa') || ($_SERVER['REQUEST_URI'] === '/en/usa') ||
-//            ($_SERVER['REQUEST_URI'] === '/mauritius') || ($_SERVER['REQUEST_URI'] === '/fr/mauritius') || ($_SERVER['REQUEST_URI'] === '/en/mauritius')
-//        ){
-//            $sell_type_array = [1, 2, 3, 4, 5, 6];
-//        } else {
-//            if ($id == 1) {
-//                $sell_type_array = [1, 4, 5, 6];
-//            } else {
-//                $sell_type_array = [2, 3];
-//            }
-//        }
-//
-//        $properties = DB::table('apimo_properties')
-//            ->whereIn('category',  $sell_type_array )
-//            ->where('reference', 'like',  'HSTP%' )
-//            ->whereIn('country', $country_array)->pluck('city');
-//
-//        $cities = DB::table('apimo_city')->whereIn('city_id', $properties)->get();
-//
-//        return json_encode($cities);
-//
-//    }
-
-    public function api()
+    public static function last_update()
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://api.apimo.pro/agencies/10338/properties');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERPWD, '1498:4b9e86c6bc4286a8bec6a0e8b02f9e014c2414a3');
-        curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, '{"limit": 10, "offset": 0, "timestamp": "" }');
-        $output = curl_exec($ch);
-        curl_close($ch);
-        $values = json_decode($output, true);
+        /* Last update on site */
+        $gallery_date = Gallery::orderBy('updated_at', 'desc')->value('updated_at');
+        $gallery_last_date = (!empty($gallery_date)) ? date(strtotime($gallery_date . '+1 hours')) : '';
+        $posts_date = Posts::orderBy('updated_at', 'desc')->value('updated_at');
+        $posts_last_date = (!empty($posts_date)) ? date(strtotime($posts_date . '+1 hours')) : '';
+        $newsletter_date = Newsletter::orderBy('updated_at', 'desc')->value('updated_at');
+        $newsletter_last_date = (!empty($newsletter_date)) ? date(strtotime($newsletter_date . '+1 hours')) : '';
+        $properties_date =
+            DB::table('apimo_properties')
+                ->select('updated_at')
+                ->where(function($query) {
+                    $query->orWhere('reference', 'like', 'HSTP%')
+                        ->orWhere('reference', 'like', 'HD%');
+                })
+                ->orderBy('updated_at', 'desc')
+                ->value('updated_at');
+        $properties_last_date = (!empty($properties_date)) ? date(strtotime($properties_date . '+1 hours')) : '';
 
-        dd($values);
+        $dates = [$posts_last_date, $gallery_last_date, $properties_last_date, $newsletter_last_date];
+
+        $last_update = max($dates);
+
+        return date('d.m.Y - H:i', (!empty($last_update)) ? $last_update : 0);
     }
-
-//    public function login()
-//    {
-//        return view('login');
-//    }
-//
-//    public function password_recover()
-//    {
-//        return view('password_recover');
-//    }
 }
