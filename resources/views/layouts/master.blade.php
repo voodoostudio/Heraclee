@@ -205,39 +205,29 @@
 
         @include('includes.header')
 
-        <div class="preloader-wrap">
-            <div class="percentage" id="precent"></div>
-            <div class="loader">
-                <div class="trackbar">
-                    <div class="loadbar"></div>
+        <div id="door-wrapper">
+            <div id="door-left"></div>
+            <div id="door-right"></div>
+            <div id="loader" class="active">
+                <div id="loader-inner">
+                    <div class="square"></div>
+                    <div class="square-animated">
+                        <div class="sk-cube-grid">
+                            <div class="sk-cube sk-cube1"></div>
+                            <div class="sk-cube sk-cube2"></div>
+                            <div class="sk-cube sk-cube3"></div>
+                            <div class="sk-cube sk-cube4"></div>
+                            <div class="sk-cube sk-cube5"></div>
+                            <div class="sk-cube sk-cube6"></div>
+                            <div class="sk-cube sk-cube7"></div>
+                            <div class="sk-cube sk-cube8"></div>
+                            <div class="sk-cube sk-cube9"></div>
+                        </div>
+                        <img src="/img/logo.svg" alt="Heraclee logo">
+                    </div>
                 </div>
-                <div class="glow"></div>
             </div>
         </div>
-
-        {{--<div id="door-wrapper">--}}
-            {{--<div id="door-left"></div>--}}
-            {{--<div id="door-right"></div>--}}
-            {{--<div id="loader" class="active">--}}
-                {{--<div id="loader-inner">--}}
-                    {{--<div class="square"></div>--}}
-                    {{--<div class="square-animated">--}}
-                        {{--<div class="sk-cube-grid">--}}
-                            {{--<div class="sk-cube sk-cube1"></div>--}}
-                            {{--<div class="sk-cube sk-cube2"></div>--}}
-                            {{--<div class="sk-cube sk-cube3"></div>--}}
-                            {{--<div class="sk-cube sk-cube4"></div>--}}
-                            {{--<div class="sk-cube sk-cube5"></div>--}}
-                            {{--<div class="sk-cube sk-cube6"></div>--}}
-                            {{--<div class="sk-cube sk-cube7"></div>--}}
-                            {{--<div class="sk-cube sk-cube8"></div>--}}
-                            {{--<div class="sk-cube sk-cube9"></div>--}}
-                        {{--</div>--}}
-                        {{--<img src="/img/logo.svg" alt="Heraclee logo">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
 
         <div class="cookies_alert">
             <div class="container-fluid">
@@ -421,47 +411,18 @@
         @yield('javascript')
         @yield('javascript_search')
         <script>
-//            $(window).on('load', function() {
-//                $('#door-wrapper').addClass('loaded');
-//                setTimeout(function(){
-//                    $('#door-wrapper').fadeOut();
-//                }, 500);
-//            });
 
-            function onLoad() {
-                var now = new Date().getTime();
-                var page_load_time = now - performance.timing.navigationStart;
-                console.log("User-perceived page loading time: " + page_load_time);
+            function hidePreloader() {
+                $('#door-wrapper').addClass('loaded');
+                $('.pace').css('height', '0');
+                setTimeout(function(){
+                    $('#door-wrapper').fadeOut();
+                }, 500);
             }
 
-            var width = 100, // width of a progress bar in percentage
-                perfData = window.performance.timing, // The PerformanceTiming interface
-                EstimatedTime = -(perfData.loadEventEnd - perfData.navigationStart), // Calculated Estimated Time of Page Load which returns negative value.
-                time = parseInt((EstimatedTime/1000)%60)*100; //Converting EstimatedTime from miliseconds to seconds.
-
-            var PercentageID = $("#precent"),
-                start = 0,
-                end = 100,
-                durataion = time;
-            animateValue(PercentageID, start, end, durataion);
-
-            function animateValue(id, start, end, duration) {
-
-                var range = end - start,
-                    current = start,
-                    increment = end > start? 1 : -1,
-                    stepTime = Math.abs(Math.floor(duration / range)),
-                    obj = $(id);
-
-                var timer = setInterval(function() {
-                    current += increment;
-                    $(obj).text(current + "%");
-                    //obj.innerHTML = current;
-                    if (current == end) {
-                        clearInterval(timer);
-                    }
-                }, stepTime);
-            }
+            Pace.on('done', function () {
+                hidePreloader();
+            });
 
             sr.reveal('.reveal',{
                 reset: true,

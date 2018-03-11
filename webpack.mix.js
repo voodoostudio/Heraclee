@@ -24,6 +24,7 @@ mix.styles([
         'resources/assets/sass/libraries/tooltipster.min.css',
         'resources/assets/sass/libraries/slick.css',
         'resources/assets/sass/libraries/datepicker.css',
+        'resources/assets/sass/libraries/pace.css',
         'public/css/custom_icons/style.css',
     ], 'public/css/libraries.css');
 
@@ -64,6 +65,7 @@ mix.scripts([
     'resources/assets/js/libraries/slick.min.js',
     'resources/assets/js/libraries/tooltipster.min.js',
     'resources/assets/js/libraries/scrollreveal.min.js',
+    'resources/assets/js/libraries/pace.js',
 ], 'public/js/libraries.js');
 
 mix.options({

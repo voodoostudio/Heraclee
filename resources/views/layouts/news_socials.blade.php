@@ -400,11 +400,16 @@
 
 @yield('javascript')
 <script>
-    $(window).on('load', function() {
+    function hidePreloader() {
         $('#door-wrapper').addClass('loaded');
+        $('.pace').css('height', '0');
         setTimeout(function(){
             $('#door-wrapper').fadeOut();
         }, 500);
+    }
+
+    Pace.on('done', function () {
+        hidePreloader();
     });
 
     sr.reveal('.reveal',{
