@@ -257,9 +257,9 @@
 @endsection
 
 @section('javascript')
-    <script src="{{mix('js/index.js')}}"></script>
+    <script defer src="{{mix('js/index.js')}}"></script>
 
-    <script>
+    <script defer>
         var locations = [
                 @foreach($all_property as $key => $unique)
                 @php

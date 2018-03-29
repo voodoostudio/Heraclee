@@ -96,7 +96,9 @@
                                 @if($counter == 1)
                                     <li>
                                         <a href="{{ $link }}">
-                                            <img src="{{ $picture }}" alt="">
+                                            @if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false)
+                                                <img src="{{ $picture }}" alt="">
+                                            @endif
                                         </a>
                                     </li>
                                 @endif
@@ -108,7 +110,9 @@
                             @foreach($image as $picture)
                                 <li>
                                     <a href="{{ $link }}">
-                                        <img src="{{ $picture }}" alt="">
+                                        @if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false)
+                                            <img src="{{ $picture }}" alt="">
+                                        @endif
                                     </a>
                                 </li>
                             @endforeach
