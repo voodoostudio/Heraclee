@@ -2526,7 +2526,7 @@ footer section.bottom_footer_section {
   padding: 30px 0;
 }
 
-footer section.bottom_footer_section h1 {
+footer section.bottom_footer_section h2 {
   line-height: 1.5rem;
   font-size: 0.85rem;
   margin-right: 50px;
@@ -8567,7 +8567,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.admin_gallery_section form.form-image-upload button[type='submit'] {
     float: right;
   }
-  footer section.bottom_footer_section h1 {
+  footer section.bottom_footer_section h2 {
     margin-right: 0;
   }
 }
@@ -9121,7 +9121,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   footer {
     margin-top: 30px;
   }
-  footer section.bottom_footer_section h1 {
+  footer section.bottom_footer_section h2 {
     margin: 30px 15px 0;
     line-height: 1.8rem;
     text-align: center;

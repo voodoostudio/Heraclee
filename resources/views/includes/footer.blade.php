@@ -140,7 +140,7 @@
                     <div id="response"></div>
                 </div>
                 <div class="col-sm-12 col-md-6 pull-md-6 col-lg-8 pull-lg-4">
-                    <h1>{!! trans('lang.footer_description') !!}</h1>
+                    <h2>{!! trans('lang.footer_description') !!}</h2>
 
                 </div>
             </div>

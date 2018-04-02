@@ -38,6 +38,7 @@ return [
     'surface'               => 'Surface area',
     'bedrooms'              => 'Bedrooms',
     'homepage_description'  => 'Our agency, Heraclee, specializing in luxury real estate in the French Riviera, has been based for 7 years in the emblematic city of Saint-Tropez. The luxury real estate market in the Cote d\'Azur being one of the most attractive in the country, we offer the best of the St. Tropez real estate.',
+    'homepage_description_france'  => 'Heraclee est spécialisé dans l’immobilier de prestige à St-Tropez. Il est historiquement présent à Saint-Tropez, à la Croix-Valmer ainsi qu’à Genève. Experts de l’immobilier de luxe, nous proposons des biens d’exception à la location comme à la vente sur la Côte d’Azure. Notre professionnalisme vous assure des transactions rapides et des estimations justes qui se traduisent par une clientèle satisfaite. A la recherche d’une villa avec vue mer, d’une bastide au milieu des vignes ou d’une propriété cossue au coeur de la campagne, Heraclee vous accompagne à chaque étape, depuis la définition de votre cahier des charges, jusqu’à la prise de décision finale. Nos agences réalisent des transaction au coeur des domaines du Golfe de Saint-Tropez',
     'homepage_title'        => '<span class="img_bg_text">Heraclee</span> Luxury real estate agency <span class="img_bg_text">Saint-Tropez</span>',
 
 //    RESULTS PAGE
@@ -225,4 +226,11 @@ return [
 
 // ADMIN
     'force_update'          => 'Force update',
+
+// META TAG DESCRIPTION & TITLE
+    'meta_description_homepage' => 'Immobilier Saint-Tropez, Location et vente immobilier de luxe Saint-Tropez. L’agence se situe au niveau de la Rivière Française. Profitant de l\'attractivité du secteur de l\'immobilier à St-Tropez, l\'agence a su au fil des années développer un réseau conséquent afin de faire profiter l\'ensemble de ses clients de biens immobiliers d\'exceptions. ',
+    'meta_description_france'   => 'Immobilier St-Tropez, Achat et vente immobilier de luxe St-Tropez. Agence immobilière sur la Baie de Saint-Tropez. Notre agence vous propose l’achat de biens immobiliers, maisons, appartements, terrains dans le golfe de St-Tropez.',
+
+    'title_homepage'    => 'Immobilier Saint-Tropez, Location et vente immobilier Saint-Tropez, vente maison, appartement de prestige sur St-Tropez, Côte d’Azur',
+    'title_france'      => 'Immobilier St-Tropez, Location et vente immobilier St-Tropez, vente maison, appartement de prestige sur Saint-Tropez, Côte d’Azur',
 ];

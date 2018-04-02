@@ -37,8 +37,9 @@ return [
     'price'                 => 'Prix',
     'surface'               => 'Surface',
     'bedrooms'              => 'Chambres',
-    'homepage_description'  => 'Notre agence Heraclee, spécialiste de l\'immobilier de luxe au niveau de la Riviera Française, est basée depuis 7 ans dans l\'emblématique ville de Saint-Tropez. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez.',
-    'homepage_title'        => '<span class="img_bg_text">Heraclee</span> <span>Agence immobilière</span> <span>de prestige</span> <span class="img_bg_text">Saint-Tropez</span>',
+    'homepage_description'  => 'Heraclee est une agence immobilière à Saint-Tropez. Spécialisée dans l\'Immobilier de luxe depuis, l\'agence se situe au niveau de la Riviera Française. Profitant de l\'attractivité du secteur de l\'immobilier à St-Tropez, l\'agence a su au fil des années développer un réseau conséquent afin de faire profiter l\'ensemble de ses clients de biens immobiliers d\'exceptions. Le marché de l\'immobilier de luxe de la Côte d\'Azur étant l\'un des plus attractif du pays, nous offrons à cet effet le meilleur de l\'immobilier à St-Tropez.',
+    'homepage_description_france'  => 'Heraclee est spécialisé dans l’immobilier de prestige à St-Tropez. Il est historiquement présent à Saint-Tropez, à la Croix-Valmer ainsi qu’à Genève. Experts de l’immobilier de luxe, nous proposons des biens d’exception à la location comme à la vente sur la Côte d’Azure. Notre professionnalisme vous assure des transactions rapides et des estimations justes qui se traduisent par une clientèle satisfaite. A la recherche d’une villa avec vue mer, d’une bastide au milieu des vignes ou d’une propriété cossue au coeur de la campagne, Heraclee vous accompagne à chaque étape, depuis la définition de votre cahier des charges, jusqu’à la prise de décision finale. Nos agences réalisent des transaction au coeur des domaines du Golfe de Saint-Tropez',
+    'homepage_title'        => '<span class="img_bg_text">Heraclee</span> <span>AGENCE DE BIENS</span> <span>IMMOBILIERS A</span> <span class="img_bg_text">Saint-Tropez</span>',
 
 //    RESULTS PAGE
     'results_per_page'      => 'résultats par page',
@@ -149,8 +150,8 @@ return [
 
 //    FOOTER
     'footer_title'          => '<span class="img_bg_text">Heraclee</span> <span>Agence Immobilière</span> <span class="img_bg_text">Saint-Tropez</span>',
-    'footer_description'    => 'En passant par les services de notre agence immobilière, les clients ont dès lors l\'opportunité de pouvoir accéder à des biens d\'exception via les nombreuses locations ou ventes situées pour la plupart dans les communes de St-Tropez et de Ramatuelle. De plus, l\'immobilier de luxe s\'avérant être en constante évolution tout comme les exigences et attentes de nos potentiels futurs acquéreurs, nous nous efforçons à ce titre de trouver le bien immobilier correspondant aux critères de sélection les plus pointus. </br></br>
-                                C\'est d\'ailleurs dans le but de garantir à notre clientèle une satisfaction totale que notre agence immobilière est composée d\'une équipe d\'experts disposant tous d\'un large domaine de compétences, notamment en matière d\'aspects juridiques et fiscaux. Le professionnalisme avéré de notre agence immobilière de St-Tropez, lui a entre autres permis de développer un réseau conséquent ayant lui-même conduit à la détention d\'un portefeuille à fort potentiel.',
+    'footer_description'    => 'Avant de se lancer dans l\'achat d\'un bien immobilier à Saint-Tropez, il est important pour le futur acquéreur de bénéficier d\'un bon encadrement. C\'est ici que l\'agence Heraclee entre en jeu afin de vous fournir différents conseils pratiques pour vous aider à mieux comprendre les mécanismes de l\'immobilier à St-Tropez. La catalogue de l\'agence s\'étend sur les communes de St-Tropez et de Ramatuelle, en fournissant différentes bonnes affaires, aussi bien au niveau de la location qu\'au niveau de la vente.</br></br>
+                                L\'évolution constante du marché de l\'immobilier de luxe nécessite l\'apport de spécialistes compétents. C\'est pour cela que l\'agence Heraclee compte sur une équipe d\'experts chevronnés, aussi bien sur le plan fiscal que sur le plan juridique, afin de vous accompagner étape par étape dans l\'acquisition de votre futur bien.',
     'subscribe_to_newsletter' => 'Inscrivez-vous à notre newsletter',
     'copyright_text'        => 'Heraclee - Création et développement par voodoo studio',
     'footer_keyword_1'        => 'Immobilier de luxe Saint-Tropez',
@@ -224,4 +225,11 @@ return [
 
 // ADMIN
     'force_update'          => 'Mettre à jour',
+
+// META TAG DESCRIPTION & TITLE
+    'meta_description_homepage' => 'Immobilier Saint-Tropez, Location et vente immobilier de luxe Saint-Tropez. L’agence se situe au niveau de la Rivière Française. Profitant de l\'attractivité du secteur de l\'immobilier à St-Tropez, l\'agence a su au fil des années développer un réseau conséquent afin de faire profiter l\'ensemble de ses clients de biens immobiliers d\'exceptions. ',
+    'meta_description_france'   => 'Immobilier St-Tropez, Achat et vente immobilier de luxe St-Tropez. Agence immobilière sur la Baie de Saint-Tropez. Notre agence vous propose l’achat de biens immobiliers, maisons, appartements, terrains dans le golfe de St-Tropez.',
+
+    'title_homepage'    => 'Immobilier Saint-Tropez, Location et vente immobilier Saint-Tropez, vente maison, appartement de prestige sur St-Tropez, Côte d’Azur',
+    'title_france'      => 'Immobilier St-Tropez, Location et vente immobilier St-Tropez, vente maison, appartement de prestige sur Saint-Tropez, Côte d’Azur',
 ];
