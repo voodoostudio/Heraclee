@@ -8383,7 +8383,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.flipbook_section .iframe-m iframe {
     height: 550px;
   }
-  #index section.description_section .description_container h1 {
+  #index section.description_section .description_container h1, #france section.description_section .description_container h1 {
     font-size: 0.85rem;
   }
   #index section.description_section .description_container h1.title {
@@ -8567,7 +8567,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   section.admin_gallery_section form.form-image-upload button[type='submit'] {
     float: right;
   }
-  footer section.bottom_footer_section h2 {
+  footer section.bottom_footer_section h1 {
     margin-right: 0;
   }
 }
@@ -8797,7 +8797,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
         -ms-flex-pack: center;
             justify-content: center;
   }
-  #index section.description_section .description_container h1 {
+  #index section.description_section .description_container h1, #france section.description_section .description_container h1 {
     text-align: center;
   }
   #index section.description_section .description_container h1.title {
@@ -9121,7 +9121,7 @@ section.team_members_section .outer_block_container:hover .inner_block_container
   footer {
     margin-top: 30px;
   }
-  footer section.bottom_footer_section h2 {
+  footer section.bottom_footer_section h1 {
     margin: 30px 15px 0;
     line-height: 1.8rem;
     text-align: center;
