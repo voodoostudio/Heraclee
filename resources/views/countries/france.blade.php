@@ -82,7 +82,6 @@
     <section class="description_section">
         <div class="container-fluid">
             <div class="description_container">
-                <h1 class="title reveal">{!! trans('lang.homepage_title') !!}</h1>
                 <h1 class="reveal">{!! trans('lang.homepage_description_france') !!}</h1>
             </div>
         </div>
