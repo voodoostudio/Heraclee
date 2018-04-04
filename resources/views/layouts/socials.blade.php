@@ -23,34 +23,37 @@
         gtag('config', 'UA-71420108-6');
     </script>
 
-    @php
-        $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
-        $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
-    @endphp
+@php
+    $comment_description = (isset($property['comments']['comment']) ? $property['comments']['comment'] : '');
+    $comment_title = (isset($property['comments']['title']) ? $property['comments']['title'] : '');
+    $property_type = (!empty($property['type'])) ? $property['type'] : '';
+@endphp
 
-    <!-- SOCIAL SHARE -->
+<!-- SOCIAL SHARE -->
     <meta property="og:title" content="{{ $comment_title }}" />
     <meta property="og:description" content="{{ $comment_description }}"/>
-    <meta property="og:type" content="{{ $property['type'] }}" />
+    <meta property="og:type" content="{{ $property_type }}" />
     <meta property="og:url" content="{{ Request::fullUrl() }}" />
 
     <meta prefix="og: http://ogp.me/ns#" property="og:title" content="{{ $comment_title }}" />
-    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{ $property['type'] }}" />
+    <meta prefix="og: http://ogp.me/ns#" property="og:type" content="{{ $property_type }}" />
     <meta prefix="og: http://ogp.me/ns#" property="og:url" content="{{ Request::fullUrl() }}" />
 
     @php
         $image_counter = 1;
     @endphp
-    @foreach($property['pictures'] as $picture)
-        @if($image_counter == 1)
-            <meta property="og:image" content="{{$picture['url']}}" />
-            <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{$picture['url']}}" />
+    @if(!empty($property['pictures']))
+        @foreach($property['pictures'] as $picture)
+            @if($image_counter == 1)
+                <meta property="og:image" content="{{$picture['url']}}" />
+                <meta prefix="og: http://ogp.me/ns#" property="og:image" content="{{$picture['url']}}" />
         @endif
         @php
             $image_counter++;
         @endphp
     @endforeach
-    <!-- END SOCIAL SHARE -->
+@endif
+<!-- END SOCIAL SHARE -->
 
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">

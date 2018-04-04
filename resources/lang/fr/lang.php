@@ -165,7 +165,7 @@ return [
     'footer_keyword_9'        => 'Location villa de luxe Saint-Tropez',
     'footer_keyword_10'        => 'Vente immobilière Saint-Tropez',
     'footer_keyword_11'        => 'Vente villas Saint-Tropez',
-    'footer_keyword_12'        => 'Vente villa de luxe Saint-Tropez',
+    'footer_keyword_12'        => 'Immobilier Saint-Tropez, Immobilier St-Tropez. Location et vente immobilier de luxe Saint-Tropez. L\'agence se situe au niveau de la Rivière Française. Profitant de l\'attractivité du secteur de l\'immobilier à St-Tropez, l\'agence a su au fil des années développer un réseau conséquent afin de faire profiter l\'ensemble de ses clients de biens',
 
 // EMAIL PAGE
     'email_title'           => 'Vous avez un nouveau contact via le formulaire de contact',

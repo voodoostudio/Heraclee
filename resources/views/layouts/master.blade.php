@@ -4,12 +4,13 @@
 <html lang="{{ LaravelLocalization::getCurrentLocale() }}">
     <head>
         <meta charset="utf-8">
-        <title>@if(Route::current()->getName() == 'index') {{ trans('lang.title_homepage') }} @elseif(Route::current()->getName() == 'france') {{ trans('lang.title_france') }} @endif</title> {{-- @yield('title') --}}
+        <title>@if((!empty(Route::current())) ? Route::current()->getName() == 'index' : '') {{ trans('lang.title_homepage') }} @elseif((!empty(Route::current())) ? Route::current()->getName() == 'france' : '') {{ trans('lang.title_france') }} @endif</title> {{-- @yield('title') --}}
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="@if(Route::current()->getName() == 'index') {{ trans('lang.meta_description_homepage') }} @elseif(Route::current()->getName() == 'france') {{ trans('lang.meta_description_france') }} @endif">
+        <meta name="description" content="@if((!empty(Route::current())) ? Route::current()->getName() == 'index' : '') {{ trans('lang.meta_description_homepage') }} @elseif((!empty(Route::current())) ? Route::current()->getName() == 'france' : '') {{ trans('lang.meta_description_france') }} @endif">
         <meta name="keywords" content="heraclee, website, responsive">
         <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script defer src="https://www.googletagmanager.com/gtag/js?id=UA-71420108-6"></script>
         <script>
