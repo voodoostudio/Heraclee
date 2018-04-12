@@ -23,6 +23,7 @@ class CreateAdminPostTable extends Migration
             $table->text('description_fr')->nullable();
             $table->text('description_en')->nullable();
             $table->string('status')->nullable();
+            $table->string('link', 512)->nullable();
             $table->timestamps();
         });
     }

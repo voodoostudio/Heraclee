@@ -110,6 +110,12 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-12" style="margin-bottom: 20px;">
+                                        <label class="form_el_label" style="background-size: 2% auto;"><span>Link</span></label>
+                                        <div class="input_container">
+                                            <input type="text" name="link" id="link" placeholder="Link">
+                                        </div>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="my_checkbox">
                                             <label>
