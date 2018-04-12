@@ -171,6 +171,10 @@
                       transform: scale3D(0, 0, 1);
                   }
             }
+
+            .pace {
+                height: 100% !important;
+            }
         </style>
 
         <link rel="stylesheet" type="text/css" href="{{mix('css/libraries.css')}}">
