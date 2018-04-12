@@ -68,7 +68,7 @@
                         <p>{!! str_replace("\n", '</p><p>', $item['description_en']) !!} <p>
                     @endif
                     @if(!empty($item['link']))
-                        <p><a href="{{ $item['link'] }}" style="color: #ccac83;text-decoration: none;font-size: 16px;float:right;">{{ ($lang == 'en') ? 'Read' : 'Lire' }}</a><p>
+                        <p style="text-align: right;"><a href="{{ $item['link'] }}" style="color: #ccac83;text-decoration: none;font-size: 16px;float:right;">{{ ($lang == 'en') ? 'Read' : 'Lire' }}</a><p>
                     @endif
                 </div>
             </div>
