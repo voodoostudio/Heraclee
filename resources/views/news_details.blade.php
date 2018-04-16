@@ -62,13 +62,25 @@
                             @endif
                         @endforeach
                     </div>
+
+                    @php
+                        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $item['video_link'], $matches);
+                        $id = (!empty($matches[1])) ? $matches[1] : '';
+                    @endphp
+
+                    @if(!empty($matches[1]))
+                        <div class="video_container" style="margin-bottom: 10px;">
+                            <iframe type="text/html" width="100%" height="600" src="https://www.youtube.com/embed/{{ $id }}?rel=0&showinfo=0&color=white&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    @endif
+
                     @if($lang == 'fr_FR')
                         <p>{!! str_replace("\n", '</p><p>', $item['description_fr']) !!}</p>
                     @elseif($lang == 'en_GB')
                         <p>{!! str_replace("\n", '</p><p>', $item['description_en']) !!} <p>
                     @endif
                     @if(!empty($item['link']))
-                        <p style="text-align: right;"><a href="{{ $item['link'] }}" style="color: #ccac83;text-decoration: none;font-size: 16px;">{{ ($lang == 'en') ? 'Read' : 'Lire' }}</a><p>
+                        <p style="text-align: right;position: relative;top: 25px;"><a href="{{ $item['link'] }}" style="color: #ccac83;text-decoration: none;font-size: 16px;text-transform: uppercase;border: 1px solid #ccac83;padding: 6px 14px;  ">{{ ($lang == 'en') ? 'Read' : 'Lire' }}</a><p>
                     @endif
                 </div>
             </div>

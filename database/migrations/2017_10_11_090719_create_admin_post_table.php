@@ -24,6 +24,7 @@ class CreateAdminPostTable extends Migration
             $table->text('description_en')->nullable();
             $table->string('status')->nullable();
             $table->string('link', 512)->nullable();
+            $table->string('video_link', 512)->nullable();
             $table->timestamps();
         });
     }

@@ -153,6 +153,7 @@ class PostsController extends Controller
             $posts->description_en  = Input::get('description_en');
             $posts->status          = Input::get('status');
             $posts->link            = Input::get('link');
+            $posts->video_link      = Input::get('video_link');
 
             $posts->save();
 
@@ -294,6 +295,7 @@ class PostsController extends Controller
             $posts->description_en  = Input::get('description_en');
             $posts->status          = Input::get('status');
             $posts->link            = Input::get('link');
+            $posts->video_link      = Input::get('video_link');
 
             $posts->save();
 

@@ -85,6 +85,13 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-12" style="margin-bottom: 20px;">
+                                        <label class="form_el_label" style="background-size: 20% auto;"><span>Youtube link</span></label>
+                                        <div class="input_container">
+                                            <input type="text" name="video_link" id="video_link" placeholder="Youtube link">
+                                        </div>
+                                    </div>
+
                                     <div class="col-12 margin_bottom_20">
                                         <div class="label_container">
                                             <label class="form_el_label"><span>{{ trans('lang.article_text') }}</span></label>
