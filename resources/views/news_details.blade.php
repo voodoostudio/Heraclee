@@ -95,6 +95,7 @@
                     @elseif($lang == 'en_GB')
                         <p>{!! str_replace("\n", '</p><p>', $item['description_en']) !!} <p>
                     @endif
+
                     @if(!empty($item['link']))
                         <p style="text-align: right;position: relative;top: 25px;"><a href="{{ $item['link'] }}" style="color: #ccac83;text-decoration: none;font-size: 16px;text-transform: uppercase;border: 1px solid #ccac83;padding: 6px 14px;  ">{{ ($lang == 'en') ? 'Read' : 'Lire' }}</a><p>
                     @endif
