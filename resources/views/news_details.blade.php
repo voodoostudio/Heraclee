@@ -5,6 +5,22 @@
 @section('title', 'Details page')
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{mix('css/dashboard.css')}}">
+    <style>
+        .video_container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 25px;
+            height: 0;
+        }
+
+        .video_container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 @stop
 @php
     $lang = LaravelLocalization::getCurrentLocaleRegional();
